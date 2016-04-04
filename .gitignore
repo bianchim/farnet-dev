@@ -9,6 +9,9 @@ build.properties.local
 phpcs.xml
 tests/behat.yml
 
+# Ignore Mac
+.DS_Store
+
 # Ignore build artifacts.
 bin/
 build/
