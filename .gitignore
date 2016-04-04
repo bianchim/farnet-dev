@@ -3,6 +3,7 @@
 *.sublime-workspace
 .idea/
 nbproject/
+composer.lock
 
 # Ignore local configuration overrides.
 build.properties.local
