@@ -2,7 +2,6 @@ name = Farnet News
 description = News for Farnet
 core = 7.x
 package = Farnet
-version = 7.x-1.0
 dependencies[] = features
 dependencies[] = text
 dependencies[] = nexteuropa_news
