@@ -23,4 +23,6 @@ features[user_permission][] = delete terms in farnet_faq_category
 features[user_permission][] = delete terms in farnet_theme
 features[user_permission][] = edit terms in farnet_faq_category
 features[user_permission][] = edit terms in farnet_theme
+features[variable][] = field_bundle_settings_taxonomy_term__farnet_faq_category
+features[variable][] = field_bundle_settings_taxonomy_term__farnet_theme
 project path = sites/all/modules/features
