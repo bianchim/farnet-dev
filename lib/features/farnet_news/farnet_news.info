@@ -1,0 +1,12 @@
+name = Farnet News
+description = News for Farnet
+core = 7.x
+package = Farnet
+version = 7.x-1.0
+dependencies[] = features
+dependencies[] = text
+dependencies[] = nexteuropa_news
+features[features_api][] = api:2
+features[field_base][] = field_farnet_abstract
+features[field_instance][] = node-nexteuropa_news-field_farnet_abstract
+project path = profiles/common/modules/features
