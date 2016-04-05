@@ -2,7 +2,6 @@ name = Farnet Core
 description = Farnet Core Config
 core = 7.x
 package = Farnet
-version = 7.x-1.0
 dependencies[] = features
 dependencies[] = menu
 features[features_api][] = api:2
