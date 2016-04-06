@@ -64,13 +64,14 @@ function farnet_taxonomy_enable() {
     taxonomy_term_save($term);
   };
 
-  // Creates the Farnet Publication Channel vocabulary if it does not exist already.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
+  // Creates the Farnet Publication Channel vocabulary
+  // if it does not exist already.
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
+  if ($voc) {
+    $vid = $voc->vid;
   }
   else {
-    $vocabulary = array(
+    $voc = array(
       'name' => 'Farnet Publication channel',
       'machine_name' => 'farnet_publication_channel',
       'description' => 'Taxonomy for the Publication channels on Farnet',
@@ -78,9 +79,9 @@ function farnet_taxonomy_enable() {
       'module' => 'taxonomy',
       'weight' => -4,
     );
-    $vocabulary = (object) $vocabulary;
-    taxonomy_vocabulary_save($vocabulary);
-    $vid = $vocabulary->vid;
+    $voc = (object) $voc;
+    taxonomy_vocabulary_save($voc);
+    $vid = $voc->vid;
   };
 
   // Imports Publication Channel data.
@@ -145,13 +146,14 @@ function farnet_taxonomy_enable() {
     taxonomy_term_save($term);
   };
 
-  // Creates the Farnet Type Publication vocabulary if it does not exist already.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
+  // Creates the Farnet Type Publication vocabulary
+  // if it does not exist already.
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
+  if ($voc) {
+    $vid = $voc->vid;
   }
   else {
-    $vocabulary = array(
+    $voc = array(
       'name' => 'Farnet Type Publication',
       'machine_name' => 'farnet_type_publication',
       'description' => 'Taxonomy for the Type of Publications on Farnet',
@@ -159,9 +161,9 @@ function farnet_taxonomy_enable() {
       'module' => 'taxonomy',
       'weight' => -5,
     );
-    $vocabulary = (object) $vocabulary;
-    taxonomy_vocabulary_save($vocabulary);
-    $vid = $vocabulary->vid;
+    $voc = (object) $voc;
+    taxonomy_vocabulary_save($voc);
+    $vid = $voc->vid;
   };
 
   // Imports Type Publication data.
@@ -181,9 +183,7 @@ function farnet_taxonomy_enable() {
 function farnet_taxonomy_disable() {
   $t = get_t();
 
-  // @TODO Check that the voc is not used and if it is not, run uninstall_hook
-  // in the feature.
-
+  // @TODO Check that the voc is not used and if it is not, run uninstall_hoo in the feature.
   // Deletes the taxonomy term.
   $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_theme');
   if ($vocabulary) {
@@ -199,9 +199,9 @@ function farnet_taxonomy_disable() {
   }
 
   // Deletes the taxonomy term.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
+  if ($voc) {
+    $vid = $voc->vid;
     taxonomy_vocabulary_delete($vid);
   }
 

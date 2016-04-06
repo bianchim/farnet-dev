@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * List of Type publications used to generate taxonomy Type Publications on Farnet.
+ * List of Type publications used to generate taxonomy Type Publications.
  */
 
 /**
