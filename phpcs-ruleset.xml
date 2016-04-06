@@ -35,4 +35,7 @@
     <rule ref="Drupal.NamingConventions.ValidVariableName">
         <exclude-pattern>src/Phing</exclude-pattern>
     </rule>
+
+    <!-- Farnet Exclude Files -->
+    <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
 </ruleset>
