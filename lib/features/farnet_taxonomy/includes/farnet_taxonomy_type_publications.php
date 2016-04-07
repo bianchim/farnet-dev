@@ -7,7 +7,7 @@
 /**
  * Lists Type Publications.
  */
-function farnet_taxonomy_type_events() {
+function farnet_taxonomy_type_publications() {
   $type_publications_array = array(
     'Publication1' => t('Farnet Type Publication1'),
     'Publication2' => t('Farnet Type Publication2'),
