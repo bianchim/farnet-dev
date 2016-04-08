@@ -13,6 +13,20 @@ function farnet_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_entity_types';
+  $strongarm->value = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'comment' => 0,
+    'bean' => 0,
+    'file' => 0,
+    'user' => 0,
+  );
+  $export['entity_translation_entity_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_map_categories_depth';
   $strongarm->value = 'all';
   $export['site_map_categories_depth'] = $strongarm;
@@ -66,7 +80,7 @@ function farnet_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_map_show_count';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['site_map_show_count'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -116,7 +130,7 @@ function farnet_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_map_show_titles';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['site_map_show_titles'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -127,11 +141,11 @@ function farnet_core_strongarm() {
     'farnet_theme' => 'farnet_theme',
     'farnet_faq_category' => 'farnet_faq_category',
     'farnet_publication_channel' => 'farnet_publication_channel',
+    'tags' => 'tags',
     'farnet_type_news' => 0,
     'farnet_type_event' => 0,
     'farnet_type_publication' => 0,
     'classification' => 0,
-    'tags' => 0,
   );
   $export['site_map_show_vocabularies'] = $strongarm;
 
