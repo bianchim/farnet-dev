@@ -24,6 +24,9 @@ function farnet_taxonomy_strongarm() {
         'language' => array(
           'weight' => '0',
         ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),

@@ -33,8 +33,71 @@ function farnet_taxonomy_enable() {
   include_once 'includes/farnet_taxonomy_themes.php';
   $themes_array = farnet_taxonomy_themes();
   foreach ($themes_array as $theme) {
-    $term = (object) array('vid' => $vid, 'name' => $theme);
+    //$term = (object) array('vid' => $vid, 'name' => $theme->name, 'language' => $theme->language);
+    $term = new stdClass();
+    $term->vid = $vid;
+    $term->name = $theme->name;
+    $term->language = $theme->language;
+    $term->name_field['en'][0]['value'] = $theme->name;
     taxonomy_term_save($term);
+
+    //Solution 1
+    foreach ($theme->translation as $language => $value) {
+
+      $translation = array(
+        'translate' => 0,
+        'status' => 1,
+        'language' => $language, // here is the language you're translating to
+        'source' => $term->language, // here is the source language
+      );
+
+      echo $term->tid.' '.$language.' '.$value;
+
+      $org_term = taxonomy_term_load($term->tid); // I had to load the taxonomy term
+      // get the translation handler in place
+      $handler  = entity_translation_get_handler('taxonomy_term', $org_term);
+      // This is the array structure for the field you are translating, in my case the name was "name_field" and the language target, English. $value is the translated string.
+      $values = array(
+        'name_field' => array(
+          $language => array(
+            '0' => array(
+              'value' => $value,
+            )
+          )
+        )
+      );
+
+      //$values = array();
+      // name field.
+      //$values['name_field'][$language][0]['value'] = $value;
+
+      // Finally you set the translation and save the object.
+      $handler->setTranslation($translation, $values);
+      taxonomy_term_save($org_term);
+    }
+
+    // Solution 2
+    /*
+    foreach ($theme->translation as $translated_term) {
+      //echo $key.' '. $value.' '.$term->name.' '. $term->language.' n:'.$term->i18n_tsi;
+
+      // 1. Load or create a translation set.
+      $translation_set = ($term->i18n_tsid) ?
+        i18n_translation_set_load($term->i18n_tsid) :
+        i18n_translation_set_create('taxonomy_term', $vocabulary->machine_name);
+
+      // 2. Add the full source term in this set.
+      $translation_set->add_item($term, $term->language);
+
+      // 3. Add the full translated term in this set.
+      $translation_set->add_item($translated_term, $translated_term->language);
+      //$translation_set->add_item($value, $key);
+
+      $translation_set->save(TRUE);
+
+    }
+    */
+
   };
 
   // Creates the Farnet FAQ categories vocabulary if it does not exist already.
@@ -174,7 +237,7 @@ function farnet_taxonomy_enable() {
     taxonomy_term_save($term);
   };
 
-  drupal_set_message($t('The Farnet Taxonomy feature is now active on your site.'));
+  drupal_set_message($t('The FARNET Taxonomy feature is now active on your site.'));
 }
 
 /**
@@ -226,7 +289,7 @@ function farnet_taxonomy_disable() {
     taxonomy_vocabulary_delete($vid);
   }
 
-  drupal_set_message($t('The Farnet Taxonomy feature is now disabled on your site.'));
+  drupal_set_message($t('The FARNET Taxonomy feature is now disabled on your site.'));
 }
 
 /**
@@ -234,7 +297,7 @@ function farnet_taxonomy_disable() {
  */
 function farnet_taxonomy_install() {
   $t = get_t();
-  drupal_set_message($t('The Farnet Taxonomy feature is now installed on your site.'));
+  drupal_set_message($t('The FARNET Taxonomy feature is now installed on your site.'));
 }
 
 /**
@@ -242,5 +305,5 @@ function farnet_taxonomy_install() {
  */
 function farnet_taxonomy_uninstall() {
   $t = get_t();
-  drupal_set_message($t('The Farnet Taxonomy feature is now uninstalled from your site.'));
+  drupal_set_message($t('The FARNET Taxonomy feature is now uninstalled from your site.'));
 }
