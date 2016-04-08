@@ -8,9 +8,11 @@
 /**
  * Implements hook_install().
  */
+/*
 function farnet_core_install() {
 
 }
+*/
 
 /**
  * Implements hook_enable().
