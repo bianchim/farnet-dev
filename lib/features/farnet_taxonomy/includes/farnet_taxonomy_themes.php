@@ -9,20 +9,10 @@
  */
 function farnet_taxonomy_themes() {
 
-  // Original Array
-  /*
-  $themes_array = array(
-    'Theme1' => t('Farnet Theme1'),
-    'Theme2' => t('Farnet Theme2'),
-    'Theme3' => t('Farnet Theme3'),
-    'Theme4' => t('Farnet Theme4'),
-  );
-  */
-
   // Array for Solution 1
   $themes_array = array(
     'Theme1' => (object) array(
-      'name' => t('Farnet Theme1 EN'),
+      'name' => t('Farnet Theme1'),
       'language' => 'en',
       'translation' => array(
         'fr' => t('Farnet Theme1 FR'),
@@ -30,65 +20,37 @@ function farnet_taxonomy_themes() {
       ),
     ),
     'Theme2' => (object) array(
-      'name' => t('Farnet Theme2 EN'),
+      'name' => t('Farnet Theme2'),
       'language' => 'en',
       'translation' => array(
         'fr' => t('Farnet Theme2 FR'),
         'it' => t('Farnet Theme2 IT'),
       ),
     ),
-
-    /*
-    'Theme1' => (object) array(
-        'name' => t('Farnet Theme1'),
-        'language' => 'und',
-        'translation' => array(
-          'en' => t('Farnet Theme1 EN'),
-          'fr' => t('Farnet Theme1 FR'),
-        ),
-    ),
-    'Theme2' => (object) array(
-        'name' => t('Farnet Theme2'),
-        'language' => 'und',
-        'translation' => array(
-          'en' => t('Farnet Theme2 EN'),
-          'fr' => t('Farnet Theme2 FR'),
-      ),
-    ),
     'Theme3' => (object) array(
-        'name' => t('Farnet Theme3'),
-        'language' => 'und',
-        'translation' => array(
-        'en' => t('Farnet Theme3 EN'),
+      'name' => t('Farnet Theme3'),
+      'language' => 'en',
+      'translation' => array(
         'fr' => t('Farnet Theme3 FR'),
+        'it' => t('Farnet Theme3 IT'),
       ),
     ),
     'Theme4' => (object) array(
-        'name' => t('Farnet Theme4'),
-        'language' => 'und',
-        'translation' => array (
-          'en' => t('Farnet Theme4 EN'),
-          'fr' => t('Farnet Theme4 FR'),
-      ),
-    ),Ò
-    */
-
-    /* With Solution 2
-    'Theme5' => (object) array(
-      'name' => t('Farnet Theme5'),
-      'language' => 'und',
+      'name' => t('Farnet Theme4'),
+      'language' => 'en',
       'translation' => array(
-        (object) array(
-          'name' =>  t('Farnet Theme1 EN'),
-          'language' => 'en',
-        ),
-        (object) array(
-          'name' =>  t('Farnet Theme1 FR'),
-          'language' => 'fr',
-        ),
+        'fr' => t('Farnet Theme4 FR'),
+        'it' => t('Farnet Theme4 IT'),
       ),
     ),
-    */
+    'Theme5' => (object) array(
+      'name' => t('Farnet Theme5'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Farnet Theme5 FR'),
+        'it' => t('Farnet Theme5 IT'),
+      ),
+    ),
   );
 
   return $themes_array;
