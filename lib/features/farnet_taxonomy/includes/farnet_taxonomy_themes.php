@@ -8,8 +8,6 @@
  * Lists Themes.
  */
 function farnet_taxonomy_themes() {
-
-  // Array for Solution 1
   $themes_array = array(
     'Theme1' => (object) array(
       'name' => t('Farnet Theme1'),
@@ -52,6 +50,5 @@ function farnet_taxonomy_themes() {
       ),
     ),
   );
-
   return $themes_array;
 }
