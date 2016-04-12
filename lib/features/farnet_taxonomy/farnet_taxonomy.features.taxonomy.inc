@@ -9,13 +9,13 @@
  */
 function farnet_taxonomy_taxonomy_default_vocabularies() {
   return array(
-    'farnet_faq_category' => (object) array(
-      'name' => 'Farnet FAQ Category',
-      'machine_name' => 'farnet_faq_category',
-      'description' => 'Taxonomy for the FAQ categories on Farnet',
+    'farnet_languages_spoken' => (object) array(
+      'name' => 'Farnet Languages spoken',
+      'machine_name' => 'farnet_languages_spoken',
+      'description' => 'Taxonomy for the languages spoken on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -8,
+      'weight' => -4,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -40,7 +40,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Publication channels on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -4,
+      'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -65,7 +65,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the themes on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -9,
+      'weight' => -10,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -90,7 +90,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of Events on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -6,
+      'weight' => -7,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -115,7 +115,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of News on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -7,
+      'weight' => -8,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -140,7 +140,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of Publications on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -5,
+      'weight' => -6,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
