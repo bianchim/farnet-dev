@@ -35,39 +35,9 @@ function farnet_taxonomy_enable() {
   // Imports theme data.
   include_once 'includes/farnet_taxonomy_themes.php';
   $themes_array = farnet_taxonomy_themes();
-  foreach ($themes_array as $theme) {
-    $term = new stdClass();
-    $term->vid = $vid;
-    $term->name = $theme->name;
-    $term->language = $theme->language;
-    taxonomy_term_save($term);
+  save_multilingual_farnet_taxonomy($themes_array, $vid);
 
-    foreach ($theme->translation as $language => $value) {
-
-      $translation = array(
-        'translate' => 0,
-        'status' => 1,
-        'language' => $language, // here is the language you're translating to
-        'source' => $term->language, // here is the source language
-      );
-
-      $org_term = taxonomy_term_load($term->tid); // I had to load the taxonomy term
-      // get the translation handler in place
-      $handler  = entity_translation_get_handler('taxonomy_term', $org_term, TRUE);
-      // This is the array structure for the field you are translating, in my case the name was "name_field" and the language target, English. $value is the translated string.
-      $translation['tid'] = $org_term->tid;
-
-      $values = array();
-      // name field.
-      $values['name_field'][$language][0]['value'] = $value;
-
-      // Finally you set the translation and save the object.
-      $handler->setTranslation($translation, $values);
-      taxonomy_term_save($org_term);
-    }
-  };
-
-  // Creates the Farnet Languages spoken vocabulary if it does not exist already.
+  // Creates the Languages spoken vocabulary if it does not exist already.
   $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_languages_spoken');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
@@ -91,8 +61,8 @@ function farnet_taxonomy_enable() {
   $languages_spoken_array = farnet_taxonomy_languages_spoken();
   save_multilingual_farnet_taxonomy($languages_spoken_array, $vid);
 
-  // Creates the Farnet Publication Channel vocabulary
-  // if it does not exist already.
+  // Creates the Farnet Publication Channel vocabulary.
+  // If it does not exist already.
   $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
   if ($voc) {
     $vid = $voc->vid;
@@ -115,12 +85,6 @@ function farnet_taxonomy_enable() {
   include_once 'includes/farnet_taxonomy_publication_channels.php';
   $publication_channels_array = farnet_taxonomy_publication_channels();
   save_multilingual_farnet_taxonomy($publication_channels_array, $vid);
-  /*
-  foreach ($publication_channels_array as $channel) {
-    $term = (object) array('vid' => $vid, 'name' => $channel);
-    taxonomy_term_save($term);
-  };
-  */
 
   // Creates the Farnet Type Event vocabulary if it does not exist already.
   $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_event');
@@ -145,12 +109,6 @@ function farnet_taxonomy_enable() {
   include_once 'includes/farnet_taxonomy_type_events.php';
   $type_events_array = farnet_taxonomy_type_events();
   save_multilingual_farnet_taxonomy($type_events_array, $vid);
-  /*
-  foreach ($type_events_array as $event) {
-    $term = (object) array('vid' => $vid, 'name' => $event);
-    taxonomy_term_save($term);
-  };
-  */
 
   // Creates the Farnet Type News vocabulary if it does not exist already.
   $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_news');
@@ -175,15 +133,9 @@ function farnet_taxonomy_enable() {
   include_once 'includes/farnet_taxonomy_type_news.php';
   $type_news_array = farnet_taxonomy_type_news();
   save_multilingual_farnet_taxonomy($type_news_array, $vid);
-  /*
-  foreach ($type_news_array as $new) {
-    $term = (object) array('vid' => $vid, 'name' => $new);
-    taxonomy_term_save($term);
-  };
-  */
 
-  // Creates the Farnet Type Publication vocabulary
-  // if it does not exist already.
+  // Creates the Farnet Type Publication vocabulary.
+  // If it does not exist already.
   $voc = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
   if ($voc) {
     $vid = $voc->vid;
@@ -206,12 +158,6 @@ function farnet_taxonomy_enable() {
   include_once 'includes/farnet_taxonomy_type_publications.php';
   $type_pubications_array = farnet_taxonomy_type_publications();
   save_multilingual_farnet_taxonomy($type_pubications_array, $vid);
-  /*
-  foreach ($type_pubications_array as $publication) {
-    $term = (object) array('vid' => $vid, 'name' => $publication);
-    taxonomy_term_save($term);
-  };
-  */
 
   drupal_set_message($t('The FARNET Taxonomy feature is now active on your site.'));
 }
@@ -285,8 +231,12 @@ function farnet_taxonomy_uninstall() {
 }
 
 /**
- * Function to save multilingual on Taxonomy Farnet
- * @param $term
+ * Function to save multilingual on Taxonomy Farnet.
+ *
+ * @param array $items_array
+ *   Items by language component taxonomy.
+ * @param int $vid
+ *   The id of the $vocabulary.
  */
 function save_multilingual_farnet_taxonomy($items_array, $vid) {
   foreach ($items_array as $item) {
@@ -301,18 +251,20 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
       $translation = array(
         'translate' => 0,
         'status' => 1,
-        'language' => $language, // here is the language you're translating to
-        'source' => $term->language, // here is the source language
+        // Here is the language you're translating to.
+        'language' => $language,
+        // Here is the source language.
+        'source' => $term->language,
       );
 
-      $org_term = taxonomy_term_load($term->tid); // I had to load the taxonomy term
-      // get the translation handler in place
+      // I had to load the taxonomy term.
+      $org_term = taxonomy_term_load($term->tid);
+      // Get the translation handler in place.
       $handler = entity_translation_get_handler('taxonomy_term', $org_term, TRUE);
-      // This is the array structure for the field you are translating, in my case the name was "name_field" and the language target, English. $value is the translated string.
       $translation['tid'] = $org_term->tid;
 
       $values = array();
-      // name field.
+      // Name field.
       $values['name_field'][$language][0]['value'] = $value;
 
       // Finally you set the translation and save the object.
