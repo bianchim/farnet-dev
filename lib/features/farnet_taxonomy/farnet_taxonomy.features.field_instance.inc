@@ -11,9 +11,9 @@ function farnet_taxonomy_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'taxonomy_term-farnet_faq_category-description_field'.
-  $field_instances['taxonomy_term-farnet_faq_category-description_field'] = array(
-    'bundle' => 'farnet_faq_category',
+  // 'taxonomy_term-farnet_languages_spoken-description_field'.
+  $field_instances['taxonomy_term-farnet_languages_spoken-description_field'] = array(
+    'bundle' => 'farnet_languages_spoken',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -50,9 +50,10 @@ function farnet_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-farnet_faq_category-name_field'.
-  $field_instances['taxonomy_term-farnet_faq_category-name_field'] = array(
-    'bundle' => 'farnet_faq_category',
+  // Exported field_instance:
+  // 'taxonomy_term-farnet_languages_spoken-name_field'.
+  $field_instances['taxonomy_term-farnet_languages_spoken-name_field'] = array(
+    'bundle' => 'farnet_languages_spoken',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
