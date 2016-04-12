@@ -24,7 +24,7 @@ function farnet_pages_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_publication_abstract',
-      1 => 'field_farnet_publication_channel',
+      1 => 'field_term_publication_channel',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -51,8 +51,8 @@ function farnet_pages_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '7',
     'children' => array(
-      0 => 'field_farnet_theme',
-      1 => 'field_farnet_country',
+      0 => 'field_term_country',
+      1 => 'field_term_theme',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
