@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Taxonomy feature.
+ */
+
+include_once 'farnet_taxonomy.features.inc';

@@ -1,0 +1,320 @@
+<?php
+/**
+ * @file
+ * Installs the Farnet taxonomy feature.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_taxonomy_enable() {
+  $t = get_t();
+
+  // Ensure all components exist.
+  features_revert_module("farnet_taxonomy");
+
+  // Creates the Farnet themes vocabulary if it does not exist already.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_theme');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+  }
+  else {
+    $vocabulary = array(
+      'name' => 'Farnet Theme',
+      'machine_name' => 'farnet_theme',
+      'description' => 'Taxonomy for the themes on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -9,
+    );
+    $vocabulary = (object) $vocabulary;
+    taxonomy_vocabulary_save($vocabulary);
+    $vid = $vocabulary->vid;
+  };
+
+  // Imports theme data.
+  include_once 'includes/farnet_taxonomy_themes.php';
+  $themes_array = farnet_taxonomy_themes();
+  foreach ($themes_array as $theme) {
+    //$term = (object) array('vid' => $vid, 'name' => $theme->name, 'language' => $theme->language);
+    $term = new stdClass();
+    $term->vid = $vid;
+    $term->name = $theme->name;
+    $term->language = $theme->language;
+    $term->name_field['en'][0]['value'] = $theme->name;
+    taxonomy_term_save($term);
+
+    //Solution 1
+    foreach ($theme->translation as $language => $value) {
+
+      $translation = array(
+        'translate' => 0,
+        'status' => 1,
+        'language' => $language, // here is the language you're translating to
+        'source' => $term->language, // here is the source language
+      );
+
+      echo $term->tid.' '.$language.' '.$value;
+
+      $org_term = taxonomy_term_load($term->tid); // I had to load the taxonomy term
+      // get the translation handler in place
+      $handler  = entity_translation_get_handler('taxonomy_term', $org_term, TRUE);
+      // This is the array structure for the field you are translating, in my case the name was "name_field" and the language target, English. $value is the translated string.
+      /*
+      $values = array(
+        'name_field' => array(
+          $language => array(
+            '0' => array(
+              'value' => $value,
+            )
+          )
+        )
+      );
+      */
+
+      $translation['tid'] = $org_term->tid;
+
+      $values = array();
+      // name field.
+      $values['name_field'][$language][0]['value'] = $value;
+      //$values['name_field']['en']['0']['value'] =   $value;
+
+      //$values['field_data_name_field'][$language][0]['value'] = $value;
+      //$values['field_data_name_field'][$language][0]['value'] = $value;
+
+      // Finally you set the translation and save the object.
+      $handler->setTranslation($translation, $values);
+      taxonomy_term_save($org_term);
+    }
+
+    // Solution 2
+    /*
+    foreach ($theme->translation as $translated_term) {
+      //echo $key.' '. $value.' '.$term->name.' '. $term->language.' n:'.$term->i18n_tsi;
+
+      // 1. Load or create a translation set.
+      $translation_set = ($term->i18n_tsid) ?
+        i18n_translation_set_load($term->i18n_tsid) :
+        i18n_translation_set_create('taxonomy_term', $vocabulary->machine_name);
+
+      // 2. Add the full source term in this set.
+      $translation_set->add_item($term, $term->language);
+
+      // 3. Add the full translated term in this set.
+      $translation_set->add_item($translated_term, $translated_term->language);
+      //$translation_set->add_item($value, $key);
+
+      $translation_set->save(TRUE);
+
+    }
+    */
+
+  };
+
+  // Creates the Farnet FAQ categories vocabulary if it does not exist already.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_faq_category');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+  }
+  else {
+    $vocabulary = array(
+      'name' => 'Farnet FAQ Category',
+      'machine_name' => 'farnet_faq_category',
+      'description' => 'Taxonomy for the FAQ categories on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -8,
+    );
+    $vocabulary = (object) $vocabulary;
+    taxonomy_vocabulary_save($vocabulary);
+    $vid = $vocabulary->vid;
+  };
+
+  // Imports FAQ Category data.
+  include_once 'includes/farnet_taxonomy_faq_categories.php';
+  $faq_categories_array = farnet_taxonomy_faq_categories();
+  foreach ($faq_categories_array as $category) {
+    $term = (object) array('vid' => $vid, 'name' => $category);
+    taxonomy_term_save($term);
+  };
+
+  // Creates the Farnet Publication Channel vocabulary
+  // if it does not exist already.
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
+  if ($voc) {
+    $vid = $voc->vid;
+  }
+  else {
+    $voc = array(
+      'name' => 'Farnet Publication channel',
+      'machine_name' => 'farnet_publication_channel',
+      'description' => 'Taxonomy for the Publication channels on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -4,
+    );
+    $voc = (object) $voc;
+    taxonomy_vocabulary_save($voc);
+    $vid = $voc->vid;
+  };
+
+  // Imports Publication Channel data.
+  include_once 'includes/farnet_taxonomy_publication_channels.php';
+  $publication_channels_array = farnet_taxonomy_publication_channels();
+  foreach ($publication_channels_array as $channel) {
+    $term = (object) array('vid' => $vid, 'name' => $channel);
+    taxonomy_term_save($term);
+  };
+
+  // Creates the Farnet Type Event vocabulary if it does not exist already.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_event');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+  }
+  else {
+    $vocabulary = array(
+      'name' => 'Farnet Type Event',
+      'machine_name' => 'farnet_type_event',
+      'description' => 'Taxonomy for the Type of Events on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -6,
+    );
+    $vocabulary = (object) $vocabulary;
+    taxonomy_vocabulary_save($vocabulary);
+    $vid = $vocabulary->vid;
+  };
+
+  // Imports Type Event data.
+  include_once 'includes/farnet_taxonomy_type_events.php';
+  $type_events_array = farnet_taxonomy_type_events();
+  foreach ($type_events_array as $event) {
+    $term = (object) array('vid' => $vid, 'name' => $event);
+    taxonomy_term_save($term);
+  };
+
+  // Creates the Farnet Type News vocabulary if it does not exist already.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_news');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+  }
+  else {
+    $vocabulary = array(
+      'name' => 'Farnet Type news',
+      'machine_name' => 'farnet_type_news',
+      'description' => 'Taxonomy for the Type of News on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -7,
+    );
+    $vocabulary = (object) $vocabulary;
+    taxonomy_vocabulary_save($vocabulary);
+    $vid = $vocabulary->vid;
+  };
+
+  // Imports Type News data.
+  include_once 'includes/farnet_taxonomy_type_news.php';
+  $type_news_array = farnet_taxonomy_type_news();
+  foreach ($type_news_array as $new) {
+    $term = (object) array('vid' => $vid, 'name' => $new);
+    taxonomy_term_save($term);
+  };
+
+  // Creates the Farnet Type Publication vocabulary
+  // if it does not exist already.
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
+  if ($voc) {
+    $vid = $voc->vid;
+  }
+  else {
+    $voc = array(
+      'name' => 'Farnet Type Publication',
+      'machine_name' => 'farnet_type_publication',
+      'description' => 'Taxonomy for the Type of Publications on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -5,
+    );
+    $voc = (object) $voc;
+    taxonomy_vocabulary_save($voc);
+    $vid = $voc->vid;
+  };
+
+  // Imports Type Publication data.
+  include_once 'includes/farnet_taxonomy_type_publications.php';
+  $type_pubications_array = farnet_taxonomy_type_publications();
+  foreach ($type_pubications_array as $publication) {
+    $term = (object) array('vid' => $vid, 'name' => $publication);
+    taxonomy_term_save($term);
+  };
+
+  drupal_set_message($t('The FARNET Taxonomy feature is now active on your site.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_taxonomy_disable() {
+  $t = get_t();
+
+  // @TODO Check that the voc is not used and if it is not, run uninstall_hoo in the feature.
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_theme');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_faq_category');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
+  if ($voc) {
+    $vid = $voc->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_event');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_news');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  drupal_set_message($t('The FARNET Taxonomy feature is now disabled on your site.'));
+}
+
+/**
+ * Implements hook_install().
+ */
+function farnet_taxonomy_install() {
+  $t = get_t();
+  drupal_set_message($t('The FARNET Taxonomy feature is now installed on your site.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function farnet_taxonomy_uninstall() {
+  $t = get_t();
+  drupal_set_message($t('The FARNET Taxonomy feature is now uninstalled from your site.'));
+}

@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+/*
+function farnet_core_install() {
+
+}
+*/
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_core_enable() {
+  drupal_set_message(t('The FARNET Core feature is now active on your site.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_core_disable() {
+  drupal_set_message(t('The FARNET Core feature is now disabled on your site.'));
+}
