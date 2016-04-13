@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Social Media feature.
+ */
+
+include_once 'farnet_social_media.features.inc';
