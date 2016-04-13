@@ -10,9 +10,9 @@
 function farnet_taxonomy_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'delete terms in farnet_faq_category'.
-  $permissions['delete terms in farnet_faq_category'] = array(
-    'name' => 'delete terms in farnet_faq_category',
+  // Exported permission: 'delete terms in farnet_languages_spoken'.
+  $permissions['delete terms in farnet_languages_spoken'] = array(
+    'name' => 'delete terms in farnet_languages_spoken',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -64,9 +64,9 @@ function farnet_taxonomy_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in farnet_faq_category'.
-  $permissions['edit terms in farnet_faq_category'] = array(
-    'name' => 'edit terms in farnet_faq_category',
+  // Exported permission: 'edit terms in farnet_languages_spoken'.
+  $permissions['edit terms in farnet_languages_spoken'] = array(
+    'name' => 'edit terms in farnet_languages_spoken',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -116,6 +116,15 @@ function farnet_taxonomy_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'translate taxonomy_term entities'.
+  $permissions['translate taxonomy_term entities'] = array(
+    'name' => 'translate taxonomy_term entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'entity_translation',
   );
 
   return $permissions;

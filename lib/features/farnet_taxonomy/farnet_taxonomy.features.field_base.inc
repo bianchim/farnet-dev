@@ -31,13 +31,13 @@ function farnet_taxonomy_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_farnet_faq_category'.
-  $field_bases['field_farnet_faq_category'] = array(
+  // Exported field_base: 'field_term_country'.
+  $field_bases['field_term_country'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_farnet_faq_category',
+    'field_name' => 'field_term_country',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -48,7 +48,7 @@ function farnet_taxonomy_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'farnet_faq_category',
+          'vocabulary' => 'ec_world_countries',
           'parent' => 0,
         ),
       ),
@@ -59,13 +59,41 @@ function farnet_taxonomy_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_farnet_publication_channel'.
-  $field_bases['field_farnet_publication_channel'] = array(
+  // Exported field_base: 'field_term_languages_spoken'.
+  $field_bases['field_term_languages_spoken'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_farnet_publication_channel',
+    'field_name' => 'field_term_languages_spoken',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'farnet_languages_spoken',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_term_publication_channel'.
+  $field_bases['field_term_publication_channel'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_term_publication_channel',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -87,13 +115,13 @@ function farnet_taxonomy_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_farnet_theme'.
-  $field_bases['field_farnet_theme'] = array(
+  // Exported field_base: 'field_term_theme'.
+  $field_bases['field_term_theme'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_farnet_theme',
+    'field_name' => 'field_term_theme',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -115,13 +143,13 @@ function farnet_taxonomy_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_farnet_type_event'.
-  $field_bases['field_farnet_type_event'] = array(
+  // Exported field_base: 'field_term_type_event'.
+  $field_bases['field_term_type_event'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_farnet_type_event',
+    'field_name' => 'field_term_type_event',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -143,13 +171,13 @@ function farnet_taxonomy_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_farnet_type_news'.
-  $field_bases['field_farnet_type_news'] = array(
+  // Exported field_base: 'field_term_type_news'.
+  $field_bases['field_term_type_news'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_farnet_type_news',
+    'field_name' => 'field_term_type_news',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -171,13 +199,13 @@ function farnet_taxonomy_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_farnet_type_publication'.
-  $field_bases['field_farnet_type_publication'] = array(
+  // Exported field_base: 'field_term_type_publication'.
+  $field_bases['field_term_type_publication'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_farnet_type_publication',
+    'field_name' => 'field_term_type_publication',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
