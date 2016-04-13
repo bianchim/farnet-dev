@@ -147,7 +147,7 @@ function farnet_faq_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_term_theme',
-    'label' => 'Farnet Theme',
+    'label' => 'Theme',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -167,9 +167,9 @@ function farnet_faq_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Farnet Theme');
   t('ID');
   t('Short Title');
+  t('Theme');
 
   return $field_instances;
 }
