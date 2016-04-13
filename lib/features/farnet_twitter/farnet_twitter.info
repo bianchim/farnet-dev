@@ -1,0 +1,11 @@
+name = Farnet Twitter
+description = Block with the latest Tweets published by FARNET in real time
+core = 7.x
+package = Farnet
+dependencies[] = bean
+dependencies[] = farnet_twitter_block
+dependencies[] = fe_block
+dependencies[] = nexteuropa_webtools
+features[fe_block_settings][] = bean-bean-twitter-block
+features[features_api][] = api:2
+project path = sites/all/modules/features
