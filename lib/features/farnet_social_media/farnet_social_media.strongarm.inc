@@ -43,19 +43,19 @@ function farnet_social_media_strongarm() {
   $strongarm->name = 'social_media_links_platforms';
   $strongarm->value = array(
     'youtube' => array(
-      'platform_value' => 'http://www.youtube.com/user/theFARNETchannel',
+      'platform_value' => 'theFARNETchannel',
       'weight' => '-10',
     ),
     'linkedin' => array(
-      'platform_value' => 'http://www.linkedin.com/groups?gid=2396254&trk=myg_ugrp_ovr',
+      'platform_value' => 'groups?gid=2396254&trk=myg_ugrp_ovr',
       'weight' => '-9',
     ),
     'twitter' => array(
-      'platform_value' => 'http://twitter.com/#!/EU_FARNET',
+      'platform_value' => 'EU_FARNET',
       'weight' => '-8',
     ),
     'facebook' => array(
-      'platform_value' => 'https://www.facebook.com/pages/FARNET/503312929685977',
+      'platform_value' => 'pages/FARNET/503312929685977',
       'weight' => '-7',
     ),
     'googleplus' => array(
