@@ -15,7 +15,7 @@ function farnet_twitter_block_install() {
   $bean->field_json_object = array(
     LANGUAGE_NONE => array(
       array(
-      'value' => '{
+        'value' => '{
   "service": "smk",
   "type": "user",
   "display_user": true,
@@ -28,7 +28,7 @@ function farnet_twitter_block_install() {
   "exclude_replies": true,
   "tweet_more_btn": true
 }',
-      )
+      ),
     ),
   );
   $bean->save();
