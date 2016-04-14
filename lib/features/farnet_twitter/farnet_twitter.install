@@ -9,6 +9,6 @@
  */
 function farnet_twitter_disable() {
   if (module_exists('farnet_twitter_block')) {
-    module_disable(array('farnet_twitter_block'), false);
+    module_disable(array('farnet_twitter_block'), FALSE);
   }
 }
