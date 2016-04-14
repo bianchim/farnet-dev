@@ -1,5 +1,0 @@
-name = Farnet Twitter Block
-description = 'Create the Farnet Twitter block.'
-core = 7.x
-package = Farnet
-dependencies[] = nexteuropa_webtools
