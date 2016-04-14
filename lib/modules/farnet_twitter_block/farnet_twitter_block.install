@@ -5,9 +5,9 @@
  */
 
 /**
- * Implements hook_install().
+ * Implements hook_enable().
  */
-function farnet_twitter_block_install() {
+function farnet_twitter_block_enable() {
   $bean = bean_create(array('type' => 'webtools'));
   $bean->label = 'Twitter Block';
   $bean->title = '';
@@ -32,4 +32,13 @@ function farnet_twitter_block_install() {
     ),
   );
   $bean->save();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_twitter_block_disable() {
+  if ($block = bean_delta_load('bean-twitter-block')) {
+    bean_delete($block);
+  }
 }

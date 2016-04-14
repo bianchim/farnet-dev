@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Installs the Farnet Twitter Feature.
+ */
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_twitter_disable() {
+  if (module_exists('farnet_twitter_block')) {
+    module_disable(array('farnet_twitter_block'), false);
+  }
+}
