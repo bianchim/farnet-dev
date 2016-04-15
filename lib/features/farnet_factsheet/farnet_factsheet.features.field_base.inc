@@ -130,25 +130,29 @@ function farnet_factsheet_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_diagram_delivery_clld'.
-  $field_bases['field_diagram_delivery_clld'] = array(
+  // Exported field_base: 'field_diagram_delivery'.
+  $field_bases['field_diagram_delivery'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_diagram_delivery_clld',
+    'field_name' => 'field_diagram_delivery',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'fid' => array(
+        0 => 'fid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_emff_budget'.
@@ -283,39 +287,6 @@ function farnet_factsheet_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'number_float',
-  );
-
-  // Exported field_base: 'og_group_ref'.
-  $field_bases['og_group_ref'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'og_group_ref',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'og',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'og_behavior' => array(
-            'status' => TRUE,
-          ),
-        ),
-        'membership_type' => 'og_membership_type_default',
-        'target_bundles' => array(),
-      ),
-      'handler_submit' => 'Change handler',
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
   );
 
   return $field_bases;

@@ -481,24 +481,25 @@ function farnet_factsheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 16,
     ),
   );
 
-  // Exported field_instance:
-  // 'node-country_factsheet-field_diagram_delivery_clld'.
-  $field_instances['node-country_factsheet-field_diagram_delivery_clld'] = array(
+  // Exported field_instance: 'node-country_factsheet-field_diagram_delivery'.
+  $field_instances['node-country_factsheet-field_diagram_delivery'] = array(
     'bundle' => 'country_factsheet',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 18,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -508,47 +509,44 @@ function farnet_factsheet_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_diagram_delivery_clld',
+    'field_name' => 'field_diagram_delivery',
     'label' => 'Diagram of the delivery system for CLLD',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
+      'alt_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'media',
       'settings' => array(
-        'rows' => 5,
+        'allowed_schemes' => array(
+          'node' => 0,
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
       ),
-      'type' => 'text_textarea',
+      'type' => 'media_generic',
       'weight' => 27,
     ),
   );
@@ -1056,7 +1054,7 @@ function farnet_factsheet_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'weight' => 19,
     ),
   );
 
@@ -1189,6 +1187,46 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-country_factsheet-group_content_access'.
+  $field_instances['node-country_factsheet-group_content_access'] = array(
+    'bundle' => 'country_factsheet',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-country_factsheet-og_group_ref'.
   $field_instances['node-country_factsheet-og_group_ref'] = array(
     'bundle' => 'country_factsheet',
@@ -1245,7 +1283,7 @@ function farnet_factsheet_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 0,
+      'weight' => 16,
     ),
   );
 
@@ -1332,6 +1370,7 @@ function farnet_factsheet_field_default_field_instances() {
   t('Country');
   t('Diagram of the delivery system for CLLD');
   t('EMFF budget for CLLD');
+  t('Group content visibility');
   t('Groups audience');
   t('Key actors and roles');
   t('Name');

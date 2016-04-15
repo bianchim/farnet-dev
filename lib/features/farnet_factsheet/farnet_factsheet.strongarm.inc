@@ -130,13 +130,13 @@ function farnet_factsheet_strongarm() {
           'weight' => '10',
         ),
         'scheduler_settings' => array(
-          'weight' => '1',
+          'weight' => '18',
         ),
         'xmlsitemap' => array(
           'weight' => '11',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '20',
         ),
       ),
       'display' => array(),

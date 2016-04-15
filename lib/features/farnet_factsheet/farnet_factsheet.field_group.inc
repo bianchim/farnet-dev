@@ -165,9 +165,9 @@ function farnet_factsheet_field_group_info() {
     'label' => 'Delivery of CLLD',
     'weight' => '8',
     'children' => array(
-      0 => 'field_diagram_delivery_clld',
-      1 => 'field_funding_process',
-      2 => 'field_key_actors_roles',
+      0 => 'field_funding_process',
+      1 => 'field_key_actors_roles',
+      2 => 'field_diagram_delivery',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -194,9 +194,11 @@ function farnet_factsheet_field_group_info() {
     'label' => 'Metadata',
     'weight' => '2',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'scheduler_settings',
-      2 => 'language',
+      0 => 'field_tags',
+      1 => 'og_group_ref',
+      2 => 'group_content_access',
+      3 => 'scheduler_settings',
+      4 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -251,8 +253,8 @@ function farnet_factsheet_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_publication_abstract',
-      1 => 'field_term_publication_channel',
-      2 => 'field_publication_date',
+      1 => 'field_publication_date',
+      2 => 'field_term_publication_channel',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -279,8 +281,7 @@ function farnet_factsheet_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '9',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_term_country',
+      0 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
