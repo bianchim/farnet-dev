@@ -48,12 +48,12 @@ function farnet_factsheet_field_group_info() {
     'label' => 'CLLD Budget',
     'weight' => '4',
     'children' => array(
-      0 => 'field_emff_budget',
-      1 => 'field_proportion_emff',
-      2 => 'field_co_funding',
-      3 => 'field_total_budget',
-      4 => 'field_average_budget_per_flag',
-      5 => 'field_number_flags',
+      0 => 'field_average_budget_per_flag',
+      1 => 'field_co_funding',
+      2 => 'field_emff_budget',
+      3 => 'field_number_flags',
+      4 => 'field_proportion_emff',
+      5 => 'field_total_budget',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -80,8 +80,8 @@ function farnet_factsheet_field_group_info() {
     'label' => 'CLLD Programme',
     'weight' => '3',
     'children' => array(
-      0 => 'field_clld_context',
-      1 => 'field_axis_4',
+      0 => 'field_axis_4',
+      1 => 'field_clld_context',
       2 => 'field_clld_objectives',
     ),
     'format_type' => 'tab',
@@ -165,9 +165,9 @@ function farnet_factsheet_field_group_info() {
     'label' => 'Delivery of CLLD',
     'weight' => '8',
     'children' => array(
-      0 => 'field_key_actors_roles',
-      1 => 'field_diagram_delivery_clld',
-      2 => 'field_funding_process',
+      0 => 'field_diagram_delivery_clld',
+      1 => 'field_funding_process',
+      2 => 'field_key_actors_roles',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -252,6 +252,7 @@ function farnet_factsheet_field_group_info() {
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_term_publication_channel',
+      2 => 'field_publication_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -278,8 +279,8 @@ function farnet_factsheet_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '9',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_tags',
+      0 => 'field_tags',
+      1 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
