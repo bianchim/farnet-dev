@@ -5,3 +5,13 @@
  */
 
 include_once 'farnet_faq.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function  farnet_faq_field_group_info_alter($groups) {
+  if (!empty($groups['group_ne_faq_content|node|nexteuropa_faq|form'])) {
+    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_id';
+    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_short_title';
+  }
+}
