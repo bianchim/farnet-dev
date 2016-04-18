@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet FAQ feature.
+ */
+
+include_once 'farnet_faq.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function farnet_faq_field_group_info_alter($groups) {
+  if (!empty($groups['group_ne_faq_content|node|nexteuropa_faq|form'])) {
+    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_id';
+    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_short_title';
+  }
+}
+
+/**
+ * Implements hook_node_submit().
+ */
+function farnet_faq_node_submit($node, $form, &$form_state) {
+  /*
+  echo $node->title_field[][0]['value'];
+  if (empty($node->field_short_title['und'][0]['value'])) {
+    $node->field_short_title['und'][0]['value'] = '';
+  }
+  echo $node->field_short_title['und'][0]['value'];
+  var_dump($node->field_short_title);
+  var_dump($node);
+  die('hook_node_submit');
+  */
+}
