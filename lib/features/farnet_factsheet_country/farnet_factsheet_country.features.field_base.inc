@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farnet_factsheet.features.field_base.inc
+ * farnet_factsheet_country.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function farnet_factsheet_field_default_field_bases() {
+function farnet_factsheet_country_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_average_budget_per_flag'.

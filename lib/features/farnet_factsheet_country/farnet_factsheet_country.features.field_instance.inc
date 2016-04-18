@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * farnet_factsheet.features.field_instance.inc
+ * farnet_factsheet_country.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function farnet_factsheet_field_default_field_instances() {
+function farnet_factsheet_country_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-country_factsheet-body'.
-  $field_instances['node-country_factsheet-body'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-body'.
+  $field_instances['node-factsheet_country-body'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -55,9 +55,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_abstract'.
-  $field_instances['node-country_factsheet-field_abstract'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_abstract'.
+  $field_instances['node-factsheet_country-field_abstract'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -123,9 +123,9 @@ function farnet_factsheet_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-country_factsheet-field_average_budget_per_flag'.
-  $field_instances['node-country_factsheet-field_average_budget_per_flag'] = array(
-    'bundle' => 'country_factsheet',
+  // 'node-factsheet_country-field_average_budget_per_flag'.
+  $field_instances['node-factsheet_country-field_average_budget_per_flag'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -170,9 +170,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_axis_4'.
-  $field_instances['node-country_factsheet-field_axis_4'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_axis_4'.
+  $field_instances['node-factsheet_country-field_axis_4'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -237,9 +237,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_clld_context'.
-  $field_instances['node-country_factsheet-field_clld_context'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_clld_context'.
+  $field_instances['node-factsheet_country-field_clld_context'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -304,9 +304,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_clld_objectives'.
-  $field_instances['node-country_factsheet-field_clld_objectives'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_clld_objectives'.
+  $field_instances['node-factsheet_country-field_clld_objectives'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -371,9 +371,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_co_funding'.
-  $field_instances['node-country_factsheet-field_co_funding'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_co_funding'.
+  $field_instances['node-factsheet_country-field_co_funding'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -418,9 +418,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_cooperation'.
-  $field_instances['node-country_factsheet-field_cooperation'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_cooperation'.
+  $field_instances['node-factsheet_country-field_cooperation'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -485,9 +485,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_diagram_delivery'.
-  $field_instances['node-country_factsheet-field_diagram_delivery'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_diagram_delivery'.
+  $field_instances['node-factsheet_country-field_diagram_delivery'] = array(
+    'bundle' => 'factsheet_country',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -551,9 +551,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_emff_budget'.
-  $field_instances['node-country_factsheet-field_emff_budget'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_emff_budget'.
+  $field_instances['node-factsheet_country-field_emff_budget'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -598,9 +598,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_funding_process'.
-  $field_instances['node-country_factsheet-field_funding_process'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_funding_process'.
+  $field_instances['node-factsheet_country-field_funding_process'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -665,9 +665,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_key_actors_roles'.
-  $field_instances['node-country_factsheet-field_key_actors_roles'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_key_actors_roles'.
+  $field_instances['node-factsheet_country-field_key_actors_roles'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -732,9 +732,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_national_network'.
-  $field_instances['node-country_factsheet-field_national_network'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_national_network'.
+  $field_instances['node-factsheet_country-field_national_network'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -799,9 +799,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_number_flags'.
-  $field_instances['node-country_factsheet-field_number_flags'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_number_flags'.
+  $field_instances['node-factsheet_country-field_number_flags'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -846,9 +846,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_proportion_emff'.
-  $field_instances['node-country_factsheet-field_proportion_emff'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_proportion_emff'.
+  $field_instances['node-factsheet_country-field_proportion_emff'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -894,9 +894,9 @@ function farnet_factsheet_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-country_factsheet-field_publication_abstract'.
-  $field_instances['node-country_factsheet-field_publication_abstract'] = array(
-    'bundle' => 'country_factsheet',
+  // 'node-factsheet_country-field_publication_abstract'.
+  $field_instances['node-factsheet_country-field_publication_abstract'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -961,9 +961,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_publication_date'.
-  $field_instances['node-country_factsheet-field_publication_date'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_publication_date'.
+  $field_instances['node-factsheet_country-field_publication_date'] = array(
+    'bundle' => 'factsheet_country',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1017,9 +1017,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_tags'.
-  $field_instances['node-country_factsheet-field_tags'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_tags'.
+  $field_instances['node-factsheet_country-field_tags'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1058,9 +1058,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_term_country'.
-  $field_instances['node-country_factsheet-field_term_country'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_term_country'.
+  $field_instances['node-factsheet_country-field_term_country'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1100,9 +1100,9 @@ function farnet_factsheet_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-country_factsheet-field_term_publication_channel'.
-  $field_instances['node-country_factsheet-field_term_publication_channel'] = array(
-    'bundle' => 'country_factsheet',
+  // 'node-factsheet_country-field_term_publication_channel'.
+  $field_instances['node-factsheet_country-field_term_publication_channel'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1140,9 +1140,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-field_total_budget'.
-  $field_instances['node-country_factsheet-field_total_budget'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-field_total_budget'.
+  $field_instances['node-factsheet_country-field_total_budget'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1187,9 +1187,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-group_content_access'.
-  $field_instances['node-country_factsheet-group_content_access'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-group_content_access'.
+  $field_instances['node-factsheet_country-group_content_access'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1227,9 +1227,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-og_group_ref'.
-  $field_instances['node-country_factsheet-og_group_ref'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-og_group_ref'.
+  $field_instances['node-factsheet_country-og_group_ref'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1287,9 +1287,9 @@ function farnet_factsheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-country_factsheet-title_field'.
-  $field_instances['node-country_factsheet-title_field'] = array(
-    'bundle' => 'country_factsheet',
+  // Exported field_instance: 'node-factsheet_country-title_field'.
+  $field_instances['node-factsheet_country-title_field'] = array(
+    'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

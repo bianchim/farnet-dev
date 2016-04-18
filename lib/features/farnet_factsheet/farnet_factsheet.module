@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Farnet Factsheet feature.
- */
-
-include_once 'farnet_factsheet.features.inc';

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farnet_factsheet.features.inc
+ * farnet_factsheet_country.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farnet_factsheet_ctools_plugin_api($module = NULL, $api = NULL) {
+function farnet_factsheet_country_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -19,10 +19,10 @@ function farnet_factsheet_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function farnet_factsheet_node_info() {
+function farnet_factsheet_country_node_info() {
   $items = array(
-    'country_factsheet' => array(
-      'name' => t('Country factsheet'),
+    'factsheet_country' => array(
+      'name' => t('Factsheet Country'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
