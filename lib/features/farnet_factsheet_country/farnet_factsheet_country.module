@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Factsheet Country feature.
+ */
+
+include_once 'farnet_factsheet_country.features.inc';
