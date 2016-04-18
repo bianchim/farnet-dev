@@ -20,7 +20,6 @@ function farnet_faq_field_group_info_alter($groups) {
  * Implements hook_node_submit().
  */
 function farnet_faq_node_submit($node, $form, &$form_state) {
-  /*
   echo $node->title_field[][0]['value'];
   if (empty($node->field_short_title['und'][0]['value'])) {
     $node->field_short_title['und'][0]['value'] = '';
