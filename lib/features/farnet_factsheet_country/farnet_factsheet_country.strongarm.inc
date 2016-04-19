@@ -34,13 +34,6 @@ function farnet_factsheet_country_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_factsheet_country';
-  $strongarm->value = '0';
-  $export['comment_factsheet_country'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_factsheet_country';
   $strongarm->value = 1;
   $export['comment_default_mode_factsheet_country'] = $strongarm;
@@ -51,6 +44,13 @@ function farnet_factsheet_country_strongarm() {
   $strongarm->name = 'comment_default_per_page_factsheet_country';
   $strongarm->value = '50';
   $export['comment_default_per_page_factsheet_country'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_factsheet_country';
+  $strongarm->value = '0';
+  $export['comment_factsheet_country'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
