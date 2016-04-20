@@ -42,7 +42,7 @@ function farnet_event_field_default_field_bases() {
       ),
       'target_type' => 'node',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'entityreference',
   );
 
@@ -130,7 +130,7 @@ function farnet_event_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 
@@ -150,8 +150,8 @@ function farnet_event_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'Ms' => 'Ms',
         'Mr' => 'Mr',
+        'Mrs' => 'Mrs',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
@@ -182,7 +182,7 @@ function farnet_event_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'file',
   );
 
@@ -250,7 +250,7 @@ function farnet_event_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -320,7 +320,7 @@ function farnet_event_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'file',
   );
 
@@ -340,10 +340,10 @@ function farnet_event_field_default_field_bases() {
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'hide_blank_items' => 1,
+      'hide_blank_items' => 0,
       'path' => '',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'field_collection',
   );
 
@@ -364,7 +364,7 @@ function farnet_event_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -414,7 +414,7 @@ function farnet_event_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'taxonomy_term_reference',
   );
 

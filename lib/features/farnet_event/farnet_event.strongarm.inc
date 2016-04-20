@@ -62,6 +62,27 @@ function farnet_event_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_event_session';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_event_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_hide_translation_links_event_session';
+  $strongarm->value = 0;
+  $export['entity_translation_hide_translation_links_event_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_event_session';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_event_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__event_session';
   $strongarm->value = array(
     'view_modes' => array(
@@ -112,6 +133,13 @@ function farnet_event_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__event_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_sync_node_type_event_session';
+  $strongarm->value = array();
+  $export['i18n_sync_node_type_event_session'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
