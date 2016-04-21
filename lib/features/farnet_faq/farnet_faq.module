@@ -31,3 +31,25 @@ function farnet_faq_node_submit($node, $form, &$form_state) {
   die('hook_node_submit');
   */
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_faq_form_alter(&$form, &$form_state, $form_id) {
+  //dsm($form_id);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter(().
+ */
+function farnet_faq_form_nexteuropa_faq_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_faq');
+  $form['#attached']['js'] = drupal_add_js(
+    $path . '/farnet_faq.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    )
+  );
+}
