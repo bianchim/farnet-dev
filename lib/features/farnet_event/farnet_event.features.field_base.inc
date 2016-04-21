@@ -203,6 +203,54 @@ function farnet_event_field_default_field_bases() {
     'type' => 'email',
   );
 
+  // Exported field_base: 'field_job_position'.
+  $field_bases['field_job_position'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_job_position',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 1,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_presentation'.
+  $field_bases['field_presentation'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_presentation',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 1,
+    'type' => 'file',
+  );
+
   // Exported field_base: 'field_registration'.
   $field_bases['field_registration'] = array(
     'active' => 1,
@@ -233,97 +281,6 @@ function farnet_event_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_speaker_description'.
-  $field_bases['field_speaker_description'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_speaker_description',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_speaker_job_position'.
-  $field_bases['field_speaker_job_position'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_speaker_job_position',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_speaker_name'.
-  $field_bases['field_speaker_name'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_speaker_name',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_speaker_presentation'.
-  $field_bases['field_speaker_presentation'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_speaker_presentation',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'file',
-    'settings' => array(
-      'display_default' => 0,
-      'display_field' => 0,
-      'entity_translation_sync' => array(
-        0 => 'fid',
-      ),
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 1,
-    'type' => 'file',
-  );
-
   // Exported field_base: 'field_speakers'.
   $field_bases['field_speakers'] = array(
     'active' => 1,
@@ -332,19 +289,32 @@ function farnet_event_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_speakers',
     'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'field_collection',
+    'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'hide_blank_items' => 0,
-      'path' => '',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'event_speaker' => 'event_speaker',
+        ),
+      ),
+      'target_type' => 'node',
     ),
     'translatable' => 1,
-    'type' => 'field_collection',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_teaser'.
