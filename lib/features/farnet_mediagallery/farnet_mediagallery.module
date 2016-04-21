@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Media Gallery feature.
+ */
+
+include_once 'farnet_mediagallery.features.inc';
