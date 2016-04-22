@@ -34,7 +34,7 @@ function farnet_taxonomy_field_default_field_bases() {
   // Exported field_base: 'field_term_country'.
   $field_bases['field_term_country'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_term_country',
@@ -90,7 +90,7 @@ function farnet_taxonomy_field_default_field_bases() {
   // Exported field_base: 'field_term_publication_channels'.
   $field_bases['field_term_publication_channels'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_term_publication_channels',
@@ -118,7 +118,7 @@ function farnet_taxonomy_field_default_field_bases() {
   // Exported field_base: 'field_term_theme'.
   $field_bases['field_term_theme'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_term_theme',
