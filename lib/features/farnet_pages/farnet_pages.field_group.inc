@@ -24,7 +24,7 @@ function farnet_pages_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_publication_abstract',
-      1 => 'field_term_publication_channel',
+      1 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

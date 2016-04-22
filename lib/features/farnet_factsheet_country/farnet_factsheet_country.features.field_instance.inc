@@ -1100,8 +1100,8 @@ function farnet_factsheet_country_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-factsheet_country-field_term_publication_channel'.
-  $field_instances['node-factsheet_country-field_term_publication_channel'] = array(
+  // 'node-factsheet_country-field_term_publication_channels'.
+  $field_instances['node-factsheet_country-field_term_publication_channels'] = array(
     'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1122,8 +1122,8 @@ function farnet_factsheet_country_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_term_publication_channel',
-    'label' => 'Publication channel',
+    'field_name' => 'field_term_publication_channels',
+    'label' => 'Publication channels',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1378,7 +1378,7 @@ function farnet_factsheet_country_field_default_field_instances() {
   t('Number of FLAGs');
   t('Proportion of CLLD in EMFF budget');
   t('Publication abstract');
-  t('Publication channel');
+  t('Publication channels');
   t('Publication date');
   t('Tags');
   t('The funding application process');

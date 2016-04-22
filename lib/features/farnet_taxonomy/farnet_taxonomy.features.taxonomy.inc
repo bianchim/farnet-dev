@@ -34,9 +34,9 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'farnet_publication_channel' => (object) array(
-      'name' => 'Farnet Publication channel',
-      'machine_name' => 'farnet_publication_channel',
+    'farnet_publication_channels' => (object) array(
+      'name' => 'Farnet Publication channels',
+      'machine_name' => 'farnet_publication_channels',
       'description' => 'Taxonomy for the Publication channels on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',

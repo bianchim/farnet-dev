@@ -185,8 +185,8 @@ function farnet_pages_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_term_publication_channel'.
-  $field_instances['node-page-field_term_publication_channel'] = array(
+  // Exported field_instance: 'node-page-field_term_publication_channels'.
+  $field_instances['node-page-field_term_publication_channels'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -207,8 +207,8 @@ function farnet_pages_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_term_publication_channel',
-    'label' => 'Publication channel',
+    'field_name' => 'field_term_publication_channels',
+    'label' => 'Publication channels',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -272,7 +272,7 @@ function farnet_pages_field_default_field_instances() {
   t('Abstract');
   t('Country');
   t('Publication abstract');
-  t('Publication channel');
+  t('Publication channels');
   t('Theme');
 
   return $field_instances;
