@@ -50,10 +50,10 @@ function farnet_event_field_group_info() {
     'label' => 'Contact',
     'weight' => '5',
     'children' => array(
-      0 => 'field_contact_title',
-      1 => 'field_contact_first_name',
-      2 => 'field_contact_last_name',
-      3 => 'field_contact_position',
+      0 => 'field_contact_first_name',
+      1 => 'field_contact_last_name',
+      2 => 'field_contact_position',
+      3 => 'field_contact_title',
       4 => 'field_email',
       5 => 'field_telephone',
     ),
@@ -109,9 +109,9 @@ function farnet_event_field_group_info() {
     'label' => 'Publication',
     'weight' => '7',
     'children' => array(
-      0 => 'field_term_publication_channel',
-      1 => 'field_publication_date',
-      2 => 'field_teaser',
+      0 => 'field_publication_date',
+      1 => 'field_teaser',
+      2 => 'field_term_publication_channel',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

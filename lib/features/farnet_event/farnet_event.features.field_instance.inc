@@ -114,6 +114,7 @@ function farnet_event_field_default_field_instances() {
   // Exported field_instance: 'node-event_session-field_speakers'.
   $field_instances['node-event_session-field_speakers'] = array(
     'bundle' => 'event_session',
+    'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -149,9 +150,12 @@ function farnet_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'inline_entity_form',
+      'module' => 'entityreference',
       'settings' => array(
         'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
         'type_settings' => array(
           'allow_existing' => 1,
           'allow_new' => 1,
@@ -162,7 +166,7 @@ function farnet_event_field_default_field_instances() {
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form',
+      'type' => 'entityreference_autocomplete',
       'weight' => 3,
     ),
   );
@@ -457,6 +461,7 @@ function farnet_event_field_default_field_instances() {
   // Exported field_instance: 'node-nexteuropa_event-field_agenda_sessions'.
   $field_instances['node-nexteuropa_event-field_agenda_sessions'] = array(
     'bundle' => 'nexteuropa_event',
+    'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -482,7 +487,7 @@ function farnet_event_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_agenda_sessions',
     'label' => 'Agenda',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
@@ -494,20 +499,23 @@ function farnet_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'inline_entity_form',
+      'module' => 'entityreference',
       'settings' => array(
         'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
         'type_settings' => array(
-          'allow_existing' => 0,
+          'allow_existing' => 1,
           'allow_new' => 1,
-          'delete_references' => 0,
+          'delete_references' => 1,
           'label_plural' => 'nodes',
           'label_singular' => 'node',
           'match_operator' => 'CONTAINS',
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form',
+      'type' => 'entityreference_autocomplete',
       'weight' => 8,
     ),
   );
