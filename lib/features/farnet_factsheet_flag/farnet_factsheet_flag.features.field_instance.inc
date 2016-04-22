@@ -579,7 +579,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 46,
+      'weight' => 45,
     ),
   );
 
@@ -1022,7 +1022,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ff_emf',
+    'field_name' => 'field_ff_emff',
     'label' => 'EMFF (a)',
     'required' => 1,
     'settings' => array(
@@ -1038,7 +1038,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 64,
+      'weight' => 68,
     ),
   );
 
@@ -1238,7 +1238,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 45,
+      'weight' => 44,
     ),
   );
 
@@ -1976,7 +1976,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'nodragging' => 0,
       ),
       'type' => 'field_collection_table',
-      'weight' => 67,
+      'weight' => 71,
     ),
   );
 
@@ -2321,7 +2321,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 65,
+      'weight' => 69,
     ),
   );
 
@@ -2365,7 +2365,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 66,
+      'weight' => 67,
     ),
   );
 
@@ -2809,7 +2809,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 47,
+      'weight' => 46,
     ),
   );
 
@@ -3502,7 +3502,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 44,
+      'weight' => 47,
     ),
   );
 
@@ -3550,7 +3550,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 63,
+      'weight' => 70,
     ),
   );
 
@@ -3655,7 +3655,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 49,
+      'weight' => 48,
     ),
   );
 
