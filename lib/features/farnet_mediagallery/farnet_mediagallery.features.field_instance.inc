@@ -110,8 +110,8 @@ function farnet_mediagallery_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-nexteuropa_mediagallery-field_term_publication_channel'.
-  $field_instances['node-nexteuropa_mediagallery-field_term_publication_channel'] = array(
+  // 'node-nexteuropa_mediagallery-field_term_publication_channels'.
+  $field_instances['node-nexteuropa_mediagallery-field_term_publication_channels'] = array(
     'bundle' => 'nexteuropa_mediagallery',
     'default_value' => NULL,
     'deleted' => 0,
@@ -132,7 +132,7 @@ function farnet_mediagallery_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_term_publication_channel',
+    'field_name' => 'field_term_publication_channels',
     'label' => 'Publication channels',
     'required' => 0,
     'settings' => array(
