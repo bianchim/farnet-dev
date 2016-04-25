@@ -54,14 +54,13 @@ function farnet_mediagallery_field_group_info() {
       0 => 'field_term_country',
       1 => 'field_term_theme',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-gallerymedia-taxonomy field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
-        'id' => '',
       ),
     ),
   );
