@@ -254,7 +254,7 @@ function farnet_factsheet_country_field_group_info() {
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
-      2 => 'field_term_publication_channel',
+      2 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
