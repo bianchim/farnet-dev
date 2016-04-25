@@ -5,3 +5,17 @@
  */
 
 include_once 'farnet_mediagallery.features.inc';
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_instances.
+ */
+function farnet_mediagallery_field_default_field_instances_alter(&$fields) {
+  $fname = "node-nexteuropa_mediagallery-field_media_upload";
+  if (isset($fields[$fname])) {
+    if (isset($fields[$fname]['widget']['settings']['browser_plugins']['media_default--media_browser_1'])) {
+      $fields[$fname]['widget']['settings']['browser_plugins']['media_default--media_browser_1'] = "media_default--media_browser_1";
+    }
+  }
+}
