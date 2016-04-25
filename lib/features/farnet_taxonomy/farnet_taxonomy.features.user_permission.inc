@@ -19,9 +19,9 @@ function farnet_taxonomy_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in farnet_publication_channel'.
-  $permissions['delete terms in farnet_publication_channel'] = array(
-    'name' => 'delete terms in farnet_publication_channel',
+  // Exported permission: 'delete terms in farnet_publication_channels'.
+  $permissions['delete terms in farnet_publication_channels'] = array(
+    'name' => 'delete terms in farnet_publication_channels',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -73,9 +73,9 @@ function farnet_taxonomy_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in farnet_publication_channel'.
-  $permissions['edit terms in farnet_publication_channel'] = array(
-    'name' => 'edit terms in farnet_publication_channel',
+  // Exported permission: 'edit terms in farnet_publication_channels'.
+  $permissions['edit terms in farnet_publication_channels'] = array(
+    'name' => 'edit terms in farnet_publication_channels',
     'roles' => array(
       'administrator' => 'administrator',
     ),
