@@ -138,8 +138,9 @@ function farnet_event_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '6',
     'children' => array(
-      0 => 'field_term_theme',
-      1 => 'field_term_type_of_event',
+      0 => 'field_term_country',
+      1 => 'field_term_theme',
+      2 => 'field_term_type_of_event',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

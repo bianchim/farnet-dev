@@ -5,3 +5,16 @@
  */
 
 include_once 'farnet_event.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function farnet_event_field_group_info_alter($groups) {
+  if (!empty($groups['group_ne_event_content|node|nexteuropa_event|form'])) {
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_abstract';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_city';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_website';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_registration';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_twitter_hashtag';
+  }
+}
