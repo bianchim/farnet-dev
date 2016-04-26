@@ -111,7 +111,7 @@ function farnet_event_field_group_info() {
     'children' => array(
       0 => 'field_publication_date',
       1 => 'field_teaser',
-      2 => 'field_term_publication_channel',
+      2 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
