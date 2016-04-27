@@ -48,6 +48,4 @@
     <rule ref="Drupal.Commenting.InlineComment">
         <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
     </rule>
-
-    
 </ruleset>
