@@ -39,4 +39,13 @@
     <!-- Farnet Exclude Files -->
     <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
     <exclude-pattern>*.farnet_core.install</exclude-pattern>
+    <exclude-pattern>*.farnet_faq.module</exclude-pattern>
+
+    <!-- OG permission not strictly follow LineLength and comment inline. -->
+    <rule ref="Drupal.Files.LineLength">
+        <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
+    </rule>
+    <rule ref="Drupal.Commenting.InlineComment">
+        <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
+    </rule>
 </ruleset>
