@@ -90,7 +90,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of Events on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -7,
+      'weight' => -8,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -115,7 +115,32 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of News on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -8,
+      'weight' => -9,
+      'language' => 'und',
+      'i18n_mode' => 4,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'farnet_type_organisation' => (object) array(
+      'name' => 'Farnet Type Organisation',
+      'machine_name' => 'farnet_type_organisation',
+      'description' => 'Taxonomy for the Type of Organisations on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -6,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -140,9 +165,34 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of Publications on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -6,
+      'weight' => -7,
       'language' => 'und',
       'i18n_mode' => 4,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'regions' => (object) array(
+      'name' => 'Regions',
+      'machine_name' => 'regions',
+      'description' => 'A list of the regions',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -1,
+      'language' => 'und',
+      'i18n_mode' => 1,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
