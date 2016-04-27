@@ -170,7 +170,7 @@ function farnet_project_short_story_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'field_tags',
-      1 => 'field_theme',
+      1 => 'field_term_theme',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

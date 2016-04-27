@@ -841,8 +841,8 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_theme'.
-  $field_instances['node-project_short_story-field_theme'] = array(
+  // Exported field_instance: 'node-project_short_story-field_term_theme'.
+  $field_instances['node-project_short_story-field_term_theme'] = array(
     'bundle' => 'project_short_story',
     'default_value' => NULL,
     'deleted' => 0,
@@ -863,7 +863,7 @@ function farnet_project_short_story_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_theme',
+    'field_name' => 'field_term_theme',
     'label' => 'Theme',
     'required' => 0,
     'settings' => array(

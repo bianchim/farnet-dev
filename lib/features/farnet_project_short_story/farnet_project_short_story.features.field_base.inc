@@ -104,34 +104,6 @@ function farnet_project_short_story_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_theme'.
-  $field_bases['field_theme'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_theme',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'farnet_theme',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_total_project_cost'.
   $field_bases['field_total_project_cost'] = array(
     'active' => 1,
