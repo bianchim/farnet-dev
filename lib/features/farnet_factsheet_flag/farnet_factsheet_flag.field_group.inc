@@ -21,7 +21,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Area',
-    'weight' => '4',
+    'weight' => '6',
     'children' => array(
       0 => 'field_ff_aquaculture',
       1 => 'field_ff_coastal_inland',
@@ -59,13 +59,12 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Budget',
-    'weight' => '12',
+    'weight' => '14',
     'children' => array(
       0 => 'field_ff_emff',
-      1 => 'field_ff_fund_collection',
-      2 => 'field_ff_ms_co_financing',
-      3 => 'field_ff_multi_funding',
-      4 => 'field_ff_total_public_budget',
+      1 => 'field_ff_ms_co_financing',
+      2 => 'field_ff_multi_funding',
+      3 => 'field_ff_total_public_budget',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -90,7 +89,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '13',
+    'weight' => '15',
     'children' => array(
       0 => 'field_ff_flag_manager',
       1 => 'field_ff_flag_president',
@@ -121,11 +120,10 @@ function farnet_factsheet_flag_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_ff_area',
-      2 => 'field_ff_code',
-      3 => 'field_ff_name_official',
-      4 => 'field_ff_programming_period',
-      5 => 'title_field',
+      1 => 'field_ff_code',
+      2 => 'field_ff_programming_period',
+      3 => 'title_field',
+      4 => 'field_title_official',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -150,7 +148,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Type of cooperation foreseen',
-    'weight' => '9',
+    'weight' => '11',
     'children' => array(
       0 => 'field_ff_budget_available',
       1 => 'field_ff_tc_interterritorial',
@@ -182,9 +180,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->data = array(
     'label' => 'Language information',
     'weight' => '18',
-    'children' => array(
-      0 => 'field_ff_language_collection',
-    ),
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -208,7 +204,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links with LEADER or other CLLD groups',
-    'weight' => '11',
+    'weight' => '13',
     'children' => array(
       0 => 'field_ff_flag_cooperates',
       1 => 'field_ff_flag_cooperates_details',
@@ -244,7 +240,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'group_content_access',
       1 => 'og_group_ref',
@@ -273,7 +269,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Partnership',
-    'weight' => '10',
+    'weight' => '12',
     'children' => array(
       0 => 'field_ff_environmental_actors',
       1 => 'field_ff_fisheries_actors',
@@ -307,7 +303,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Calls for projects',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(
       0 => 'field_ff_calls_for_projects',
       1 => 'field_ff_calls_for_projects_url',
@@ -335,10 +331,8 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Project examples and ideas',
-    'weight' => '6',
-    'children' => array(
-      0 => 'field_ff_project_collection',
-    ),
+    'weight' => '8',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -366,7 +360,7 @@ function farnet_factsheet_flag_field_group_info() {
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
-      2 => 'field_term_publication_channel',
+      2 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -391,7 +385,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Social media',
-    'weight' => '15',
+    'weight' => '17',
     'children' => array(
       0 => 'field_ff_facebook',
       1 => 'field_ff_google',
@@ -421,7 +415,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Staff',
-    'weight' => '14',
+    'weight' => '16',
     'children' => array(
       0 => 'field_ff_number_staff',
     ),
@@ -448,10 +442,9 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Strategy',
-    'weight' => '5',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_ff_objective_collection',
-      1 => 'field_ff_summary',
+      0 => 'field_ff_summary',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -505,7 +498,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Thematic expertise and cooperation',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(
       0 => 'field_ff_thematic_text',
     ),
@@ -521,6 +514,35 @@ function farnet_factsheet_flag_field_group_info() {
   );
   $field_groups['group_factsheet_flag_thematic|node|factsheet_flag|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ff_location|node|factsheet_flag|form';
+  $field_group->group_name = 'group_ff_location';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Location',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_term_country',
+      1 => 'field_term_region',
+      2 => 'field_area',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_ff_location|node|factsheet_flag|form'] = $field_group;
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Area');
@@ -530,6 +552,7 @@ function farnet_factsheet_flag_field_group_info() {
   t('Content');
   t('Language information');
   t('Links with LEADER or other CLLD groups');
+  t('Location');
   t('Metadata');
   t('Partnership');
   t('Project examples and ideas');

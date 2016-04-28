@@ -15,25 +15,5 @@ function farnet_factsheet_flag_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:editorial_team:delete any factsheet_flag content'
-  $permissions['node:editorial_team:delete any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own factsheet_flag content'
-  $permissions['node:editorial_team:delete own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:update any factsheet_flag content'
-  $permissions['node:editorial_team:update any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:update own factsheet_flag content'
-  $permissions['node:editorial_team:update own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
   return $permissions;
 }

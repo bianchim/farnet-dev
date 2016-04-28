@@ -10,34 +10,6 @@
 function farnet_factsheet_flag_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_farnet_languages_spoken2'.
-  $field_bases['field_farnet_languages_spoken2'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_farnet_languages_spoken2',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'farnet_languages_spoken',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 1,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_ff_aquaculture'.
   $field_bases['field_ff_aquaculture'] = array(
     'active' => 1,
@@ -52,47 +24,8 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
-    'type' => 'number_float',
-  );
-
-  // Exported field_base: 'field_ff_area'.
-  $field_bases['field_ff_area'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_area',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 1,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ff_budget_allocated'.
-  $field_bases['field_ff_budget_allocated'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_budget_allocated',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_ff_budget_available'.
@@ -109,7 +42,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
   );
 
@@ -186,7 +119,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_text',
   );
 
@@ -229,7 +162,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -247,7 +180,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
   );
 
@@ -264,8 +197,8 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
-    'type' => 'number_integer',
+    'translatable' => 0,
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_ff_facebook'.
@@ -311,8 +244,8 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
-    'type' => 'number_integer',
+    'translatable' => 0,
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_ff_fishing'.
@@ -329,7 +262,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
   );
 
@@ -612,81 +545,6 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ff_fund_collection'.
-  $field_bases['field_ff_fund_collection'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_fund_collection',
-    'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'field_collection',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'hide_blank_items' => 1,
-      'path' => '',
-    ),
-    'translatable' => 1,
-    'type' => 'field_collection',
-  );
-
-  // Exported field_base: 'field_ff_fund_name'.
-  $field_bases['field_ff_fund_name'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_fund_name',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 1,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ff_fund_url'.
-  $field_bases['field_ff_fund_url'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_fund_url',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'entity_translation_sync' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 1,
-    'type' => 'link_field',
-  );
-
   // Exported field_base: 'field_ff_google'.
   $field_bases['field_ff_google'] = array(
     'active' => 1,
@@ -717,29 +575,6 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_ff_language_collection'.
-  $field_bases['field_ff_language_collection'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_language_collection',
-    'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'field_collection',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'hide_blank_items' => 1,
-      'path' => '',
-    ),
-    'translatable' => 1,
-    'type' => 'field_collection',
-  );
-
   // Exported field_base: 'field_ff_lead_partner'.
   $field_bases['field_ff_lead_partner'] = array(
     'active' => 1,
@@ -760,34 +595,6 @@ function farnet_factsheet_flag_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ff_level'.
-  $field_bases['field_ff_level'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_level',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'Basic' => 'Basic',
-        'Intermediate' => 'Intermediate',
-        'Advanced' => 'Advanced',
-        'Mother tongue' => 'Mother tongue',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_ff_linkedin'.
@@ -816,7 +623,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -855,7 +662,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
   );
 
@@ -885,28 +692,6 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_ff_name_official'.
-  $field_bases['field_ff_name_official'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_name_official',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_ff_number_assembly'.
   $field_bases['field_ff_number_assembly'] = array(
     'active' => 1,
@@ -920,7 +705,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_integer',
   );
 
@@ -937,7 +722,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_integer',
   );
 
@@ -955,60 +740,8 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
-  );
-
-  // Exported field_base: 'field_ff_objective'.
-  $field_bases['field_ff_objective'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_objective',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'Objective 1' => 'Objective 1',
-        'Objective 2' => 'Objective 2',
-        'Objective 3' => 'Objective 3',
-        'Objective 4' => 'Objective 4',
-        'Objective 5' => 'Objective 5',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_ff_objective_collection'.
-  $field_bases['field_ff_objective_collection'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_objective_collection',
-    'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'field_collection',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'hide_blank_items' => 1,
-      'path' => '',
-    ),
-    'translatable' => 1,
-    'type' => 'field_collection',
   );
 
   // Exported field_base: 'field_ff_other_non_fisheries'.
@@ -1024,8 +757,8 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
-    'type' => 'number_integer',
+    'translatable' => 0,
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_ff_population'.
@@ -1059,24 +792,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_ff_priority'.
-  $field_bases['field_ff_priority'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_priority',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_ff_processing'.
@@ -1093,7 +809,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
   );
 
@@ -1123,102 +839,6 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_ff_project_collection'.
-  $field_bases['field_ff_project_collection'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_project_collection',
-    'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'field_collection',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'hide_blank_items' => TRUE,
-      'path' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'field_collection',
-  );
-
-  // Exported field_base: 'field_ff_project_description'.
-  $field_bases['field_ff_project_description'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_project_description',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_ff_project_title'.
-  $field_bases['field_ff_project_title'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_project_title',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 1,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ff_project_url'.
-  $field_bases['field_ff_project_url'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_project_url',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'entity_translation_sync' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 1,
-    'type' => 'link_field',
-  );
-
   // Exported field_base: 'field_ff_protected_areas'.
   $field_bases['field_ff_protected_areas'] = array(
     'active' => 1,
@@ -1236,7 +856,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -1253,7 +873,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_integer',
   );
 
@@ -1274,7 +894,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -1292,7 +912,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_ff_tc_interterritorial'.
@@ -1414,7 +1034,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
   );
 
@@ -1432,7 +1052,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
   );
 
@@ -1480,34 +1100,8 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'number_float',
-  );
-
-  // Exported field_base: 'field_term_region'.
-  $field_bases['field_term_region'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_term_region',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'Region 1' => 'Region 1',
-        'Region 2' => 'Region 2',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'list_text',
   );
 
   return $field_bases;
