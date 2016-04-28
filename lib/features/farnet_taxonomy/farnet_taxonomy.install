@@ -61,17 +61,17 @@ function farnet_taxonomy_enable() {
   $languages_spoken_array = farnet_taxonomy_languages_spoken();
   save_multilingual_farnet_taxonomy($languages_spoken_array, $vid);
 
-  // Creates the Farnet Publication Channel vocabulary.
+  // Creates the Farnet Publication channels vocabulary.
   // If it does not exist already.
-  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channels');
   if ($voc) {
     $vid = $voc->vid;
   }
   else {
     $voc = array(
-      'name' => 'Farnet Publication channel',
-      'machine_name' => 'farnet_publication_channel',
-      'description' => 'Taxonomy for the Publication channels on Farnet',
+      'name' => 'Farnet Publication Channels',
+      'machine_name' => 'farnet_publication_channels',
+      'description' => 'Taxonomy for the Publication Channels on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -4,
@@ -81,7 +81,7 @@ function farnet_taxonomy_enable() {
     $vid = $voc->vid;
   };
 
-  // Imports Publication Channel data.
+  // Imports Publication channels data.
   include_once 'includes/farnet_taxonomy_publication_channels.php';
   $publication_channels_array = farnet_taxonomy_publication_channels();
   save_multilingual_farnet_taxonomy($publication_channels_array, $vid);
@@ -184,7 +184,7 @@ function farnet_taxonomy_disable() {
   }
 
   // Deletes the taxonomy term.
-  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channel');
+  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channels');
   if ($voc) {
     $vid = $voc->vid;
     taxonomy_vocabulary_delete($vid);

@@ -34,7 +34,7 @@ function farnet_taxonomy_field_default_field_bases() {
   // Exported field_base: 'field_term_country'.
   $field_bases['field_term_country'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_term_country',
@@ -87,13 +87,13 @@ function farnet_taxonomy_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_term_publication_channel'.
-  $field_bases['field_term_publication_channel'] = array(
+  // Exported field_base: 'field_term_publication_channels'.
+  $field_bases['field_term_publication_channels'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_term_publication_channel',
+    'field_name' => 'field_term_publication_channels',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -104,7 +104,7 @@ function farnet_taxonomy_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'farnet_publication_channel',
+          'vocabulary' => 'farnet_publication_channels',
           'parent' => 0,
         ),
       ),
@@ -118,7 +118,7 @@ function farnet_taxonomy_field_default_field_bases() {
   // Exported field_base: 'field_term_theme'.
   $field_bases['field_term_theme'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_term_theme',

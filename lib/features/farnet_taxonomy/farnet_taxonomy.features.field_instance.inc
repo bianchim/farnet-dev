@@ -89,9 +89,9 @@ function farnet_taxonomy_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-farnet_publication_channel-description_field'.
-  $field_instances['taxonomy_term-farnet_publication_channel-description_field'] = array(
-    'bundle' => 'farnet_publication_channel',
+  // 'taxonomy_term-farnet_publication_channels-description_field'.
+  $field_instances['taxonomy_term-farnet_publication_channels-description_field'] = array(
+    'bundle' => 'farnet_publication_channels',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -129,9 +129,9 @@ function farnet_taxonomy_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-farnet_publication_channel-name_field'.
-  $field_instances['taxonomy_term-farnet_publication_channel-name_field'] = array(
-    'bundle' => 'farnet_publication_channel',
+  // 'taxonomy_term-farnet_publication_channels-name_field'.
+  $field_instances['taxonomy_term-farnet_publication_channels-name_field'] = array(
+    'bundle' => 'farnet_publication_channels',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
