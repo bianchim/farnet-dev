@@ -195,6 +195,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
+      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
@@ -242,6 +243,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
+      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
@@ -755,6 +757,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
+      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
@@ -789,6 +792,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
+      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
@@ -874,7 +878,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_ff_summary'.
@@ -909,6 +913,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
+      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
