@@ -185,7 +185,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -734,7 +734,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 26,
     ),
   );
 
@@ -937,7 +937,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 27,
     ),
   );
 
@@ -1052,7 +1052,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -1245,6 +1245,46 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-summary_sheet_method-field_term_region'.
+  $field_instances['node-summary_sheet_method-field_term_region'] = array(
+    'bundle' => 'summary_sheet_method',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 29,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_term_region',
+    'label' => 'Region',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 22,
     ),
   );
 
@@ -1521,6 +1561,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   t('Publication Channels');
   t('Publication abstract');
   t('Publication date');
+  t('Region');
   t('Skills');
   t('Staff resources (FTE)');
   t('Tags');

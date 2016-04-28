@@ -52,14 +52,14 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'body',
       1 => 'field_objective',
-      2 => 'field_ssm_main_achievements',
-      3 => 'field_ssm_activities',
-      4 => 'field_ssm_transferability',
-      5 => 'field_ssm_lessons',
+      2 => 'field_ssm_activities',
+      3 => 'field_ssm_lessons',
+      4 => 'field_ssm_main_achievements',
+      5 => 'field_ssm_transferability',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -84,10 +84,11 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_area',
+      0 => 'field_area',
+      1 => 'field_term_country',
+      2 => 'field_term_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -112,7 +113,7 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -198,12 +199,12 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_ssm_skills',
-      1 => 'field_ssm_staff_resources',
-      2 => 'field_ssm_financial_resources',
-      3 => 'field_ssm_other_resources',
+      0 => 'field_ssm_financial_resources',
+      1 => 'field_ssm_other_resources',
+      2 => 'field_ssm_skills',
+      3 => 'field_ssm_staff_resources',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -255,7 +256,7 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_dates_start_end',
     ),

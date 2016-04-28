@@ -64,6 +64,7 @@ features[field_instance][] = node-summary_sheet_method-field_ssm_transferability
 features[field_instance][] = node-summary_sheet_method-field_tags
 features[field_instance][] = node-summary_sheet_method-field_term_country
 features[field_instance][] = node-summary_sheet_method-field_term_publication_channels
+features[field_instance][] = node-summary_sheet_method-field_term_region
 features[field_instance][] = node-summary_sheet_method-field_term_theme
 features[field_instance][] = node-summary_sheet_method-field_title_official
 features[field_instance][] = node-summary_sheet_method-group_content_access
