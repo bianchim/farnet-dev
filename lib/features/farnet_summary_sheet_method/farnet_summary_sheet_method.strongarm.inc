@@ -68,19 +68,19 @@ function farnet_summary_sheet_method_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '2',
+          'weight' => '6',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'scheduler_settings' => array(
           'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'language' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
       ),
       'display' => array(),
