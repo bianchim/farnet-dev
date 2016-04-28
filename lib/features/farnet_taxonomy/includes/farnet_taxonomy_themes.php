@@ -10,43 +10,43 @@
 function farnet_taxonomy_themes() {
   $themes_array = array(
     'Theme1' => (object) array(
-      'name' => t('Farnet Theme1'),
+      'name' => t('Adding value, employment, innovation'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Theme1 FR'),
-        'it' => t('Farnet Theme1 IT'),
+        'fr' => t("La valeur ajoutée, l'emploi, l'innovation"),
+        'it' => t('Adding value, employment, innovation IT'),
       ),
     ),
     'Theme2' => (object) array(
-      'name' => t('Farnet Theme2'),
+      'name' => t('Diversification'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Theme2 FR'),
-        'it' => t('Farnet Theme2 IT'),
+        'fr' => t('Diversification'),
+        'it' => t('Diversification IT'),
       ),
     ),
     'Theme3' => (object) array(
-      'name' => t('Farnet Theme3'),
+      'name' => t('Environment'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Theme3 FR'),
-        'it' => t('Farnet Theme3 IT'),
+        'fr' => t('Environnement'),
+        'it' => t('Environment IT'),
       ),
     ),
     'Theme4' => (object) array(
-      'name' => t('Farnet Theme4'),
+      'name' => t('Social well-being, cultural heritage'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Theme4 FR'),
-        'it' => t('Farnet Theme4 IT'),
+        'fr' => t('Le bien-être social, le patrimoine culturelR'),
+        'it' => t('Social well-being, cultural heritage IT'),
       ),
     ),
     'Theme5' => (object) array(
-      'name' => t('Farnet Theme5'),
+      'name' => t('Governance and management'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Theme5 FR'),
-        'it' => t('Farnet Theme5 IT'),
+        'fr' => t('Gouvernance et gestion'),
+        'it' => t('Governance and management IT'),
       ),
     ),
   );
