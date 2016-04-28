@@ -10,35 +10,35 @@
 function farnet_taxonomy_type_events() {
   $type_events_array = array(
     'Event1' => (object) array(
-      'name' => t('Farnet Type Event1 EN'),
+      'name' => t('Transnational seminars'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Type Event1 FR'),
-        'it' => t('Farnet Type Event1 IT'),
+        'fr' => t('Séminaire transnational'),
+        'it' => t('Transnational seminars IT'),
       ),
     ),
     'Event2' => (object) array(
-      'name' => t('Farnet Type Event2 EN'),
+      'name' => t('Managing authorities & National networks'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Type Event2 FR'),
-        'it' => t('Farnet Type Event2 IT'),
+        'fr' => t('Les autorités de gestion et les réseaux nationaux'),
+        'it' => t('Managing authorities & National networks IT'),
       ),
     ),
     'Event3' => (object) array(
-      'name' => t('Farnet Type Event3 EN'),
+      'name' => t('National / regional / local events'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Type Event3 FR'),
-        'it' => t('Farnet Type Event3 IT'),
+        'fr' => t('National / régional / événements locaux'),
+        'it' => t('National / regional / local events IT'),
       ),
     ),
     'Event4' => (object) array(
-      'name' => t('Farnet Type Event4 EN'),
+      'name' => t('Conferences'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Type Event4 FR'),
-        'it' => t('Farnet Type Event4 IT'),
+        'fr' => t('Conférences'),
+        'it' => t('Conferences IT'),
       ),
     ),
   );
