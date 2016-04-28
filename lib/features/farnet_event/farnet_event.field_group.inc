@@ -50,8 +50,8 @@ function farnet_event_field_group_info() {
     'label' => 'Contact',
     'weight' => '5',
     'children' => array(
-      0 => 'field_contact_first_name',
-      1 => 'field_contact_last_name',
+      0 => 'field_first_name',
+      1 => 'field_last_name',
       2 => 'field_contact_position',
       3 => 'field_contact_title',
       4 => 'field_email',

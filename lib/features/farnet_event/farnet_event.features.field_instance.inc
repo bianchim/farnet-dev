@@ -587,8 +587,8 @@ function farnet_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nexteuropa_event-field_contact_first_name'.
-  $field_instances['node-nexteuropa_event-field_contact_first_name'] = array(
+  // Exported field_instance: 'node-nexteuropa_event-field_first_name'.
+  $field_instances['node-nexteuropa_event-field_first_name'] = array(
     'bundle' => 'nexteuropa_event',
     'default_value' => NULL,
     'deleted' => 0,
@@ -609,7 +609,7 @@ function farnet_event_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_contact_first_name',
+    'field_name' => 'field_first_name',
     'label' => 'First Name',
     'required' => 0,
     'settings' => array(
@@ -654,8 +654,8 @@ function farnet_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nexteuropa_event-field_contact_last_name'.
-  $field_instances['node-nexteuropa_event-field_contact_last_name'] = array(
+  // Exported field_instance: 'node-nexteuropa_event-field_last_name'.
+  $field_instances['node-nexteuropa_event-field_last_name'] = array(
     'bundle' => 'nexteuropa_event',
     'default_value' => NULL,
     'deleted' => 0,
@@ -676,7 +676,7 @@ function farnet_event_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_contact_last_name',
+    'field_name' => 'field_last_name',
     'label' => 'Last Name',
     'required' => 0,
     'settings' => array(
