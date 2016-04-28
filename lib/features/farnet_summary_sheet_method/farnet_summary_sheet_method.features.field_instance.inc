@@ -189,8 +189,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-summary_sheet_method-field_dates_start_end'.
+  // Exported field_instance: 'node-summary_sheet_method-field_dates_start_end'.
   $field_instances['node-summary_sheet_method-field_dates_start_end'] = array(
     'bundle' => 'summary_sheet_method',
     'deleted' => 0,
