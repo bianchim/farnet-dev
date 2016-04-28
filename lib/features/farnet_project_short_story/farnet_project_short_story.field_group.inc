@@ -21,7 +21,7 @@ function farnet_project_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Project information',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_area',
     ),
@@ -55,7 +55,7 @@ function farnet_project_short_story_field_group_info() {
       2 => 'field_picture',
       3 => 'field_website',
       4 => 'title_field',
-      5 => 'field_id',
+      5 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -80,7 +80,7 @@ function farnet_project_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Funding',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_eu_contribution',
       1 => 'field_other_public_contribution',
@@ -102,6 +102,33 @@ function farnet_project_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_media|node|project_short_story|form';
+  $field_group->group_name = 'group_short_story_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Media',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_gallery',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-short-story-media field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_short_story_media|node|project_short_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_short_story_publication|node|project_short_story|form';
   $field_group->group_name = 'group_short_story_publication';
   $field_group->entity_type = 'node';
@@ -110,11 +137,11 @@ function farnet_project_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '6',
+    'weight' => '8',
     'children' => array(
-      0 => 'field_publication_date',
-      1 => 'field_term_publication_channels',
-      2 => 'field_publication_abstract',
+      0 => 'field_publication_abstract',
+      1 => 'field_publication_date',
+      2 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -139,7 +166,7 @@ function farnet_project_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Quote',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_quote_author',
       1 => 'field_quote_text',
@@ -167,7 +194,7 @@ function farnet_project_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_term_theme',
@@ -195,7 +222,7 @@ function farnet_project_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_dates_start_end',
     ),
@@ -215,6 +242,7 @@ function farnet_project_short_story_field_group_info() {
   // Included for use with string extractors like potx.
   t('Content');
   t('Funding');
+  t('Media');
   t('Project information');
   t('Publication');
   t('Quote');

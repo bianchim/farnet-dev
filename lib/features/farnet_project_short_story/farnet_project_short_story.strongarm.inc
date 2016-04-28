@@ -68,13 +68,13 @@ function farnet_project_short_story_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'language' => array(
-          'weight' => '7',
+          'weight' => '26',
         ),
       ),
       'display' => array(),

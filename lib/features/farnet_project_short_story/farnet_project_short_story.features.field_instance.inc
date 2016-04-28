@@ -292,23 +292,21 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_id'.
-  $field_instances['node-project_short_story-field_id'] = array(
+  // Exported field_instance: 'node-project_short_story-field_gallery'.
+  $field_instances['node-project_short_story-field_gallery'] = array(
     'bundle' => 'project_short_story',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
+        'module' => 'entityreference',
         'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => '',
+          'link' => FALSE,
         ),
-        'type' => 'number_integer',
+        'type' => 'entityreference_label',
         'weight' => 20,
       ),
       'teaser' => array(
@@ -319,23 +317,26 @@ function farnet_project_short_story_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_id',
-    'label' => 'Id',
+    'field_name' => 'field_gallery',
+    'label' => 'Gallery',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 20,
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 26,
     ),
   );
 
@@ -497,7 +498,7 @@ function farnet_project_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1038,7 +1039,7 @@ function farnet_project_short_story_field_default_field_instances() {
   t('Body');
   t('Display Channels');
   t('EU contribution');
-  t('Id');
+  t('Gallery');
   t('Keywords');
   t('Other public contribution');
   t('Picture');
