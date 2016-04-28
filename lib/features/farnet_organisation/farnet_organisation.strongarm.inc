@@ -76,6 +76,9 @@ function farnet_organisation_strongarm() {
         'xmlsitemap' => array(
           'weight' => '14',
         ),
+        'language' => array(
+          'weight' => '13',
+        ),
       ),
       'display' => array(),
     ),
@@ -86,7 +89,7 @@ function farnet_organisation_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_organisation';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_organisation'] = $strongarm;
 
   $strongarm = new stdClass();
