@@ -10,7 +10,7 @@
 function farnet_taxonomy_faq_categories() {
   $faq_categories_array = array(
     'FAQCategory1' => (object) array(
-      'name' => t('CLLD overview EN'),
+      'name' => t('CLLD overview'),
       'language' => 'en',
       'translation' => array(
         'fr' => t('CLLD overview FR'),
