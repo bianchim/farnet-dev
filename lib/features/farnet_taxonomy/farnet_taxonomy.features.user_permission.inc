@@ -55,12 +55,26 @@ function farnet_taxonomy_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in farnet_type_organisation'.
+  $permissions['delete terms in farnet_type_organisation'] = array(
+    'name' => 'delete terms in farnet_type_organisation',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in farnet_type_publication'.
   $permissions['delete terms in farnet_type_publication'] = array(
     'name' => 'delete terms in farnet_type_publication',
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in regions'.
+  $permissions['delete terms in regions'] = array(
+    'name' => 'delete terms in regions',
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -109,12 +123,26 @@ function farnet_taxonomy_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in farnet_type_organisation'.
+  $permissions['edit terms in farnet_type_organisation'] = array(
+    'name' => 'edit terms in farnet_type_organisation',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in farnet_type_publication'.
   $permissions['edit terms in farnet_type_publication'] = array(
     'name' => 'edit terms in farnet_type_publication',
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in regions'.
+  $permissions['edit terms in regions'] = array(
+    'name' => 'edit terms in regions',
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
