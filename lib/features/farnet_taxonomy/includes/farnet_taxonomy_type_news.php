@@ -10,35 +10,19 @@
 function farnet_taxonomy_type_news() {
   $type_news_array = array(
     'News1' => (object) array(
-      'name' => t('Farnet Type News1 EN'),
+      'name' => t('FARNET news'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Type News1 FR'),
-        'it' => t('Farnet Type News1 IT'),
+        'fr' => t('FARNET news'),
+        'it' => t('FARNET news IT'),
       ),
     ),
     'News2' => (object) array(
-      'name' => t('Farnet Type News2 EN'),
+      'name' => t('Other news'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Type News2 FR'),
-        'it' => t('Farnet Type News2 IT'),
-      ),
-    ),
-    'News3' => (object) array(
-      'name' => t('Farnet Type News3 EN'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => t('Farnet Type News3 FR'),
-        'it' => t('Farnet Type News3 IT'),
-      ),
-    ),
-    'News4' => (object) array(
-      'name' => t('Farnet Type News4 EN'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => t('Farnet Type News4 FR'),
-        'it' => t('Farnet Type News4 IT'),
+        'fr' => t('Autres news'),
+        'it' => t('Other news IT'),
       ),
     ),
   );
