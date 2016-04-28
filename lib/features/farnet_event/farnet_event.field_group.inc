@@ -50,8 +50,8 @@ function farnet_event_field_group_info() {
     'label' => 'Contact',
     'weight' => '5',
     'children' => array(
-      0 => 'field_contact_first_name',
-      1 => 'field_contact_last_name',
+      0 => 'field_first_name',
+      1 => 'field_last_name',
       2 => 'field_contact_position',
       3 => 'field_contact_title',
       4 => 'field_email',
@@ -112,6 +112,7 @@ function farnet_event_field_group_info() {
       0 => 'field_publication_date',
       1 => 'field_teaser',
       2 => 'field_term_publication_channels',
+      3 => 'field_publication_abstract',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -140,7 +141,7 @@ function farnet_event_field_group_info() {
     'children' => array(
       0 => 'field_term_country',
       1 => 'field_term_theme',
-      2 => 'field_term_type_of_event',
+      2 => 'field_term_type_event',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
