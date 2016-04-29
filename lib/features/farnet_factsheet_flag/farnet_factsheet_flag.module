@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Factsheet Flag feature.
+ */
+
+include_once 'farnet_factsheet_flag.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter(().
+ */
+function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$form_state, $form_id) {
+  //dpm($form);
+  $path = drupal_get_path('module', 'farnet_factsheet_flag');
+  $form['#attached']['js'] = drupal_add_js(
+    $path . '/farnet_factsheet_flag.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    )
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_factsheet_flag_form_alter(&$form, &$form_state, $form_id) {
+  //dsm($form_id);
+}
