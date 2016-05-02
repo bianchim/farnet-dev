@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Project Summary Sheet feature.
+ */
+
+include_once 'farnet_project_summary_sheet.features.inc';
