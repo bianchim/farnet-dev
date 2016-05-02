@@ -185,7 +185,7 @@ function farnet_project_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 14,
     ),
   );
 
@@ -289,6 +289,54 @@ function farnet_project_short_story_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_short_story-field_flag'.
+  $field_instances['node-project_short_story-field_flag'] = array(
+    'bundle' => 'project_short_story',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flag',
+    'label' => 'Flag',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 25,
     ),
   );
 
@@ -801,6 +849,46 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project_short_story-field_term_country'.
+  $field_instances['node-project_short_story-field_term_country'] = array(
+    'bundle' => 'project_short_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_term_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-project_short_story-field_term_publication_channels'.
   $field_instances['node-project_short_story-field_term_publication_channels'] = array(
@@ -839,6 +927,46 @@ function farnet_project_short_story_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_short_story-field_term_region'.
+  $field_instances['node-project_short_story-field_term_region'] = array(
+    'bundle' => 'project_short_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_term_region',
+    'label' => 'Region',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 13,
     ),
   );
 
@@ -985,7 +1113,7 @@ function farnet_project_short_story_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 25,
+      'weight' => 26,
     ),
   );
 
@@ -1037,8 +1165,10 @@ function farnet_project_short_story_field_default_field_instances() {
   t('Abstract');
   t('Area');
   t('Body');
+  t('Country');
   t('Display Channels');
   t('EU contribution');
+  t('Flag');
   t('Gallery');
   t('Keywords');
   t('Other public contribution');
@@ -1048,6 +1178,7 @@ function farnet_project_short_story_field_default_field_instances() {
   t('Publication date');
   t('Quote Author');
   t('Quote Text');
+  t('Region');
   t('Theme');
   t('Timeframe date');
   t('Title');

@@ -24,6 +24,8 @@ function farnet_project_short_story_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'field_area',
+      1 => 'field_term_region',
+      2 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -55,7 +57,7 @@ function farnet_project_short_story_field_group_info() {
       2 => 'field_picture',
       3 => 'field_website',
       4 => 'title_field',
-      5 => 'language',
+      5 => 'field_flag',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -125,6 +127,34 @@ function farnet_project_short_story_field_group_info() {
     ),
   );
   $field_groups['group_short_story_media|node|project_short_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_metadata|node|project_short_story|form';
+  $field_group->group_name = 'group_short_story_metadata';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Metadata',
+    'weight' => '9',
+    'children' => array(
+      0 => 'scheduler_settings',
+      1 => 'language',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-short-story-metadata field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_short_story_metadata|node|project_short_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -243,6 +273,7 @@ function farnet_project_short_story_field_group_info() {
   t('Content');
   t('Funding');
   t('Media');
+  t('Metadata');
   t('Project information');
   t('Publication');
   t('Quote');

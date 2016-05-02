@@ -68,13 +68,16 @@ function farnet_project_short_story_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'xmlsitemap' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'language' => array(
-          'weight' => '26',
+          'weight' => '27',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '28',
         ),
       ),
       'display' => array(),
@@ -109,7 +112,10 @@ function farnet_project_short_story_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_project_short_story';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'moderation',
+    1 => 'revision',
+  );
   $export['node_options_project_short_story'] = $strongarm;
 
   $strongarm = new stdClass();
