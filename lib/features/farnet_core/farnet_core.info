@@ -33,6 +33,7 @@ features[field_base][] = field_objective
 features[field_base][] = field_picture
 features[field_base][] = field_publication_abstract
 features[field_base][] = field_publication_date
+features[field_base][] = field_social_media
 features[field_base][] = field_telephone
 features[field_base][] = field_title_official
 features[field_base][] = field_website
