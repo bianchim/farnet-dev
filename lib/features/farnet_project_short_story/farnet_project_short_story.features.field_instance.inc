@@ -185,7 +185,7 @@ function farnet_project_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 31,
     ),
   );
 
@@ -385,6 +385,54 @@ function farnet_project_short_story_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 26,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_short_story-field_organisation'.
+  $field_instances['node-project_short_story-field_organisation'] = array(
+    'bundle' => 'project_short_story',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_organisation',
+    'label' => 'Organisation',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 28,
     ),
   );
 
@@ -885,7 +933,7 @@ function farnet_project_short_story_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 29,
     ),
   );
 
@@ -966,7 +1014,7 @@ function farnet_project_short_story_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 30,
     ),
   );
 
@@ -1171,6 +1219,7 @@ function farnet_project_short_story_field_default_field_instances() {
   t('Flag');
   t('Gallery');
   t('Keywords');
+  t('Organisation');
   t('Other public contribution');
   t('Picture');
   t('Private contribution');

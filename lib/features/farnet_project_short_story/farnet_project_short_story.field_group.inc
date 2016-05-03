@@ -24,8 +24,9 @@ function farnet_project_short_story_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'field_area',
-      1 => 'field_term_region',
-      2 => 'field_term_country',
+      1 => 'field_term_country',
+      2 => 'field_term_region',
+      3 => 'field_organisation',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -54,10 +55,10 @@ function farnet_project_short_story_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_abstract',
-      2 => 'field_picture',
-      3 => 'field_website',
-      4 => 'title_field',
-      5 => 'field_flag',
+      2 => 'field_flag',
+      3 => 'field_picture',
+      4 => 'field_website',
+      5 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -141,8 +142,7 @@ function farnet_project_short_story_field_group_info() {
     'label' => 'Metadata',
     'weight' => '9',
     'children' => array(
-      0 => 'scheduler_settings',
-      1 => 'language',
+      0 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
