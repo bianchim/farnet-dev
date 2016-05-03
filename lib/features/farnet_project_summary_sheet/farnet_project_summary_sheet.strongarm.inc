@@ -68,13 +68,13 @@ function farnet_project_summary_sheet_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'scheduler_settings' => array(
           'weight' => '8',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'language' => array(
           'weight' => '9',

@@ -134,6 +134,54 @@ function farnet_project_summary_sheet_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project_summary_sheet-field_flag'.
+  $field_instances['node-project_summary_sheet-field_flag'] = array(
+    'bundle' => 'project_summary_sheet',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flag',
+    'label' => 'Flag',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'node-project_summary_sheet-field_id'.
   $field_instances['node-project_summary_sheet-field_id'] = array(
     'bundle' => 'project_summary_sheet',
@@ -240,6 +288,54 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_summary_sheet-field_organisation'.
+  $field_instances['node-project_summary_sheet-field_organisation'] = array(
+    'bundle' => 'project_summary_sheet',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 29,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_organisation',
+    'label' => 'Beneficiary',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
       'weight' => 12,
     ),
   );
@@ -618,7 +714,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 20,
     ),
   );
 
@@ -782,7 +878,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 18,
     ),
   );
 
@@ -849,7 +945,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 23,
     ),
   );
 
@@ -916,7 +1012,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 19,
     ),
   );
 
@@ -983,7 +1079,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 21,
     ),
   );
 
@@ -1099,7 +1195,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 22,
     ),
   );
 
@@ -1167,7 +1263,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 27,
     ),
   );
 
@@ -1224,7 +1320,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 10,
+      'weight' => 28,
     ),
   );
 
@@ -1265,7 +1361,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1306,7 +1402,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 29,
     ),
   );
 
@@ -1471,8 +1567,10 @@ function farnet_project_summary_sheet_field_default_field_instances() {
   t('Activities');
   t('B - Beneficiary contribution');
   t('B2 - Lead partner');
+  t('Beneficiary');
   t('Context and needs');
   t('Dates (Start/End)');
+  t('Flag');
   t('ID');
   t('Lessons');
   t('Media upload');
