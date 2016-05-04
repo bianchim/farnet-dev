@@ -352,9 +352,11 @@ function farnet_project_short_story_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'media_gallery_page',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 20,
       ),
       'teaser' => array(
