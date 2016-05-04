@@ -866,6 +866,56 @@ function farnet_event_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-nexteuropa_event-field_gallery'.
+  $field_instances['node-nexteuropa_event-field_gallery'] = array(
+    'bundle' => 'nexteuropa_event',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'media_gallery_page',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_gallery',
+    'label' => 'Gallery',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-nexteuropa_event-field_last_name'.
   $field_instances['node-nexteuropa_event-field_last_name'] = array(
     'bundle' => 'nexteuropa_event',

@@ -83,6 +83,7 @@ function farnet_event_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_documents',
+      1 => 'field_gallery',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
