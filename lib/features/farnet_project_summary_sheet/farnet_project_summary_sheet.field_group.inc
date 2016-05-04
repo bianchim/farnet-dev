@@ -89,6 +89,8 @@ function farnet_project_summary_sheet_field_group_info() {
       5 => 'field_pss_b2_lead_partner',
       6 => 'field_pss_b_beneficiary',
       7 => 'field_pss_total_project_cost',
+      8 => 'field_b1_other_contribution',
+      9 => 'field_a5_public_contribution',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

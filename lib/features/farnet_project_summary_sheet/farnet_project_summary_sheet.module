@@ -10,7 +10,6 @@ include_once 'farnet_project_summary_sheet.features.inc';
  * Implements hook_form_FORM_ID_alter(().
  */
 function farnet_project_summary_sheet_form_project_summary_sheet_node_form_alter(&$form, &$form_state, $form_id) {
-  //dpm($form);
   $path = drupal_get_path('module', 'farnet_project_summary_sheet');
   $form['#attached']['js'] = drupal_add_js(
     $path . '/js/farnet_project_summary_sheet.js',
