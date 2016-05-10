@@ -8,88 +8,47 @@
  * Lists Themes.
  */
 function farnet_taxonomy_themes() {
-
-  // Original Array
-  /*
-  $themes_array = array(
-    'Theme1' => t('Farnet Theme1'),
-    'Theme2' => t('Farnet Theme2'),
-    'Theme3' => t('Farnet Theme3'),
-    'Theme4' => t('Farnet Theme4'),
-  );
-  */
-
-  // Array for Solution 1
   $themes_array = array(
     'Theme1' => (object) array(
-      'name' => t('Farnet Theme1 EN'),
+      'name' => t('Adding value, employment, innovation'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Theme1 FR'),
-        'it' => t('Farnet Theme1 IT'),
+        'fr' => t("La valeur ajoutée, l'emploi, l'innovation"),
+        'it' => t('Adding value, employment, innovation IT'),
       ),
     ),
     'Theme2' => (object) array(
-      'name' => t('Farnet Theme2 EN'),
+      'name' => t('Diversification'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet Theme2 FR'),
-        'it' => t('Farnet Theme2 IT'),
-      ),
-    ),
-
-    /*
-    'Theme1' => (object) array(
-        'name' => t('Farnet Theme1'),
-        'language' => 'und',
-        'translation' => array(
-          'en' => t('Farnet Theme1 EN'),
-          'fr' => t('Farnet Theme1 FR'),
-        ),
-    ),
-    'Theme2' => (object) array(
-        'name' => t('Farnet Theme2'),
-        'language' => 'und',
-        'translation' => array(
-          'en' => t('Farnet Theme2 EN'),
-          'fr' => t('Farnet Theme2 FR'),
+        'fr' => t('Diversification'),
+        'it' => t('Diversification IT'),
       ),
     ),
     'Theme3' => (object) array(
-        'name' => t('Farnet Theme3'),
-        'language' => 'und',
-        'translation' => array(
-        'en' => t('Farnet Theme3 EN'),
-        'fr' => t('Farnet Theme3 FR'),
+      'name' => t('Environment'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Environnement'),
+        'it' => t('Environment IT'),
       ),
     ),
     'Theme4' => (object) array(
-        'name' => t('Farnet Theme4'),
-        'language' => 'und',
-        'translation' => array (
-          'en' => t('Farnet Theme4 EN'),
-          'fr' => t('Farnet Theme4 FR'),
-      ),
-    ),Ò
-    */
-
-    /* With Solution 2
-    'Theme5' => (object) array(
-      'name' => t('Farnet Theme5'),
-      'language' => 'und',
+      'name' => t('Social well-being, cultural heritage'),
+      'language' => 'en',
       'translation' => array(
-        (object) array(
-          'name' =>  t('Farnet Theme1 EN'),
-          'language' => 'en',
-        ),
-        (object) array(
-          'name' =>  t('Farnet Theme1 FR'),
-          'language' => 'fr',
-        ),
+        'fr' => t('Le bien-être social, le patrimoine culturelR'),
+        'it' => t('Social well-being, cultural heritage IT'),
       ),
     ),
-    */
+    'Theme5' => (object) array(
+      'name' => t('Governance and management'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Gouvernance et gestion'),
+        'it' => t('Governance and management IT'),
+      ),
+    ),
   );
-
   return $themes_array;
 }

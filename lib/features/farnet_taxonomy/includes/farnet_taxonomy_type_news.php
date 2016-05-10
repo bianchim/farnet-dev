@@ -9,10 +9,22 @@
  */
 function farnet_taxonomy_type_news() {
   $type_news_array = array(
-    'News1' => t('Farnet Type News1'),
-    'News2' => t('Farnet Type News2'),
-    'News3' => t('Farnet Type News3'),
-    'News4' => t('Farnet Type News4'),
+    'News1' => (object) array(
+      'name' => t('FARNET news'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('FARNET news'),
+        'it' => t('FARNET news IT'),
+      ),
+    ),
+    'News2' => (object) array(
+      'name' => t('Other news'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Autres news'),
+        'it' => t('Other news IT'),
+      ),
+    ),
   );
   return $type_news_array;
 }

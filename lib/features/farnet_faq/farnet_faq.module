@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet FAQ feature.
+ */
+
+include_once 'farnet_faq.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function farnet_faq_field_group_info_alter($groups) {
+  if (!empty($groups['group_ne_faq_content|node|nexteuropa_faq|form'])) {
+    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_id';
+    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_short_title';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_faq_form_nexteuropa_faq_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_faq');
+  $form['#attached']['js'] = drupal_add_js(
+    $path . '/farnet_faq.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    )
+  );
+}

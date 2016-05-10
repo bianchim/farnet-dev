@@ -139,13 +139,13 @@ function farnet_core_strongarm() {
   $strongarm->name = 'site_map_show_vocabularies';
   $strongarm->value = array(
     'farnet_theme' => 'farnet_theme',
-    'farnet_faq_category' => 'farnet_faq_category',
-    'farnet_publication_channel' => 'farnet_publication_channel',
-    'tags' => 'tags',
+    'farnet_faq_category' => 0,
     'farnet_type_news' => 0,
     'farnet_type_event' => 0,
     'farnet_type_publication' => 0,
+    'farnet_publication_channel' => 0,
     'classification' => 0,
+    'tags' => 0,
   );
   $export['site_map_show_vocabularies'] = $strongarm;
 
@@ -167,7 +167,7 @@ function farnet_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_regenerate_needed';
-  $strongarm->value = FALSE;
+  $strongarm->value = TRUE;
   $export['xmlsitemap_regenerate_needed'] = $strongarm;
 
   return $export;
