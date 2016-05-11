@@ -480,6 +480,56 @@ function farnet_project_summary_sheet_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project_summary_sheet-field_gallery'.
+  $field_instances['node-project_summary_sheet-field_gallery'] = array(
+    'bundle' => 'project_summary_sheet',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'media_gallery_page',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_gallery',
+    'label' => 'Gallery',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-project_summary_sheet-field_id'.
   $field_instances['node-project_summary_sheet-field_id'] = array(
     'bundle' => 'project_summary_sheet',
@@ -586,7 +636,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 12,
+      'weight' => 32,
     ),
   );
 
@@ -1872,6 +1922,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
   t('Dates (Start/End)');
   t('Figure');
   t('Flag');
+  t('Gallery');
   t('ID');
   t('Label');
   t('Lessons');

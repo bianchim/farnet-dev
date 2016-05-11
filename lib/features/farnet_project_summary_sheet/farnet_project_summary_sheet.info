@@ -65,6 +65,7 @@ features[field_instance][] = node-project_summary_sheet-field_abstract
 features[field_instance][] = node-project_summary_sheet-field_b1_other_contribution
 features[field_instance][] = node-project_summary_sheet-field_dates_start_end
 features[field_instance][] = node-project_summary_sheet-field_flag
+features[field_instance][] = node-project_summary_sheet-field_gallery
 features[field_instance][] = node-project_summary_sheet-field_id
 features[field_instance][] = node-project_summary_sheet-field_media_upload
 features[field_instance][] = node-project_summary_sheet-field_organisation
