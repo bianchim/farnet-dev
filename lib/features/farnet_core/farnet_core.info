@@ -11,6 +11,7 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = link
 dependencies[] = locale
+dependencies[] = media_oembed
 dependencies[] = menu
 dependencies[] = number
 dependencies[] = sitemap
