@@ -875,6 +875,7 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
+      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,

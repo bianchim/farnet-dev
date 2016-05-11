@@ -24,9 +24,9 @@ function farnet_project_short_story_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'field_area',
-      1 => 'field_term_country',
-      2 => 'field_term_region',
-      3 => 'field_organisation',
+      1 => 'field_organisation',
+      2 => 'field_term_country',
+      3 => 'field_term_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -59,6 +59,7 @@ function farnet_project_short_story_field_group_info() {
       3 => 'field_picture',
       4 => 'field_website',
       5 => 'title_field',
+      6 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
