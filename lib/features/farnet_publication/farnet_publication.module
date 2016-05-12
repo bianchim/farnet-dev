@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Publication feature.
+ */
+
+include_once 'farnet_publication.features.inc';
