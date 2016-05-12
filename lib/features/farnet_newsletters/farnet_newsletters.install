@@ -1,0 +1,25 @@
+<?php
+
+/**
+* @file
+* Install, uninstall, schema and update hooks for farnet newsletters module.
+*/
+
+/**
+* Implements hook_install().
+*/
+function farnet_newsletters_install() {
+
+  // Get the field info
+  $info = field_info_field('field_related_contents');
+
+  // Get a reference to the values
+  $values = &$info['settings']['handler_settings']['target_bundles'];
+
+  // Manipulate the values in some way, e.g.
+  $values['nexteuropa_news'] = 'nexteuropa_news';
+
+  // Save the field
+  field_update_field($info);
+
+}
