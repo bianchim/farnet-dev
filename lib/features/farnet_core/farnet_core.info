@@ -12,6 +12,7 @@ dependencies[] = image
 dependencies[] = link
 dependencies[] = locale
 dependencies[] = menu
+dependencies[] = newsletters
 dependencies[] = number
 dependencies[] = sitemap
 dependencies[] = strongarm
