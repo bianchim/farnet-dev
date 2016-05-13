@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function farnet_newsletters_install() {
+
+  features_revert_module("newsletters");
+
+  // Get the field info
+  $info = field_info_field('field_related_contents');
+
+  // Get a reference to the values
+  $values = &$info['settings']['handler_settings']['target_bundles'];
+
+  // Manipulate the values in some way, e.g.
+  $values['nexteuropa_news'] = 'nexteuropa_news';
+  $values['article'] = '';
+  $values['page'] = '';
+
+  // Save the field
+  field_update_field($info);
+
+}
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_newsletters_enable() {
+  drupal_set_message(t('The FARNET Newsletters feature is now active on your site.'));
+
+  /*
+  features_revert_module("newsletters");
+  //drupal_set_message(t('farnet_newsletters_enable'));
+
+  // Get the field info
+  $info = field_info_field('field_related_contents');
+
+  // Get a reference to the values
+  $values = &$info['settings']['handler_settings']['target_bundles'];
+
+  //var_dump($values);
+
+  // Manipulate the values in some way, e.g.
+  $values['nexteuropa_news'] = 'nexteuropa_news';
+
+  // Save the field
+  field_update_field($info);
+
+  //var_dump($values);
+  */
+
+}
