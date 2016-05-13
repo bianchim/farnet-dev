@@ -122,8 +122,9 @@ function farnet_factsheet_flag_field_group_info() {
       0 => 'body',
       1 => 'field_ff_code',
       2 => 'field_ff_programming_period',
-      3 => 'title_field',
-      4 => 'field_title_official',
+      3 => 'field_title_official',
+      4 => 'title_field',
+      5 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -471,10 +472,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->data = array(
     'label' => 'Taxonomy',
     'weight' => '3',
-    'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_term_region',
-    ),
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -527,9 +525,9 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Location',
     'weight' => '5',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_term_region',
-      2 => 'field_area',
+      0 => 'field_area',
+      1 => 'field_term_country',
+      2 => 'field_term_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

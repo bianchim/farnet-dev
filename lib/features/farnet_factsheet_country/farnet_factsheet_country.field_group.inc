@@ -112,6 +112,7 @@ function farnet_factsheet_country_field_group_info() {
       0 => 'body',
       1 => 'field_abstract',
       2 => 'title_field',
+      3 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -165,9 +166,9 @@ function farnet_factsheet_country_field_group_info() {
     'label' => 'Delivery of CLLD',
     'weight' => '8',
     'children' => array(
-      0 => 'field_funding_process',
-      1 => 'field_key_actors_roles',
-      2 => 'field_diagram_delivery',
+      0 => 'field_diagram_delivery',
+      1 => 'field_funding_process',
+      2 => 'field_key_actors_roles',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -195,8 +196,8 @@ function farnet_factsheet_country_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_tags',
-      1 => 'og_group_ref',
-      2 => 'group_content_access',
+      1 => 'group_content_access',
+      2 => 'og_group_ref',
       3 => 'scheduler_settings',
       4 => 'language',
     ),

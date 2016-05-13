@@ -60,6 +60,7 @@ function farnet_summary_sheet_method_field_group_info() {
       3 => 'field_ssm_lessons',
       4 => 'field_ssm_main_achievements',
       5 => 'field_ssm_transferability',
+      6 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

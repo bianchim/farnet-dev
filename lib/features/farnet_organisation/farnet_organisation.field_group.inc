@@ -62,6 +62,7 @@ function farnet_organisation_field_group_info() {
       9 => 'field_website',
       10 => 'field_zip_code',
       11 => 'title_field',
+      12 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -116,14 +117,7 @@ function farnet_organisation_field_group_info() {
     'label' => 'Social Media',
     'weight' => '2',
     'children' => array(
-      0 => 'field_url_facebook',
-      1 => 'field_url_google',
-      2 => 'field_url_linkedin',
-      3 => 'field_url_pinterest',
-      4 => 'field_url_twitter',
-      5 => 'field_url_vimeo',
-      6 => 'field_url_youtube',
-      7 => 'field_social_media',
+      0 => 'field_social_media',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

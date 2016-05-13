@@ -10,51 +10,6 @@
 function farnet_summary_sheet_method_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-summary_sheet_method-body'.
-  $field_instances['node-summary_sheet_method-body'] = array(
-    'bundle' => 'summary_sheet_method',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'node-summary_sheet_method-field_abstract'.
   $field_instances['node-summary_sheet_method-field_abstract'] = array(
     'bundle' => 'summary_sheet_method',
@@ -107,6 +62,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           ),
         ),
       ),
+      'display_summary' => 0,
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -340,6 +296,75 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-summary_sheet_method-field_ne_body'.
+  $field_instances['node-summary_sheet_method-field_ne_body'] = array(
+    'bundle' => 'summary_sheet_method',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ne_body',
+    'label' => 'Context, needs, opportunity',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 0,
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-summary_sheet_method-field_objective'.
   $field_instances['node-summary_sheet_method-field_objective'] = array(
     'bundle' => 'summary_sheet_method',
@@ -403,7 +428,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
