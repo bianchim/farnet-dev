@@ -10,7 +10,6 @@
  */
 /*
 function farnet_core_install() {
-
 }
 */
 
@@ -23,6 +22,11 @@ function farnet_core_enable() {
   // Add taxonomy facet blocks in the search context.
   multisite_drupal_toolbox_add_block_context('search', 'facetapi-5SQGKsqMcg3G4C4wN20v9jPpJat86xio', 'facetapi', '5SQGKsqMcg3G4C4wN20v9jPpJat86xio', 'sidebar_left', -12);
   multisite_drupal_toolbox_add_block_context('search', 'facetapi-18WjNPGwX6Wd9GW1a0vknPHY31uUCXVn', 'facetapi', '18WjNPGwX6Wd9GW1a0vknPHY31uUCXVn', 'sidebar_left', -13);
+
+  // Add text/oembed mimetype for document file type.
+  $ft = file_type_load("document");
+  $ft->mimetypes[] = "text/oembed";
+  file_type_save($ft);
 }
 
 /**
