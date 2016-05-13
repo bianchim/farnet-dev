@@ -10,6 +10,40 @@
 function farnet_core_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu_about:<front>.
+  $menu_links['main-menu_about:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'About',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_about:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -49,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_adding-value-employment-innovation:<front>.
   $menu_links['main-menu_adding-value-employment-innovation:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -43,7 +77,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-themes:<front>',
+    'parent_identifier' => 'main-menu_themes:<front>',
   );
   // Exported menu link: main-menu_areas:<front>.
   $menu_links['main-menu_areas:<front>'] = array(
@@ -80,41 +114,6 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_implementing-axis-4:<front>',
   );
-  // Exported menu link: main-menu_audio--interviews:<front>.
-  $menu_links['main-menu_audio--interviews:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Audio / interviews',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_audio--interviews:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -48,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_galleries:<front>',
-  );
   // Exported menu link: main-menu_brochures:<front>.
   $menu_links['main-menu_brochures:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -144,11 +143,11 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -48,
+    'weight' => -49,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
+    'parent_identifier' => 'main-menu_library:<front>',
   );
   // Exported menu link: main-menu_calendar:<front>.
   $menu_links['main-menu_calendar:<front>'] = array(
@@ -218,7 +217,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
+    'parent_identifier' => 'main-menu_library:<front>',
   );
   // Exported menu link: main-menu_clld-at-a-glance:<front>.
   $menu_links['main-menu_clld-at-a-glance:<front>'] = array(
@@ -228,6 +227,7 @@ function farnet_core_menu_default_menu_links() {
     'link_title' => 'CLLD at a glance',
     'options' => array(
       'alter' => TRUE,
+      'identifier' => 'main-menu_clld-at-a-glance:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -242,7 +242,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'identifier' => 'main-menu_clld-at-a-glance:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -253,14 +252,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_about:<front>',
   );
-  // Exported menu link: main-menu_clld-example:<front>.
-  $menu_links['main-menu_clld-example:<front>'] = array(
+  // Exported menu link: main-menu_clld-examples:<front>.
+  $menu_links['main-menu_clld-examples:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'CLLD example',
+    'link_title' => 'CLLD examples',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_clld-examples:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -275,8 +277,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_clld-example:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -287,42 +287,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
-  );
-  // Exported menu link: main-menu_clld-examples:<front>.
-  $menu_links['main-menu_clld-examples:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'CLLD examples',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_clld-examples:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -48,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_farnet-on-the-ground:<front>',
+    'parent_identifier' => 'main-menu_library:<front>',
   );
   // Exported menu link: main-menu_clld-overview:<front>.
   $menu_links['main-menu_clld-overview:<front>'] = array(
@@ -359,74 +324,6 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_faqs:<front>',
   );
-  // Exported menu link: main-menu_clld-themes:<front>.
-  $menu_links['main-menu_clld-themes:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'CLLD Themes',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_clld-themes:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -44,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: main-menu_clld-tools:<front>.
-  $menu_links['main-menu_clld-tools:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'CLLD Tools',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_clld-tools:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -43,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
   // Exported menu link: main-menu_community-led-local-development:<front>.
   $menu_links['main-menu_community-led-local-development:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -460,7 +357,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-tools:<front>',
+    'parent_identifier' => 'main-menu_tools:<front>',
   );
   // Exported menu link: main-menu_conferences:<front>.
   $menu_links['main-menu_conferences:<front>'] = array(
@@ -504,6 +401,8 @@ function farnet_core_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Contact us',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_contact-us:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -518,8 +417,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_contact-us:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -530,6 +427,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_about:<front>',
   );
   // Exported menu link: main-menu_cooperation-calls:<front>.
   $menu_links['main-menu_cooperation-calls:<front>'] = array(
@@ -669,7 +567,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-tools:<front>',
+    'parent_identifier' => 'main-menu_tools:<front>',
   );
   // Exported menu link: main-menu_country-factsheets:<front>.
   $menu_links['main-menu_country-factsheets:<front>'] = array(
@@ -704,7 +602,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_farnet-on-the-ground:<front>',
+    'parent_identifier' => 'main-menu_on-the-ground:<front>',
   );
   // Exported menu link: main-menu_dedicated-partner-search:<front>.
   $menu_links['main-menu_dedicated-partner-search:<front>'] = array(
@@ -809,42 +707,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-themes:<front>',
-  );
-  // Exported menu link: main-menu_electronic-flash-reports:<front>.
-  $menu_links['main-menu_electronic-flash-reports:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Electronic Flash reports',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_electronic-flash-reports:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -49,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
+    'parent_identifier' => 'main-menu_themes:<front>',
   );
   // Exported menu link: main-menu_eligibility:<front>.
   $menu_links['main-menu_eligibility:<front>'] = array(
@@ -949,7 +812,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-themes:<front>',
+    'parent_identifier' => 'main-menu_themes:<front>',
   );
   // Exported menu link: main-menu_events:<front>.
   $menu_links['main-menu_events:<front>'] = array(
@@ -986,41 +849,6 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news--events:<front>',
   );
-  // Exported menu link: main-menu_facebook:<front>.
-  $menu_links['main-menu_facebook:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Facebook',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_facebook:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -49,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_social-media-posts:<front>',
-  );
   // Exported menu link: main-menu_faqs:<front>.
   $menu_links['main-menu_faqs:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -1054,7 +882,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-tools:<front>',
+    'parent_identifier' => 'main-menu_tools:<front>',
   );
   // Exported menu link: main-menu_farnet-at-a-glance:<front>.
   $menu_links['main-menu_farnet-at-a-glance:<front>'] = array(
@@ -1062,6 +890,41 @@ function farnet_core_menu_default_menu_links() {
     'link_path' => '<front>',
     'router_path' => '',
     'link_title' => 'FARNET at a glance',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_farnet-at-a-glance:<front>',
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -49,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_about:<front>',
+  );
+  // Exported menu link: main-menu_farnet-data:<front>.
+  $menu_links['main-menu_farnet-data:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'FARNET Data',
     'options' => array(
       'attributes' => array(
         'data-display-title' => 1,
@@ -1078,17 +941,18 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_farnet-at-a-glance:<front>',
+      'identifier' => 'main-menu_farnet-data:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -49,
+    'weight' => -44,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_about:<front>',
   );
   // Exported menu link: main-menu_farnet-events:<front>.
   $menu_links['main-menu_farnet-events:<front>'] = array(
@@ -1159,75 +1023,6 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news:<front>',
-  );
-  // Exported menu link: main-menu_farnet-on-eu-bookshop:<front>.
-  $menu_links['main-menu_farnet-on-eu-bookshop:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'FARNET on EU Bookshop',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_farnet-on-eu-bookshop:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -43,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
-  );
-  // Exported menu link: main-menu_farnet-on-the-ground:<front>.
-  $menu_links['main-menu_farnet-on-the-ground:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'FARNET on the ground',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_farnet-on-the-ground:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -46,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
   );
   // Exported menu link: main-menu_farnet-support-unit:<front>.
   $menu_links['main-menu_farnet-support-unit:<front>'] = array(
@@ -1332,7 +1127,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_farnet-on-the-ground:<front>',
+    'parent_identifier' => 'main-menu_on-the-ground:<front>',
   );
   // Exported menu link: main-menu_flags:<front>.
   $menu_links['main-menu_flags:<front>'] = array(
@@ -1369,41 +1164,6 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_whos-who:<front>',
   );
-  // Exported menu link: main-menu_galleries:<front>.
-  $menu_links['main-menu_galleries:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Galleries',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_galleries:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -44,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
-  );
   // Exported menu link: main-menu_glossary:<front>.
   $menu_links['main-menu_glossary:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -1411,6 +1171,8 @@ function farnet_core_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Glossary',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_glossary:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1425,8 +1187,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_glossary:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1437,7 +1197,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
+    'parent_identifier' => 'main-menu_about:<front>',
   );
   // Exported menu link: main-menu_good-practices:<front>.
   $menu_links['main-menu_good-practices:<front>'] = array(
@@ -1507,7 +1267,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-themes:<front>',
+    'parent_identifier' => 'main-menu_themes:<front>',
   );
   // Exported menu link: main-menu_guidance:<front>.
   $menu_links['main-menu_guidance:<front>'] = array(
@@ -1543,29 +1303,6 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_cooperation:<front>',
-  );
-  // Exported menu link: main-menu_home:<front>.
-  $menu_links['main-menu_home:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Home',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 0,
-        'data-image' => 'home',
-      ),
-      'identifier' => 'main-menu_home:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 0,
-    'language' => 'und',
-    'menu_links_customized' => 0,
   );
   // Exported menu link: main-menu_implementing-axis-4:<front>.
   $menu_links['main-menu_implementing-axis-4:<front>'] = array(
@@ -1635,15 +1372,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-tools:<front>',
+    'parent_identifier' => 'main-menu_tools:<front>',
   );
-  // Exported menu link: main-menu_linked-in:<front>.
-  $menu_links['main-menu_linked-in:<front>'] = array(
+  // Exported menu link: main-menu_library:<front>.
+  $menu_links['main-menu_library:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'Linked In',
+    'link_title' => 'Library',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_library:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1658,54 +1397,16 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_linked-in:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 1,
-    'weight' => -48,
+    'weight' => -45,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_social-media-posts:<front>',
-  );
-  // Exported menu link: main-menu_links:<front>.
-  $menu_links['main-menu_links:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Links',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_links:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -46,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_whos-who:<front>',
   );
   // Exported menu link: main-menu_magazine:<front>.
   $menu_links['main-menu_magazine:<front>'] = array(
@@ -1740,7 +1441,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
+    'parent_identifier' => 'main-menu_library:<front>',
   );
   // Exported menu link: main-menu_managing-authorities--national-networks:<front>.
   $menu_links['main-menu_managing-authorities--national-networks:<front>'] = array(
@@ -1804,90 +1505,23 @@ function farnet_core_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -45,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_farnet-on-the-ground:<front>',
-  );
-  // Exported menu link: main-menu_media-library:<front>.
-  $menu_links['main-menu_media-library:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Media library',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_media-library:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -45,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: main-menu_ms-certified-projects:<front>.
-  $menu_links['main-menu_ms-certified-projects:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'MS certified projects',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_ms-certified-projects:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_farnet-on-the-ground:<front>',
+    'parent_identifier' => 'main-menu_on-the-ground:<front>',
   );
-  // Exported menu link: main-menu_national--regional--local-events:<front>.
-  $menu_links['main-menu_national--regional--local-events:<front>'] = array(
+  // Exported menu link: main-menu_national--regional--local-events-capacity-building-events:<front>.
+  $menu_links['main-menu_national--regional--local-events-capacity-building-events:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'National / regional / local events',
+    'link_title' => 'National / regional / local events (Capacity building events)',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_national--regional--local-events-capacity-building-events:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1902,8 +1536,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_national--regional--local-events:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2020,6 +1652,40 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news--events:<front>',
   );
+  // Exported menu link: main-menu_on-the-ground:<front>.
+  $menu_links['main-menu_on-the-ground:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'On the ground',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_on-the-ground:<front>',
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -46,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_other-news:<front>.
   $menu_links['main-menu_other-news:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -2123,7 +1789,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-themes:<front>',
+    'parent_identifier' => 'main-menu_themes:<front>',
   );
   // Exported menu link: main-menu_partnerships:<front>.
   $menu_links['main-menu_partnerships:<front>'] = array(
@@ -2160,14 +1826,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_implementing-axis-4:<front>',
   );
-  // Exported menu link: main-menu_pictures--farnet-visuals:<front>.
-  $menu_links['main-menu_pictures--farnet-visuals:<front>'] = array(
+  // Exported menu link: main-menu_photos:<front>.
+  $menu_links['main-menu_photos:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'Pictures & FARNET visuals',
+    'link_title' => 'Photos',
     'options' => array(
       'alter' => TRUE,
+      'identifier' => 'main-menu_photos:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2182,26 +1849,27 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'identifier' => 'main-menu_pictures--farnet-visuals:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -50,
+    'weight' => -44,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_galleries:<front>',
+    'parent_identifier' => 'main-menu_library:<front>',
   );
-  // Exported menu link: main-menu_pinterest:<front>.
-  $menu_links['main-menu_pinterest:<front>'] = array(
+  // Exported menu link: main-menu_presentations:<front>.
+  $menu_links['main-menu_presentations:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'Pinterest',
+    'link_title' => 'Presentations',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_presentations:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2216,54 +1884,17 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_pinterest:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -46,
+    'weight' => -42,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_social-media-posts:<front>',
-  );
-  // Exported menu link: main-menu_presentationsslideshare:<front>.
-  $menu_links['main-menu_presentationsslideshare:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Presentations/slideshare',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_presentationsslideshare:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -49,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_galleries:<front>',
+    'parent_identifier' => 'main-menu_library:<front>',
   );
   // Exported menu link: main-menu_project-ideas:<front>.
   $menu_links['main-menu_project-ideas:<front>'] = array(
@@ -2425,41 +2056,6 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_faqs:<front>',
   );
-  // Exported menu link: main-menu_slideshare:<front>.
-  $menu_links['main-menu_slideshare:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'SlideShare',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_slideshare:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -47,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_social-media-posts:<front>',
-  );
   // Exported menu link: main-menu_social-media-groups:<front>.
   $menu_links['main-menu_social-media-groups:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -2495,13 +2091,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_cooperation:<front>',
   );
-  // Exported menu link: main-menu_social-media-posts:<front>.
-  $menu_links['main-menu_social-media-posts:<front>'] = array(
+  // Exported menu link: main-menu_social-media:<front>.
+  $menu_links['main-menu_social-media:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'Social media posts',
+    'link_title' => 'Social media',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_social-media:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2516,19 +2114,17 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_social-media-posts:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
-    'has_children' => 1,
+    'has_children' => 0,
     'expanded' => 1,
     'weight' => 0,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news:<front>',
+    'parent_identifier' => 'main-menu_news--events:<front>',
   );
   // Exported menu link: main-menu_social-well-being-cultural-heritage:<front>.
   $menu_links['main-menu_social-well-being-cultural-heritage:<front>'] = array(
@@ -2563,7 +2159,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_clld-themes:<front>',
+    'parent_identifier' => 'main-menu_themes:<front>',
   );
   // Exported menu link: main-menu_stakeholder-events:<front>.
   $menu_links['main-menu_stakeholder-events:<front>'] = array(
@@ -2642,6 +2238,8 @@ function farnet_core_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Subscribe',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_subscribe:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2656,11 +2254,9 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_subscribe:<front>',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
@@ -2668,15 +2264,16 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_media-library:<front>',
   );
-  // Exported menu link: main-menu_the-european-atlas-of-the-seas:<front>.
-  $menu_links['main-menu_the-european-atlas-of-the-seas:<front>'] = array(
+  // Exported menu link: main-menu_themes:<front>.
+  $menu_links['main-menu_themes:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'The European Atlas of the Seas',
+    'link_title' => 'Themes',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_themes:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2691,19 +2288,16 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_the-european-atlas-of-the-seas:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 1,
-    'weight' => -50,
+    'weight' => -44,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_maps:<front>',
   );
   // Exported menu link: main-menu_tools-for-flags:<front>.
   $menu_links['main-menu_tools-for-flags:<front>'] = array(
@@ -2775,6 +2369,40 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_community-led-local-development:<front>',
   );
+  // Exported menu link: main-menu_tools:<front>.
+  $menu_links['main-menu_tools:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Tools',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_tools:<front>',
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -43,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_transnational-cooperation-projects:<front>.
   $menu_links['main-menu_transnational-cooperation-projects:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -2808,7 +2436,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_farnet-on-the-ground:<front>',
+    'parent_identifier' => 'main-menu_on-the-ground:<front>',
   );
   // Exported menu link: main-menu_transnational-seminars:<front>.
   $menu_links['main-menu_transnational-seminars:<front>'] = array(
@@ -2845,13 +2473,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_events:<front>',
   );
-  // Exported menu link: main-menu_twitter:<front>.
-  $menu_links['main-menu_twitter:<front>'] = array(
+  // Exported menu link: main-menu_videos:<front>.
+  $menu_links['main-menu_videos:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'Twitter',
+    'link_title' => 'Videos',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_videos:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2866,54 +2496,17 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_twitter:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -50,
+    'weight' => -43,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_social-media-posts:<front>',
-  );
-  // Exported menu link: main-menu_videos--youtube-channels:<front>.
-  $menu_links['main-menu_videos--youtube-channels:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Videos + YouTube channels',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_videos--youtube-channels:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -47,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_galleries:<front>',
+    'parent_identifier' => 'main-menu_library:<front>',
   );
   // Exported menu link: main-menu_whos-who:<front>.
   $menu_links['main-menu_whos-who:<front>'] = array(
@@ -2922,6 +2515,8 @@ function farnet_core_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Who\'s who',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_whos-who:<front>',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2936,66 +2531,27 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_whos-who:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
     'has_children' => 1,
     'expanded' => 1,
-    'weight' => -42,
+    'weight' => -46,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-  );
-  // Exported menu link: main-menu_youtube:<front>.
-  $menu_links['main-menu_youtube:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'YouTube',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_youtube:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -45,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_social-media-posts:<front>',
+    'parent_identifier' => 'main-menu_about:<front>',
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('About');
   t('Adding value, employment, innovation');
   t('Areas');
-  t('Audio / interviews');
   t('Brochures');
-  t('CLLD Themes');
-  t('CLLD Tools');
   t('CLLD articles');
   t('CLLD at a glance');
-  t('CLLD example');
   t('CLLD examples');
   t('CLLD overview');
   t('Calendar');
@@ -3011,68 +2567,58 @@ function farnet_core_menu_default_menu_links() {
   t('Dedicated partner search');
   t('Diversification');
   t('EMFF Cooperation by MS');
-  t('Electronic Flash reports');
   t('Eligibility');
   t('Environment');
   t('Events');
   t('FAQs');
+  t('FARNET Data');
   t('FARNET Support Unit');
   t('FARNET at a glance');
   t('FARNET events');
   t('FARNET news');
-  t('FARNET on EU Bookshop');
-  t('FARNET on the ground');
   t('FLAG factsheets');
   t('FLAGs');
-  t('Facebook');
   t('Finance and administration');
-  t('Galleries');
   t('Glossary');
   t('Good practices');
   t('Governance and management');
   t('Guidance');
-  t('Home');
   t('Implementing Axis 4');
   t('Lessons from FARNET 1 (2007-2013)');
-  t('Linked In');
-  t('Links');
-  t('MS certified projects');
+  t('Library');
   t('Magazine');
   t('Managing authorities & National networks');
   t('Maps');
-  t('Media library');
-  t('National / regional / local events');
+  t('National / regional / local events (Capacity building events)');
   t('National authorities');
   t('News');
   t('News & Events');
+  t('On the ground');
   t('Other news');
   t('Other tools');
   t('Other…');
   t('Partnerships');
-  t('Pictures & FARNET visuals');
-  t('Pinterest');
-  t('Presentations/slideshare');
+  t('Photos');
+  t('Presentations');
   t('Project ideas');
   t('Q&A on CLLD');
   t('Sea basin cooperation');
   t('Search');
   t('Setting up FLAGs');
-  t('SlideShare');
+  t('Social media');
   t('Social media groups');
-  t('Social media posts');
   t('Social well-being, cultural heritage');
   t('Stakeholder events');
   t('Strategies');
   t('Subscribe');
-  t('The European Atlas of the Seas');
+  t('Themes');
+  t('Tools');
   t('Tools for FLAGs');
   t('Tools for Managing Authorities');
   t('Transnational cooperation projects');
   t('Transnational seminars');
-  t('Twitter');
-  t('Videos + YouTube channels');
+  t('Videos');
   t('Who\'s who');
-  t('YouTube');
 
   return $menu_links;
 }
