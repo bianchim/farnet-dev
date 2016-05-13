@@ -12,10 +12,10 @@ function farnet_newsletters_install() {
 
   features_revert_module("newsletters");
 
-  // Get the field info
+  // Get the field info.
   $info = field_info_field('field_related_contents');
 
-  // Get a reference to the values
+  // Get a reference to the values.
   $values = &$info['settings']['handler_settings']['target_bundles'];
 
   // Manipulate the values in some way, e.g.
@@ -23,9 +23,8 @@ function farnet_newsletters_install() {
   $values['article'] = '';
   $values['page'] = '';
 
-  // Save the field
+  // Save the field.
   field_update_field($info);
-
 }
 
 /**
@@ -38,7 +37,7 @@ function farnet_newsletters_enable() {
   features_revert_module("newsletters");
   //drupal_set_message(t('farnet_newsletters_enable'));
 
-  // Get the field info
+  // Get the field info.
   $info = field_info_field('field_related_contents');
 
   // Get a reference to the values
@@ -49,10 +48,9 @@ function farnet_newsletters_enable() {
   // Manipulate the values in some way, e.g.
   $values['nexteuropa_news'] = 'nexteuropa_news';
 
-  // Save the field
+  // Save the field.
   field_update_field($info);
 
   //var_dump($values);
-  */
-
+   */
 }
