@@ -319,7 +319,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ne_body',
-    'label' => 'Body',
+    'label' => 'Context, needs, opportunity',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
