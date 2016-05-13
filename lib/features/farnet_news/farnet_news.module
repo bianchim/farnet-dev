@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet News feature.
+ */
+
+include_once 'farnet_news.features.inc';
