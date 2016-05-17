@@ -52,7 +52,7 @@ function farnet_newsletters_enable() {
 
   // Save the field.
   field_update_field($info);
-
+  var_dump($info);
   var_dump($values);
 
 }
