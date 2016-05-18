@@ -127,13 +127,13 @@ function farnet_factsheet_country_strongarm() {
           'weight' => '6',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'scheduler_settings' => array(
           'weight' => '18',
         ),
         'xmlsitemap' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'language' => array(
           'weight' => '20',
