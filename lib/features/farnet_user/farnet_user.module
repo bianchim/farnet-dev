@@ -7,14 +7,14 @@
 include_once 'farnet_user.features.inc';
 
 /**
- * Implementation of hook_form_alter()
+ * Implements hook_form_FORM_ID_alter()
  */
 function farnet_user_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
   $form['#validate'][] = 'farnet_user_profile_validate';
 }
 
 /**
- * Perform your own validation
+ * Perform own validation.
  */
 function farnet_user_profile_validate($form, &$form_state) {
   $magazines = $form_state['values']['field_farnet_magazine_subscribe']['und'];
@@ -23,12 +23,12 @@ function farnet_user_profile_validate($form, &$form_state) {
   foreach ($magazines as $key => $value) {
     $selected_language = $value['field_magazine_language']['und'][0]['tid'];
     if (in_array($selected_language, $languages)) {
-        form_set_error('field_farnet_magazine_subscribe', t('A language must be selected once.'));
+      form_set_error('field_farnet_magazine_subscribe', t('A language must be selected once.'));
     }
     else {
-        if (!is_null($selected_language)) {
-            $languages[] = $selected_language;
-        }
+      if (!is_null($selected_language)) {
+        $languages[] = $selected_language;
+      }
     }
     $qte += $value['field_magazine_quantity']['und'][0]['value'];
   }
