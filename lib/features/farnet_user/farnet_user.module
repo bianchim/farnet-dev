@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet User feature.
+ */
+
+include_once 'farnet_user.features.inc';
