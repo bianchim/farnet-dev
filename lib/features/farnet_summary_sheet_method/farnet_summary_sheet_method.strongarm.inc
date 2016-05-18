@@ -102,13 +102,13 @@ function farnet_summary_sheet_method_strongarm() {
           'weight' => '6',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '13',
         ),
         'scheduler_settings' => array(
           'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '11',
+          'weight' => '14',
         ),
         'language' => array(
           'weight' => '8',
