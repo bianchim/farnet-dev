@@ -10,6 +10,83 @@
 function farnet_user_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance:
+  // 'field_collection_item-field_farnet_magazine_subscribe-field_magazine_language'.
+  $field_instances['field_collection_item-field_farnet_magazine_subscribe-field_magazine_language'] = array(
+    'bundle' => 'field_farnet_magazine_subscribe',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magazine_language',
+    'label' => 'Language',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_farnet_magazine_subscribe-field_magazine_quantity'.
+  $field_instances['field_collection_item-field_farnet_magazine_subscribe-field_magazine_quantity'] = array(
+    'bundle' => 'field_farnet_magazine_subscribe',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magazine_quantity',
+    'label' => 'Quantity',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => 5,
+      'min' => 1,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_address_1'.
   $field_instances['user-user-field_address_1'] = array(
     'bundle' => 'user',
@@ -193,6 +270,80 @@ function farnet_user_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_farnet_magazine_paper'.
+  $field_instances['user-user-field_farnet_magazine_paper'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_farnet_magazine_paper',
+    'label' => 'FARNET Magazine (paper version)',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_farnet_magazine_subscribe'.
+  $field_instances['user-user-field_farnet_magazine_subscribe'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 26,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_farnet_magazine_subscribe',
+    'label' => 'FARNET Magazine subscriptions',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_gender'.
   $field_instances['user-user-field_gender'] = array(
     'bundle' => 'user',
@@ -287,6 +438,42 @@ function farnet_user_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_keep_me_informed_on_farnet'.
+  $field_instances['user-user-field_keep_me_informed_on_farnet'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 24,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_keep_me_informed_on_farnet',
+    'label' => 'Keep me informed on FARNET activities',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 10,
     ),
   );
 
@@ -421,6 +608,108 @@ function farnet_user_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_preferred_language_1'.
+  $field_instances['user-user-field_preferred_language_1'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 20,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_preferred_language_1',
+    'label' => 'Preferred language (1)',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_preferred_language_2'.
+  $field_instances['user-user-field_preferred_language_2'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 21,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_preferred_language_2',
+    'label' => 'Preferred language (2)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_preferred_language_3'.
+  $field_instances['user-user-field_preferred_language_3'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 22,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_preferred_language_3',
+    'label' => 'Preferred language (3)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_social_media'.
   $field_instances['user-user-field_social_media'] = array(
     'bundle' => 'user',
@@ -470,6 +759,42 @@ function farnet_user_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_subscribe_newsletter'.
+  $field_instances['user-user-field_subscribe_newsletter'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_subscribe_newsletter',
+    'label' => 'Newsletter',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
     ),
   );
 
@@ -773,12 +1098,21 @@ function farnet_user_field_default_field_instances() {
   t('Address 2');
   t('City');
   t('Country');
+  t('FARNET Magazine (paper version)');
+  t('FARNET Magazine subscriptions');
   t('Gender');
   t('Group membership');
+  t('Keep me informed on FARNET activities');
   t('Keep my email private');
+  t('Language');
+  t('Newsletter');
   t('Phone');
   t('Phone (mobile)');
   t('Preferred email');
+  t('Preferred language (1)');
+  t('Preferred language (2)');
+  t('Preferred language (3)');
+  t('Quantity');
   t('Social media');
   t('Title / Function');
   t('Translation skills');
