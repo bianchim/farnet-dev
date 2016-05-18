@@ -173,6 +173,42 @@ function farnet_factsheet_country_field_default_field_bases() {
     'type' => 'number_float',
   );
 
+  // Exported field_base: 'field_flag_areas'.
+  $field_bases['field_flag_areas'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_flag_areas',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'factsheet_flag' => 'factsheet_flag',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_funding_process'.
   $field_bases['field_funding_process'] = array(
     'active' => 1,
@@ -254,6 +290,42 @@ function farnet_factsheet_country_field_default_field_bases() {
     'type' => 'number_float',
   );
 
+  // Exported field_base: 'field_organisations'.
+  $field_bases['field_organisations'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_organisations',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'organisation' => 'organisation',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_proportion_emff'.
   $field_bases['field_proportion_emff'] = array(
     'active' => 1,
@@ -268,7 +340,7 @@ function farnet_factsheet_country_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_total_budget'.

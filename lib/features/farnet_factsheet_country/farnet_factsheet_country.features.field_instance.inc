@@ -503,7 +503,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 27,
+      'weight' => 35,
     ),
   );
 
@@ -551,6 +551,56 @@ function farnet_factsheet_country_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-factsheet_country-field_flag_areas'.
+  $field_instances['node-factsheet_country-field_flag_areas'] = array(
+    'bundle' => 'factsheet_country',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flag_areas',
+    'label' => 'FLAG areas',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 7,
     ),
   );
 
@@ -617,7 +667,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 28,
+      'weight' => 36,
     ),
   );
 
@@ -684,7 +734,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 34,
     ),
   );
 
@@ -820,7 +870,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -2,
+      'weight' => -3,
     ),
   );
 
@@ -868,6 +918,54 @@ function farnet_factsheet_country_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-factsheet_country-field_organisations'.
+  $field_instances['node-factsheet_country-field_organisations'] = array(
+    'bundle' => 'factsheet_country',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_organisations',
+    'label' => 'Managing Authority',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => -2,
     ),
   );
 
@@ -1395,9 +1493,11 @@ function farnet_factsheet_country_field_default_field_instances() {
   t('Country');
   t('Diagram of the delivery system for CLLD');
   t('EMFF budget for CLLD');
+  t('FLAG areas');
   t('Group content visibility');
   t('Groups audience');
   t('Key actors and roles');
+  t('Managing Authority');
   t('Name');
   t('National Network');
   t('Number of FLAGs');

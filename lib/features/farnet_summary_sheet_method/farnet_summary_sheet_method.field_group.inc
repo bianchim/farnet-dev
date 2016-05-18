@@ -52,15 +52,14 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '4',
+    'weight' => '8',
     'children' => array(
-      0 => 'body',
+      0 => 'field_ne_body',
       1 => 'field_objective',
       2 => 'field_ssm_activities',
       3 => 'field_ssm_lessons',
       4 => 'field_ssm_main_achievements',
       5 => 'field_ssm_transferability',
-      6 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -85,7 +84,7 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '3',
+    'weight' => '7',
     'children' => array(
       0 => 'field_area',
       1 => 'field_term_country',
@@ -114,7 +113,7 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '7',
+    'weight' => '11',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -163,6 +162,33 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_ssm_organisations|node|summary_sheet_method|form';
+  $field_group->group_name = 'group_ssm_organisations';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'summary_sheet_method';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Organisations',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_organisations',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-ssm-organisations field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_ssm_organisations|node|summary_sheet_method|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_ssm_publication|node|summary_sheet_method|form';
   $field_group->group_name = 'group_ssm_publication';
   $field_group->entity_type = 'node';
@@ -200,7 +226,7 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
-    'weight' => '5',
+    'weight' => '9',
     'children' => array(
       0 => 'field_ssm_financial_resources',
       1 => 'field_ssm_other_resources',
@@ -230,7 +256,7 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '9',
+    'weight' => '12',
     'children' => array(
       0 => 'field_term_theme',
     ),
@@ -257,7 +283,7 @@ function farnet_summary_sheet_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '6',
+    'weight' => '10',
     'children' => array(
       0 => 'field_dates_start_end',
     ),
@@ -280,6 +306,7 @@ function farnet_summary_sheet_method_field_group_info() {
   t('Location');
   t('Media');
   t('Metadata');
+  t('Organisations');
   t('Publication');
   t('Resources');
   t('Taxonomy');
