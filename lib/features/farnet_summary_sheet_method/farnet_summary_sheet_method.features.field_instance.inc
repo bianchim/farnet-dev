@@ -460,7 +460,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_organisations',
-    'label' => 'Organisations',
+    'label' => 'Organisation / FLAG',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1633,7 +1633,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   t('Main achievements');
   t('Objectives');
   t('Official Title');
-  t('Organisations');
+  t('Organisation / FLAG');
   t('Other resources');
   t('Picture');
   t('Publication Channels');
