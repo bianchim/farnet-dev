@@ -9,6 +9,7 @@
  * Implements hook_entity_info_alter().
  */
 function nexteuropa_news_entity_info_alter(&$entity_info) {
+  echo 'nexteuropa_news_entity_info_alter';
   $entity_info['node']['view modes']['newsletter'] = array(
     'label' => t('Newsletter'),
     'custom settings' => TRUE,
