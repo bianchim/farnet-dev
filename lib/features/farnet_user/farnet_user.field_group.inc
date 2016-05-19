@@ -29,6 +29,7 @@ function farnet_user_field_group_info() {
       3 => 'field_city',
       4 => 'field_telephone',
       5 => 'field_phone_mobile',
+      6 => 'field_website',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -205,8 +206,7 @@ function farnet_user_field_group_info() {
     'label' => 'Social Media',
     'weight' => '3',
     'children' => array(
-      0 => 'field_website',
-      1 => 'field_social_media',
+      0 => 'field_social_media',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -237,7 +237,6 @@ function farnet_user_field_group_info() {
       1 => 'field_keep_me_informed_on_farnet',
       2 => 'field_farnet_magazine_paper',
       3 => 'field_farnet_magazine_subscribe',
-      4 => 'field_subscribe_newsletter_1',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -762,42 +762,6 @@ function farnet_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_subscribe_newsletter'.
-  $field_instances['user-user-field_subscribe_newsletter'] = array(
-    'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 23,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_subscribe_newsletter',
-    'label' => 'Newsletter',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_telephone'.
   $field_instances['user-user-field_telephone'] = array(
     'bundle' => 'user',
@@ -941,7 +905,7 @@ function farnet_user_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 19,
+      'weight' => 15,
     ),
   );
 
@@ -1105,7 +1069,6 @@ function farnet_user_field_default_field_instances() {
   t('Keep me informed on FARNET activities');
   t('Keep my email private');
   t('Language');
-  t('Newsletter');
   t('Phone');
   t('Phone (mobile)');
   t('Preferred email');
