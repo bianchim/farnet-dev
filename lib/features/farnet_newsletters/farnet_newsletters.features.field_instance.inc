@@ -10,8 +10,8 @@
 function farnet_newsletters_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-simplenews-field_news_higlight_1'.
-  $field_instances['node-simplenews-field_news_higlight_1'] = array(
+  // Exported field_instance: 'node-simplenews-field_news_highlight_1'.
+  $field_instances['node-simplenews-field_news_highlight_1'] = array(
     'bundle' => 'simplenews',
     'default_value' => NULL,
     'default_value_function' => '',
@@ -22,12 +22,23 @@ function farnet_newsletters_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => TRUE,
-          'use_content_language' => TRUE,
-          'view_mode' => 'default',
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'newsletter',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 4,
+      ),
+      'newsletter' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'newsletter',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -37,8 +48,8 @@ function farnet_newsletters_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_news_higlight_1',
-    'label' => 'News Higlight 1',
+    'field_name' => 'field_news_highlight_1',
+    'label' => 'News highlight 1',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -60,8 +71,8 @@ function farnet_newsletters_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-simplenews-field_news_higlight_2'.
-  $field_instances['node-simplenews-field_news_higlight_2'] = array(
+  // Exported field_instance: 'node-simplenews-field_news_highlight_2'.
+  $field_instances['node-simplenews-field_news_highlight_2'] = array(
     'bundle' => 'simplenews',
     'default_value' => NULL,
     'default_value_function' => '',
@@ -72,12 +83,23 @@ function farnet_newsletters_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => TRUE,
-          'use_content_language' => TRUE,
-          'view_mode' => 'default',
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'newsletter',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 5,
+      ),
+      'newsletter' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'newsletter',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -87,8 +109,8 @@ function farnet_newsletters_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_news_higlight_2',
-    'label' => 'News Higlight 2',
+    'field_name' => 'field_news_highlight_2',
+    'label' => 'News highlight 2',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -122,12 +144,23 @@ function farnet_newsletters_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => TRUE,
-          'use_content_language' => TRUE,
-          'view_mode' => 'default',
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'newsletter',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 6,
+      ),
+      'newsletter' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'newsletter',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -172,12 +205,23 @@ function farnet_newsletters_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'newsletter_news_list',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 7,
+      ),
+      'newsletter' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -213,8 +257,8 @@ function farnet_newsletters_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Events');
-  t('News Higlight 1');
-  t('News Higlight 2');
+  t('News highlight 1');
+  t('News highlight 2');
   t('Other News');
 
   return $field_instances;

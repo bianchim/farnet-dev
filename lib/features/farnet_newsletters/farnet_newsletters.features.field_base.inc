@@ -10,13 +10,13 @@
 function farnet_newsletters_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_news_higlight_1'.
-  $field_bases['field_news_higlight_1'] = array(
+  // Exported field_base: 'field_news_highlight_1'.
+  $field_bases['field_news_highlight_1'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_news_higlight_1',
+    'field_name' => 'field_news_highlight_1',
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -46,13 +46,13 @@ function farnet_newsletters_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_news_higlight_2'.
-  $field_bases['field_news_higlight_2'] = array(
+  // Exported field_base: 'field_news_highlight_2'.
+  $field_bases['field_news_highlight_2'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_news_higlight_2',
+    'field_name' => 'field_news_highlight_2',
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

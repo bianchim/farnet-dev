@@ -25,8 +25,8 @@ function farnet_newsletters_field_group_info() {
     'children' => array(
       0 => 'field_related_events',
       1 => 'field_related_news',
-      2 => 'field_news_higlight_1',
-      3 => 'field_news_higlight_2',
+      2 => 'field_news_highlight_1',
+      3 => 'field_news_highlight_2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
