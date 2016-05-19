@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function farnet_news_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['newsletter'] = array(
+    'label' => t('Newsletter'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['node']['view modes']['newsletter_news_list'] = array(
+    'label' => t('Newsletter News List'),
+    'custom settings' => TRUE,
+  );
+}
