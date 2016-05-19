@@ -60,8 +60,9 @@ function farnet_newsletters_enable() {
 /**
  * Implements hook_entity_info_alter().
  */
-function simplenews_entity_info_alter(&$entity_info) {
-  echo 'simplenews_entity_info_alter';
+function farnet_newsletters_entity_info_alter(&$entity_info) {
+  echo 'farnet_newsletters_entity_info_alter';
+  var_dump($entity_info);
   $entity_info['node']['view modes']['newsletter'] = array(
     'label' => t('Newsletter'),
     'custom settings' => TRUE,
