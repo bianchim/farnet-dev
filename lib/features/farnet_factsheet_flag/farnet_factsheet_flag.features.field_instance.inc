@@ -554,7 +554,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 69,
+      'weight' => 70,
     ),
   );
 
@@ -621,7 +621,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 70,
+      'weight' => 71,
     ),
   );
 
@@ -755,7 +755,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 72,
+      'weight' => 73,
     ),
   );
 
@@ -961,9 +961,9 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'text',
+        'module' => 'email',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'email_default',
         'weight' => 55,
       ),
       'teaser' => array(
@@ -975,46 +975,19 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_email',
-    'label' => 'Email',
+    'label' => 'Email3',
     'required' => 1,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'email',
       'settings' => array(
         'size' => 60,
       ),
-      'type' => 'text_textfield',
+      'type' => 'email_textfield',
       'weight' => 66,
     ),
   );
@@ -1560,7 +1533,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 89,
+      'weight' => 90,
     ),
   );
 
@@ -4070,7 +4043,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 67,
+      'weight' => 68,
     ),
   );
 
@@ -4317,7 +4290,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 68,
+      'weight' => 69,
     ),
   );
 
@@ -4384,7 +4357,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 71,
+      'weight' => 72,
     ),
   );
 
@@ -4637,8 +4610,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Transnational');
   t('Twitter');
   t('URL');
-  t('Website Project');
   t('Website');
+  t('Website Project');
   t('Women employment in fisheries');
   t('Zip Code 2');
 
