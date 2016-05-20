@@ -18,7 +18,7 @@ function farnet_newsletters_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'newsletter';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '3',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -37,6 +37,11 @@ function farnet_newsletters_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'nexteuropa_news';
   $ds_fieldsetting->view_mode = 'newsletter';
   $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'node_link' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -87,18 +92,16 @@ function farnet_newsletters_ds_layout_settings_info() {
         0 => 'field_term_country',
       ),
       'right' => array(
-        1 => 'field_dates',
-        2 => 'field_contact_title',
-        3 => 'title',
-        4 => 'field_city',
+        1 => 'title',
+        2 => 'field_city',
+        3 => 'field_dates',
       ),
     ),
     'fields' => array(
       'field_term_country' => 'left',
-      'field_dates' => 'right',
-      'field_contact_title' => 'right',
       'title' => 'right',
       'field_city' => 'right',
+      'field_dates' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -128,14 +131,14 @@ function farnet_newsletters_ds_layout_settings_info() {
         1 => 'node_link',
       ),
       'right' => array(
-        2 => 'title_field',
+        2 => 'title',
         3 => 'field_abstract',
       ),
     ),
     'fields' => array(
       'field_image' => 'left',
       'node_link' => 'left',
-      'title_field' => 'right',
+      'title' => 'right',
       'field_abstract' => 'right',
     ),
     'classes' => array(),
