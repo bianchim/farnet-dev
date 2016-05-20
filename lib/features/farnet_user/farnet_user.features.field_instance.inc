@@ -560,7 +560,7 @@ function farnet_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'If your organisation is not in the select field \'Organisation\', enter the name of your organisation.',
+    'description' => 'If your organisation is not in the select field "Organisation", enter the name of your organisation.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1169,7 +1169,7 @@ function farnet_user_field_default_field_instances() {
   t('FARNET Magazine subscriptions');
   t('Gender');
   t('Group membership');
-  t('If your organisation is not in the select field \'Organisation\', enter the name of your organisation.');
+  t('If your organisation is not in the select field "Organisation", enter the name of your organisation.');
   t('Keep me informed on FARNET activities');
   t('Keep my email private');
   t('Language');
