@@ -437,7 +437,7 @@ function farnet_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 12,
     ),
   );
 
@@ -510,6 +510,109 @@ function farnet_user_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_organisation'.
+  $field_instances['user-user-field_organisation'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 27,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_organisation',
+    'label' => 'Organisation',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_organisation_other'.
+  $field_instances['user-user-field_organisation_other'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If your organisation is not in the select field "Organisation", enter the name of your organisation.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 28,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_organisation_other',
+    'label' => 'Organisation (other)',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 11,
     ),
   );
 
@@ -1066,9 +1169,12 @@ function farnet_user_field_default_field_instances() {
   t('FARNET Magazine subscriptions');
   t('Gender');
   t('Group membership');
+  t('If your organisation is not in the select field "Organisation", enter the name of your organisation.');
   t('Keep me informed on FARNET activities');
   t('Keep my email private');
   t('Language');
+  t('Organisation');
+  t('Organisation (other)');
   t('Phone');
   t('Phone (mobile)');
   t('Preferred email');
