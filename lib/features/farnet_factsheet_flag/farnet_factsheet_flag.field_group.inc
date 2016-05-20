@@ -61,11 +61,11 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Budget',
     'weight' => '14',
     'children' => array(
-      0 => 'field_ff_emff',
-      1 => 'field_ff_ms_co_financing',
-      2 => 'field_ff_multi_funding',
-      3 => 'field_ff_total_public_budget',
-      4 => 'field_collection_budget',
+      0 => 'field_collection_budget',
+      1 => 'field_ff_emff',
+      2 => 'field_ff_ms_co_financing',
+      3 => 'field_ff_multi_funding',
+      4 => 'field_ff_total_public_budget',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -94,6 +94,13 @@ function farnet_factsheet_flag_field_group_info() {
     'children' => array(
       0 => 'field_ff_flag_manager',
       1 => 'field_ff_flag_president',
+      2 => 'field_email2',
+      3 => 'field_city2',
+      4 => 'field_telephone2',
+      5 => 'field_website2',
+      6 => 'field_address_12',
+      7 => 'field_address_22',
+      8 => 'field_zip_code_2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -336,8 +343,7 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Project examples and ideas',
     'weight' => '7',
     'children' => array(
-      0 => 'field_collection_projects',
-      1 => 'field_collection_project',
+      0 => 'field_collection_project',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -450,8 +456,8 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Strategy',
     'weight' => '6',
     'children' => array(
-      0 => 'field_ff_summary',
-      1 => 'field_collection_strategy',
+      0 => 'field_collection_strategy',
+      1 => 'field_ff_summary',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
