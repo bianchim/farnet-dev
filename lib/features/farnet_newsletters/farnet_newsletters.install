@@ -53,7 +53,7 @@ function farnet_newsletters_enable() {
   field_update_field($info);
   var_dump($info);
   var_dump($values);
-  */
+   */
 
   // Enable the view mode newsletter for simplenews.
   $settings = field_bundle_settings('node', 'simplenews');

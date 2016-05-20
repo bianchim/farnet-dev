@@ -7,35 +7,9 @@
 include_once 'farnet_newsletters.features.inc';
 
 /**
- * Implements hook_entity_view_mode_alter().
- */
-/*
-function farnet_newsletters_entity_view_mode_alter(&$view_mode, $context) {
-  // For nodes, change the view mode when it is teaser.
-  if ($context['entity_type'] == 'node' && $view_mode == 'default') {
-    $view_mode = 'newsletter';
-  }
-}
-*/
-
-/**
  * Implements hook_entity_info_alter().
  */
-/*
 function farnet_newsletters_entity_info_alter(&$entity_info) {
-  echo 'farnet_newsletters_entity_info_alter';
-  var_dump($entity_info);
-  $entity_info['node']['view modes']['newsletter'] = array(
-    'label' => t('Newsletter'),
-    'custom settings' => TRUE,
-  );
-}
-*/
-
-/**
- * Implements hook_entity_info_alter().
- */
-function HOOK_entity_info_alter(&$entity_info) {
 
   $entity_info['node']['view modes'] += array(
     'newsletter' => array(
