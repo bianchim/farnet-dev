@@ -94,10 +94,10 @@ function farnet_factsheet_flag_field_group_info() {
     'children' => array(
       0 => 'field_ff_flag_manager',
       1 => 'field_ff_flag_president',
-      2 => 'field_email2',
-      3 => 'field_city2',
+      2 => 'field_email',
+      3 => 'field_city',
       4 => 'field_telephone2',
-      5 => 'field_website2',
+      5 => 'field_website',
       6 => 'field_address_12',
       7 => 'field_address_22',
       8 => 'field_zip_code_2',

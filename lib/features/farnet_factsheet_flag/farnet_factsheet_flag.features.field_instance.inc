@@ -715,7 +715,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_city',
-    'label' => 'City2',
+    'label' => 'City',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
@@ -975,7 +975,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_email',
-    'label' => 'Email2',
+    'label' => 'Email',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
@@ -4286,7 +4286,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_website',
-    'label' => 'Website2',
+    'label' => 'Website',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -4575,7 +4575,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Body');
   t('Budget available for cooperation');
   t('Calls for projects');
-  t('City2');
+  t('City');
   t('Coastal or inland');
   t('Code');
   t('Collection Budget');
@@ -4585,7 +4585,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Country');
   t('Description');
   t('EMFF (a)');
-  t('Email2');
+  t('Email');
   t('FLAG Manager');
   t('FLAG President');
   t('FLAG and LAG have a common local development strategy (with separate sections for EMFF/ EAFRD/ other ESI funds)');
@@ -4638,7 +4638,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Twitter');
   t('URL');
   t('Website Project');
-  t('Website2');
+  t('Website');
   t('Women employment in fisheries');
   t('Zip Code 2');
 
