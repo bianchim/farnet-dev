@@ -975,7 +975,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_email',
-    'label' => 'Email3',
+    'label' => 'Email',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
