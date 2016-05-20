@@ -25,11 +25,11 @@ function farnet_user_field_group_info() {
     'children' => array(
       0 => 'field_address_1',
       1 => 'field_address_2',
-      2 => 'field_zip_code',
-      3 => 'field_city',
+      2 => 'field_city',
+      3 => 'field_phone_mobile',
       4 => 'field_telephone',
-      5 => 'field_phone_mobile',
-      6 => 'field_website',
+      5 => 'field_website',
+      6 => 'field_zip_code',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -58,8 +58,8 @@ function farnet_user_field_group_info() {
     'children' => array(
       0 => 'field_firstname',
       1 => 'field_lastname',
-      2 => 'field_preferred_email',
-      3 => 'field_gender',
+      2 => 'field_gender',
+      3 => 'field_preferred_email',
       4 => 'field_user_country',
       5 => 'account',
       6 => 'picture',
@@ -119,6 +119,8 @@ function farnet_user_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_job_title',
+      1 => 'field_organisation',
+      2 => 'field_organisation_other',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -233,10 +235,9 @@ function farnet_user_field_group_info() {
     'label' => 'Subscriptions',
     'weight' => '6',
     'children' => array(
-      0 => 'field_subscribe_newsletter',
-      1 => 'field_keep_me_informed_on_farnet',
-      2 => 'field_farnet_magazine_paper',
-      3 => 'field_farnet_magazine_subscribe',
+      0 => 'field_farnet_magazine_paper',
+      1 => 'field_farnet_magazine_subscribe',
+      2 => 'field_keep_me_informed_on_farnet',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
