@@ -35,6 +35,7 @@ function farnet_newsletters_install() {
 function farnet_newsletters_enable() {
   drupal_set_message(t('The FARNET Newsletters feature is now active on your site.'));
 
+  /*
   features_revert_module("newsletters");
 
   // Get the field info.
@@ -42,8 +43,6 @@ function farnet_newsletters_enable() {
 
   // Get a reference to the values.
   $values = &$info['settings']['handler_settings']['target_bundles'];
-
-  /* var_dump($values); */
 
   // Manipulate the values in some way, e.g.
   $values['nexteuropa_news'] = 'nexteuropa_news';
@@ -54,17 +53,22 @@ function farnet_newsletters_enable() {
   field_update_field($info);
   var_dump($info);
   var_dump($values);
+  */
 
-}
+  // Enable the view mode newsletter for simplenews.
+  $settings = field_bundle_settings('node', 'simplenews');
+  $settings['view_modes']['newsletter']['custom_settings'] = TRUE;
+  field_bundle_settings('node', 'simplenews', $settings);
 
-/**
- * Implements hook_entity_info_alter().
- */
-function farnet_newsletters_entity_info_alter(&$entity_info) {
-  echo 'farnet_newsletters_entity_info_alter';
-  var_dump($entity_info);
-  $entity_info['node']['view modes']['newsletter'] = array(
-    'label' => t('Newsletter'),
-    'custom settings' => TRUE,
-  );
+  // Enable the view mode newsletter for nexteuropa_event.
+  $settings = field_bundle_settings('node', 'nexteuropa_event');
+  $settings['view_modes']['newsletter']['custom_settings'] = TRUE;
+  field_bundle_settings('node', 'nexteuropa_event', $settings);
+
+  // Enable the view mode newsletter, newsletter_news_list for nexteuropa_news.
+  $settings = field_bundle_settings('node', 'nexteuropa_news');
+  $settings['view_modes']['newsletter']['custom_settings'] = TRUE;
+  $settings['view_modes']['newsletter_news_list']['custom_settings'] = TRUE;
+  field_bundle_settings('node', 'nexteuropa_news', $settings);
+
 }
