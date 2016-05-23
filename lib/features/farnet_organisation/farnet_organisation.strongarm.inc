@@ -228,7 +228,7 @@ function farnet_organisation_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_organisation';
   $strongarm->value = array(
-    'status' => '0',
+    'status' => '1',
     'priority' => '0.6',
   );
   $export['xmlsitemap_settings_node_organisation'] = $strongarm;
