@@ -45,6 +45,11 @@ function farnet_user_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_organisation_target_id']['id'] = 'field_organisation_target_id';
+  $handler->display->display_options['relationships']['field_organisation_target_id']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['relationships']['field_organisation_target_id']['field'] = 'field_organisation_target_id';
+  $handler->display->display_options['relationships']['field_organisation_target_id']['label'] = 'entity_reference_field_organisation';
   /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
@@ -146,17 +151,19 @@ function farnet_user_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'ec_world_countries';
-  /* Filter criterion: User: Organisation (field_organisation) */
-  $handler->display->display_options['filters']['field_organisation_target_id']['id'] = 'field_organisation_target_id';
-  $handler->display->display_options['filters']['field_organisation_target_id']['table'] = 'field_data_field_organisation';
-  $handler->display->display_options['filters']['field_organisation_target_id']['field'] = 'field_organisation_target_id';
-  $handler->display->display_options['filters']['field_organisation_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_organisation_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_organisation_target_id']['expose']['operator_id'] = 'field_organisation_target_id_op';
-  $handler->display->display_options['filters']['field_organisation_target_id']['expose']['label'] = 'Organisation';
-  $handler->display->display_options['filters']['field_organisation_target_id']['expose']['operator'] = 'field_organisation_target_id_op';
-  $handler->display->display_options['filters']['field_organisation_target_id']['expose']['identifier'] = 'field_organisation_target_id';
-  $handler->display->display_options['filters']['field_organisation_target_id']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Name (title_field) */
+  $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
+  $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
+  $handler->display->display_options['filters']['title_field_value']['relationship'] = 'field_organisation_target_id';
+  $handler->display->display_options['filters']['title_field_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title_field_value']['group'] = 1;
+  $handler->display->display_options['filters']['title_field_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title_field_value']['expose']['operator_id'] = 'title_field_value_op';
+  $handler->display->display_options['filters']['title_field_value']['expose']['label'] = 'Organisation';
+  $handler->display->display_options['filters']['title_field_value']['expose']['operator'] = 'title_field_value_op';
+  $handler->display->display_options['filters']['title_field_value']['expose']['identifier'] = 'title_field_value';
+  $handler->display->display_options['filters']['title_field_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     6 => 0,
