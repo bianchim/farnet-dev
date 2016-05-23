@@ -33,13 +33,81 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
     'name' => 'name',
+    'field_firstname' => 'field_firstname',
+    'field_lastname' => 'field_lastname',
+    'field_organisation' => 'field_organisation',
+    'field_keep_me_informed_on_farnet' => 'field_keep_me_informed_on_farnet',
+    'created' => 'created',
+    'access' => 'access',
+    'status' => 'status',
+    'edit_node' => 'edit_node',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'name';
   $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'name' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_firstname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_lastname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_organisation' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_keep_me_informed_on_farnet' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'access' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -104,6 +172,11 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_organisation']['settings'] = array(
     'link' => 0,
   );
+  /* Field: User: Keep me informed on FARNET activities */
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['id'] = 'field_keep_me_informed_on_farnet';
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['table'] = 'field_data_field_keep_me_informed_on_farnet';
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['field'] = 'field_keep_me_informed_on_farnet';
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['label'] = 'FARNET activities';
   /* Field: User: Created date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'users';
@@ -131,6 +204,44 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: User: First name (field_firstname) */
+  $handler->display->display_options['filters']['field_firstname_value']['id'] = 'field_firstname_value';
+  $handler->display->display_options['filters']['field_firstname_value']['table'] = 'field_data_field_firstname';
+  $handler->display->display_options['filters']['field_firstname_value']['field'] = 'field_firstname_value';
+  $handler->display->display_options['filters']['field_firstname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_firstname_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_firstname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['operator_id'] = 'field_firstname_value_op';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['label'] = 'First name';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['operator'] = 'field_firstname_value_op';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['identifier'] = 'field_firstname_value';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: User: Last name (field_lastname) */
+  $handler->display->display_options['filters']['field_lastname_value']['id'] = 'field_lastname_value';
+  $handler->display->display_options['filters']['field_lastname_value']['table'] = 'field_data_field_lastname';
+  $handler->display->display_options['filters']['field_lastname_value']['field'] = 'field_lastname_value';
+  $handler->display->display_options['filters']['field_lastname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_lastname_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_lastname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lastname_value']['expose']['operator_id'] = 'field_lastname_value_op';
+  $handler->display->display_options['filters']['field_lastname_value']['expose']['label'] = 'Last name';
+  $handler->display->display_options['filters']['field_lastname_value']['expose']['operator'] = 'field_lastname_value_op';
+  $handler->display->display_options['filters']['field_lastname_value']['expose']['identifier'] = 'field_lastname_value';
+  $handler->display->display_options['filters']['field_lastname_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+  );
   /* Filter criterion: User: Country (field_user_country) */
   $handler->display->display_options['filters']['field_user_country_tid']['id'] = 'field_user_country_tid';
   $handler->display->display_options['filters']['field_user_country_tid']['table'] = 'field_data_field_user_country';
