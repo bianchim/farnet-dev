@@ -111,7 +111,7 @@ function farnet_factsheet_country_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_abstract',
+      0 => 'field_farnet_abstract',
       1 => 'field_ne_body',
       2 => 'title_field',
       3 => 'field_organisations',
