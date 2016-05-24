@@ -210,7 +210,7 @@ function farnet_taxonomy_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'farnet_type_event',
+          'vocabulary' => 'nexteuropa_event_type',
           'parent' => 0,
         ),
       ),
@@ -238,7 +238,7 @@ function farnet_taxonomy_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'farnet_type_news',
+          'vocabulary' => 'nexteuropa_news_categories',
           'parent' => 0,
         ),
       ),
