@@ -97,7 +97,6 @@ features[field_base][] = field_priority
 features[field_base][] = field_project_description
 features[field_base][] = field_project_title
 features[field_base][] = field_project_url
-features[field_base][] = field_telephone
 features[field_base][] = field_term_language
 features[field_group][] = group_factsheet_flag_area|node|factsheet_flag|form
 features[field_group][] = group_factsheet_flag_budget|node|factsheet_flag|form
