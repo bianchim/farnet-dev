@@ -10,7 +10,7 @@ include_once 'farnet_user.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function farnet_user_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
-  /*$form['field_profile_completed']['#access'] = FALSE;*/
+  $form['field_profile_completed']['#access'] = FALSE;
   $form['#validate'][] = 'farnet_user_profile_validate';
 }
 
