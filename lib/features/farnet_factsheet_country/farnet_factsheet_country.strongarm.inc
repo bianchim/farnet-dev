@@ -386,7 +386,7 @@ function farnet_factsheet_country_strongarm() {
   $strongarm->name = 'xmlsitemap_settings_node_factsheet_country';
   $strongarm->value = array(
     'status' => '1',
-    'priority' => '0.9',
+    'priority' => '0.5',
   );
   $export['xmlsitemap_settings_node_factsheet_country'] = $strongarm;
 

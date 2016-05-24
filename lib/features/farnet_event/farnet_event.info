@@ -120,6 +120,7 @@ features[variable][] = node_preview_event_session
 features[variable][] = node_preview_event_speaker
 features[variable][] = node_submitted_event_session
 features[variable][] = node_submitted_event_speaker
+features[variable][] = xmlsitemap_settings_node_nexteuropa_event
 features_exclude[field_base][field_city] = field_city
 features_exclude[field_base][field_email] = field_email
 features_exclude[field_base][field_telephone] = field_telephone

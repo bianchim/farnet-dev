@@ -1529,6 +1529,7 @@ function farnet_event_field_default_field_instances() {
   t('Documents');
   t('Email');
   t('First Name');
+  t('Gallery');
   t('Job position');
   t('Last Name');
   t('Position');

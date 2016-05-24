@@ -82,5 +82,6 @@ features[variable][] = scheduler_unpublish_moderation_state_organisation
 features[variable][] = scheduler_unpublish_required_organisation
 features[variable][] = scheduler_unpublish_revision_organisation
 features[variable][] = scheduler_use_vertical_tabs_organisation
+features[variable][] = xmlsitemap_settings_node_organisation
 features_exclude[field_base][field_social_media] = field_social_media
 project path = sites/all/modules/features
