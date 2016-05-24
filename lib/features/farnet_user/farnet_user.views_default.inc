@@ -396,6 +396,12 @@ function farnet_user_views_default_views() {
     'users.created' => 'users.created',
   );
   $handler->display->display_options['filters']['date_filter_1']['date_method'] = 'AND';
+  /* Filter criterion: User: The user ID */
+  $handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['operator'] = '>';
+  $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -403,6 +409,170 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Manage Users';
   $handler->display->display_options['menu']['name'] = 'management';
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['attach_text'] = 'Export XLS';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['filename'] = 'users-farnet-export.xls';
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'User';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Gender */
+  $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
+  $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
+  $handler->display->display_options['fields']['field_gender']['field'] = 'field_gender';
+  /* Field: User: First name */
+  $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_lastname']['id'] = 'field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['table'] = 'field_data_field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['field'] = 'field_lastname';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
+  /* Field: User: Preferred email */
+  $handler->display->display_options['fields']['field_preferred_email']['id'] = 'field_preferred_email';
+  $handler->display->display_options['fields']['field_preferred_email']['table'] = 'field_data_field_preferred_email';
+  $handler->display->display_options['fields']['field_preferred_email']['field'] = 'field_preferred_email';
+  /* Field: User: Country */
+  $handler->display->display_options['fields']['field_user_country']['id'] = 'field_user_country';
+  $handler->display->display_options['fields']['field_user_country']['table'] = 'field_data_field_user_country';
+  $handler->display->display_options['fields']['field_user_country']['field'] = 'field_user_country';
+  /* Field: User: Organisation */
+  $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: User: Organisation (other) */
+  $handler->display->display_options['fields']['field_organisation_other']['id'] = 'field_organisation_other';
+  $handler->display->display_options['fields']['field_organisation_other']['table'] = 'field_data_field_organisation_other';
+  $handler->display->display_options['fields']['field_organisation_other']['field'] = 'field_organisation_other';
+  /* Field: Field: Job title */
+  $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
+  $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
+  $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
+  $handler->display->display_options['fields']['field_job_title']['label'] = 'Title / Function';
+  /* Field: Field: Address 1 */
+  $handler->display->display_options['fields']['field_address_1']['id'] = 'field_address_1';
+  $handler->display->display_options['fields']['field_address_1']['table'] = 'field_data_field_address_1';
+  $handler->display->display_options['fields']['field_address_1']['field'] = 'field_address_1';
+  /* Field: Field: Address 2 */
+  $handler->display->display_options['fields']['field_address_2']['id'] = 'field_address_2';
+  $handler->display->display_options['fields']['field_address_2']['table'] = 'field_data_field_address_2';
+  $handler->display->display_options['fields']['field_address_2']['field'] = 'field_address_2';
+  /* Field: Field: Zip code */
+  $handler->display->display_options['fields']['field_zip_code']['id'] = 'field_zip_code';
+  $handler->display->display_options['fields']['field_zip_code']['table'] = 'field_data_field_zip_code';
+  $handler->display->display_options['fields']['field_zip_code']['field'] = 'field_zip_code';
+  /* Field: Field: City */
+  $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
+  $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
+  $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
+  /* Field: Field: Telephone */
+  $handler->display->display_options['fields']['field_telephone']['id'] = 'field_telephone';
+  $handler->display->display_options['fields']['field_telephone']['table'] = 'field_data_field_telephone';
+  $handler->display->display_options['fields']['field_telephone']['field'] = 'field_telephone';
+  $handler->display->display_options['fields']['field_telephone']['label'] = 'Phone';
+  /* Field: User: Phone (mobile) */
+  $handler->display->display_options['fields']['field_phone_mobile']['id'] = 'field_phone_mobile';
+  $handler->display->display_options['fields']['field_phone_mobile']['table'] = 'field_data_field_phone_mobile';
+  $handler->display->display_options['fields']['field_phone_mobile']['field'] = 'field_phone_mobile';
+  /* Field: Field: Website */
+  $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
+  $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
+  /* Field: Field: Social media */
+  $handler->display->display_options['fields']['field_social_media']['id'] = 'field_social_media';
+  $handler->display->display_options['fields']['field_social_media']['table'] = 'field_data_field_social_media';
+  $handler->display->display_options['fields']['field_social_media']['field'] = 'field_social_media';
+  $handler->display->display_options['fields']['field_social_media']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_social_media']['delta_offset'] = '0';
+  /* Field: User: Keep my email private */
+  $handler->display->display_options['fields']['field_keep_my_email_private']['id'] = 'field_keep_my_email_private';
+  $handler->display->display_options['fields']['field_keep_my_email_private']['table'] = 'field_data_field_keep_my_email_private';
+  $handler->display->display_options['fields']['field_keep_my_email_private']['field'] = 'field_keep_my_email_private';
+  /* Field: User: Preferred language (1) */
+  $handler->display->display_options['fields']['field_preferred_language_1']['id'] = 'field_preferred_language_1';
+  $handler->display->display_options['fields']['field_preferred_language_1']['table'] = 'field_data_field_preferred_language_1';
+  $handler->display->display_options['fields']['field_preferred_language_1']['field'] = 'field_preferred_language_1';
+  /* Field: User: Preferred language (2) */
+  $handler->display->display_options['fields']['field_preferred_language_2']['id'] = 'field_preferred_language_2';
+  $handler->display->display_options['fields']['field_preferred_language_2']['table'] = 'field_data_field_preferred_language_2';
+  $handler->display->display_options['fields']['field_preferred_language_2']['field'] = 'field_preferred_language_2';
+  /* Field: User: Preferred language (3) */
+  $handler->display->display_options['fields']['field_preferred_language_3']['id'] = 'field_preferred_language_3';
+  $handler->display->display_options['fields']['field_preferred_language_3']['table'] = 'field_data_field_preferred_language_3';
+  $handler->display->display_options['fields']['field_preferred_language_3']['field'] = 'field_preferred_language_3';
+  /* Field: User: Keep me informed on FARNET activities */
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['id'] = 'field_keep_me_informed_on_farnet';
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['table'] = 'field_data_field_keep_me_informed_on_farnet';
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['field'] = 'field_keep_me_informed_on_farnet';
+  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['label'] = 'FARNET activities';
+  /* Field: User: FARNET Magazine (paper version) */
+  $handler->display->display_options['fields']['field_farnet_magazine_paper']['id'] = 'field_farnet_magazine_paper';
+  $handler->display->display_options['fields']['field_farnet_magazine_paper']['table'] = 'field_data_field_farnet_magazine_paper';
+  $handler->display->display_options['fields']['field_farnet_magazine_paper']['field'] = 'field_farnet_magazine_paper';
+  /* Field: User: FARNET Magazine subscriptions */
+  $handler->display->display_options['fields']['field_farnet_magazine_subscribe']['id'] = 'field_farnet_magazine_subscribe';
+  $handler->display->display_options['fields']['field_farnet_magazine_subscribe']['table'] = 'field_data_field_farnet_magazine_subscribe';
+  $handler->display->display_options['fields']['field_farnet_magazine_subscribe']['field'] = 'field_farnet_magazine_subscribe';
+  $handler->display->display_options['fields']['field_farnet_magazine_subscribe']['settings'] = array(
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'add' => 'Add',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_farnet_magazine_subscribe']['delta_offset'] = '0';
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'long';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
+  /* Field: User: Last login */
+  $handler->display->display_options['fields']['login']['id'] = 'login';
+  $handler->display->display_options['fields']['login']['table'] = 'users';
+  $handler->display->display_options['fields']['login']['field'] = 'login';
+  $handler->display->display_options['fields']['login']['date_format'] = 'long';
+  $handler->display->display_options['fields']['login']['second_date_format'] = 'long';
+  /* Field: User: Language */
+  $handler->display->display_options['fields']['language']['id'] = 'language';
+  $handler->display->display_options['fields']['language']['table'] = 'users';
+  $handler->display->display_options['fields']['language']['field'] = 'language';
+  /* Field: User: Active */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'users';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  $handler->display->display_options['path'] = 'admin/manage-users/export';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+  );
   $export['farnet_manage_users'] = $view;
 
   return $export;
