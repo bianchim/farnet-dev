@@ -23,7 +23,6 @@ features[features_api][] = api:2
 features[field_base][] = field_fax
 features[field_base][] = field_job_title
 features[field_base][] = field_organisation_contacts
-features[field_base][] = field_zip_code
 features[field_group][] = group_organisation_contact|node|organisation|form
 features[field_group][] = group_organisation_content|node|organisation|form
 features[field_group][] = group_organisation_metadata|node|organisation|form
