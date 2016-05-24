@@ -236,7 +236,7 @@ function farnet_taxonomy_disable() {
     }
   }
 
-  // Deletes all terms of the nexteuropa_news taxonomy nexteuropa_news_categories.
+  // Deletes all terms of the taxonomy nexteuropa_news_categories.
   $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
   if ($vocabulary) {
     foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
