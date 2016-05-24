@@ -105,8 +105,8 @@ function farnet_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_abstract'.
-  $field_instances['node-publication-field_abstract'] = array(
+  // Exported field_instance: 'node-publication-field_farnet_abstract'.
+  $field_instances['node-publication-field_farnet_abstract'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
@@ -127,7 +127,7 @@ function farnet_publication_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
     'required' => 0,
     'settings' => array(

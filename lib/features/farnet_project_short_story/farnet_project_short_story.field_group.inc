@@ -54,7 +54,7 @@ function farnet_project_short_story_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_abstract',
+      1 => 'field_farnet_abstract',
       2 => 'field_flag',
       3 => 'field_picture',
       4 => 'field_website',

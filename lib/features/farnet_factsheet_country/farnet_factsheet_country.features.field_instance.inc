@@ -10,8 +10,8 @@
 function farnet_factsheet_country_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-factsheet_country-field_abstract'.
-  $field_instances['node-factsheet_country-field_abstract'] = array(
+  // Exported field_instance: 'node-factsheet_country-field_farnet_abstract'.
+  $field_instances['node-factsheet_country-field_farnet_abstract'] = array(
     'bundle' => 'factsheet_country',
     'default_value' => NULL,
     'deleted' => 0,
@@ -32,7 +32,7 @@ function farnet_factsheet_country_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
     'required' => 1,
     'settings' => array(
