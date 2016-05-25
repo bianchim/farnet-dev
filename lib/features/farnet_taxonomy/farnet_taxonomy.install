@@ -11,6 +11,9 @@ function farnet_taxonomy_enable() {
   $t = get_t();
 
   // Ensure all components exist.
+  features_revert_module("nexteuropa_news");
+  features_revert_module("nexteuropa_event");
+  features_revert_module("nexteuropa_faq");
   features_revert_module("farnet_taxonomy");
 
   // Imports FAQ data.
