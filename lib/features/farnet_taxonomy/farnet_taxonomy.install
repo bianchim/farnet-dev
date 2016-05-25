@@ -118,8 +118,7 @@ function farnet_taxonomy_enable() {
   }
 
   // Imports Type News data.
-  $vocabulary =
-  taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
   // 4 is "translate" option.
   $vocabulary->i18n_mode = 4;
   taxonomy_vocabulary_save($vocabulary);
