@@ -18,7 +18,8 @@ function farnet_taxonomy_enable() {
 
   // Imports FAQ data.
   $vocabulary = taxonomy_vocabulary_machine_name_load('faq_categories');
-  $vocabulary->i18n_mode = 4; //4 is "translate" option
+  // 4 is "translate" option.
+  $vocabulary->i18n_mode = 4;
   taxonomy_vocabulary_save($vocabulary);
   $vocabulary = taxonomy_vocabulary_machine_name_load('faq_categories');
   if ($vocabulary) {
@@ -104,7 +105,8 @@ function farnet_taxonomy_enable() {
 
   // Imports Type Event data.
   $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_event_type');
-  $vocabulary->i18n_mode = 4; //4 is "translate" option
+  // 4 is "translate" option.
+  $vocabulary->i18n_mode = 4;
   taxonomy_vocabulary_save($vocabulary);
   $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_event_type');
   if ($vocabulary) {
@@ -117,7 +119,8 @@ function farnet_taxonomy_enable() {
 
   // Imports Type News data.
   $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
-  $vocabulary->i18n_mode = 4; //4 is "translate" option
+  // 4 is "translate" option.
+  $vocabulary->i18n_mode = 4;
   taxonomy_vocabulary_save($vocabulary);
   $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
   if ($vocabulary) {
