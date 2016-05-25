@@ -1,0 +1,39 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet User feature.
+ */
+
+include_once 'farnet_user.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_user_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_profile_completed']['#access'] = FALSE;
+  $form['#validate'][] = 'farnet_user_profile_validate';
+}
+
+/**
+ * Perform own validation.
+ */
+function farnet_user_profile_validate($form, &$form_state) {
+  $magazines = $form_state['values']['field_farnet_magazine_subscribe']['und'];
+  $languages = array();
+  $qte = 0;
+  foreach ($magazines as $key => $value) {
+    $selected_language = $value['field_magazine_language']['und'][0]['tid'];
+    if (in_array($selected_language, $languages)) {
+      form_set_error('field_farnet_magazine_subscribe', t('A language must be selected once.'));
+    }
+    else {
+      if (!is_null($selected_language)) {
+        $languages[] = $selected_language;
+      }
+    }
+    $qte += $value['field_magazine_quantity']['und'][0]['value'];
+  }
+  if ($qte > 5) {
+    form_set_error('field_farnet_magazine_subscribe', t('The overall total cannot exceed 5 (e.g. FR=2 / EN=2 / ES=1).'));
+  }
+}

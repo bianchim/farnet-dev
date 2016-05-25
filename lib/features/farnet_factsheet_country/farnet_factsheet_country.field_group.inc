@@ -22,7 +22,9 @@ function farnet_factsheet_country_field_group_info() {
   $field_group->data = array(
     'label' => 'Areas',
     'weight' => '5',
-    'children' => array(),
+    'children' => array(
+      0 => 'field_flag_areas',
+    ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -109,10 +111,10 @@ function farnet_factsheet_country_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'body',
-      1 => 'field_abstract',
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
       2 => 'title_field',
-      3 => 'field_ne_body',
+      3 => 'field_organisations',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -137,7 +139,7 @@ function farnet_factsheet_country_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Cooperation',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_cooperation',
     ),
@@ -164,7 +166,7 @@ function farnet_factsheet_country_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Delivery of CLLD',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_diagram_delivery',
       1 => 'field_funding_process',
@@ -280,7 +282,7 @@ function farnet_factsheet_country_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_term_country',
     ),

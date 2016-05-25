@@ -10,8 +10,8 @@
 function farnet_summary_sheet_method_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-summary_sheet_method-field_abstract'.
-  $field_instances['node-summary_sheet_method-field_abstract'] = array(
+  // Exported field_instance: 'node-summary_sheet_method-field_farnet_abstract'.
+  $field_instances['node-summary_sheet_method-field_farnet_abstract'] = array(
     'bundle' => 'summary_sheet_method',
     'default_value' => NULL,
     'deleted' => 0,
@@ -32,7 +32,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
     'required' => 0,
     'settings' => array(
@@ -141,7 +141,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 9,
     ),
   );
 
@@ -197,7 +197,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 12,
+      'weight' => 15,
     ),
   );
 
@@ -247,7 +247,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 27,
+      'weight' => 14,
     ),
   );
 
@@ -430,7 +430,57 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-summary_sheet_method-field_organisations'.
+  $field_instances['node-summary_sheet_method-field_organisations'] = array(
+    'bundle' => 'summary_sheet_method',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_organisations',
+    'label' => 'Organisation / FLAG',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 6,
     ),
   );
 
@@ -693,7 +743,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 
@@ -828,7 +878,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 18,
     ),
   );
 
@@ -896,7 +946,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
@@ -1079,7 +1129,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 25,
+      'weight' => 24,
     ),
   );
 
@@ -1147,7 +1197,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -1229,7 +1279,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 21,
+      'weight' => 7,
     ),
   );
 
@@ -1311,7 +1361,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 22,
+      'weight' => 8,
     ),
   );
 
@@ -1352,7 +1402,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 20,
+      'weight' => 14,
     ),
   );
 
@@ -1571,7 +1621,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   t('Abstract');
   t('Activities');
   t('Area');
-  t('Body');
+  t('Context, needs, opportunity');
   t('Country');
   t('Dates (Start/End)');
   t('Financial resources');
@@ -1583,6 +1633,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   t('Main achievements');
   t('Objectives');
   t('Official Title');
+  t('Organisation / FLAG');
   t('Other resources');
   t('Picture');
   t('Publication Channels');

@@ -263,8 +263,8 @@ function farnet_project_summary_sheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_summary_sheet-field_abstract'.
-  $field_instances['node-project_summary_sheet-field_abstract'] = array(
+  // Exported field_instance: 'node-project_summary_sheet-field_farnet_abstract'.
+  $field_instances['node-project_summary_sheet-field_farnet_abstract'] = array(
     'bundle' => 'project_summary_sheet',
     'default_value' => NULL,
     'deleted' => 0,
@@ -285,7 +285,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
     'required' => 0,
     'settings' => array(

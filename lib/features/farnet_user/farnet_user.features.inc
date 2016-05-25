@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farnet_news.features.inc
+ * farnet_user.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farnet_news_ctools_plugin_api($module = NULL, $api = NULL) {
+function farnet_user_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -19,6 +19,6 @@ function farnet_news_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function farnet_news_views_api($module = NULL, $api = NULL) {
+function farnet_user_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }

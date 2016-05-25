@@ -55,7 +55,7 @@ function farnet_publication_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'title_field',
-      2 => 'field_abstract',
+      2 => 'field_farnet_abstract',
       3 => 'field_picture',
       4 => 'field_publication_files',
       5 => 'field_ne_body',

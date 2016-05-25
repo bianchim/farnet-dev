@@ -81,7 +81,7 @@ function farnet_pages_field_group_info() {
     'children' => array(
       0 => 'title_field',
       1 => 'body',
-      2 => 'field_abstract',
+      2 => 'field_farnet_abstract',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

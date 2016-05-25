@@ -10,13 +10,13 @@
 function farnet_core_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_abstract'.
-  $field_bases['field_abstract'] = array(
+  // Exported field_base: 'field_farnet_abstract'.
+  $field_bases['field_farnet_abstract'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -53,6 +53,50 @@ function farnet_core_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_address_1'.
+  $field_bases['field_address_1'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_address_1',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_address_2'.
+  $field_bases['field_address_2'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_address_2',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_city'.
   $field_bases['field_city'] = array(
     'active' => 1,
@@ -70,6 +114,28 @@ function farnet_core_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_zip_code'.
+  $field_bases['field_zip_code'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_zip_code',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 20,
     ),
     'translatable' => 0,
     'type' => 'text',
@@ -283,6 +349,42 @@ function farnet_core_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_organisation',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'organisation' => 'organisation',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_organisations'.
+  $field_bases['field_organisations'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_organisations',
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

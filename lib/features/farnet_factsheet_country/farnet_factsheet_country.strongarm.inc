@@ -127,13 +127,13 @@ function farnet_factsheet_country_strongarm() {
           'weight' => '6',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'scheduler_settings' => array(
           'weight' => '18',
         ),
         'xmlsitemap' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'language' => array(
           'weight' => '20',
@@ -386,7 +386,7 @@ function farnet_factsheet_country_strongarm() {
   $strongarm->name = 'xmlsitemap_settings_node_factsheet_country';
   $strongarm->value = array(
     'status' => '1',
-    'priority' => '0.9',
+    'priority' => '0.5',
   );
   $export['xmlsitemap_settings_node_factsheet_country'] = $strongarm;
 
