@@ -10,8 +10,8 @@
 function farnet_summary_sheet_method_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-summary_sheet_method-field_abstract'.
-  $field_instances['node-summary_sheet_method-field_abstract'] = array(
+  // Exported field_instance: 'node-summary_sheet_method-field_farnet_abstract'.
+  $field_instances['node-summary_sheet_method-field_farnet_abstract'] = array(
     'bundle' => 'summary_sheet_method',
     'default_value' => NULL,
     'deleted' => 0,
@@ -32,7 +32,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
     'required' => 0,
     'settings' => array(

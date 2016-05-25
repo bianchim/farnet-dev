@@ -10,8 +10,8 @@
 function farnet_pages_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-field_abstract'.
-  $field_instances['node-page-field_abstract'] = array(
+  // Exported field_instance: 'node-page-field_farnet_abstract'.
+  $field_instances['node-page-field_farnet_abstract'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -32,7 +32,7 @@ function farnet_pages_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
     'required' => 0,
     'settings' => array(

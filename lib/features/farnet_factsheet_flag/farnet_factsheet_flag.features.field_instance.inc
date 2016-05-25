@@ -491,8 +491,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_address_12'.
-  $field_instances['node-factsheet_flag-field_address_12'] = array(
+  // Exported field_instance: 'node-factsheet_flag-field_address_1'.
+  $field_instances['node-factsheet_flag-field_address_1'] = array(
     'bundle' => 'factsheet_flag',
     'default_value' => NULL,
     'deleted' => 0,
@@ -513,7 +513,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_address_12',
+    'field_name' => 'field_address_1',
     'label' => 'Address 12',
     'required' => 1,
     'settings' => array(
@@ -558,8 +558,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_address_22'.
-  $field_instances['node-factsheet_flag-field_address_22'] = array(
+  // Exported field_instance: 'node-factsheet_flag-field_address_2'.
+  $field_instances['node-factsheet_flag-field_address_2'] = array(
     'bundle' => 'factsheet_flag',
     'default_value' => NULL,
     'deleted' => 0,
@@ -580,7 +580,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_address_22',
+    'field_name' => 'field_address_2',
     'label' => 'Address 22',
     'required' => 0,
     'settings' => array(
@@ -3980,8 +3980,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_telephone2'.
-  $field_instances['node-factsheet_flag-field_telephone2'] = array(
+  // Exported field_instance: 'node-factsheet_flag-field_telephone'.
+  $field_instances['node-factsheet_flag-field_telephone'] = array(
     'bundle' => 'factsheet_flag',
     'default_value' => NULL,
     'deleted' => 0,
@@ -4002,8 +4002,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_telephone2',
-    'label' => 'Telephone2',
+    'field_name' => 'field_telephone',
+    'label' => 'Telephone',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -4294,8 +4294,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_zip_code_2'.
-  $field_instances['node-factsheet_flag-field_zip_code_2'] = array(
+  // Exported field_instance: 'node-factsheet_flag-field_zip_code'.
+  $field_instances['node-factsheet_flag-field_zip_code'] = array(
     'bundle' => 'factsheet_flag',
     'default_value' => NULL,
     'deleted' => 0,
@@ -4316,8 +4316,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_zip_code_2',
-    'label' => 'Zip Code 2',
+    'field_name' => 'field_zip_code',
+    'label' => 'Zip Code',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
@@ -4541,8 +4541,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('% of other (non-fisheries) private / NGO sector actors');
   t('% of public actors');
   t('% of the budget allocated');
-  t('Address 12');
-  t('Address 22');
+  t('Address 1');
+  t('Address 2');
   t('Aquaculture');
   t('Area');
   t('Body');
@@ -4602,7 +4602,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Specific details');
   t('Summary');
   t('Surface area (km²)');
-  t('Telephone2');
+  t('Telephone');
   t('Thematic expertise and cooperation');
   t('Title');
   t('Total employment in fisheries');
@@ -4613,7 +4613,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Website');
   t('Website Project');
   t('Women employment in fisheries');
-  t('Zip Code 2');
+  t('Zip Code');
 
   return $field_instances;
 }

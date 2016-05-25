@@ -391,8 +391,8 @@ function farnet_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nexteuropa_event-field_abstract'.
-  $field_instances['node-nexteuropa_event-field_abstract'] = array(
+  // Exported field_instance: 'node-nexteuropa_event-field_farnet_abstract'.
+  $field_instances['node-nexteuropa_event-field_farnet_abstract'] = array(
     'bundle' => 'nexteuropa_event',
     'default_value' => NULL,
     'deleted' => 0,
@@ -413,7 +413,7 @@ function farnet_event_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
     'required' => 1,
     'settings' => array(
