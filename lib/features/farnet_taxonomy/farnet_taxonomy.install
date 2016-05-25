@@ -308,6 +308,7 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
     $term->vid = $vid;
     $term->name = $item->name;
     $term->language = $item->language;
+    $term->i18n_mode = 4;
     taxonomy_term_save($term);
 
     if (isset($item->code)) {
