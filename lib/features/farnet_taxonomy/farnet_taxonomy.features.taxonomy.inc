@@ -17,7 +17,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -4,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -42,7 +42,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -5,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -67,57 +67,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -10,
       'language' => 'und',
-      'i18n_mode' => 4,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
-    'farnet_type_event' => (object) array(
-      'name' => 'Farnet Type Event',
-      'machine_name' => 'farnet_type_event',
-      'description' => 'Taxonomy for the Type of Events on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -8,
-      'language' => 'und',
-      'i18n_mode' => 4,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
-    'farnet_type_news' => (object) array(
-      'name' => 'Farnet Type News',
-      'machine_name' => 'farnet_type_news',
-      'description' => 'Taxonomy for the Type of News on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -9,
-      'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -142,7 +92,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -6,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -167,7 +117,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -7,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -192,7 +142,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -1,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

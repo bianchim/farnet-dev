@@ -11,8 +11,12 @@ function farnet_taxonomy_enable() {
   $t = get_t();
 
   // Ensure all components exist.
+  features_revert_module("nexteuropa_news");
+  features_revert_module("nexteuropa_event");
+  features_revert_module("nexteuropa_faq");
   features_revert_module("farnet_taxonomy");
 
+  // Imports FAQ data.
   $vocabulary = taxonomy_vocabulary_machine_name_load('faq_categories');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
@@ -95,53 +99,26 @@ function farnet_taxonomy_enable() {
   $publication_channels_array = farnet_taxonomy_publication_channels();
   save_multilingual_farnet_taxonomy($publication_channels_array, $vid);
 
-  // Creates the Farnet Type Event vocabulary if it does not exist already.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_event');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
-  }
-  else {
-    $vocabulary = array(
-      'name' => 'Farnet Type Event',
-      'machine_name' => 'farnet_type_event',
-      'description' => 'Taxonomy for the Type of Events on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -8,
-    );
-    $vocabulary = (object) $vocabulary;
-    taxonomy_vocabulary_save($vocabulary);
-    $vid = $vocabulary->vid;
-  };
-
   // Imports Type Event data.
-  include_once 'includes/farnet_taxonomy_type_events.php';
-  $type_events_array = farnet_taxonomy_type_events();
-  save_multilingual_farnet_taxonomy($type_events_array, $vid);
-
-  // Creates the Farnet Type News vocabulary if it does not exist already.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_news');
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_event_type');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
+
+    include_once 'includes/farnet_taxonomy_type_events.php';
+    $type_events_array = farnet_taxonomy_type_events();
+    save_multilingual_farnet_taxonomy($type_events_array, $vid);
   }
-  else {
-    $vocabulary = array(
-      'name' => 'Farnet Type news',
-      'machine_name' => 'farnet_type_news',
-      'description' => 'Taxonomy for the Type of News on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -9,
-    );
-    $vocabulary = (object) $vocabulary;
-    taxonomy_vocabulary_save($vocabulary);
-    $vid = $vocabulary->vid;
-  };
 
   // Imports Type News data.
-  include_once 'includes/farnet_taxonomy_type_news.php';
-  $type_news_array = farnet_taxonomy_type_news();
-  save_multilingual_farnet_taxonomy($type_news_array, $vid);
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+
+    // Imports Type News data.
+    include_once 'includes/farnet_taxonomy_type_news.php';
+    $type_news_array = farnet_taxonomy_type_news();
+    save_multilingual_farnet_taxonomy($type_news_array, $vid);
+  }
 
   // Creates the Farnet Type Publication vocabulary.
   // If it does not exist already.
@@ -254,18 +231,20 @@ function farnet_taxonomy_disable() {
     taxonomy_vocabulary_delete($vid);
   }
 
-  // Deletes the taxonomy term.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_event');
+  // Deletes all terms of the nexteuropa_event taxonomy nexteuropa_event_type.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_event_type');
   if ($vocabulary) {
-    $vid = $vocabulary->vid;
-    taxonomy_vocabulary_delete($vid);
+    foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
+      taxonomy_term_delete($term->tid);
+    }
   }
 
-  // Deletes the taxonomy term.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_news');
+  // Deletes all terms of the taxonomy nexteuropa_news_categories.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
   if ($vocabulary) {
-    $vid = $vocabulary->vid;
-    taxonomy_vocabulary_delete($vid);
+    foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
+      taxonomy_term_delete($term->tid);
+    }
   }
 
   // Deletes the taxonomy term.
