@@ -18,3 +18,47 @@ function farnet_event_field_group_info_alter($groups) {
     $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_twitter_hashtag';
   }
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_instances.
+ */
+function farnet_news_field_default_field_instances_alter(&$fields) {
+
+  if (isset($fields['node-nexteuropa_event-field_city'])) {
+    if (isset($fields['node-nexteuropa_event-field_city']['display']['newsletter'])) {
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['label'] = "inline";
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['module'] = "text";
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['settings'] = array();
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['type'] = "text_plain";
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_event-field_term_country'])) {
+    if (isset($fields['node-nexteuropa_event-field_term_country']['display']['newsletter'])) {
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['label'] = "inline";
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['module'] = "taxonomy";
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['settings'] = array();
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['type'] = "taxonomy_term_reference_plain";
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_event-field_dates'])) {
+    if (isset($fields['node-nexteuropa_event-field_dates']['display']['newsletter'])) {
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['label'] = "inline";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['module'] = "date";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['format_type'] = "long";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['fromto'] = "both";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['multiple_from'] = "";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['multiple_number'] = "";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['multiple_to'] = "";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['show_remaining_days'] = FALSE;
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['type'] = "date_default";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['weight'] = 0;
+    }
+  }
+  
+}
