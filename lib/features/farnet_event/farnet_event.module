@@ -24,7 +24,7 @@ function farnet_event_field_group_info_alter($groups) {
  *
  * COMPONENT = field_default_field_instances.
  */
-function farnet_news_field_default_field_instances_alter(&$fields) {
+function farnet_event_field_default_field_instances_alter(&$fields) {
 
   if (isset($fields['node-nexteuropa_event-field_city'])) {
     if (isset($fields['node-nexteuropa_event-field_city']['display']['newsletter'])) {
