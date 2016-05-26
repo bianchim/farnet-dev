@@ -17,7 +17,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -4,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -42,7 +42,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -5,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -67,7 +67,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -10,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -92,7 +92,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -6,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -117,7 +117,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -7,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -142,7 +142,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -1,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
