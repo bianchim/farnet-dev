@@ -60,5 +60,4 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
       $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['weight'] = 0;
     }
   }
-  
 }
