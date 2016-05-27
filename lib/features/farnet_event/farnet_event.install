@@ -1,0 +1,6 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
