@@ -22,7 +22,7 @@ function farnet_core_default_fe_block_settings() {
     'node_types' => array(
       0 => 'factsheet_flag',
     ),
-    'pages' => '',
+    'pages' => 'node/*/edit',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
