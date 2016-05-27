@@ -7,8 +7,8 @@
 include_once 'farnet_core.features.inc';
 
 /**
-* Implements hook_block_info().
-*/
+ * Implements hook_block_info().
+ */
 function farnet_core_block_info() {
   $blocks = array();
 
@@ -20,8 +20,8 @@ function farnet_core_block_info() {
 }
 
 /**
-* Implements hook_block_view().
-*/
+ * Implements hook_block_view().
+ */
 function farnet_core_block_view($delta = '') {
   $block = array();
 
@@ -39,13 +39,16 @@ function farnet_core_block_view($delta = '') {
           ),
         ),
       );
-      
+
       break;
   }
 
   return $block;
 }
 
+/**
+ * Implement the content of the block.
+ */
 function _farnet_core_menu_page_content() {
   $node = node_load(arg(1));
   $field_groups = field_group_info_groups('node', $node->type, 'default');
@@ -60,7 +63,7 @@ function _farnet_core_menu_page_content() {
   ksort($field_groups_sorted);
   $output = '<div><nav id="navbar-node-page" class="navbar"><h3>Page contents</h3><ul class="nav">';
   foreach ($field_groups_sorted as $key => $field_group) {
-    $output .= '<li><a href="#'.str_replace('_', '-', $field_group->group_name).'">'.$field_group->label.'</a></li>';
+    $output .= '<li><a href="#' . str_replace('_', '-', $field_group->group_name) . '">' . $field_group->label . '</a></li>';
   }
   $output .= '</ul></nav></div>';
 
