@@ -500,9 +500,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 58,
       ),
       'teaser' => array(
@@ -567,9 +566,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 59,
       ),
       'teaser' => array(
@@ -3989,9 +3987,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 57,
       ),
       'teaser' => array(
@@ -4303,9 +4300,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 60,
       ),
       'teaser' => array(
@@ -4541,8 +4537,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('% of other (non-fisheries) private / NGO sector actors');
   t('% of public actors');
   t('% of the budget allocated');
-  t('Address 1');
-  t('Address 2');
+  t('Address 12');
+  t('Address 22');
   t('Aquaculture');
   t('Area');
   t('Body');
