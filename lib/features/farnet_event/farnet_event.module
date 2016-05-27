@@ -27,7 +27,7 @@ function farnet_event_field_group_info_alter($groups) {
 function farnet_event_field_default_field_instances_alter(&$fields) {
 
   if (isset($fields['node-nexteuropa_event-field_city'])) {
-    if (isset($fields['node-nexteuropa_event-field_city']['display']['newsletter'])) {
+    if (isset($fields['node-nexteuropa_event-field_city']['display'])) {
       $fields['node-nexteuropa_event-field_city']['display']['newsletter']['label'] = "inline";
       $fields['node-nexteuropa_event-field_city']['display']['newsletter']['module'] = "text";
       $fields['node-nexteuropa_event-field_city']['display']['newsletter']['settings'] = array();
@@ -37,7 +37,7 @@ function farnet_event_field_default_field_instances_alter(&$fields) {
   }
 
   if (isset($fields['node-nexteuropa_event-field_term_country'])) {
-    if (isset($fields['node-nexteuropa_event-field_term_country']['display']['newsletter'])) {
+    if (isset($fields['node-nexteuropa_event-field_term_country']['display'])) {
       $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['label'] = "inline";
       $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['module'] = "taxonomy";
       $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['settings'] = array();
@@ -47,7 +47,7 @@ function farnet_event_field_default_field_instances_alter(&$fields) {
   }
 
   if (isset($fields['node-nexteuropa_event-field_dates'])) {
-    if (isset($fields['node-nexteuropa_event-field_dates']['display']['newsletter'])) {
+    if (isset($fields['node-nexteuropa_event-field_dates']['display'])) {
       $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['label'] = "inline";
       $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['module'] = "date";
       $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['format_type'] = "long";
