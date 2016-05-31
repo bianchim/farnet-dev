@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Views feature.
+ */
+
+include_once 'farnet_views.features.inc';

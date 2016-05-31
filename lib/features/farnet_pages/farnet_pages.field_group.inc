@@ -80,8 +80,7 @@ function farnet_pages_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'title_field',
-      1 => 'body',
-      2 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -105,7 +104,7 @@ function farnet_pages_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '4',
+    'weight' => '10',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'group_content_access',
