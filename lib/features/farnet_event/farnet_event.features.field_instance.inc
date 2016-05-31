@@ -391,73 +391,6 @@ function farnet_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nexteuropa_event-field_farnet_abstract'.
-  $field_instances['node-nexteuropa_event-field_farnet_abstract'] = array(
-    'bundle' => 'nexteuropa_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_farnet_abstract',
-    'label' => 'Abstract',
-    'required' => 1,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-nexteuropa_event-field_agenda_sessions'.
   $field_instances['node-nexteuropa_event-field_agenda_sessions'] = array(
     'bundle' => 'nexteuropa_event',
@@ -481,7 +414,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
     ),
     'entity_type' => 'node',
@@ -538,7 +471,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 27,
       ),
     ),
     'entity_type' => 'node',
@@ -605,7 +538,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 28,
       ),
     ),
     'entity_type' => 'node',
@@ -672,7 +605,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 32,
       ),
     ),
     'entity_type' => 'node',
@@ -711,7 +644,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 33,
       ),
     ),
     'entity_type' => 'node',
@@ -777,7 +710,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 31,
       ),
     ),
     'entity_type' => 'node',
@@ -799,6 +732,74 @@ function farnet_event_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-nexteuropa_event-field_farnet_abstract'.
+  $field_instances['node-nexteuropa_event-field_farnet_abstract'] = array(
+    'bundle' => 'nexteuropa_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_farnet_abstract',
+    'label' => 'Abstract',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-nexteuropa_event-field_first_name'.
   $field_instances['node-nexteuropa_event-field_first_name'] = array(
     'bundle' => 'nexteuropa_event',
@@ -817,7 +818,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 30,
       ),
     ),
     'entity_type' => 'node',
@@ -886,9 +887,14 @@ function farnet_event_field_default_field_instances() {
         'weight' => 23,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => TRUE,
+          'use_content_language' => TRUE,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
         'weight' => 0,
       ),
     ),
@@ -934,7 +940,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 29,
       ),
     ),
     'entity_type' => 'node',
@@ -1002,7 +1008,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 34,
       ),
     ),
     'entity_type' => 'node',
@@ -1075,7 +1081,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -1125,7 +1131,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -1183,7 +1189,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -1250,7 +1256,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -1292,7 +1298,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -1333,7 +1339,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -1370,10 +1376,11 @@ function farnet_event_field_default_field_instances() {
         'weight' => 16,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -1411,7 +1418,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -1478,7 +1485,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
