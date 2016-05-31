@@ -1134,7 +1134,7 @@ function farnet_core_menu_default_menu_links() {
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
-    'link_title' => 'Good practices',
+    'link_title' => 'Good Practices',
     'options' => array(
       'attributes' => array(
         'data-display-title' => 1,
@@ -1156,13 +1156,13 @@ function farnet_core_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 1,
-    'weight' => 0,
+    'weight' => -48,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_lessons-from-farnet-1-2007-2013:<front>',
+    'parent_identifier' => 'main-menu_on-the-ground:node/1',
   );
   // Exported menu link: main-menu_governance-and-management:<front>.
   $menu_links['main-menu_governance-and-management:<front>'] = array(
@@ -1948,7 +1948,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -44,
+    'weight' => -47,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -2323,6 +2323,41 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: main-menu_the-good-practices:<front>.
+  $menu_links['main-menu_the-good-practices:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'The good practices',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_the-good-practices:<front>',
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => 0,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_lessons-from-farnet-1-2007-2013:<front>',
+  );
   // Exported menu link: main-menu_themes:node/1.
   $menu_links['main-menu_themes:node/1'] = array(
     'menu_name' => 'main-menu',
@@ -2636,7 +2671,7 @@ function farnet_core_menu_default_menu_links() {
   t('FLAGs');
   t('Finance and administration');
   t('Glossary');
-  t('Good practices');
+  t('Good Practices');
   t('Governance and management');
   t('Guidance');
   t('Home');
@@ -2671,6 +2706,7 @@ function farnet_core_menu_default_menu_links() {
   t('Stakeholder events');
   t('Strategies');
   t('Subscribe');
+  t('The good practices');
   t('Themes');
   t('Tools');
   t('Tools for FLAGs');

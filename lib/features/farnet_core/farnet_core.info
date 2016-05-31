@@ -141,6 +141,7 @@ features[menu_links][] = main-menu_social-well-being-cultural-heritage:<front>
 features[menu_links][] = main-menu_stakeholder-events:<front>
 features[menu_links][] = main-menu_strategies:<front>
 features[menu_links][] = main-menu_subscribe:<front>
+features[menu_links][] = main-menu_the-good-practices:<front>
 features[menu_links][] = main-menu_themes:node/1
 features[menu_links][] = main-menu_tools-for-flags:<front>
 features[menu_links][] = main-menu_tools-for-managing-authorities:<front>
