@@ -45,15 +45,15 @@ function farnet_news_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title_field',
-        1 => 'field_abstract',
-        2 => 'field_publication_date',
+        1 => 'field_publication_date',
+        2 => 'field_abstract',
         3 => 'node_link',
       ),
     ),
     'fields' => array(
       'title_field' => 'ds_content',
-      'field_abstract' => 'ds_content',
       'field_publication_date' => 'ds_content',
+      'field_abstract' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
