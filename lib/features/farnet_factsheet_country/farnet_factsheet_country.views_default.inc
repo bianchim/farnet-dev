@@ -11,18 +11,18 @@ function farnet_factsheet_country_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'country_factsheets_view';
+  $view->name = 'farnet_factsheets_country_view';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Country Factsheets View';
+  $view->human_name = 'Farnet Factsheets Country View';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Country Factsheets View';
+  $handler->display->display_options['title'] = 'Farnet Factsheets Country View';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -94,7 +94,7 @@ function farnet_factsheet_country_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['path'] = 'on-the-ground/country-factsheets/';
+  $handler->display->display_options['path'] = 'on-the-ground/country-factsheets';
   $export['country_factsheets_view'] = $view;
 
   return $export;
