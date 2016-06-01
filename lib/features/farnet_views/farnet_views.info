@@ -1,0 +1,12 @@
+name = Farnet Views
+description = Feature for Farnet Views
+core = 7.x
+package = Farnet
+dependencies[] = farnet_project_summary_sheet
+dependencies[] = farnet_summary_sheet_method
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = good_practices
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/features

@@ -95,6 +95,9 @@ function farnet_summary_sheet_method_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
