@@ -42,7 +42,6 @@ features[field_base][] = field_funding_process
 features[field_base][] = field_key_actors_roles
 features[field_base][] = field_national_network
 features[field_base][] = field_number_flags
-features[field_base][] = field_organisations
 features[field_base][] = field_proportion_emff
 features[field_base][] = field_total_budget
 features[field_group][] = group_factsheet_areas|node|factsheet_country|form
