@@ -25,6 +25,7 @@ function farnet_pages_field_group_info() {
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_term_publication_channels',
+      2 => 'field_publication_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -81,6 +82,7 @@ function farnet_pages_field_group_info() {
     'children' => array(
       0 => 'title_field',
       1 => 'field_ne_body',
+      2 => 'field_farnet_abstract',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
