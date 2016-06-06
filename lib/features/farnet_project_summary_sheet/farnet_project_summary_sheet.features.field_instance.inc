@@ -382,9 +382,8 @@ function farnet_project_summary_sheet_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_plain',
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -1569,9 +1568,10 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'weight' => 25,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_plain',
         'weight' => 0,
       ),
     ),
