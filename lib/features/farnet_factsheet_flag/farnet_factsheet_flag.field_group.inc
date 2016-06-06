@@ -13,6 +13,49 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_area|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_area';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Area',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_ff_aquaculture',
+      1 => 'field_ff_coastal_inland',
+      2 => 'field_ff_description',
+      3 => 'field_ff_fishing',
+      4 => 'field_ff_population',
+      5 => 'field_ff_population_density',
+      6 => 'field_ff_processing',
+      7 => 'field_ff_protected_areas',
+      8 => 'field_ff_surface_area',
+      9 => 'field_ff_total_employment',
+      10 => 'field_ff_women_employment',
+      11 => 'field_ne_body',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Area',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_area',
+        'classes' => 'group-factsheet-flag-area field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_area|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_area|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_area';
   $field_group->entity_type = 'node';
@@ -51,6 +94,42 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_budget|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_budget';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Budget',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_collection_budget',
+      1 => 'field_ff_emff',
+      2 => 'field_ff_ms_co_financing',
+      3 => 'field_ff_multi_funding',
+      4 => 'field_ff_total_public_budget',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Budget',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_budget',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_budget|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_budget|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_budget';
   $field_group->entity_type = 'node';
@@ -78,6 +157,46 @@ function farnet_factsheet_flag_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_flag_budget|node|factsheet_flag|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_contact|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_contact';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Contact',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_address_12',
+      1 => 'field_address_22',
+      2 => 'field_city',
+      3 => 'field_email',
+      4 => 'field_ff_flag_manager',
+      5 => 'field_ff_flag_president',
+      6 => 'field_telephone2',
+      7 => 'field_website',
+      8 => 'field_zip_code_2',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Contact',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_contact',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_contact|node|factsheet_flag|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -117,6 +236,44 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_content|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_area',
+      1 => 'field_ff_code',
+      2 => 'field_ff_programming_period',
+      3 => 'field_term_country',
+      4 => 'field_term_region',
+      5 => 'field_title_official',
+      6 => 'title_field',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Content',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_content',
+        'classes' => 'group-factsheet-flag-content field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_content|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_content|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_content';
   $field_group->entity_type = 'node';
@@ -144,6 +301,42 @@ function farnet_factsheet_flag_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_flag_content|node|factsheet_flag|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_cooperation|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_cooperation';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Type of cooperation foreseen',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_ff_budget_available',
+      1 => 'field_ff_tc_interterritorial',
+      2 => 'field_ff_tc_other',
+      3 => 'field_ff_tc_sea_basin',
+      4 => 'field_ff_tc_transnational',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Type of cooperation foreseen',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_cooperation',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_cooperation|node|factsheet_flag|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -179,6 +372,38 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_language|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_language';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Language information',
+    'weight' => '13',
+    'children' => array(
+      0 => 'field_collection_language',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Language information',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_language',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_language|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_language|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_language';
   $field_group->entity_type = 'node';
@@ -202,6 +427,47 @@ function farnet_factsheet_flag_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_flag_language|node|factsheet_flag|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_links|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_links';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Links with LEADER or other CLLD groups',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_ff_flag_cooperates',
+      1 => 'field_ff_flag_cooperates_details',
+      2 => 'field_ff_flag_lag',
+      3 => 'field_ff_flag_lag_details',
+      4 => 'field_ff_flag_legal',
+      5 => 'field_ff_flag_legal_details',
+      6 => 'field_ff_flag_shares',
+      7 => 'field_ff_flag_shares_details',
+      8 => 'field_ff_flag_territory',
+      9 => 'field_ff_flag_territory_details',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Links with LEADER or other CLLD groups',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_links',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_links|node|factsheet_flag|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -271,6 +537,45 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_partenrship|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_partenrship';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Partnership',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_ff_environmental_actors',
+      1 => 'field_ff_fisheries_actors',
+      2 => 'field_ff_lead_partner',
+      3 => 'field_ff_members_partnership',
+      4 => 'field_ff_number_assembly',
+      5 => 'field_ff_number_decision',
+      6 => 'field_ff_other_non_fisheries',
+      7 => 'field_ff_public_actors',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Partnership',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_partenrship',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_partenrship|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_partenrship|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_partenrship';
   $field_group->entity_type = 'node';
@@ -305,6 +610,39 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_project_cal|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_project_cal';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Calls for projects',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_ff_calls_for_projects',
+      1 => 'field_ff_calls_for_projects_url',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Calls for projects',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_project_cal',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_project_cal|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_project_cal|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_project_cal';
   $field_group->entity_type = 'node';
@@ -329,6 +667,38 @@ function farnet_factsheet_flag_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_flag_project_cal|node|factsheet_flag|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_project_ex|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_project_ex';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Project examples and ideas',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_collection_project',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Project examples and ideas',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_project_ex',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_project_ex|node|factsheet_flag|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -389,6 +759,41 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_social|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_social';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Social media',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_ff_facebook',
+      1 => 'field_ff_google',
+      2 => 'field_ff_linkedin',
+      3 => 'field_ff_twitter',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Social media',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_social',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_social|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_social|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_social';
   $field_group->entity_type = 'node';
@@ -419,6 +824,38 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_staff|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_staff';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Staff',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_ff_number_staff',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Staff',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_staff',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_staff|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_staff|node|factsheet_flag|form';
   $field_group->group_name = 'group_factsheet_flag_staff';
   $field_group->entity_type = 'node';
@@ -442,6 +879,39 @@ function farnet_factsheet_flag_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_flag_staff|node|factsheet_flag|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_strategy|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_strategy';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Strategy',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_collection_strategy',
+      1 => 'field_ff_summary',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Strategy',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_strategy',
+        'classes' => 'group-factsheet-flag-strategy field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_strategy|node|factsheet_flag|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -496,6 +966,38 @@ function farnet_factsheet_flag_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_flag_taxonomy|node|factsheet_flag|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_thematic|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_thematic';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Thematic expertise and cooperation',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_ff_thematic_text',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Thematic expertise and cooperation',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_flag_thematic',
+        'classes' => 'group-factsheet-flag-thematic field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_thematic|node|factsheet_flag|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet Newsletters feature.
+ */
+
+include_once 'farnet_newsletters.features.inc';
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function farnet_newsletters_entity_info_alter(&$entity_info) {
+
+  $entity_info['node']['view modes'] += array(
+    'newsletter' => array(
+      'label' => t('Newsletter'),
+      'custom settings' => FALSE,
+    ),
+  );
+
+  $entity_info['node']['view modes'] += array(
+    'newsletter_news_list' => array(
+      'label' => t('Newsletter News List'),
+      'custom settings' => FALSE,
+    ),
+  );
+
+  return $entity_info;
+}
