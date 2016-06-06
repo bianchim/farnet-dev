@@ -114,13 +114,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_implementing-axis-4:<front>',
   );
-  // Exported menu link: main-menu_brochures:<front>.
-  $menu_links['main-menu_brochures:<front>'] = array(
+  // Exported menu link: main-menu_brochures:library/brochures.
+  $menu_links['main-menu_brochures:library/brochures'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'library/brochures',
+    'router_path' => 'library/brochures',
     'link_title' => 'Brochures',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_brochures:library/brochures',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -135,12 +137,10 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_brochures:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -49,
@@ -668,7 +668,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -49,
+    'weight' => -48,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -1018,7 +1018,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -1361,13 +1361,15 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_magazine:<front>.
-  $menu_links['main-menu_magazine:<front>'] = array(
+  // Exported menu link: main-menu_magazine:library/magazines.
+  $menu_links['main-menu_magazine:library/magazines'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'library/magazines',
+    'router_path' => 'library/magazines',
     'link_title' => 'Magazine',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_magazine:library/magazines',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1382,12 +1384,10 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_magazine:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -50,
@@ -1849,15 +1849,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_library:node/1',
   );
-  // Exported menu link: main-menu_presentations:<front>.
-  $menu_links['main-menu_presentations:<front>'] = array(
+  // Exported menu link: main-menu_presentations:library/presentations.
+  $menu_links['main-menu_presentations:library/presentations'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'library/presentations',
+    'router_path' => 'library/presentations',
     'link_title' => 'Presentations',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_presentations:<front>',
+      'identifier' => 'main-menu_presentations:library/presentations',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1875,10 +1875,10 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -45,
+    'weight' => -46,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -2108,7 +2108,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -47,
+    'weight' => -46,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
