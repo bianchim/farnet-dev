@@ -75,8 +75,8 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
 
-  /* Display: Brochures */
-  $handler = $view->new_display('page', 'Brochures', 'page');
+  /* Display: brochures */
+  $handler = $view->new_display('page', 'brochures', 'page_brochures');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -113,10 +113,11 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   $handler->display->display_options['path'] = 'library/brochures';
 
-  /* Display: Magazines */
-  $handler = $view->new_display('page', 'Magazines', 'page_1');
+  /* Display: magazines */
+  $handler = $view->new_display('page', 'magazines', 'page_magazines');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Magazines';
+  $handler->display->display_options['display_description'] = 'Magazines';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -150,9 +151,14 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   $handler->display->display_options['path'] = 'library/magazines';
+  $handler->display->display_options['menu']['title'] = 'kkk';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Presentations */
-  $handler = $view->new_display('page', 'Presentations', 'page_2');
+  /* Display: presentations */
+  $handler = $view->new_display('page', 'presentations', 'page_presentations');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Presentations';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;

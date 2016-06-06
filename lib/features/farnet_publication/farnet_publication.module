@@ -5,3 +5,29 @@
  */
 
 include_once 'farnet_publication.features.inc';
+
+/**
+ * Implements hook_views_default_views_alter()
+ */
+function farnet_publication_views_default_views_alter(&$views) {
+  if (isset($views['farnet_publication_view'])) {
+    /* $views['VIEW_NAME']->display['default']->display_options['fields']['field_gallery_natural_images']['settings']['colorbox_node_style'] = 'thumbnail'; */
+    /* dpm($views); */
+    $tid_brochure = taxonomy_get_term_by_name('');
+    $tid_report = taxonomy_get_term_by_name('');
+    $tid_guide = taxonomy_get_term_by_name('');
+    $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'] = array(
+      $tid_brochure => $tid_brochure,
+      $tid_report => $tid_report,
+      $tid_guide => $tid_guide,
+    );
+    $tid_magazine = taxonomy_get_term_by_name('FARNET Magazine');
+    $views['farnet_publication_view']->display['page_magazines']->display_options['filters']['field_type_of_publication_tid']['value'] = array(
+      $tid_magazine => $tid_magazine,
+    );
+    $tid_presentation = taxonomy_get_term_by_name('Presentation');
+    $views['farnet_publication_view']->display['page_presentations']->display_options['filters']['field_type_of_publication_tid']['value'] = array(
+      $tid_presentation => $tid_presentation,
+    );
+  }
+}
