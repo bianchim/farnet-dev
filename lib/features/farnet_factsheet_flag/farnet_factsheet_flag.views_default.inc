@@ -67,8 +67,10 @@ function farnet_factsheet_flag_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Flag Factsheets';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
-  $export['flag_factsheets_view'] = $view;
+  $export['farnet_factsheets_flag_view'] = $view;
 
   return $export;
 }

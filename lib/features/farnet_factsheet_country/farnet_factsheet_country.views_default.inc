@@ -88,6 +88,8 @@ function farnet_factsheet_country_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Country Factsheets';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -95,7 +97,7 @@ function farnet_factsheet_country_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'on-the-ground/country-factsheets';
-  $export['country_factsheets_view'] = $view;
+  $export['farnet_factsheets_country_view'] = $view;
 
   return $export;
 }

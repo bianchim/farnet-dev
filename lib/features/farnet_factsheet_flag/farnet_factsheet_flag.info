@@ -225,6 +225,7 @@ features[variable][] = node_options_factsheet_flag
 features[variable][] = node_preview_factsheet_flag
 features[variable][] = node_submitted_factsheet_flag
 features[variable][] = xmlsitemap_settings_node_factsheet_flag
+features[views_view][] = farnet_factsheets_flag_view
 features_exclude[field_base][group_content_access] = group_content_access
 features_exclude[field_base][og_group_ref] = og_group_ref
 project path = sites/all/modules/features
