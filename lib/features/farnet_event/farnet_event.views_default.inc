@@ -63,6 +63,13 @@ function farnet_event_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'news-events/events';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Events';
+  $handler->display->display_options['menu']['description'] = 'Events';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Transnational Seminars */
   $handler = $view->new_display('page', 'Transnational Seminars', 'page_1');
@@ -94,6 +101,13 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/transnational-seminars';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Transnational seminars';
+  $handler->display->display_options['menu']['description'] = 'Transnational seminars';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Managing authorities & National networks */
   $handler = $view->new_display('page', 'Managing authorities & National networks', 'page_2');
@@ -125,6 +139,13 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/ma-nn';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Managing authorities & National networks';
+  $handler->display->display_options['menu']['description'] = 'Managing authorities & National networks';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: National / regional / local events */
   $handler = $view->new_display('page', 'National / regional / local events', 'page_3');
@@ -156,6 +177,13 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/other';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'National / regional / local events ';
+  $handler->display->display_options['menu']['description'] = 'National / regional / local events ';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Conferences */
   $handler = $view->new_display('page', 'Conferences', 'page_4');
@@ -187,6 +215,13 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/conferences';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Conferences';
+  $handler->display->display_options['menu']['description'] = 'Conferences';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['events'] = $view;
 
   return $export;
