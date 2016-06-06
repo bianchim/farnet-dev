@@ -64,6 +64,13 @@ function farnet_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'on-the-ground/good-practices';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Good Practices';
+  $handler->display->display_options['menu']['description'] = 'Good Practices';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Project Summary Sheet */
   $handler = $view->new_display('page', 'Project Summary Sheet', 'page_1');
@@ -86,6 +93,13 @@ function farnet_views_views_default_views() {
     'project_summary_sheet' => 'project_summary_sheet',
   );
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/projects';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Projects';
+  $handler->display->display_options['menu']['description'] = 'Projects';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Method Summary Sheet */
   $handler = $view->new_display('page', 'Method Summary Sheet', 'page_2');
@@ -108,6 +122,13 @@ function farnet_views_views_default_views() {
     'summary_sheet_method' => 'summary_sheet_method',
   );
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/methods';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Methods';
+  $handler->display->display_options['menu']['description'] = 'Methods';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['good_practices'] = $view;
 
   return $export;
