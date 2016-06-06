@@ -7,7 +7,7 @@
 include_once 'farnet_publication.features.inc';
 
 /**
- * Implements hook_views_default_views_alter()
+ * Implements hook_views_default_views_alter().
  */
 function farnet_publication_views_default_views_alter(&$views) {
   if (isset($views['farnet_publication_view'])) {
