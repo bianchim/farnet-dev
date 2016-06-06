@@ -11,23 +11,29 @@ include_once 'farnet_publication.features.inc';
  */
 function farnet_publication_views_default_views_alter(&$views) {
   if (isset($views['farnet_publication_view'])) {
-    /* $views['VIEW_NAME']->display['default']->display_options['fields']['field_gallery_natural_images']['settings']['colorbox_node_style'] = 'thumbnail'; */
-    /* dpm($views); */
-    $tid_brochure = taxonomy_get_term_by_name('');
-    $tid_report = taxonomy_get_term_by_name('');
-    $tid_guide = taxonomy_get_term_by_name('');
-    $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-      $tid_brochure => $tid_brochure,
-      $tid_report => $tid_report,
-      $tid_guide => $tid_guide,
-    );
-    $tid_magazine = taxonomy_get_term_by_name('FARNET Magazine');
-    $views['farnet_publication_view']->display['page_magazines']->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-      $tid_magazine => $tid_magazine,
-    );
-    $tid_presentation = taxonomy_get_term_by_name('Presentation');
-    $views['farnet_publication_view']->display['page_presentations']->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-      $tid_presentation => $tid_presentation,
-    );
+    $brochure = taxonomy_get_term_by_name('Brochure');
+    $brochure_term = current($brochure);
+    $tid_brochure = $brochure_term->tid;
+    $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_brochure] = $tid_brochure;
+
+    $report = taxonomy_get_term_by_name('Report');
+    $report_term = current($report);
+    $tid_report = $report_term->tid;
+    $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_report] = $tid_report;
+
+    $guide = taxonomy_get_term_by_name('Guide');
+    $guide_term = current($guide);
+    $tid_guide = $guide_term->tid;
+    $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_guide] = $tid_guide;
+
+    $magazine = taxonomy_get_term_by_name('FARNET Magazine');
+    $magazine_term = current($magazine);
+    $tid_magazine = $magazine_term->tid;
+    $views['farnet_publication_view']->display['page_magazines']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_magazine] = $tid_magazine;
+
+    $presentation = taxonomy_get_term_by_name('Presentation');
+    $presentation_term = current($presentation);
+    $tid_presentation = $presentation_term->tid;
+    $views['farnet_publication_view']->display['page_presentations']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_presentation] = $tid_presentation;
   }
 }

@@ -69,9 +69,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    276 => '276',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array();
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
 
@@ -104,11 +102,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    334 => '334',
-    336 => '336',
-    337 => '337',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array();
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   $handler->display->display_options['path'] = 'library/brochures';
@@ -145,9 +139,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    333 => '333',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array();
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   $handler->display->display_options['path'] = 'library/magazines';
@@ -188,9 +180,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    335 => '335',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array();
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   $handler->display->display_options['path'] = 'library/presentations';
