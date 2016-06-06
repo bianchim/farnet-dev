@@ -64,7 +64,6 @@ function farnet_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'on-the-ground/good-practices';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Good Practices';
   $handler->display->display_options['menu']['description'] = 'Good Practices';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -93,7 +92,6 @@ function farnet_views_views_default_views() {
     'project_summary_sheet' => 'project_summary_sheet',
   );
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/projects';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Projects';
   $handler->display->display_options['menu']['description'] = 'Projects';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -122,7 +120,6 @@ function farnet_views_views_default_views() {
     'summary_sheet_method' => 'summary_sheet_method',
   );
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/methods';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Methods';
   $handler->display->display_options['menu']['description'] = 'Methods';
   $handler->display->display_options['menu']['weight'] = '0';
