@@ -30,3 +30,32 @@ function farnet_faq_form_nexteuropa_faq_node_form_alter(&$form, &$form_state, $f
     )
   );
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_instances.
+ */
+function farnet_faq_field_default_field_instances_alter(&$fields) {
+
+  if (isset($fields['node-nexteuropa_faq-title_field'])) {
+    if (isset($fields['node-nexteuropa_faq-title_field']['display'])) {
+      $fields['node-nexteuropa_faq-title_field']['display']['teaser']['label'] = "hidden";
+      $fields['node-nexteuropa_faq-title_field']['display']['teaser']['module'] = "text";
+      $fields['node-nexteuropa_faq-title_field']['display']['teaser']['settings'] = array();
+      $fields['node-nexteuropa_faq-title_field']['display']['teaser']['type'] = "text_plain";
+      /* $fields['node-nexteuropa_faq-title_field']['display']['teaser']['type'] = "title_linked";*/
+      $fields['node-nexteuropa_faq-title_field']['display']['teaser']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_faq-field_ne_body'])) {
+    if (isset($fields['node-nexteuropa_faq-field_ne_body']['display'])) {
+      $fields['node-nexteuropa_faq-field_ne_body']['display']['teaser']['label'] = "hidden";
+      $fields['node-nexteuropa_faq-field_ne_body']['display']['teaser']['module'] = "text";
+      $fields['node-nexteuropa_faq-field_ne_body']['display']['teaser']['settings'] = array();
+      $fields['node-nexteuropa_faq-field_ne_body']['display']['teaser']['type'] = "text_default";
+      $fields['node-nexteuropa_faq-field_ne_body']['display']['teaser']['weight'] = 2;
+    }
+  }
+}
