@@ -3,6 +3,7 @@ description = Feature for Farnet Views
 core = 7.x
 package = Farnet
 dependencies[] = farnet_event
+dependencies[] = farnet_pages
 dependencies[] = farnet_factsheet_country
 dependencies[] = farnet_factsheet_flag
 dependencies[] = farnet_faq
