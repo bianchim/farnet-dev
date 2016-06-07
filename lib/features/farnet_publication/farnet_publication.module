@@ -5,3 +5,45 @@
  */
 
 include_once 'farnet_publication.features.inc';
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function farnet_publication_views_default_views_alter(&$views) {
+  if (isset($views['farnet_publication_view'])) {
+    $brochure = taxonomy_get_term_by_name('Brochure');
+    if ((isset($brochure)) && (!empty($brochure))) {
+      $brochure_term = current($brochure);
+      $tid_brochure = $brochure_term->tid;
+      $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_brochure] = $tid_brochure;
+    }
+
+    $report = taxonomy_get_term_by_name('Report');
+    if ((isset($report)) && (!empty($report))) {
+      $report_term = current($report);
+      $tid_report = $report_term->tid;
+      $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_report] = $tid_report;
+    }
+
+    $guide = taxonomy_get_term_by_name('Guide');
+    if ((isset($guide)) && (!empty($guide))) {
+      $guide_term = current($guide);
+      $tid_guide = $guide_term->tid;
+      $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_guide] = $tid_guide;
+    }
+
+    $magazine = taxonomy_get_term_by_name('FARNET Magazine');
+    if ((isset($magazine)) && (!empty($magazine))) {
+      $magazine_term = current($magazine);
+      $tid_magazine = $magazine_term->tid;
+      $views['farnet_publication_view']->display['page_magazines']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_magazine] = $tid_magazine;
+    }
+
+    $presentation = taxonomy_get_term_by_name('Presentation');
+    if ((isset($presentation)) && (!empty($presentation))) {
+      $presentation_term = current($presentation);
+      $tid_presentation = $presentation_term->tid;
+      $views['farnet_publication_view']->display['page_presentations']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_presentation] = $tid_presentation;
+    }
+  }
+}

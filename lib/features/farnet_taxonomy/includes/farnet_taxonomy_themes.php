@@ -49,6 +49,14 @@ function farnet_taxonomy_themes() {
         'it' => t('Governance and management IT'),
       ),
     ),
+    'Theme6' => (object) array(
+      'name' => t('Other'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Autre'),
+        'it' => t('Other'),
+      ),
+    ),
   );
   return $themes_array;
 }

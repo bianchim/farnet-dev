@@ -1,0 +1,89 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function farnet_menu_content_block_info() {
+  $blocks = array();
+
+  $blocks['farnet_menu_content_menu_page'] = array(
+    'info' => t('Farnet Field Group Menu Page'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function farnet_menu_content_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'farnet_menu_content_menu_page':
+      $block['subject'] = '';
+      $block['content'] = array(
+        '#markup' => _farnet_menu_content_menu_page_content(),
+        '#attached' => array(
+          'css' => array(
+            drupal_get_path('module', 'farnet_menu_content') . '/css/farnet_menu_content_block.css',
+          ),
+          'js' => array(
+            drupal_get_path('module', 'farnet_menu_content') . '/js/farnet_menu_content_block.js',
+          ),
+        ),
+      );
+
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implement the content of the block.
+ */
+function _farnet_menu_content_menu_page_content() {
+  global $language;
+
+  $node = node_load(arg(1));
+  $field_groups = field_group_info_groups('node', $node->type, 'default');
+  $field_groups_sorted = array();
+
+  foreach ($field_groups as $key => $field_group) {
+    if ($field_group->format_type == 'div') {
+      // Check if children are empty.
+      $is_empty = TRUE;
+
+      foreach ($field_group->children as $key => $field) {
+        // Check for data in the field.
+        if (!empty($node->{$field})) {
+          // Check if there is data in the current language.
+          $und_language = isset($node->{$field}[LANGUAGE_NONE]);
+          $current_language = isset($node->{$field}[$language->language]);
+          if ($current_language || $und_language) {
+            $is_empty = FALSE;
+            break;
+          }
+        }
+      }
+
+      if (!$is_empty) {
+        $field_groups_sorted[$field_group->weight] = $field_group;
+      }
+    }
+  }
+
+  ksort($field_groups_sorted);
+  $output = '<div><nav id="navbar-node-page" class="navbar"><h3>Page contents</h3><ul class="nav">';
+  foreach ($field_groups_sorted as $key => $field_group) {
+    $output .= '<li><a href="#' . str_replace('_', '-', $field_group->group_name) . '">' . $field_group->label . '</a></li>';
+  }
+  $output .= '</ul></nav></div>';
+
+  return $output;
+}

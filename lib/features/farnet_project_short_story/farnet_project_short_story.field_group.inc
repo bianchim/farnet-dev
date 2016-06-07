@@ -13,6 +13,41 @@ function farnet_project_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group__short_story_project_info|node|project_short_story|default';
+  $field_group->group_name = 'group__short_story_project_info';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Project information',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_area',
+      1 => 'field_organisation',
+      2 => 'field_term_country',
+      3 => 'field_term_region',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Project information',
+      'instance_settings' => array(
+        'id' => 'group__short_story_project_info',
+        'classes' => 'group__short_story_project_info field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group__short_story_project_info|node|project_short_story|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group__short_story_project_info|node|project_short_story|form';
   $field_group->group_name = 'group__short_story_project_info';
   $field_group->entity_type = 'node';
@@ -39,6 +74,42 @@ function farnet_project_short_story_field_group_info() {
     ),
   );
   $field_groups['group__short_story_project_info|node|project_short_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_content|node|project_short_story|default';
+  $field_group->group_name = 'group_short_story_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_farnet_abstract',
+      1 => 'field_flag',
+      2 => 'field_ne_body',
+      3 => 'field_picture',
+      4 => 'field_website',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Content',
+      'instance_settings' => array(
+        'id' => 'group_short_story_content',
+        'classes' => 'group-short-story-content field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_short_story_content|node|project_short_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -76,6 +147,41 @@ function farnet_project_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_funding|node|project_short_story|default';
+  $field_group->group_name = 'group_short_story_funding';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Funding',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_eu_contribution',
+      1 => 'field_other_public_contribution',
+      2 => 'field_private_contribution',
+      3 => 'field_total_project_cost',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Funding',
+      'instance_settings' => array(
+        'id' => 'group_short_story_funding',
+        'classes' => 'group_short_story_funding  field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_short_story_funding|node|project_short_story|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_short_story_funding|node|project_short_story|form';
   $field_group->group_name = 'group_short_story_funding';
   $field_group->entity_type = 'node';
@@ -102,6 +208,38 @@ function farnet_project_short_story_field_group_info() {
     ),
   );
   $field_groups['group_short_story_funding|node|project_short_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_media|node|project_short_story|default';
+  $field_group->group_name = 'group_short_story_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Media',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_gallery',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Media',
+      'instance_settings' => array(
+        'id' => 'group_short_story_media',
+        'classes' => 'group_short_story_media field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_short_story_media|node|project_short_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -160,6 +298,40 @@ function farnet_project_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_publication|node|project_short_story|default';
+  $field_group->group_name = 'group_short_story_publication';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Publication',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_publication_abstract',
+      1 => 'field_publication_date',
+      2 => 'field_term_publication_channels',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Publication',
+      'instance_settings' => array(
+        'id' => 'group_short_story_publication',
+        'classes' => 'group_short_story_publication field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_short_story_publication|node|project_short_story|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_short_story_publication|node|project_short_story|form';
   $field_group->group_name = 'group_short_story_publication';
   $field_group->entity_type = 'node';
@@ -185,6 +357,39 @@ function farnet_project_short_story_field_group_info() {
     ),
   );
   $field_groups['group_short_story_publication|node|project_short_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_quote|node|project_short_story|default';
+  $field_group->group_name = 'group_short_story_quote';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Quote',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_quote_author',
+      1 => 'field_quote_text',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Quote',
+      'instance_settings' => array(
+        'id' => 'group_short_story_quote',
+        'classes' => 'group_short_story_quote  field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_short_story_quote|node|project_short_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -217,6 +422,39 @@ function farnet_project_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_taxonomy|node|project_short_story|default';
+  $field_group->group_name = 'group_short_story_taxonomy';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Taxonomy',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_tags',
+      1 => 'field_term_theme',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Taxonomy',
+      'instance_settings' => array(
+        'id' => 'group_short_story_taxonomy',
+        'classes' => 'group_short_story_taxonomy field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_short_story_taxonomy|node|project_short_story|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_short_story_taxonomy|node|project_short_story|form';
   $field_group->group_name = 'group_short_story_taxonomy';
   $field_group->entity_type = 'node';
@@ -241,6 +479,38 @@ function farnet_project_short_story_field_group_info() {
     ),
   );
   $field_groups['group_short_story_taxonomy|node|project_short_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_short_story_timeframe|node|project_short_story|default';
+  $field_group->group_name = 'group_short_story_timeframe';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project_short_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Timeframe of implementation',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_dates_start_end',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Timeframe of implementation',
+      'instance_settings' => array(
+        'id' => 'group_short_story_timeframe',
+        'classes' => 'group_short_story_timeframe file-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_short_story_timeframe|node|project_short_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

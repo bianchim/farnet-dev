@@ -98,6 +98,21 @@ function farnet_project_summary_sheet_strongarm() {
       'ical' => array(
         'custom_settings' => FALSE,
       ),
+      'newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
+      'newsletter_news_list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_plain' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_html' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_textalt' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

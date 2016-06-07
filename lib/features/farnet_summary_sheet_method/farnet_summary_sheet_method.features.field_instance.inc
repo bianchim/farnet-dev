@@ -22,7 +22,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -95,7 +95,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 27,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -145,7 +145,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -218,7 +218,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           'view_mode' => 'media_gallery_page',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 28,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -268,7 +268,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_integer',
-        'weight' => 10,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -310,7 +310,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 30,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -379,7 +379,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -449,7 +449,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 32,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -498,7 +498,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 13,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -572,7 +572,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -647,7 +647,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -705,7 +705,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 20,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -773,7 +773,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -840,7 +840,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 22,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -908,7 +908,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -976,7 +976,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 26,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1043,7 +1043,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 23,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1116,7 +1116,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 24,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1159,7 +1159,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1226,7 +1226,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1267,7 +1267,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1309,7 +1309,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1350,7 +1350,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 29,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1390,7 +1390,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 8,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1431,7 +1431,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1498,7 +1498,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 2,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1538,7 +1538,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 0,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1595,14 +1595,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'title',
-        'settings' => array(
-          'title_class' => '',
-          'title_link' => '',
-          'title_style' => '',
-        ),
-        'type' => 'title_linked',
-        'weight' => 16,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'hidden',
