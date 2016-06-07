@@ -919,11 +919,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_calendar:<front>',
   );
-  // Exported menu link: main-menu_farnet-news:<front>.
-  $menu_links['main-menu_farnet-news:<front>'] = array(
+  // Exported menu link: main-menu_farnet-news:news-events/news/farnet.
+  $menu_links['main-menu_farnet-news:news-events/news/farnet'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'news-events/news/farnet',
+    'router_path' => 'news-events/news/farnet',
     'link_title' => 'FARNET news',
     'options' => array(
       'alter' => TRUE,
@@ -941,7 +941,7 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'identifier' => 'main-menu_farnet-news:<front>',
+      'identifier' => 'main-menu_farnet-news:news-events/news/farnet',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -952,7 +952,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news:<front>',
+    'parent_identifier' => 'main-menu_news:news-events/news',
   );
   // Exported menu link: main-menu_farnet-support-unit:<front>.
   $menu_links['main-menu_farnet-support-unit:<front>'] = array(
@@ -1605,11 +1605,11 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_news:<front>.
-  $menu_links['main-menu_news:<front>'] = array(
+  // Exported menu link: main-menu_news:news-events/news.
+  $menu_links['main-menu_news:news-events/news'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'news-events/news',
+    'router_path' => 'news-events/news',
     'link_title' => 'News',
     'options' => array(
       'attributes' => array(
@@ -1627,7 +1627,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_news:<front>',
+      'identifier' => 'main-menu_news:news-events/news',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1674,11 +1674,11 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_other-news:<front>.
-  $menu_links['main-menu_other-news:<front>'] = array(
+  // Exported menu link: main-menu_other-news:news-events/news/other.
+  $menu_links['main-menu_other-news:news-events/news/other'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'news-events/news/other',
+    'router_path' => 'news-events/news/other',
     'link_title' => 'Other news',
     'options' => array(
       'attributes' => array(
@@ -1696,7 +1696,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_other-news:<front>',
+      'identifier' => 'main-menu_other-news:news-events/news/other',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1707,7 +1707,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news:<front>',
+    'parent_identifier' => 'main-menu_news:news-events/news',
   );
   // Exported menu link: main-menu_other-tools:<front>.
   $menu_links['main-menu_other-tools:<front>'] = array(
