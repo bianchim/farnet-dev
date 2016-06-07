@@ -72,9 +72,9 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Project Summary Sheet */
-  $handler = $view->new_display('page', 'Project Summary Sheet', 'page_1');
+  $handler = $view->new_display('page', 'Project Summary Sheet', 'page_projects');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Good practices - Project Summary Sheet';
+  $handler->display->display_options['title'] = 'Projects';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -100,9 +100,9 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Method Summary Sheet */
-  $handler = $view->new_display('page', 'Method Summary Sheet', 'page_2');
+  $handler = $view->new_display('page', 'Method Summary Sheet', 'page_methods');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Good practices - Method Summary Sheet';
+  $handler->display->display_options['title'] = 'Methods';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
