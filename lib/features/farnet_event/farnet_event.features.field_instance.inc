@@ -789,6 +789,7 @@ function farnet_event_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_plain',
         'weight' => 3,
+      ),
       'newsletter' => array(
         'label' => 'above',
         'settings' => array(),
