@@ -237,7 +237,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 31,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -263,7 +263,110 @@ function farnet_project_summary_sheet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_summary_sheet-field_farnet_abstract'.
+  // Exported field_instance:
+  // 'node-project_summary_sheet-field_b1_other_contribution'.
+  $field_instances['node-project_summary_sheet-field_b1_other_contribution'] = array(
+    'bundle' => 'project_summary_sheet',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_b1_other_contribution',
+    'label' => 'B1 - Other contribution',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-project_summary_sheet-field_dates_start_end'.
+  $field_instances['node-project_summary_sheet-field_dates_start_end'] = array(
+    'bundle' => 'project_summary_sheet',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_dates_start_end',
+    'label' => 'Dates (Start/End)',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-project_summary_sheet-field_farnet_abstract'.
   $field_instances['node-project_summary_sheet-field_farnet_abstract'] = array(
     'bundle' => 'project_summary_sheet',
     'default_value' => NULL,
@@ -275,7 +378,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -327,108 +430,6 @@ function farnet_project_summary_sheet_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-project_summary_sheet-field_b1_other_contribution'.
-  $field_instances['node-project_summary_sheet-field_b1_other_contribution'] = array(
-    'bundle' => 'project_summary_sheet',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 30,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_b1_other_contribution',
-    'label' => 'B1 - Other contribution',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 17,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-project_summary_sheet-field_dates_start_end'.
-  $field_instances['node-project_summary_sheet-field_dates_start_end'] = array(
-    'bundle' => 'project_summary_sheet',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-        ),
-        'type' => 'date_default',
-        'weight' => 21,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_dates_start_end',
-    'label' => 'Dates (Start/End)',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'd/m/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'no_fieldset' => 0,
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_popup',
-      'weight' => 10,
     ),
   );
 
@@ -497,7 +498,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'view_mode' => 'media_gallery_page',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 32,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -590,7 +591,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 24,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -655,7 +656,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 29,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -702,7 +703,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1011,7 +1012,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1084,7 +1085,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1132,7 +1133,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1242,7 +1243,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1309,7 +1310,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1376,7 +1377,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1492,7 +1493,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1560,7 +1561,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1634,7 +1635,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 26,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1684,7 +1685,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 23,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1726,7 +1727,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 27,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1766,7 +1767,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 22,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1872,7 +1873,7 @@ function farnet_project_summary_sheet_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
