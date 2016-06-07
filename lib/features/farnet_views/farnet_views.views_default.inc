@@ -515,6 +515,5 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['path'] = 'news-events/news/other';
   $export['farnet_view_news'] = $view;
 
-
   return $export;
 }
