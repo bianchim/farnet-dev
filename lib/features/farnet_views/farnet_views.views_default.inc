@@ -73,7 +73,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['path'] = 'news-events/news';
 
   /* Display: Farnet */
-  $handler = $view->new_display('page', 'Farnet', 'page_1');
+  $handler = $view->new_display('page', 'Farnet', 'page_news_farnet');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'FARNET news';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -99,15 +99,13 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array(
-    265 => '265',
-  );
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array();
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
   $handler->display->display_options['path'] = 'news-events/news/farnet';
 
   /* Display: Other */
-  $handler = $view->new_display('page', 'Other', 'page_2');
+  $handler = $view->new_display('page', 'Other', 'page_news_other');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Other news';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -133,9 +131,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array(
-    266 => '266',
-  );
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array();
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
   $handler->display->display_options['path'] = 'news-events/news/other';

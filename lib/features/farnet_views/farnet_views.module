@@ -5,3 +5,24 @@
  */
 
 include_once 'farnet_views.features.inc';
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function farnet_event_views_default_views_alter(&$views) {
+  if (isset($views['farnet_view_news'])) {
+    $term = taxonomy_get_term_by_name('Farnet News');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_view_news']->display['page_news_farnet']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
+    }
+
+    $term = taxonomy_get_term_by_name('Other News');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_view_news']->display['page_news_other']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
+    }
+  }
+}

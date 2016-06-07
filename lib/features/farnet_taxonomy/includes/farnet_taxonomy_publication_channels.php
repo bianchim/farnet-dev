@@ -10,7 +10,7 @@
 function farnet_taxonomy_publication_channels() {
   $publication_channels_array = array(
     'Farnetnews' => (object) array(
-      'name' => t('Farnet News EN'),
+      'name' => t('Farnet News'),
       'language' => 'en',
       'translation' => array(
         'fr' => t('Farnet News FR'),
@@ -18,7 +18,7 @@ function farnet_taxonomy_publication_channels() {
       ),
     ),
     'Othernews' => (object) array(
-      'name' => t('Other News EN'),
+      'name' => t('Other News'),
       'language' => 'en',
       'translation' => array(
         'fr' => t('Other News FR'),
