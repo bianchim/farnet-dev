@@ -44,7 +44,6 @@ function farnet_menu_content_block_view($delta = '') {
   return $block;
 }
 
-
 /**
  * Implement the content of the block.
  */
@@ -57,23 +56,23 @@ function _farnet_menu_content_menu_page_content() {
 
   foreach ($field_groups as $key => $field_group) {
     if ($field_group->format_type == 'div') {
-      // Check if children are empty
+      // Check if children are empty.
       $is_empty = TRUE;
 
       foreach ($field_group->children as $key => $field) {
-        // check for data in the field
+        // Check for data in the field.
         if (!empty($node->{$field})) {
-          // check if there is data in the current language
+          // Check if there is data in the current language.
           $und_language = isset($node->{$field}[LANGUAGE_NONE]);
           $current_language = isset($node->{$field}[$language->language]);
-          if ( $current_language || $und_language) {
+          if ($current_language || $und_language) {
             $is_empty = FALSE;
             break;
           }
         }
       }
 
-      if(!$is_empty) {
+      if (!$is_empty) {
         $field_groups_sorted[$field_group->weight] = $field_group;
       }
     }
