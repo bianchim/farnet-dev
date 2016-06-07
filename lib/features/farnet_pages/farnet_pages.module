@@ -5,3 +5,12 @@
  */
 
 include_once 'farnet_pages.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function farnet_pages_field_group_info_alter($groups) {
+  if (!empty($groups['group_page_content|node|page|form'])) {
+    $groups['group_page_content|node|page|form']->data['children'][1] = 'field_farnet_abstract';
+  }
+}
