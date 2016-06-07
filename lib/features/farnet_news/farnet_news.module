@@ -24,6 +24,9 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
   }
 
   if (isset($fields['node-nexteuropa_news-field_abstract'])) {
+      $fields['node-nexteuropa_news-field_abstract']['widget'] ['settings']['maxlength_js'] = '400';
+      $fields['node-nexteuropa_news-field_abstract']['widget'] ['settings']['maxlength_js_label'] = 'Content limited to @limit characters, remaining: <strong>@remaining</strong>';
+      $fields['node-nexteuropa_news-field_abstract']['widget'] ['settings']['maxlength_js_label_summary'] = 'Content limited to @limit characters, remaining: <strong>@remaining</strong>';
     if (isset($fields['node-nexteuropa_news-field_abstract']['display'])) {
       $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['label'] = "hidden";
       $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['module'] = "text";

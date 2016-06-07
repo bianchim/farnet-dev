@@ -9,6 +9,7 @@
  */
 function farnet_news_ds_field_settings_info() {
   $export = array();
+
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|nexteuropa_news|teaser';
@@ -23,6 +24,7 @@ function farnet_news_ds_field_settings_info() {
     ),
   );
   $export['node|nexteuropa_news|teaser'] = $ds_fieldsetting;
+
   return $export;
 }
 
