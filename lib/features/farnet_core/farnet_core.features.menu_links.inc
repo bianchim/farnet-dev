@@ -499,13 +499,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_tools:node/1',
   );
-  // Exported menu link: main-menu_country-factsheets:<front>.
-  $menu_links['main-menu_country-factsheets:<front>'] = array(
+  // Exported menu link: main-menu_country-factsheets:on-the-ground/country-factsheets.
+  $menu_links['main-menu_country-factsheets:on-the-ground/country-factsheets'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/country-factsheets',
+    'router_path' => 'on-the-ground/country-factsheets',
     'link_title' => 'Country factsheets',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_country-factsheets:on-the-ground/country-factsheets',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -520,12 +522,10 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_country-factsheets:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -50,
@@ -1024,13 +1024,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_faqs:<front>',
   );
-  // Exported menu link: main-menu_flag-factsheets:<front>.
-  $menu_links['main-menu_flag-factsheets:<front>'] = array(
+  // Exported menu link: main-menu_flag-factsheets:on-the-ground/flag-factsheets.
+  $menu_links['main-menu_flag-factsheets:on-the-ground/flag-factsheets'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/flag-factsheets',
+    'router_path' => 'on-the-ground/flag-factsheets',
     'link_title' => 'FLAG factsheets',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_flag-factsheets:on-the-ground/flag-factsheets',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1045,12 +1047,10 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_flag-factsheets:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -49,
