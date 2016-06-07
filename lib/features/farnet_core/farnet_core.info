@@ -15,6 +15,7 @@ dependencies[] = link
 dependencies[] = locale
 dependencies[] = media_oembed
 dependencies[] = menu
+dependencies[] = multisite_maxlength
 dependencies[] = number
 dependencies[] = print_mail
 dependencies[] = print_pdf
