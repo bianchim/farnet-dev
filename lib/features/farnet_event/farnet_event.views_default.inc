@@ -94,9 +94,7 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['id'] = 'field_term_type_event_tid';
   $handler->display->display_options['filters']['field_term_type_event_tid']['table'] = 'field_data_field_term_type_event';
   $handler->display->display_options['filters']['field_term_type_event_tid']['field'] = 'field_term_type_event_tid';
-  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array(
-    269 => '269',
-  );
+  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array();
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/transnational-seminars';
@@ -131,9 +129,7 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['id'] = 'field_term_type_event_tid';
   $handler->display->display_options['filters']['field_term_type_event_tid']['table'] = 'field_data_field_term_type_event';
   $handler->display->display_options['filters']['field_term_type_event_tid']['field'] = 'field_term_type_event_tid';
-  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array(
-    270 => '270',
-  );
+  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array();
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/ma-nn';
@@ -168,9 +164,7 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['id'] = 'field_term_type_event_tid';
   $handler->display->display_options['filters']['field_term_type_event_tid']['table'] = 'field_data_field_term_type_event';
   $handler->display->display_options['filters']['field_term_type_event_tid']['field'] = 'field_term_type_event_tid';
-  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array(
-    271 => '271',
-  );
+  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array();
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/other';
@@ -205,9 +199,7 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_term_type_event_tid']['id'] = 'field_term_type_event_tid';
   $handler->display->display_options['filters']['field_term_type_event_tid']['table'] = 'field_data_field_term_type_event';
   $handler->display->display_options['filters']['field_term_type_event_tid']['field'] = 'field_term_type_event_tid';
-  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array(
-    272 => '272',
-  );
+  $handler->display->display_options['filters']['field_term_type_event_tid']['value'] = array();
   $handler->display->display_options['filters']['field_term_type_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_type_event_tid']['vocabulary'] = 'nexteuropa_event_type';
   $handler->display->display_options['path'] = 'news-events/events/conferences';
