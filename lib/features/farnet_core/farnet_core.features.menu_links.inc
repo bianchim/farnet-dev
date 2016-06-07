@@ -359,6 +359,41 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_tools:<front>',
   );
+  // Exported menu link: main-menu_conferences:news-events/events/conferences.
+  $menu_links['main-menu_conferences:news-events/events/conferences'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'news-events/events/conferences',
+    'router_path' => 'news-events/events/conferences',
+    'link_title' => 'Conferences',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_conferences:news-events/events/conferences',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -47,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_events:news-events/events',
+  );
   // Exported menu link: main-menu_contact-us:<front>.
   $menu_links['main-menu_contact-us:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -778,6 +813,41 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_themes:<front>',
+  );
+    // Exported menu link: main-menu_events:news-events/events.
+  $menu_links['main-menu_events:news-events/events'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'news-events/events',
+    'router_path' => 'news-events/events',
+    'link_title' => 'Events',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_events:news-events/events',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -49,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_news--events:<front>',
   );
   // Exported menu link: main-menu_faqs:<front>.
   $menu_links['main-menu_faqs:<front>'] = array(
@@ -1373,6 +1443,41 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_library:<front>',
   );
+  // Exported menu link: main-menu_managing-authorities--national-networks:news-events/events/ma-nn.
+  $menu_links['main-menu_managing-authorities--national-networks:news-events/events/ma-nn'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'news-events/events/ma-nn',
+    'router_path' => 'news-events/events/ma-nn',
+    'link_title' => 'Managing authorities & National networks',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_managing-authorities--national-networks:news-events/events/ma-nn',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -49,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_events:news-events/events',
+  );
   // Exported menu link: main-menu_maps:<front>.
   $menu_links['main-menu_maps:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -1407,6 +1512,41 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_on-the-ground:<front>',
+  );
+  // Exported menu link: main-menu_national--regional--local-events-capacity-building-events:news-events/events/other.
+  $menu_links['main-menu_national--regional--local-events-capacity-building-events:news-events/events/other'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'news-events/events/other',
+    'router_path' => 'news-events/events/other',
+    'link_title' => 'National / regional / local events (Capacity building events)',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_national--regional--local-events-capacity-building-events:news-events/events/other',
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -48,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_events:news-events/events',
   );
   // Exported menu link: main-menu_national-authorities:<front>.
   $menu_links['main-menu_national-authorities:<front>'] = array(
@@ -2298,6 +2438,41 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_on-the-ground:<front>',
   );
+  // Exported menu link: main-menu_transnational-seminars:news-events/events/transnational-seminars.
+  $menu_links['main-menu_transnational-seminars:news-events/events/transnational-seminars'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'news-events/events/transnational-seminars',
+    'router_path' => 'news-events/events/transnational-seminars',
+    'link_title' => 'Transnational seminars',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_transnational-seminars:news-events/events/transnational-seminars',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -50,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_events:news-events/events',
+  );
   // Exported menu link: main-menu_videos:<front>.
   $menu_links['main-menu_videos:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -2381,6 +2556,7 @@ function farnet_core_menu_default_menu_links() {
   t('CLLD overview');
   t('Calendar');
   t('Community Led Local Development');
+  t('Conferences');
   t('Contact us');
   t('Cooperation');
   t('Cooperation calls');
@@ -2411,7 +2587,9 @@ function farnet_core_menu_default_menu_links() {
   t('Lessons from FARNET 1 (2007-2013)');
   t('Library');
   t('Magazine');
+  t('Managing authorities & National networks');
   t('Maps');
+  t('National / regional / local events (Capacity building events)');
   t('National authorities');
   t('News');
   t('News & Events');
@@ -2438,6 +2616,7 @@ function farnet_core_menu_default_menu_links() {
   t('Tools for FLAGs');
   t('Tools for Managing Authorities');
   t('Transnational cooperation projects');
+  t('Transnational seminars');
   t('Videos');
   t('Who\'s who');
 
