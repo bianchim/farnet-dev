@@ -1989,11 +1989,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_cooperation:<front>',
   );
-  // Exported menu link: main-menu_project-stories:<front>.
-  $menu_links['main-menu_project-stories:<front>'] = array(
+  // Exported menu link: main-menu_project-stories:on-the-ground/project-stories.
+  $menu_links['main-menu_project-stories:on-the-ground/project-stories'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/project-stories',
+    'router_path' => 'on-the-ground/project-stories',
     'link_title' => 'Project stories',
     'options' => array(
       'attributes' => array(
@@ -2011,7 +2011,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_project-stories:<front>',
+      'identifier' => 'main-menu_project-stories:on-the-ground/project-stories',
     ),
     'module' => 'menu',
     'hidden' => 0,
