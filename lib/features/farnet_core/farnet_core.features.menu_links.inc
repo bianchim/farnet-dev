@@ -1164,6 +1164,41 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_on-the-ground:node/1',
   );
+  // Exported menu link: main-menu_good-practices:on-the-ground/good-practices.
+  $menu_links['main-menu_good-practices:on-the-ground/good-practices'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'on-the-ground/good-practices',
+    'router_path' => 'on-the-ground/good-practices',
+    'link_title' => 'Good practices',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_good-practices:on-the-ground/good-practices',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -48,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_on-the-ground:<front>',
+  );
   // Exported menu link: main-menu_governance-and-management:themes/governance-management.
   $menu_links['main-menu_governance-and-management:themes/governance-management'] = array(
     'menu_name' => 'main-menu',
@@ -1460,14 +1495,49 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -45,
+    'weight' => -46,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_on-the-ground:node/1',
   );
-  // Exported menu link: main-menu_methods:<front>.
-  $menu_links['main-menu_methods:<front>'] = array(
+  // Exported menu link: main-menu_methods:on-the-ground/good-practices/methods.
+  $menu_links['main-menu_methods:on-the-ground/good-practices/methods'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'on-the-ground/good-practices/methods',
+    'router_path' => 'on-the-ground/good-practices/methods',
+    'link_title' => 'Methods',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_methods:on-the-ground/good-practices/methods',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => 1,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_good-practices:on-the-ground/good-practices',
+  );
+  // Exported menu link: main-menu_national--regional--local-events-capacity-building-events:<front>.
+  $menu_links['main-menu_national--regional--local-events-capacity-building-events:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
@@ -1954,11 +2024,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_on-the-ground:node/1',
   );
-  // Exported menu link: main-menu_projects:<front>.
-  $menu_links['main-menu_projects:<front>'] = array(
+  // Exported menu link: main-menu_projects:on-the-ground/good-practices/projects.
+  $menu_links['main-menu_projects:on-the-ground/good-practices/projects'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/good-practices/projects',
+    'router_path' => 'on-the-ground/good-practices/projects',
     'link_title' => 'Projects',
     'options' => array(
       'attributes' => array(
@@ -1976,18 +2046,18 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_projects:<front>',
+      'identifier' => 'main-menu_projects:on-the-ground/good-practices/projects',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -50,
+    'weight' => 0,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_good-practices:<front>',
+    'parent_identifier' => 'main-menu_good-practices:on-the-ground/good-practices',
   );
   // Exported menu link: main-menu_qa-on-clld:<front>.
   $menu_links['main-menu_qa-on-clld:<front>'] = array(
