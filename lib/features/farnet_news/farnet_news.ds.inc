@@ -9,7 +9,6 @@
  */
 function farnet_news_ds_field_settings_info() {
   $export = array();
-
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|nexteuropa_news|teaser';
@@ -24,7 +23,6 @@ function farnet_news_ds_field_settings_info() {
     ),
   );
   $export['node|nexteuropa_news|teaser'] = $ds_fieldsetting;
-
   return $export;
 }
 
@@ -40,31 +38,37 @@ function farnet_news_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'nexteuropa_news';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'title_field',
-        1 => 'field_publication_date',
-        2 => 'field_abstract',
-        3 => 'node_link',
+      'left' => array(
+        0 => 'field_image',
+      ),
+      'right' => array(
+        1 => 'title_field',
+        2 => 'field_publication_date',
+        3 => 'field_term_theme',
+        4 => 'field_abstract',
       ),
     ),
     'fields' => array(
-      'title_field' => 'ds_content',
-      'field_publication_date' => 'ds_content',
-      'field_abstract' => 'ds_content',
-      'node_link' => 'ds_content',
+      'field_image' => 'left',
+      'title_field' => 'right',
+      'field_publication_date' => 'right',
+      'field_term_theme' => 'right',
+      'field_abstract' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|nexteuropa_news|teaser'] = $ds_layout;
 
