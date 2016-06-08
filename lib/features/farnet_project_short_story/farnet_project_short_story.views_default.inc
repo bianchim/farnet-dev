@@ -22,7 +22,7 @@ function farnet_project_short_story_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Project Short Story';
+  $handler->display->display_options['title'] = 'Project stories';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -63,7 +63,6 @@ function farnet_project_short_story_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'on-the-ground/project-stories';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Project stories';
   $handler->display->display_options['menu']['description'] = 'Project stories';
   $handler->display->display_options['menu']['weight'] = '0';
