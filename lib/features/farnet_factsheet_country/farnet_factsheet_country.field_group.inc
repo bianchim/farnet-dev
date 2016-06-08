@@ -13,6 +13,38 @@ function farnet_factsheet_country_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_areas|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_areas';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Areas',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_flag_areas',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Areas',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_areas',
+        'classes' => 'group_factsheet_areas field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_areas|node|factsheet_country|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_areas|node|factsheet_country|form';
   $field_group->group_name = 'group_factsheet_areas';
   $field_group->entity_type = 'node';
@@ -36,6 +68,43 @@ function farnet_factsheet_country_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_areas|node|factsheet_country|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_clld_budget|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_clld_budget';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'CLLD Budget',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_average_budget_per_flag',
+      1 => 'field_co_funding',
+      2 => 'field_emff_budget',
+      3 => 'field_number_flags',
+      4 => 'field_proportion_emff',
+      5 => 'field_total_budget',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'CLLD Budget',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_clld_budget',
+        'classes' => 'group_factsheet_clld_budget field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_clld_budget|node|factsheet_country|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -72,6 +141,40 @@ function farnet_factsheet_country_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_clld_programme|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_clld_programme';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'CLLD Programme',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_axis_4',
+      1 => 'field_clld_context',
+      2 => 'field_clld_objectives',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'CLLD Programme',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_clld_programme',
+        'classes' => 'group_factsheet_clld_programme field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_clld_programme|node|factsheet_country|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_clld_programme|node|factsheet_country|form';
   $field_group->group_name = 'group_factsheet_clld_programme';
   $field_group->entity_type = 'node';
@@ -97,6 +200,41 @@ function farnet_factsheet_country_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_clld_programme|node|factsheet_country|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_content|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
+      2 => 'field_organisations',
+      3 => 'title_field',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Content',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_content',
+        'classes' => 'group_factsheet_content field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_content|node|factsheet_country|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -131,6 +269,38 @@ function farnet_factsheet_country_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_cooperation|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_cooperation';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Cooperation',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_cooperation',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Cooperation',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_cooperation',
+        'classes' => 'group_factsheet_cooperation field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_cooperation|node|factsheet_country|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_cooperation|node|factsheet_country|form';
   $field_group->group_name = 'group_factsheet_cooperation';
   $field_group->entity_type = 'node';
@@ -154,6 +324,40 @@ function farnet_factsheet_country_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_cooperation|node|factsheet_country|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_delivery_clld|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_delivery_clld';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Delivery of CLLD',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_diagram_delivery',
+      1 => 'field_funding_process',
+      2 => 'field_key_actors_roles',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Delivery of CLLD',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_delivery_clld',
+        'classes' => 'group_factsheet_delivery_clld field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_delivery_clld|node|factsheet_country|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -183,6 +387,40 @@ function farnet_factsheet_country_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_delivery_clld|node|factsheet_country|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_metadata|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_metadata';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Metadata',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_tags',
+      1 => 'group_content_access',
+      2 => 'og_group_ref',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Metadata',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_metadata',
+        'classes' => 'group_factsheet_metadata  field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_metadata|node|factsheet_country|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -218,6 +456,38 @@ function farnet_factsheet_country_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_national_network|node|factsheet_country|default';
+  $field_group->group_name = 'group_factsheet_national_network';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'National Network',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_national_network',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'National Network',
+      'instance_settings' => array(
+        'id' => 'group_factsheet_national_network',
+        'classes' => 'group_factsheet_national_network field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_national_network|node|factsheet_country|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_national_network|node|factsheet_country|form';
   $field_group->group_name = 'group_factsheet_national_network';
   $field_group->entity_type = 'node';
@@ -241,6 +511,40 @@ function farnet_factsheet_country_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_national_network|node|factsheet_country|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ne_factsheet_publication|node|factsheet_country|default';
+  $field_group->group_name = 'group_ne_factsheet_publication';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Publication',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_publication_abstract',
+      1 => 'field_publication_date',
+      2 => 'field_term_publication_channels',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Publication',
+      'instance_settings' => array(
+        'id' => 'group_ne_factsheet_publication',
+        'classes' => 'group_ne_factsheet_publication field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_ne_factsheet_publication|node|factsheet_country|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -270,6 +574,38 @@ function farnet_factsheet_country_field_group_info() {
     ),
   );
   $field_groups['group_ne_factsheet_publication|node|factsheet_country|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ne_factsheet_taxonomy|node|factsheet_country|default';
+  $field_group->group_name = 'group_ne_factsheet_taxonomy';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_country';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Taxonomy',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_term_country',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Taxonomy',
+      'instance_settings' => array(
+        'id' => 'group_ne_factsheet_taxonomy',
+        'classes' => 'group_ne_factsheet_taxonomy field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_ne_factsheet_taxonomy|node|factsheet_country|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
