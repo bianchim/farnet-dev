@@ -4,7 +4,7 @@ Feature: Publication content type
   I want to be able to create, edit and delete publications
 
   @api
-  Scenario: Create an publication
+  Scenario: Create a publication
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "publication" content:
       | title                       | EC decides tax advantages for Fiat are illegal                        |
@@ -17,7 +17,7 @@ Feature: Publication content type
     And I should see the text "Published by Anonymous"
 
   @api
-  Scenario: Create an publication with publication type Brochures and test view brochures
+  Scenario: Create a publication with publication type Brochures and test view brochures
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "publication" content:
       | title                       | Brochures EC decides tax advantages for Fiat are illegal                        |
@@ -34,7 +34,7 @@ Feature: Publication content type
     And I should see the text "Read more"
 
   @api
-  Scenario: Create an publication with publication type FARNET Magazines and test view magazines
+  Scenario: Create a publication with publication type FARNET Magazines and test view magazines
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "publication" content:
       | title                     | Magazines EC decides tax advantages for Fiat are illegal                        |
@@ -52,7 +52,7 @@ Feature: Publication content type
     And I should see the text "Magazines Commissioner states tax rulings are not in line with state aid rules."
 
   @api
-  Scenario: Create an publication with publication type Presentations and test view presentations
+  Scenario: Create a publication with publication type Presentations and test view presentations
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "publication" content:
       | title                     | Presentations EC decides tax advantages for Fiat are illegal                        |
