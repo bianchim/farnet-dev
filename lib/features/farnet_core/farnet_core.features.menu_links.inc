@@ -1129,41 +1129,6 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_about:node/1',
   );
-  // Exported menu link: main-menu_good-practices:<front>.
-  $menu_links['main-menu_good-practices:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Good Practices',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_good-practices:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -48,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:node/1',
-  );
   // Exported menu link: main-menu_good-practices:on-the-ground/good-practices.
   $menu_links['main-menu_good-practices:on-the-ground/good-practices'] = array(
     'menu_name' => 'main-menu',
@@ -1197,7 +1162,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:<front>',
+    'parent_identifier' => 'main-menu_on-the-ground:node/1',
   );
   // Exported menu link: main-menu_governance-and-management:themes/governance-management.
   $menu_links['main-menu_governance-and-management:themes/governance-management'] = array(
@@ -1535,41 +1500,6 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_good-practices:on-the-ground/good-practices',
-  );
-  // Exported menu link: main-menu_national--regional--local-events-capacity-building-events:<front>.
-  $menu_links['main-menu_national--regional--local-events-capacity-building-events:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Methods',
-    'options' => array(
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'data-remove-class' => 0,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => '',
-        'data-remove-class' => 0,
-        'style' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_methods:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => 0,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_good-practices:<front>',
   );
   // Exported menu link: main-menu_national--regional--local-events-capacity-building-events:news-events/events/other.
   $menu_links['main-menu_national--regional--local-events-capacity-building-events:news-events/events/other'] = array(
