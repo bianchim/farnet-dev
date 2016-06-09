@@ -549,6 +549,11 @@ function farnet_factsheet_country_field_default_field_instances() {
       'module' => 'text',
       'settings' => array(
         'rows' => 5,
+        'maxlength_js' => 400,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+
       ),
       'type' => 'text_textarea',
       'weight' => -4,
@@ -1079,6 +1084,10 @@ function farnet_factsheet_country_field_default_field_instances() {
       'module' => 'text',
       'settings' => array(
         'rows' => 5,
+        'maxlength_js' => 500,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
       ),
       'type' => 'text_textarea',
       'weight' => 30,
