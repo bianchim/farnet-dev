@@ -16,6 +16,6 @@ dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = farnet_view_news
-features[views_view][] = farnet_themes_views
+features[views_view][] = farnet_themes_view
 features[views_view][] = good_practices
 project path = sites/all/modules/features
