@@ -18,7 +18,7 @@ function farnet_taxonomy_faq_categories() {
       ),
     ),
     'FAQCategory2' => (object) array(
-      'name' => t('Eligibility EN'),
+      'name' => t('Eligibility'),
       'language' => 'en',
       'translation' => array(
         'fr' => t('Eligibility FR'),

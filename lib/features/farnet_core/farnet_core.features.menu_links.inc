@@ -219,11 +219,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_about:node/1',
   );
-  // Exported menu link: main-menu_clld-overview:<front>.
-  $menu_links['main-menu_clld-overview:<front>'] = array(
+  // Exported menu link: main-menu_clld-overview:tools/faq/clld-overview.
+  $menu_links['main-menu_clld-overview:tools/faq/clld-overview'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'tools/faq/clld-overview',
+    'router_path' => 'tools/faq/clld-overview',
     'link_title' => 'CLLD overview',
     'options' => array(
       'alter' => TRUE,
@@ -241,18 +241,18 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'identifier' => 'main-menu_clld-overview:<front>',
+      'identifier' => 'main-menu_clld-overview:tools/faq/clld-overview',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -50,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_faqs:<front>',
+    'parent_identifier' => 'main-menu_faqs:tools/faq',
   );
   // Exported menu link: main-menu_community-led-local-development:<front>.
   $menu_links['main-menu_community-led-local-development:<front>'] = array(
@@ -639,11 +639,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_themes:themes',
   );
-  // Exported menu link: main-menu_eligibility:<front>.
-  $menu_links['main-menu_eligibility:<front>'] = array(
+  // Exported menu link: main-menu_eligibility:tools/faq/eligibility.
+  $menu_links['main-menu_eligibility:tools/faq/eligibility'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'tools/faq/eligibility',
+    'router_path' => 'tools/faq/eligibility',
     'link_title' => 'Eligibility',
     'options' => array(
       'attributes' => array(
@@ -661,18 +661,18 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_eligibility:<front>',
+      'identifier' => 'main-menu_eligibility:tools/faq/eligibility',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -48,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_faqs:<front>',
+    'parent_identifier' => 'main-menu_faqs:tools/faq',
   );
   // Exported menu link: main-menu_emff-cooperation-by-ms:<front>.
   $menu_links['main-menu_emff-cooperation-by-ms:<front>'] = array(
@@ -779,11 +779,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news--events:node/1',
   );
-  // Exported menu link: main-menu_faqs:<front>.
-  $menu_links['main-menu_faqs:<front>'] = array(
+  // Exported menu link: main-menu_faqs:tools/faq.
+  $menu_links['main-menu_faqs:tools/faq'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'tools/faq',
+    'router_path' => 'tools/faq',
     'link_title' => 'FAQs',
     'options' => array(
       'attributes' => array(
@@ -801,11 +801,11 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_faqs:<front>',
+      'identifier' => 'main-menu_faqs:tools/faq',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 1,
     'expanded' => 1,
     'weight' => -46,
@@ -989,11 +989,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_whos-who:<front>',
   );
-  // Exported menu link: main-menu_finance-and-administration:<front>.
-  $menu_links['main-menu_finance-and-administration:<front>'] = array(
+  // Exported menu link: main-menu_finance-and-administration:tools/faq/finance-dministration.
+  $menu_links['main-menu_finance-and-administration:tools/faq/finance-dministration'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'tools/faq/finance-dministration',
+    'router_path' => 'tools/faq/finance-dministration',
     'link_title' => 'Finance and administration',
     'options' => array(
       'attributes' => array(
@@ -1011,18 +1011,18 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_finance-and-administration:<front>',
+      'identifier' => 'main-menu_finance-and-administration:tools/faq/finance-dministration',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -47,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_faqs:<front>',
+    'parent_identifier' => 'main-menu_faqs:tools/faq',
   );
   // Exported menu link: main-menu_flag-factsheets:on-the-ground/flag-factsheets.
   $menu_links['main-menu_flag-factsheets:on-the-ground/flag-factsheets'] = array(
@@ -2079,11 +2079,11 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_setting-up-flags:<front>.
-  $menu_links['main-menu_setting-up-flags:<front>'] = array(
+  // Exported menu link: main-menu_setting-up-flags:tools/faq/flag-set-up.
+  $menu_links['main-menu_setting-up-flags:tools/faq/flag-set-up'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'tools/faq/flag-set-up',
+    'router_path' => 'tools/faq/flag-set-up',
     'link_title' => 'Setting up FLAGs',
     'options' => array(
       'attributes' => array(
@@ -2101,18 +2101,53 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_setting-up-flags:<front>',
+      'identifier' => 'main-menu_setting-up-flags:tools/faq/flag-set-up',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -46,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_faqs:<front>',
+    'parent_identifier' => 'main-menu_faqs:tools/faq',
+  );
+  // Exported menu link: main-menu_faq-cooperation:tools/faq/cooperationp.
+  $menu_links['main-menu_faq-cooperation:tools/faq/cooperationp'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'tools/faq/cooperation',
+    'router_path' => 'tools/faq/cooperation',
+    'link_title' => 'Cooperation',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => '',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_faq-cooperation:tools/faq/cooperation',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -46,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_faqs:tools/faq',
   );
   // Exported menu link: main-menu_social-media-groups:<front>.
   $menu_links['main-menu_social-media-groups:<front>'] = array(

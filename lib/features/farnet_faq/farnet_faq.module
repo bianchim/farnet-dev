@@ -59,3 +59,229 @@ function farnet_faq_field_default_field_instances_alter(&$fields) {
     }
   }
 }
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function farnet_faq_views_default_views_alter(&$views) {
+  if (isset($views['ne_faq'])) {
+
+    $view = $views['ne_faq'];
+
+    /* Display: faq-clld-overview */
+    $handler = $view->new_display('page', 'faq-clld-overview', 'page_faq_clld_overview');
+    $handler->display->display_options['defaults']['title'] = FALSE;
+    $handler->display->display_options['title'] = 'FAQ - CLLD overview';
+    $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+    $handler->display->display_options['defaults']['filters'] = FALSE;
+    /* Filter criterion: Content: Published */
+    $handler->display->display_options['filters']['status']['id'] = 'status';
+    $handler->display->display_options['filters']['status']['table'] = 'node';
+    $handler->display->display_options['filters']['status']['field'] = 'status';
+    $handler->display->display_options['filters']['status']['value'] = 1;
+    $handler->display->display_options['filters']['status']['group'] = 1;
+    $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+    /* Filter criterion: Content: Type */
+    $handler->display->display_options['filters']['type']['id'] = 'type';
+    $handler->display->display_options['filters']['type']['table'] = 'node';
+    $handler->display->display_options['filters']['type']['field'] = 'type';
+    $handler->display->display_options['filters']['type']['value'] = array(
+      'nexteuropa_faq' => 'nexteuropa_faq',
+    );
+    /* Filter criterion: Content: Categories (field_ne_faq_categories) */
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['id'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['table'] = 'field_data_field_ne_faq_categories';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['field'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'] = array();
+    $term = taxonomy_get_term_by_name('CLLD overview');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
+    $handler->display->display_options['path'] = 'tools/faq/clld-overview';
+    /*
+    $term = taxonomy_get_term_by_name('CLLD overview');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['ne_faq']->display['page_faq_clld_overview']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    */
+
+    /* Display: faq-eligibility */
+    $handler = $view->new_display('page', 'faq-eligibility', 'page_faq_eligibility');
+    $handler->display->display_options['defaults']['title'] = FALSE;
+    $handler->display->display_options['title'] = 'FAQ - Eligibility';
+    $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+    $handler->display->display_options['defaults']['filters'] = FALSE;
+    /* Filter criterion: Content: Published */
+    $handler->display->display_options['filters']['status']['id'] = 'status';
+    $handler->display->display_options['filters']['status']['table'] = 'node';
+    $handler->display->display_options['filters']['status']['field'] = 'status';
+    $handler->display->display_options['filters']['status']['value'] = 1;
+    $handler->display->display_options['filters']['status']['group'] = 1;
+    $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+    /* Filter criterion: Content: Type */
+    $handler->display->display_options['filters']['type']['id'] = 'type';
+    $handler->display->display_options['filters']['type']['table'] = 'node';
+    $handler->display->display_options['filters']['type']['field'] = 'type';
+    $handler->display->display_options['filters']['type']['value'] = array(
+      'nexteuropa_faq' => 'nexteuropa_faq',
+    );
+    /* Filter criterion: Content: Categories (field_ne_faq_categories) */
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['id'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['table'] = 'field_data_field_ne_faq_categories';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['field'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'] = array();
+    $term = taxonomy_get_term_by_name('Eligibility');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
+    $handler->display->display_options['path'] = 'tools/faq/eligibility';
+    /*
+    $term = taxonomy_get_term_by_name('Eligibility');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['ne_faq']->display['page_faq_eligibility']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    */
+
+    /* Display: faq-finance-administration */
+    $handler = $view->new_display('page', 'faq-finance-administration', 'page_faq_finance_administration');
+    $handler->display->display_options['defaults']['title'] = FALSE;
+    $handler->display->display_options['title'] = 'FAQ - Finance and administration';
+    $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+    $handler->display->display_options['defaults']['filters'] = FALSE;
+    /* Filter criterion: Content: Published */
+    $handler->display->display_options['filters']['status']['id'] = 'status';
+    $handler->display->display_options['filters']['status']['table'] = 'node';
+    $handler->display->display_options['filters']['status']['field'] = 'status';
+    $handler->display->display_options['filters']['status']['value'] = 1;
+    $handler->display->display_options['filters']['status']['group'] = 1;
+    $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+    /* Filter criterion: Content: Type */
+    $handler->display->display_options['filters']['type']['id'] = 'type';
+    $handler->display->display_options['filters']['type']['table'] = 'node';
+    $handler->display->display_options['filters']['type']['field'] = 'type';
+    $handler->display->display_options['filters']['type']['value'] = array(
+      'nexteuropa_faq' => 'nexteuropa_faq',
+    );
+    /* Filter criterion: Content: Categories (field_ne_faq_categories) */
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['id'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['table'] = 'field_data_field_ne_faq_categories';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['field'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'] = array();
+    $term = taxonomy_get_term_by_name('Eligibility');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
+    $handler->display->display_options['path'] = 'tools/faq/finance-dministration';
+    /*
+    $term = taxonomy_get_term_by_name('Finance and administration');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['ne_faq']->display['page_faq_finance_administration']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    */
+
+    /* Display: faq-flag-set-up */
+    $handler = $view->new_display('page', 'faq-flag-set-up', 'page_faq_flag_set_up');
+    $handler->display->display_options['defaults']['title'] = FALSE;
+    $handler->display->display_options['title'] = 'FAQ - Setting up FLAGs';
+    $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+    $handler->display->display_options['defaults']['filters'] = FALSE;
+    /* Filter criterion: Content: Published */
+    $handler->display->display_options['filters']['status']['id'] = 'status';
+    $handler->display->display_options['filters']['status']['table'] = 'node';
+    $handler->display->display_options['filters']['status']['field'] = 'status';
+    $handler->display->display_options['filters']['status']['value'] = 1;
+    $handler->display->display_options['filters']['status']['group'] = 1;
+    $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+    /* Filter criterion: Content: Type */
+    $handler->display->display_options['filters']['type']['id'] = 'type';
+    $handler->display->display_options['filters']['type']['table'] = 'node';
+    $handler->display->display_options['filters']['type']['field'] = 'type';
+    $handler->display->display_options['filters']['type']['value'] = array(
+      'nexteuropa_faq' => 'nexteuropa_faq',
+    );
+    /* Filter criterion: Content: Categories (field_ne_faq_categories) */
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['id'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['table'] = 'field_data_field_ne_faq_categories';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['field'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'] = array();
+    $term = taxonomy_get_term_by_name('Setting up FLAGs');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
+    $handler->display->display_options['path'] = 'tools/faq/flag-set-up';
+    /*
+    $term = taxonomy_get_term_by_name('Setting up FLAGs');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['ne_faq']->display['page_faq_flag_set_up']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    */
+
+    /* Display: faq-cooperation */
+    $handler = $view->new_display('page', 'faq-cooperation', 'page_faq_cooperation');
+    $handler->display->display_options['defaults']['title'] = FALSE;
+    $handler->display->display_options['title'] = 'FAQ - Cooperation';
+    $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+    $handler->display->display_options['defaults']['filters'] = FALSE;
+    /* Filter criterion: Content: Published */
+    $handler->display->display_options['filters']['status']['id'] = 'status';
+    $handler->display->display_options['filters']['status']['table'] = 'node';
+    $handler->display->display_options['filters']['status']['field'] = 'status';
+    $handler->display->display_options['filters']['status']['value'] = 1;
+    $handler->display->display_options['filters']['status']['group'] = 1;
+    $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+    /* Filter criterion: Content: Type */
+    $handler->display->display_options['filters']['type']['id'] = 'type';
+    $handler->display->display_options['filters']['type']['table'] = 'node';
+    $handler->display->display_options['filters']['type']['field'] = 'type';
+    $handler->display->display_options['filters']['type']['value'] = array(
+      'nexteuropa_faq' => 'nexteuropa_faq',
+    );
+    /* Filter criterion: Content: Categories (field_ne_faq_categories) */
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['id'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['table'] = 'field_data_field_ne_faq_categories';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['field'] = 'field_ne_faq_categories_tid';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'] = array();
+    $term = taxonomy_get_term_by_name('Cooperation');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
+    $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
+    $handler->display->display_options['path'] = 'tools/faq/cooperation';
+    /*
+    $term = taxonomy_get_term_by_name('Cooperation');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['ne_faq']->display['page_faq_cooperation']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
+    }
+    */
+
+  }
+}
