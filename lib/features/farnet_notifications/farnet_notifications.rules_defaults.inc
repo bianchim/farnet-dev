@@ -58,5 +58,30 @@ function farnet_notifications_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_send_email_when_user_add_a_new_organisation'] = entity_import('rules_config', '{ "rules_send_email_when_user_add_a_new_organisation" : {
+      "LABEL" : "Send Email when user add a new organisation",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_update" : [] },
+      "IF" : [
+        { "NOT data_is_empty" : { "data" : [ "account:field-organisation-other" ] } },
+        { "NOT data_is" : {
+            "data" : [ "account:field-organisation-other" ],
+            "value" : "[account-unchanged:field-organisation-other]"
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : "[site:mail]",
+            "subject" : "A user has added a new organisation on FARNET",
+            "message" : "[account:name] has updated his profile with a new organisation named \\u0022[account:field-organisation-other]\\u0022",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }
