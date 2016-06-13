@@ -10,7 +10,6 @@
 function farnet_views_views_default_views() {
   $export = array();
 
-  $export = array();
   $view = new view();
   $view->name = 'farnet_themes_view';
   $view->description = '';
@@ -20,6 +19,7 @@ function farnet_views_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -76,7 +76,6 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['value'] = array();
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'farnet_theme';
   /* Filter criterion: Content: Theme (field_term_theme) */
@@ -85,6 +84,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['field'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+
   /* Display: themes */
   $handler = $view->new_display('page', 'themes', 'page_themes');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -128,6 +128,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes';
+
   /* Display: employment-innovation */
   $handler = $view->new_display('page', 'employment-innovation', 'page_employment_innovation');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -171,6 +172,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes/employment-innovation';
+
   /* Display: diversification */
   $handler = $view->new_display('page', 'diversification', 'page_diversification');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -214,6 +216,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes/diversification';
+
   /* Display: environment */
   $handler = $view->new_display('page', 'environment', 'page_environment');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -257,6 +260,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes/environment';
+
   /* Display: social-culture */
   $handler = $view->new_display('page', 'social-culture', 'page_social_culture');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -300,6 +304,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes/social-culture';
+
   /* Display: governance-management */
   $handler = $view->new_display('page', 'governance-management', 'page_governance_management');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -343,6 +348,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes/governance-management';
+
   /* Display: other */
   $handler = $view->new_display('page', 'other', 'page_other');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -393,10 +399,11 @@ function farnet_views_views_default_views() {
   $view->description = 'Views for the news Farnet and other';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'News';
+  $view->human_name = 'Farnet News views';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'News';
@@ -444,9 +451,18 @@ function farnet_views_views_default_views() {
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
   );
+  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array();
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
+
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'news-events/news';
+
   /* Display: Farnet */
   $handler = $view->new_display('page', 'Farnet', 'page_news_farnet');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -478,6 +494,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
   $handler->display->display_options['path'] = 'news-events/news/farnet';
+
   /* Display: Other */
   $handler = $view->new_display('page', 'Other', 'page_news_other');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -520,6 +537,7 @@ function farnet_views_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Good practices';
@@ -560,6 +578,7 @@ function farnet_views_views_default_views() {
     'project_summary_sheet' => 'project_summary_sheet',
     'summary_sheet_method' => 'summary_sheet_method',
   );
+
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'on-the-ground/good-practices';
@@ -569,6 +588,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
   /* Display: Project Summary Sheet */
   $handler = $view->new_display('page', 'Project Summary Sheet', 'page_projects');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -596,6 +616,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
   /* Display: Method Summary Sheet */
   $handler = $view->new_display('page', 'Method Summary Sheet', 'page_methods');
   $handler->display->display_options['defaults']['title'] = FALSE;
