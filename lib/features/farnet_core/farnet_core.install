@@ -27,6 +27,8 @@ function farnet_core_enable() {
   $ft = file_type_load("document");
   $ft->mimetypes[] = "text/oembed";
   file_type_save($ft);
+
+  variable_set('print_mail_link_pos', array());
 }
 
 /**

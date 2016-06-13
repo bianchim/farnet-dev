@@ -315,7 +315,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -47,
@@ -744,7 +744,7 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_themes:themes',
   );
-    // Exported menu link: main-menu_events:news-events/events.
+  // Exported menu link: main-menu_events:news-events/events.
   $menu_links['main-menu_events:news-events/events'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'news-events/events',
@@ -770,7 +770,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 1,
     'expanded' => 1,
     'weight' => -49,
@@ -945,7 +945,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -50,
@@ -1422,7 +1422,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -49,
@@ -1527,7 +1527,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -48,
@@ -1631,7 +1631,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 1,
     'expanded' => 1,
     'weight' => -50,
@@ -1700,7 +1700,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -49,
@@ -1945,7 +1945,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -47,
@@ -2557,7 +2557,7 @@ function farnet_core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -50,
@@ -2671,7 +2671,7 @@ function farnet_core_menu_default_menu_links() {
   t('FLAGs');
   t('Finance and administration');
   t('Glossary');
-  t('Good Practices');
+  t('Good practices');
   t('Governance and management');
   t('Guidance');
   t('Home');
