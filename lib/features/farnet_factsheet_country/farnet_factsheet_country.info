@@ -86,6 +86,7 @@ features[field_instance][] = node-factsheet_country-field_national_network
 features[field_instance][] = node-factsheet_country-field_ne_body
 features[field_instance][] = node-factsheet_country-field_number_flags
 features[field_instance][] = node-factsheet_country-field_organisations
+features[field_instance][] = node-factsheet_country-field_picture
 features[field_instance][] = node-factsheet_country-field_proportion_emff
 features[field_instance][] = node-factsheet_country-field_publication_abstract
 features[field_instance][] = node-factsheet_country-field_publication_date

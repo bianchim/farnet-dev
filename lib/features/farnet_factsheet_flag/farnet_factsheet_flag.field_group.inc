@@ -289,6 +289,8 @@ function farnet_factsheet_flag_field_group_info() {
       2 => 'field_ne_body',
       3 => 'field_title_official',
       4 => 'title_field',
+      5 => 'field_picture',
+      6 => 'field_farnet_abstract',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
