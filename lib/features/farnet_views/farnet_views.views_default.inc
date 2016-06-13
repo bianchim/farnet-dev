@@ -399,7 +399,7 @@ function farnet_views_views_default_views() {
   $view->description = 'Views for the news Farnet and other';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'News';
+  $view->human_name = 'Farnet News views';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
