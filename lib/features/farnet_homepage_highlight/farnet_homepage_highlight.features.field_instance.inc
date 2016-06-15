@@ -322,7 +322,7 @@ function farnet_homepage_highlight_field_default_field_instances() {
       'weight' => 0,
     ),
   );
-  
+
   // Exported field_instance: 'node-homepage_highlight-field_page'.
   $field_instances['node-homepage_highlight-field_page'] = array(
     'bundle' => 'homepage_highlight',
