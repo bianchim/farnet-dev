@@ -11,11 +11,11 @@ function farnet_news_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'news_feed';
+  $view->name = 'farnet_view_news_feed';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'news feed';
+  $view->human_name = 'Farnet News Feed';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -136,7 +136,7 @@ function farnet_news_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_description'] = 'News feed';
-  $export['news_feed'] = $view;
+  $export['farnet_view_news_feed'] = $view;
 
   return $export;
 }

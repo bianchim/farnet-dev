@@ -11,11 +11,11 @@ function farnet_user_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'farnet_manage_users';
+  $view->name = 'farnet_view_manage_users';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'users';
-  $view->human_name = 'Manage Users';
+  $view->human_name = 'Farnet Manage Users Views';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -573,7 +573,7 @@ function farnet_user_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
-  $export['farnet_manage_users'] = $view;
+  $export['farnet_view_manage_users'] = $view;
 
   return $export;
 }
