@@ -6,7 +6,6 @@
 
 include_once 'farnet_article.features.inc';
 
- 
 /**
  * Implements hook_COMPONENT_alter().
  *
@@ -14,10 +13,9 @@ include_once 'farnet_article.features.inc';
  */
 function farnet_article_field_default_field_instances_alter(&$fields) {
   if (isset($fields['node-article-body'])) {
-    unset ($fields['node-article-body']);
+    unset($fields['node-article-body']);
   }
 }
-
 
 /**
  * Implements hook_COMPONENT_alter().
@@ -26,8 +24,8 @@ function farnet_article_field_default_field_instances_alter(&$fields) {
  */
 function farnet_article_field_group_info_alter($groups) {
   if (!empty($groups['group_article_content|node|article|form'])) {
-    if ($key = array_search("field_body", $groups['group_article_content|node|article|form']->data['children'])){
-      unset ($groups['group_article_content|node|article|form']->data['children'][$key]);
+    if ($key = array_search("field_body", $groups['group_article_content|node|article|form']->data['children'])) {
+      unset($groups['group_article_content|node|article|form']->data['children'][$key]);
     }
     $groups['group_article_content|node|article|form']->data['children'][] = 'field_ne_body';
     $groups['group_article_content|node|article|form']->data['children'][] = 'field_page';
