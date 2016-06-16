@@ -109,6 +109,7 @@ function farnet_taxonomy_enable() {
     save_multilingual_farnet_taxonomy($type_events_array, $vid);
   }
 
+  /*
   // Imports Type News data.
   $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
   if ($vocabulary) {
@@ -119,6 +120,7 @@ function farnet_taxonomy_enable() {
     $type_news_array = farnet_taxonomy_type_news();
     save_multilingual_farnet_taxonomy($type_news_array, $vid);
   }
+  */
 
   // Creates the Farnet Type Publication vocabulary.
   // If it does not exist already.
@@ -169,6 +171,36 @@ function farnet_taxonomy_enable() {
   include_once 'includes/farnet_taxonomy_type_organisations.php';
   $type_organisations_array = farnet_taxonomy_type_organisations();
   save_multilingual_farnet_taxonomy($type_organisations_array, $vid);
+
+  // Creates the Farnet Region Vocabulary.
+  $voc = taxonomy_vocabulary_machine_name_load('countries');
+  if ($voc) {
+    $vid = $voc->vid;
+  }
+  else {
+    $voc = array(
+      'name' => 'Countries',
+      'machine_name' => 'countries',
+      'description' => 'A list of the countries',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -1,
+    );
+    $voc = (object) $voc;
+    taxonomy_vocabulary_save($voc);
+    $vid = $voc->vid;
+  };
+
+  // Imports Country data.
+  include_once 'includes/farnet_taxonomy_countries.php';
+  $countries_array = farnet_taxonomy_countries();
+  foreach ($countries_array as $item) {
+    $term = new stdClass();
+    $term->vid = $vid;
+    $term->name = $item->name;
+    $term->language = $item->language;
+    taxonomy_term_save($term);
+  }
 
   // Creates the Farnet Region Vocabulary.
   $voc = taxonomy_vocabulary_machine_name_load('regions');
@@ -240,12 +272,14 @@ function farnet_taxonomy_disable() {
   }
 
   // Deletes all terms of the taxonomy nexteuropa_news_categories.
+  /*
   $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
   if ($vocabulary) {
     foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
       taxonomy_term_delete($term->tid);
     }
   }
+  */
 
   // Deletes the taxonomy term.
   $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
@@ -270,6 +304,13 @@ function farnet_taxonomy_disable() {
 
   // Deletes the taxonomy term.
   $vocabulary = taxonomy_vocabulary_machine_name_load('field_term_region');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('field_term_country');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
     taxonomy_vocabulary_delete($vid);
