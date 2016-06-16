@@ -109,19 +109,7 @@ function farnet_taxonomy_enable() {
     save_multilingual_farnet_taxonomy($type_events_array, $vid);
   }
 
-  /*
   // Imports Type News data.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
-
-    // Imports Type News data.
-    include_once 'includes/farnet_taxonomy_type_news.php';
-    $type_news_array = farnet_taxonomy_type_news();
-    save_multilingual_farnet_taxonomy($type_news_array, $vid);
-  }
-  */
-
   // Creates the Farnet Type Publication vocabulary.
   // If it does not exist already.
   $voc = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
@@ -281,15 +269,6 @@ function farnet_taxonomy_disable() {
   }
 
   // Deletes all terms of the taxonomy nexteuropa_news_categories.
-  /*
-  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_news_categories');
-  if ($vocabulary) {
-    foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
-      taxonomy_term_delete($term->tid);
-    }
-  }
-  */
-
   // Deletes the taxonomy term.
   $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
   if ($vocabulary) {
