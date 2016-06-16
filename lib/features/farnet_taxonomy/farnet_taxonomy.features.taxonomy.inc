@@ -9,6 +9,31 @@
  */
 function farnet_taxonomy_taxonomy_default_vocabularies() {
   return array(
+    'countries' => (object) array(
+      'name' => 'Countries',
+      'machine_name' => 'countries',
+      'description' => 'A list of the countries',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -1,
+      'language' => 'und',
+      'i18n_mode' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'farnet_languages_spoken' => (object) array(
       'name' => 'Farnet Languages spoken',
       'machine_name' => 'farnet_languages_spoken',
@@ -138,31 +163,6 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'name' => 'Regions',
       'machine_name' => 'regions',
       'description' => 'A list of the regions',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -1,
-      'language' => 'und',
-      'i18n_mode' => 0,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
-    'countries' => (object) array(
-      'name' => 'Countries',
-      'machine_name' => 'countries',
-      'description' => 'A list of the countries',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -1,

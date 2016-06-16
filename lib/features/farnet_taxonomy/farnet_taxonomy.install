@@ -172,7 +172,7 @@ function farnet_taxonomy_enable() {
   $type_organisations_array = farnet_taxonomy_type_organisations();
   save_multilingual_farnet_taxonomy($type_organisations_array, $vid);
 
-  // Creates the Farnet Region Vocabulary.
+  // Creates the Farnet Country Vocabulary.
   $voc = taxonomy_vocabulary_machine_name_load('countries');
   if ($voc) {
     $vid = $voc->vid;
@@ -191,16 +191,25 @@ function farnet_taxonomy_enable() {
     $vid = $voc->vid;
   };
 
-  // Imports Country data.
+  // Imports country data.
   include_once 'includes/farnet_taxonomy_countries.php';
-  $countries_array = farnet_taxonomy_countries();
-  foreach ($countries_array as $item) {
-    $term = new stdClass();
-    $term->vid = $vid;
-    $term->name = $item->name;
-    $term->language = $item->language;
+  $country_array = farnet_taxonomy_countries();
+  foreach ($country_array as $zone => $countries) {
+    $term = (object) array('vid' => $vid, 'name' => $zone);
     taxonomy_term_save($term);
-  }
+    $tid = $term->tid;
+    foreach ($countries as $country => $cy_name) {
+      $subterm = (object) array(
+        'vid' => $vid,
+        'name' => $cy_name,
+        'parent' => $tid,
+      );
+      taxonomy_term_save($subterm);
+      watchdog('taxonomy_countries', 'Created country %country', array(
+        '%country' => $cy_name,
+      ), WATCHDOG_INFO);
+    }
+  };
 
   // Creates the Farnet Region Vocabulary.
   $voc = taxonomy_vocabulary_machine_name_load('regions');
