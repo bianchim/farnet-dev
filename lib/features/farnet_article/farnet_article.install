@@ -11,6 +11,5 @@ function farnet_article_install() {
   $type = node_type_load('article');
   $type->name = "Article old";
   $type->disabled = TRUE;
-  dpm ($type);
   node_type_save($type);
 }
