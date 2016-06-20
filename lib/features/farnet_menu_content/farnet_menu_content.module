@@ -81,7 +81,9 @@ function _farnet_menu_content_menu_page_content() {
   ksort($field_groups_sorted);
   $output = '<div><nav id="navbar-node-page" class="navbar"><h3>Page contents</h3><ul class="nav">';
   foreach ($field_groups_sorted as $key => $field_group) {
-    $output .= '<li><a href="#' . str_replace('_', '-', $field_group->group_name) . '">' . t($field_group->label) . '</a></li>';
+    $group_name = str_replace('_', '-', $field_group->group_name);
+    $label = locale($field_group->label, NULL, $language->language);
+    $output .= '<li><a href="#' . $group_name . '">' . $label . '</a></li>';
   }
   $output .= '</ul></nav></div>';
 
