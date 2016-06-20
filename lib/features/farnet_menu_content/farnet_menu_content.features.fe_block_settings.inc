@@ -26,7 +26,10 @@ function farnet_menu_content_default_fe_block_settings() {
       3 => 'project_summary_sheet',
       4 => 'summary_sheet_method',
     ),
-    'pages' => 'node/*/edit
+    'pages' => 'node/*/edit*
+node/*/moderation*
+node/*/translate*
+node/*/node_export*
 node/add/*',
     'roles' => array(),
     'themes' => array(
