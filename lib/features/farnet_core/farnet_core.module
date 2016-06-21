@@ -50,8 +50,8 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
 
   $node = node_load(arg(1));
   $language_list = language_list();
-  $translations =$node->translations;
-  
+  $translations = $node->translations;
+
   if (is_null($translations->original)) {
     $translations = array($language->language => $language->language);
   }
