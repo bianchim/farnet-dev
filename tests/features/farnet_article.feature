@@ -75,26 +75,6 @@ Feature: Article content type
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "farnet_article" content:
       | title                       | Behat Article Test #3                     |
-      | field_abstract              | Lorem ipsum dolor sit amet abstract.      |
-      | field_ne_body               | Lorem ipsum dolor sit amet body.          |
-      | moderation state            | published                                 |
-      | workbench_moderation_state  | published                                 |
-      | status                      | 1                                         |
-      | field_term_theme            | Diversification                           |
-      | field_publication_date      | 1465294233                                |
-    Then I should see the heading "Behat Article Test #3"
-    When I click "Edit"
-    And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
-    And I press "Delete"
-    Then I should see "Are you sure you want to delete Behat Article Test #3?"
-    When I press "Delete"
-    Then I should see the success message "Article Behat Article Test #3 has been deleted."
-
-  @api
-  Scenario: Delete article
-    Given I am logged in as a user with the "administrator" role
-    When I am viewing an "farnet_article" content:
-      | title                       | Behat Article Test #3                     |
       | field_farnet_abstract       | Lorem ipsum dolor sit amet abstract.      |
       | field_ne_body               | Lorem ipsum dolor sit amet body.          |
       | moderation state            | published                                 |
