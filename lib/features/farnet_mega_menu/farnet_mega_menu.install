@@ -16,14 +16,7 @@ function farnet_mega_menu_enable() {
   /* drupal_flush_all_caches(); */
   _array_for_block_creation('main-menu');
 
-  // Set OM Maximenu.
-  $om_maximenu = variable_get("om_maximenu", array());
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE;
-  $strongarm->api_version = 1;
-  $strongarm->name = 'om_maximenu';
-  $strongarm->value = array(
+  $om_maximenu = array(
     1 => array(
       'code' => 'om-u1-1203206587',
       'title' => 'Main Menu',
@@ -302,7 +295,7 @@ function farnet_mega_menu_enable() {
     ),
   );
 
-  variable_set("om_maximenu", $strongarm);
+  variable_set("om_maximenu", $om_maximenu);
 }
 
 /**
