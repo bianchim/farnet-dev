@@ -96,3 +96,12 @@ function farnet_event_views_default_views_alter(&$views) {
     }
   }
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ */
+function farnet_event_strongarm_alter(&$variables) {
+  if(isset($variables['pathauto_node_nexteuropa_event_pattern'])) {
+    $variables['pathauto_node_nexteuropa_event_pattern']->value = "news-events/events/[node:field-event-type:name]/[node:source:title]";
+  }
+}

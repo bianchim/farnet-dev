@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_factsheet_flag_enable() {
+  variable_set("pathauto_node_factsheet_flag_pattern", "on-the-ground/flag-factsheets/[node:source:title]");
+}
