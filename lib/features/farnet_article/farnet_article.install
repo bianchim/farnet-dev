@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Install feature file.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function farnet_article_install() {
+  node_type_delete("article");
+}
