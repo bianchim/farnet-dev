@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_factsheet_country_enable() {
+  variable_set("pathauto_node_factsheet_country_pattern", "on-the-ground/country-factsheets/[node:source:title]");
+}
