@@ -15,7 +15,6 @@ function farnet_mega_menu_enable() {
 
   /* drupal_flush_all_caches(); */
   _array_for_block_creation('main-menu');
-
 }
 
 /**

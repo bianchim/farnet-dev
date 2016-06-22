@@ -23,6 +23,7 @@ dependencies[] = farnet_user
 dependencies[] = farnet_views
 dependencies[] = fe_block
 dependencies[] = features
+dependencies[] = multisite_megamenu
 dependencies[] = om_maximenu
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
