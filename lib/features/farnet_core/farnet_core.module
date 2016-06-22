@@ -67,6 +67,7 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
 
   $form['#id'] = FARNET_CORE_FORM_PDF_ID;
 
+  // Show the pdf image from the print module.
   $image_variables = array(
     'path' => drupal_get_path('module', 'print_pdf') . "/icons/pdf_icon.png",
     'alt' => 'Print to pdf',
@@ -77,14 +78,15 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
   );
   $img = theme('image', $image_variables);
 
+  $node_type_name = node_type_load($node->type)->name;
+  $node_type_name = locale($node_type_name, NULL, $language->language);
+
   $form['content_type_pdf_download'] = array(
-    '#markup' => $img . '<div class="print_pdf_text">' . node_type_load($node->type)->name . ' ' . t('in PDF') . '</div>',
+    '#markup' => $img . '<div class="print_pdf_text">' . t('@node_type_name in PDF', array('@node_type_name' => $node_type_name)) . '</div>',
   );
 
   $form['fields_pdf_print'] = array(
-    '#type' => 'fieldset',
-    '#collapsible' => FALSE,
-    '#collapsed' => FALSE,
+    '#type' => 'container',
   );
 
   $form['fields_pdf_print'][FARNET_CORE_SELECT_PDF_ID] = array(
@@ -121,6 +123,7 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
     'id_form' => '#' . FARNET_CORE_FORM_PDF_ID,
     'id_select' => '#' . FARNET_CORE_SELECT_PDF_ID,
     'id_hidden' => '#' . FARNET_CORE_HIDDEN_PDF_ID,
+    'delimiter' => variable_get('nexteuropa_multilingual_language_suffix_delimiter', '_'),
   );
 
   $form['#attached']['js'] = array(

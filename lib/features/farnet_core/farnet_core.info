@@ -35,6 +35,7 @@ features[fe_block_settings][] = farnet_core-farnet_core_printpdf
 features[fe_block_settings][] = print-print-top
 features[fe_block_settings][] = print_mail-print_mail-top
 features[fe_block_settings][] = print_pdf-print_pdf-top
+features[fe_block_settings][] = print_ui-print-links
 features[features_api][] = api:2
 features[field_base][] = field_page
 features[field_base][] = field_address_1
