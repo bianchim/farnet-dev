@@ -10,6 +10,15 @@
 function farnet_mega_menu_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer fmm'.
+  $permissions['administer fmm'] = array(
+    'name' => 'administer fmm',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'farnet_mega_menu',
+  );
+
   // Exported permission: 'administer om maximenu'.
   $permissions['administer om maximenu'] = array(
     'name' => 'administer om maximenu',
