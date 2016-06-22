@@ -14,7 +14,11 @@ function _yamb_block_name_cleaner($string) {
 
   // Fallback if transliteration is not active.
   // It is recommended to use transliteration.
-  $newStr = preg_replace(array('/å/', '/ä/', '/ö/', '/Å/', '/Ä/', '/Ö/'), array('a', 'a', 'o', 'A', 'A', 'O'), $string);
+  $newStr = preg_replace(
+    array('/å/', '/ä/', '/ö/', '/Å/', '/Ä/', '/Ö/'),
+    array('a', 'a', 'o', 'A', 'A', 'O'),
+    $string
+  );
   $newStr = preg_replace('/[^a-zA-Z0-9\']/', '_', $newStr);
   $newStr = str_replace("'", '', $newStr);
   return strtolower($newStr);
@@ -28,17 +32,7 @@ function _array_for_block_creation($menu_name) {
   $menuCollector = array();
   foreach ($tree as $branch) {
     $menuLevel1Title = $branch['link']['link_title'];
-    /* $menuSubCollector = array(); */
     if (is_array($branch['below']) && $branch['below'] != NULL) {
-      /*
-      foreach($branch['below'] as $leave) {
-        $subMenuTitle = $leave['link']['link_title'];
-        $menuSubCollector[$subMenuTitle]['link'] = $leave['link'];
-        $menuSubCollector[$subMenuTitle]['below'] = $leave['below'];
-      }
-      $menuCollector[$menuLevel1Title]['below'] = $menuSubCollector;
-      $menuCollector[$menuLevel1Title]['link'] = $branch['link'];
-      */
       $menuCollector[$menuLevel1Title] = $branch['below'];
     }
   }

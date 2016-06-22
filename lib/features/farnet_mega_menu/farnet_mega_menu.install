@@ -18,7 +18,6 @@ function farnet_mega_menu_enable() {
 
   // Set OM Maximenu.
   $om_maximenu = variable_get("om_maximenu", array());
-  /* $export = array(); */
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE;
@@ -303,11 +302,7 @@ function farnet_mega_menu_enable() {
     ),
   );
 
-  /* $export['om_maximenu'] = $strongarm; */
-  $om_maximenu = $strongarm;
-  if (!empty($om_maximenu)) {
-    variable_set("om_maximenu", $om_maximenu);
-  }
+  variable_set("om_maximenu", $strongarm);
 }
 
 /**
