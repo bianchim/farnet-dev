@@ -11,6 +11,3 @@
 function farnet_news_enable() {
   variable_set("pathauto_node_nexteuropa_news_pattern", "news-events/news/[node:field-term-publication-channels:name]/[node:source:title]");
 }
-
-
-
