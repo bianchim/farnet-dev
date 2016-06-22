@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_project_short_story_enable() {
+  variable_set("pathauto_node_project_short_story_pattern", "on-the-ground/project-stories//[node:source:title]");
+}
