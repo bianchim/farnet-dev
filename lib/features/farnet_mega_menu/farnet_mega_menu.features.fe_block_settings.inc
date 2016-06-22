@@ -24,7 +24,7 @@ function farnet_mega_menu_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
-        'region' => 'content',
+        'region' => '',
         'status' => 1,
         'theme' => 'bartik',
         'weight' => 0,
@@ -98,7 +98,7 @@ function farnet_mega_menu_default_fe_block_settings() {
         'weight' => 0,
       ),
       'ec_resp' => array(
-        'region' => 'content',
+        'region' => '',
         'status' => 1,
         'theme' => 'ec_resp',
         'weight' => 0,
@@ -126,7 +126,7 @@ function farnet_mega_menu_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
-        'region' => 'content',
+        'region' => '',
         'status' => 1,
         'theme' => 'bartik',
         'weight' => 0,
@@ -194,7 +194,7 @@ function farnet_mega_menu_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
-        'region' => 'content',
+        'region' => '',
         'status' => 1,
         'theme' => 'bartik',
         'weight' => 0,
