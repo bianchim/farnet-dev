@@ -40,7 +40,7 @@ Feature: Article content type
     And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I should see "Page" in the "div.form-item-field-page-und" element
     And I should see "Country" in the "div.form-item-field-term-country-und" element
-    And I fill in "Theme" with "237"
+    And I select "Diversification" from "Theme"
     And I should see "Teaser" in the "div.form-item-field-publication-abstract-und-0-value" element
     And I should see "Publication Channels" in the "div.form-item-field-term-publication-channels-und" element
     And I should see "Publication date" in the "div.field-name-field-publication-date" element
