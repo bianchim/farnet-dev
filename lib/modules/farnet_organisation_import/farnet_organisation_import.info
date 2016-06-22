@@ -1,0 +1,4 @@
+name = "Import organisations"
+description = "Module to import organisations"
+package = "Farnet Import"
+core = 7.x

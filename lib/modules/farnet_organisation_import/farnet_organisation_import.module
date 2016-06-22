@@ -1,0 +1,193 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet organisation import module.
+ */
+
+include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_organisation_import_menu() {
+  $items['admin/content/import_organisations'] = array(
+    'title' => 'Import Organisations',
+    'description' => 'Import farnet organisations',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('farnet_organisation_import_confirm'),
+    'access arguments' => array('administer content'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['batch_import_organisations'] = array(
+    'page callback' => '_farnet_organisation_import_batch',
+    'access arguments' => array('administer content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Form for import confirmation.
+ */
+function farnet_organisation_import_confirm($form, &$form_state) {
+  $form['confirm_text'] = array(
+    '#markup' => '<h2>' . t('Import organisations from csv file ?') . '</h2>',
+  );
+
+  $form['confirm_note'] = array(
+    '#markup' => '<span>' . t('Note : file must be placed inside the <b>public</b> folder as <b>organisations.csv</b>') . '</span>',
+    '#suffix' => '<br />',
+  );
+
+  $form['confirm'] = array(
+    '#type' => 'submit',
+    '#value' => t('Confirm'),
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_form_submit().
+ */
+function farnet_organisation_import_confirm_submit($form, &$form_state) {
+  drupal_goto('batch_import_organisations');
+}
+
+/**
+ * Import organisations with a batch process.
+ */
+function _farnet_organisation_import_batch() {
+  $operations = array();
+  $public_path = variable_get('file_public_path', conf_path() . '/files');
+  $csv = DRUPAL_ROOT . '/' . $public_path . '/organisations.csv';
+
+  $line_count = 0;
+  try {
+    if (!file_exists($csv)) {
+      throw new Exception(t('File not found.'));
+    }
+
+    $handle = fopen($csv, "r");
+
+    if (!$handle) {
+      throw new Exception(t('File open failed.'));
+    }
+  }
+  catch (Exception $e) {
+    drupal_set_message($e->getMessage(), 'error');
+    drupal_goto('<front>');
+  }
+
+  while (!feof($handle)) {
+    fgets($handle);
+    $line_count++;
+  }
+  fclose($handle);
+
+  // Ignore first line of file.
+  $operation_count = ceil(($line_count - 1) / 50);
+
+  for ($i = 0; $i < $operation_count; $i++) {
+    $params = array($i * 50 + 1, $csv);
+    $operations[] = array('_farnet_organisation_import_process', $params);
+  }
+
+  $batch = array(
+    'title' => t('Importing organisations'),
+    'operations' => $operations,
+    'finished' => 'farnet_organisation_import_finished',
+    'init_message' => t('Importing...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('Import has encountered an error.'),
+  );
+  batch_set($batch);
+  batch_process('admin/content/node/overview');
+}
+
+/**
+ * Process on batch operation.
+ */
+function _farnet_organisation_import_process($start, $file) {
+  $row_num = 0;
+  $done = 0;
+
+  // Get countries from farnet Taxonomy.
+  $countries_raw = farnet_taxonomy_countries();
+  $countries = array();
+  foreach ($countries_raw as $subcountries) {
+    $countries += $subcountries;
+  }
+
+  try {
+    if (!file_exists($file)) {
+      throw new Exception(t('File not found.'));
+    }
+
+    $handle = fopen($file, "r");
+
+    if (!$handle) {
+      throw new Exception(t('File open failed.'));
+    }
+  }
+  catch (Exception $e) {
+    drupal_set_message($e->getMessage(), 'error');
+    drupal_goto('<front>');
+  }
+
+  while (($data = fgetcsv($handle, 1000, ",")) !== FALSE && $done < 50) {
+    if ($row_num < $start) {
+      $row_num++;
+      continue;
+    }
+
+    // Trim all cells at once.
+    $data = array_map('trim', $data);
+
+    // Search the entity and load it before attempting to create it.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'organisation')
+      ->fieldCondition('title_field', 'value', $data[0], '=')
+      ->range(0, 1)
+      ->addMetaData('account', user_load(1));
+    $result = $query->execute();
+
+    // Load the entity if it exits.
+    if (isset($result['node']) && FALSE) {
+      $nid = reset(array_keys($result['node']));
+      $wrapper = entity_metadata_wrapper('node', node_load($nid));
+    }
+    else {
+      $entity = entity_create('node', array('type' => 'organisation'));
+      $wrapper = entity_metadata_wrapper('node', $entity);
+    }
+
+    // Fill the data.
+    $wrapper->title_field->set($data[0]);
+    $wrapper->title->set($data[0]);
+    $wrapper->field_address_1->set($data[1]);
+    $wrapper->field_address_2->set($data[2]);
+    $wrapper->field_zip_code->set($data[3]);
+    $wrapper->field_city->set($data[4]);
+
+    // Set language to avoid errors.
+    $wrapper->language->set('en');
+
+    // Get country from the taxonomy and set it.
+    if (trim($data[5]) !== '') {
+      $term = taxonomy_get_term_by_name($countries[trim($data[5])], 'countries');
+      if (isset(reset($term)->tid)) {
+        $wrapper->field_term_country->set(array(reset($term)->tid));
+      }
+    }
+
+    $wrapper->save();
+
+    $row_num++;
+    $done++;
+  }
+
+  fclose($handle);
+}
