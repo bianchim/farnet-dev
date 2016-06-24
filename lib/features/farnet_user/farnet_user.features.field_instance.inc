@@ -509,7 +509,7 @@ function farnet_user_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 11,
     ),
   );
 
@@ -846,59 +846,7 @@ function farnet_user_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_social_media'.
-  $field_instances['user-user-field_social_media'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Add your social media link : LinkedIn, Twitter, Facebook, Pinterest, Slideshare, Youtube, ...',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 17,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_social_media',
-    'label' => 'Social media',
-    'required' => 0,
-    'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'entity_translation_sync' => FALSE,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_label_use_field_label' => 0,
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => 1,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 20,
+      'weight' => 16,
     ),
   );
 
@@ -994,6 +942,447 @@ function farnet_user_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_facebook'.
+  $field_instances['user-user-field_user_facebook'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 28,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_facebook',
+    'label' => 'Facebook',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 22,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_linkedin'.
+  $field_instances['user-user-field_user_linkedin'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 31,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_linkedin',
+    'label' => 'LinkedIn',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_pinterest'.
+  $field_instances['user-user-field_user_pinterest'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 30,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_pinterest',
+    'label' => 'Pinterest',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_slideshare'.
+  $field_instances['user-user-field_user_slideshare'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 32,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_slideshare',
+    'label' => 'Slideshare',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 25,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_twitter'.
+  $field_instances['user-user-field_user_twitter'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 29,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_twitter',
+    'label' => 'Twitter',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_vimeo'.
+  $field_instances['user-user-field_user_vimeo'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 34,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_vimeo',
+    'label' => 'Vimeo',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_youtube'.
+  $field_instances['user-user-field_user_youtube'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 33,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_youtube',
+    'label' => 'YouTube',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 26,
     ),
   );
 
@@ -1160,7 +1549,7 @@ function farnet_user_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 12,
+      'weight' => 18,
     ),
   );
 
@@ -1191,39 +1580,44 @@ function farnet_user_field_default_field_instances() {
       'module' => 'tmgmt_language_combination',
       'settings' => array(),
       'type' => 'tmgmt_language_combination_default',
-      'weight' => 11,
+      'weight' => 17,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add your social media link : LinkedIn, Twitter, Facebook, Pinterest, Slideshare, Youtube, ...');
   t('Address 1');
   t('Address 2');
   t('City');
   t('Country');
   t('FARNET Magazine (paper version)');
   t('FARNET Magazine subscriptions');
+  t('Facebook');
   t('Gender');
   t('Group membership');
   t('If your organisation is not in the select field "Organisation", enter the name of your organisation.');
   t('Keep me informed on FARNET activities');
   t('Keep my email private');
   t('Language');
+  t('LinkedIn');
   t('Organisation');
   t('Organisation (other)');
   t('Phone');
   t('Phone (mobile)');
+  t('Pinterest');
   t('Preferred email');
   t('Preferred language (1)');
   t('Preferred language (2)');
   t('Preferred language (3)');
   t('Profile Completed');
   t('Quantity');
-  t('Social media');
+  t('Slideshare');
   t('Title / Function');
   t('Translation skills');
+  t('Twitter');
+  t('Vimeo');
   t('Website');
+  t('YouTube');
   t('Zip code');
 
   return $field_instances;
