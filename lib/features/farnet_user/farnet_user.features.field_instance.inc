@@ -437,7 +437,7 @@ function farnet_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -546,12 +546,15 @@ function farnet_user_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 10,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 8,
     ),
   );
 
@@ -612,7 +615,7 @@ function farnet_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 

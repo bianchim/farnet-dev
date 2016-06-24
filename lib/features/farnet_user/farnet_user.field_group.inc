@@ -60,9 +60,8 @@ function farnet_user_field_group_info() {
       1 => 'field_lastname',
       2 => 'field_gender',
       3 => 'field_preferred_email',
-      4 => 'field_user_country',
-      5 => 'account',
-      6 => 'picture',
+      4 => 'account',
+      5 => 'picture',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -121,6 +120,7 @@ function farnet_user_field_group_info() {
       0 => 'field_job_title',
       1 => 'field_organisation',
       2 => 'field_organisation_other',
+      3 => 'field_user_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

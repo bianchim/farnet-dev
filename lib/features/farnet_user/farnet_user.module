@@ -12,6 +12,43 @@ include_once 'farnet_user.features.inc';
 function farnet_user_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
   $form['field_profile_completed']['#access'] = FALSE;
   $form['#validate'][] = 'farnet_user_profile_validate';
+  $form['#validate'][] = 'farnet_user_profile_validate_field_organisation';
+
+  $form['field_organisation'][LANGUAGE_NONE][0]['target_id']['#autocomplete_path'] = "farnet_user/autocomplete/field_organisation";
+}
+
+/**
+ * Implements hook_FORM_ID_alter().
+ */
+function farnet_user_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  $form['#validate'][] = 'farnet_user_profile_validate_field_organisation';
+
+  $form['field_organisation'][LANGUAGE_NONE][0]['target_id']['#autocomplete_path'] = "farnet_user/autocomplete/field_organisation";
+}
+
+/**
+ * Implements hook_init().
+ */
+function farnet_user_init() {
+  drupal_add_js(drupal_get_path('module', 'farnet_user') . '/js/farnet_user.js', 'file');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_user_menu() {
+  $items = array();
+
+  $items['farnet_user/autocomplete/field_organisation'] = array(
+    'title' => 'Field organisation autocomplete',
+    'page callback' => 'farnet_user_field_organisation_callback',
+    'page arguments' => array(3, 4),
+    'access callback' => 'farnet_user_field_access_callback',
+    'access arguments' => array('field_organisation', 'user', 'user'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
 }
 
 /**
@@ -36,4 +73,80 @@ function farnet_user_profile_validate($form, &$form_state) {
   if ($qte > 5) {
     form_set_error('field_farnet_magazine_subscribe', t('The overall total cannot exceed 5 (e.g. FR=2 / EN=2 / ES=1).'));
   }
+}
+
+/**
+ * Performs a check on the organisation fields.
+ */
+function farnet_user_profile_validate_field_organisation($form, &$form_state) {
+  $field_organisation = $form_state['values']['field_organisation'][LANGUAGE_NONE];
+  $field_organisation = reset($field_organisation)['target_id'];
+
+  $field_organisation_other = $form_state['values']['field_organisation_other'][LANGUAGE_NONE];
+  $field_organisation_other = reset($field_organisation_other)['value'];
+
+  if (empty($field_organisation) && empty($field_organisation_other)) {
+    form_set_error('field_organisation_user_profile', t('One organisation field must be filled.'));
+  }
+}
+
+/**
+ * Field access callback used for organisation autocomplete.
+ */
+function farnet_user_field_access_callback($field_name, $entity_type, $bundle_name) {
+  $field = field_info_field($field_name);
+
+  $instance = field_info_instance($entity_type, $field_name, $bundle_name);
+
+  if (!$field || !$instance || $field['type'] != 'entityreference' || !field_access('edit', $field, $entity_type)) {
+    return FALSE;
+  }
+  return TRUE;
+}
+
+/**
+ * Callback of field organisation autocomplete widget.
+ */
+function farnet_user_field_organisation_callback($country, $search = NULL) {
+  if (is_null($search)) {
+    $search = $country;
+    $country = NULL;
+  }
+
+  $matches = array();
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'organisation')
+    ->propertyCondition('status', 1)
+    ->propertyCondition('title', $search . '%', 'like')
+    ->range(0, 10);
+
+  if (!is_null($country)) {
+    $query->fieldCondition('field_term_country', 'tid', $country, '=');
+  }
+
+  $result = $query->execute();
+
+  $organisations = array();
+  if (isset($result['node'])) {
+    $organisations = $result['node'];
+    $fields = field_info_instances('node', 'organisation');
+    $field_id = $fields['field_organisation']['field_id'];
+    field_attach_load('node', $organisations, FIELD_LOAD_CURRENT, array('field_id' => $field_id));
+  }
+
+  foreach ($organisations as $nid => $organisation) {
+    $label = reset($organisation->title_field['en'])['value'];
+    $key = "$label ($nid)";
+    // Strip things like starting/trailing white spaces, line breaks and tags.
+    $key = preg_replace('/\s\s+/', ' ', str_replace("\n", '', trim(decode_entities(strip_tags($key)))));
+    // Names containing commas or quotes must be wrapped in quotes.
+    if (strpos($key, ',') !== FALSE || strpos($key, '"') !== FALSE) {
+      $key = '"' . str_replace('"', '""', $key) . '"';
+    }
+    $matches[$key] = '<div class="reference-autocomplete">' . $label . '</div>';
+  }
+
+  drupal_json_output($matches);
 }
