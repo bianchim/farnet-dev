@@ -1340,7 +1340,7 @@ function farnet_user_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_user_youtube',
-    'label' => 'YouTube',
+    'label' => 'Youtube',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
