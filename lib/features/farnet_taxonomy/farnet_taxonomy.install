@@ -351,10 +351,11 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
       $parent_term = taxonomy_get_term_by_name($item->parent);
       if (empty($parent_term)) {
         drupal_set_message('No term found');
-      } else {
+      }
+      else {
         $tid = array_pop($parent_term)->tid;
         $org_term->parent = $tid;
-        drupal_set_message('Term found: '.$tid);
+        drupal_set_message('Term found: ' . $tid);
         taxonomy_term_save($org_term);
       }
     }
