@@ -18,11 +18,11 @@ function farnet_user_form_user_profile_form_alter(&$form, &$form_state, $form_id
  * Perform own validation.
  */
 function farnet_user_profile_validate($form, &$form_state) {
-  $magazines = $form_state['values']['field_farnet_magazine_subscribe']['und'];
+  $magazines = $form_state['values']['field_farnet_magazine_subscribe'][LANGUAGE_NONE];
   $languages = array();
   $qte = 0;
   foreach ($magazines as $key => $value) {
-    $selected_language = $value['field_magazine_language']['und'][0]['tid'];
+    $selected_language = $value['field_magazine_language'][LANGUAGE_NONE][0]['tid'];
     if (in_array($selected_language, $languages)) {
       form_set_error('field_farnet_magazine_subscribe', t('A language must be selected once.'));
     }
@@ -31,9 +31,32 @@ function farnet_user_profile_validate($form, &$form_state) {
         $languages[] = $selected_language;
       }
     }
-    $qte += $value['field_magazine_quantity']['und'][0]['value'];
+    $qte += $value['field_magazine_quantity'][LANGUAGE_NONE][0]['value'];
   }
   if ($qte > 5) {
     form_set_error('field_farnet_magazine_subscribe', t('The overall total cannot exceed 5 (e.g. FR=2 / EN=2 / ES=1).'));
+  }
+
+  // Check that the magazine is sent in at least one language.
+  $get_paper_magazine = reset($form_state['values']['field_farnet_magazine_paper'][LANGUAGE_NONE]);
+  $get_paper_magazine = (int) $get_paper_magazine['value'] == TRUE;
+
+  if ($get_paper_magazine && ($qte == 0 || empty($languages))) {
+    form_set_error('field_farnet_magazine_subscribe', t('Please specify at least one language and a quantity to receive the FARNET magazine.'));
+  }
+
+  // Check that an address has been set.
+  if ($get_paper_magazine) {
+    $empty_address1 = empty(reset($form_state['values']['field_address_1'][LANGUAGE_NONE])['value']);
+    $empty_address2 = empty(reset($form_state['values']['field_address_2'][LANGUAGE_NONE])['value']);
+    $empty_zip_code = empty(reset($form_state['values']['field_zip_code'][LANGUAGE_NONE])['value']);
+
+    if ($empty_address1 && $empty_address2) {
+      form_set_error('field_address_1', t('Please enter an address to receive your FARNET magazine.'));
+    }
+
+    if ($empty_zip_code) {
+      form_set_error('field_zip_code', t('Please enter a zip code to receive your FARNET magazine.'));
+    }
   }
 }
