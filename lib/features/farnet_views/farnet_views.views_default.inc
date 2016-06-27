@@ -64,6 +64,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -112,6 +113,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -156,6 +158,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -200,6 +203,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -244,6 +248,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -288,6 +293,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -332,6 +338,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -376,6 +383,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
