@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of Type events used to generate taxonomy Type Events on Farnet.
