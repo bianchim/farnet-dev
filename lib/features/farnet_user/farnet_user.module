@@ -16,6 +16,10 @@ function farnet_user_form_user_profile_form_alter(&$form, &$form_state, $form_id
   $form['#validate'][] = 'farnet_user_profile_validate_field_organisation';
 
   $form['field_organisation'][LANGUAGE_NONE][0]['target_id']['#autocomplete_path'] = "farnet_user/autocomplete/field_organisation";
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'farnet_user') . '/js/farnet_user.js',
+  );
 }
 
 /**
@@ -25,13 +29,10 @@ function farnet_user_form_user_register_form_alter(&$form, &$form_state, $form_i
   $form['#validate'][] = 'farnet_user_profile_validate_field_organisation';
 
   $form['field_organisation'][LANGUAGE_NONE][0]['target_id']['#autocomplete_path'] = "farnet_user/autocomplete/field_organisation";
-}
 
-/**
- * Implements hook_init().
- */
-function farnet_user_init() {
-  drupal_add_js(drupal_get_path('module', 'farnet_user') . '/js/farnet_user.js', 'file');
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'farnet_user') . '/js/farnet_user.js',
+  );
 }
 
 /**
