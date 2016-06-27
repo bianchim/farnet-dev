@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_views.views_default.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_notifications.rules_defaults.inc

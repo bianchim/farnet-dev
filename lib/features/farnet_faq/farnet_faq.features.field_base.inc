@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_faq.features.field_base.inc

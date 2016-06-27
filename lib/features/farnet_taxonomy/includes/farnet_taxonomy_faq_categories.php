@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of categories FAQ used to generate taxonomy FAQ categories on Farnet.
