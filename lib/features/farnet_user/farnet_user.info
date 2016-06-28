@@ -3,7 +3,6 @@ description = Feature for User
 core = 7.x
 package = Farnet
 dependencies[] = ctools
-dependencies[] = ec_world_countries
 dependencies[] = email
 dependencies[] = entityreference
 dependencies[] = farnet_core

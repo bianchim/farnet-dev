@@ -3,7 +3,6 @@ description = Extend nexteuropa page content for Farnet
 core = 7.x
 package = Farnet
 dependencies[] = ctools
-dependencies[] = ec_world_countries
 dependencies[] = farnet_core
 dependencies[] = farnet_taxonomy
 dependencies[] = features
