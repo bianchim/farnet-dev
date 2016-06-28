@@ -70,6 +70,6 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
  */
 function farnet_news_strongarm_alter(&$variables) {
   if (isset($variables['pathauto_node_nexteuropa_news_pattern'])) {
-    $variables['pathauto_node_nexteuropa_news_pattern']->value = "news-events/news/[node:field-term-publication-channels:name]/[node:source:title]";
+    $variables['pathauto_node_nexteuropa_news_pattern']->value = "news-events/news/[node:source:title]";
   }
 }

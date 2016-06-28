@@ -128,7 +128,7 @@ function farnet_publication_field_default_field_bases() {
   // Exported field_base: 'field_type_of_publication'.
   $field_bases['field_type_of_publication'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_type_of_publication',

@@ -184,6 +184,13 @@ function farnet_project_summary_sheet_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_project_summary_sheet_pattern';
+  $strongarm->value = 'on-the-ground/good-practice/projects/[node:source:title]';
+  $export['pathauto_node_project_summary_sheet_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_expand_fieldset_project_summary_sheet';
   $strongarm->value = '0';
   $export['scheduler_expand_fieldset_project_summary_sheet'] = $strongarm;

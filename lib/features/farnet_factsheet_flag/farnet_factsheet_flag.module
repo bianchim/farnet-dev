@@ -21,12 +21,3 @@ function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$for
     )
   );
 }
-
-/**
- * Implements hook_COMPONENT_alter().
- */
-function farnet_factsheet_flag_strongarm_alter(&$variables) {
-  if(isset($variables['pathauto_node_factsheet_flag_pattern'])) {
-    $variables['pathauto_node_factsheet_flag_pattern']->value = "on-the-ground/flag-factsheets/[node:source:title]";
-  }
-}

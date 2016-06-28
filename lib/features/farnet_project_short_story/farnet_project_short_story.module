@@ -5,12 +5,3 @@
  */
 
 include_once 'farnet_project_short_story.features.inc';
-
-/**
- * Implements hook_COMPONENT_alter().
- */
-function farnet_project_short_story_strongarm_alter(&$variables) {
-  if(isset($variables['pathauto_node_project_short_story_pattern'])) {
-    $variables['pathauto_node_project_short_story_pattern']->value = "on-the-ground/project-stories//[node:source:title]";
-  }
-}

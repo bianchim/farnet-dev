@@ -187,6 +187,13 @@ function farnet_summary_sheet_method_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_summary_sheet_method_pattern';
+  $strongarm->value = 'on-the-ground/good-practice/methods/[node:source:title]';
+  $export['pathauto_node_summary_sheet_method_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_summary_sheet_method';
   $strongarm->value = array(
     'status' => '1',
