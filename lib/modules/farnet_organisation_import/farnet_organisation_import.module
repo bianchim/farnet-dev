@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet organisation import module.
@@ -36,7 +37,7 @@ function farnet_organisation_import_confirm($form, &$form_state) {
   );
 
   $form['confirm_note'] = array(
-    '#markup' => '<span>' . t('Note : file must be placed inside the <b>public</b> folder as <b>organisations.csv</b>') . '</span>',
+    '#markup' => '<span>' . t('Note : file must be placed inside the <b>csv</b> folder as <b>organisations.csv</b> in the <b>farnet organisation import</b> module folder') . '</span>',
     '#suffix' => '<br />',
   );
 
@@ -60,8 +61,7 @@ function farnet_organisation_import_confirm_submit($form, &$form_state) {
  */
 function _farnet_organisation_import_batch() {
   $operations = array();
-  $public_path = variable_get('file_public_path', conf_path() . '/files');
-  $csv = DRUPAL_ROOT . '/' . $public_path . '/organisations.csv';
+  $csv = drupal_get_path('module', 'farnet_organisation_import') . '/csv/organisations.csv';
 
   $line_count = 0;
   try {
@@ -102,8 +102,17 @@ function _farnet_organisation_import_batch() {
     'progress_message' => t('Processed @current out of @total.'),
     'error_message' => t('Import has encountered an error.'),
   );
+
   batch_set($batch);
-  batch_process('admin/content/node/overview');
+  $batch =& batch_get();
+
+  if (drupal_is_cli()) {
+    $batch['progressive'] = FALSE;
+    drush_backend_batch_process();
+  }
+  else {
+    batch_process('admin/content/node/overview');
+  }
 }
 
 /**
@@ -155,7 +164,7 @@ function _farnet_organisation_import_process($start, $file) {
     $result = $query->execute();
 
     // Load the entity if it exits.
-    if (isset($result['node']) && FALSE) {
+    if (isset($result['node'])) {
       $nid = reset(array_keys($result['node']));
       $wrapper = entity_metadata_wrapper('node', node_load($nid));
     }
@@ -171,6 +180,7 @@ function _farnet_organisation_import_process($start, $file) {
     $wrapper->field_address_2->set($data[2]);
     $wrapper->field_zip_code->set($data[3]);
     $wrapper->field_city->set($data[4]);
+    $wrapper->status->set(NODE_PUBLISHED);
 
     // Set language to avoid errors.
     $wrapper->language->set('en');
