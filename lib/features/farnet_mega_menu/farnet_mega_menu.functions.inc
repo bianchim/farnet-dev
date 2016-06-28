@@ -7,7 +7,7 @@
 /**
  * Escaping characters.
  */
-function _yamb_block_name_cleaner($string) {
+function _farnet_mega_menu_block_name_cleaner($string) {
   if (module_exists('transliteration')) {
     return transliteration_clean_filename($string);
   }

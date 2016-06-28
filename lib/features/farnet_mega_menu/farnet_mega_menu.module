@@ -23,7 +23,7 @@ function farnet_mega_menu_menu() {
     'title' => 'FMM settings',
     'description' => 'Configure which menues to slice',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('yamb_admin_form'),
+    'page arguments' => array('farnet_mega_menu_admin_form'),
     'access arguments' => array('administer fmm'),
     'position' => 'left',
     'weight' => -15,
@@ -56,7 +56,7 @@ function farnet_mega_menu_block_info() {
 
   // Create the blocks info.
   foreach ($infoArray as $name => $menuArray) {
-    $blocks[_yamb_block_name_cleaner($name)] = array(
+    $blocks[_farnet_mega_menu_block_name_cleaner($name)] = array(
       'info' => 'FMM: ' . $name,
       'cache' => DRUPAL_NO_CACHE,
     );
@@ -77,7 +77,7 @@ function farnet_mega_menu_block_view($block_name = '') {
 
   // Create the blocks view.
   foreach ($menuCollector as $name => $value) {
-    if ($block_name == _yamb_block_name_cleaner($name)) {
+    if ($block_name == _farnet_mega_menu_block_name_cleaner($name)) {
       $block['subject'] = $name;
       $block['content'] = menu_tree_output($value);
       return $block;

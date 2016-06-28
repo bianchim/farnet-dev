@@ -37,5 +37,4 @@ features[fe_block_settings][] = om_maximenu-om-maximenu-1
 features[features_api][] = api:2
 features[user_permission][] = administer fmm
 features[user_permission][] = administer om maximenu
-features[variable][] = om_maximenu
 project path = sites/all/modules/features
