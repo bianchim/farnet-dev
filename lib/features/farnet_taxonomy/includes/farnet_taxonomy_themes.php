@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of themes used to generate taxonomy Theme on Farnet.

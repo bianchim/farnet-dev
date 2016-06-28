@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of Type news used to generate taxonomy Type News on Farnet.

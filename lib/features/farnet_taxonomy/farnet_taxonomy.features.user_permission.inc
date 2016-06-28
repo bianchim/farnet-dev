@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_taxonomy.features.user_permission.inc
@@ -9,6 +10,13 @@
  */
 function farnet_taxonomy_user_default_permissions() {
   $permissions = array();
+
+  // Exported permission: 'delete terms in countries'.
+  $permissions['delete terms in countries'] = array(
+    'name' => 'delete terms in countries',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
 
   // Exported permission: 'delete terms in farnet_languages_spoken'.
   $permissions['delete terms in farnet_languages_spoken'] = array(
@@ -56,6 +64,13 @@ function farnet_taxonomy_user_default_permissions() {
   // Exported permission: 'delete terms in regions'.
   $permissions['delete terms in regions'] = array(
     'name' => 'delete terms in regions',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in countries'.
+  $permissions['edit terms in countries'] = array(
+    'name' => 'edit terms in countries',
     'roles' => array(),
     'module' => 'taxonomy',
   );

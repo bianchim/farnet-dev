@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_views.views_default.inc
@@ -11,11 +12,11 @@ function farnet_views_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'farnet_themes_view';
+  $view->name = 'farnet_view_themes';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet Themes Views';
+  $view->human_name = 'Farnet Themes';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -64,6 +65,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -112,6 +114,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -156,6 +159,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -200,6 +204,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -244,6 +249,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -288,6 +294,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -332,6 +339,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -376,6 +384,7 @@ function farnet_views_views_default_views() {
     'project_short_story' => 'project_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -392,14 +401,14 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes/other';
-  $export['farnet_themes_view'] = $view;
+  $export['farnet_view_themes'] = $view;
 
   $view = new view();
   $view->name = 'farnet_view_news';
   $view->description = 'Views for the news Farnet and other';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet News views';
+  $view->human_name = 'Farnet News';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -529,11 +538,11 @@ function farnet_views_views_default_views() {
   $export['farnet_view_news'] = $view;
 
   $view = new view();
-  $view->name = 'good_practices';
+  $view->name = 'farnet_view_good_practices';
   $view->description = 'Project Summary Sheet + Method Summary Sheet';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Good practices';
+  $view->human_name = 'Farnet Good Practices Views';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -644,7 +653,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $export['good_practices'] = $view;
+  $export['farnet_view_good_practices'] = $view;
 
   return $export;
 }

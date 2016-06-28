@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_publication.views_default.inc
@@ -11,11 +12,11 @@ function farnet_publication_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'farnet_publication_view';
+  $view->name = 'farnet_view_publication';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet Publication View';
+  $view->human_name = 'Farnet Publication';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -184,7 +185,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   $handler->display->display_options['path'] = 'library/presentations';
-  $export['farnet_publication_view'] = $view;
+  $export['farnet_view_publication'] = $view;
 
   return $export;
 }

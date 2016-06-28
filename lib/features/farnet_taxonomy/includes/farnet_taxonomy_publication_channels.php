@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of Publication Channels used to generate taxonomy Publication Channels.

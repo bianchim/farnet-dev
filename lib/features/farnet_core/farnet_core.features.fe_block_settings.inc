@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_core.features.fe_block_settings.inc
