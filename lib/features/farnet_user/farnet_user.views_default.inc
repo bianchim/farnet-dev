@@ -262,7 +262,7 @@ function farnet_user_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'ec_world_countries';
+  $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'countries';
   /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
