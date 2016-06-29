@@ -24,6 +24,7 @@ dependencies[] = print_ui
 dependencies[] = sitemap
 dependencies[] = strongarm
 dependencies[] = text
+dependencies[] = metatag_twitter_cards
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_taxonomy
 features[contact_categories][] = Website feedback
