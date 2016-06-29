@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of Regions used to generate taxonomy Regions on Farnet.

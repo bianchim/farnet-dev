@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_publication.field_group.inc

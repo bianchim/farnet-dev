@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_news.views_default.inc
