@@ -6,3 +6,134 @@
  */
 
 include_once 'farnet_core.features.inc';
+
+define("FARNET_CORE_FORM_PDF_ID", "form-pdfprint-lang");
+define("FARNET_CORE_SELECT_PDF_ID", "select-pdfprint-lang");
+define("FARNET_CORE_HIDDEN_PDF_ID", "hidden-pdfprint-lang");
+define("FARNET_CORE_SUBMIT_PDF_ID", "submit-pdfprint-lang");
+
+/**
+ * Implements hook_block_info().
+ */
+function farnet_core_block_info() {
+  $blocks = array();
+
+  $blocks['farnet_core_printpdf'] = array(
+    'info' => t('Farnet multilingual pdf generation'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function farnet_core_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'farnet_core_printpdf':
+      if ((arg(0) == 'node') && is_numeric(arg(1)) && (arg(2) == NULL)) {
+        $block['subject'] = '';
+        $block['content'] = drupal_get_form('farnet_core_printpdf_multilingual_form');
+      }
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_form().
+ */
+function farnet_core_printpdf_multilingual_form($form, &$form_state) {
+  global $language;
+
+  $node = node_load(arg(1));
+  $language_list = language_list();
+  $translations = $node->translations;
+
+  if (is_null($translations->original)) {
+    $translations = array($language->language => $language->language);
+  }
+  else {
+    $translations = array_keys($translations->data);
+  }
+
+  $options = [];
+  foreach ($translations as $langcode) {
+    $language_name = locale($language_list[$langcode]->name, NULL, $language->language);
+    $options[$langcode] = $language_name;
+  }
+
+  $form['#id'] = FARNET_CORE_FORM_PDF_ID;
+
+  // Show the pdf image from the print module.
+  $image_variables = array(
+    'path' => drupal_get_path('module', 'print_pdf') . "/icons/pdf_icon.png",
+    'alt' => 'Print to pdf',
+    'title' => 'print to pdf',
+    'width' => '16px',
+    'height' => '16px',
+    'attributes' => array('class' => 'print_pdf_icon'),
+  );
+  $img = theme('image', $image_variables);
+
+  $node_type_name = node_type_load($node->type)->name;
+  $node_type_name = locale($node_type_name, NULL, $language->language);
+
+  $form['content_type_pdf_download'] = array(
+    '#markup' => $img . '<div class="print_pdf_text">' . t('@node_type_name in PDF', array('@node_type_name' => $node_type_name)) . '</div>',
+  );
+
+  $form['fields_pdf_print'] = array(
+    '#type' => 'container',
+  );
+
+  $form['fields_pdf_print'][FARNET_CORE_SELECT_PDF_ID] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#default_value' => $language->language,
+    '#attributes' => array(
+      'id' => FARNET_CORE_SELECT_PDF_ID,
+    ),
+  );
+
+  $form['fields_pdf_print'][FARNET_CORE_HIDDEN_PDF_ID] = array(
+    '#type' => 'hidden',
+    '#value' => $node->nid,
+    '#attributes' => array(
+      'id' => FARNET_CORE_HIDDEN_PDF_ID,
+    ),
+  );
+
+  $form['fields_pdf_print'][FARNET_CORE_SUBMIT_PDF_ID] = array(
+    '#type' => 'submit',
+    '#value' => t('Download'),
+    '#attributes' => array(
+      'id' => FARNET_CORE_SUBMIT_PDF_ID,
+    ),
+  );
+
+  // Add JS and CSS files.
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'farnet_core') . '/css/farnet_core_block.css',
+  );
+
+  $settings = array(
+    'id_form' => '#' . FARNET_CORE_FORM_PDF_ID,
+    'id_select' => '#' . FARNET_CORE_SELECT_PDF_ID,
+    'id_hidden' => '#' . FARNET_CORE_HIDDEN_PDF_ID,
+    'delimiter' => variable_get('nexteuropa_multilingual_language_suffix_delimiter', '_'),
+  );
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'farnet_core') . '/js/farnet_core_block.js',
+        array(
+          'data' => array('farnet_core' => $settings),
+          'type' => 'setting',
+        ),
+  );
+
+  return $form;
+}
