@@ -1,13 +1,14 @@
 <?php
+
 /**
  * @file
- * farnet_project_summary_sheet.features.inc
+ * farnet_gp_project.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farnet_project_summary_sheet_ctools_plugin_api($module = NULL, $api = NULL) {
+function farnet_gp_project_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -22,10 +23,10 @@ function farnet_project_summary_sheet_ctools_plugin_api($module = NULL, $api = N
 /**
  * Implements hook_node_info().
  */
-function farnet_project_summary_sheet_node_info() {
+function farnet_gp_project_node_info() {
   $items = array(
-    'project_summary_sheet' => array(
-      'name' => t('Project Summary Sheet'),
+    'gp_project' => array(
+      'name' => t('GP Project'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
