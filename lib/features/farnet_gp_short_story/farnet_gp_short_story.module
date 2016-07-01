@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet GP Short Story feature.
+ */
+
+include_once 'farnet_gp_short_story.features.inc';
