@@ -1,13 +1,14 @@
 <?php
+
 /**
  * @file
- * farnet_summary_sheet_method.features.inc
+ * farnet_gp_method.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farnet_summary_sheet_method_ctools_plugin_api($module = NULL, $api = NULL) {
+function farnet_gp_method_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -22,10 +23,10 @@ function farnet_summary_sheet_method_ctools_plugin_api($module = NULL, $api = NU
 /**
  * Implements hook_node_info().
  */
-function farnet_summary_sheet_method_node_info() {
+function farnet_gp_method_node_info() {
   $items = array(
-    'summary_sheet_method' => array(
-      'name' => t('Summary Sheet Method'),
+    'gp_method' => array(
+      'name' => t('GP Method'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
