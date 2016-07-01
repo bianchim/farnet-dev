@@ -965,11 +965,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'inline_entity_form',
       'settings' => array(
         'apply_chosen' => '',
+        'fields' => array(),
+        'type_settings' => array(),
       ),
-      'type' => 'options_select',
+      'type' => 'inline_entity_form',
       'weight' => -1,
     ),
   );
