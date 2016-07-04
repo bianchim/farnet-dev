@@ -7,6 +7,9 @@
 
 include_once 'farnet_user.features.inc';
 
+require_once DRUPAL_ROOT . '/sites/all/vendor/autoload.php';
+include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -57,6 +60,7 @@ function farnet_user_menu() {
  * Perform own validation.
  */
 function farnet_user_profile_validate($form, &$form_state) {
+
   $magazines = $form_state['values']['field_farnet_magazine_subscribe'][LANGUAGE_NONE];
   $languages = array();
   $qte = 0;
@@ -98,6 +102,59 @@ function farnet_user_profile_validate($form, &$form_state) {
       form_set_error('field_zip_code', t('Please enter a zip code to receive your FARNET magazine.'));
     }
   }
+
+  // Get country from form.
+  $tid_country = reset($form_state['values']['field_user_country'][LANGUAGE_NONE])['tid'];
+  $term_country = taxonomy_term_load($tid_country);
+
+  // Get countries from farnet Taxonomy.
+  $countries_raw = farnet_taxonomy_countries();
+  $countries = array();
+  foreach ($countries_raw as $subcountries) {
+    $countries += $subcountries;
+  }
+  $countries = array_flip($countries);
+
+  // Get countries from farnet Taxonomy.
+  $code_country = $countries[$term_country->name];
+
+  // Init instance of PhoneNumberUtil.
+  $phoneUtil = \libphonenumber\PhoneNumberUtil::getInstance();
+
+  // Check that if the field_telephone is valid.
+  $telephoneNumberStr = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
+  try {
+    $telephoneNumberProto = $phoneUtil->parse($telephoneNumberStr, $code_country);
+    $isValid = $phoneUtil->isValidNumber($telephoneNumberProto);
+    if (!$isValid) {
+      form_set_error('field_telephone', t('Please enter a valid telephone number.'));
+    }
+  } catch (\libphonenumber\NumberParseException $e) {
+    form_set_error('field_telephone', t('Please enter a valid telephone number.'));
+    /* dpm($e); */
+  }
+
+  // Check that if the field_phone_mobile is valid.
+  $mobileNumberStr = reset($form_state['values']['field_phone_mobile'][LANGUAGE_NONE])['value'];
+  try {
+    $mobileNumberProto = $phoneUtil->parse($mobileNumberStr, $code_country);
+    $isValid = $phoneUtil->isValidNumber($mobileNumberProto);
+    if (!$isValid) {
+      form_set_error('field_phone_mobile', t('Please enter a valid mobile phone.'));
+    }
+  } catch (\libphonenumber\NumberParseException $e) {
+    form_set_error('field_website', t('Please enter a valid mobile phone.'));
+    /* dpm($e); */
+  }
+
+  // Check that if the field_website is filled, the url is valid.
+  $url_website = reset($form_state['values']['field_website'][LANGUAGE_NONE])['url'];
+  if (strlen($url_website) > 0) {
+    if (filter_var($url_website, FILTER_VALIDATE_URL) === false) {
+      form_set_error('field_website', t('Please enter a valid url for the website.'));
+    }
+  }
+
 }
 
 /**

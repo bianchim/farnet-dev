@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_user.features.inc

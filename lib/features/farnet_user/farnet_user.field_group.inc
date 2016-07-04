@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_user.field_group.inc
@@ -210,14 +209,13 @@ function farnet_user_field_group_info() {
     'label' => 'Social Media',
     'weight' => '3',
     'children' => array(
-      0 => 'field_social_media',
-      1 => 'field_user_facebook',
-      2 => 'field_user_twitter',
-      3 => 'field_user_pinterest',
-      4 => 'field_user_linkedin',
-      5 => 'field_user_slideshare',
+      0 => 'field_user_facebook',
+      1 => 'field_user_linkedin',
+      2 => 'field_user_pinterest',
+      3 => 'field_user_slideshare',
+      4 => 'field_user_twitter',
+      5 => 'field_user_vimeo',
       6 => 'field_user_youtube',
-      7 => 'field_user_vimeo',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

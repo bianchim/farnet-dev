@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_user.views_default.inc
@@ -166,7 +165,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_lastname']['id'] = 'field_lastname';
   $handler->display->display_options['fields']['field_lastname']['table'] = 'field_data_field_lastname';
   $handler->display->display_options['fields']['field_lastname']['field'] = 'field_lastname';
-  /* Field: User: Organisation */
+  /* Field: Field: Organisation */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
@@ -453,7 +452,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_user_country']['id'] = 'field_user_country';
   $handler->display->display_options['fields']['field_user_country']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['fields']['field_user_country']['field'] = 'field_user_country';
-  /* Field: User: Organisation */
+  /* Field: Field: Organisation */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
@@ -519,7 +518,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_user_vimeo']['id'] = 'field_user_vimeo';
   $handler->display->display_options['fields']['field_user_vimeo']['table'] = 'field_data_field_user_vimeo';
   $handler->display->display_options['fields']['field_user_vimeo']['field'] = 'field_user_vimeo';
-  /* Field: User: YouTube */
+  /* Field: User: Youtube */
   $handler->display->display_options['fields']['field_user_youtube']['id'] = 'field_user_youtube';
   $handler->display->display_options['fields']['field_user_youtube']['table'] = 'field_data_field_user_youtube';
   $handler->display->display_options['fields']['field_user_youtube']['field'] = 'field_user_youtube';
