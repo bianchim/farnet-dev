@@ -19,4 +19,8 @@ function farnet_factsheet_country_form_factsheet_country_node_form_alter(&$form,
       'weight' => 100,
     )
   );
+
+  $form['field_total_budget'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_average_budget_per_flag'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+
 }
