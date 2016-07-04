@@ -969,7 +969,15 @@ function farnet_factsheet_country_field_default_field_instances() {
       'settings' => array(
         'apply_chosen' => '',
         'fields' => array(),
-        'type_settings' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'Managing Authorities',
+          'label_singular' => 'Managing Authority',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
       'type' => 'inline_entity_form',
       'weight' => -1,
