@@ -10,6 +10,9 @@ include_once 'farnet_user.features.inc';
 require_once DRUPAL_ROOT . '/sites/all/vendor/autoload.php';
 include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
 
+use libphonenumber\NumberParseException;
+use libphonenumber\PhoneNumberUtil;
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -119,7 +122,7 @@ function farnet_user_profile_validate($form, &$form_state) {
   $code_country = $countries[$term_country->name];
 
   // Init instance of PhoneNumberUtil.
-  $phoneUtil = \libphonenumber\PhoneNumberUtil::getInstance();
+  $phoneUtil = PhoneNumberUtil::getInstance();
 
   // Check that if the field_telephone is valid.
   $telephoneNumberStr = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
@@ -129,7 +132,8 @@ function farnet_user_profile_validate($form, &$form_state) {
     if (!$isValid) {
       form_set_error('field_telephone', t('Please enter a valid telephone number.'));
     }
-  } catch (\libphonenumber\NumberParseException $e) {
+  }
+  catch (NumberParseException $e) {
     form_set_error('field_telephone', t('Please enter a valid telephone number.'));
     /* dpm($e); */
   }
@@ -142,7 +146,8 @@ function farnet_user_profile_validate($form, &$form_state) {
     if (!$isValid) {
       form_set_error('field_phone_mobile', t('Please enter a valid mobile phone.'));
     }
-  } catch (\libphonenumber\NumberParseException $e) {
+  }
+  catch (NumberParseException $e) {
     form_set_error('field_website', t('Please enter a valid mobile phone.'));
     /* dpm($e); */
   }
@@ -150,7 +155,7 @@ function farnet_user_profile_validate($form, &$form_state) {
   // Check that if the field_website is filled, the url is valid.
   $url_website = reset($form_state['values']['field_website'][LANGUAGE_NONE])['url'];
   if (strlen($url_website) > 0) {
-    if (filter_var($url_website, FILTER_VALIDATE_URL) === false) {
+    if (filter_var($url_website, FILTER_VALIDATE_URL) === FALSE) {
       form_set_error('field_website', t('Please enter a valid url for the website.'));
     }
   }
