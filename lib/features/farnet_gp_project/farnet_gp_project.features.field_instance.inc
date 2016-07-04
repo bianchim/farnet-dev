@@ -681,7 +681,15 @@ function farnet_gp_project_field_default_field_instances() {
       'settings' => array(
         'apply_chosen' => '',
         'fields' => array(),
-        'type_settings' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'Organisations',
+          'label_singular' => 'Organisation',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
       'type' => 'inline_entity_form',
       'weight' => 12,
