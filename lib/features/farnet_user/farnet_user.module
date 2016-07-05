@@ -160,10 +160,9 @@ function farnet_user_profile_validate($form, &$form_state) {
   // Check that if the field_website is filled, the url is valid.
   $url_website = reset($form_state['values']['field_website'][LANGUAGE_NONE])['url'];
   if (strlen($url_website) > 0) {
-    // Remove all illegal characters from a url
+    // Remove all illegal characters from a url.
     $url_website = filter_var($url_website, FILTER_SANITIZE_URL);
     if (filter_var($url_website, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED) === FALSE) {
-    /* if (filter_var($url_website, FILTER_VALIDATE_URL) === FALSE) { */
       form_set_error('field_website', t('Please enter a valid url for the website. URL must include host name'));
     }
   }
