@@ -219,8 +219,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_a5_public_contribution'.
+  // Exported field_instance: 'node-gp_project-field_a5_public_contribution'.
   $field_instances['node-gp_project-field_a5_public_contribution'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
@@ -264,8 +263,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_b1_other_contribution'.
+  // Exported field_instance: 'node-gp_project-field_b1_other_contribution'.
   $field_instances['node-gp_project-field_b1_other_contribution'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
@@ -309,8 +307,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_dates_start_end'.
+  // Exported field_instance: 'node-gp_project-field_dates_start_end'.
   $field_instances['node-gp_project-field_dates_start_end'] = array(
     'bundle' => 'gp_project',
     'deleted' => 0,
@@ -366,8 +363,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_farnet_abstract'.
+  // Exported field_instance: 'node-gp_project-field_farnet_abstract'.
   $field_instances['node-gp_project-field_farnet_abstract'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
@@ -681,11 +677,21 @@ function farnet_gp_project_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'inline_entity_form',
       'settings' => array(
         'apply_chosen' => '',
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'Organisations',
+          'label_singular' => 'Organisation',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
-      'type' => 'options_select',
+      'type' => 'inline_entity_form',
       'weight' => 12,
     ),
   );
@@ -765,9 +771,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_pss_a1_eu_contribution'.
-  $field_instances['node-gp_project-field_pss_a1_eu_contribution'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_a1_eu_contribution'.
+  $field_instances['node-gp_project-field_gpp_a1_eu_contribution'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -793,7 +798,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_a1_eu_contribution',
+    'field_name' => 'field_gpp_a1_eu_contribution',
     'label' => 'A1 - EU contribution (EMFF)',
     'required' => 0,
     'settings' => array(
@@ -814,8 +819,8 @@ function farnet_gp_project_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-gp_project-field_pss_a2_public_contribution'.
-  $field_instances['node-gp_project-field_pss_a2_public_contribution'] = array(
+  // 'node-gp_project-field_gpp_a2_public_contribution'.
+  $field_instances['node-gp_project-field_gpp_a2_public_contribution'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -841,7 +846,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_a2_public_contribution',
+    'field_name' => 'field_gpp_a2_public_contribution',
     'label' => 'A2 - Public contribution (national)',
     'required' => 0,
     'settings' => array(
@@ -862,8 +867,8 @@ function farnet_gp_project_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-gp_project-field_pss_a3_public_contribution'.
-  $field_instances['node-gp_project-field_pss_a3_public_contribution'] = array(
+  // 'node-gp_project-field_gpp_a3_public_contribution'.
+  $field_instances['node-gp_project-field_gpp_a3_public_contribution'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -889,7 +894,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_a3_public_contribution',
+    'field_name' => 'field_gpp_a3_public_contribution',
     'label' => 'A3 - Public contribution (regional)',
     'required' => 0,
     'settings' => array(
@@ -910,8 +915,8 @@ function farnet_gp_project_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-gp_project-field_pss_a4_public_contribution'.
-  $field_instances['node-gp_project-field_pss_a4_public_contribution'] = array(
+  // 'node-gp_project-field_gpp_a4_public_contribution'.
+  $field_instances['node-gp_project-field_gpp_a4_public_contribution'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -937,7 +942,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_a4_public_contribution',
+    'field_name' => 'field_gpp_a4_public_contribution',
     'label' => 'A4 - Public contribution (local)',
     'required' => 0,
     'settings' => array(
@@ -957,9 +962,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_pss_a_flag_grant'.
-  $field_instances['node-gp_project-field_pss_a_flag_grant'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_a_flag_grant'.
+  $field_instances['node-gp_project-field_gpp_a_flag_grant'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -985,7 +989,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_a_flag_grant',
+    'field_name' => 'field_gpp_a_flag_grant',
     'label' => 'A - FLAG grant',
     'required' => 0,
     'settings' => array(
@@ -1005,8 +1009,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_project-field_pss_activities'.
-  $field_instances['node-gp_project-field_pss_activities'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_activities'.
+  $field_instances['node-gp_project-field_gpp_activities'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1027,7 +1031,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_activities',
+    'field_name' => 'field_gpp_activities',
     'label' => 'Activities',
     'required' => 0,
     'settings' => array(
@@ -1072,9 +1076,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_pss_b2_lead_partner'.
-  $field_instances['node-gp_project-field_pss_b2_lead_partner'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_b2_lead_partner'.
+  $field_instances['node-gp_project-field_gpp_b2_lead_partner'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1100,7 +1103,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_b2_lead_partner',
+    'field_name' => 'field_gpp_b2_lead_partner',
     'label' => 'B2 - Lead partner',
     'required' => 0,
     'settings' => array(
@@ -1120,9 +1123,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_pss_b_beneficiary'.
-  $field_instances['node-gp_project-field_pss_b_beneficiary'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_b_beneficiary'.
+  $field_instances['node-gp_project-field_gpp_b_beneficiary'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1148,7 +1150,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_b_beneficiary',
+    'field_name' => 'field_gpp_b_beneficiary',
     'label' => 'B - Beneficiary contribution',
     'required' => 0,
     'settings' => array(
@@ -1168,9 +1170,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_pss_context_and_needs'.
-  $field_instances['node-gp_project-field_pss_context_and_needs'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_context_and_needs'.
+  $field_instances['node-gp_project-field_gpp_context_and_needs'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1191,7 +1192,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_context_and_needs',
+    'field_name' => 'field_gpp_context_and_needs',
     'label' => 'Context and needs',
     'required' => 0,
     'settings' => array(
@@ -1236,8 +1237,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_project-field_pss_lessons'.
-  $field_instances['node-gp_project-field_pss_lessons'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_lessons'.
+  $field_instances['node-gp_project-field_gpp_lessons'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1258,7 +1259,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_lessons',
+    'field_name' => 'field_gpp_lessons',
     'label' => 'Lessons',
     'required' => 0,
     'settings' => array(
@@ -1303,8 +1304,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_project-field_pss_objectives'.
-  $field_instances['node-gp_project-field_pss_objectives'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_objectives'.
+  $field_instances['node-gp_project-field_gpp_objectives'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1325,7 +1326,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_objectives',
+    'field_name' => 'field_gpp_objectives',
     'label' => 'Objectives',
     'required' => 0,
     'settings' => array(
@@ -1370,8 +1371,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_project-field_pss_results'.
-  $field_instances['node-gp_project-field_pss_results'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_results'.
+  $field_instances['node-gp_project-field_gpp_results'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1392,7 +1393,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_results',
+    'field_name' => 'field_gpp_results',
     'label' => 'Results',
     'required' => 0,
     'settings' => array(
@@ -1437,9 +1438,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_pss_total_project_cost'.
-  $field_instances['node-gp_project-field_pss_total_project_cost'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_total_project_cost'.
+  $field_instances['node-gp_project-field_gpp_total_project_cost'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1465,7 +1465,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_total_project_cost',
+    'field_name' => 'field_gpp_total_project_cost',
     'label' => 'Total project cost',
     'required' => 0,
     'settings' => array(
@@ -1485,9 +1485,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_pss_transferability'.
-  $field_instances['node-gp_project-field_pss_transferability'] = array(
+  // Exported field_instance: 'node-gp_project-field_gpp_transferability'.
+  $field_instances['node-gp_project-field_gpp_transferability'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1508,7 +1507,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_pss_transferability',
+    'field_name' => 'field_gpp_transferability',
     'label' => 'Transferability',
     'required' => 0,
     'settings' => array(
@@ -1553,8 +1552,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_publication_abstract'.
+  // Exported field_instance: 'node-gp_project-field_publication_abstract'.
   $field_instances['node-gp_project-field_publication_abstract'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
@@ -1622,8 +1620,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_publication_date'.
+  // Exported field_instance: 'node-gp_project-field_publication_date'.
   $field_instances['node-gp_project-field_publication_date'] = array(
     'bundle' => 'gp_project',
     'deleted' => 0,
@@ -1728,8 +1725,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_project-field_term_publication_channels'.
+  // Exported field_instance: 'node-gp_project-field_term_publication_channels'.
   $field_instances['node-gp_project-field_term_publication_channels'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
