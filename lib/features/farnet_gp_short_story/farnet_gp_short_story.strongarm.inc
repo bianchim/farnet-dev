@@ -41,16 +41,16 @@ function farnet_gp_short_story_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_gp_short_story';
+  $strongarm->name = 'comment_gp_short_story';
   $strongarm->value = '1';
-  $export['comment_preview_gp_short_story'] = $strongarm;
+  $export['comment_gp_short_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_gp_short_story';
+  $strongarm->name = 'comment_preview_gp_short_story';
   $strongarm->value = '1';
-  $export['comment_gp_short_story'] = $strongarm;
+  $export['comment_preview_gp_short_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -128,6 +128,9 @@ function farnet_gp_short_story_strongarm() {
         'scheduler_settings' => array(
           'weight' => '28',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),
@@ -180,13 +183,6 @@ function farnet_gp_short_story_strongarm() {
   $strongarm->name = 'node_submitted_gp_short_story';
   $strongarm->value = 1;
   $export['node_submitted_gp_short_story'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_gp_short_story_pattern';
-  $strongarm->value = 'on-the-ground/good-practice/short-stories/[node:source:title]';
-  $export['pathauto_node_gp_short_story_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
