@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_cooperation_call.field_group.inc
