@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * farnet_project_short_story.views_default.inc
+ * farnet_gp_short_story.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function farnet_project_short_story_views_default_views() {
+function farnet_gp_short_story_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'farnet_view_project_short_story';
+  $view->name = 'farnet_view_gp_short_story';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet Project Short Story';
+  $view->human_name = 'Farnet GP Short Story';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -57,7 +57,7 @@ function farnet_project_short_story_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
   );
 
   /* Display: Page */
@@ -69,7 +69,7 @@ function farnet_project_short_story_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $export['farnet_view_project_short_story'] = $view;
+  $export['farnet_view_gp_short_story'] = $view;
 
   return $export;
 }
