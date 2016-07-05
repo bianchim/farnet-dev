@@ -109,6 +109,7 @@ features[variable][] = menu_parent_summary_sheet_method
 features[variable][] = node_options_summary_sheet_method
 features[variable][] = node_preview_summary_sheet_method
 features[variable][] = node_submitted_summary_sheet_method
+features[variable][] = pathauto_node_summary_sheet_method_pattern
 features[variable][] = xmlsitemap_settings_node_summary_sheet_method
 features_exclude[field_base][group_content_access] = group_content_access
 features_exclude[field_base][og_group_ref] = og_group_ref

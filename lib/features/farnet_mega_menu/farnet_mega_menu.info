@@ -10,7 +10,6 @@ dependencies[] = farnet_factsheet_flag
 dependencies[] = farnet_faq
 dependencies[] = farnet_homepage_highlight
 dependencies[] = farnet_mediagallery
-dependencies[] = farnet_mega_menu
 dependencies[] = farnet_news
 dependencies[] = farnet_organisation
 dependencies[] = farnet_pages
