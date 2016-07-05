@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_user.field_group.inc
@@ -60,9 +61,8 @@ function farnet_user_field_group_info() {
       1 => 'field_lastname',
       2 => 'field_gender',
       3 => 'field_preferred_email',
-      4 => 'field_user_country',
-      5 => 'account',
-      6 => 'picture',
+      4 => 'account',
+      5 => 'picture',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -87,7 +87,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Language',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_preferred_language_1',
       1 => 'field_preferred_language_2',
@@ -121,6 +121,7 @@ function farnet_user_field_group_info() {
       0 => 'field_job_title',
       1 => 'field_organisation',
       2 => 'field_organisation_other',
+      3 => 'field_user_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -145,7 +146,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Other',
-    'weight' => '7',
+    'weight' => '12',
     'children' => array(
       0 => 'field_creator',
       1 => 'tmgmt_translation_skills',
@@ -180,7 +181,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Privacy settings',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_keep_my_email_private',
     ),
@@ -210,6 +211,13 @@ function farnet_user_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'field_social_media',
+      1 => 'field_user_facebook',
+      2 => 'field_user_twitter',
+      3 => 'field_user_pinterest',
+      4 => 'field_user_linkedin',
+      5 => 'field_user_slideshare',
+      6 => 'field_user_youtube',
+      7 => 'field_user_vimeo',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -234,7 +242,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subscriptions',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_farnet_magazine_paper',
       1 => 'field_farnet_magazine_subscribe',

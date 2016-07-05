@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet Event feature.
@@ -66,6 +67,10 @@ function farnet_event_field_default_field_instances_alter(&$fields) {
  * Implements hook_views_default_views_alter().
  */
 function farnet_event_views_default_views_alter(&$views) {
+  if (isset($views['calendar'])) {
+    $views['calendar']->display['page']->display_options['path'] = 'news-events/calendar';
+  }
+
   if (isset($views['events'])) {
     $term = taxonomy_get_term_by_name('Transnational seminars');
     if ((isset($term)) && (!empty($term))) {

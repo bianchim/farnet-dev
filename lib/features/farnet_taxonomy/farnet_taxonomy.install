@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Installs the Farnet taxonomy feature.
@@ -10,223 +11,123 @@
 function farnet_taxonomy_enable() {
   $t = get_t();
 
-  // Ensure all components exist.
+  // Ensure vocabularies exist.
+  drupal_flush_all_caches();
   features_revert_module("nexteuropa_news");
   features_revert_module("nexteuropa_event");
   features_revert_module("nexteuropa_faq");
+  features_revert_module("farnet_core");
   features_revert_module("farnet_taxonomy");
 
-  // Imports FAQ data.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('faq_categories');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
-
+  // Imports FAQ terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('faq_categories')) {
     include_once 'includes/farnet_taxonomy_faq_categories.php';
     $faq_categories_array = farnet_taxonomy_faq_categories();
-    save_multilingual_farnet_taxonomy($faq_categories_array, $vid);
-  }
-
-  // Creates the Farnet themes vocabulary if it does not exist already.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_theme');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
+    save_multilingual_farnet_taxonomy($faq_categories_array, $vocabulary->vid);
   }
   else {
-    $vocabulary = array(
-      'name' => 'Farnet Theme',
-      'machine_name' => 'farnet_theme',
-      'description' => 'Taxonomy for the themes on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -10,
-    );
-    $vocabulary = (object) $vocabulary;
-    taxonomy_vocabulary_save($vocabulary);
-    $vid = $vocabulary->vid;
-  };
+    watchdog('farnet_taxonomy', "Import faq_categories terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports theme data.
-  include_once 'includes/farnet_taxonomy_themes.php';
-  $themes_array = farnet_taxonomy_themes();
-  save_multilingual_farnet_taxonomy($themes_array, $vid);
-
-  // Creates the Languages spoken vocabulary if it does not exist already.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_languages_spoken');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
+  // Imports theme terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_theme')) {
+    include_once 'includes/farnet_taxonomy_themes.php';
+    $themes_array = farnet_taxonomy_themes();
+    save_multilingual_farnet_taxonomy($themes_array, $vocabulary->vid);
   }
   else {
-    $vocabulary = array(
-      'name' => 'Farnet Languages spoken',
-      'machine_name' => 'farnet_languages_spoken',
-      'description' => 'Taxonomy for the languages spoken on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -4,
-    );
-    $vocabulary = (object) $vocabulary;
-    taxonomy_vocabulary_save($vocabulary);
-    $vid = $vocabulary->vid;
-  };
+    watchdog('farnet_taxonomy', "Import farnet_theme terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports Languages spoken data.
-  include_once 'includes/farnet_taxonomy_languages_spoken.php';
-  $languages_spoken_array = farnet_taxonomy_languages_spoken();
-  save_multilingual_farnet_taxonomy($languages_spoken_array, $vid);
-
-  // Creates the Farnet Publication channels vocabulary.
-  // If it does not exist already.
-  $voc = taxonomy_vocabulary_machine_name_load('farnet_publication_channels');
-  if ($voc) {
-    $vid = $voc->vid;
+  // Imports Languages spoken terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_languages_spoken')) {
+    include_once 'includes/farnet_taxonomy_languages_spoken.php';
+    $languages_spoken_array = farnet_taxonomy_languages_spoken();
+    save_multilingual_farnet_taxonomy($languages_spoken_array, $vocabulary->vid);
   }
   else {
-    $voc = array(
-      'name' => 'Farnet Publication Channels',
-      'machine_name' => 'farnet_publication_channels',
-      'description' => 'Taxonomy for the Publication Channels on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -5,
-    );
-    $voc = (object) $voc;
-    taxonomy_vocabulary_save($voc);
-    $vid = $voc->vid;
-  };
+    watchdog('farnet_taxonomy', "Import farnet_languages_spoken terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports Publication channels data.
-  include_once 'includes/farnet_taxonomy_publication_channels.php';
-  $publication_channels_array = farnet_taxonomy_publication_channels();
-  save_multilingual_farnet_taxonomy($publication_channels_array, $vid);
+  // Imports Publication channels terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_publication_channels')) {
+    include_once 'includes/farnet_taxonomy_publication_channels.php';
+    $publication_channels_array = farnet_taxonomy_publication_channels();
+    save_multilingual_farnet_taxonomy($publication_channels_array, $vocabulary->vid);
+  }
+  else {
+    watchdog('farnet_taxonomy', "Import farnet_publication_channels terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports Type Event data.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_event_type');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
-
+  // Imports Type Event terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('nexteuropa_event_type')) {
     include_once 'includes/farnet_taxonomy_type_events.php';
     $type_events_array = farnet_taxonomy_type_events();
-    save_multilingual_farnet_taxonomy($type_events_array, $vid);
-  }
-
-  // Imports Type News data.
-  // Creates the Farnet Type Publication vocabulary.
-  // If it does not exist already.
-  $voc = taxonomy_vocabulary_machine_name_load('farnet_type_publication');
-  if ($voc) {
-    $vid = $voc->vid;
+    save_multilingual_farnet_taxonomy($type_events_array, $vocabulary->vid);
   }
   else {
-    $voc = array(
-      'name' => 'Farnet Type Publication',
-      'machine_name' => 'farnet_type_publication',
-      'description' => 'Taxonomy for the Type of Publications on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -7,
-    );
-    $voc = (object) $voc;
-    taxonomy_vocabulary_save($voc);
-    $vid = $voc->vid;
-  };
+    watchdog('farnet_taxonomy', "Import nexteuropa_event_type terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports Type Publication data.
-  include_once 'includes/farnet_taxonomy_type_publications.php';
-  $type_pubications_array = farnet_taxonomy_type_publications();
-  save_multilingual_farnet_taxonomy($type_pubications_array, $vid);
-
-  // Creates the Farnet Type Organisation vocabulary.
-  // If it does not exist already.
-  $voc = taxonomy_vocabulary_machine_name_load('farnet_type_organisation');
-  if ($voc) {
-    $vid = $voc->vid;
+  // Imports Type Publication data terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_publication')) {
+    include_once 'includes/farnet_taxonomy_type_publications.php';
+    $type_pubications_array = farnet_taxonomy_type_publications();
+    save_multilingual_farnet_taxonomy($type_pubications_array, $vocabulary->vid);
   }
   else {
-    $voc = array(
-      'name' => 'Farnet Type Organisation',
-      'machine_name' => 'farnet_type_organisation',
-      'description' => 'Taxonomy for the Type of Organisations on Farnet',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 4,
-    );
-    $voc = (object) $voc;
-    taxonomy_vocabulary_save($voc);
-    $vid = $voc->vid;
-  };
+    watchdog('farnet_taxonomy', "Import farnet_type_organisation terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports Type Organisation data.
-  include_once 'includes/farnet_taxonomy_type_organisations.php';
-  $type_organisations_array = farnet_taxonomy_type_organisations();
-  save_multilingual_farnet_taxonomy($type_organisations_array, $vid);
-
-  // Creates the Farnet Country Vocabulary.
-  $voc = taxonomy_vocabulary_machine_name_load('countries');
-  if ($voc) {
-    $vid = $voc->vid;
+  // Import Farnet Type Organisation terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_organisation')) {
+    include_once 'includes/farnet_taxonomy_type_organisations.php';
+    $type_organisations_array = farnet_taxonomy_type_organisations();
+    save_multilingual_farnet_taxonomy($type_organisations_array, $vocabulary->vid);
   }
   else {
-    $voc = array(
-      'name' => 'Countries',
-      'machine_name' => 'countries',
-      'description' => 'A list of the countries',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -1,
-    );
-    $voc = (object) $voc;
-    taxonomy_vocabulary_save($voc);
-    $vid = $voc->vid;
-  };
+    watchdog('farnet_taxonomy', "Import farnet_type_organisation terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports country data.
-  include_once 'includes/farnet_taxonomy_countries.php';
-  $country_array = farnet_taxonomy_countries();
-  foreach ($country_array as $zone => $countries) {
-    $term = (object) array('vid' => $vid, 'name' => $zone);
-    taxonomy_term_save($term);
-    $tid = $term->tid;
-    foreach ($countries as $country => $cy_name) {
-      $subterm = (object) array(
-        'vid' => $vid,
-        'name' => $cy_name,
-        'parent' => $tid,
-      );
-      taxonomy_term_save($subterm);
-      watchdog('taxonomy_countries', 'Created country %country', array(
-        '%country' => $cy_name,
-      ), WATCHDOG_INFO);
+  // Import Farnet Country terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('countries')) {
+    $vid = $vocabulary->vid;
+    // Imports country data.
+    include_once 'includes/farnet_taxonomy_countries.php';
+    $country_array = farnet_taxonomy_countries();
+    foreach ($country_array as $zone => $countries) {
+      $term = (object) array('vid' => $vid, 'name' => $zone);
+      taxonomy_term_save($term);
+      $tid = $term->tid;
+      foreach ($countries as $country => $cy_name) {
+        $subterm = (object) array(
+          'vid' => $vid,
+          'name' => $cy_name,
+          'parent' => $tid,
+        );
+        taxonomy_term_save($subterm);
+      }
     }
-  };
-
-  // Creates the Farnet Region Vocabulary.
-  $voc = taxonomy_vocabulary_machine_name_load('regions');
-  if ($voc) {
-    $vid = $voc->vid;
   }
   else {
-    $voc = array(
-      'name' => 'Regions',
-      'machine_name' => 'regions',
-      'description' => 'A list of the regions',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => -1,
-    );
-    $voc = (object) $voc;
-    taxonomy_vocabulary_save($voc);
-    $vid = $voc->vid;
-  };
+    watchdog('farnet_taxonomy', "Import countries terms failed.", array(), WATCHDOG_ERROR);
+  }
 
-  // Imports Region data.
-  include_once 'includes/farnet_taxonomy_regions.php';
-  $regions_array = farnet_taxonomy_regions();
-  foreach ($regions_array as $item) {
-    $term = new stdClass();
-    $term->vid = $vid;
-    $term->name = $item->name;
-    $term->language = $item->language;
-    taxonomy_term_save($term);
+  // Import Farnet Region terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('regions')) {
+    $vid = $vocabulary->vid;
+    include_once 'includes/farnet_taxonomy_regions.php';
+    $regions_array = farnet_taxonomy_regions();
+    foreach ($regions_array as $item) {
+      $term = new stdClass();
+      $term->vid = $vid;
+      $term->name = $item->name;
+      $term->language = $item->language;
+      taxonomy_term_save($term);
+    }
+  }
+  else {
+    watchdog('farnet_taxonomy', "Import regions terms failed.", array(), WATCHDOG_ERROR);
   }
 
   drupal_set_message($t('The FARNET Taxonomy feature is now active on your site.'));
@@ -336,7 +237,9 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
     $term = new stdClass();
     $term->vid = $vid;
     $term->name = $item->name;
+    $term->name_field = $item->name_field;
     $term->language = $item->language;
+    $term->uid = 1;
     taxonomy_term_save($term);
 
     if (isset($item->code)) {
@@ -345,8 +248,15 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
       taxonomy_term_save($org_term);
     }
 
-    foreach ($item->translation as $language => $value) {
+    if (isset($item->parent)) {
+      $org_term = taxonomy_term_load($term->tid);
+      $parent_term = taxonomy_get_term_by_name($item->parent);
+      $tid = array_pop($parent_term)->tid;
+      $org_term->parent = $tid;
+      taxonomy_term_save($org_term);
+    }
 
+    foreach ($item->translation as $language => $value) {
       $translation = array(
         'translate' => 0,
         'status' => 1,
