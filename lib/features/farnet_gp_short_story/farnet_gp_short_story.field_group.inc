@@ -124,13 +124,12 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'body',
-      1 => 'field_farnet_abstract',
-      2 => 'field_flag',
+      0 => 'field_farnet_abstract',
+      1 => 'field_flag',
+      2 => 'field_ne_body',
       3 => 'field_picture',
       4 => 'field_website',
       5 => 'title_field',
-      6 => 'field_ne_body',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -467,6 +466,8 @@ function farnet_gp_short_story_field_group_info() {
     'children' => array(
       0 => 'field_tags',
       1 => 'field_term_theme',
+      2 => 'field_sea_basins',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
