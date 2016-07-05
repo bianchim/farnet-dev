@@ -62,9 +62,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -110,9 +111,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -154,9 +156,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -198,9 +201,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -242,9 +246,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -286,9 +291,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -330,9 +336,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -374,9 +381,10 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
+    'farnet_article' => 'farnet_article',
   );
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -448,7 +456,7 @@ function farnet_views_views_default_views() {
     'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
     'nexteuropa_news' => 'nexteuropa_news',
-    'project_short_story' => 'project_short_story',
+    'gp_short_story' => 'gp_short_story',
     'publication' => 'publication',
     'summary_sheet_method' => 'summary_sheet_method',
   );
@@ -531,7 +539,7 @@ function farnet_views_views_default_views() {
 
   $view = new view();
   $view->name = 'farnet_view_good_practices';
-  $view->description = 'Project Summary Sheet + Method Summary Sheet';
+  $view->description = 'GP Project + Method Summary Sheet';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Farnet Good Practices Views';
@@ -576,7 +584,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'project_summary_sheet' => 'project_summary_sheet',
+    'gp_project' => 'gp_project',
     'summary_sheet_method' => 'summary_sheet_method',
   );
 
@@ -590,8 +598,8 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Project Summary Sheet */
-  $handler = $view->new_display('page', 'Project Summary Sheet', 'page_projects');
+  /* Display: GP Project */
+  $handler = $view->new_display('page', 'GP Project', 'page_projects');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Projects';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -608,7 +616,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'project_summary_sheet' => 'project_summary_sheet',
+    'gp_project' => 'gp_project',
   );
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/projects';
   $handler->display->display_options['menu']['title'] = 'Projects';

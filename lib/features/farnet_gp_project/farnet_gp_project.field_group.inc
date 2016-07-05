@@ -1,22 +1,23 @@
 <?php
+
 /**
  * @file
- * farnet_project_summary_sheet.field_group.inc
+ * farnet_gp_project.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function farnet_project_summary_sheet_field_group_info() {
+function farnet_gp_project_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_beneficiary|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_beneficiary';
+  $field_group->identifier = 'group_gp_project_beneficiary|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_beneficiary';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -29,8 +30,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Beneficiary',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_beneficiary',
-        'classes' => 'group_summary_sheet_beneficiary field-group-tab',
+        'id' => 'group_gp_project_beneficiary',
+        'classes' => 'group_gp_project_beneficiary field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -40,15 +41,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_beneficiary|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_beneficiary|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_beneficiary|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_beneficiary';
+  $field_group->identifier = 'group_gp_project_beneficiary|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_beneficiary';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -62,20 +63,20 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-beneficiary field-group-tab',
+        'classes' => 'group-gp-project-beneficiary field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_beneficiary|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_beneficiary|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_content|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_content';
+  $field_group->identifier = 'group_gp_project_content|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -91,8 +92,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Content',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_content',
-        'classes' => 'group_summary_sheet_content field-group-tab',
+        'id' => 'group_gp_project_content',
+        'classes' => 'group_gp_project_content field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -102,15 +103,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_content|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_content|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_content|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_content';
+  $field_group->identifier = 'group_gp_project_content|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -133,15 +134,15 @@ function farnet_project_summary_sheet_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_summary_sheet_content|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_content|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_cost|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_cost';
+  $field_group->identifier = 'group_gp_project_cost|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_cost';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -163,8 +164,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Project cost / Funding',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_cost',
-        'classes' => 'group_summary_sheet_cost field-group-tab',
+        'id' => 'group_gp_project_cost',
+        'classes' => 'group_gp_project_cost field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -174,15 +175,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_cost|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_cost|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_cost|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_cost';
+  $field_group->identifier = 'group_gp_project_cost|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_cost';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -205,20 +206,20 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-cost field-group-tab',
+        'classes' => 'group-gp-project-cost field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_cost|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_cost|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_dates|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_dates';
+  $field_group->identifier = 'group_gp_project_dates|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_dates';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -231,8 +232,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Timeframe of implementation',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_dates',
-        'classes' => 'group_summary_sheet_dates field-group-tab',
+        'id' => 'group_gp_project_dates',
+        'classes' => 'group_gp_project_dates field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -242,15 +243,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_dates|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_dates|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_dates|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_dates';
+  $field_group->identifier = 'group_gp_project_dates|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_dates';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -264,20 +265,20 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-dates field-group-tab',
+        'classes' => 'group-gp-project-dates field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_dates|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_dates|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_description|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_description';
+  $field_group->identifier = 'group_gp_project_description|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_description';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -295,8 +296,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Description',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_description',
-        'classes' => 'group_summary_sheet_description field-group-tab',
+        'id' => 'group_gp_project_description',
+        'classes' => 'group_gp_project_description field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -306,15 +307,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_description|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_description|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_description|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_description';
+  $field_group->identifier = 'group_gp_project_description|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_description';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -338,15 +339,15 @@ function farnet_project_summary_sheet_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_summary_sheet_description|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_description|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_flag|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_flag';
+  $field_group->identifier = 'group_gp_project_flag|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_flag';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -359,8 +360,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Flag',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_flag',
-        'classes' => 'group_summary_sheet_flag field-group-tab',
+        'id' => 'group_gp_project_flag',
+        'classes' => 'group_gp_project_flag field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -370,15 +371,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_flag|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_flag|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_flag|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_flag';
+  $field_group->identifier = 'group_gp_project_flag|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_flag';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -392,20 +393,20 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-flag field-group-tab',
+        'classes' => 'group-gp-project-flag field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_flag|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_flag|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_media|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_media';
+  $field_group->identifier = 'group_gp_project_media|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_media';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -419,8 +420,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Media',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_media',
-        'classes' => 'group_summary_sheet_media field-group-tab',
+        'id' => 'group_gp_project_media',
+        'classes' => 'group_gp_project_media field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -430,15 +431,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_media|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_media|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_media|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_media';
+  $field_group->identifier = 'group_gp_project_media|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_media';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -453,20 +454,20 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-media field-group-tab',
+        'classes' => 'group-gp-project-media field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_media|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_media|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_metatag|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_metatag';
+  $field_group->identifier = 'group_gp_project_metatag|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_metatag';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -481,20 +482,20 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-metatag field-group-tab',
+        'classes' => 'group-gp-project-metatag field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_metatag|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_metatag|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_publication|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_publication';
+  $field_group->identifier = 'group_gp_project_publication|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_publication';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -509,8 +510,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Publication',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_publication',
-        'classes' => 'group_summary_sheet_publication field-group-tab',
+        'id' => 'group_gp_project_publication',
+        'classes' => 'group_gp_project_publication field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -520,15 +521,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_publication|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_publication|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_publication|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_publication';
+  $field_group->identifier = 'group_gp_project_publication|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_publication';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -544,20 +545,20 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-publication field-group-tab',
+        'classes' => 'group-gp-project-publication field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_publication|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_publication|node|gp_project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_taxonomy|node|project_summary_sheet|default';
-  $field_group->group_name = 'group_summary_sheet_taxonomy';
+  $field_group->identifier = 'group_gp_project_taxonomy|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_taxonomy';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -571,8 +572,8 @@ function farnet_project_summary_sheet_field_group_info() {
     'format_settings' => array(
       'label' => 'Taxonomy',
       'instance_settings' => array(
-        'id' => 'group_summary_sheet_taxonomy',
-        'classes' => 'group_summary_sheet_taxonomy field-group-tab',
+        'id' => 'group_gp_project_taxonomy',
+        'classes' => 'group_gp_project_taxonomy field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -582,15 +583,15 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_summary_sheet_taxonomy|node|project_summary_sheet|default'] = $field_group;
+  $field_groups['group_gp_project_taxonomy|node|gp_project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary_sheet_taxonomy|node|project_summary_sheet|form';
-  $field_group->group_name = 'group_summary_sheet_taxonomy';
+  $field_group->identifier = 'group_gp_project_taxonomy|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_taxonomy';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'project_summary_sheet';
+  $field_group->bundle = 'gp_project';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -605,12 +606,12 @@ function farnet_project_summary_sheet_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-summary-sheet-taxonomy field-group-tab',
+        'classes' => 'group-gp-project-taxonomy field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_summary_sheet_taxonomy|node|project_summary_sheet|form'] = $field_group;
+  $field_groups['group_gp_project_taxonomy|node|gp_project|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

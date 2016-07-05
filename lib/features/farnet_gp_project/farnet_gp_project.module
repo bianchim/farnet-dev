@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet GP Project feature.
+ */
+
+include_once 'farnet_gp_project.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_gp_project_form_gp_project_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_gp_project');
+  $form['#attached']['js'] = drupal_add_js(
+    $path . '/js/farnet_gp_project.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    )
+  );
+}

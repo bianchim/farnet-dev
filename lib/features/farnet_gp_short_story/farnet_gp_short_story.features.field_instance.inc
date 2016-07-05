@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * farnet_project_short_story.features.field_instance.inc
+ * farnet_gp_short_story.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function farnet_project_short_story_field_default_field_instances() {
+function farnet_gp_short_story_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-project_short_story-field_area'.
-  $field_instances['node-project_short_story-field_area'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_area'.
+  $field_instances['node-gp_short_story-field_area'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -77,9 +77,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_dates_start_end'.
-  $field_instances['node-project_short_story-field_dates_start_end'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_dates_start_end'.
+  $field_instances['node-gp_short_story-field_dates_start_end'] = array(
+    'bundle' => 'gp_short_story',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -133,9 +133,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_eu_contribution'.
-  $field_instances['node-project_short_story-field_eu_contribution'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_eu_contribution'.
+  $field_instances['node-gp_short_story-field_eu_contribution'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -180,9 +180,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_farnet_abstract'.
-  $field_instances['node-project_short_story-field_farnet_abstract'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_farnet_abstract'.
+  $field_instances['node-gp_short_story-field_farnet_abstract'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -249,9 +249,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_flag'.
-  $field_instances['node-project_short_story-field_flag'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_flag'.
+  $field_instances['node-gp_short_story-field_flag'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -297,9 +297,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_gallery'.
-  $field_instances['node-project_short_story-field_gallery'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_gallery'.
+  $field_instances['node-gp_short_story-field_gallery'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -347,9 +347,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_ne_body'.
-  $field_instances['node-project_short_story-field_ne_body'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_ne_body'.
+  $field_instances['node-gp_short_story-field_ne_body'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -416,9 +416,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_organisation'.
-  $field_instances['node-project_short_story-field_organisation'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_organisation'.
+  $field_instances['node-gp_short_story-field_organisation'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -465,9 +465,9 @@ function farnet_project_short_story_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-project_short_story-field_other_public_contribution'.
-  $field_instances['node-project_short_story-field_other_public_contribution'] = array(
-    'bundle' => 'project_short_story',
+  // 'node-gp_short_story-field_other_public_contribution'.
+  $field_instances['node-gp_short_story-field_other_public_contribution'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -512,9 +512,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_picture'.
-  $field_instances['node-project_short_story-field_picture'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_picture'.
+  $field_instances['node-gp_short_story-field_picture'] = array(
+    'bundle' => 'gp_short_story',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -583,9 +583,9 @@ function farnet_project_short_story_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-project_short_story-field_private_contribution'.
-  $field_instances['node-project_short_story-field_private_contribution'] = array(
-    'bundle' => 'project_short_story',
+  // 'node-gp_short_story-field_private_contribution'.
+  $field_instances['node-gp_short_story-field_private_contribution'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -631,9 +631,9 @@ function farnet_project_short_story_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-project_short_story-field_publication_abstract'.
-  $field_instances['node-project_short_story-field_publication_abstract'] = array(
-    'bundle' => 'project_short_story',
+  // 'node-gp_short_story-field_publication_abstract'.
+  $field_instances['node-gp_short_story-field_publication_abstract'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -698,9 +698,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_publication_date'.
-  $field_instances['node-project_short_story-field_publication_date'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_publication_date'.
+  $field_instances['node-gp_short_story-field_publication_date'] = array(
+    'bundle' => 'gp_short_story',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -762,9 +762,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_quote_author'.
-  $field_instances['node-project_short_story-field_quote_author'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_quote_author'.
+  $field_instances['node-gp_short_story-field_quote_author'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -829,9 +829,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_quote_text'.
-  $field_instances['node-project_short_story-field_quote_text'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_quote_text'.
+  $field_instances['node-gp_short_story-field_quote_text'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -896,9 +896,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_tags'.
-  $field_instances['node-project_short_story-field_tags'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_tags'.
+  $field_instances['node-gp_short_story-field_tags'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -937,9 +937,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_term_country'.
-  $field_instances['node-project_short_story-field_term_country'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_term_country'.
+  $field_instances['node-gp_short_story-field_term_country'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -978,9 +978,9 @@ function farnet_project_short_story_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-project_short_story-field_term_publication_channels'.
-  $field_instances['node-project_short_story-field_term_publication_channels'] = array(
-    'bundle' => 'project_short_story',
+  // 'node-gp_short_story-field_term_publication_channels'.
+  $field_instances['node-gp_short_story-field_term_publication_channels'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1018,9 +1018,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_term_region'.
-  $field_instances['node-project_short_story-field_term_region'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_term_region'.
+  $field_instances['node-gp_short_story-field_term_region'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1058,9 +1058,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_term_theme'.
-  $field_instances['node-project_short_story-field_term_theme'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_term_theme'.
+  $field_instances['node-gp_short_story-field_term_theme'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1100,9 +1100,9 @@ function farnet_project_short_story_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-project_short_story-field_total_project_cost'.
-  $field_instances['node-project_short_story-field_total_project_cost'] = array(
-    'bundle' => 'project_short_story',
+  // 'node-gp_short_story-field_total_project_cost'.
+  $field_instances['node-gp_short_story-field_total_project_cost'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1147,9 +1147,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-field_website'.
-  $field_instances['node-project_short_story-field_website'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-field_website'.
+  $field_instances['node-gp_short_story-field_website'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1205,9 +1205,9 @@ function farnet_project_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_short_story-title_field'.
-  $field_instances['node-project_short_story-title_field'] = array(
-    'bundle' => 'project_short_story',
+  // Exported field_instance: 'node-gp_short_story-title_field'.
+  $field_instances['node-gp_short_story-title_field'] = array(
+    'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

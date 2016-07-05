@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farnet_project_short_story.features.field_base.inc
+ * farnet_gp_short_story.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function farnet_project_short_story_field_default_field_bases() {
+function farnet_gp_short_story_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_eu_contribution'.

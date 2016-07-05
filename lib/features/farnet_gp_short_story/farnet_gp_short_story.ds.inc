@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * farnet_project_short_story.ds.inc
+ * farnet_gp_short_story.ds.inc
  */
 
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function farnet_project_short_story_ds_layout_settings_info() {
+function farnet_gp_short_story_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|project_short_story|teaser';
+  $ds_layout->id = 'node|gp_short_story|teaser';
   $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'project_short_story';
+  $ds_layout->bundle = 'gp_short_story';
   $ds_layout->view_mode = 'teaser';
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
@@ -46,7 +46,7 @@ function farnet_project_short_story_ds_layout_settings_info() {
     'layout_link_custom' => '',
     'layout_disable_css' => 0,
   );
-  $export['node|project_short_story|teaser'] = $ds_layout;
+  $export['node|gp_short_story|teaser'] = $ds_layout;
 
   return $export;
 }
