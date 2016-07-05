@@ -18,7 +18,7 @@ function farnet_factsheet_flag_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'node_link' => array(
-      'weight' => '3',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -230,31 +230,39 @@ function farnet_factsheet_flag_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'factsheet_flag';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'title_field',
-        1 => 'field_publication_date',
-        2 => 'field_ff_description',
-        3 => 'node_link',
+      'left' => array(
+        0 => 'field_picture',
+      ),
+      'right' => array(
+        1 => 'title_field',
+        2 => 'field_term_country',
+        3 => 'field_publication_date',
+        4 => 'field_farnet_abstract',
+        5 => 'node_link',
       ),
     ),
     'fields' => array(
-      'title_field' => 'ds_content',
-      'field_publication_date' => 'ds_content',
-      'field_ff_description' => 'ds_content',
-      'node_link' => 'ds_content',
+      'field_picture' => 'left',
+      'title_field' => 'right',
+      'field_term_country' => 'right',
+      'field_publication_date' => 'right',
+      'field_farnet_abstract' => 'right',
+      'node_link' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|factsheet_flag|teaser'] = $ds_layout;
 
