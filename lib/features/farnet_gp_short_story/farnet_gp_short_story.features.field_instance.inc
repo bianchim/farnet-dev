@@ -972,7 +972,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 17,
+      'weight' => 15,
     ),
   );
 
