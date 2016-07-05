@@ -1,68 +1,69 @@
 <?php
+
 /**
  * @file
- * farnet_summary_sheet_method.strongarm.inc
+ * farnet_gp_method.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function farnet_summary_sheet_method_strongarm() {
+function farnet_gp_method_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_summary_sheet_method';
+  $strongarm->name = 'comment_anonymous_gp_method';
   $strongarm->value = '0';
-  $export['comment_anonymous_summary_sheet_method'] = $strongarm;
+  $export['comment_anonymous_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_summary_sheet_method';
+  $strongarm->name = 'comment_default_mode_gp_method';
   $strongarm->value = 1;
-  $export['comment_default_mode_summary_sheet_method'] = $strongarm;
+  $export['comment_default_mode_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_summary_sheet_method';
+  $strongarm->name = 'comment_default_per_page_gp_method';
   $strongarm->value = '50';
-  $export['comment_default_per_page_summary_sheet_method'] = $strongarm;
+  $export['comment_default_per_page_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_summary_sheet_method';
+  $strongarm->name = 'comment_form_location_gp_method';
   $strongarm->value = 1;
-  $export['comment_form_location_summary_sheet_method'] = $strongarm;
+  $export['comment_form_location_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_summary_sheet_method';
+  $strongarm->name = 'comment_preview_gp_method';
   $strongarm->value = '1';
-  $export['comment_preview_summary_sheet_method'] = $strongarm;
+  $export['comment_preview_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_summary_sheet_method';
+  $strongarm->name = 'comment_subject_field_gp_method';
   $strongarm->value = 1;
-  $export['comment_subject_field_summary_sheet_method'] = $strongarm;
+  $export['comment_subject_field_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_summary_sheet_method';
+  $strongarm->name = 'comment_gp_method';
   $strongarm->value = '2';
-  $export['comment_summary_sheet_method'] = $strongarm;
+  $export['comment_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__summary_sheet_method';
+  $strongarm->name = 'field_bundle_settings_node__gp_method';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -135,71 +136,71 @@ function farnet_summary_sheet_method_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__summary_sheet_method'] = $strongarm;
+  $export['field_bundle_settings_node__gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_summary_sheet_method';
+  $strongarm->name = 'language_content_type_gp_method';
   $strongarm->value = '4';
-  $export['language_content_type_summary_sheet_method'] = $strongarm;
+  $export['language_content_type_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_summary_sheet_method';
+  $strongarm->name = 'menu_options_gp_method';
   $strongarm->value = array(
     0 => 'main-menu',
   );
-  $export['menu_options_summary_sheet_method'] = $strongarm;
+  $export['menu_options_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_summary_sheet_method';
+  $strongarm->name = 'menu_parent_gp_method';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_summary_sheet_method'] = $strongarm;
+  $export['menu_parent_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_summary_sheet_method';
+  $strongarm->name = 'node_options_gp_method';
   $strongarm->value = array(
     0 => 'moderation',
     1 => 'revision',
   );
-  $export['node_options_summary_sheet_method'] = $strongarm;
+  $export['node_options_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_summary_sheet_method';
+  $strongarm->name = 'node_preview_gp_method';
   $strongarm->value = '1';
-  $export['node_preview_summary_sheet_method'] = $strongarm;
+  $export['node_preview_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_summary_sheet_method';
+  $strongarm->name = 'node_submitted_gp_method';
   $strongarm->value = 1;
-  $export['node_submitted_summary_sheet_method'] = $strongarm;
+  $export['node_submitted_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_summary_sheet_method_pattern';
+  $strongarm->name = 'pathauto_node_gp_method_pattern';
   $strongarm->value = 'on-the-ground/good-practice/methods/[node:source:title]';
-  $export['pathauto_node_summary_sheet_method_pattern'] = $strongarm;
+  $export['pathauto_node_gp_method_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'xmlsitemap_settings_node_summary_sheet_method';
+  $strongarm->name = 'xmlsitemap_settings_node_gp_method';
   $strongarm->value = array(
     'status' => '1',
     'priority' => '0.5',
   );
-  $export['xmlsitemap_settings_node_summary_sheet_method'] = $strongarm;
+  $export['xmlsitemap_settings_node_gp_method'] = $strongarm;
 
   return $export;
 }

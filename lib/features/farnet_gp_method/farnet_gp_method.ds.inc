@@ -1,20 +1,21 @@
 <?php
+
 /**
  * @file
- * farnet_summary_sheet_method.ds.inc
+ * farnet_gp_method.ds.inc
  */
 
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function farnet_summary_sheet_method_ds_layout_settings_info() {
+function farnet_gp_method_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|summary_sheet_method|teaser';
+  $ds_layout->id = 'node|gp_method|teaser';
   $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'summary_sheet_method';
+  $ds_layout->bundle = 'gp_method';
   $ds_layout->view_mode = 'teaser';
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
@@ -46,7 +47,7 @@ function farnet_summary_sheet_method_ds_layout_settings_info() {
     'layout_link_custom' => '',
     'layout_disable_css' => 0,
   );
-  $export['node|summary_sheet_method|teaser'] = $ds_layout;
+  $export['node|gp_method|teaser'] = $ds_layout;
 
   return $export;
 }

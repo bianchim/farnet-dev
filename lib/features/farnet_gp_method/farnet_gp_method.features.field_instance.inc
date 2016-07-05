@@ -1,18 +1,19 @@
 <?php
+
 /**
  * @file
- * farnet_summary_sheet_method.features.field_instance.inc
+ * farnet_gp_method.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function farnet_summary_sheet_method_field_default_field_instances() {
+function farnet_gp_method_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-summary_sheet_method-field_area'.
-  $field_instances['node-summary_sheet_method-field_area'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_area'.
+  $field_instances['node-gp_method-field_area'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -77,9 +78,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_dates_start_end'.
-  $field_instances['node-summary_sheet_method-field_dates_start_end'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_dates_start_end'.
+  $field_instances['node-gp_method-field_dates_start_end'] = array(
+    'bundle' => 'gp_method',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -133,9 +134,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_farnet_abstract'.
-  $field_instances['node-summary_sheet_method-field_farnet_abstract'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_farnet_abstract'.
+  $field_instances['node-gp_method-field_farnet_abstract'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -201,9 +202,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_gallery'.
-  $field_instances['node-summary_sheet_method-field_gallery'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_gallery'.
+  $field_instances['node-gp_method-field_gallery'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -251,9 +252,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_id'.
-  $field_instances['node-summary_sheet_method-field_id'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_id'.
+  $field_instances['node-gp_method-field_id'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -298,9 +299,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_ne_body'.
-  $field_instances['node-summary_sheet_method-field_ne_body'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_ne_body'.
+  $field_instances['node-gp_method-field_ne_body'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -367,9 +368,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_objective'.
-  $field_instances['node-summary_sheet_method-field_objective'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_objective'.
+  $field_instances['node-gp_method-field_objective'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -434,9 +435,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_organisations'.
-  $field_instances['node-summary_sheet_method-field_organisations'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_organisations'.
+  $field_instances['node-gp_method-field_organisations'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -484,9 +485,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_picture'.
-  $field_instances['node-summary_sheet_method-field_picture'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_picture'.
+  $field_instances['node-gp_method-field_picture'] = array(
+    'bundle' => 'gp_method',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -560,9 +561,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_publication_abstract'.
-  $field_instances['node-summary_sheet_method-field_publication_abstract'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_publication_abstract'.
+  $field_instances['node-gp_method-field_publication_abstract'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -629,9 +630,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_publication_date'.
-  $field_instances['node-summary_sheet_method-field_publication_date'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_publication_date'.
+  $field_instances['node-gp_method-field_publication_date'] = array(
+    'bundle' => 'gp_method',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -693,9 +694,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_ssm_activities'.
-  $field_instances['node-summary_sheet_method-field_ssm_activities'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_gpm_activities'.
+  $field_instances['node-gp_method-field_gpm_activities'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -715,7 +716,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_activities',
+    'field_name' => 'field_gpm_activities',
     'label' => 'Activities',
     'required' => 1,
     'settings' => array(
@@ -761,9 +762,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_ssm_financial_resources'.
-  $field_instances['node-summary_sheet_method-field_ssm_financial_resources'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_gpm_financial_resources'.
+  $field_instances['node-gp_method-field_gpm_financial_resources'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -783,7 +784,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_financial_resources',
+    'field_name' => 'field_gpm_financial_resources',
     'label' => 'Financial resources',
     'required' => 0,
     'settings' => array(
@@ -828,9 +829,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_ssm_lessons'.
-  $field_instances['node-summary_sheet_method-field_ssm_lessons'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_gpm_lessons'.
+  $field_instances['node-gp_method-field_gpm_lessons'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -850,7 +851,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_lessons',
+    'field_name' => 'field_gpm_lessons',
     'label' => 'Lessons',
     'required' => 1,
     'settings' => array(
@@ -896,9 +897,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_ssm_main_achievements'.
-  $field_instances['node-summary_sheet_method-field_ssm_main_achievements'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_gpm_main_achievements'.
+  $field_instances['node-gp_method-field_gpm_main_achievements'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -918,7 +919,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_main_achievements',
+    'field_name' => 'field_gpm_main_achievements',
     'label' => 'Main achievements',
     'required' => 1,
     'settings' => array(
@@ -964,9 +965,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_ssm_other_resources'.
-  $field_instances['node-summary_sheet_method-field_ssm_other_resources'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_gpm_other_resources'.
+  $field_instances['node-gp_method-field_gpm_other_resources'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -986,7 +987,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_other_resources',
+    'field_name' => 'field_gpm_other_resources',
     'label' => 'Other resources',
     'required' => 0,
     'settings' => array(
@@ -1031,9 +1032,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_ssm_skills'.
-  $field_instances['node-summary_sheet_method-field_ssm_skills'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_gpm_skills'.
+  $field_instances['node-gp_method-field_gpm_skills'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1053,7 +1054,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_skills',
+    'field_name' => 'field_gpm_skills',
     'label' => 'Skills',
     'required' => 1,
     'settings' => array(
@@ -1099,9 +1100,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_ssm_staff_resources'.
-  $field_instances['node-summary_sheet_method-field_ssm_staff_resources'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_gpm_staff_resources'.
+  $field_instances['node-gp_method-field_gpm_staff_resources'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1126,7 +1127,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_staff_resources',
+    'field_name' => 'field_gpm_staff_resources',
     'label' => 'Staff resources (FTE)',
     'required' => 0,
     'settings' => array(
@@ -1147,9 +1148,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_ssm_transferability'.
-  $field_instances['node-summary_sheet_method-field_ssm_transferability'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_gpm_transferability'.
+  $field_instances['node-gp_method-field_gpm_transferability'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1169,7 +1170,7 @@ function farnet_summary_sheet_method_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_ssm_transferability',
+    'field_name' => 'field_gpm_transferability',
     'label' => 'Transferability',
     'required' => 1,
     'settings' => array(
@@ -1214,9 +1215,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_tags'.
-  $field_instances['node-summary_sheet_method-field_tags'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_tags'.
+  $field_instances['node-gp_method-field_tags'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1255,9 +1256,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_term_country'.
-  $field_instances['node-summary_sheet_method-field_term_country'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_term_country'.
+  $field_instances['node-gp_method-field_term_country'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1297,9 +1298,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-summary_sheet_method-field_term_publication_channels'.
-  $field_instances['node-summary_sheet_method-field_term_publication_channels'] = array(
-    'bundle' => 'summary_sheet_method',
+  // 'node-gp_method-field_term_publication_channels'.
+  $field_instances['node-gp_method-field_term_publication_channels'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1338,9 +1339,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_term_region'.
-  $field_instances['node-summary_sheet_method-field_term_region'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_term_region'.
+  $field_instances['node-gp_method-field_term_region'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1378,9 +1379,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_term_theme'.
-  $field_instances['node-summary_sheet_method-field_term_theme'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_term_theme'.
+  $field_instances['node-gp_method-field_term_theme'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1419,9 +1420,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-field_title_official'.
-  $field_instances['node-summary_sheet_method-field_title_official'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-field_title_official'.
+  $field_instances['node-gp_method-field_title_official'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1486,9 +1487,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-group_content_access'.
-  $field_instances['node-summary_sheet_method-group_content_access'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-group_content_access'.
+  $field_instances['node-gp_method-group_content_access'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1526,9 +1527,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-og_group_ref'.
-  $field_instances['node-summary_sheet_method-og_group_ref'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-og_group_ref'.
+  $field_instances['node-gp_method-og_group_ref'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1586,9 +1587,9 @@ function farnet_summary_sheet_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-summary_sheet_method-title_field'.
-  $field_instances['node-summary_sheet_method-title_field'] = array(
-    'bundle' => 'summary_sheet_method',
+  // Exported field_instance: 'node-gp_method-title_field'.
+  $field_instances['node-gp_method-title_field'] = array(
+    'bundle' => 'gp_method',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
