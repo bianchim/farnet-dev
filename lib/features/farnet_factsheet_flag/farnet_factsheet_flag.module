@@ -13,7 +13,7 @@ function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$for
   //dpm($form);
   $path = drupal_get_path('module', 'farnet_factsheet_flag');
   $form['#attached']['js'] = drupal_add_js(
-    $path . '/farnet_factsheet_flag.js',
+    $path . '/js/farnet_factsheet_flag.js',
     array(
       'type' => 'file',
       'scope' => 'footer',
