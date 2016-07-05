@@ -160,7 +160,6 @@ features[variable][] = scheduler_unpublish_revision_factsheet_country
 features[variable][] = scheduler_use_vertical_tabs_factsheet_country
 features[variable][] = workbench_moderation_default_state_factsheet_country
 features[variable][] = xmlsitemap_settings_node_factsheet_country
-features[views_view][] = farnet_factsheets_country_view
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
 features_exclude[field_base][field_organisations] = field_organisations
