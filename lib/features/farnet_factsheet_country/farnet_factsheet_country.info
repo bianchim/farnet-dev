@@ -132,6 +132,7 @@ features[variable][] = menu_parent_factsheet_country
 features[variable][] = node_options_factsheet_country
 features[variable][] = node_preview_factsheet_country
 features[variable][] = node_submitted_factsheet_country
+features[variable][] = pathauto_node_factsheet_country_pattern
 features[variable][] = print_html_display_comment_factsheet_country
 features[variable][] = print_html_display_factsheet_country
 features[variable][] = print_html_display_urllist_factsheet_country

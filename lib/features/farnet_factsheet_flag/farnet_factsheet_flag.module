@@ -21,10 +21,3 @@ function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$for
     )
   );
 }
-
-/**
- * Implements hook_form_alter().
- */
-function farnet_factsheet_flag_form_alter(&$form, &$form_state, $form_id) {
-  //dsm($form_id);
-}

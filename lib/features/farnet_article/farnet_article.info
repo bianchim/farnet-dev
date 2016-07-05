@@ -38,5 +38,6 @@ features[field_instance][] = node-farnet_article-field_term_country
 features[field_instance][] = node-farnet_article-field_term_publication_channels
 features[field_instance][] = node-farnet_article-field_term_theme
 features[node][] = farnet_article
+features[variable][] = pathauto_node_farnet_article_pattern
 features[variable][] = field_bundle_settings_node__farnet_article
 project path = sites/all/modules/features

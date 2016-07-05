@@ -77,6 +77,7 @@ features[variable][] = menu_parent_publication
 features[variable][] = node_options_publication
 features[variable][] = node_preview_publication
 features[variable][] = node_submitted_publication
+features[variable][] = pathauto_node_publication_pattern
 features[variable][] = xmlsitemap_settings_node_publication
 features[views_view][] = farnet_publication_view
 features_exclude[field_base][field_languages_spoken] = field_languages_spoken

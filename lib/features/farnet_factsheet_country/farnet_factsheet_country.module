@@ -5,3 +5,22 @@
  */
 
 include_once 'farnet_factsheet_country.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_factsheet_country_form_factsheet_country_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_factsheet_country');
+  $form['#attached']['js'] = drupal_add_js(
+    $path . '/js/farnet_factsheet_country.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    )
+  );
+
+  $form['field_total_budget'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_average_budget_per_flag'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+
+}

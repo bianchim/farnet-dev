@@ -184,6 +184,13 @@ function farnet_gp_short_story_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_gp_short_story_pattern';
+  $strongarm->value = 'on-the-ground/good-practice/short-stories/[node:source:title]';
+  $export['pathauto_node_gp_short_story_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_gp_short_story';
   $strongarm->value = array(
     'status' => '1',
