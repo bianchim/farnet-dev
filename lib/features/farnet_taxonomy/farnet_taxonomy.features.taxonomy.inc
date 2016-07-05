@@ -16,7 +16,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'A list of the countries',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -4,
+      'weight' => -1,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -41,7 +41,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the languages spoken on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -6,
+      'weight' => -4,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -66,7 +66,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Publication channels on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -7,
+      'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -166,7 +166,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of Organisations on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -8,
+      'weight' => -6,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -191,7 +191,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'Taxonomy for the Type of Publications on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -9,
+      'weight' => -7,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
@@ -216,7 +216,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'description' => 'A list of the regions',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => -3,
+      'weight' => -1,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(
