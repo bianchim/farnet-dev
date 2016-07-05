@@ -139,7 +139,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       $this->uploadedFiles = [];
     }
 
-    $file = file_save_data($data,'public://' . $filename);
+    $file = file_save_data($data, 'public://' . $filename);
     $this->uploadedFiles[] = $file;
 
     // Remove the extension from  the file name.
@@ -161,4 +161,5 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       }
     }
   }
+
 }
