@@ -101,6 +101,7 @@ features[variable][] = menu_parent_gp_short_story
 features[variable][] = node_options_gp_short_story
 features[variable][] = node_preview_gp_short_story
 features[variable][] = node_submitted_gp_short_story
+features[variable][] = pathauto_node_gp_short_story_pattern
 features[variable][] = xmlsitemap_settings_node_gp_short_story
 features[views_view][] = farnet_view_gp_short_story
 features_exclude[field_base][field_picture] = field_picture
