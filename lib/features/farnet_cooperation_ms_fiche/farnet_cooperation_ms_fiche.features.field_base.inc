@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_cooperation_ms_fiche.features.field_base.inc
