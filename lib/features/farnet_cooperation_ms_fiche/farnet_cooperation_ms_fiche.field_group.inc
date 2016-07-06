@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_cooperation_ms_fiche.field_group.inc
@@ -24,9 +23,9 @@ function farnet_cooperation_ms_fiche_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'title_field',
-      1 => 'field_farnet_abstract',
-      2 => 'field_picture',
+      0 => 'field_farnet_abstract',
+      1 => 'field_picture',
+      2 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -51,7 +50,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Financing and co-financing of your cooperation project',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_financing_and_co_financing',
     ),
@@ -78,7 +77,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Introduction',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_ne_body',
       1 => 'field_number_flags',
@@ -106,7 +105,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Level at which cooperation is handled',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_level_at_which_cooperation',
     ),
@@ -133,7 +132,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Possible partners',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_possible_partners',
     ),
@@ -160,10 +159,10 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_term_theme',
-      1 => 'field_sea_basins',
+      0 => 'field_sea_basins',
+      1 => 'field_term_theme',
       2 => 'field_type_of_area',
     ),
     'format_type' => 'fieldset',

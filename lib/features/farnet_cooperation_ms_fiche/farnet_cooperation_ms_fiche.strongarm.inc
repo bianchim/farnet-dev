@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_cooperation_ms_fiche.strongarm.inc
@@ -76,6 +75,9 @@ function farnet_cooperation_ms_fiche_strongarm() {
         ),
         'language' => array(
           'weight' => '7',
+        ),
+        'metatags' => array(
+          'weight' => '10',
         ),
       ),
       'display' => array(),
