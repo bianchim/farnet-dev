@@ -22,10 +22,10 @@ function farnet_faq_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 5,

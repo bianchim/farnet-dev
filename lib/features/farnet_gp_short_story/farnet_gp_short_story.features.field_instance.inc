@@ -144,10 +144,10 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 8,
@@ -476,10 +476,10 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 9,
@@ -582,8 +582,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_short_story-field_private_contribution'.
+  // Exported field_instance: 'node-gp_short_story-field_private_contribution'.
   $field_instances['node-gp_short_story-field_private_contribution'] = array(
     'bundle' => 'gp_short_story',
     'default_value' => NULL,
@@ -594,10 +593,10 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 10,
@@ -630,8 +629,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_short_story-field_publication_abstract'.
+  // Exported field_instance: 'node-gp_short_story-field_publication_abstract'.
   $field_instances['node-gp_short_story-field_publication_abstract'] = array(
     'bundle' => 'gp_short_story',
     'default_value' => NULL,
@@ -896,6 +894,47 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gp_short_story-field_sea_basins'.
+  $field_instances['node-gp_short_story-field_sea_basins'] = array(
+    'bundle' => 'gp_short_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sea_basins',
+    'label' => 'Sea Basins',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_short_story-field_tags'.
   $field_instances['node-gp_short_story-field_tags'] = array(
     'bundle' => 'gp_short_story',
@@ -1099,8 +1138,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-gp_short_story-field_total_project_cost'.
+  // Exported field_instance: 'node-gp_short_story-field_total_project_cost'.
   $field_instances['node-gp_short_story-field_total_project_cost'] = array(
     'bundle' => 'gp_short_story',
     'default_value' => NULL,
@@ -1111,10 +1149,10 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 7,
@@ -1144,6 +1182,47 @@ function farnet_gp_short_story_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-gp_short_story-field_type_of_area'.
+  $field_instances['node-gp_short_story-field_type_of_area'] = array(
+    'bundle' => 'gp_short_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_type_of_area',
+    'label' => 'Type of area',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 16,
     ),
   );
 
@@ -1273,10 +1352,12 @@ function farnet_gp_short_story_field_default_field_instances() {
   t('Quote Author');
   t('Quote Text');
   t('Region');
+  t('Sea Basins');
   t('Theme');
   t('Timeframe date');
   t('Title');
   t('Total project cost');
+  t('Type of area');
   t('Website');
 
   return $field_instances;

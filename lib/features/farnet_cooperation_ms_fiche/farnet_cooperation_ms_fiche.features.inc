@@ -1,16 +1,13 @@
 <?php
 /**
  * @file
- * farnet_summary_sheet_method.features.inc
+ * farnet_cooperation_ms_fiche.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farnet_summary_sheet_method_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "ds" && $api == "ds") {
-    return array("version" => "1");
-  }
+function farnet_cooperation_ms_fiche_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -22,10 +19,10 @@ function farnet_summary_sheet_method_ctools_plugin_api($module = NULL, $api = NU
 /**
  * Implements hook_node_info().
  */
-function farnet_summary_sheet_method_node_info() {
+function farnet_cooperation_ms_fiche_node_info() {
   $items = array(
-    'summary_sheet_method' => array(
-      'name' => t('Summary Sheet Method'),
+    'ms_fiche' => array(
+      'name' => t('MS Fiche'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

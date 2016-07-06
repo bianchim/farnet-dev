@@ -21,7 +21,7 @@ function farnet_notifications_default_rules_configuration() {
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "6" : "6" } },
-            "subject" : "First login",
+            "subject" : "FARNET Users - New user",
             "message" : "First login of the user [site:current-user].",
             "from" : "[site:mail]"
           }
@@ -46,7 +46,7 @@ function farnet_notifications_default_rules_configuration() {
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "6" : "6" } },
-            "subject" : "First complete of the profile",
+            "subject" : "FARNET Users - New profile",
             "message" : "First complete of the profile for the user [site:current-user].",
             "from" : "[site:mail]"
           }
@@ -76,7 +76,7 @@ function farnet_notifications_default_rules_configuration() {
       "DO" : [
         { "mail" : {
             "to" : "[site:mail]",
-            "subject" : "A user has added a new organisation on FARNET",
+            "subject" : "FARNET Users - New organisation",
             "message" : "[account:name] has updated his profile with a new organisation named \\u0022[account:field-organisation-other]\\u0022",
             "language" : [ "" ]
           }
