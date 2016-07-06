@@ -2,18 +2,87 @@
 
 /**
  * @file
- * farnet_cooperation_ms_fiche.features.field_instance.inc
+ * farnet_cooperation_call.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function farnet_cooperation_ms_fiche_field_default_field_instances() {
+function farnet_cooperation_call_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ms_fiche-field_farnet_abstract'.
-  $field_instances['node-ms_fiche-field_farnet_abstract'] = array(
-    'bundle' => 'ms_fiche',
+  // Exported field_instance: 'node-cooperation_call-field_call'.
+  $field_instances['node-cooperation_call-field_call'] = array(
+    'bundle' => 'cooperation_call',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_call',
+    'label' => 'Call',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-cooperation_call-field_farnet_abstract'.
+  $field_instances['node-cooperation_call-field_farnet_abstract'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -82,151 +151,9 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ms_fiche-field_financing_and_co_financing'.
-  $field_instances['node-ms_fiche-field_financing_and_co_financing'] = array(
-    'bundle' => 'ms_fiche',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_financing_and_co_financing',
-    'label' => 'Financing and co-financing of your cooperation project',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-ms_fiche-field_level_at_which_cooperation'.
-  $field_instances['node-ms_fiche-field_level_at_which_cooperation'] = array(
-    'bundle' => 'ms_fiche',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_level_at_which_cooperation',
-    'label' => 'Level at which cooperation is handled',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-ms_fiche-field_ne_body'.
-  $field_instances['node-ms_fiche-field_ne_body'] = array(
-    'bundle' => 'ms_fiche',
+  // Exported field_instance: 'node-cooperation_call-field_ne_body'.
+  $field_instances['node-cooperation_call-field_ne_body'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -295,27 +222,25 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-ms_fiche-field_number_flags'.
-  $field_instances['node-ms_fiche-field_number_flags'] = array(
-    'bundle' => 'ms_fiche',
+  // Exported field_instance: 'node-cooperation_call-field_organisation'.
+  $field_instances['node-cooperation_call-field_organisation'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
+        'module' => 'entityreference',
         'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => '',
+          'link' => FALSE,
         ),
-        'type' => 'number_decimal',
+        'type' => 'entityreference_label',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -326,29 +251,34 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_number_flags',
-    'label' => 'Number of FLAGs',
+    'field_name' => 'field_organisation',
+    'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 9,
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-ms_fiche-field_picture'.
-  $field_instances['node-ms_fiche-field_picture'] = array(
-    'bundle' => 'ms_fiche',
+  // Exported field_instance: 'node-cooperation_call-field_picture'.
+  $field_instances['node-cooperation_call-field_picture'] = array(
+    'bundle' => 'cooperation_call',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -418,80 +348,9 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ms_fiche-field_possible_partners'.
-  $field_instances['node-ms_fiche-field_possible_partners'] = array(
-    'bundle' => 'ms_fiche',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_possible_partners',
-    'label' => 'Possible partners',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-ms_fiche-field_sea_basins'.
-  $field_instances['node-ms_fiche-field_sea_basins'] = array(
-    'bundle' => 'ms_fiche',
+  // Exported field_instance: 'node-cooperation_call-field_sea_basins'.
+  $field_instances['node-cooperation_call-field_sea_basins'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -501,7 +360,7 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 10,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -523,13 +382,13 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-ms_fiche-field_term_theme'.
-  $field_instances['node-ms_fiche-field_term_theme'] = array(
-    'bundle' => 'ms_fiche',
+  // Exported field_instance: 'node-cooperation_call-field_term_theme'.
+  $field_instances['node-cooperation_call-field_term_theme'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -539,7 +398,7 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -557,59 +416,20 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-ms_fiche-field_type_of_area'.
-  $field_instances['node-ms_fiche-field_type_of_area'] = array(
-    'bundle' => 'ms_fiche',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_type_of_area',
-    'label' => 'Type of area',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-ms_fiche-title_field'.
-  $field_instances['node-ms_fiche-title_field'] = array(
-    'bundle' => 'ms_fiche',
+  // Exported field_instance: 'node-cooperation_call-title_field'.
+  $field_instances['node-cooperation_call-title_field'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -654,15 +474,12 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Abstract');
   t('Body');
-  t('Financing and co-financing of your cooperation project');
-  t('Level at which cooperation is handled');
-  t('Number of FLAGs');
+  t('Call');
+  t('Organisation');
   t('Picture');
-  t('Possible partners');
   t('Sea Basins');
   t('Theme');
   t('Title');
-  t('Type of area');
 
   return $field_instances;
 }
