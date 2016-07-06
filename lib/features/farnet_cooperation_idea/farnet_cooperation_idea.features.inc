@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_cooperation_idea.features.inc
