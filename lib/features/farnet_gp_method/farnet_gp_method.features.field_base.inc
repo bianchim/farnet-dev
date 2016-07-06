@@ -148,7 +148,7 @@ function farnet_gp_method_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,

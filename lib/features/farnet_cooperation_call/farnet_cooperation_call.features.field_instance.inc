@@ -1,19 +1,18 @@
 <?php
-
 /**
  * @file
- * farnet_cooperation_idea.features.field_instance.inc
+ * farnet_cooperation_call.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function farnet_cooperation_idea_field_default_field_instances() {
+function farnet_cooperation_call_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-cooperation_idea-field_farnet_abstract'.
-  $field_instances['node-cooperation_idea-field_farnet_abstract'] = array(
-    'bundle' => 'cooperation_idea',
+  // Exported field_instance: 'node-cooperation_call-field_call'.
+  $field_instances['node-cooperation_call-field_call'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -23,7 +22,76 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_call',
+    'label' => 'Call',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-cooperation_call-field_farnet_abstract'.
+  $field_instances['node-cooperation_call-field_farnet_abstract'] = array(
+    'bundle' => 'cooperation_call',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -82,59 +150,9 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_idea-field_flag'.
-  $field_instances['node-cooperation_idea-field_flag'] = array(
-    'bundle' => 'cooperation_idea',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_flag',
-    'label' => 'Flag',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-cooperation_idea-field_ne_body'.
-  $field_instances['node-cooperation_idea-field_ne_body'] = array(
-    'bundle' => 'cooperation_idea',
+  // Exported field_instance: 'node-cooperation_call-field_ne_body'.
+  $field_instances['node-cooperation_call-field_ne_body'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -144,7 +162,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -207,9 +225,9 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_idea-field_organisation'.
-  $field_instances['node-cooperation_idea-field_organisation'] = array(
-    'bundle' => 'cooperation_idea',
+  // Exported field_instance: 'node-cooperation_call-field_organisation'.
+  $field_instances['node-cooperation_call-field_organisation'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -222,7 +240,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -253,13 +271,13 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_idea-field_picture'.
-  $field_instances['node-cooperation_idea-field_picture'] = array(
-    'bundle' => 'cooperation_idea',
+  // Exported field_instance: 'node-cooperation_call-field_picture'.
+  $field_instances['node-cooperation_call-field_picture'] = array(
+    'bundle' => 'cooperation_call',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -271,7 +289,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -329,9 +347,9 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_idea-field_sea_basins'.
-  $field_instances['node-cooperation_idea-field_sea_basins'] = array(
-    'bundle' => 'cooperation_idea',
+  // Exported field_instance: 'node-cooperation_call-field_sea_basins'.
+  $field_instances['node-cooperation_call-field_sea_basins'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -363,13 +381,13 @@ function farnet_cooperation_idea_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_idea-field_term_theme'.
-  $field_instances['node-cooperation_idea-field_term_theme'] = array(
-    'bundle' => 'cooperation_idea',
+  // Exported field_instance: 'node-cooperation_call-field_term_theme'.
+  $field_instances['node-cooperation_call-field_term_theme'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -379,7 +397,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -404,51 +422,13 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_idea-field_type_of_area'.
-  $field_instances['node-cooperation_idea-field_type_of_area'] = array(
-    'bundle' => 'cooperation_idea',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_type_of_area',
-    'label' => 'Type of area',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-cooperation_idea-title_field'.
-  $field_instances['node-cooperation_idea-title_field'] = array(
-    'bundle' => 'cooperation_idea',
+  // Exported field_instance: 'node-cooperation_call-title_field'.
+  $field_instances['node-cooperation_call-title_field'] = array(
+    'bundle' => 'cooperation_call',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -493,13 +473,12 @@ function farnet_cooperation_idea_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Abstract');
   t('Body');
-  t('Flag');
+  t('Call');
   t('Organisation');
   t('Picture');
   t('Sea Basins');
   t('Theme');
   t('Title');
-  t('Type of area');
 
   return $field_instances;
 }
