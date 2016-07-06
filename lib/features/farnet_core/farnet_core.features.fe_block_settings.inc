@@ -13,6 +13,55 @@ function farnet_core_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['easy_breadcrumb-easy_breadcrumb'] = array(
+    'cache' => 4,
+    'custom' => 0,
+    'delta' => 'easy_breadcrumb',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'easy_breadcrumb',
+    'node_types' => array(
+      0 => 'cooperation_idea',
+      1 => 'factsheet_country',
+      2 => 'factsheet_flag',
+      3 => 'farnet_article',
+      4 => 'gp_method',
+      5 => 'gp_project',
+      6 => 'gp_short_story',
+      7 => 'ms_fiche',
+      8 => 'nexteuropa_event',
+      9 => 'nexteuropa_faq',
+      10 => 'nexteuropa_news',
+      11 => 'organisation',
+      12 => 'page',
+      13 => 'publication',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ec_resp' => array(
+        'region' => 'content_top',
+        'status' => 1,
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['farnet_core-farnet_core_printpdf'] = array(
     'cache' => 1,
     'custom' => 0,
