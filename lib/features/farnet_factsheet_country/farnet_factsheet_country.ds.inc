@@ -18,7 +18,7 @@ function farnet_factsheet_country_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -28,7 +28,7 @@ function farnet_factsheet_country_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '3',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -50,31 +50,39 @@ function farnet_factsheet_country_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'factsheet_country';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'title',
-        1 => 'field_publication_date',
-        2 => 'field_farnet_abstract',
-        3 => 'node_link',
+      'left' => array(
+        0 => 'field_picture',
+      ),
+      'right' => array(
+        1 => 'title',
+        2 => 'field_term_country',
+        3 => 'field_publication_date',
+        4 => 'field_farnet_abstract',
+        5 => 'node_link',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
-      'field_publication_date' => 'ds_content',
-      'field_farnet_abstract' => 'ds_content',
-      'node_link' => 'ds_content',
+      'field_picture' => 'left',
+      'title' => 'right',
+      'field_term_country' => 'right',
+      'field_publication_date' => 'right',
+      'field_farnet_abstract' => 'right',
+      'node_link' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|factsheet_country|teaser'] = $ds_layout;
 

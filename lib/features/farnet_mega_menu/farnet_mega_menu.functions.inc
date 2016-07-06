@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_mega_menu.functions.inc

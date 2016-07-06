@@ -23,9 +23,9 @@ function farnet_menu_content_default_fe_block_settings() {
     'node_types' => array(
       0 => 'factsheet_country',
       1 => 'factsheet_flag',
-      2 => 'project_short_story',
-      3 => 'project_summary_sheet',
-      4 => 'summary_sheet_method',
+      2 => 'gp_short_story',
+      3 => 'gp_project',
+      4 => 'gp_method',
     ),
     'pages' => 'node/*/edit*
 node/*/moderation*

@@ -5,3 +5,51 @@
  */
 
 include_once 'farnet_factsheet_country.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_factsheet_country_form_factsheet_country_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_factsheet_country');
+  $form['#attached']['js'] = drupal_add_js(
+    $path . '/js/farnet_factsheet_country.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    )
+  );
+
+  $form['field_total_budget'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_average_budget_per_flag'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+
+  $form['#validate'][] = 'farnet_factsheet_country_form_validate';
+}
+
+/**
+ * Validate the edit / add form for a factsheet country node.
+ */
+function farnet_factsheet_country_form_validate($form, &$form_state) {
+  $key_docs = $form_state['values']['field_key_documents'][LANGUAGE_NONE];
+
+  // Remove the non numeric keys of the array, since they're not values.
+  foreach ($key_docs as $key => $value) {
+    if (!is_int($key)) {
+      unset($key_docs[$key]);
+    }
+  }
+
+  foreach ($key_docs as $key_doc) {
+    $has_document = $key_doc['field_document'][LANGUAGE_NONE][0]['fid'] !== 0;
+    $has_label = $key_doc['field_key_document_label'][LANGUAGE_NONE][0]['value'] !== "";
+
+    // Check that if one field has a value, the other has one too.
+    if ($has_document && !$has_label) {
+      form_set_error('field_key_documents', t('A key document must be linked with a label.'));
+    }
+
+    if(!$has_document && $has_label) {
+      form_set_error('field_key_documents', t('Each key document must have a label.'));
+    }
+  }
+}
