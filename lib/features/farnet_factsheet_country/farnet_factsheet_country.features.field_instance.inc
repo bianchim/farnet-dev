@@ -11,6 +11,111 @@ function farnet_factsheet_country_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'field_collection_item-field_key_documents-field_document'.
+  $field_instances['field_collection_item-field_key_documents-field_document'] = array(
+    'bundle' => 'field_key_documents',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_document',
+    'label' => 'Document',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx xls xlsx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'node' => 0,
+          'oembed' => 0,
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+        'filefield_sources' => array(
+          'filefield_sources' => array(),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_key_documents-field_key_document_label'.
+  $field_instances['field_collection_item-field_key_documents-field_key_document_label'] = array(
+    'bundle' => 'field_key_documents',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_key_document_label',
+    'label' => 'Label',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-factsheet_country-field_average_budget_per_flag'.
   $field_instances['node-factsheet_country-field_average_budget_per_flag'] = array(
     'bundle' => 'factsheet_country',
@@ -22,10 +127,10 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 14,
@@ -270,10 +375,10 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 11,
@@ -450,10 +555,10 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 9,
@@ -743,6 +848,50 @@ function farnet_factsheet_country_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-factsheet_country-field_key_documents'.
+  $field_instances['node-factsheet_country-field_key_documents'] = array(
+    'bundle' => 'factsheet_country',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_key_documents',
+    'label' => 'Key documents',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 41,
+    ),
+  );
+
   // Exported field_instance: 'node-factsheet_country-field_national_network'.
   $field_instances['node-factsheet_country-field_national_network'] = array(
     'bundle' => 'factsheet_country',
@@ -890,10 +1039,10 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 13,
@@ -1071,10 +1220,10 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 10,
@@ -1378,10 +1527,10 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 12,
@@ -1596,12 +1745,15 @@ function farnet_factsheet_country_field_default_field_instances() {
   t('Cooperation');
   t('Country');
   t('Diagram of the delivery system for CLLD');
+  t('Document');
   t('EMFF budget for CLLD');
   t('FLAG areas');
   t('Group content visibility');
   t('Groups audience');
   t('Image');
   t('Key actors and roles');
+  t('Key documents');
+  t('Label');
   t('Managing Authority');
   t('Name');
   t('National Network');
