@@ -149,7 +149,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => '',
         ),
-        'type' => 'number_integer',
+        'type' => 'number_float',
         'weight' => 8,
       ),
       'teaser' => array(
@@ -481,7 +481,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => '',
         ),
-        'type' => 'number_integer',
+        'type' => 'number_float',
         'weight' => 9,
       ),
       'teaser' => array(
@@ -598,7 +598,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => '',
         ),
-        'type' => 'number_integer',
+        'type' => 'number_float',
         'weight' => 10,
       ),
       'teaser' => array(
@@ -1154,7 +1154,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => '',
         ),
-        'type' => 'number_integer',
+        'type' => 'number_float',
         'weight' => 7,
       ),
       'teaser' => array(

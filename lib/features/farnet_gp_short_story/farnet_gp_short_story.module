@@ -5,3 +5,22 @@
  */
 
 include_once 'farnet_gp_short_story.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_gp_short_story_form_gp_short_story_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_gp_short_story');
+  $form['#attached']['js'] = drupal_add_js(
+    $path . '/js/farnet_gp_short_story.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    )
+  );
+
+  $form['ield_total_project_cost'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  //$form['field_average_budget_per_flag'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+
+}
