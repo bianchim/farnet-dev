@@ -29,6 +29,7 @@ features[field_group][] = group_ne_ms_fiche_content|node|ms_fiche|form
 features[field_group][] = group_ne_ms_fiche_facfoycp|node|ms_fiche|form
 features[field_group][] = group_ne_ms_fiche_introduction|node|ms_fiche|form
 features[field_group][] = group_ne_ms_fiche_lawoih|node|ms_fiche|form
+features[field_group][] = group_ne_ms_fiche_metadata|node|ms_fiche|form
 features[field_group][] = group_ne_ms_fiche_pa|node|ms_fiche|form
 features[field_group][] = group_ne_ms_fiche_taxonomy|node|ms_fiche|form
 features[field_instance][] = node-ms_fiche-field_farnet_abstract
