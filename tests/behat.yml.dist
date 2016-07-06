@@ -15,6 +15,7 @@ default:
       selenium2: ~
       javascript_session: 'selenium2'
       base-url: '${behat.base_url}'
+      files_path: '${behat.dir}/files'
     Drupal\DrupalExtension:
       api_driver: 'drupal'
       blackbox: ~

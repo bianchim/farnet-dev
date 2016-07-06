@@ -114,4 +114,52 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     }
   }
 
+  /**
+   * Upload a managed file in Drupal.
+   *
+   * @param string $type
+   *   Type of drupal media to upload (Image/document/Video/Audio).
+   * @param string $filename
+   *   Name of the file.
+   *
+   * @Given I upload a/an :fileType file named :fileName
+   */
+  public function uploadFile($type, $filename) {
+    // Create the complete file path from the config and the parameters.
+    $path = implode('/', [
+      $this->getMinkParameter('files_path'),
+      strtolower($type),
+      $filename,
+    ]);
+
+    $data = file_get_contents($path);
+
+    // Set the property if not already done.
+    if (!isset($this->uploadedFiles)) {
+      $this->uploadedFiles = [];
+    }
+
+    $file = file_save_data($data, 'public://' . $filename);
+    $this->uploadedFiles[] = $file;
+
+    // Remove the extension from  the file name.
+    $filename = pathinfo($filename, PATHINFO_FILENAME);
+    $file->filename = $filename;
+    file_save($file);
+  }
+
+  /**
+   * Delete the uploaded files.
+   *
+   * @AfterScenario
+   */
+  public function deleteUploadedFiles() {
+    if (isset($this->uploadedFiles)) {
+      $files = $this->uploadedFiles;
+      foreach ($files as $file) {
+        file_delete($file);
+      }
+    }
+  }
+
 }
