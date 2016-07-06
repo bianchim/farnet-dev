@@ -4,3 +4,10 @@
  * @file
  * Install, uninstall, schema and update hooks for farnet module.
  */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_event_enable() {
+  variable_set("pathauto_node_nexteuropa_event_pattern", "news-events/events/[node:field-event-type:name]/[node:source:title]");
+}

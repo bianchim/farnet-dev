@@ -1,22 +1,23 @@
 <?php
+
 /**
  * @file
- * farnet_summary_sheet_method.field_group.inc
+ * farnet_gp_method.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function farnet_summary_sheet_method_field_group_info() {
+function farnet_gp_method_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_content|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_content';
+  $field_group->identifier = 'group_gp_method_content|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -32,8 +33,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Content',
       'instance_settings' => array(
-        'id' => 'group_ssm_content',
-        'classes' => 'group_ssm_content field-group-tab',
+        'id' => 'group_gp_method_content',
+        'classes' => 'group_gp_method_content field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -43,15 +44,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_content|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_content|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_content|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_content';
+  $field_group->identifier = 'group_gp_method_content|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -69,20 +70,20 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-content field-group-tab',
+        'classes' => 'group-gp-method-content field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_content|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_content|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_description|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_description';
+  $field_group->identifier = 'group_gp_method_description|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_description';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -91,17 +92,17 @@ function farnet_summary_sheet_method_field_group_info() {
     'children' => array(
       0 => 'field_ne_body',
       1 => 'field_objective',
-      2 => 'field_ssm_activities',
-      3 => 'field_ssm_lessons',
-      4 => 'field_ssm_main_achievements',
-      5 => 'field_ssm_transferability',
+      2 => 'field_gpm_activities',
+      3 => 'field_gpm_lessons',
+      4 => 'field_gpm_main_achievements',
+      5 => 'field_gpm_transferability',
     ),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Description',
       'instance_settings' => array(
-        'id' => 'group_ssm_description',
-        'classes' => 'group_ssm_description field-group-tab',
+        'id' => 'group_gp_method_description',
+        'classes' => 'group_gp_method_description field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -111,15 +112,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_description|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_description|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_description|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_description';
+  $field_group->identifier = 'group_gp_method_description|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_description';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -128,30 +129,30 @@ function farnet_summary_sheet_method_field_group_info() {
     'children' => array(
       0 => 'field_ne_body',
       1 => 'field_objective',
-      2 => 'field_ssm_activities',
-      3 => 'field_ssm_lessons',
-      4 => 'field_ssm_main_achievements',
-      5 => 'field_ssm_transferability',
+      2 => 'field_gpm_activities',
+      3 => 'field_gpm_lessons',
+      4 => 'field_gpm_main_achievements',
+      5 => 'field_gpm_transferability',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-description field-group-tab',
+        'classes' => 'group-gp-method-description field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_description|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_description|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_location|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_location';
+  $field_group->identifier = 'group_gp_method_location|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_location';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -166,8 +167,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Location',
       'instance_settings' => array(
-        'id' => 'group_ssm_location',
-        'classes' => 'group_ssm_location field-group-tab',
+        'id' => 'group_gp_method_location',
+        'classes' => 'group_gp_method_location field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -177,15 +178,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_location|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_location|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_location|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_location';
+  $field_group->identifier = 'group_gp_method_location|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_location';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -201,20 +202,20 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-location field-group-tab',
+        'classes' => 'group-gp-method-location field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_location|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_location|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_media|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_media';
+  $field_group->identifier = 'group_gp_method_media|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_media';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -227,8 +228,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Media',
       'instance_settings' => array(
-        'id' => 'group_ssm_media',
-        'classes' => 'group_ssm_media field-group-tab',
+        'id' => 'group_gp_method_media',
+        'classes' => 'group_gp_method_media field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -238,15 +239,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_media|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_media|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_media|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_media';
+  $field_group->identifier = 'group_gp_method_media|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_media';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -260,20 +261,20 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-media field-group-tab',
+        'classes' => 'group-gp-method-media field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_media|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_media|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_metadata|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_metadata';
+  $field_group->identifier = 'group_gp_method_metadata|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_metadata';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -288,8 +289,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Metadata',
       'instance_settings' => array(
-        'id' => 'group_ssm_metadata',
-        'classes' => 'group_ssm_metadata field-group-tab',
+        'id' => 'group_gp_method_metadata',
+        'classes' => 'group_gp_method_metadata field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -299,15 +300,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $field_groups['group_ssm_metadata|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_metadata|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_metadata|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_metadata';
+  $field_group->identifier = 'group_gp_method_metadata|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_metadata';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -324,20 +325,20 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-metadata field-group-tab',
+        'classes' => 'group-gp-method-metadata field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_metadata|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_metadata|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_organisations|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_organisations';
+  $field_group->identifier = 'group_gp_method_organisations|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_organisations';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -350,8 +351,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Organisations',
       'instance_settings' => array(
-        'id' => 'group_ssm_organisations',
-        'classes' => 'group_ssm_organisations field-group-tab',
+        'id' => 'group_gp_method_organisations',
+        'classes' => 'group_gp_method_organisations field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -361,15 +362,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_organisations|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_organisations|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_organisations|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_organisations';
+  $field_group->identifier = 'group_gp_method_organisations|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_organisations';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -383,20 +384,20 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-organisations field-group-tab',
+        'classes' => 'group-gp-method-organisations field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_organisations|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_organisations|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_publication|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_publication';
+  $field_group->identifier = 'group_gp_method_publication|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_publication';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -411,8 +412,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Publication',
       'instance_settings' => array(
-        'id' => 'group_ssm_publication',
-        'classes' => 'group_ssm_publication field-group-tab',
+        'id' => 'group_gp_method_publication',
+        'classes' => 'group_gp_method_publication field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -422,15 +423,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_publication|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_publication|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_publication|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_publication';
+  $field_group->identifier = 'group_gp_method_publication|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_publication';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -446,37 +447,37 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-publication field-group-tab',
+        'classes' => 'group-gp-method-publication field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_publication|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_publication|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_resources|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_resources';
+  $field_group->identifier = 'group_gp_method_resources|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_resources';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
     'weight' => '7',
     'children' => array(
-      0 => 'field_ssm_financial_resources',
-      1 => 'field_ssm_other_resources',
-      2 => 'field_ssm_skills',
-      3 => 'field_ssm_staff_resources',
+      0 => 'field_gpm_financial_resources',
+      1 => 'field_gpm_other_resources',
+      2 => 'field_gpm_skills',
+      3 => 'field_gpm_staff_resources',
     ),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Resources',
       'instance_settings' => array(
-        'id' => 'group_ssm_resources',
-        'classes' => 'group_ssm_resources field-group-tab',
+        'id' => 'group_gp_method_resources',
+        'classes' => 'group_gp_method_resources field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -486,45 +487,45 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_resources|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_resources|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_resources|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_resources';
+  $field_group->identifier = 'group_gp_method_resources|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_resources';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
     'weight' => '9',
     'children' => array(
-      0 => 'field_ssm_financial_resources',
-      1 => 'field_ssm_other_resources',
-      2 => 'field_ssm_skills',
-      3 => 'field_ssm_staff_resources',
+      0 => 'field_gpm_financial_resources',
+      1 => 'field_gpm_other_resources',
+      2 => 'field_gpm_skills',
+      3 => 'field_gpm_staff_resources',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-resources field-group-tab',
+        'classes' => 'group-gp-method-resources field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_resources|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_resources|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_taxonomy|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_taxonomy';
+  $field_group->identifier = 'group_gp_method_taxonomy|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_taxonomy';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -537,8 +538,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Taxonomy',
       'instance_settings' => array(
-        'id' => 'group_ssm_taxonomy',
-        'classes' => 'group_ssm_taxonomy field-group-tab',
+        'id' => 'group_gp_method_taxonomy',
+        'classes' => 'group_gp_method_taxonomy field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -548,15 +549,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_taxonomy|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_taxonomy|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_taxonomy|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_taxonomy';
+  $field_group->identifier = 'group_gp_method_taxonomy|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_taxonomy';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -570,20 +571,20 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-taxonomy field-group-tab',
+        'classes' => 'group-gp-method-taxonomy field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_taxonomy|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_taxonomy|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_timeframe|node|summary_sheet_method|default';
-  $field_group->group_name = 'group_ssm_timeframe';
+  $field_group->identifier = 'group_gp_method_timeframe|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_timeframe';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -596,8 +597,8 @@ function farnet_summary_sheet_method_field_group_info() {
     'format_settings' => array(
       'label' => 'Timeframe of implementation',
       'instance_settings' => array(
-        'id' => 'group_ssm_timeframe',
-        'classes' => 'group_ssm_timeframe field-group-tab',
+        'id' => 'group_gp_method_timeframe',
+        'classes' => 'group_gp_method_timeframe field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -607,15 +608,15 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ssm_timeframe|node|summary_sheet_method|default'] = $field_group;
+  $field_groups['group_gp_method_timeframe|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_ssm_timeframe|node|summary_sheet_method|form';
-  $field_group->group_name = 'group_ssm_timeframe';
+  $field_group->identifier = 'group_gp_method_timeframe|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_timeframe';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'summary_sheet_method';
+  $field_group->bundle = 'gp_method';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -629,12 +630,12 @@ function farnet_summary_sheet_method_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ssm-timeframe field-group-tab',
+        'classes' => 'group-gp-method-timeframe field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_ssm_timeframe|node|summary_sheet_method|form'] = $field_group;
+  $field_groups['group_gp_method_timeframe|node|gp_method|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
