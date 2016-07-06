@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet GP Method feature.
+ */
+
+include_once 'farnet_gp_method.features.inc';

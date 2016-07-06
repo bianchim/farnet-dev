@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Farnet Project Short Story feature.
- */
-
-include_once 'farnet_project_short_story.features.inc';
