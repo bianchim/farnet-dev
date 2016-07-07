@@ -1,0 +1,51 @@
+/* Allow tooltip overflow */
+ .view-display-id-calendar_block .fc-view {
+    overflow: visible !important;
+}
+
+/* Change the cursor to indicate a link */
+.view-display-id-calendar_block .fc-event {
+    cursor: pointer !important;
+}
+
+/* Show the tooltip */
+.view-display-id-calendar_block .fc-event-inner {
+    overflow: visible;
+}
+
+/* Display the tooltip */
+.view-display-id-calendar_block .fc-event:hover .fc-event-time,
+.view-display-id-calendar_block .fc-event:hover .fc-event-title {
+    display: block !important;
+}
+
+/* Tooltip Styling */
+.view-display-id-calendar_block .fc-event-title, .view-display-id-calendar_block .fc-event-time {
+    min-width: 100px;
+    min-height: 20px;
+    position: relative;
+    background-color: #36c;
+}
+
+.view-display-id-calendar_block .fc-event-time {
+    margin-top: 15px;
+    border-radius: 2px 2px 0 0;
+}
+
+.view-display-id-calendar_block .fc-event-title {
+    margin-top: 0;
+    border-radius: 0 0 2px 2px;
+    padding: 0 3px 3px 3px;
+}
+
+/* Tooltip Styling, show an arrow above the tooltip */
+.view-display-id-calendar_block .fc-event-time::after {
+    content: " ";
+    position: absolute;
+    top: -15px;
+    left: 30%;
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent #36c transparent;
+}
