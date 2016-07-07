@@ -112,7 +112,7 @@ function farnet_event_strongarm_alter(&$variables) {
 }
 
 /**
- * Implements HOOK_init().
+ * Implements hook_init().
  */
 function farnet_event_init() {
   drupal_add_css(drupal_get_path('module', 'farnet_event') . '/css/farnet_event.css');
