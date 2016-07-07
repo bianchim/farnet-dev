@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_taxonomy.views_default.inc
