@@ -4,61 +4,90 @@ Feature: Check Views
   I want to be able to create a article and see it on view
 
   @api
-  Scenario: Create article and check it in view Theme Diversification
-    Given I am logged in as a user with the "administrator" role
-    When I am viewing an "farnet_article" content:
-      | title                       | Behat Article Test #1                 |
-      | field_farnet_abstract       | Lorem ipsum dolor sit amet abstract.  |
-      | field_ne_body               | Lorem ipsum dolor sit amet body.      |
-      | moderation state            | published                             |
-      | workbench_moderation_state  | published                             |
-      | status                      | 1                                     |
-      | field_term_theme            | Diversification                       |
-      | field_publication_date      | 1465294233                            |
-    Then I should see the heading "Behat Article Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
-    And I should see "Lorem ipsum dolor sit amet body."
-    And I visit "themes/diversification"
-    And I should see the heading "Diversification"
-    And I should see the text "Behat Article Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
-
-  @api
-  Scenario: Create news and check it in view Theme Environment
+  Scenario: Create news and check it in view News
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "nexteuropa_news" content:
-      | title                       | Behat News Test #1                    |
-      | field_abstract              | Lorem ipsum dolor sit amet abstract.  |
-      | field_ne_body               | Lorem ipsum dolor sit amet body.      |
-      | moderation state            | published                             |
-      | workbench_moderation_state  | published                             |
-      | status                      | 1                                     |
-      | field_term_theme            | Environment                           |
-      | field_publication_date      | 1465294233                            |
+      | title                           | Behat News Test #1                   |
+      | field_abstract                  | Lorem ipsum dolor sit amet abstract. |
+      | field_ne_body                   | Lorem ipsum dolor sit amet body.     |
+      | moderation state                | published                            |
+      | workbench_moderation_state      | published                            |
+      | status                          | 1                                    |
+      | field_term_publication_channels | Farnet News                          |
+      | field_publication_date          | 1465294233                           |
     Then I should see the heading "Behat News Test #1"
     And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
-    And I visit "themes/environment"
-    And I should see the heading "Environment"
+    And I visit "news-events/news"
+    And I should see the heading "News"
     And I should see the text "Behat News Test #1"
     And I should see "Lorem ipsum dolor sit amet abstract."
 
   @api
-  Scenario: Create event and check it in view Theme Governance and management
+  Scenario: Create news and check it in view FARNET news
     Given I am logged in as a user with the "administrator" role
-    When I am viewing an "nexteuropa_event" content:
-      | title                       | Behat Event Test #1                   |
-      | field_farnet_abstract       | Lorem ipsum dolor sit amet abstract.  |
-      | field_ne_body               | Lorem ipsum dolor sit amet body.      |
-      | moderation state            | published                             |
-      | workbench_moderation_state  | published                             |
-      | status                      | 1                                     |
-      | field_term_theme            | Governance and management             |
-      | field_publication_date      | 1465294233                            |
-    Then I should see the heading "Behat Event Test #1"
+    When I am viewing an "nexteuropa_news" content:
+      | title                           | Behat News Test #2                   |
+      | field_abstract                  | Lorem ipsum dolor sit amet abstract. |
+      | field_ne_body                   | Lorem ipsum dolor sit amet body.     |
+      | moderation state                | published                            |
+      | workbench_moderation_state      | published                            |
+      | status                          | 1                                    |
+      | field_term_publication_channels | Farnet News                          |
+      | field_publication_date          | 1465294233                           |
+    Then I should see the heading "Behat News Test #2"
     And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
-    And I visit "themes/governance-management"
-    And I should see the heading "Governance and management"
-    And I should see the text "Behat Event Test #1"
+    And I visit "news-events/news/farnet"
+    And I should see the heading "FARNET news"
+    And I should see the text "Behat News Test #2"
     And I should see "Lorem ipsum dolor sit amet abstract."
+
+  @api
+  Scenario: Create news and check it in view Other news
+    Given I am logged in as a user with the "administrator" role
+    When I am viewing an "nexteuropa_news" content:
+      | title                           | Behat News Test #3                   |
+      | field_abstract                  | Lorem ipsum dolor sit amet abstract. |
+      | field_ne_body                   | Lorem ipsum dolor sit amet body.     |
+      | moderation state                | published                            |
+      | workbench_moderation_state      | published                            |
+      | status                          | 1                                    |
+      | field_term_publication_channels | Other News                           |
+      | field_publication_date          | 1465294233                           |
+    Then I should see the heading "Behat News Test #3"
+    And I should see "Lorem ipsum dolor sit amet abstract."
+    And I should see "Lorem ipsum dolor sit amet body."
+    And I visit "news-events/news/other"
+    And I should see the heading "Other news"
+    And I should see the text "Behat News Test #3"
+    And I should see "Lorem ipsum dolor sit amet abstract."
+
+  @api
+  Scenario: Create GP Project and check it in view Good Practices
+    Given I am logged in as a user with the "administrator" role
+    When "gp_project" content:
+      | title                     | status  | field_publication_date  |
+      | Behat GP Projects Test #1 | 1       | 1465294233              |
+    When I visit "on-the-ground/good-practices"
+    And I should see the heading "Good practices"
+    And I should see the text "Behat GP Projects Test #1"
+
+  @api
+  Scenario: Create GP Project and check it in view Other GP Method
+    Given I am logged in as a user with the "administrator" role
+    When "gp_project" content:
+      | title                     | status  | field_publication_date  |
+      | Behat GP Projects Test #1 | 1       | 1465294233              |
+    When I visit "on-the-ground/good-practices/projects"
+    And I should see the heading "Projects"
+    And I should see the text "Behat GP Projects Test #1"
+
+  @api
+  Scenario: Create GP Method and check it in view Other GP Method
+    Given I am logged in as a user with the "administrator" role
+    When "gp_method" content:
+      | title                   | status  | field_publication_date  |
+      | Behat GP Method Test #1 | 1       | 1465294233              |
+    When I visit "on-the-ground/good-practices/methods"
+    And I should see the text "Behat GP Method Test #1"
