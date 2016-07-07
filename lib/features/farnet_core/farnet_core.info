@@ -33,7 +33,6 @@ features[ctools][] = facetapi:facetapi_defaults:1
 features[ctools][] = strongarm:strongarm:1
 features[facetapi][] = apachesolr@solr:block:im_field_term_country
 features[facetapi][] = apachesolr@solr:block:im_field_term_theme
-features[fe_block_settings][] = easy_breadcrumb-easy_breadcrumb
 features[fe_block_settings][] = farnet_core-farnet_core_printpdf
 features[fe_block_settings][] = print-print-top
 features[fe_block_settings][] = print_mail-print_mail-top
