@@ -446,8 +446,8 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Media',
     'weight' => '7',
     'children' => array(
-      0 => 'field_media_upload',
-      1 => 'field_gallery',
+      0 => 'field_gallery',
+      1 => 'field_media_upload',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -600,6 +600,8 @@ function farnet_gp_project_field_group_info() {
     'children' => array(
       0 => 'field_tags',
       1 => 'field_term_theme',
+      2 => 'field_sea_basins',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
