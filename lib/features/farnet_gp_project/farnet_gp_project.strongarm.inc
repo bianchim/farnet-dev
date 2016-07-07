@@ -129,6 +129,9 @@ function farnet_gp_project_strongarm() {
         'language' => array(
           'weight' => '9',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),
