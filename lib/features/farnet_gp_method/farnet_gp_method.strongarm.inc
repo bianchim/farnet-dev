@@ -42,6 +42,13 @@ function farnet_gp_method_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_gp_method';
+  $strongarm->value = '2';
+  $export['comment_gp_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_gp_method';
   $strongarm->value = '1';
   $export['comment_preview_gp_method'] = $strongarm;
@@ -52,13 +59,6 @@ function farnet_gp_method_strongarm() {
   $strongarm->name = 'comment_subject_field_gp_method';
   $strongarm->value = 1;
   $export['comment_subject_field_gp_method'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_gp_method';
-  $strongarm->value = '2';
-  $export['comment_gp_method'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -131,6 +131,9 @@ function farnet_gp_method_strongarm() {
         ),
         'language' => array(
           'weight' => '8',
+        ),
+        'metatags' => array(
+          'weight' => '40',
         ),
       ),
       'display' => array(),
