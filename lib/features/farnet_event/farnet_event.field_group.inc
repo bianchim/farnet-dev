@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_event.field_group.inc
@@ -14,65 +13,6 @@ function farnet_event_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_event_agenda|node|nexteuropa_event|default';
-  $field_group->group_name = 'group_event_agenda';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'nexteuropa_event';
-  $field_group->mode = 'default';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Agenda',
-    'weight' => '3',
-    'children' => array(
-      0 => 'field_agenda_sessions',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Agenda',
-      'instance_settings' => array(
-        'id' => 'group_event_agenda',
-        'classes' => 'group_event_agenda field-group-tab',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_event_agenda|node|nexteuropa_event|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_event_agenda|node|nexteuropa_event|form';
-  $field_group->group_name = 'group_event_agenda';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'nexteuropa_event';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Agenda',
-    'weight' => '3',
-    'children' => array(
-      0 => 'field_agenda_sessions',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-event-agenda field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_event_agenda|node|nexteuropa_event|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_event_contact|node|nexteuropa_event|default';
   $field_group->group_name = 'group_event_contact';
   $field_group->entity_type = 'node';
@@ -81,7 +21,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '6',
+    'weight' => '4',
     'children' => array(
       0 => 'field_contact_position',
       1 => 'field_contact_title',
@@ -118,13 +58,13 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_first_name',
-      1 => 'field_last_name',
-      2 => 'field_contact_position',
-      3 => 'field_contact_title',
-      4 => 'field_email',
+      0 => 'field_contact_position',
+      1 => 'field_contact_title',
+      2 => 'field_email',
+      3 => 'field_first_name',
+      4 => 'field_last_name',
       5 => 'field_telephone',
     ),
     'format_type' => 'tab',
@@ -150,7 +90,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Multimedia',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_documents',
       1 => 'field_gallery',
@@ -183,7 +123,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Multimedia',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_documents',
       1 => 'field_gallery',
@@ -211,7 +151,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '8',
+    'weight' => '6',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -245,12 +185,11 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_publication_date',
-      1 => 'field_teaser',
+      0 => 'field_publication_abstract',
+      1 => 'field_publication_date',
       2 => 'field_term_publication_channels',
-      3 => 'field_publication_abstract',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -275,11 +214,12 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '7',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_term_theme',
-      2 => 'field_term_type_event',
+      0 => 'field_tags',
+      1 => 'field_term_country',
+      2 => 'field_term_theme',
+      3 => 'field_term_type_event',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -309,11 +249,12 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_term_theme',
-      2 => 'field_term_type_event',
+      0 => 'field_tags',
+      1 => 'field_term_country',
+      2 => 'field_term_theme',
+      3 => 'field_term_type_event',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -330,6 +271,64 @@ function farnet_event_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_ne_event_agenda|node|nexteuropa_event|default';
+  $field_group->group_name = 'group_ne_event_agenda';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nexteuropa_event';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Agenda',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_sessions',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-ne-event-agenda field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_ne_event_agenda|node|nexteuropa_event|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ne_event_agenda|node|nexteuropa_event|form';
+  $field_group->group_name = 'group_ne_event_agenda';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nexteuropa_event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Agenda',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_sessions',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-ne-event-agenda field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_ne_event_agenda|node|nexteuropa_event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_ne_event_content|node|nexteuropa_event|default';
   $field_group->group_name = 'group_ne_event_content';
   $field_group->entity_type = 'node';
@@ -341,8 +340,8 @@ function farnet_event_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_ne_body',
-      1 => 'field_farnet_abstract',
-      2 => 'field_city',
+      1 => 'field_city',
+      2 => 'field_farnet_abstract',
       3 => 'field_registration',
       4 => 'field_twitter_hashtag',
       5 => 'field_website',
