@@ -24,6 +24,10 @@ projects[field_collection_table][version] = "1.0-beta3"
 ; Libraries
 ; =========
 
+; libphonenumber-for-php
+libraries[libphonenumber-for-php][destination] = "libraries"
+libraries[libphonenumber-for-php][download][type] = "git"
+libraries[libphonenumber-for-php][download][url] = "https://github.com/giggsey/libphonenumber-for-php.git"
 
 ; ======
 ; Themes

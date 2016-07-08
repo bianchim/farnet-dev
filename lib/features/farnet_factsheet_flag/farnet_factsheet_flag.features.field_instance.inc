@@ -384,10 +384,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 2,
@@ -461,10 +461,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 1,
@@ -999,9 +999,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 83,
       ),
       'teaser' => array(
@@ -1073,13 +1072,13 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1105,7 +1104,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -1120,10 +1119,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 29,
@@ -1282,44 +1281,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_ff_coastal_inland'.
-  $field_instances['node-factsheet_flag-field_ff_coastal_inland'] = array(
-    'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 45,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_ff_coastal_inland',
-    'label' => 'Coastal or inland',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-factsheet_flag-field_ff_code'.
   $field_instances['node-factsheet_flag-field_ff_code'] = array(
     'bundle' => 'factsheet_flag',
@@ -1465,10 +1426,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 49,
@@ -1513,10 +1474,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 35,
@@ -1618,10 +1579,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 33,
@@ -1665,13 +1626,13 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1697,7 +1658,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -2655,10 +2616,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 51,
@@ -2746,10 +2707,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 36,
@@ -2793,10 +2754,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 37,
@@ -2840,10 +2801,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 62,
@@ -2888,10 +2849,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 34,
@@ -2935,10 +2896,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
         'weight' => 9,
@@ -2982,10 +2943,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 10,
@@ -3029,13 +2990,13 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 17,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3061,7 +3022,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -3115,7 +3076,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3166,7 +3127,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -3181,10 +3142,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 32,
@@ -3295,10 +3256,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 0,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 11,
@@ -3678,13 +3639,13 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3710,7 +3671,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -3726,10 +3687,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
         'weight' => 48,
@@ -3831,13 +3792,13 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => '.',
+          'decimal_separator' => ',',
           'prefix_suffix' => TRUE,
           'scale' => 2,
-          'thousand_separator' => '',
+          'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 18,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3863,7 +3824,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -3944,12 +3905,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 82,
       ),
       'teaser' => array(
@@ -4135,6 +4092,47 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-factsheet_flag-field_sea_basins'.
+  $field_instances['node-factsheet_flag-field_sea_basins'] = array(
+    'bundle' => 'factsheet_flag',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sea_basins',
+    'label' => 'Sea Basins',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 12,
     ),
   );
 
@@ -4391,6 +4389,47 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'node-factsheet_flag-field_type_of_area'.
+  $field_instances['node-factsheet_flag-field_type_of_area'] = array(
+    'bundle' => 'factsheet_flag',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_type_of_area',
+    'label' => 'Type of area',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 13,
     ),
   );
 
@@ -4712,7 +4751,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Budget available for cooperation');
   t('Calls for projects');
   t('City');
-  t('Coastal or inland');
   t('Code');
   t('Collection Budget');
   t('Collection Language');
@@ -4763,6 +4801,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Publication date');
   t('Region');
   t('Sea Basin');
+  t('Sea Basins');
   t('Specific details');
   t('Summary');
   t('Surface area (km²)');
@@ -4773,6 +4812,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Total public budget allocated to the FLAG for 2014-2020');
   t('Transnational');
   t('Twitter');
+  t('Type of area');
   t('URL');
   t('Website');
   t('Website Project');

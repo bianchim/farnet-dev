@@ -281,9 +281,8 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Metadata',
     'weight' => '2',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'group_content_access',
-      2 => 'og_group_ref',
+      0 => 'group_content_access',
+      1 => 'og_group_ref',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -315,10 +314,9 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Metadata',
     'weight' => '2',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'group_content_access',
-      2 => 'og_group_ref',
-      3 => 'language',
+      0 => 'group_content_access',
+      1 => 'og_group_ref',
+      2 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -533,6 +531,7 @@ function farnet_gp_method_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_term_theme',
+      1 => 'field_tags',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -565,6 +564,10 @@ function farnet_gp_method_field_group_info() {
     'weight' => '12',
     'children' => array(
       0 => 'field_term_theme',
+      1 => 'field_sea_basins',
+      2 => 'field_type_of_area',
+      3 => 'field_tags',
+
     ),
     'format_type' => 'tab',
     'format_settings' => array(
