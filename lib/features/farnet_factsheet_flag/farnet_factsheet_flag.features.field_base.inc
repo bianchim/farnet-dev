@@ -207,32 +207,6 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_ff_coastal_inland'.
-  $field_bases['field_ff_coastal_inland'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ff_coastal_inland',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'Coastal' => 'Coastal',
-        'Inland' => 'Inland',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_ff_code'.
   $field_bases['field_ff_code'] = array(
     'active' => 1,
