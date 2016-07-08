@@ -779,7 +779,7 @@ function farnet_user_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -813,7 +813,7 @@ function farnet_user_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -850,7 +850,70 @@ function farnet_user_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 16,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_skype_id'.
+  $field_instances['user-user-field_skype_id'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 35,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_skype_id',
+    'label' => 'Skype ID',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 15,
     ),
   );
 
@@ -1425,7 +1488,7 @@ function farnet_user_field_default_field_instances() {
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'none',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
@@ -1438,7 +1501,7 @@ function farnet_user_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1553,7 +1616,7 @@ function farnet_user_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 18,
+      'weight' => 12,
     ),
   );
 
@@ -1584,7 +1647,7 @@ function farnet_user_field_default_field_instances() {
       'module' => 'tmgmt_language_combination',
       'settings' => array(),
       'type' => 'tmgmt_language_combination_default',
-      'weight' => 17,
+      'weight' => 11,
     ),
   );
 
@@ -1615,13 +1678,14 @@ function farnet_user_field_default_field_instances() {
   t('Preferred language (3)');
   t('Profile Completed');
   t('Quantity');
+  t('Skype ID');
   t('Slideshare');
   t('Title / Function');
   t('Translation skills');
   t('Twitter');
   t('Vimeo');
   t('Website');
-  t('YouTube');
+  t('Youtube');
   t('Zip code');
 
   return $field_instances;
