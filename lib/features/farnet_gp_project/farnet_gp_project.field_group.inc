@@ -411,7 +411,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
       1 => 'field_media_upload',
@@ -511,7 +511,7 @@ function farnet_gp_project_field_group_info() {
       'label' => 'Publication',
       'instance_settings' => array(
         'id' => 'group_gp_project_publication',
-        'classes' => 'group_gp_project_publication field-group-tab',
+        'classes' => 'group_gp_project_publication field-group-tab no-menu-content',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -563,7 +563,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_term_theme',
@@ -573,7 +573,7 @@ function farnet_gp_project_field_group_info() {
       'label' => 'Taxonomy',
       'instance_settings' => array(
         'id' => 'group_gp_project_taxonomy',
-        'classes' => 'group_gp_project_taxonomy field-group-tab',
+        'classes' => 'group_gp_project_taxonomy field-group-tab no-menu-content',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
