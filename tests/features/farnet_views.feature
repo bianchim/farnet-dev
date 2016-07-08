@@ -91,3 +91,24 @@ Feature: Check Views
       | Behat GP Method Test #1 | 1       | 1465294233              |
     When I visit "on-the-ground/good-practices/methods"
     And I should see the text "Behat GP Method Test #1"
+
+  @api
+  Scenario: Create news with a term in second level and check it in view Themes
+    Given I am logged in as a user with the "administrator" role
+    When I am viewing an "nexteuropa_news" content:
+      | title                       | Behat News Test #1                    |
+      | field_abstract              | Lorem ipsum dolor sit amet abstract.  |
+      | field_ne_body               | Lorem ipsum dolor sit amet body.      |
+      | moderation state            | published                             |
+      | workbench_moderation_state  | published                             |
+      | status                      | 1                                     |
+      | field_term_theme            | Aquaculture                           |
+      | field_publication_date      | 1465294233                            |
+    Then I should see the heading "Behat News Test #1"
+    And I should see "Lorem ipsum dolor sit amet abstract."
+    And I should see "Lorem ipsum dolor sit amet body."
+    #And I visit "themes"
+    And I visit "themes_en"
+    And I should see the heading "Themes"
+    And I should see the text "Behat News Test #1"
+    And I should see "Lorem ipsum dolor sit amet abstract."
