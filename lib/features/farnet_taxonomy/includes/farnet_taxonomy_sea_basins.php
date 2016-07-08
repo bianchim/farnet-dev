@@ -2,54 +2,62 @@
 
 /**
  * @file
- * List of Type publications used to generate taxonomy Type Publications.
+ * List of Sea Basins used to generate taxonomy Sea Basins.
  */
 
 /**
- * Lists Type Publications.
+ * Lists Sea Basins.
  */
-function farnet_taxonomy_type_publications() {
-  $type_publications_array = array(
-    'Publication1' => (object) array(
-      'name' => t('FARNET Magazine'),
+function farnet_taxonomy_sea_basins() {
+  $sea_basins_array = array(
+    'SeaBasin1' => (object) array(
+      'name' => t('Baltic'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('FARNET Magazine'),
-        'it' => t('FARNET Magazine IT'),
+        'fr' => t('Baltic FR'),
+        'it' => t('Baltic IT'),
       ),
     ),
-    'Publication2' => (object) array(
-      'name' => t('Brochure'),
+    'SeaBasin2' => (object) array(
+      'name' => t('North Sea'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Brochure'),
-        'it' => t('Brochure IT'),
+        'fr' => t('North Sea FR'),
+        'it' => t('North Sea IT'),
       ),
     ),
-    'Publication3' => (object) array(
-      'name' => t('Presentation'),
+    'SeaBasin3' => (object) array(
+      'name' => t('Atlantic'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Presentation'),
-        'it' => t('Presentation IT'),
+        'fr' => t('Atlantic FR'),
+        'it' => t('Atlantic IT'),
       ),
     ),
-    'Publication4' => (object) array(
-      'name' => t('Guide'),
+    'SeaBasin4' => (object) array(
+      'name' => t('Mediterranean'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Guide'),
-        'it' => t('Guide IT'),
+        'fr' => t('Mediterranean FR'),
+        'it' => t('Mediterranean IT'),
       ),
     ),
-    'Publication5' => (object) array(
-      'name' => t('Report'),
+    'SeaBasin5' => (object) array(
+      'name' => t('Black Sea'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Rapport'),
-        'it' => t('Report IT'),
+        'fr' => t('Black Sea FR'),
+        'it' => t('Black Sea IT'),
+      ),
+    ),
+    'SeaBasin6' => (object) array(
+      'name' => t('Rivers and Lakes'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Rivers and Lakes FR'),
+        'it' => t('Rivers and Lakes IT'),
       ),
     ),
   );
-  return $type_publications_array;
+  return $sea_basins_array;
 }

@@ -130,6 +130,26 @@ function farnet_taxonomy_enable() {
     watchdog('farnet_taxonomy', "Import regions terms failed.", array(), WATCHDOG_ERROR);
   }
 
+  // Imports Type of Area terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_of_area')) {
+    include_once 'includes/farnet_taxonomy_type_of_areas.php';
+    $type_areas_array = farnet_taxonomy_type_of_areas();
+    save_multilingual_farnet_taxonomy($type_areas_array, $vocabulary->vid);
+  }
+  else {
+    watchdog('farnet_taxonomy', "Import farnet_type_of_area terms failed.", array(), WATCHDOG_ERROR);
+  }
+
+  // Imports Sea Basins terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_sea_basins')) {
+    include_once 'includes/farnet_taxonomy_sea_basins.php';
+    $sea_basins_array = farnet_taxonomy_sea_basins();
+    save_multilingual_farnet_taxonomy($sea_basins_array, $vocabulary->vid);
+  }
+  else {
+    watchdog('farnet_taxonomy', "Import farnet_sea_basins terms failed.", array(), WATCHDOG_ERROR);
+  }
+
   drupal_set_message($t('The FARNET Taxonomy feature is now active on your site.'));
 }
 
@@ -200,6 +220,20 @@ function farnet_taxonomy_disable() {
 
   // Deletes the taxonomy term.
   $vocabulary = taxonomy_vocabulary_machine_name_load('field_term_country');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_of_area');
+  if ($vocabulary) {
+    $vid = $vocabulary->vid;
+    taxonomy_vocabulary_delete($vid);
+  }
+
+  // Deletes the taxonomy term.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_sea_basins');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
     taxonomy_vocabulary_delete($vid);

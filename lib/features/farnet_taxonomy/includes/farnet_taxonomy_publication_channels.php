@@ -11,19 +11,43 @@
 function farnet_taxonomy_publication_channels() {
   $publication_channels_array = array(
     'Farnetnews' => (object) array(
-      'name' => t('Farnet News'),
+      'name' => t('News - FARNET'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Farnet News FR'),
-        'it' => t('Farnet News IT'),
+        'fr' => t('News - FARNET FR'),
+        'it' => t('News - FARNET IT'),
       ),
     ),
     'Othernews' => (object) array(
-      'name' => t('Other News'),
+      'name' => t('News - Other'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Other News FR'),
-        'it' => t('Other News IT'),
+        'fr' => t('News - Other FR'),
+        'it' => t('News - Other IT'),
+      ),
+    ),
+    'CooperationWhyHow' => (object) array(
+      'name' => t('Cooperation - Why & How to'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Cooperation - Why & How to FR'),
+        'it' => t('Cooperation - Why & How to IT'),
+      ),
+    ),
+    'CooperationEuropean' => (object) array(
+      'name' => t('Cooperation - European overview'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Cooperation - European overview FR'),
+        'it' => t('Cooperation - European overview IT'),
+      ),
+    ),
+    'CooperationActivities' => (object) array(
+      'name' => t('Cooperation - Activities'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => t('Cooperation - Activities FR'),
+        'it' => t('Cooperation - Activities IT'),
       ),
     ),
   );
