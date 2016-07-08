@@ -31,6 +31,7 @@ function farnet_user_field_group_info() {
       4 => 'field_telephone',
       5 => 'field_website',
       6 => 'field_zip_code',
+      7 => 'field_skype_id',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -87,7 +88,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Language',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_preferred_language_1',
       1 => 'field_preferred_language_2',
@@ -146,17 +147,18 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Other',
-    'weight' => '12',
+    'weight' => '8',
     'children' => array(
       0 => 'field_creator',
       1 => 'tmgmt_translation_skills',
       2 => 'og_user_node',
       3 => 'field_profile_completed',
-      4 => 'timezone',
-      5 => 'xmlsitemap',
-      6 => 'contact',
-      7 => 'locale',
-      8 => 'wysiwyg',
+      4 => 'metatags',
+      5 => 'timezone',
+      6 => 'xmlsitemap',
+      7 => 'contact',
+      8 => 'locale',
+      9 => 'wysiwyg',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -181,7 +183,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Privacy settings',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_keep_my_email_private',
     ),
@@ -210,14 +212,13 @@ function farnet_user_field_group_info() {
     'label' => 'Social Media',
     'weight' => '3',
     'children' => array(
-      0 => 'field_social_media',
-      1 => 'field_user_facebook',
-      2 => 'field_user_twitter',
-      3 => 'field_user_pinterest',
-      4 => 'field_user_linkedin',
-      5 => 'field_user_slideshare',
+      0 => 'field_user_facebook',
+      1 => 'field_user_linkedin',
+      2 => 'field_user_pinterest',
+      3 => 'field_user_slideshare',
+      4 => 'field_user_twitter',
+      5 => 'field_user_vimeo',
       6 => 'field_user_youtube',
-      7 => 'field_user_vimeo',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -242,7 +243,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subscriptions',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_farnet_magazine_paper',
       1 => 'field_farnet_magazine_subscribe',
