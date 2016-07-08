@@ -127,7 +127,8 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
   $handler->display->display_options['filters']['field_term_theme_tid']['field'] = 'field_term_theme_tid';
-  $handler->display->display_options['filters']['field_term_theme_tid']['value'] = array();
+  /* $handler->display->display_options['filters']['field_term_theme_tid']['value'] = array(); */
+  $handler->display->display_options['filters']['field_term_theme_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes';
