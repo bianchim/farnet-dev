@@ -990,20 +990,13 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'inline_entity_form',
+      'module' => 'entityreference',
       'settings' => array(
-        'fields' => array(),
-        'type_settings' => array(
-          'allow_existing' => 1,
-          'allow_new' => 1,
-          'delete_references' => 0,
-          'label_plural' => 'Organisations',
-          'label_singular' => 'Organisation',
-          'match_operator' => 'CONTAINS',
-          'override_labels' => 1,
-        ),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'inline_entity_form',
+      'type' => 'entityreference_autocomplete',
       'weight' => 6,
     ),
   );
@@ -1215,6 +1208,47 @@ function farnet_gp_method_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gp_method-field_sea_basins'.
+  $field_instances['node-gp_method-field_sea_basins'] = array(
+    'bundle' => 'gp_method',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sea_basins',
+    'label' => 'Sea Basins',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_method-field_tags'.
   $field_instances['node-gp_method-field_tags'] = array(
     'bundle' => 'gp_method',
@@ -1227,7 +1261,7 @@ function farnet_gp_method_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1252,7 +1286,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'weight' => 7,
     ),
   );
 
@@ -1486,6 +1520,47 @@ function farnet_gp_method_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gp_method-field_type_of_area'.
+  $field_instances['node-gp_method-field_type_of_area'] = array(
+    'bundle' => 'gp_method',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_type_of_area',
+    'label' => 'Type of area',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_method-group_content_access'.
   $field_instances['node-gp_method-group_content_access'] = array(
     'bundle' => 'gp_method',
@@ -1658,12 +1733,14 @@ function farnet_gp_method_field_default_field_instances() {
   t('Publication abstract');
   t('Publication date');
   t('Region');
+  t('Sea Basins');
   t('Skills');
   t('Staff resources (FTE)');
   t('Tags');
   t('Theme');
   t('Title');
   t('Transferability');
+  t('Type of area');
 
   return $field_instances;
 }

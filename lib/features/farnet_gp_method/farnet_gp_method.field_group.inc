@@ -564,7 +564,10 @@ function farnet_gp_method_field_group_info() {
     'weight' => '12',
     'children' => array(
       0 => 'field_term_theme',
-      1 => 'field_tags',
+      1 => 'field_sea_basins',
+      2 => 'field_type_of_area',
+      3 => 'field_tags',
+
     ),
     'format_type' => 'tab',
     'format_settings' => array(
