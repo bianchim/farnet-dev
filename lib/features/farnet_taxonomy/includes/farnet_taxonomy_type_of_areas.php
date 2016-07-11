@@ -14,40 +14,40 @@ function farnet_taxonomy_type_of_areas() {
       'name' => t('Inland'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Inland FR'),
-        'it' => t('Inland IT'),
+        'fr' => 'Inland FR',
+        'it' => 'Inland IT',
       ),
     ),
     'TypeArea2' => (object) array(
       'name' => t('Coastal'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Coastal FR'),
-        'it' => t('Coastal IT'),
+        'fr' => 'Coastal FR',
+        'it' => 'Coastal IT',
       ),
     ),
     'TypeArea3' => (object) array(
       'name' => t('Island'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Island FR'),
-        'it' => t('Island IT'),
+        'fr' => 'Island FR',
+        'it' => 'Island IT',
       ),
     ),
     'TypeArea4' => (object) array(
       'name' => t('Urban'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Urban FR'),
-        'it' => t('Urban IT'),
+        'fr' => 'Urban FR',
+        'it' => 'Urban IT',
       ),
     ),
     'TypeArea5' => (object) array(
       'name' => t('Rural'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Rural FR'),
-        'it' => t('Rural IT'),
+        'fr' => 'Rural FR',
+        'it' => 'Rural IT',
       ),
     ),
   );
