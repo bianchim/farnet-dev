@@ -386,5 +386,104 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['farnet_view_good_practices'] = $view;
 
+  $view = new view();
+  $view->name = 'homepage_highlight';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Homepage highlight';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'homepage-highlight-carousel';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = '5000';
+  $handler->display->display_options['style_options']['navigation'] = 1;
+  $handler->display->display_options['style_options']['indicators'] = 1;
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_class'] = 'homepage-highlight-title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Page */
+  $handler->display->display_options['fields']['field_page']['id'] = 'field_page';
+  $handler->display->display_options['fields']['field_page']['table'] = 'field_data_field_page';
+  $handler->display->display_options['fields']['field_page']['field'] = 'field_page';
+  $handler->display->display_options['fields']['field_page']['label'] = '';
+  $handler->display->display_options['fields']['field_page']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_page']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_page']['alter']['text'] = 'node/[field_page-target_id]';
+  $handler->display->display_options['fields']['field_page']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_page']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_page']['delta_offset'] = '0';
+  /* Field: Content: URL */
+  $handler->display->display_options['fields']['field_farnet_url']['id'] = 'field_farnet_url';
+  $handler->display->display_options['fields']['field_farnet_url']['table'] = 'field_data_field_farnet_url';
+  $handler->display->display_options['fields']['field_farnet_url']['field'] = 'field_farnet_url';
+  $handler->display->display_options['fields']['field_farnet_url']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_farnet_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_farnet_url']['empty'] = '[field_page]';
+  $handler->display->display_options['fields']['field_farnet_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_farnet_url']['type'] = 'link_plain';
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
+  $handler->display->display_options['fields']['field_picture']['field'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_picture']['alter']['path'] = '[field_farnet_url]';
+  $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_picture']['settings'] = array(
+    'image_style' => 'landscape',
+    'image_link' => '',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'homepage_highlight' => 'homepage_highlight',
+  );
+
+  /* Display: Homepage Highlight block */
+  $handler = $view->new_display('block', 'Homepage Highlight block', 'block');
+  $export['homepage_highlight'] = $view;
+
   return $export;
 }
