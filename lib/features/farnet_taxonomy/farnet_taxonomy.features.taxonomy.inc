@@ -111,7 +111,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       ),
     ),
     'farnet_theme' => (object) array(
-      'name' => 'Farnet Theme',
+      'name' => 'Themes',
       'machine_name' => 'farnet_theme',
       'description' => 'Taxonomy for the themes on Farnet',
       'hierarchy' => 0,
