@@ -185,7 +185,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $fid = $this->uploadFile($fileType, $fileName);
 
     $this->getSession()->getPage()->find('css',
-      'input[name="'.$field.'"][type="hidden"]')->setValue($fid);
+      'input[name="' . $field . '"][type="hidden"]')->setValue($fid);
   }
 
 }
