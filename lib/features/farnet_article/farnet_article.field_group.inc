@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_article.field_group.inc
@@ -22,7 +21,7 @@ function farnet_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -51,11 +50,11 @@ function farnet_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_term_theme',
-      2 => 'field_tags',
+      0 => 'field_tags',
+      1 => 'field_term_country',
+      2 => 'field_term_theme',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
