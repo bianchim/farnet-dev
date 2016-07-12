@@ -11,6 +11,8 @@ include_once 'farnet_gp_short_story.features.inc';
  */
 function farnet_gp_short_story_form_gp_short_story_node_form_alter(&$form, &$form_state, $form_id) {
   $path = drupal_get_path('module', 'farnet_gp_short_story');
+
+  // Add JS files.
   $form['#attached']['js'] = drupal_add_js(
     $path . '/js/farnet_gp_short_story.js',
     array(
@@ -20,7 +22,12 @@ function farnet_gp_short_story_form_gp_short_story_node_form_alter(&$form, &$for
     )
   );
 
-  $form['ield_total_project_cost'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
-  //$form['field_average_budget_per_flag'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  // Add CSS files.
+  $form['#attached']['css'] = array(
+    $path . '/css/farnet_gp_short_story.css',
+  );
 
+  dpm($form['field_collection_project_phase']);
+  // $form['field_collection_project_phase'][LANGUAGE_NONE][0]['field_total_cost'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_total_cost'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
 }

@@ -10,6 +10,545 @@
 function farnet_gp_short_story_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_eu_contribution'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_eu_contribution'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_eu_contribution',
+    'label' => 'EU contribution (phase)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_eu_contribution_eardf'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_eu_contribution_eardf'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_eu_contribution_eardf',
+    'label' => 'EARDF',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_eu_contribution_emff'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_eu_contribution_emff'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_eu_contribution_emff',
+    'label' => 'EMFF',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_eu_contribution_erdf'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_eu_contribution_erdf'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_eu_contribution_erdf',
+    'label' => 'ERDF',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_eu_contribution_esf'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_eu_contribution_esf'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_eu_contribution_esf',
+    'label' => 'ESF',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_eu_contribution_oeu'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_eu_contribution_oeu'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_eu_contribution_oeu',
+    'label' => 'Other EU funding',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_other_public_contribution'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_other_public_contribution'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_other_public_contribution',
+    'label' => 'Other public contribution (phase)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_phase'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_phase'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_phase',
+    'label' => 'Phase',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_private_contribution'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_private_contribution'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_private_contribution',
+    'label' => 'Private contribution (phase)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_public_contrib_local'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_public_contrib_local'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_public_contrib_local',
+    'label' => 'Local',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_public_contrib_national'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_public_contrib_national'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_public_contrib_national',
+    'label' => 'National',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_public_contrib_regional'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_public_contrib_regional'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_public_contrib_regional',
+    'label' => 'Regional',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collection_project_phase-field_total_cost'.
+  $field_instances['field_collection_item-field_collection_project_phase-field_total_cost'] = array(
+    'bundle' => 'field_collection_project_phase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_total_cost',
+    'label' => 'Total project cost (phase)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_short_story-field_area'.
   $field_instances['node-gp_short_story-field_area'] = array(
     'bundle' => 'gp_short_story',
@@ -22,7 +561,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -74,6 +613,51 @@ function farnet_gp_short_story_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-gp_short_story-field_collection_project_phase'.
+  $field_instances['node-gp_short_story-field_collection_project_phase'] = array(
+    'bundle' => 'gp_short_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_collection_project_phase',
+    'label' => 'Project Phase(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 4,
     ),
   );
 
@@ -149,8 +733,8 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => ' ',
         ),
-        'type' => 'number_float',
-        'weight' => 8,
+        'type' => 'number_decimal',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -176,7 +760,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 6,
     ),
   );
 
@@ -431,7 +1015,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 24,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -481,8 +1065,8 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => ' ',
         ),
-        'type' => 'number_float',
-        'weight' => 9,
+        'type' => 'number_decimal',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -508,7 +1092,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 7,
     ),
   );
 
@@ -598,8 +1182,8 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => ' ',
         ),
-        'type' => 'number_float',
-        'weight' => 10,
+        'type' => 'number_decimal',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -625,7 +1209,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 14,
+      'weight' => 8,
     ),
   );
 
@@ -906,7 +1490,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 26,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -931,7 +1515,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'weight' => 10,
     ),
   );
 
@@ -947,7 +1531,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -972,7 +1556,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'weight' => 9,
     ),
   );
 
@@ -988,7 +1572,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 22,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1069,7 +1653,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 21,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1134,12 +1718,12 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-gp_short_story-field_total_project_cost'.
-  $field_instances['node-gp_short_story-field_total_project_cost'] = array(
+  // Exported field_instance: 'node-gp_short_story-field_total_cost'.
+  $field_instances['node-gp_short_story-field_total_cost'] = array(
     'bundle' => 'gp_short_story',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1154,8 +1738,8 @@ function farnet_gp_short_story_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => ' ',
         ),
-        'type' => 'number_float',
-        'weight' => 7,
+        'type' => 'number_decimal',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1165,7 +1749,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_total_project_cost',
+    'field_name' => 'field_total_cost',
     'label' => 'Total project cost',
     'required' => 1,
     'settings' => array(
@@ -1181,7 +1765,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 10,
+      'weight' => 5,
     ),
   );
 
@@ -1197,7 +1781,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 27,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1222,7 +1806,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 16,
+      'weight' => 11,
     ),
   );
 
@@ -1295,7 +1879,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1339,24 +1923,38 @@ function farnet_gp_short_story_field_default_field_instances() {
   t('Body');
   t('Country');
   t('Display Channels');
+  t('EARDF');
+  t('EMFF');
+  t('ERDF');
+  t('ESF');
   t('EU contribution');
+  t('EU contribution (phase)');
   t('Flag');
   t('Gallery');
   t('Keywords');
+  t('Local');
+  t('National');
   t('Organisation');
+  t('Other EU funding');
   t('Other public contribution');
+  t('Other public contribution (phase)');
+  t('Phase');
   t('Picture');
   t('Private contribution');
+  t('Private contribution (phase)');
+  t('Project Phase(s)');
   t('Publication abstract');
   t('Publication date');
   t('Quote Author');
   t('Quote Text');
   t('Region');
+  t('Regional');
   t('Sea Basins');
   t('Theme');
   t('Timeframe date');
   t('Title');
   t('Total project cost');
+  t('Total project cost (phase)');
   t('Type of area');
   t('Website');
 
