@@ -35,8 +35,8 @@ Feature: Article content type
     When I visit "node/add/farnet-article"
     Then I should see the heading "Create Article"
     When I fill in "title" with "Behat Article Test #1"
-    And I fill in "Body" with "Lorem ipsum dolor sit amet body."
-    And I fill in "Abstract" with "Lorem ipsum dolor sit amet abstract."
+    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
     And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I should see "Page" in the "div.form-item-field-page-und" element
     And I should see "Country" in the "div.form-item-field-term-country-und" element
