@@ -319,7 +319,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -419,7 +419,7 @@ function farnet_gp_short_story_field_group_info() {
       'label' => 'Publication',
       'instance_settings' => array(
         'id' => 'group_short_story_publication',
-        'classes' => 'group_short_story_publication field-group-tab',
+        'classes' => 'group_short_story_publication field-group-tab no-menu-content',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -532,7 +532,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_term_theme',
@@ -542,7 +542,7 @@ function farnet_gp_short_story_field_group_info() {
       'label' => 'Taxonomy',
       'instance_settings' => array(
         'id' => 'group_short_story_taxonomy',
-        'classes' => 'group_short_story_taxonomy field-group-tab',
+        'classes' => 'group_short_story_taxonomy field-group-tab no-menu-content',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',

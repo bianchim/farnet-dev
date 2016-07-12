@@ -16,8 +16,8 @@ function farnet_taxonomy_type_organisations() {
       'description' => 'description',
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Managing Authorities FR'),
-        'it' => t('Managing Authorities IT'),
+        'fr' => 'Managing Authorities FR',
+        'it' => 'Managing Authorities IT',
       ),
     ),
     'Organisation2' => (object) array(
@@ -26,8 +26,8 @@ function farnet_taxonomy_type_organisations() {
       'description' => 'description',
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Intermediate Bodies FR'),
-        'it' => t('Intermediate Bodies IT'),
+        'fr' => 'Intermediate Bodies FR',
+        'it' => 'Intermediate Bodies IT',
       ),
     ),
     'Organisation3' => (object) array(
@@ -35,8 +35,8 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'FSU',
       'language' => 'en',
       'translation' => array(
-        'fr' => t('FARNET Support Unit FR'),
-        'it' => t('FARNET Support Unit IT'),
+        'fr' => 'FARNET Support Unit FR',
+        'it' => 'FARNET Support Unit IT',
       ),
     ),
     'Organisation4' => (object) array(
@@ -44,8 +44,8 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'DG MARE',
       'language' => 'en',
       'translation' => array(
-        'fr' => t('DG MARE FR'),
-        'it' => t('DG MARE IT'),
+        'fr' => 'DG MARE FR',
+        'it' => 'DG MARE IT',
       ),
     ),
     'Organisation5' => (object) array(
@@ -53,8 +53,8 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'EC',
       'language' => 'en',
       'translation' => array(
-        'fr' => t('European Commission FR'),
-        'it' => t('European Commission IT'),
+        'fr' => 'European Commission FR',
+        'it' => 'European Commission IT',
       ),
     ),
     'Organisation6' => (object) array(
@@ -62,8 +62,8 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'FLAG',
       'language' => 'en',
       'translation' => array(
-        'fr' => t('FARNET Local Action Group FR'),
-        'it' => t('FARNET Local Action Group IT'),
+        'fr' => 'FARNET Local Action Group FR',
+        'it' => 'FARNET Local Action Group IT',
       ),
     ),
   );
