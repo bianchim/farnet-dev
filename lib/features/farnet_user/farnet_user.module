@@ -7,7 +7,7 @@
 
 include_once 'farnet_user.features.inc';
 
-$autoload = DRUPAL_ROOT . '/' . conf_path() .'/vendor/autoload.php';
+$autoload = DRUPAL_ROOT . '/' . conf_path() . '/vendor/autoload.php';
 if (!file_exists($autoload)) {
   $autoload = DRUPAL_ROOT . '/sites/all/vendor/autoload.php';
 }
