@@ -36,7 +36,6 @@ Feature: Factsheet Flag content type
     And I should see the error message "Priority field is required."
     And I should see the error message "Email field is required."
     And I should see the error message "Aquaculture field is required."
-    And I should see the error message "Coastal or inland field is required."
     And I should see the error message "Description field is required."
     And I should see the error message "EMFF (a) field is required."
     And I should see the error message "% of environmental actors field is required."
@@ -100,7 +99,6 @@ Feature: Factsheet Flag content type
       | field_ff_population	          | 12500                                  |
       | field_ff_population_density	  | 12.5                                   |
       | field_ff_surface_area	      | 1000                                   |
-      | field_ff_coastal_inland	      | Inland                                 |
       | field_ff_protected_areas	  | Lorem ipsum protected areas            |
       | field_ff_emff                 | 1100                                   |
       | field_ff_ms_co_financing      | 5000                                   |
@@ -132,6 +130,8 @@ Feature: Factsheet Flag content type
     # | field_ff_multi_funding        | 1                                      |
       | field_ff_summary              | Lorem ipsum summary                    |
       | field_ff_thematic_text        | Lorem ipsum thematic                   |
+      | field_sea_basins              | Atlantic                               |
+      | field_type_of_area            | Coastal                                |
 
     Then I should see the heading "Behat Factsheet Flag Test #2"
     And I click "New draft"
