@@ -188,4 +188,55 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       'input[name="' . $field . '"][type="hidden"]')->setValue($fid);
   }
 
+  /**
+   * Creates content of type news, provided in the form:
+   * | title     | My node        |
+   * | Field One | My field value |
+   * | author    | Joe Editor     |
+   * | status    | 1              |
+   * | ...       | ...            |
+   *
+   * @Given I am viewing a farnet news:
+   */
+  public function assertViewingNode(TableNode $fields) {
+    $node = (object) array(
+      'type' => 'nexteuropa_news',
+    );
+
+    foreach ($fields->getRowsHash() as $field => $value) {
+      $node->{$field} = $value;
+    }
+
+    // $saved = $this->nodeCreate($node);
+
+    foreach ($node as $field => $value) {
+      $field_info = field_info_field($field);
+      if (!is_null($field_info)) {
+        // Manage fields with summary.
+        if ($field_info['type'] == 'text_with_summary') {
+          $node->$field = [LANGUAGE_NONE=> [0 => ['value' => $value]]];
+        }
+
+        // Manage taxonomy terms.
+        if ($field_info['type'] == 'taxonomy_term_reference') {
+          $term = taxonomy_get_term_by_name($value);
+
+          if (empty($term)) {
+            throw new Exception("No term '$value' exists.");
+          }
+
+          $term = reset($term);
+          $node->$field = [LANGUAGE_NONE => [0 => ['tid' => $term->tid]]];
+        }
+      }
+    }
+
+    $saved = node_submit($node);
+    node_save($saved);
+    $this->nodes[] = $saved;
+
+    // Set internal browser on the node.
+    $this->getSession()->visit($this->locatePath('/node/' . $saved->nid));
+  }
+
 }
