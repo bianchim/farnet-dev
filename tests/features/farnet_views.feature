@@ -6,14 +6,14 @@ Feature: Check Views
   @api
   Scenario: Create news and check it in view News
     Given I am logged in as a user with the "administrator" role
-    When I am viewing an "nexteuropa_news" content:
+    When I am viewing a farnet news:
       | title                           | Behat News Test #1                   |
       | field_abstract                  | Lorem ipsum dolor sit amet abstract. |
       | field_ne_body                   | Lorem ipsum dolor sit amet body.     |
       | moderation state                | published                            |
       | workbench_moderation_state      | published                            |
       | status                          | 1                                    |
-      | field_term_publication_channels | Farnet News                          |
+      | field_term_publication_channels | News - FARNET                        |
       | field_publication_date          | 1465294233                           |
     Then I should see the heading "Behat News Test #1"
     And I should see "Lorem ipsum dolor sit amet abstract."
@@ -26,14 +26,14 @@ Feature: Check Views
   @api
   Scenario: Create news and check it in view FARNET news
     Given I am logged in as a user with the "administrator" role
-    When I am viewing an "nexteuropa_news" content:
+    When I am viewing a farnet news:
       | title                           | Behat News Test #2                   |
       | field_abstract                  | Lorem ipsum dolor sit amet abstract. |
       | field_ne_body                   | Lorem ipsum dolor sit amet body.     |
       | moderation state                | published                            |
       | workbench_moderation_state      | published                            |
       | status                          | 1                                    |
-      | field_term_publication_channels | Farnet News                          |
+      | field_term_publication_channels | News - FARNET                        |
       | field_publication_date          | 1465294233                           |
     Then I should see the heading "Behat News Test #2"
     And I should see "Lorem ipsum dolor sit amet abstract."
@@ -46,14 +46,14 @@ Feature: Check Views
   @api
   Scenario: Create news and check it in view Other news
     Given I am logged in as a user with the "administrator" role
-    When I am viewing an "nexteuropa_news" content:
+    When I am viewing a farnet news:
       | title                           | Behat News Test #3                   |
       | field_abstract                  | Lorem ipsum dolor sit amet abstract. |
       | field_ne_body                   | Lorem ipsum dolor sit amet body.     |
       | moderation state                | published                            |
       | workbench_moderation_state      | published                            |
       | status                          | 1                                    |
-      | field_term_publication_channels | Other News                           |
+      | field_term_publication_channels | News - Other                         |
       | field_publication_date          | 1465294233                           |
     Then I should see the heading "Behat News Test #3"
     And I should see "Lorem ipsum dolor sit amet abstract."
