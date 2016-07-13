@@ -7,7 +7,12 @@
 
 include_once 'farnet_user.features.inc';
 
-require_once DRUPAL_ROOT . '/sites/all/vendor/autoload.php';
+$autoload = DRUPAL_ROOT . '/' . conf_path() . '/vendor/autoload.php';
+if (!file_exists($autoload)) {
+  $autoload = DRUPAL_ROOT . '/sites/all/vendor/autoload.php';
+}
+
+require_once $autoload;
 include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
 
 use libphonenumber\NumberParseException;
