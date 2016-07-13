@@ -35,9 +35,9 @@ Feature: Organisation content type
   Scenario: Edit the content
     Given I am logged in as a user with the "administrator" role
     And I am viewing an "organisation" content:
-      | title              | test organisation |
+      | title                        | test organisation |
       | field_term_type_organisation | DG MARE           |
-      | status             | 1                 |
+      | status                       | 1                 |
     When I click "New draft"
     And I fill in "title_field[en][0][value]" with "Edited organisation"
     And I press the "Save" button
@@ -47,9 +47,9 @@ Feature: Organisation content type
   Scenario: Delete the content
     Given I am logged in as a user with the "administrator" role
     And I am viewing an "organisation" content:
-      | title              | test organisation |
+      | title                        | test organisation |
       | field_term_type_organisation | DG MARE           |
-      | status             | 1                 |
+      | status                       | 1                 |
     When I click "New draft"
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test organisation?"
