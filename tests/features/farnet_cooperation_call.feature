@@ -25,7 +25,7 @@ Feature: Cooperation Cooperation call content type
   @api
   Scenario: Create the content
     Given I am logged in as a user with the "administrator" role
-    And I visit "node/add/cooperation-call_en"
+    And I visit "node/add/cooperation-call"
     And I fill in "title_field[und][0][value]" with "test Cooperation Call"    
     And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
     And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
