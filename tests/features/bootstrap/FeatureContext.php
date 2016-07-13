@@ -189,12 +189,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   }
 
   /**
-   * Creates content of type news, provided in the form:
-   * | title     | My node        |
-   * | Field One | My field value |
-   * | author    | Joe Editor     |
-   * | status    | 1              |
-   * | ...       | ...            |
+   * Creates content of type news, provided in the form.
    *
    * @Given I am viewing a farnet news:
    */
@@ -208,13 +203,12 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     }
 
     // $saved = $this->nodeCreate($node);
-
     foreach ($node as $field => $value) {
       $field_info = field_info_field($field);
       if (!is_null($field_info)) {
         // Manage fields with summary.
         if ($field_info['type'] == 'text_with_summary') {
-          $node->$field = [LANGUAGE_NONE=> [0 => ['value' => $value]]];
+          $node->$field = [LANGUAGE_NONE => [0 => ['value' => $value]]];
         }
 
         // Manage taxonomy terms.
