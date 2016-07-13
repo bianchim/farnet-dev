@@ -1,7 +1,7 @@
 Feature: Factsheet GP Short Story content type
   In order to manage gp_short_story on the website
   As an authorised user
-  I want to be able to create, edit and delete publications
+  I want to be able to create, edit and delete short stories
 
   @api
   Scenario: Access to gp short story create form
@@ -58,7 +58,7 @@ Feature: Factsheet GP Short Story content type
       | field_private_contribution      | 42                    |
       | status                          | 1                     |
     When I click "New draft"
-    And I fill in "edit-title-field-en-0-value" with "Edited gp short story"
+    And I fill in "title_field[en][0][value]" with "Edited gp short story"
     And I press the "Save" button
     Then I should see the heading "Edited gp short story"
 
