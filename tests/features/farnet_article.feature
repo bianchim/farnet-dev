@@ -34,9 +34,9 @@ Feature: Article content type
     Given I am logged in as a user with the "administrator" role
     When I visit "node/add/farnet-article"
     Then I should see the heading "Create Article"
-    When I fill in "title" with "Behat Article Test #1"
-    And I fill in "Body" with "Lorem ipsum dolor sit amet body."
-    And I fill in "Abstract" with "Lorem ipsum dolor sit amet abstract."
+    When I fill in "title_field[und][0][value]" with "Behat Article Test #1"
+    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
     And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I should see "Page" in the "div.form-item-field-page-und" element
     And I should see "Country" in the "div.form-item-field-term-country-und" element
@@ -63,8 +63,8 @@ Feature: Article content type
       | field_term_theme            | Diversification                       |
       | field_publication_date      | 1465294233                            |
     Then I should see the heading "Behat Article Test #2"
-    And I click "Edit"
-    And I fill in "title" with "Behat Article Test #2.1"
+    And I click "New draft"
+    And I fill in "title_field[en][0][value]" with "Behat Article Test #2.1"
     And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I press the "Save" button
     And I should see the success message "Article Behat Article Test #2.1 has been updated."
@@ -83,7 +83,7 @@ Feature: Article content type
       | field_term_theme            | Diversification                           |
       | field_publication_date      | 1465294233                                |
     Then I should see the heading "Behat Article Test #3"
-    When I click "Edit"
+    When I click "New draft"
     And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I press "Delete"
     Then I should see the heading "Are you sure you want to delete Behat Article Test #3?"
