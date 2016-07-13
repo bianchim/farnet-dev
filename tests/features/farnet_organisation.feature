@@ -1,7 +1,7 @@
 Feature: Organisation content type
   In order to manage organisations on the website
   As an authorised user
-  I want to be able to create, edit and delete publications
+  I want to be able to create, edit and delete organisations
 
   @api
   Scenario: Access to Organisation create form
@@ -26,7 +26,7 @@ Feature: Organisation content type
   Scenario: Create the content
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/organisation"
-    And I fill in "edit-title-field-und-0-value" with "test organisation"
+    And I fill in "title_field[und][0][value]" with "test organisation"
     And select "DG MARE" from "field_term_type_organisation[und]"
     When I press the "Save" button
     Then I should see the heading "test organisation"
@@ -39,7 +39,7 @@ Feature: Organisation content type
       | field_term_type_organisation | DG MARE           |
       | status             | 1                 |
     When I click "New draft"
-    And I fill in "edit-title-field-en-0-value" with "Edited organisation"
+    And I fill in "title_field[en][0][value]" with "Edited organisation"
     And I press the "Save" button
     Then I should see the heading "Edited organisation"
 
