@@ -78,6 +78,196 @@ function farnet_gp_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_eu_contribution|field_collection_item|field_collection_project_phase|default';
+  $field_group->group_name = 'group_eu_contribution';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_collection_project_phase';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_phase';
+  $field_group->data = array(
+    'label' => 'Eu Contribution',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_eu_contribution_eardf',
+      1 => 'field_eu_contribution_emff',
+      2 => 'field_eu_contribution_erdf',
+      3 => 'field_eu_contribution_esf',
+      4 => 'field_eu_contribution_oeu',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-eu-contribution field-group-fieldset',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_eu_contribution|field_collection_item|field_collection_project_phase|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_eu_contribution|field_collection_item|field_collection_project_phase|form';
+  $field_group->group_name = 'group_eu_contribution';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_collection_project_phase';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_phase';
+  $field_group->data = array(
+    'label' => 'Eu Contribution',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_eu_contribution_emff',
+      1 => 'field_eu_contribution_esf',
+      2 => 'field_eu_contribution_erdf',
+      3 => 'field_eu_contribution_eardf',
+      4 => 'field_eu_contribution_oeu',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Eu Contribution',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => 'group-eu-contribution',
+        'classes' => 'group-eu-contribution field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $field_groups['group_eu_contribution|field_collection_item|field_collection_project_phase|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_other_public_contribution|field_collection_item|field_collection_project_phase|default';
+  $field_group->group_name = 'group_other_public_contribution';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_collection_project_phase';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_phase';
+  $field_group->data = array(
+    'label' => 'Other public contribution',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_public_contrib_local',
+      1 => 'field_public_contrib_national',
+      2 => 'field_public_contrib_regional',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-other-public-contribution field-group-fieldset',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_other_public_contribution|field_collection_item|field_collection_project_phase|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_other_public_contribution|field_collection_item|field_collection_project_phase|form';
+  $field_group->group_name = 'group_other_public_contribution';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_collection_project_phase';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_phase';
+  $field_group->data = array(
+    'label' => 'Other public contribution',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_public_contrib_national',
+      1 => 'field_public_contrib_regional',
+      2 => 'field_public_contrib_local',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Other public contribution',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => 'group-other-public-contribution',
+        'classes' => 'group-other-public-contribution field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $field_groups['group_other_public_contribution|field_collection_item|field_collection_project_phase|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_phase|field_collection_item|field_collection_project_phase|default';
+  $field_group->group_name = 'group_phase';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_collection_project_phase';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Phase',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_eu_contribution',
+      1 => 'field_other_public_contribution',
+      2 => 'field_private_contribution',
+      3 => 'field_total_cost',
+      4 => 'group_eu_contribution',
+      5 => 'group_other_public_contribution',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-phase field-group-fieldset',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_phase|field_collection_item|field_collection_project_phase|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_phase|field_collection_item|field_collection_project_phase|form';
+  $field_group->group_name = 'group_phase';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_collection_project_phase';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Phase',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_total_cost',
+      1 => 'field_eu_contribution',
+      2 => 'field_private_contribution',
+      3 => 'field_other_public_contribution',
+      4 => 'group_eu_contribution',
+      5 => 'group_other_public_contribution',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Phase',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => 'group-phase',
+        'classes' => 'group-phase field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $field_groups['group_phase|field_collection_item|field_collection_project_phase|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_short_story_content|node|gp_short_story|default';
   $field_group->group_name = 'group_short_story_content';
   $field_group->entity_type = 'node';
@@ -156,10 +346,11 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Funding',
     'weight' => '3',
     'children' => array(
-      0 => 'field_eu_contribution',
-      1 => 'field_other_public_contribution',
-      2 => 'field_private_contribution',
-      3 => 'field_total_project_cost',
+      0 => 'field_collection_project_phase',
+      1 => 'field_eu_contribution',
+      2 => 'field_other_public_contribution',
+      3 => 'field_private_contribution',
+      4 => 'field_total_cost',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -189,12 +380,13 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Funding',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_eu_contribution',
       1 => 'field_other_public_contribution',
       2 => 'field_private_contribution',
-      3 => 'field_total_project_cost',
+      3 => 'field_total_cost',
+      4 => 'field_collection_project_phase',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -280,7 +472,10 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Metadata',
     'weight' => '9',
     'children' => array(
-      0 => 'language',
+      0 => 'metatags',
+      1 => 'path',
+      2 => 'xmlsitemap',
+      3 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -401,7 +596,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Quote',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_quote_author',
       1 => 'field_quote_text',
@@ -431,8 +626,10 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '6',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_term_theme',
+      0 => 'field_sea_basins',
+      1 => 'field_tags',
+      2 => 'field_term_theme',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -464,9 +661,9 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '6',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_term_theme',
-      2 => 'field_sea_basins',
+      0 => 'field_sea_basins',
+      1 => 'field_tags',
+      2 => 'field_term_theme',
       3 => 'field_type_of_area',
     ),
     'format_type' => 'tab',
@@ -524,7 +721,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_dates_start_end',
     ),
@@ -543,9 +740,12 @@ function farnet_gp_short_story_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Eu Contribution');
   t('Funding');
   t('Media');
   t('Metadata');
+  t('Other public contribution');
+  t('Phase');
   t('Project information');
   t('Publication');
   t('Quote');
