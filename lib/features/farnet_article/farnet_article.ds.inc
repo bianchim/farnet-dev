@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_article.ds.inc

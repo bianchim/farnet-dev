@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_article.strongarm.inc
@@ -103,19 +102,19 @@ function farnet_article_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '9',
         ),
         'title' => array(
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '5',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '4',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
