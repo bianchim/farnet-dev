@@ -16,10 +16,11 @@ use Drupal\DrupalExtension\Context\DrupalContext;
 class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
 
   /**
-   * @var array
    * Keep track of created field collections.
+   *
+   * @var array
    */
-  private $field_collections = [];
+  private $fieldCollections = [];
 
   /**
    * Create a field collection for future use in the tests.
@@ -39,7 +40,7 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
    */
   public function attachFieldCollection($label, $entity_type, $node_label, TableNode $fieldTable) {
     // Get the target node.
-    $efq = new EntityFieldQuery;
+    $efq = new EntityFieldQuery();
     $result = $efq->entityCondition('entity_type', $entity_type)
       ->propertyCondition('status', NODE_PUBLISHED)
       ->propertyCondition('title', $node_label, '=')
@@ -49,7 +50,7 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
 
     // Check that the result is a test created entity.
     $saved = [];
-    foreach($this->nodes as $node) {
+    foreach ($this->nodes as $node) {
       $saved[$node->nid] = $node->nid;
     }
 
@@ -65,8 +66,7 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
   }
 
   /**
-   * Attach a field collection to an entity.
-   * Use the context and driver logic to fill fields like a normal node.
+   * Attach a field collection to another field collection.
    *
    * @param string $label
    *   Name of the field collection.
@@ -82,16 +82,16 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
   public function attachSubFieldCollection($label, $target_fc, TableNode $fieldTable) {
     $entity_type = 'field_collection_item';
 
-    // Get the last field collection with the name
-    $efq = new EntityFieldQuery;
+    // Get the last field collection with the name.
+    $efq = new EntityFieldQuery();
     $result = $efq->entityCondition('entity_type', $entity_type)
       ->propertyCondition('field_name', $target_fc, '=')
       ->addMetaData('account', user_load(1))
       ->execute();
     $result = array_keys($result[$entity_type]);
 
-    // check that it is a test created field collection
-    $saved = array_keys($this->field_collections);
+    // Check that it is a test created field collection.
+    $saved = array_keys($this->fieldCollections);
     $result = array_intersect($saved, $result);
 
     if (empty($result)) {
@@ -104,12 +104,13 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
 
   /**
    * Create field collection entity.
+   *
    * Use the context and driver logic to fill fields like a normal node.
    *
-   * @param $label
-   *   Name of the field collection
-   * @param $target
-   *   Target node where we attach the field collection
+   * @param string $label
+   *   Name of the field collection.
+   * @param string $target
+   *   Target node where we attach the field collection.
    * @param TableNode $fieldTable
    *   Data table of the field collection.
    */
@@ -153,6 +154,7 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
     $fc_node = entity_create('field_collection_item', (array) $fc_node);
     $fc_node->setHostEntity($entity_type, $target);
     $fc_node->save();
-    $this->field_collections[$fc_node->item_id] = $fc_node;
+    $this->fieldCollections[$fc_node->item_id] = $fc_node;
   }
+
 }
