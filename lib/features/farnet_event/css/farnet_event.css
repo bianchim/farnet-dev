@@ -5,12 +5,17 @@
 
 /* Change the cursor to indicate a link */
 .view-display-id-calendar_block .fc-event {
+  height: 8px !important;
   cursor: pointer !important;
 }
 
 /* Show the tooltip */
 .view-display-id-calendar_block .fc-event-inner {
   overflow: visible;
+}
+
+.view-display-id-calendar_block .fc-event:hover {
+  z-index:10;
 }
 
 /* Display the tooltip */
@@ -25,7 +30,9 @@
   min-width: 100px;
   min-height: 20px;
   position: relative;
-  background-color: #36c;
+  background-color: #555555 !important;
+  border-color: #555555 !important;
+  z-index: 10;
 }
 
 .view-display-id-calendar_block .fc-event-time {
@@ -48,5 +55,5 @@
   margin-left: -5px;
   border-width: 7px;
   border-style: solid;
-  border-color: transparent transparent #36c transparent;
+  border-color: transparent transparent #555555 transparent;
 }
