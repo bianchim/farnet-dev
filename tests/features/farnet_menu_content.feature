@@ -8,7 +8,7 @@ Feature: Test the presence of the content menu
     And "factsheet_flag" content:
       | title | status |
       | Flag  | 1      |
-    And "oraganisation" content:
+    And "organisation" content:
       | title        | status |
       | Organisation | 1      |
     And "nexteuropa_mediagallery" content:
@@ -40,7 +40,7 @@ Feature: Test the presence of the content menu
   @api
   Scenario: I check the GP Method menu
     Given I am logged in as a user with the "administrator" role
-    And "oraganisation" content:
+    And "organisation" content:
       | title        | status |
       | Organisation | 1      |
     And "nexteuropa_mediagallery" content:
@@ -71,7 +71,7 @@ Feature: Test the presence of the content menu
   @api
   Scenario: I check the GP Short Story menu
     Given I am logged in as a user with the "administrator" role
-    And "oraganisation" content:
+    And "organisation" content:
       | title        | status |
       | Organisation | 1      |
     And "nexteuropa_mediagallery" content:

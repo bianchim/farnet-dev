@@ -8,7 +8,7 @@
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Mink\Exception\ExpectationException;
-use Drupal\DrupalExtension\Context\DrupalContext;
+use Drupal\nexteuropa\Context\DrupalContext;
 
 /**
  * Manage DrupalContext overrides.
@@ -67,6 +67,8 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
 
   /**
    * Attach a field collection to another field collection.
+   *
+   * Currently broken, field collection search for a non existent bundle.
    *
    * @param string $label
    *   Name of the field collection.
