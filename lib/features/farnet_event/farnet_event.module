@@ -18,6 +18,16 @@ function farnet_event_field_group_info_alter($groups) {
     $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_registration';
     $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_twitter_hashtag';
   }
+  if (!empty($groups['group_event_taxonomy|node|nexteuropa_event|form'])) {
+    if (!empty($groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'])) {
+      $metadataGroup = $groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'];
+      $fieldTagsKey = array_search('field_tags', $metadataGroup);
+      if (FALSE !== $fieldTagsKey) {
+        unset($metadataGroup[$fieldTagsKey]);
+      }
+    }
+    $groups['group_event_taxonomy|node|nexteuropa_event|form']->data['children'][] = 'field_tags';
+  }
 }
 
 /**

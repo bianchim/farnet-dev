@@ -11,42 +11,6 @@
 function farnet_event_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_agenda_sessions'.
-  $field_bases['field_agenda_sessions'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_agenda_sessions',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'event_session' => 'event_session',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
   // Exported field_base: 'field_contact_position'.
   $field_bases['field_contact_position'] = array(
     'active' => 1,
@@ -199,6 +163,29 @@ function farnet_event_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_sessions'.
+  $field_bases['field_sessions'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sessions',
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
+  );
+
   // Exported field_base: 'field_speakers'.
   $field_bases['field_speakers'] = array(
     'active' => 1,
@@ -207,32 +194,49 @@ function farnet_event_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_speakers',
     'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
+      'revision_id' => array(
+        0 => 'revision_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'entityreference',
+    'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'event_speaker' => 'event_speaker',
-        ),
-      ),
-      'target_type' => 'node',
+      'hide_blank_items' => 1,
+      'path' => '',
     ),
     'translatable' => 0,
-    'type' => 'entityreference',
+    'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_start'.
+  $field_bases['field_start'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_start',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'entity_translation_sync' => FALSE,
+      'granularity' => array(
+        'day' => 'day',
+        'hour' => 'hour',
+        'minute' => 'minute',
+        'month' => 'month',
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'timezone_db' => 'UTC',
+      'todate' => 'required',
+      'tz_handling' => 'site',
+    ),
+    'translatable' => 0,
+    'type' => 'datetime',
   );
 
   // Exported field_base: 'field_twitter_hashtag'.

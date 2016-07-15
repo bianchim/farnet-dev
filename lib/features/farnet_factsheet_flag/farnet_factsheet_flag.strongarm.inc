@@ -92,6 +92,27 @@ function farnet_factsheet_flag_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
+      'newsletter_news_list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_plain' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_html' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_textalt' => array(
+        'custom_settings' => FALSE,
+      ),
+      'media_gallery_page' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -109,6 +130,9 @@ function farnet_factsheet_flag_strongarm() {
         ),
         'language' => array(
           'weight' => '10',
+        ),
+        'metatags' => array(
+          'weight' => '40',
         ),
       ),
       'display' => array(),

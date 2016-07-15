@@ -134,18 +134,25 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
 
     $data = file_get_contents($path);
 
-    // Set the property if not already done.
+    // Set the properties if not already done.
     if (!isset($this->uploadedFiles)) {
       $this->uploadedFiles = [];
     }
 
+    if (!isset($this->lastFile)) {
+      $this->lastFile = NULL;
+    }
+
     $file = file_save_data($data, 'public://' . $filename);
-    $this->uploadedFiles[] = $file;
+    $this->uploadedFiles[$file->fid] = $file;
+    $this->lastFile = $file->fid;
 
     // Remove the extension from  the file name.
     $filename = pathinfo($filename, PATHINFO_FILENAME);
     $file->filename = $filename;
     file_save($file);
+
+    return $file->fid;
   }
 
   /**
@@ -160,6 +167,70 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
         file_delete($file);
       }
     }
+  }
+
+  /**
+   * Fill a media browser widget with a file.
+   *
+   * @param string $field
+   *   Name property of the input to fill.
+   * @param string $fileType
+   *   Type of drupal media to upload (Image/document/Video/Audio).
+   * @param string $fileName
+   *   Name of the file.
+   *
+   * @Given I fill a media browser :field with a/an :fileType named :fileName
+   */
+  public function iFillMediaBrowser($field, $fileType, $fileName) {
+    $fid = $this->uploadFile($fileType, $fileName);
+
+    $this->getSession()->getPage()->find('css',
+      'input[name="' . $field . '"][type="hidden"]')->setValue($fid);
+  }
+
+  /**
+   * Creates content of type news, provided in the form.
+   *
+   * @Given I am viewing a farnet news:
+   */
+  public function assertViewingNode(TableNode $fields) {
+    $node = (object) array(
+      'type' => 'nexteuropa_news',
+    );
+
+    foreach ($fields->getRowsHash() as $field => $value) {
+      $node->{$field} = $value;
+    }
+
+    // $saved = $this->nodeCreate($node);
+    foreach ($node as $field => $value) {
+      $field_info = field_info_field($field);
+      if (!is_null($field_info)) {
+        // Manage fields with summary.
+        if ($field_info['type'] == 'text_with_summary') {
+          $node->$field = [LANGUAGE_NONE => [0 => ['value' => $value]]];
+        }
+
+        // Manage taxonomy terms.
+        if ($field_info['type'] == 'taxonomy_term_reference') {
+          $term = taxonomy_get_term_by_name($value);
+
+          if (empty($term)) {
+            throw new Exception("No term '$value' exists.");
+          }
+
+          $term = reset($term);
+          $node->$field = [LANGUAGE_NONE => [0 => ['tid' => $term->tid]]];
+        }
+      }
+    }
+
+    $saved = node_submit($node);
+    node_save($saved);
+    $this->nodes[] = $saved;
+
+    // Set internal browser on the node.
+    $this->getSession()->visit($this->locatePath('/node/' . $saved->nid));
   }
 
 }
