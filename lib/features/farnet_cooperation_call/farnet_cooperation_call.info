@@ -35,7 +35,6 @@ features[field_instance][] = node-cooperation_call-field_organisation
 features[field_instance][] = node-cooperation_call-field_picture
 features[field_instance][] = node-cooperation_call-field_sea_basins
 features[field_instance][] = node-cooperation_call-field_term_theme
-features[field_instance][] = node-cooperation_call-group_content_access
 features[field_instance][] = node-cooperation_call-og_group_ref
 features[field_instance][] = node-cooperation_call-title_field
 features[node][] = cooperation_call
