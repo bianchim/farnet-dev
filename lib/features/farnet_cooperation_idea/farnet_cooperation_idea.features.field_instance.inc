@@ -446,46 +446,6 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_idea-group_content_access'.
-  $field_instances['node-cooperation_idea-group_content_access'] = array(
-    'bundle' => 'cooperation_idea',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'group_content_access',
-    'label' => 'Group content visibility',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-cooperation_idea-og_group_ref'.
   $field_instances['node-cooperation_idea-og_group_ref'] = array(
     'bundle' => 'cooperation_idea',
@@ -598,7 +558,6 @@ function farnet_cooperation_idea_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Flag');
-  t('Group content visibility');
   t('Groups audience');
   t('Organisation');
   t('Picture');
