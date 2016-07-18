@@ -607,46 +607,6 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ms_fiche-group_content_access'.
-  $field_instances['node-ms_fiche-group_content_access'] = array(
-    'bundle' => 'ms_fiche',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'group_content_access',
-    'label' => 'Group content visibility',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-ms_fiche-og_group_ref'.
   $field_instances['node-ms_fiche-og_group_ref'] = array(
     'bundle' => 'ms_fiche',
@@ -759,7 +719,6 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Financing and co-financing of your cooperation project');
-  t('Group content visibility');
   t('Groups audience');
   t('Level at which cooperation is handled');
   t('Number of FLAGs');
