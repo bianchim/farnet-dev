@@ -120,3 +120,10 @@ function farnet_event_strongarm_alter(&$variables) {
     $variables['pathauto_node_nexteuropa_event_pattern']->value = "news-events/events/[node:field-event-type:name]/[node:source:title]";
   }
 }
+
+/**
+ * Implements hook_init().
+ */
+function farnet_event_init() {
+  drupal_add_css(drupal_get_path('module', 'farnet_event') . '/css/farnet_event.css');
+}
