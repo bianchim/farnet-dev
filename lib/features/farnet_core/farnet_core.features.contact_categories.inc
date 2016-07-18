@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_core.features.contact_categories.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_user.views_default.inc
@@ -11,11 +12,11 @@ function farnet_user_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'farnet_manage_users';
+  $view->name = 'farnet_view_manage_users';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'users';
-  $view->human_name = 'Manage Users';
+  $view->human_name = 'Farnet Manage Users Views';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -165,7 +166,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_lastname']['id'] = 'field_lastname';
   $handler->display->display_options['fields']['field_lastname']['table'] = 'field_data_field_lastname';
   $handler->display->display_options['fields']['field_lastname']['field'] = 'field_lastname';
-  /* Field: User: Organisation */
+  /* Field: Field: Organisation */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
@@ -261,8 +262,8 @@ function farnet_user_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'ec_world_countries';
-  /* Filter criterion: Content: Name (title_field) */
+  $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'countries';
+  /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
@@ -452,7 +453,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_user_country']['id'] = 'field_user_country';
   $handler->display->display_options['fields']['field_user_country']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['fields']['field_user_country']['field'] = 'field_user_country';
-  /* Field: User: Organisation */
+  /* Field: Field: Organisation */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
@@ -498,12 +499,30 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
-  /* Field: Field: Social media */
-  $handler->display->display_options['fields']['field_social_media']['id'] = 'field_social_media';
-  $handler->display->display_options['fields']['field_social_media']['table'] = 'field_data_field_social_media';
-  $handler->display->display_options['fields']['field_social_media']['field'] = 'field_social_media';
-  $handler->display->display_options['fields']['field_social_media']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_social_media']['delta_offset'] = '0';
+  /* Field: User: Twitter */
+  $handler->display->display_options['fields']['field_user_twitter']['id'] = 'field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['table'] = 'field_data_field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['field'] = 'field_user_twitter';
+  /* Field: User: Facebook */
+  $handler->display->display_options['fields']['field_user_facebook']['id'] = 'field_user_facebook';
+  $handler->display->display_options['fields']['field_user_facebook']['table'] = 'field_data_field_user_facebook';
+  $handler->display->display_options['fields']['field_user_facebook']['field'] = 'field_user_facebook';
+  /* Field: User: Pinterest */
+  $handler->display->display_options['fields']['field_user_pinterest']['id'] = 'field_user_pinterest';
+  $handler->display->display_options['fields']['field_user_pinterest']['table'] = 'field_data_field_user_pinterest';
+  $handler->display->display_options['fields']['field_user_pinterest']['field'] = 'field_user_pinterest';
+  /* Field: User: LinkedIn */
+  $handler->display->display_options['fields']['field_user_linkedin']['id'] = 'field_user_linkedin';
+  $handler->display->display_options['fields']['field_user_linkedin']['table'] = 'field_data_field_user_linkedin';
+  $handler->display->display_options['fields']['field_user_linkedin']['field'] = 'field_user_linkedin';
+  /* Field: User: Vimeo */
+  $handler->display->display_options['fields']['field_user_vimeo']['id'] = 'field_user_vimeo';
+  $handler->display->display_options['fields']['field_user_vimeo']['table'] = 'field_data_field_user_vimeo';
+  $handler->display->display_options['fields']['field_user_vimeo']['field'] = 'field_user_vimeo';
+  /* Field: User: Youtube */
+  $handler->display->display_options['fields']['field_user_youtube']['id'] = 'field_user_youtube';
+  $handler->display->display_options['fields']['field_user_youtube']['table'] = 'field_data_field_user_youtube';
+  $handler->display->display_options['fields']['field_user_youtube']['field'] = 'field_user_youtube';
   /* Field: User: Keep my email private */
   $handler->display->display_options['fields']['field_keep_my_email_private']['id'] = 'field_keep_my_email_private';
   $handler->display->display_options['fields']['field_keep_my_email_private']['table'] = 'field_data_field_keep_my_email_private';
@@ -573,7 +592,7 @@ function farnet_user_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
-  $export['farnet_manage_users'] = $view;
+  $export['farnet_view_manage_users'] = $view;
 
   return $export;
 }

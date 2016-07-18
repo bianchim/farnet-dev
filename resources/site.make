@@ -14,6 +14,9 @@ projects[media_oembed][version] = "2.6"
 projects[social_media_links][subdir] = "contrib"
 projects[social_media_links][version] = "1.5"
 
+projects[field_collection][subdir] = "contrib"
+projects[field_collection][version] = "1.0-beta11"
+
 projects[field_collection_table][subdir] = "contrib"
 projects[field_collection_table][version] = "1.0-beta3"
 
@@ -21,6 +24,10 @@ projects[field_collection_table][version] = "1.0-beta3"
 ; Libraries
 ; =========
 
+; libphonenumber-for-php
+libraries[libphonenumber-for-php][destination] = "libraries"
+libraries[libphonenumber-for-php][download][type] = "git"
+libraries[libphonenumber-for-php][download][url] = "https://github.com/giggsey/libphonenumber-for-php.git"
 
 ; ======
 ; Themes

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of Type news used to generate taxonomy Type News on Farnet.
@@ -13,16 +14,16 @@ function farnet_taxonomy_type_news() {
       'name' => t('FARNET news'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('FARNET news'),
-        'it' => t('FARNET news IT'),
+        'fr' => 'FARNET news',
+        'it' => 'FARNET news IT',
       ),
     ),
     'News2' => (object) array(
       'name' => t('Other news'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Autres news'),
-        'it' => t('Other news IT'),
+        'fr' => 'Autres news',
+        'it' => 'Other news IT',
       ),
     ),
   );

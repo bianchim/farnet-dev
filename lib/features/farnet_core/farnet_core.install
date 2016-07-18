@@ -27,6 +27,12 @@ function farnet_core_enable() {
   $ft = file_type_load("document");
   $ft->mimetypes[] = "text/oembed";
   file_type_save($ft);
+
+
+  // Set the print links configuration to avoid duplicate with custom block.
+  variable_set('print_pdf_link_pos', array());
+  variable_set('print_mail_link_pos', array());
+  variable_set('print_html_link_pos', array('block' => 'block'));
 }
 
 /**

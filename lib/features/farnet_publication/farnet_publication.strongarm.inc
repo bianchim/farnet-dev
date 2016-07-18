@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_publication.strongarm.inc
@@ -159,6 +160,13 @@ function farnet_publication_strongarm() {
   $strongarm->name = 'node_submitted_publication';
   $strongarm->value = 1;
   $export['node_submitted_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_publication_pattern';
+  $strongarm->value = 'library/[node:field-type-of-publication:name]/[node:source:title]';
+  $export['pathauto_node_publication_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

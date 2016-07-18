@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet Event feature.
@@ -16,6 +17,16 @@ function farnet_event_field_group_info_alter($groups) {
     $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_website';
     $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_registration';
     $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_twitter_hashtag';
+  }
+  if (!empty($groups['group_event_taxonomy|node|nexteuropa_event|form'])) {
+    if (!empty($groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'])) {
+      $metadataGroup = $groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'];
+      $fieldTagsKey = array_search('field_tags', $metadataGroup);
+      if (FALSE !== $fieldTagsKey) {
+        unset($metadataGroup[$fieldTagsKey]);
+      }
+    }
+    $groups['group_event_taxonomy|node|nexteuropa_event|form']->data['children'][] = 'field_tags';
   }
 }
 
@@ -66,6 +77,10 @@ function farnet_event_field_default_field_instances_alter(&$fields) {
  * Implements hook_views_default_views_alter().
  */
 function farnet_event_views_default_views_alter(&$views) {
+  if (isset($views['calendar'])) {
+    $views['calendar']->display['page']->display_options['path'] = 'news-events/calendar';
+  }
+
   if (isset($views['events'])) {
     $term = taxonomy_get_term_by_name('Transnational seminars');
     if ((isset($term)) && (!empty($term))) {
@@ -95,4 +110,20 @@ function farnet_event_views_default_views_alter(&$views) {
       $views['events']->display['page_conferences']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
     }
   }
+}
+
+/**
+ * Implements hook_COMPONENT_alter().
+ */
+function farnet_event_strongarm_alter(&$variables) {
+  if (isset($variables['pathauto_node_nexteuropa_event_pattern'])) {
+    $variables['pathauto_node_nexteuropa_event_pattern']->value = "news-events/events/[node:field-event-type:name]/[node:source:title]";
+  }
+}
+
+/**
+ * Implements hook_init().
+ */
+function farnet_event_init() {
+  drupal_add_css(drupal_get_path('module', 'farnet_event') . '/css/farnet_event.css');
 }

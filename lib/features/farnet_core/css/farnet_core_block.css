@@ -1,0 +1,28 @@
+#form-pdfprint-lang .form-item {
+  margin: 0;
+}
+
+#form-pdfprint-lang .print_pdf_icon {
+  float: left;
+  margin-right: 15px;
+}
+
+#form-pdfprint-lang .print_pdf_text {
+  float: left;
+}
+
+#form-pdfprint-lang #select-pdfprint-lang {
+  width: 200px;
+  float: left;
+  margin-right: 25px;
+}
+
+#form-pdfprint-lang #submit-pdfprint-lang {
+  width: 175px;
+  float: left;
+}
+
+#form-pdfprint-lang #edit-fields-pdf-print {
+  float: right;
+  width: 400px;
+}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * List of categories FAQ used to generate taxonomy FAQ categories on Farnet.
@@ -13,48 +14,48 @@ function farnet_taxonomy_faq_categories() {
       'name' => t('CLLD overview'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('CLLD overview FR'),
-        'it' => t('CLLD overview IT'),
+        'fr' => 'CLLD overview FR',
+        'it' => 'CLLD overview IT',
       ),
     ),
     'FAQCategory2' => (object) array(
       'name' => t('Eligibility'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Eligibility FR'),
-        'it' => t('Eligibility IT'),
+        'fr' => 'Eligibility FR',
+        'it' => 'Eligibility IT',
       ),
     ),
     'FAQCategory3' => (object) array(
       'name' => t('Finance and administration'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Finance and administration FR'),
-        'it' => t('Finance and administration IT'),
+        'fr' => 'Finance and administration FR',
+        'it' => 'Finance and administration IT',
       ),
     ),
     'FAQCategory4' => (object) array(
       'name' => t('Setting up FLAGs'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Setting up FLAGs FR'),
-        'it' => t('Setting up FLAGs IT'),
+        'fr' => 'Setting up FLAGs FR',
+        'it' => 'Setting up FLAGs IT',
       ),
     ),
     'FAQCategory5' => (object) array(
       'name' => t('Cooperation'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('Cooperation FR'),
-        'it' => t('Cooperation IT'),
+        'fr' => 'Cooperation FR',
+        'it' => 'Cooperation IT',
       ),
     ),
     'FAQCategory6' => (object) array(
       'name' => t('myFARNET'),
       'language' => 'en',
       'translation' => array(
-        'fr' => t('myFARNET FR'),
-        'it' => t('myFARNET IT'),
+        'fr' => 'myFARNET FR',
+        'it' => 'myFARNET IT',
       ),
     ),
   );

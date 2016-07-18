@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_taxonomy.features.taxonomy.inc
@@ -9,6 +10,31 @@
  */
 function farnet_taxonomy_taxonomy_default_vocabularies() {
   return array(
+    'countries' => (object) array(
+      'name' => 'Countries',
+      'machine_name' => 'countries',
+      'description' => 'A list of the countries',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -1,
+      'language' => 'und',
+      'i18n_mode' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'farnet_languages_spoken' => (object) array(
       'name' => 'Farnet Languages spoken',
       'machine_name' => 'farnet_languages_spoken',
@@ -59,13 +85,63 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'farnet_sea_basins' => (object) array(
+      'name' => 'Farnet Sea Basins',
+      'machine_name' => 'farnet_sea_basins',
+      'description' => 'Taxonomy for the Sea Basins on Farnet',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => -5,
+      'language' => 'und',
+      'i18n_mode' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'farnet_theme' => (object) array(
-      'name' => 'Farnet Theme',
+      'name' => 'Themes',
       'machine_name' => 'farnet_theme',
       'description' => 'Taxonomy for the themes on Farnet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -10,
+      'language' => 'und',
+      'i18n_mode' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'farnet_type_of_area' => (object) array(
+      'name' => 'Farnet Type of Area',
+      'machine_name' => 'farnet_type_of_area',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
       'rdf_mapping' => array(

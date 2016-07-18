@@ -7,4 +7,5 @@ dependencies[] = rules
 features[features_api][] = api:2
 features[rules_config][] = rules_notification_first_login
 features[rules_config][] = rules_rules_notification_first_profile_completed
+features[rules_config][] = rules_send_email_when_user_add_a_new_organisation
 project path = sites/all/modules/features

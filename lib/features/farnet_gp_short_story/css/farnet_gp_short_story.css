@@ -1,0 +1,11 @@
+fieldset .group-phase {
+  /*background-color : red;*/
+}
+
+fieldset .group-eu-contribution, .group-other-public-contribution {
+  margin-left : 25px;
+}
+
+a, a:hover .fieldset-title {
+  font-size : 16px;
+}

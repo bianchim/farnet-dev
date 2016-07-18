@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_core.facetapi_defaults.inc

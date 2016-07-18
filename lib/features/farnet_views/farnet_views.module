@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet Views feature.
@@ -16,6 +17,7 @@ function farnet_views_views_default_views_alter(&$views) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
       $views['farnet_view_news']->display['page_news_farnet']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_news']->display['default']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
     }
 
     $term = taxonomy_get_term_by_name('Other News');
@@ -23,56 +25,7 @@ function farnet_views_views_default_views_alter(&$views) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
       $views['farnet_view_news']->display['page_news_other']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
-    }
-  }
-
-  if (isset($views['farnet_themes_view'])) {
-    $term = taxonomy_get_term_by_name('Adding value, employment, innovation');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['farnet_themes_view']->display['page_employment_innovation']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-      $views['farnet_themes_view']->display['page_themes']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-    }
-
-    $term = taxonomy_get_term_by_name('Diversification');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['farnet_themes_view']->display['page_diversification']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-      $views['farnet_themes_view']->display['page_themes']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-    }
-
-    $term = taxonomy_get_term_by_name('Environment');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['farnet_themes_view']->display['page_environment']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-      $views['farnet_themes_view']->display['page_themes']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-    }
-
-    $term = taxonomy_get_term_by_name('Social well-being, cultural heritage');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['farnet_themes_view']->display['page_social_culture']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-      $views['farnet_themes_view']->display['page_themes']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-    }
-
-    $term = taxonomy_get_term_by_name('Governance and management');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['farnet_themes_view']->display['page_governance_management']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-      $views['farnet_themes_view']->display['page_themes']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-    }
-
-    $term = taxonomy_get_term_by_name('Other');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['farnet_themes_view']->display['page_other']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
-      $views['farnet_themes_view']->display['page_themes']->display_options['filters']['field_term_theme_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_news']->display['default']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
     }
   }
 }

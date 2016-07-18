@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_user.field_group.inc
@@ -30,6 +31,7 @@ function farnet_user_field_group_info() {
       4 => 'field_telephone',
       5 => 'field_website',
       6 => 'field_zip_code',
+      7 => 'field_skype_id',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -60,9 +62,8 @@ function farnet_user_field_group_info() {
       1 => 'field_lastname',
       2 => 'field_gender',
       3 => 'field_preferred_email',
-      4 => 'field_user_country',
-      5 => 'account',
-      6 => 'picture',
+      4 => 'account',
+      5 => 'picture',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -121,6 +122,7 @@ function farnet_user_field_group_info() {
       0 => 'field_job_title',
       1 => 'field_organisation',
       2 => 'field_organisation_other',
+      3 => 'field_user_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -145,17 +147,18 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Other',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_creator',
       1 => 'tmgmt_translation_skills',
       2 => 'og_user_node',
       3 => 'field_profile_completed',
-      4 => 'timezone',
-      5 => 'xmlsitemap',
-      6 => 'contact',
-      7 => 'locale',
-      8 => 'wysiwyg',
+      4 => 'metatags',
+      5 => 'timezone',
+      6 => 'xmlsitemap',
+      7 => 'contact',
+      8 => 'locale',
+      9 => 'wysiwyg',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -209,7 +212,13 @@ function farnet_user_field_group_info() {
     'label' => 'Social Media',
     'weight' => '3',
     'children' => array(
-      0 => 'field_social_media',
+      0 => 'field_user_facebook',
+      1 => 'field_user_linkedin',
+      2 => 'field_user_pinterest',
+      3 => 'field_user_slideshare',
+      4 => 'field_user_twitter',
+      5 => 'field_user_vimeo',
+      6 => 'field_user_youtube',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet News feature.
@@ -62,5 +63,14 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
       $fields['node-nexteuropa_news-field_image']['display']['newsletter_news_list']['type'] = "hidden";
       $fields['node-nexteuropa_news-field_image']['display']['newsletter_news_list']['weight'] = 0;
     }
+  }
+}
+
+/**
+ * Implements hook_COMPONENT_alter().
+ */
+function farnet_news_strongarm_alter(&$variables) {
+  if (isset($variables['pathauto_node_nexteuropa_news_pattern'])) {
+    $variables['pathauto_node_nexteuropa_news_pattern']->value = "news-events/news/[node:source:title]";
   }
 }

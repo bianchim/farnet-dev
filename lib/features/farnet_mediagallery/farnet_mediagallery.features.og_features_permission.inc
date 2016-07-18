@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_mediagallery.features.og_features_permission.inc
