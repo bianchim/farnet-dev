@@ -23,7 +23,7 @@ function farnet_cooperation_ms_fiche_ctools_plugin_api($module = NULL, $api = NU
 function farnet_cooperation_ms_fiche_node_info() {
   $items = array(
     'ms_fiche' => array(
-      'name' => t('MS Fiche'),
+      'name' => t('Cooperation MS Fiche'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
