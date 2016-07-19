@@ -35,7 +35,13 @@
     <rule ref="Drupal.NamingConventions.ValidVariableName">
         <exclude-pattern>src/Phing</exclude-pattern>
     </rule>
-
+	
+    <!-- Wysiwyg profiles exported in Features do not have a trailing period. -->
+    <!-- Remove this once https://www.drupal.org/node/2724173 is in. -->
+    <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
+        <exclude-pattern>*.features.wysiwyg.inc</exclude-pattern>
+    </rule>
+	
     <!-- Farnet Exclude Files -->
     <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
     <exclude-pattern>*.farnet_core.install</exclude-pattern>
@@ -48,4 +54,5 @@
     <rule ref="Drupal.Commenting.InlineComment">
         <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
     </rule>
+
 </ruleset>
