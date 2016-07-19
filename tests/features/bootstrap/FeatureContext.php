@@ -178,7 +178,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    *   Name property of the input to fill.
    * @param string $file_type
    *   Type of drupal media to upload (Image/document/Video/Audio).
-   // * @param string $file_name
+   * @param string $file_name
    *   Name of the file.
    *
    * @Given I fill a media browser :field with a/an :fileType named :fileName
