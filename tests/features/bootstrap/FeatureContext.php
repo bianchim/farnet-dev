@@ -176,15 +176,15 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    *
    * @param string $field
    *   Name property of the input to fill.
-   * @param string $fileType
+   * @param string $file_type
    *   Type of drupal media to upload (Image/document/Video/Audio).
-   * @param string $fileName
+   // * @param string $file_name
    *   Name of the file.
    *
    * @Given I fill a media browser :field with a/an :fileType named :fileName
    */
-  public function iFillMediaBrowser($field, $fileType, $fileName) {
-    $fid = $this->uploadFile($fileType, $fileName);
+  public function iFillMediaBrowser($field, $file_type, $file_name) {
+    $fid = $this->uploadFile($file_type, $file_name);
 
     $this->getSession()->getPage()->find('css',
       'input[name="' . $field . '"][type="hidden"]')->setValue($fid);
@@ -234,7 +234,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     // Set internal browser on the node.
     $this->getSession()->visit($this->locatePath('/node/' . $saved->nid));
   }
-  
+
   /**
    * Prepare for PHP errors log.
    *
