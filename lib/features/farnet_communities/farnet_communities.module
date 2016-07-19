@@ -67,4 +67,6 @@ function farnet_communities_node_access($node, $op, $account) {
  */
 function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
   $form['group_access']['und']['#disabled'] = TRUE;
+  $form['group_access']['und']['#type'] = 'hidden';
+  $form['group_access']['und']['#value'] = '0';
 }
