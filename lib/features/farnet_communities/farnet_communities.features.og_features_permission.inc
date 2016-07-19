@@ -1,0 +1,486 @@
+<?php
+
+/**
+ * @file
+ * farnet_communities.features.og_features_permission.inc
+ */
+
+/**
+ * Implements hook_og_features_default_permissions().
+ */
+function farnet_communities_og_features_default_permissions() {
+  $permissions = array();
+
+  // Exported og permission: 'node:community_public:View all unpublished content'
+  $permissions['node:community_public:View all unpublished content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:access group broken links report'
+  $permissions['node:community_public:access group broken links report'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:add user'
+  $permissions['node:community_public:add user'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:administer group'
+  $permissions['node:community_public:administer group'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:approve and deny subscription'
+  $permissions['node:community_public:approve and deny subscription'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:create cooperation_call content'
+  $permissions['node:community_public:create cooperation_call content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:create cooperation_idea content'
+  $permissions['node:community_public:create cooperation_idea content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:create factsheet_country content'
+  $permissions['node:community_public:create factsheet_country content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create factsheet_flag content'
+  $permissions['node:community_public:create factsheet_flag content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create farnet_article content'
+  $permissions['node:community_public:create farnet_article content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create gp_method content'
+  $permissions['node:community_public:create gp_method content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create ms_fiche content'
+  $permissions['node:community_public:create ms_fiche content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:create nexteuropa_event content'
+  $permissions['node:community_public:create nexteuropa_event content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create nexteuropa_faq content'
+  $permissions['node:community_public:create nexteuropa_faq content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create nexteuropa_mediagallery content'
+  $permissions['node:community_public:create nexteuropa_mediagallery content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create nexteuropa_news content'
+  $permissions['node:community_public:create nexteuropa_news content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:create page content'
+  $permissions['node:community_public:create page content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any cooperation_call content'
+  $permissions['node:community_public:delete any cooperation_call content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:delete any cooperation_idea content'
+  $permissions['node:community_public:delete any cooperation_idea content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:delete any factsheet_country content'
+  $permissions['node:community_public:delete any factsheet_country content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any factsheet_flag content'
+  $permissions['node:community_public:delete any factsheet_flag content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any farnet_article content'
+  $permissions['node:community_public:delete any farnet_article content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any gp_method content'
+  $permissions['node:community_public:delete any gp_method content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any ms_fiche content'
+  $permissions['node:community_public:delete any ms_fiche content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:delete any nexteuropa_event content'
+  $permissions['node:community_public:delete any nexteuropa_event content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any nexteuropa_faq content'
+  $permissions['node:community_public:delete any nexteuropa_faq content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any nexteuropa_mediagallery content'
+  $permissions['node:community_public:delete any nexteuropa_mediagallery content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any nexteuropa_news content'
+  $permissions['node:community_public:delete any nexteuropa_news content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any page content'
+  $permissions['node:community_public:delete any page content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own cooperation_call content'
+  $permissions['node:community_public:delete own cooperation_call content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:delete own cooperation_idea content'
+  $permissions['node:community_public:delete own cooperation_idea content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:delete own factsheet_country content'
+  $permissions['node:community_public:delete own factsheet_country content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own factsheet_flag content'
+  $permissions['node:community_public:delete own factsheet_flag content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own farnet_article content'
+  $permissions['node:community_public:delete own farnet_article content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own gp_method content'
+  $permissions['node:community_public:delete own gp_method content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own ms_fiche content'
+  $permissions['node:community_public:delete own ms_fiche content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:delete own nexteuropa_event content'
+  $permissions['node:community_public:delete own nexteuropa_event content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own nexteuropa_faq content'
+  $permissions['node:community_public:delete own nexteuropa_faq content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own nexteuropa_mediagallery content'
+  $permissions['node:community_public:delete own nexteuropa_mediagallery content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own nexteuropa_news content'
+  $permissions['node:community_public:delete own nexteuropa_news content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own page content'
+  $permissions['node:community_public:delete own page content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:manage members'
+  $permissions['node:community_public:manage members'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:manage organic group translation jobs'
+  $permissions['node:community_public:manage organic group translation jobs'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:manage permissions'
+  $permissions['node:community_public:manage permissions'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:manage roles'
+  $permissions['node:community_public:manage roles'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from draft to needs_review'
+  $permissions['node:community_public:moderate content from draft to needs_review'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from needs_review to draft'
+  $permissions['node:community_public:moderate content from needs_review to draft'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from needs_review to published'
+  $permissions['node:community_public:moderate content from needs_review to published'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from needs_review to validated'
+  $permissions['node:community_public:moderate content from needs_review to validated'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from published to archived'
+  $permissions['node:community_public:moderate content from published to archived'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from published to draft'
+  $permissions['node:community_public:moderate content from published to draft'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from published to expired'
+  $permissions['node:community_public:moderate content from published to expired'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from published to needs_review'
+  $permissions['node:community_public:moderate content from published to needs_review'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:moderate content from validated to published'
+  $permissions['node:community_public:moderate content from validated to published'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:subscribe'
+  $permissions['node:community_public:subscribe'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:subscribe without approval'
+  $permissions['node:community_public:subscribe without approval'] = array(
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:unsubscribe'
+  $permissions['node:community_public:unsubscribe'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update any cooperation_call content'
+  $permissions['node:community_public:update any cooperation_call content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update any cooperation_idea content'
+  $permissions['node:community_public:update any cooperation_idea content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update any factsheet_country content'
+  $permissions['node:community_public:update any factsheet_country content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any factsheet_flag content'
+  $permissions['node:community_public:update any factsheet_flag content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any farnet_article content'
+  $permissions['node:community_public:update any farnet_article content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any gp_method content'
+  $permissions['node:community_public:update any gp_method content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any ms_fiche content'
+  $permissions['node:community_public:update any ms_fiche content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update any nexteuropa_event content'
+  $permissions['node:community_public:update any nexteuropa_event content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any nexteuropa_faq content'
+  $permissions['node:community_public:update any nexteuropa_faq content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any nexteuropa_mediagallery content'
+  $permissions['node:community_public:update any nexteuropa_mediagallery content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any nexteuropa_news content'
+  $permissions['node:community_public:update any nexteuropa_news content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any page content'
+  $permissions['node:community_public:update any page content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update group'
+  $permissions['node:community_public:update group'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update own cooperation_call content'
+  $permissions['node:community_public:update own cooperation_call content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update own cooperation_idea content'
+  $permissions['node:community_public:update own cooperation_idea content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update own factsheet_country content'
+  $permissions['node:community_public:update own factsheet_country content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own factsheet_flag content'
+  $permissions['node:community_public:update own factsheet_flag content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own farnet_article content'
+  $permissions['node:community_public:update own farnet_article content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own gp_method content'
+  $permissions['node:community_public:update own gp_method content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own ms_fiche content'
+  $permissions['node:community_public:update own ms_fiche content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update own nexteuropa_event content'
+  $permissions['node:community_public:update own nexteuropa_event content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own nexteuropa_faq content'
+  $permissions['node:community_public:update own nexteuropa_faq content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own nexteuropa_mediagallery content'
+  $permissions['node:community_public:update own nexteuropa_mediagallery content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own nexteuropa_news content'
+  $permissions['node:community_public:update own nexteuropa_news content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update own page content'
+  $permissions['node:community_public:update own page content'] = array(
+    'roles' => array(),
+  );
+
+  return $permissions;
+}
