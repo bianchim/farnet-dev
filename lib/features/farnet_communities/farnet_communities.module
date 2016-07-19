@@ -61,3 +61,10 @@ function farnet_communities_node_access($node, $op, $account) {
     }
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
+  $form['group_access']['und']['#disabled'] = TRUE;
+}
