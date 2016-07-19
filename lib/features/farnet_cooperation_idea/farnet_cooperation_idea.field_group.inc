@@ -52,7 +52,7 @@ function farnet_cooperation_idea_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'FLAG',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_flag',
     ),
@@ -81,7 +81,9 @@ function farnet_cooperation_idea_field_group_info() {
     'label' => 'Metadata',
     'weight' => '1',
     'children' => array(
-      0 => 'language',
+      0 => 'group_content_access',
+      1 => 'og_group_ref',
+      2 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -106,7 +108,7 @@ function farnet_cooperation_idea_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisation',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_organisation',
     ),
@@ -133,7 +135,7 @@ function farnet_cooperation_idea_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_term_theme',

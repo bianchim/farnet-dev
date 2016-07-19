@@ -51,7 +51,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Financing and co-financing of your cooperation project',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_financing_and_co_financing',
     ),
@@ -106,7 +106,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Level at which cooperation is handled',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_level_at_which_cooperation',
     ),
@@ -135,7 +135,9 @@ function farnet_cooperation_ms_fiche_field_group_info() {
     'label' => 'Metadata',
     'weight' => '1',
     'children' => array(
-      0 => 'language',
+      0 => 'og_group_ref',
+      1 => 'group_content_access',
+      2 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -187,7 +189,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_term_theme',

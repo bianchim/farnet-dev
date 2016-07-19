@@ -24,11 +24,11 @@ function farnet_cooperation_call_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'title_field',
-      1 => 'field_ne_body',
-      2 => 'field_farnet_abstract',
+      0 => 'field_call',
+      1 => 'field_farnet_abstract',
+      2 => 'field_ne_body',
       3 => 'field_picture',
-      4 => 'field_call',
+      4 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -55,7 +55,9 @@ function farnet_cooperation_call_field_group_info() {
     'label' => 'Metadata',
     'weight' => '1',
     'children' => array(
-      0 => 'language',
+      0 => 'og_group_ref',
+      1 => 'group_content_access',
+      2 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -80,7 +82,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisation',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_organisation',
     ),
@@ -107,7 +109,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_term_theme',
