@@ -22,7 +22,7 @@ function farnet_faq_field_group_info_alter($groups) {
 function farnet_faq_form_nexteuropa_faq_node_form_alter(&$form, &$form_state, $form_id) {
   $path = drupal_get_path('module', 'farnet_faq');
   $form['#attached']['js'] = drupal_add_js(
-    $path . '/farnet_faq.js',
+    $path . '/js/farnet_faq.js',
     array(
       'type' => 'file',
       'scope' => 'footer',
@@ -321,7 +321,7 @@ function farnet_faq_views_default_views_alter(&$views) {
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['table'] = 'field_data_field_ne_faq_categories';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['field'] = 'field_ne_faq_categories_tid';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['value'] = array();
-    $term = taxonomy_get_term_by_name('Eligibility');
+    $term = taxonomy_get_term_by_name('Finance and administration');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
@@ -329,7 +329,7 @@ function farnet_faq_views_default_views_alter(&$views) {
     }
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
-    $handler->display->display_options['path'] = 'tools/faq/finance-dministration';
+    $handler->display->display_options['path'] = 'tools/faq/finance-administration';
     /*
     $term = taxonomy_get_term_by_name('Finance and administration');
     if ((isset($term)) && (!empty($term))) {
