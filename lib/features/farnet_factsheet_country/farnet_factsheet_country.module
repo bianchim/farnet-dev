@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet Factsheet Country feature.
@@ -48,7 +49,7 @@ function farnet_factsheet_country_form_validate($form, &$form_state) {
       form_set_error('field_key_documents', t('A key document must be linked with a label.'));
     }
 
-    if(!$has_document && $has_label) {
+    if (!$has_document && $has_label) {
       form_set_error('field_key_documents', t('Each key document must have a label.'));
     }
   }
