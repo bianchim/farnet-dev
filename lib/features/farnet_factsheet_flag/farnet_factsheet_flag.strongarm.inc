@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_factsheet_flag.strongarm.inc

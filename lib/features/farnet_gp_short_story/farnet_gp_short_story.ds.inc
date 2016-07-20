@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_gp_short_story.ds.inc
