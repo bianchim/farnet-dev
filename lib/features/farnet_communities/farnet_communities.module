@@ -75,7 +75,7 @@ function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
     $form['group_access']['und']['#type'] = 'hidden';
     $form['group_access']['und']['#value'] = '0';
   }
-  if ($form_id == 'community_private_node_form') {
+  if ($form_id == 'community_private_node_form' || $form_id == 'community_hidden_node_form') {
     $form['group_access']['und']['#disabled'] = TRUE;
     $form['group_access']['und']['#type'] = 'hidden';
     $form['group_access']['und']['#value'] = '1';
