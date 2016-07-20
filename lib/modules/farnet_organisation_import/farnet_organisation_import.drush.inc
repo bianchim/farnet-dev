@@ -6,7 +6,7 @@
  */
 
 /**
- * Implementation of hook_drush_command().
+ * Implements hook_drush_command().
  */
 function farnet_organisation_import_drush_command() {
   $items = array();
@@ -20,9 +20,8 @@ function farnet_organisation_import_drush_command() {
 }
 
 /**
- * Implementation of hook_drush_command().
+ * Implements hook_drush_command().
  */
-
 function farnet_organisation_import_drush_help($section) {
   switch ($section) {
     case 'drush:import-organisations':

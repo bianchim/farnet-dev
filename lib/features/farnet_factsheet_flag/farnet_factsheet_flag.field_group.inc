@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_factsheet_flag.field_group.inc
