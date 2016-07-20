@@ -80,6 +80,6 @@ Feature: FAQ content type
       | category                   | title                                           | view_title                       | url                             |
       | CLLD overview              | Behat FAQ Question - CLLD overview              | FAQ - CLLD overview              | tools/faq/clld-overview         |
       | Eligibility                | Behat FAQ Question - Eligibility                | FAQ - Eligibility                | tools/faq/eligibility           |
-      | Finance and administration | Behat FAQ Question - Finance and administration | FAQ - Finance and administration | tools/faq/finance-dministration |
+      | Finance and administration | Behat FAQ Question - Finance and administration | FAQ - Finance and administration | tools/faq/finance-administration |
       | Setting up FLAGs           | Behat FAQ Question - Setting up FLAGs           | FAQ - Setting up FLAGs           | tools/faq/flag-set-up           |
       | Cooperation                | Behat FAQ Question - Cooperation                | FAQ - Cooperation                | tools/faq/cooperation           |
