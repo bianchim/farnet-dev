@@ -3,6 +3,7 @@
  * @file
  * farnet_communities.strongarm.inc
  */
+
 /**
  * Implements hook_strongarm().
  */

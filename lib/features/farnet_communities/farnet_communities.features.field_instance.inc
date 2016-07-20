@@ -3,6 +3,7 @@
  * @file
  * farnet_communities.features.field_instance.inc
  */
+
 /**
  * Implements hook_field_default_field_instances().
  */
