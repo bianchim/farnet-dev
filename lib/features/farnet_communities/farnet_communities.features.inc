@@ -19,6 +19,22 @@ function farnet_communities_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function farnet_communities_node_info() {
   $items = array(
+    'community_hidden' => array(
+      'name' => t('Community hidden'),
+      'base' => 'node_content',
+      'description' => t('The communities and their posts are hidden to non-members. This is the native behaviour of an organic group with a visibility defined as "private".'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'community_private' => array(
+      'name' => t('Community private'),
+      'base' => 'node_content',
+      'description' => t('Non-members can see the private communities, but cannot read their posts. They need an approval from the group administrator to join the community and be able to read posts and add/edit/delete own posts and comments.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'community_public' => array(
       'name' => t('Community public'),
       'base' => 'node_content',
