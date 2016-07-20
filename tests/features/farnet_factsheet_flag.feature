@@ -61,17 +61,32 @@ Feature: Factsheet Flag content type
     And I should see the error message "Zip Code field is required."
 
   @api
-   Scenario: Create factsheet flag
+  Scenario: Create factsheet flag
     Given I am logged in as a user with the "administrator" role
     When I visit "node/add/factsheet-flag"
     Then I should see the heading "Create Factsheet Flag"
-    When I fill in "Name" with "Behat Factsheet Flag Test #1"
-    And I fill in "Body" with "Lorem ipsum dolor sit amet body."
-    And I fill in "Abstract" with "Lorem ipsum dolor sit amet abstract."
+    When I fill in "title_field[und][0][value]" with "Behat Factsheet Flag Test #1"
+    And I fill in "field_title_official[und][0][value]" with "Behat Factsheet Flag Test #1"
+    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
+    And I fill in "field_ff_code[und][0][value]" with "12345"
+    And I fill in "field_address_1[und][0][value]" with "address 1"
+    And I fill in "field_area[und][0][value]" with "Lux"
+    And I fill in "Country" with "Belgium"
+    #And I fill in "Region1 EN" with "Lux"
+    #And I fill in "Region1 EN" with "Lux"
+    And I fill in "field_city[und][0][value]" with "Luxembourg"
     And I should see "Country" in the "div.form-item-field-term-country-und" element
-    And I should see "Abstract" in the "div.form-item-field-publication-abstract-und-0-value" element
+    #And I should see "Abstract" in the "div.form-item-field-publication-abstract-und-0-value" element
     And I should see "Publication Channels" in the "div.form-item-field-term-publication-channels-und" element
     And I should see "Publication date" in the "div.field-name-field-publication-date" element
+    #And attach a "field_collection_strategy" field collection to a "node" named "Behat Factsheet Flag Test #1" with:
+    #  | field_list_objective   | Objective 1 |
+    #  | field_priority         | 5           |
+    #  | field_allocated_budget | 10000       |
+    #And I fill in "field_email[und][0][email]" with "jhon.doe@farnet.dev"
+    #And I fill in "field_website[und][0][title]" with "Test"
+    #And I fill in "field_website[und][0][url]" with "http://www.google.be"
     And I press the "Save" button
     # Then I should see the heading "Behat Factsheet Flag Test #1"
     # And I should see "Lorem ipsum dolor sit amet body."
@@ -106,14 +121,11 @@ Feature: Factsheet Flag content type
       | field_ff_number_staff         | 16                                     |
       | field_ff_flag_manager         | Jhon Doe                               |
       | field_ff_flag_president       | Jhon Doe                               |
-      | field_email                   | jhon.doe@farnet.dev                    |
       | field_telephone               | 0032011131453                          |
-      | field_website                 | http://www.google.be                   |
       | field_address_1               | address 1                              |
       | field_address_2               | address 2                              |
       | field_zip_code                | 7200                                   |
       | field_city                    | Luxembourg                             |
-    # | field_collection_budget       | 16                                     |
       | field_ff_fishing	          | 1                                      |
       | field_ff_aquaculture	      | 2                                      |
       | field_ff_processing	          | 3                                      |
@@ -127,16 +139,19 @@ Feature: Factsheet Flag content type
       | field_ff_environmental_actors | 16                                     |
       | field_ff_number_assembly      | 16                                     |
       | field_ff_number_decision      | 16                                     |
-    # | field_ff_multi_funding        | 1                                      |
       | field_ff_summary              | Lorem ipsum summary                    |
       | field_ff_thematic_text        | Lorem ipsum thematic                   |
       | field_sea_basins              | Atlantic                               |
       | field_type_of_area            | Coastal                                |
-
+    And fill in "field_email[und][0][email]" with "jhon.doe@farnet.dev"
+    #And I fill in "field_website[und][0][title]" with "Test"
+    #And I fill in "field_website[und][0][url]" with "http://www.google.be"
+    And attach a "field_collection_strategy" field collection to a "node" named "Behat Factsheet Flag Test #2" with:
+      | field_list_objective   | Objective 1 |
+      | field_priority         | 5           |
+      | field_allocated_budget | 10000       |
     Then I should see the heading "Behat Factsheet Flag Test #2"
     And I click "New draft"
-    And print current URL
-    And I fill in "Name" with "Edit Behat Factsheet Flag Test #2.1"
     And I press the "Save" button
     And print current URL
     # And I should see the heading "Behat Factsheet Flag Test #2.1"
@@ -163,7 +178,6 @@ Feature: Factsheet Flag content type
       | field_ff_population	          | 12500                                  |
       | field_ff_population_density	  | 12.5                                   |
       | field_ff_surface_area	      | 1000                                   |
-      | field_ff_coastal_inland	      | Inland                                 |
       | field_ff_protected_areas	  | Lorem ipsum protected areas            |
       | field_ff_emff                 | 1100                                   |
       | field_ff_ms_co_financing      | 5000                                   |
@@ -171,14 +185,11 @@ Feature: Factsheet Flag content type
       | field_ff_number_staff         | 16                                     |
       | field_ff_flag_manager         | Jhon Doe                               |
       | field_ff_flag_president       | Jhon Doe                               |
-      | field_email                   | jhon.doe@farnet.dev                    |
       | field_telephone               | 0032011131453                          |
-      | field_website                 | http://www.google.be                   |
       | field_address_1               | address 1                              |
       | field_address_2               | address 2                              |
       | field_zip_code                | 7200                                   |
       | field_city                    | Luxembourg                             |
-    # | field_collection_budget       | 16                                     |
       | field_ff_fishing	          | 1                                      |
       | field_ff_aquaculture	      | 2                                      |
       | field_ff_processing	          | 3                                      |
@@ -192,9 +203,17 @@ Feature: Factsheet Flag content type
       | field_ff_environmental_actors | 16                                     |
       | field_ff_number_assembly      | 16                                     |
       | field_ff_number_decision      | 16                                     |
-    # | field_ff_multi_funding        | 1                                      |
       | field_ff_summary              | Lorem ipsum summary                    |
       | field_ff_thematic_text        | Lorem ipsum thematic                   |
+      | field_sea_basins              | Atlantic                               |
+      | field_type_of_area            | Coastal                                |
+    #And I fill in "field_email[und][0][email]" with "jhon.doe@farnet.dev"
+    #And I fill in "field_website[und][0][title]" with "Test"
+    #And I fill in "field_website[und][0][url]" with "http://www.google.be"
+    And attach a "field_collection_strategy" field collection to a "node" named "Behat Factsheet Flag Test #3" with:
+      | field_list_objective   | Objective 1 |
+      | field_priority         | 5           |
+      | field_allocated_budget | 10000       |
     Then I should see the heading "Behat Factsheet Flag Test #3"
     When I click "New draft"
     And print current URL

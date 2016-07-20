@@ -42,9 +42,9 @@ Feature: Factsheet Country content type
     Given I am logged in as a user with the "administrator" role
     When I visit "node/add/factsheet-country"
     Then I should see the heading "Create Factsheet Country"
-    When I fill in "Name" with "Behat Factsheet Country Test #1"
-    And I fill in "Body" with "Lorem ipsum dolor sit amet body."
-    And I fill in "Abstract" with "Lorem ipsum dolor sit amet abstract."
+    When I fill in "title_field[und][0][value]" with "Behat Factsheet Country Test #1"
+    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
     # And I fill in "Managing Authority" with "Organisation1"
     And I fill in "Country" with "Belgium"
     And I fill in "CLLD Context" with "Lorem ipsum dolor sit amet context."

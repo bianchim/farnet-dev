@@ -7,7 +7,7 @@ Feature: Cooperation MS Fiche content type
   Scenario: Access to MS Fiche create form
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/ms-fiche"
-    Then I should see the text "Create MS Fiche"
+    Then I should see the text "Create Cooperation MS Fiche"
 
   @api
   Scenario: Access denied to create form without right
@@ -29,6 +29,7 @@ Feature: Cooperation MS Fiche content type
     And I fill in "title_field[und][0][value]" with "test MS Fiche"    
     And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
     And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
+    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     When I press the "Save" button
     Then I should see the heading "test MS Fiche"
 
@@ -40,6 +41,7 @@ Feature: Cooperation MS Fiche content type
       | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
+      | og_group_ref          | Global editorial team                |
     When I click "New draft"
     And I fill in "edit-title-field-en-0-value" with "Edited MS Fiche"
     And I press the "Save" button
@@ -53,6 +55,7 @@ Feature: Cooperation MS Fiche content type
       | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
+      | og_group_ref          | Global editorial team                |
     When I click "New draft"
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test MS Fiche?"
