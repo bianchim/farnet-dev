@@ -1,4 +1,4 @@
-name = Farnet communities
+me = Farnet communities
 description = Feature to manage Farnet organic groups (communities) and their contents, with different types of access rights
 core = 7.x
 package = Farnet

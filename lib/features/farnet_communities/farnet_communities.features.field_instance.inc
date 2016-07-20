@@ -1,16 +1,13 @@
 <?php
-
 /**
  * @file
  * farnet_communities.features.field_instance.inc
  */
-
 /**
  * Implements hook_field_default_field_instances().
  */
 function farnet_communities_field_default_field_instances() {
   $field_instances = array();
-
   // Exported field_instance: 'node-community_hidden-body'.
   $field_instances['node-community_hidden-body'] = array(
     'bundle' => 'community_hidden',
@@ -55,7 +52,6 @@ function farnet_communities_field_default_field_instances() {
       'weight' => 31,
     ),
   );
-
   // Exported field_instance: 'node-community_hidden-group_access'.
   $field_instances['node-community_hidden-group_access'] = array(
     'bundle' => 'community_hidden',
@@ -107,7 +103,6 @@ function farnet_communities_field_default_field_instances() {
     ),
     'widget_type' => 'options_select',
   );
-
   // Exported field_instance: 'node-community_hidden-group_group'.
   $field_instances['node-community_hidden-group_group'] = array(
     'bundle' => 'community_hidden',
@@ -166,7 +161,6 @@ function farnet_communities_field_default_field_instances() {
       'weight' => 0,
     ),
   );
-
   // Exported field_instance: 'node-community_private-body'.
   $field_instances['node-community_private-body'] = array(
     'bundle' => 'community_private',
@@ -211,7 +205,6 @@ function farnet_communities_field_default_field_instances() {
       'weight' => 31,
     ),
   );
-
   // Exported field_instance: 'node-community_private-group_access'.
   $field_instances['node-community_private-group_access'] = array(
     'bundle' => 'community_private',
@@ -263,7 +256,6 @@ function farnet_communities_field_default_field_instances() {
     ),
     'widget_type' => 'options_select',
   );
-
   // Exported field_instance: 'node-community_private-group_group'.
   $field_instances['node-community_private-group_group'] = array(
     'bundle' => 'community_private',
@@ -322,7 +314,6 @@ function farnet_communities_field_default_field_instances() {
       'weight' => 0,
     ),
   );
-
   // Exported field_instance: 'node-community_public-body'.
   $field_instances['node-community_public-body'] = array(
     'bundle' => 'community_public',
@@ -367,7 +358,6 @@ function farnet_communities_field_default_field_instances() {
       'weight' => 31,
     ),
   );
-
   // Exported field_instance: 'node-community_public-group_access'.
   $field_instances['node-community_public-group_access'] = array(
     'bundle' => 'community_public',
@@ -418,7 +408,6 @@ function farnet_communities_field_default_field_instances() {
     ),
     'widget_type' => 'options_select',
   );
-
   // Exported field_instance: 'node-community_public-group_group'.
   $field_instances['node-community_public-group_group'] = array(
     'bundle' => 'community_public',
@@ -477,13 +466,11 @@ function farnet_communities_field_default_field_instances() {
       'weight' => 0,
     ),
   );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Determine if this is an OG group.');
   t('Group');
   t('Group visibility');
-
   return $field_instances;
 }

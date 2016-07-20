@@ -1,10 +1,8 @@
 <?php
-
 /**
  * @file
  * farnet_communities.features.inc
  */
-
 /**
  * Implements hook_ctools_plugin_api().
  */
@@ -13,7 +11,6 @@ function farnet_communities_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
 }
-
 /**
  * Implements hook_node_info().
  */
