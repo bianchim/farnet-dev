@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet communities feature.
+ */
+
+include_once 'farnet_communities.features.inc';
+
+/**
+ * Implements hook_node_access_records().
+ */
+function farnet_communities_node_access_records($node) {
+  $grants = array();
+
+  if ($node->type == 'community_public') {
+    $grants[] = array(
+      'realm' => 'farnet_communities',
+      'gid' => 1,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+      'priority' => 1,
+    );
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_grants().
+ */
+function farnet_communities_node_grants($account, $op) {
+  if ($op != 'view') {
+    return;
+  }
+
+  $grants = array();
+
+  if ($account->uid == 0) {
+    $grants['farnet_communities'][] = 0;
+  }
+  else {
+    $grants['farnet_communities'][] = 1;
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function farnet_communities_node_access($node, $op, $account) {
+  if (is_object($node) && $node->type == 'community_public') {
+    if ($account->uid == 0) {
+      return NODE_ACCESS_DENY;
+    }
+    else {
+      return NODE_ACCESS_ALLOW;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
+  $form['group_access']['und']['#disabled'] = TRUE;
+  $form['group_access']['und']['#type'] = 'hidden';
+  $form['group_access']['und']['#value'] = '0';
+}
