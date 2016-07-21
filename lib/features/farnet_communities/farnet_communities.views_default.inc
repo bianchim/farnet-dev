@@ -11,7 +11,7 @@ function farnet_communities_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'og_groups';
+  $view->name = 'farnet_communities';
   $view->description = 'List of Farnet communities';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -73,7 +73,7 @@ function farnet_communities_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'community/farnet_communities';
-  $export['og_groups'] = $view;
+  $export['farnet_communities'] = $view;
 
   return $export;
 }
