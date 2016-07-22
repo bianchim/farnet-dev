@@ -143,7 +143,7 @@ Feature: Factsheet Flag content type
       | field_ff_thematic_text        | Lorem ipsum thematic                   |
       | field_sea_basins              | Atlantic                               |
       | field_type_of_area            | Coastal                                |
-    And fill in "field_email[und][0][email]" with "jhon.doe@farnet.dev"
+    #And fill in "field_email[und][0][email]" with "john.doe@farnet.dev"
     #And I fill in "field_website[und][0][title]" with "Test"
     #And I fill in "field_website[und][0][url]" with "http://www.google.be"
     And attach a "field_collection_strategy" field collection to a "node" named "Behat Factsheet Flag Test #2" with:
