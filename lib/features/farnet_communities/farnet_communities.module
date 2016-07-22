@@ -54,6 +54,7 @@ function farnet_communities_node_access($node, $op, $account) {
   $restrictedContentTypes[] = 'ms_fiche';
   $restrictedContentTypes[] = 'cooperation_call';
   $restrictedContentTypes[] = 'cooperation_idea';
+  $restrictedContentTypes[] = 'farnet_discussion';
   $restrictedContentTypes[] = 'nexteuropa_news';
   $restrictedContentTypes[] = 'nexteuropa_event';
   $restrictedContentTypes[] = 'community_public';
