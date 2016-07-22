@@ -287,4 +287,52 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     }
   }
 
+  /**
+   * @Given /^I am (?:a|an) :group_role of :group$/
+   * Source: http://www.grasmash.com/article/behat-steps-organic-groups
+   */
+  public function iAmAnOfGroup($group_role, $group) {
+    $this->addMembertoGroup($group_role, $group);
+    $this->getMainContext()->softReload();
+  }
+
+  /**
+   * Adds a member to an organic group with the specified role.
+   *
+   * @param string $group_role
+   *   The machine name of the group role.
+   *
+   * @param object $group
+   *   The group node.
+   *
+   * @param string $group_type
+   *   (optional) The group's entity type.
+   *
+   * @throws \Exception
+   */
+  public function addMembertoGroup($group_role, $group, $group_type = 'node') {
+    $user = $this->getMainContext()->user;
+    list($gid, $vid, $bundle) = entity_extract_ids($group_type, $group);
+
+    $membership = og_group($group_type, $gid, array(
+      "entity type" => 'user',
+      "entity" => $user,
+    ));
+
+    if (!$membership) {
+      throw new \Exception("The Organic Group membership could not be created.");
+    }
+
+    // Add role for membership.
+    $roles = og_roles($group_type, $group->type, $gid);
+    $rid = array_search($group_role, $roles);
+
+    if (!$rid) {
+      throw new \Exception("'$group_role' is not a valid group role.");
+    }
+
+    og_role_grant($group_type, $gid, $user->uid, $rid);
+
+  }
+
 }
