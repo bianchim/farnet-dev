@@ -50,17 +50,17 @@ function farnet_communities_node_grants($account, $op) {
  * Implements hook_node_access().
  */
 function farnet_communities_node_access($node, $op, $account) {
-  $restrictedContentTypes = array();
-  $restrictedContentTypes[] = 'ms_fiche';
-  $restrictedContentTypes[] = 'cooperation_call';
-  $restrictedContentTypes[] = 'cooperation_idea';
-  $restrictedContentTypes[] = 'farnet_discussion';
-  $restrictedContentTypes[] = 'nexteuropa_news';
-  $restrictedContentTypes[] = 'nexteuropa_event';
-  $restrictedContentTypes[] = 'community_public';
-  $restrictedContentTypes[] = 'community_private';
+  $restricted_content_types = array();
+  $restricted_content_types[] = 'ms_fiche';
+  $restricted_content_types[] = 'cooperation_call';
+  $restricted_content_types[] = 'cooperation_idea';
+  $restricted_content_types[] = 'farnet_discussion';
+  $restricted_content_types[] = 'nexteuropa_news';
+  $restricted_content_types[] = 'nexteuropa_event';
+  $restricted_content_types[] = 'community_public';
+  $restricted_content_types[] = 'community_private';
 
-  if (is_object($node) && in_array($node->type, $restrictedContentTypes)) {
+  if (is_object($node) && in_array($node->type, $restricted_content_types)) {
     if ($account->uid == 0) {
       return NODE_ACCESS_DENY;
     }
