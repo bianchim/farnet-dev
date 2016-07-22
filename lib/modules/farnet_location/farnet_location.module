@@ -63,6 +63,9 @@ function farnet_location_admin() {
  * Implements hook_form_FORM_ID_alter().
  */
 function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Use the title_field that should always be existing to determine language.
+  $lang = $form['title_field']['#language'];
+
   switch ($form_id) {
     case 'factsheet_flag_node_form':
       $form['field_region'][LANGUAGE_NONE][0]['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
@@ -72,9 +75,27 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
       $form['field_region']['#states']['enabled'] = [':input[name="field_term_country[und]"]' => ['empty' => FALSE]];
       $form['field_area']['#states']['enabled'] = [':input[name="field_term_country[und]"]' => ['empty' => FALSE]];
 
-      $form['#attached']['js'] = array(
-        drupal_get_path('module', 'farnet_location') . '/js/farnet_location.js',
-      );
+      // List the needed field ids for the JS.
+      // List the used fields.
+      $js_settings = [
+        'country' => '#edit-field-term-country-' . LANGUAGE_NONE,
+        'region' => '#edit-field-region-' . LANGUAGE_NONE . '-0-value',
+        'region_ac' => '#edit-field-region-' . LANGUAGE_NONE . '-0-value-autocomplete',
+        'area' => '#edit-field-area-' . LANGUAGE_NONE . '-0-value',
+        'area_ac' => '#edit-field-area-' . LANGUAGE_NONE . '-0-value-autocomplete',
+      ];
+
+      // Attach the javascript to the form.
+      $form['#attached']['js'] = [
+        [
+          'data' => ['farnet_location' => $js_settings],
+          'type' => 'setting',
+        ],
+        [
+          'data' => drupal_get_path('module', 'farnet_location') . '/js/farnet_location.js',
+          'type' => 'file',
+        ],
+      ];
       break;
   }
 }
@@ -122,7 +143,7 @@ function _farnet_location_autocomplete($country, $region, $search) {
 
   // Do the search.
   $params = [
-    'q' => check_plain($search),
+    'name_startsWith' => check_plain($search),
     'maxRows' => $maxrows,
     'username' => $username,
     'type' => 'json',
@@ -132,16 +153,16 @@ function _farnet_location_autocomplete($country, $region, $search) {
     'lang' => $language->language,
   ];
 
+  // Filter by region if available.
+  if ($region !== FALSE) {
+    $params['adminCode1'] = $region;
+  }
+
   $geolocs = drupal_http_request('http://api.geonames.org/search?' . http_build_query($params));
   $geolocs = drupal_json_decode($geolocs->data);
 
   $result = [];
   foreach ($geolocs['geonames'] as $geoname) {
-    // If not part of the current region, skip.
-    if (isset($region) && (int) $geoname['adminId1'] !== $region) {
-      continue;
-    }
-
     $result[$geoname['name']] = $geoname['name'];
   }
 
@@ -189,7 +210,7 @@ function _farnet_location_get_region_code($region, $country_code) {
     'type' => 'json',
     'country' => $country_code,
     'fcode' => 'adm1',
-    'style' => 'SHORT',
+    'style' => 'LONG',
     'lang' => $language->language,
   ];
 
@@ -199,5 +220,5 @@ function _farnet_location_get_region_code($region, $country_code) {
   $geolocs = drupal_json_decode($geolocs->data);
   $result = reset($geolocs['geonames']);
 
-  return (int) $result['geonameId'];
+  return (int) $result['adminCode1'];
 }
