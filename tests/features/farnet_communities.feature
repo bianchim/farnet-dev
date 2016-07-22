@@ -37,38 +37,6 @@ Feature: Communities feature
     Then I should see the heading "A hidden community"
 
   @api @here
-  Scenario:  As a community administrator, I can add/edit/delete any content of any of the community where I am a community administrator
-    Given I am logged in as a user with the "authenticated user" role
-    And I am viewing a "public_community":
-      | title                 | A public community                    |
-    # | group_access          | Public - accessible to all site users |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.      |
-      | status                | 1                                     |
-    And I am a "administrator member" of "A public community"
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    And I fill in "title_field[und][0][value]" with "An MS Fiche in a public community"    
-    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
-    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
-    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "A public community"
-    And I press the "Save" button
-    Then I should see the heading "A public community"
-
-    And I am viewing a "public_community":
-      | title                 | Another public community                   |
-    # | group_access          | Private - accessible only to group members |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.           |
-      | status                | 1                                          |
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    And I fill in "title_field[und][0][value]" with "An MS Fiche in another public community"    
-    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
-    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
-    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Another public community"
-    And I press the "Save" button
-    Then I should see the heading "Another public community"
-
-  @api
   Scenario: As an anonymous user, I cannot see any of the communities and their content
     Given I am not logged in
     And I am viewing a "public_community" content:
@@ -87,7 +55,7 @@ Feature: Communities feature
 
     And I am viewing a "hidden_community" content:
       | title                 | A hidden community                   |
-      | group_access          | 1                                    |
+    # | group_access          | 1                                    |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
     Then I should get an access denied error
 
@@ -179,3 +147,34 @@ Feature: Communities feature
     And I press the "Save" button
     Then I should see the error message "You must select one or more groups for this content."
 
+  @api 
+  Scenario:  As a community administrator, I can add/edit/delete any content of any of the community where I am a community administrator
+    Given I am logged in as a user with the "authenticated user" role
+    And I am viewing a "public_community":
+      | title                 | A public community                    |
+    # | group_access          | Public - accessible to all site users |
+      | field_ne_body         | Lorem ipsum dolor sit amet body.      |
+      | status                | 1                                     |
+    And I am a "administrator member" of "A public community"
+    And I visit "node/add/ms-fiche"
+    Then I should see the heading "Create Cooperation MS Fiche"
+    And I fill in "title_field[und][0][value]" with "An MS Fiche in a public community"    
+    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
+    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "A public community"
+    And I press the "Save" button
+    Then I should see the heading "A public community"
+
+    And I am viewing a "public_community":
+      | title                 | Another public community                   |
+    # | group_access          | Private - accessible only to group members |
+      | field_ne_body         | Lorem ipsum dolor sit amet body.           |
+      | status                | 1                                          |
+    And I visit "node/add/ms-fiche"
+    Then I should see the heading "Create Cooperation MS Fiche"
+    And I fill in "title_field[und][0][value]" with "An MS Fiche in another public community"    
+    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
+    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Another public community"
+    And I press the "Save" button
+    Then I should see the heading "Another public community"
