@@ -14,7 +14,7 @@
 	<!-- Revert features. -->
 	<target name="features-revert">
 		<drush
-		command="feature-revert"
+		command="features-revert"
 		assume="yes"
 		root="${platform.build.dir}"
 		bin="${drush.bin}"
