@@ -35,7 +35,13 @@
     <rule ref="Drupal.NamingConventions.ValidVariableName">
         <exclude-pattern>src/Phing</exclude-pattern>
     </rule>
-	
+
+    <!-- Phing tasks require to use CamelCaps for argument names. -->
+    <rule ref="Drupal.Commenting.FileComment.Missing">
+        <exclude-pattern>src/Phing</exclude-pattern>
+        <exclude-pattern>tests/src/Context</exclude-pattern>
+    </rule>
+
     <!-- Wysiwyg profiles exported in Features do not have a trailing period. -->
     <!-- Remove this once https://www.drupal.org/node/2724173 is in. -->
     <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
