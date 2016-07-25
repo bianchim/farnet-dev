@@ -6,9 +6,12 @@
 		<phingcall target="enable-modules">
 			<property name="drupal.modules" value="${subsite.install.features}" />
 		</phingcall>
+
 		<phingcall target="features-revert">
 			<property name="drupal.features" value="${subsite.install.features}" />
 		</phingcall>
+
+		<phingcall target="rebuild-node-access"/>
 	</target>
 
 	<!-- Revert features. -->
