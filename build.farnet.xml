@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="My Subsite" default="help">
+	<!-- Activate and revert required features after installation of the profile. -->
+	<target name="activates-feature">
+		<phingcall target="enable-modules">
+			<property name="drupal.modules" value="${subsite.install.features}" />
+		</phingcall>
+		<phingcall target="features-revert">
+			<property name="drupal.features" value="${subsite.install.features}" />
+		</phingcall>
+	</target>
+
+	<!-- Revert features. -->
+	<target name="features-revert">
+		<drush
+		command="feature-revert"
+		assume="yes"
+		root="${platform.build.dir}"
+		bin="${drush.bin}"
+		verbose="${drush.verbose}">
+		<param>${drupal.features}</param>
+		</drush>
+	</target>
+</project>
