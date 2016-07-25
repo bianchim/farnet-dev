@@ -2,7 +2,7 @@
 
 <project name="My Subsite" default="help">
 	<!-- Activate and revert required features after installation of the profile. -->
-	<target name="activates-feature">
+	<target name="activate-features">
 		<phingcall target="enable-modules">
 			<property name="drupal.modules" value="${subsite.install.features}" />
 		</phingcall>
