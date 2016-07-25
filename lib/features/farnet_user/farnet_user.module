@@ -128,15 +128,15 @@ function farnet_user_profile_validate($form, &$form_state) {
   $code_country = $countries[$term_country->name];
 
   // Init instance of PhoneNumberUtil.
-  $phoneUtil = PhoneNumberUtil::getInstance();
+  $phone_util = PhoneNumberUtil::getInstance();
 
   // Check that if the field_telephone is valid.
-  $telephoneNumberStr = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
-  if (strlen($telephoneNumberStr) > 0) {
+  $telephone_number_str = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
+  if (strlen($telephone_number_str) > 0) {
     try {
-      $telephoneNumberProto = $phoneUtil->parse($telephoneNumberStr, $code_country);
-      $isValid = $phoneUtil->isValidNumber($telephoneNumberProto);
-      if (!$isValid) {
+      $telephone_number_proto = $phone_util->parse($telephone_number_str, $code_country);
+      $is_valid = $phone_util->isValidNumber($telephone_number_proto);
+      if (!$is_valid) {
         form_set_error('field_telephone', t('Please enter a valid telephone number.'));
       }
     }
@@ -147,12 +147,12 @@ function farnet_user_profile_validate($form, &$form_state) {
   }
 
   // Check that if the field_phone_mobile is valid.
-  $mobileNumberStr = reset($form_state['values']['field_phone_mobile'][LANGUAGE_NONE])['value'];
-  if (strlen($mobileNumberStr) > 0) {
+  $mobile_number_str = reset($form_state['values']['field_phone_mobile'][LANGUAGE_NONE])['value'];
+  if (strlen($mobile_number_str) > 0) {
     try {
-      $mobileNumberProto = $phoneUtil->parse($mobileNumberStr, $code_country);
-      $isValid = $phoneUtil->isValidNumber($mobileNumberProto);
-      if (!$isValid) {
+      $mobile_number_proto = $phone_util->parse($mobile_number_str, $code_country);
+      $is_valid = $phone_util->isValidNumber($mobile_number_proto);
+      if (!$is_valid) {
         form_set_error('field_phone_mobile', t('Please enter a valid mobile phone.'));
       }
     }

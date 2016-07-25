@@ -31,14 +31,15 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
    *   Name of the target entity type.
    * @param string $node_label
    *   Name of the target node.
-   * @param TableNode $fieldTable
+   * @param TableNode $field_table
    *   Table of the field collection.
    *
    * @Given (I )attach a :field_collection field collection to a/an :entity_type named :node_label with:
    *
    * @throws ExpectationException
+   *   Throws an Exception when the expected node was not found.
    */
-  public function attachFieldCollection($label, $entity_type, $node_label, TableNode $fieldTable) {
+  public function attachFieldCollection($label, $entity_type, $node_label, TableNode $field_table) {
     // Get the target node.
     $efq = new EntityFieldQuery();
     $result = $efq->entityCondition('entity_type', $entity_type)
@@ -62,7 +63,7 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
 
     $target = node_load(reset($result));
 
-    $this->createFieldCollection($label, $target, $entity_type, $fieldTable);
+    $this->createFieldCollection($label, $target, $entity_type, $field_table);
   }
 
   /**
@@ -74,14 +75,15 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
    *   Name of the field collection.
    * @param string $target_fc
    *   Name of the target field collection.
-   * @param TableNode $fieldTable
+   * @param TableNode $field_table
    *   Data table of the field collection.
    *
    * @Given (I )attach a :fc_name field collection to another named :target_fc with:
    *
    * @throws ExpectationException
+   *   Throws an Exception when the expected field collection was not found.
    */
-  public function attachSubFieldCollection($label, $target_fc, TableNode $fieldTable) {
+  public function attachSubFieldCollection($label, $target_fc, TableNode $field_table) {
     $entity_type = 'field_collection_item';
 
     // Get the last field collection with the name.
@@ -101,7 +103,7 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
     }
     $target = entity_load_single('field_collection_item', reset($result));
 
-    $this->createFieldCollection($label, $target, $entity_type, $fieldTable);
+    $this->createFieldCollection($label, $target, $entity_type, $field_table);
   }
 
   /**
@@ -113,10 +115,10 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
    *   Name of the field collection.
    * @param string $target
    *   Target node where we attach the field collection.
-   * @param TableNode $fieldTable
+   * @param TableNode $field_table
    *   Data table of the field collection.
    */
-  protected function createFieldCollection($label, $target, $entity_type, TableNode $fieldTable) {
+  protected function createFieldCollection($label, $target, $entity_type, TableNode $field_table) {
     // Get Drupal driver core.
     $core = $this->getDriver()->getCore();
 
@@ -127,7 +129,7 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
     ];
 
     // Process the data table.
-    foreach ($fieldTable->getRowsHash() as $field => $value) {
+    foreach ($field_table->getRowsHash() as $field => $value) {
       $fc_node->{$field} = $value;
     }
 

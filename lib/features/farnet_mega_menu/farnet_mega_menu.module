@@ -49,14 +49,14 @@ function farnet_mega_menu_permission() {
  */
 function farnet_mega_menu_block_info() {
   $blocks = array();
-  $infoArray = _array_for_block_creation('main-menu');
+  $info_array = _array_for_block_creation('main-menu');
   // In case infoarray is empty return empty blocks.
-  if (empty($infoArray)) {
+  if (empty($info_array)) {
     return $blocks;
   }
 
   // Create the blocks info.
-  foreach ($infoArray as $name => $menuArray) {
+  foreach ($info_array as $name => $menu_array) {
     $blocks[_farnet_mega_menu_block_name_cleaner($name)] = array(
       'info' => 'FMM: ' . $name,
       'cache' => DRUPAL_NO_CACHE,
@@ -71,13 +71,13 @@ function farnet_mega_menu_block_info() {
  */
 function farnet_mega_menu_block_view($block_name = '') {
   $block = array();
-  $menuCollector = _array_for_block_creation('main-menu');
-  if (empty($menuCollector)) {
+  $menu_collector = _array_for_block_creation('main-menu');
+  if (empty($menu_collector)) {
     return $block;
   }
 
   // Create the blocks view.
-  foreach ($menuCollector as $name => $value) {
+  foreach ($menu_collector as $name => $value) {
     if ($block_name == _farnet_mega_menu_block_name_cleaner($name)) {
       $block['subject'] = $name;
       $block['content'] = menu_tree_output($value);
