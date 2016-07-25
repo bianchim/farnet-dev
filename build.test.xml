@@ -31,8 +31,8 @@
             historical reasons. The functionality is contained in one of more
             features and modules which need to be enabled after installation.
          -->
-         <phingcall target="enable-install-modules" />
-		 <phingcall target="rebuild-node-access" />
+        <phingcall target="enable-install-modules" />
+        <phingcall target="rebuild-node-access" />
     </target>
 
     <!-- Enable required modules after installation of the profile. -->
