@@ -53,6 +53,7 @@ features[variable][] = menu_parent_cooperation_idea
 features[variable][] = node_options_cooperation_idea
 features[variable][] = node_preview_cooperation_idea
 features[variable][] = node_submitted_cooperation_idea
+features[variable][] = pathauto_node_cooperation_idea_pattern
 features_exclude[field_base][field_sea_basins] = field_sea_basins
 features_exclude[field_base][field_type_of_area] = field_type_of_area
 features_exclude[field_base][group_content_access] = group_content_access
