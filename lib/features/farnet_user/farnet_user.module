@@ -116,49 +116,54 @@ function farnet_user_profile_validate($form, &$form_state) {
   $tid_country = reset($form_state['values']['field_user_country'][LANGUAGE_NONE])['tid'];
   $term_country = taxonomy_term_load($tid_country);
 
-  // Get countries from farnet Taxonomy.
-  $countries_raw = farnet_taxonomy_countries();
-  $countries = array();
-  foreach ($countries_raw as $subcountries) {
-    $countries += $subcountries;
+  if ($term_country === FALSE) {
+    form_set_error('field_zip_code', t('Please enter a zip code to receive your FARNET magazine.'));
   }
-  $countries = array_flip($countries);
+  else {
+    // Get countries from farnet Taxonomy.
+    $countries_raw = farnet_taxonomy_countries();
+    $countries = array();
+    foreach ($countries_raw as $subcountries) {
+      $countries += $subcountries;
+    }
+    $countries = array_flip($countries);
 
-  // Get countries from farnet Taxonomy.
-  $code_country = $countries[$term_country->name];
+    // Get countries from farnet Taxonomy.
+    $code_country = $countries[$term_country->name];
 
-  // Init instance of PhoneNumberUtil.
-  $phoneUtil = PhoneNumberUtil::getInstance();
+    // Init instance of PhoneNumberUtil.
+    $phone_util = PhoneNumberUtil::getInstance();
 
-  // Check that if the field_telephone is valid.
-  $telephoneNumberStr = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
-  if (strlen($telephoneNumberStr) > 0) {
-    try {
-      $telephoneNumberProto = $phoneUtil->parse($telephoneNumberStr, $code_country);
-      $isValid = $phoneUtil->isValidNumber($telephoneNumberProto);
-      if (!$isValid) {
+    // Check that if the field_telephone is valid.
+    $telephone_number_str = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
+    if (strlen($telephone_number_str) > 0) {
+      try {
+        $telephone_number_proto = $phone_util->parse($telephone_number_str, $code_country);
+        $is_valid = $phone_util->isValidNumber($telephone_number_proto);
+        if (!$is_valid) {
+          form_set_error('field_telephone', t('Please enter a valid telephone number.'));
+        }
+      }
+      catch (NumberParseException $e) {
         form_set_error('field_telephone', t('Please enter a valid telephone number.'));
+        /* dpm($e); */
       }
     }
-    catch (NumberParseException $e) {
-      form_set_error('field_telephone', t('Please enter a valid telephone number.'));
-      /* dpm($e); */
-    }
-  }
 
-  // Check that if the field_phone_mobile is valid.
-  $mobileNumberStr = reset($form_state['values']['field_phone_mobile'][LANGUAGE_NONE])['value'];
-  if (strlen($mobileNumberStr) > 0) {
-    try {
-      $mobileNumberProto = $phoneUtil->parse($mobileNumberStr, $code_country);
-      $isValid = $phoneUtil->isValidNumber($mobileNumberProto);
-      if (!$isValid) {
-        form_set_error('field_phone_mobile', t('Please enter a valid mobile phone.'));
+    // Check that if the field_phone_mobile is valid.
+    $mobile_number_str = reset($form_state['values']['field_phone_mobile'][LANGUAGE_NONE])['value'];
+    if (strlen($mobile_number_str) > 0) {
+      try {
+        $mobile_number_proto = $phone_util->parse($mobile_number_str, $code_country);
+        $is_valid = $phone_util->isValidNumber($mobile_number_proto);
+        if (!$is_valid) {
+          form_set_error('field_phone_mobile', t('Please enter a valid mobile phone.'));
+        }
       }
-    }
-    catch (NumberParseException $e) {
-      form_set_error('field_website', t('Please enter a valid mobile phone.'));
-      /* dpm($e); */
+      catch (NumberParseException $e) {
+        form_set_error('field_website', t('Please enter a valid mobile phone.'));
+        /* dpm($e); */
+      }
     }
   }
 

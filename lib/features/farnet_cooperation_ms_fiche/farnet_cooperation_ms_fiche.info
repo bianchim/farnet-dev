@@ -62,6 +62,7 @@ features[variable][] = menu_parent_ms_fiche
 features[variable][] = node_options_ms_fiche
 features[variable][] = node_preview_ms_fiche
 features[variable][] = node_submitted_ms_fiche
+features[variable][] = pathauto_node_ms_fiche_pattern
 features_exclude[field_base][field_sea_basins] = field_sea_basins
 features_exclude[field_base][field_type_of_area] = field_type_of_area
 features_exclude[field_base][og_group_ref] = og_group_ref

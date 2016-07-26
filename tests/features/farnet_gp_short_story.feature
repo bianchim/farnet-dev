@@ -22,7 +22,6 @@ Feature: Factsheet GP Short Story content type
     When I press the "Save" button
     Then I should see the error message "Title field is required."
     And I should see the error message "EU contribution field is required."
-    And I should see the error message "Flag field is required."
     And I should see the error message "Other public contribution field is required."
     And I should see the error message "Private contribution field is required."
     And I should see the error message "Total project cost field is required."
@@ -35,8 +34,8 @@ Feature: Factsheet GP Short Story content type
       | flag  | 1      |
     When I visit "node/add/gp-short-story_en"
     And I fill in "title_field[und][0][value]" with "Test gp short story"
-    And I select "flag" from "field_flag[und]"
-    And I fill in "field_total_project_cost[und][0][value]" with "42"
+    And I select "flag" from "field_flag[und][]"
+    And I fill in "field_total_cost[und][0][value]" with "42"
     And I fill in "field_eu_contribution[und][0][value]" with "42"
     And I fill in "field_other_public_contribution[und][0][value]" with "42"
     And I fill in "field_private_contribution[und][0][value]" with "42"
@@ -52,7 +51,7 @@ Feature: Factsheet GP Short Story content type
     And I am viewing a "gp_short_story" content:
       | title                           | test gp short story   |
       | field_flag                      | flag                  |
-      | field_total_project_cost        | 42                    |
+      | field_total_cost                | 42                    |
       | field_eu_contribution           | 42                    |
       | field_other_public_contribution | 42                    |
       | field_private_contribution      | 42                    |
@@ -71,7 +70,7 @@ Feature: Factsheet GP Short Story content type
     And I am viewing a "gp_short_story" content:
       | title                           | test gp short story   |
       | field_flag                      | flag                  |
-      | field_total_project_cost        | 42                    |
+      | field_total_cost                | 42                    |
       | field_eu_contribution           | 42                    |
       | field_other_public_contribution | 42                    |
       | field_private_contribution      | 42                    |

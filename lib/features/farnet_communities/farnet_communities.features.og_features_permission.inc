@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_communities.features.og_features_permission.inc
@@ -74,6 +75,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_hidden:create farnet_discussion content'
+  $permissions['node:community_hidden:create farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:community_hidden:create gp_method content'
   $permissions['node:community_hidden:create gp_method content'] = array(
     'roles' => array(),
@@ -139,6 +148,13 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_hidden:delete any farnet_article content'
   $permissions['node:community_hidden:delete any farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:delete any farnet_discussion content'
+  $permissions['node:community_hidden:delete any farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:delete any gp_method content'
@@ -207,6 +223,14 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_hidden:delete own farnet_article content'
   $permissions['node:community_hidden:delete own farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:delete own farnet_discussion content'
+  $permissions['node:community_hidden:delete own farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:delete own gp_method content'
@@ -368,6 +392,13 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_hidden:update any farnet_discussion content'
+  $permissions['node:community_hidden:update any farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
   // Exported og permission: 'node:community_hidden:update any gp_method content'
   $permissions['node:community_hidden:update any gp_method content'] = array(
     'roles' => array(),
@@ -441,6 +472,14 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_hidden:update own farnet_article content'
   $permissions['node:community_hidden:update own farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:update own farnet_discussion content'
+  $permissions['node:community_hidden:update own farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:update own gp_method content'
@@ -545,6 +584,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_private:create farnet_discussion content'
+  $permissions['node:community_private:create farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:community_private:create gp_method content'
   $permissions['node:community_private:create gp_method content'] = array(
     'roles' => array(),
@@ -610,6 +657,13 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_private:delete any farnet_article content'
   $permissions['node:community_private:delete any farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:delete any farnet_discussion content'
+  $permissions['node:community_private:delete any farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:delete any gp_method content'
@@ -678,6 +732,14 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_private:delete own farnet_article content'
   $permissions['node:community_private:delete own farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:delete own farnet_discussion content'
+  $permissions['node:community_private:delete own farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:delete own gp_method content'
@@ -839,6 +901,13 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_private:update any farnet_discussion content'
+  $permissions['node:community_private:update any farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
   // Exported og permission: 'node:community_private:update any gp_method content'
   $permissions['node:community_private:update any gp_method content'] = array(
     'roles' => array(),
@@ -912,6 +981,14 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_private:update own farnet_article content'
   $permissions['node:community_private:update own farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:update own farnet_discussion content'
+  $permissions['node:community_private:update own farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:update own gp_method content'
@@ -1016,6 +1093,13 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_public:create farnet_discussion content'
+  $permissions['node:community_public:create farnet_discussion content'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:community_public:create gp_method content'
   $permissions['node:community_public:create gp_method content'] = array(
     'roles' => array(),
@@ -1081,6 +1165,13 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_public:delete any farnet_article content'
   $permissions['node:community_public:delete any farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any farnet_discussion content'
+  $permissions['node:community_public:delete any farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:delete any gp_method content'
@@ -1149,6 +1240,14 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_public:delete own farnet_article content'
   $permissions['node:community_public:delete own farnet_article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own farnet_discussion content'
+  $permissions['node:community_public:delete own farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:delete own gp_method content'
@@ -1310,6 +1409,13 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_public:update any farnet_discussion content'
+  $permissions['node:community_public:update any farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
   // Exported og permission: 'node:community_public:update any gp_method content'
   $permissions['node:community_public:update any gp_method content'] = array(
     'roles' => array(),
@@ -1385,6 +1491,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_public:update own farnet_discussion content'
+  $permissions['node:community_public:update own farnet_discussion content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:community_public:update own gp_method content'
   $permissions['node:community_public:update own gp_method content'] = array(
     'roles' => array(),
@@ -1420,6 +1534,31 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:update own page content'
   $permissions['node:community_public:update own page content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:editorial_team:create farnet_discussion content'
+  $permissions['node:editorial_team:create farnet_discussion content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:editorial_team:delete any farnet_discussion content'
+  $permissions['node:editorial_team:delete any farnet_discussion content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:editorial_team:delete own farnet_discussion content'
+  $permissions['node:editorial_team:delete own farnet_discussion content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:editorial_team:update any farnet_discussion content'
+  $permissions['node:editorial_team:update any farnet_discussion content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:editorial_team:update own farnet_discussion content'
+  $permissions['node:editorial_team:update own farnet_discussion content'] = array(
     'roles' => array(),
   );
 

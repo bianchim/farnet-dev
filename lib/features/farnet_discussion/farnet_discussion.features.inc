@@ -2,13 +2,13 @@
 
 /**
  * @file
- * farnet_cooperation_call.features.inc
+ * farnet_discussion.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farnet_cooperation_call_ctools_plugin_api($module = NULL, $api = NULL) {
+function farnet_discussion_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -20,12 +20,12 @@ function farnet_cooperation_call_ctools_plugin_api($module = NULL, $api = NULL) 
 /**
  * Implements hook_node_info().
  */
-function farnet_cooperation_call_node_info() {
+function farnet_discussion_node_info() {
   $items = array(
-    'cooperation_call' => array(
-      'name' => t('Cooperation Call'),
+    'farnet_discussion' => array(
+      'name' => t('Discussion'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Discussion content type for Farnet Community'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
