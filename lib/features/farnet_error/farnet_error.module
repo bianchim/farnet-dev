@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Error feature.
+ */
+
+include_once 'farnet_error.features.inc';
+
+define('FARNET_ERROR_PUBLIC_URL', '/error/public/403');
+define('FARNET_ERROR_PRIVATE_URL', '/error/myfarnet/403');
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_error_menu() {
+  $items['error/403'] = [
+    'title' => 'Access Denied',
+    'description' => 'Manage farnet error pages',
+    'page callback' => 'farnet_error_redirect',
+    'access callback' => TRUE,
+    'type' => MENU_LOCAL_TASK,
+  ];
+
+  return $items;
+}
+
+/**
+ * Redirect the user to the correct error page.
+ */
+function farnet_error_redirect() {
+  $myfarnet = FALSE;
+  $keyword = variable_get('nexteuropa_communities_url_keyword', 'community');
+
+  // Get the aliased path in order to check if the community keyword is here.
+  $path = drupal_lookup_path('alias', $_GET['destination']);
+  $path = explode('/', $path);
+
+  if ($path[0] === $keyword) {
+    $myfarnet = TRUE;
+  }
+
+  // Drupal goto uses the destination in priority, prevent this behaviour.
+  unset($_GET['destination']);
+
+  if ($myfarnet) {
+    drupal_goto(FARNET_ERROR_PRIVATE_URL);
+  }
+  else {
+    drupal_goto(FARNET_ERROR_PUBLIC_URL);
+  }
+}
