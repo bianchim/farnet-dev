@@ -18,7 +18,7 @@ function farnet_error_install() {
 
   $public = clone($node);
   $public->title = 'Access denied';
-  $public->field_body_error['en'][0]['value'] = 'You don\'t have access to this content.';
+  $public->field_body_error[LANGUAGE_NONE][0]['value'] = 'You don\'t have access to this content.';
   $public->path = [
     'pathauto' => FALSE,
     'alias' => FARNET_ERROR_PUBLIC_URL,
@@ -28,7 +28,7 @@ function farnet_error_install() {
 
   $private = clone($node);
   $private->title = 'Access denied';
-  $private->field_body_error['en'][0]['value'] = 'You don\'t have access to this content on MyFarnet.';
+  $private->field_body_error[LANGUAGE_NONE][0]['value'] = 'You don\'t have access to this content on MyFarnet.';
   $private->path = [
     'pathauto' => FALSE,
     'alias' => FARNET_ERROR_PRIVATE_URL,

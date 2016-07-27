@@ -7,8 +7,8 @@
 
 include_once 'farnet_error.features.inc';
 
-define('FARNET_ERROR_PUBLIC_URL', '/error/public/403');
-define('FARNET_ERROR_PRIVATE_URL', '/error/myfarnet/403');
+define('FARNET_ERROR_PUBLIC_URL', 'error/public/403');
+define('FARNET_ERROR_PRIVATE_URL', 'error/myfarnet/403');
 
 /**
  * Implements hook_menu().
