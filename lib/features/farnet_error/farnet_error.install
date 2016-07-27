@@ -36,5 +36,11 @@ function farnet_error_install() {
   $private = node_submit($private);
   node_save($private);
 
+  // Set the new 403 error page.
   variable_set('site_403', 'error/403');
+
+  // Change the lastest content view filter to avoid displaying the error CT.
+  $view = views_get_view('multisite_settings_core');
+  $view->display['block_1']->display_options['filters']['type']['value'][] = 'farnet_error';
+  $view->save();
 }
