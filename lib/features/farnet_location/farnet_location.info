@@ -1,0 +1,4 @@
+name = "Farnet location"
+description = "Manage the location fields on a some content types"
+package = "Farnet"
+core = 7.x
