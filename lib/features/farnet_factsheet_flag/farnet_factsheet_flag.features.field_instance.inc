@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_factsheet_flag.features.field_instance.inc
@@ -767,18 +766,15 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection_table',
+        'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
-          'cssfield' => FALSE,
-          'cssrowcol' => FALSE,
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
-          'empty' => TRUE,
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_table_view',
+        'type' => 'field_collection_view',
         'weight' => 52,
       ),
       'teaser' => array(
@@ -798,11 +794,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'field_collection_table',
+      'module' => 'field_collection',
       'settings' => array(
         'nodragging' => FALSE,
       ),
-      'type' => 'field_collection_table',
+      'type' => 'field_collection_embed',
       'weight' => 20,
     ),
   );
@@ -816,18 +812,15 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection_table',
+        'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
-          'cssfield' => FALSE,
-          'cssrowcol' => FALSE,
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
-          'empty' => TRUE,
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_table_view',
+        'type' => 'field_collection_view',
         'weight' => 67,
       ),
       'teaser' => array(
@@ -847,11 +840,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'field_collection_table',
+      'module' => 'field_collection',
       'settings' => array(
         'nodragging' => FALSE,
       ),
-      'type' => 'field_collection_table',
+      'type' => 'field_collection_embed',
       'weight' => 92,
     ),
   );
@@ -911,18 +904,15 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection_table',
+        'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
-          'cssfield' => FALSE,
-          'cssrowcol' => FALSE,
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
-          'empty' => TRUE,
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_table_view',
+        'type' => 'field_collection_view',
         'weight' => 20,
       ),
       'teaser' => array(
@@ -942,11 +932,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'field_collection_table',
+      'module' => 'field_collection',
       'settings' => array(
         'nodragging' => FALSE,
       ),
-      'type' => 'field_collection_table',
+      'type' => 'field_collection_embed',
       'weight' => 49,
     ),
   );
