@@ -21,14 +21,14 @@ function farnet_faq_field_group_info_alter($groups) {
  */
 function farnet_faq_form_nexteuropa_faq_node_form_alter(&$form, &$form_state, $form_id) {
   $path = drupal_get_path('module', 'farnet_faq');
-  $form['#attached']['js'] = drupal_add_js(
-    $path . '/js/farnet_faq.js',
-    array(
+  $form['#attached']['js'] = [
+    [
+      'data' => $path . '/js/farnet_faq.js',
       'type' => 'file',
       'scope' => 'footer',
       'weight' => 100,
-    )
-  );
+    ],
+  ];
 }
 
 /**
