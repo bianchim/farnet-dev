@@ -299,7 +299,7 @@ function farnet_core_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'text',
   );
-  
+
   // Exported field_base: 'field_latitude'.
   $field_bases['field_latitude'] = array(
     'active' => 1,

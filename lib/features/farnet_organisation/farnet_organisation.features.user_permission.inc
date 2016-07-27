@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_organisation.features.user_permission.inc
