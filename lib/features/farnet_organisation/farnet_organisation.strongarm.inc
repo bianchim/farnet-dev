@@ -69,16 +69,19 @@ function farnet_organisation_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'scheduler_settings' => array(
           'weight' => '4',
         ),
         'xmlsitemap' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'language' => array(
           'weight' => '3',
+        ),
+        'metatags' => array(
+          'weight' => '7',
         ),
       ),
       'display' => array(),

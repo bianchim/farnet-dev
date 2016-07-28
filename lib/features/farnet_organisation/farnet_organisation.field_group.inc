@@ -22,7 +22,7 @@ function farnet_organisation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact person',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_organisation_contacts',
     ),
@@ -51,19 +51,20 @@ function farnet_organisation_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'body',
-      1 => 'field_address_1',
-      2 => 'field_address_2',
-      3 => 'field_city',
-      4 => 'field_email',
-      5 => 'field_fax',
+      0 => 'field_address_1',
+      1 => 'field_address_2',
+      2 => 'field_city',
+      3 => 'field_email',
+      4 => 'field_fax',
+      5 => 'field_ne_body',
       6 => 'field_telephone',
       7 => 'field_term_country',
       8 => 'field_term_type_organisation',
       9 => 'field_website',
       10 => 'field_zip_code',
       11 => 'title_field',
-      12 => 'field_ne_body',
+      12 => 'field_longitude',
+      13 => 'field_latitude',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -88,7 +89,7 @@ function farnet_organisation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'scheduler_settings',
       1 => 'language',
@@ -116,7 +117,7 @@ function farnet_organisation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Social Media',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_social_media',
     ),
