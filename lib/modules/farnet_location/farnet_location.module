@@ -6,6 +6,11 @@
  */
 
 /**
+ * Used to manage countries names and codes.
+ */
+include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
+
+/**
  * Implements hook_menu().
  */
 function farnet_location_menu() {
@@ -18,6 +23,14 @@ function farnet_location_menu() {
     'type' => MENU_NORMAL_ITEM,
   ];
 
+  $items['farnet_location/autocomplete'] = [
+    'title' => 'Autocomplete for areas',
+    'page callback' => '_farnet_location_autocomplete',
+    'access arguments' => TRUE,
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  ];
+
   return $items;
 }
 
@@ -26,6 +39,31 @@ function farnet_location_menu() {
  */
 function farnet_location_admin() {
   $form = [];
+
+<<<<<<< HEAD
+  $form['geonames_username'] = [
+    '#type' => 'textfield',
+    '#title' => t('GeoNames webservice username'),
+    '#default_value' => variable_get('geonames_username', ''),
+    '#required' => TRUE,
+  ];
+
+  $form['geonames_maxrows'] = [
+    '#type' => 'textfield',
+    '#title' => t('Maximum number results per request'),
+    '#default_value' => variable_get('geonames_maxrows', 10),
+    '#size' => 2,
+    '#maxlength' => 2,
+    '#required' => TRUE,
+  ];
+
+  $form['geonames_baseurl'] = [
+    '#type' => 'textfield',
+    '#title' => t('Base url for the GeoNames service.'),
+    '#default_value' => variable_get('geonames_baseurl', 'http://api.geonames.org/search'),
+    '#maxlength' => 255,
+    '#required' => TRUE,
+  ];
 
   $form['geocoding_baseurl'] = [
     '#type' => 'textfield',
@@ -36,6 +74,53 @@ function farnet_location_admin() {
   ];
 
   return system_settings_form($form);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Use the title_field that should always be existing to determine language.
+  $lang = $form['title_field']['#language'];
+
+  switch ($form_id) {
+    case 'factsheet_flag_node_form':
+      // Configure the fields.
+      $form['field_term_country'][LANGUAGE_NONE]['#attributes']['class'][] = 'country_field_form';
+
+      $form['field_region'][LANGUAGE_NONE][0]['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
+      $form['field_region'][LANGUAGE_NONE][0]['value']['#attributes']['class'][] = 'region_field_form';
+
+      foreach ($form['field_area'][$lang] as $key => $value) {
+        if (is_int($key) !== FALSE) {
+          $form['field_area'][$lang][$key]['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
+          $form['field_area'][$lang][$key]['value']['#attributes']['class'][] = 'area_field_form';
+        }
+      }
+
+      // Manage form states.
+      $state = [":input[name='field_term_country[$lang]']" => ['empty' => FALSE]];
+      $form['field_region']['#states']['enabled'] = $state;
+      $form['field_area']['#states']['enabled'] = $state;
+
+      $js_settings = [
+        // Convert undefined form language to english for GeoNames.
+        'form_lang' => $lang === 'und' ? 'en' : $lang,
+      ];
+
+      // Attach the javascript to the form.
+      $form['#attached']['js'] = [
+        [
+          'data' => ['farnet_location' => $js_settings],
+          'type' => 'setting',
+        ],
+        [
+          'data' => drupal_get_path('module', 'farnet_location') . '/js/farnet_location.js',
+          'type' => 'file',
+        ],
+      ];
+      break;
+   }
 }
 
 /**
@@ -63,6 +148,133 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       }
     }
   }
+}
+
+/**
+ * Query the GeoNames database.
+ *
+ * @param string $country
+ *   The country in which we search.
+ * @param string $region
+ *   The region in which we search.
+ * @param string $search
+ *   The current search string.
+ */
+function _farnet_location_autocomplete($lang, $country, $region, $search) {
+  // Define if it is a first level or second level search.
+  if (!isset($search)) {
+    $search = $region;
+    $region = NULL;
+  }
+
+  // Fcode is used to determine the administrative level of the target search.
+  $fcode = 'adm1';
+
+  // API options.
+  $username = variable_get('geonames_username', FALSE);
+  $maxrows = variable_get('geonames_maxrows', 10);
+
+  // Reverse search of the country to get its country code.
+  $country_code = _farnet_location_get_country_code($country);
+
+  // If searche for an area, we look back for the region in the GN database.
+  if (isset($region)) {
+    $region = _farnet_location_get_region_code($lang, $region, $country_code);
+    $fcode = 'adm4';
+  }
+
+  // Return an empty array on any error.
+  if ($username === FALSE || (int) $maxrows < 1 || $country_code === FALSE || $region === FALSE) {
+    drupal_json_output([]);
+    return;
+  }
+
+  // Do the search.
+  $params = [
+    'name_startsWith' => check_plain($search),
+    'maxRows' => $maxrows,
+    'username' => $username,
+    'type' => 'json',
+    'country' => $country_code,
+    'fcode' => $fcode,
+    'style' => 'FULL',
+    'lang' => strtoupper($lang),
+  ];
+
+  // Filter by region if available.
+  if ($region !== FALSE) {
+    $params['adminCode1'] = $region;
+  }
+
+  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/search');
+  $url = $base_url . '?' . http_build_query($params);
+
+  $geolocs = drupal_http_request($url);
+  $geolocs = drupal_json_decode($geolocs->data);
+
+  $result = [];
+  foreach ($geolocs['geonames'] as $geoname) {
+    $result[$geoname['name']] = $geoname['name'];
+  }
+
+  drupal_json_output($result);
+}
+
+/**
+ * Get the code of a country from its name.
+ *
+ * @param string $country
+ *   The name of the country term.
+ *
+ * @return bool | string
+ *   Return the country code of FALSE.
+ */
+function _farnet_location_get_country_code($country) {
+  // Get country code from farnet Taxonomy.
+  $countries = farnet_taxonomy_countries();
+  $countries = call_user_func_array('array_merge', $countries);
+  $countries = array_flip($countries);
+
+  if (!isset($countries[$country])) {
+    return FALSE;
+  }
+
+  return $countries[$country];
+}
+
+/**
+ * Get the GeoNames code of a region from its name.
+ *
+ * @param string $region
+ *   The name of  the region to get.
+ *
+ * @return int
+ *   The GeoNames id of the target region.
+ */
+function _farnet_location_get_region_code($lang, $region, $country_code) {
+  $params = [
+    'name_equals' => check_plain($region),
+    'maxrows' => 1,
+    'username' => $username = variable_get('geonames_username'),
+    'type' => 'json',
+    'country' => $country_code,
+    'fcode' => 'adm1',
+    'style' => 'LONG',
+    'lang' => $lang,
+  ];
+
+  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/search');
+  $url = $base_url . '?' . http_build_query($params);
+
+  $geolocs = drupal_http_request($url);
+  $geolocs = drupal_json_decode($geolocs->data);
+  $result = reset($geolocs['geonames']);
+
+  if ((int) $geolocs['totalResultsCount'] < 1) {
+    return FALSE;
+  }
+
+  return $result['adminCode1'];
 }
 
 /**
