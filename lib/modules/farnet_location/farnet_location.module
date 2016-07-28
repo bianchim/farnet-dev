@@ -40,7 +40,6 @@ function farnet_location_menu() {
 function farnet_location_admin() {
   $form = [];
 
-<<<<<<< HEAD
   $form['geonames_username'] = [
     '#type' => 'textfield',
     '#title' => t('GeoNames webservice username'),
@@ -120,7 +119,7 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
         ],
       ];
       break;
-   }
+  }
 }
 
 /**
