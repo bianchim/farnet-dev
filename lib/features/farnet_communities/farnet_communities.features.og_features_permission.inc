@@ -11,6 +11,226 @@
 function farnet_communities_og_features_default_permissions() {
   $permissions = array();
 
+  // Exported og permission: 'node:community:approve comment_node_community_hidden'
+  $permissions['node:community:approve comment_node_community_hidden'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:approve comment_node_community_private'
+  $permissions['node:community:approve comment_node_community_private'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:approve comment_node_community_public'
+  $permissions['node:community:approve comment_node_community_public'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:approve comment_node_cooperation_call'
+  $permissions['node:community:approve comment_node_cooperation_call'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:approve comment_node_cooperation_idea'
+  $permissions['node:community:approve comment_node_cooperation_idea'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:approve comment_node_farnet_discussion'
+  $permissions['node:community:approve comment_node_farnet_discussion'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:approve comment_node_ms_fiche'
+  $permissions['node:community:approve comment_node_ms_fiche'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete comment_node_community_hidden'
+  $permissions['node:community:delete comment_node_community_hidden'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete comment_node_community_private'
+  $permissions['node:community:delete comment_node_community_private'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete comment_node_community_public'
+  $permissions['node:community:delete comment_node_community_public'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete comment_node_cooperation_call'
+  $permissions['node:community:delete comment_node_cooperation_call'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete comment_node_cooperation_idea'
+  $permissions['node:community:delete comment_node_cooperation_idea'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete comment_node_farnet_discussion'
+  $permissions['node:community:delete comment_node_farnet_discussion'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete comment_node_ms_fiche'
+  $permissions['node:community:delete comment_node_ms_fiche'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete own comment_node_community_hidden'
+  $permissions['node:community:delete own comment_node_community_hidden'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete own comment_node_community_private'
+  $permissions['node:community:delete own comment_node_community_private'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete own comment_node_community_public'
+  $permissions['node:community:delete own comment_node_community_public'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete own comment_node_cooperation_call'
+  $permissions['node:community:delete own comment_node_cooperation_call'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete own comment_node_cooperation_idea'
+  $permissions['node:community:delete own comment_node_cooperation_idea'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete own comment_node_farnet_discussion'
+  $permissions['node:community:delete own comment_node_farnet_discussion'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:delete own comment_node_ms_fiche'
+  $permissions['node:community:delete own comment_node_ms_fiche'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_community_hidden'
+  $permissions['node:community:edit comment_node_community_hidden'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_community_private'
+  $permissions['node:community:edit comment_node_community_private'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_community_public'
+  $permissions['node:community:edit comment_node_community_public'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_cooperation_call'
+  $permissions['node:community:edit comment_node_cooperation_call'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_cooperation_idea'
+  $permissions['node:community:edit comment_node_cooperation_idea'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_factsheet_country'
+  $permissions['node:community:edit comment_node_factsheet_country'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_farnet_discussion'
+  $permissions['node:community:edit comment_node_farnet_discussion'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit comment_node_ms_fiche'
+  $permissions['node:community:edit comment_node_ms_fiche'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit own comment_node_community_hidden'
+  $permissions['node:community:edit own comment_node_community_hidden'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit own comment_node_community_private'
+  $permissions['node:community:edit own comment_node_community_private'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit own comment_node_community_public'
+  $permissions['node:community:edit own comment_node_community_public'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit own comment_node_cooperation_call'
+  $permissions['node:community:edit own comment_node_cooperation_call'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit own comment_node_cooperation_idea'
+  $permissions['node:community:edit own comment_node_cooperation_idea'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit own comment_node_farnet_discussion'
+  $permissions['node:community:edit own comment_node_farnet_discussion'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:edit own comment_node_ms_fiche'
+  $permissions['node:community:edit own comment_node_ms_fiche'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_community_hidden'
+  $permissions['node:community:post comment_node_community_hidden'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_community_private'
+  $permissions['node:community:post comment_node_community_private'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_community_public'
+  $permissions['node:community:post comment_node_community_public'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_cooperation_call'
+  $permissions['node:community:post comment_node_cooperation_call'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_cooperation_idea'
+  $permissions['node:community:post comment_node_cooperation_idea'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_factsheet_country'
+  $permissions['node:community:post comment_node_factsheet_country'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_farnet_discussion'
+  $permissions['node:community:post comment_node_farnet_discussion'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community:post comment_node_ms_fiche'
+  $permissions['node:community:post comment_node_ms_fiche'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:community_hidden:View all unpublished content'
   $permissions['node:community_hidden:View all unpublished content'] = array(
     'roles' => array(),
