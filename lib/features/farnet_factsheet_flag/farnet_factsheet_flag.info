@@ -12,7 +12,6 @@ dependencies[] = farnet_core
 dependencies[] = farnet_taxonomy
 dependencies[] = features
 dependencies[] = field_collection
-dependencies[] = field_collection_table
 dependencies[] = field_group
 dependencies[] = i18n_taxonomy
 dependencies[] = image

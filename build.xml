@@ -30,8 +30,14 @@
     <echo msg="Loading Drush Makefile task." />
     <taskdef name="drushmakefile" classname="\NextEuropa\Phing\DrushMakeFileTask" />
 
+    <echo msg="Loading Starterkit update check task." />
+    <taskdef name="checkstarterkit" classname="\NextEuropa\Phing\CheckStarterkitTask" />
+
     <import file="build.package.xml" />
     <import file="build.test.xml" />
+
+    <!-- Specific to Farnet project -->
+    <import file="build.farnet.xml" />
 
     <import file="./vendor/continuousphp/aws-sdk-phing/tasks.xml" />
     <property name="aws.profile" value="" />
@@ -40,13 +46,13 @@
         <property name="aws.profile" value="" />
         <aws-config region="${aws.region}" profile="${aws.profile}" />
     </target>
-    
+
     <target name="delete-deployment-group">
         <aws-deploy-delete-deployment-group
                 name="${deploy.groupName}"
                 application="${deploy.applicationName}" />
     </target>
-    
+
     <target name="delete-stack" depends="delete-deployment-group">
         <aws-cf-deletestack name="${cf.stackName}" />
     </target>

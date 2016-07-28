@@ -40,6 +40,7 @@ function farnet_location_menu() {
 function farnet_location_admin() {
   $form = [];
 
+<<<<<<< HEAD
   $form['geonames_username'] = [
     '#type' => 'textfield',
     '#title' => t('GeoNames webservice username'),
@@ -60,6 +61,14 @@ function farnet_location_admin() {
     '#type' => 'textfield',
     '#title' => t('Base url for the GeoNames service.'),
     '#default_value' => variable_get('geonames_baseurl', 'http://api.geonames.org/search'),
+    '#maxlength' => 255,
+    '#required' => TRUE,
+  ];
+
+  $form['geocoding_baseurl'] = [
+    '#type' => 'textfield',
+    '#title' => t('Base url for Nexteuropa Webtools geocoding service.'),
+    '#default_value' => variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/'),
     '#maxlength' => 255,
     '#required' => TRUE,
   ];
@@ -111,6 +120,33 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
         ],
       ];
       break;
+   }
+}
+
+/**
+ * Implements hook_node_submit().
+ */
+function farnet_location_node_submit($node, $form, &$form_state) {
+  if ($node->type == 'organisation') {
+    $address_1 = isset($node->field_address_1[LANGUAGE_NONE][0]['value']) ? $node->field_address_1[LANGUAGE_NONE][0]['value'] : '';
+    $address_2 = isset($node->field_address_2[LANGUAGE_NONE][0]['value']) ? $node->field_address_2[LANGUAGE_NONE][0]['value'] : '';
+    $city = isset($node->field_city[LANGUAGE_NONE][0]['value']) ? $node->field_city[LANGUAGE_NONE][0]['value'] : '';
+    $zip_code = isset($node->field_zip_code[LANGUAGE_NONE][0]['value']) ? $node->field_zip_code[LANGUAGE_NONE][0]['value'] : '';
+    $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+    if ((!empty($address_1) || !empty($address_2)) && (!empty($city) || !empty($zip_code)) && !empty($country)) {
+      $address = (isset($address_1) ? $address_1 . ', ' : '') . (isset($address_2) ? $address_2 . ', ' : '') .
+                 (isset($zip_code) ? $zip_code . ' ' : '') . (isset($city) ? $city . ', ' : '') . $country;
+      $output = _farnet_location_geocoding($address);
+      if ($output && is_array($output)) {
+        $longitude = $output[0];
+        $latitude = $output[1];
+        $node->field_longitude[LANGUAGE_NONE][0]['value'] = $longitude;
+        $node->field_latitude[LANGUAGE_NONE][0]['value'] = $latitude;
+      }
+      else {
+        drupal_set_message("The coordinates of this location could not be set. Please set them manually or contact an administrator.", 'warning');
+      }
+    }
   }
 }
 
@@ -239,4 +275,36 @@ function _farnet_location_get_region_code($lang, $region, $country_code) {
   }
 
   return $result['adminCode1'];
+}
+
+/**
+ * Query the Geooding database.
+ *
+ * @param string $address
+ *   The full address (street, number, zip, city, country).
+ */
+function _farnet_location_geocoding($address) {
+  $params = [
+    'address' => $address,
+    'mode' => 1,
+  ];
+
+  $base_url = variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/');
+  $url = $base_url . '?' . http_build_query($params);
+
+  $geolocs = drupal_http_request($url);
+  if ($geolocs->status_message !== 'OK') {
+    return FALSE;
+  }
+  $geolocs = drupal_json_decode($geolocs->data);
+
+  if (isset($geolocs['geocodingRequestsCollection'][0])) {
+    $geoloc = $geolocs['geocodingRequestsCollection'][0];
+    if (isset($geoloc['responseMessage']) && $geoloc['responseMessage'] === 'OK'
+        && isset($geoloc['result']['features'][0]['geometry']['coordinates'])) {
+      $coordinates = $geoloc['result']['features'][0]['geometry']['coordinates'];
+      return $coordinates;
+    }
+  }
+  return FALSE;
 }

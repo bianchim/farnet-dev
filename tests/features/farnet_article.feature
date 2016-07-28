@@ -44,6 +44,7 @@ Feature: Article content type
     And I should see "Teaser" in the "div.form-item-field-publication-abstract-und-0-value" element
     And I should see "Publication Channels" in the "div.form-item-field-term-publication-channels-und" element
     And I should see "Publication date" in the "div.field-name-field-publication-date" element
+    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     And I press the "Save" button
     Then I should see the success message "Article Behat Article Test #1 has been created."
     And I should see the heading "Behat Article Test #1"
@@ -62,6 +63,7 @@ Feature: Article content type
       | status                      | 1                                     |
       | field_term_theme            | Diversification                       |
       | field_publication_date      | 1465294233                            |
+      | og_group_ref                | Global editorial team                 |
     Then I should see the heading "Behat Article Test #2"
     And I click "New draft"
     And I fill in "title_field[en][0][value]" with "Behat Article Test #2.1"
@@ -82,6 +84,7 @@ Feature: Article content type
       | status                      | 1                                         |
       | field_term_theme            | Diversification                           |
       | field_publication_date      | 1465294233                                |
+      | og_group_ref                | Global editorial team                     |
     Then I should see the heading "Behat Article Test #3"
     When I click "New draft"
     And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"

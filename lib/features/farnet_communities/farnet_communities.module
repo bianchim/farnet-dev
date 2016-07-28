@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet communities feature.
+ */
+
+include_once 'farnet_communities.features.inc';
+
+/**
+ * Implements hook_node_access_records().
+ */
+function farnet_communities_node_access_records($node) {
+  $grants = array();
+
+  if ($node->type == 'community_public' || $node->type == 'community_private') {
+    $grants[] = array(
+      'realm' => 'farnet_communities',
+      'gid' => 1,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+      'priority' => 1,
+    );
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_grants().
+ */
+function farnet_communities_node_grants($account, $op) {
+  if ($op != 'view') {
+    return;
+  }
+  $grants = array();
+
+  if ($account->uid == 0) {
+    $grants['farnet_communities'][] = 0;
+  }
+  else {
+    $grants['farnet_communities'][] = 1;
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function farnet_communities_node_access($node, $op, $account) {
+  $restricted_content_types = array();
+  $restricted_content_types[] = 'ms_fiche';
+  $restricted_content_types[] = 'cooperation_call';
+  $restricted_content_types[] = 'cooperation_idea';
+  $restricted_content_types[] = 'farnet_discussion';
+  $restricted_content_types[] = 'nexteuropa_news';
+  $restricted_content_types[] = 'nexteuropa_event';
+  $restricted_content_types[] = 'community_public';
+  $restricted_content_types[] = 'community_private';
+
+  if (is_object($node) && in_array($node->type, $restricted_content_types)) {
+    if ($account->uid == 0) {
+      return NODE_ACCESS_DENY;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'community_public_node_form') {
+    $form['group_access']['und']['#disabled'] = TRUE;
+    $form['group_access']['und']['#type'] = 'hidden';
+    $form['group_access']['und']['#value'] = '0';
+  }
+  if ($form_id == 'community_private_node_form' || $form_id == 'community_hidden_node_form') {
+    $form['group_access']['und']['#disabled'] = TRUE;
+    $form['group_access']['und']['#type'] = 'hidden';
+    $form['group_access']['und']['#value'] = '1';
+  }
+}

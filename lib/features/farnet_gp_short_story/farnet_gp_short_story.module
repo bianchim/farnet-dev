@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet GP Short Story feature.
@@ -13,14 +14,14 @@ function farnet_gp_short_story_form_gp_short_story_node_form_alter(&$form, &$for
   $path = drupal_get_path('module', 'farnet_gp_short_story');
 
   // Add JS files.
-  $form['#attached']['js'] = drupal_add_js(
-    $path . '/js/farnet_gp_short_story.js',
-    array(
+  $form['#attached']['js'] = [
+    [
+      'data' => $path . '/js/farnet_gp_short_story.js',
       'type' => 'file',
       'scope' => 'footer',
       'weight' => 100,
-    )
-  );
+    ],
+  ];
 
   // Add CSS files.
   $form['#attached']['css'] = array(
@@ -28,6 +29,7 @@ function farnet_gp_short_story_form_gp_short_story_node_form_alter(&$form, &$for
   );
 
   // dpm($form['field_collection_project_phase']);
-  // $form['field_collection_project_phase'][LANGUAGE_NONE][0]['field_total_cost'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  // $form['field_collection_project_phase'][LANGUAGE_NONE][0]['field_total_cost']
+  // [LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;.
   $form['field_total_cost'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
 }
