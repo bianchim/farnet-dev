@@ -60,4 +60,4 @@ Feature: Cooperation Cooperation call content type
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test Cooperation Call?"
     And I press the "Delete" button
-    Then I should see the success message "Cooperation call test Cooperation Call has been deleted."
+    Then I should see the success message "Cooperation Call test Cooperation Call has been deleted."
