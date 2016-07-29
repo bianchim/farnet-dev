@@ -385,7 +385,6 @@ function _farnet_location_get_cities_list_from_postal_code($postal_code, $countr
     'lang' => $language->language,
   ];
 
-
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'postalCodeSearch?' . http_build_query($params);
 
