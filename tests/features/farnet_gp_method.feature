@@ -20,7 +20,7 @@ Feature: Factsheet GP Method content type
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/gp-method"
     When I press the "Save" button
-    Then I should see the error message "Area field is required."
+    Then I should see the error message "Area (value 1) field is required."
     And I should see the error message "ID field is required."
     And I should see the error message "Objectives field is required."
     And I should see the error message "Picture field is required."
