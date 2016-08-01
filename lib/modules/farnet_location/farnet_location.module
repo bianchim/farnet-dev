@@ -129,23 +129,23 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     case 'user_register_form':
+    case 'user_profile_form':
       $postal_code = isset($form_state['values']['field_zip_code'][LANGUAGE_NONE][0]['value']) ? $form_state['values']['field_zip_code'][LANGUAGE_NONE][0]['value'] : 0;
       $country_selected_tid = isset($form_state['values']['field_user_country'][LANGUAGE_NONE][0]['tid']) ? $form_state['values']['field_user_country'][LANGUAGE_NONE][0]['tid'] : 0;
       $field_city_select_default_value = isset($form_state['values']['field_city_select']) ? $form_state['values']['field_city_select'] : '';
-    case 'user_profile_form':
-      if (!isset($postal_code)) {
+
+      if (($form_id == 'user_profile_form') && ($postal_code == 0)) {
         $postal_code = $form['field_zip_code'][LANGUAGE_NONE][0]['value']['#default_value'];
       }
 
-      /* $form['field_zip_code'][LANGUAGE_NONE][0]['value']['#title'] = 'Zip Code 2'; */
       $form['field_zip_code'][LANGUAGE_NONE][0]['value']['#ajax'] = array(
         'event' => 'change',
         'callback' => 'farnet_location_depend_dropdown_callback',
         'wrapper' => 'dropdown-field-city-select',
       );
 
-      if (!isset($country_selected_tid)) {
-        $country_selected_tid = $form['field_user_country'][LANGUAGE_NONE]['#default_value'][0];
+      if (($form_id == 'user_profile_form') && ($country_selected_tid == 0)) {
+        $country_selected_tid = isset($form['field_user_country'][LANGUAGE_NONE]['#default_value'][0]) ? $form['field_user_country'][LANGUAGE_NONE]['#default_value'][0] : 0;
       }
 
       $country_selected = '';
@@ -154,22 +154,22 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
         $country_selected = $term->name;
       }
 
-      /* $form['field_user_country'][LANGUAGE_NONE]['#title'] = 'Ajax Country 2'; */
       $form['field_user_country'][LANGUAGE_NONE]['#ajax'] = array(
         'event' => 'change',
         'callback' => 'farnet_location_depend_dropdown_callback',
         'wrapper' => 'dropdown-field-city-select',
       );
 
-      /* $form['field_city_select'][LANGUAGE_NONE]['#title'] = 'Ajax City 2 for ' . $country_selected; */
       $form['field_city_select'][LANGUAGE_NONE]['#title'] = 'City';
       $form['field_city_select'][LANGUAGE_NONE]['#type'] = 'select';
       $form['field_city_select'][LANGUAGE_NONE]['#prefix'] = '<div id="dropdown-field-city-select">';
       $form['field_city_select'][LANGUAGE_NONE]['#suffix'] = '</div>';
       $form['field_city_select'][LANGUAGE_NONE]['#options'] = _farnet_location_get_field_city_select_dropdown($country_selected, $postal_code);
-      if (!isset($field_city_select_default_value)) {
-        $field_city_select_default_value = $form['#user']->field_city_select[LANGUAGE_NONE][0]['value'];
-        $form['field_city_select'][LANGUAGE_NONE]['#default_value'] = $field_city_select_default_value;
+      if (($form_id == 'user_profile_form') && ($field_city_select_default_value == '')) {
+        if (isset($form['#user']->field_city_select[LANGUAGE_NONE][0]['value'])) {
+          $field_city_select_default_value = $form['#user']->field_city_select[LANGUAGE_NONE][0]['value'];
+          $form['field_city_select'][LANGUAGE_NONE]['#default_value'] = $field_city_select_default_value;
+        }
       }
       break;
   }
@@ -375,27 +375,35 @@ function _farnet_location_geocoding($address) {
 function _farnet_location_get_cities_list_from_postal_code($postal_code, $country_code) {
   global $language;
 
-  $params = [
-    'postalcode' => check_plain($postal_code),
-    'maxrows' => 50,
-    'username' => $username = variable_get('geonames_username'),
-    'type' => 'json',
-    'country' => $country_code,
-    'style' => 'SHORT',
-    'lang' => $language->language,
-  ];
+  // API options.
+  $username = variable_get('geonames_username', FALSE);
 
-  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
-  $url = $base_url . 'postalCodeSearch?' . http_build_query($params);
+  if (strlen($username) > 0) {
+    $params = [
+      'postalcode' => check_plain($postal_code),
+      'maxrows' => 50,
+      'username' => $username,
+      'type' => 'json',
+      'country' => $country_code,
+      'style' => 'SHORT',
+      'lang' => $language->language,
+    ];
 
-  $geolocs = drupal_http_request($url);
-  $geolocs = drupal_json_decode($geolocs->data);
+    $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
+    $url = $base_url . 'postalCodeSearch?' . http_build_query($params);
 
-  $result = [];
-  foreach ($geolocs['postalCodes'] as $geoname) {
-    $result[$geoname['placeName']] = $geoname['placeName'];
+    $geolocs = drupal_http_request($url);
+    $geolocs = drupal_json_decode($geolocs->data);
+
+    $result = [];
+    foreach ($geolocs['postalCodes'] as $geoname) {
+      $result[$geoname['placeName']] = $geoname['placeName'];
+    }
   }
-
+  else {
+    drupal_set_message('API geonames_username not configured !', 'error');
+    $result = [];
+  }
   return (array) $result;
 }
 
