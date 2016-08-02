@@ -28,7 +28,7 @@ Feature: Factsheet Flag content type
     And I should see the error message "Code field is required."
     And I should see the error message "Programming period field is required."
     And I should see the error message "Country field is required."
-    And I should see the error message "Area field is required."
+    And I should see the error message "Area (value 1) field is required."
     And I should see the error message "Address 1 field is required."
     And I should see the error message "City field is required."
     And I should see the error message "% of the budget allocated field is required."
