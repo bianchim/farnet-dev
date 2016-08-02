@@ -80,12 +80,15 @@ Feature: Factsheet GP Method content type
     # Dates field can't be filled at automated node creation
     And I fill in "field_dates_start_end[und][0][value][date]" with "01/01/2000"
     And I fill in "field_dates_start_end[und][0][value2][date]" with "31/12/2000"
+    # Temporary fix, |field_picture|behatTestImage| not working
+    And I fill a media browser "field_picture[und][0][fid]" with an "image" named "behatTestImage.png"
     And I press the "Save" button
     Then I should see the heading "Edited gp method"
 
   @api
   Scenario: Delete the content
     Given I am logged in as a user with the "administrator" role
+	And I upload an "image" file named "behatTestImage.png"
     And I am viewing a "gp_method" content:
       | title                       | test gp method        |
       | field_id                    | 42                    |
@@ -104,6 +107,8 @@ Feature: Factsheet GP Method content type
     # Dates field can't be filled at automated node creation
     And I fill in "field_dates_start_end[und][0][value][date]" with "01/01/2000"
     And I fill in "field_dates_start_end[und][0][value2][date]" with "31/12/2000"
+    # Temporary fix, |field_picture|behatTestImage| not working
+    And I fill a media browser "field_picture[und][0][fid]" with an "image" named "behatTestImage.png"
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test gp method?"
     And I press the "Delete" button
