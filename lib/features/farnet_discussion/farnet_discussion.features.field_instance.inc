@@ -11,6 +11,103 @@
 function farnet_discussion_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance:
+  // 'comment-comment_node_farnet_discussion-comment_body'.
+  $field_instances['comment-comment_node_farnet_discussion-comment_body'] = array(
+    'bundle' => 'comment_node_farnet_discussion',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'comment_body',
+    'label' => 'Comment',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'comment-comment_node_farnet_discussion-field_related_documents'.
+  $field_instances['comment-comment_node_farnet_discussion-field_related_documents'] = array(
+    'bundle' => 'comment_node_farnet_discussion',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Download [file:name]',
+        ),
+        'type' => 'file_download_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_related_documents',
+    'label' => 'Related documents',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'pdf doc docx xls xlsx ppt pptx txt jpg jpeg png',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'plupload' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-farnet_discussion-field_ne_body'.
   $field_instances['node-farnet_discussion-field_ne_body'] = array(
     'bundle' => 'farnet_discussion',
@@ -210,7 +307,9 @@ function farnet_discussion_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Comment');
   t('Groups audience');
+  t('Related documents');
   t('Title');
 
   return $field_instances;

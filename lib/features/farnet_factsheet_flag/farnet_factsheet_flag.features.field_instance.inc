@@ -684,6 +684,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'size' => 60,
       ),
       'type' => 'text_textfield',
@@ -767,18 +769,15 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection_table',
+        'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
-          'cssfield' => FALSE,
-          'cssrowcol' => FALSE,
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
-          'empty' => TRUE,
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_table_view',
+        'type' => 'field_collection_view',
         'weight' => 52,
       ),
       'teaser' => array(
@@ -798,11 +797,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'field_collection_table',
+      'module' => 'field_collection',
       'settings' => array(
         'nodragging' => FALSE,
       ),
-      'type' => 'field_collection_table',
+      'type' => 'field_collection_embed',
       'weight' => 20,
     ),
   );
@@ -816,18 +815,15 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection_table',
+        'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
-          'cssfield' => FALSE,
-          'cssrowcol' => FALSE,
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
-          'empty' => TRUE,
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_table_view',
+        'type' => 'field_collection_view',
         'weight' => 67,
       ),
       'teaser' => array(
@@ -847,11 +843,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'field_collection_table',
+      'module' => 'field_collection',
       'settings' => array(
         'nodragging' => FALSE,
       ),
-      'type' => 'field_collection_table',
+      'type' => 'field_collection_embed',
       'weight' => 92,
     ),
   );
@@ -911,18 +907,15 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection_table',
+        'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
-          'cssfield' => FALSE,
-          'cssrowcol' => FALSE,
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
-          'empty' => TRUE,
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_table_view',
+        'type' => 'field_collection_view',
         'weight' => 20,
       ),
       'teaser' => array(
@@ -942,11 +935,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'field_collection_table',
+      'module' => 'field_collection',
       'settings' => array(
         'nodragging' => FALSE,
       ),
-      'type' => 'field_collection_table',
+      'type' => 'field_collection_embed',
       'weight' => 49,
     ),
   );
@@ -4096,6 +4089,75 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-factsheet_flag-field_region'.
+  $field_instances['node-factsheet_flag-field_region'] = array(
+    'bundle' => 'factsheet_flag',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 84,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_region',
+    'label' => 'Region',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 100,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-factsheet_flag-field_sea_basins'.
   $field_instances['node-factsheet_flag-field_sea_basins'] = array(
     'bundle' => 'factsheet_flag',
@@ -4283,46 +4345,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-factsheet_flag-field_term_region'.
-  $field_instances['node-factsheet_flag-field_term_region'] = array(
-    'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_term_region',
-    'label' => 'Region',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 0,
     ),
   );
 

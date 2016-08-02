@@ -23,7 +23,7 @@ function farnet_cooperation_call_ctools_plugin_api($module = NULL, $api = NULL) 
 function farnet_cooperation_call_node_info() {
   $items = array(
     'cooperation_call' => array(
-      'name' => t('Cooperation call'),
+      'name' => t('Cooperation Call'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

@@ -1042,7 +1042,7 @@ function farnet_factsheet_flag_field_group_info() {
     'children' => array(
       0 => 'field_area',
       1 => 'field_term_country',
-      2 => 'field_term_region',
+      2 => 'field_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
