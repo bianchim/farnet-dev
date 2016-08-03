@@ -28,10 +28,12 @@ function farnet_user_field_group_info() {
       1 => 'field_address_2',
       2 => 'field_city',
       3 => 'field_phone_mobile',
-      4 => 'field_telephone',
-      5 => 'field_website',
-      6 => 'field_zip_code',
-      7 => 'field_skype_id',
+      4 => 'field_skype_id',
+      5 => 'field_telephone',
+      6 => 'field_user_country',
+      7 => 'field_website',
+      8 => 'field_zip_code',
+      9 => 'field_city_select',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -88,7 +90,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Language',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_preferred_language_1',
       1 => 'field_preferred_language_2',
@@ -122,7 +124,6 @@ function farnet_user_field_group_info() {
       0 => 'field_job_title',
       1 => 'field_organisation',
       2 => 'field_organisation_other',
-      3 => 'field_user_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -243,7 +244,7 @@ function farnet_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subscriptions',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_farnet_magazine_paper',
       1 => 'field_farnet_magazine_subscribe',

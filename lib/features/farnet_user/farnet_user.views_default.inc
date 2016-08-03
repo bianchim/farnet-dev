@@ -263,7 +263,7 @@ function farnet_user_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'countries';
-  /* Filter criterion: Content: Title (title_field) */
+  /* Filter criterion: Field: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
@@ -481,10 +481,6 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_zip_code']['id'] = 'field_zip_code';
   $handler->display->display_options['fields']['field_zip_code']['table'] = 'field_data_field_zip_code';
   $handler->display->display_options['fields']['field_zip_code']['field'] = 'field_zip_code';
-  /* Field: Field: City */
-  $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
-  $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
-  $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
   /* Field: Field: Telephone */
   $handler->display->display_options['fields']['field_telephone']['id'] = 'field_telephone';
   $handler->display->display_options['fields']['field_telephone']['table'] = 'field_data_field_telephone';
@@ -587,6 +583,10 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['status']['table'] = 'users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: User: City Select */
+  $handler->display->display_options['fields']['field_city_select']['id'] = 'field_city_select';
+  $handler->display->display_options['fields']['field_city_select']['table'] = 'field_data_field_city_select';
+  $handler->display->display_options['fields']['field_city_select']['field'] = 'field_city_select';
   $handler->display->display_options['path'] = 'admin/manage-users/export';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',

@@ -28,6 +28,7 @@ dependencies[] = text
 dependencies[] = metatag_twitter_cards
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_taxonomy
+dependencies[] = farnet_location
 features[contact_categories][] = Website feedback
 features[ctools][] = facetapi:facetapi_defaults:1
 features[ctools][] = strongarm:strongarm:1
