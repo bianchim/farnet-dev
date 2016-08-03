@@ -70,8 +70,6 @@ function farnet_user_menu() {
  */
 function farnet_user_profile_validate($form, &$form_state) {
 
-  dpm('in farnet_user_profile_validate');
-
   $magazines = $form_state['values']['field_farnet_magazine_subscribe'][LANGUAGE_NONE];
   $languages = array();
   $qte = 0;
@@ -128,7 +126,7 @@ function farnet_user_profile_validate($form, &$form_state) {
 
   // Get countries from farnet Taxonomy.
   $code_country = '';
-  if(isset($term_country->name)) {
+  if (isset($term_country->name)) {
     $code_country = $countries[$term_country->name];
   }
 
