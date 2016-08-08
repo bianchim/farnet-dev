@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_communities.strongarm.inc
