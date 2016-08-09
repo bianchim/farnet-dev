@@ -145,7 +145,7 @@ function farnet_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -206,12 +206,12 @@ function farnet_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'user-user-field_city'.
-  $field_instances['user-user-field_city'] = array(
+  // Exported field_instance: 'user-user-field_city_select'.
+  $field_instances['user-user-field_city_select'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
@@ -219,55 +219,28 @@ function farnet_user_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
+        'type' => 'list_default',
+        'weight' => 36,
       ),
     ),
     'entity_type' => 'user',
-    'field_name' => 'field_city',
-    'label' => 'City',
+    'field_name' => 'field_city_select',
+    'label' => 'City Select',
     'required' => 1,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'options',
       'settings' => array(
-        'size' => 60,
+        'apply_chosen' => '',
       ),
-      'type' => 'text_textfield',
-      'weight' => 12,
+      'type' => 'options_select',
+      'weight' => 11,
     ),
   );
 
@@ -1562,7 +1535,7 @@ function farnet_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -1655,7 +1628,7 @@ function farnet_user_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address 1');
   t('Address 2');
-  t('City');
+  t('City Select');
   t('Country');
   t('FARNET Magazine (paper version)');
   t('FARNET Magazine subscriptions');
