@@ -50,6 +50,14 @@ function farnet_communities_node_grants($account, $op) {
  * Implements hook_form_alter().
  */
 function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
+  $form_ids_pushable_to_public = array();
+  $form_ids_pushable_to_public[] = 'nexteuropa_event_node_form';
+  $form_ids_pushable_to_public[] = 'nexteuropa_news_node_form';
+  $form_ids_pushable_to_public[] = 'cooperation_call_node_form';
+  $form_ids_pushable_to_public[] = 'cooperation_idea_node_form';
+  $form_ids_pushable_to_public[] = 'gp_method_node_form';
+  $form_ids_pushable_to_public[] = 'gp_project_node_form';
+  $form_ids_pushable_to_public[] = 'gp_short_story_node_form';
   if ($form_id == 'community_public_node_form') {
     $form['group_access']['und']['#disabled'] = TRUE;
     $form['group_access']['und']['#type'] = 'hidden';
@@ -59,5 +67,17 @@ function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
     $form['group_access']['und']['#disabled'] = TRUE;
     $form['group_access']['und']['#type'] = 'hidden';
     $form['group_access']['und']['#value'] = '1';
+  }
+  if (in_array($form_id, $form_ids_pushable_to_public)) {
+    $form['group_content_access']['und']['#type'] = 'hidden';
+    if (!empty($form['og_group_ref']['und'][0]['default']['#default_value'])) {
+      $form['actions']['clone_public'] = array(
+        '#type' => 'submit',
+        '#value' => t('Push to public site'),
+        '#name' => 'push_public',
+        '#validate' => array('node_form_validate'),
+        '#submit' => array('node_form_submit', '_push_public'),
+      );
+    }
   }
 }

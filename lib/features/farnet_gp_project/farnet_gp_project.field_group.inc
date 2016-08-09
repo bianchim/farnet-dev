@@ -474,8 +474,9 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Metatag',
     'weight' => '9',
     'children' => array(
-      0 => 'scheduler_settings',
-      1 => 'language',
+      0 => 'og_group_ref',
+      1 => 'scheduler_settings',
+      2 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -565,8 +566,10 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '7',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_term_theme',
+      0 => 'field_sea_basins',
+      1 => 'field_tags',
+      2 => 'field_term_theme',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -598,9 +601,9 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '6',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_term_theme',
-      2 => 'field_sea_basins',
+      0 => 'field_sea_basins',
+      1 => 'field_tags',
+      2 => 'field_term_theme',
       3 => 'field_type_of_area',
     ),
     'format_type' => 'tab',

@@ -74,19 +74,3 @@ function farnet_news_strongarm_alter(&$variables) {
     $variables['pathauto_node_nexteuropa_news_pattern']->value = "news-events/news/[node:source:title]";
   }
 }
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function farnet_news_form_nexteuropa_news_node_form_alter(&$form, &$form_state, $form_id) {
-  $form['group_content_access']['und']['#type'] = 'hidden';
-  if (!empty($form['og_group_ref']['und'][0]['default']['#default_value'])) {
-    $form['actions']['clone_public'] = array(
-      '#type' => 'submit',
-      '#value' => t('Push to public site'),
-      '#name' => 'push_public',
-      '#validate' => array('node_form_validate'),
-      '#submit' => array('node_form_submit', '_push_public'),
-    );
-  }
-}

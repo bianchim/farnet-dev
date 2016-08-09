@@ -90,12 +90,12 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Description',
     'weight' => '3',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'field_objective',
-      2 => 'field_gpm_activities',
-      3 => 'field_gpm_lessons',
-      4 => 'field_gpm_main_achievements',
-      5 => 'field_gpm_transferability',
+      0 => 'field_gpm_activities',
+      1 => 'field_gpm_lessons',
+      2 => 'field_gpm_main_achievements',
+      3 => 'field_gpm_transferability',
+      4 => 'field_ne_body',
+      5 => 'field_objective',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -281,22 +281,12 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Metadata',
     'weight' => '9',
     'children' => array(
-      0 => 'group_content_access',
-      1 => 'og_group_ref',
+      0 => 'og_group_ref',
     ),
-    'format_type' => 'div',
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'label' => 'Metadata',
-      'instance_settings' => array(
-        'id' => 'group_gp_method_metadata',
-        'classes' => 'group_gp_method_metadata field-group-tab no-menu-content',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'collapsible',
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_gp_method_metadata|node|gp_method|default'] = $field_group;
@@ -530,8 +520,10 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '7',
     'children' => array(
-      0 => 'field_term_theme',
+      0 => 'field_sea_basins',
       1 => 'field_tags',
+      2 => 'field_term_theme',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -567,7 +559,6 @@ function farnet_gp_method_field_group_info() {
       1 => 'field_sea_basins',
       2 => 'field_type_of_area',
       3 => 'field_tags',
-
     ),
     'format_type' => 'tab',
     'format_settings' => array(

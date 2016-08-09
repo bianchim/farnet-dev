@@ -1696,7 +1696,7 @@ function farnet_gp_project_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 29,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1925,7 +1925,7 @@ function farnet_gp_project_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 30,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1951,6 +1951,59 @@ function farnet_gp_project_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-gp_project-og_group_ref'.
+  $field_instances['node-gp_project-og_group_ref'] = array(
+    'bundle' => 'gp_project',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 10,
     ),
   );
 
@@ -2021,6 +2074,7 @@ function farnet_gp_project_field_default_field_instances() {
   t('Figure');
   t('Flag');
   t('Gallery');
+  t('Groups audience');
   t('ID');
   t('Label');
   t('Lessons');

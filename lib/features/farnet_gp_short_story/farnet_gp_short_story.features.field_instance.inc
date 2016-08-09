@@ -1869,6 +1869,62 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gp_short_story-og_group_ref'.
+  $field_instances['node-gp_short_story-og_group_ref'] = array(
+    'bundle' => 'gp_short_story',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 28,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_short_story-title_field'.
   $field_instances['node-gp_short_story-title_field'] = array(
     'bundle' => 'gp_short_story',
@@ -1932,6 +1988,7 @@ function farnet_gp_short_story_field_default_field_instances() {
   t('EU contribution (phase)');
   t('Flag');
   t('Gallery');
+  t('Groups audience');
   t('Keywords');
   t('Local');
   t('National');
