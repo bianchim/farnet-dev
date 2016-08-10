@@ -17,9 +17,15 @@ projects[social_media_links][version] = "1.5"
 projects[field_collection][subdir] = "contrib"
 projects[field_collection][version] = "1.0-beta11"
 
+<<<<<<< HEAD
 projects[workbench_moderation][subdir] = "contrib"
 projects[workbench_moderation][version] = "1.4"
 projects[workbench_moderation][patch][] = https://www.drupal.org/files/issues/workbench_moderation-pathauto_alias_issue-2308095-20.patch
+=======
+projects[comment_og][subdir] = "contrib"
+projects[comment_og][version] = "1.0"
+projects[comment_og][patch][] = "https://www.drupal.org/files/issues/comment_og-delete_own_comment.patch"
+>>>>>>> develop
 
 ; =========
 ; Libraries
