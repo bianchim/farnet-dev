@@ -491,6 +491,10 @@ function farnet_gp_project_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'nexteuropa_listing_columns' => 'default',
+          'nexteuropa_listing_modifier' => '',
+          'nexteuropa_listing_wrapper_modifier' => '',
+          'show_translations' => '',
           'use_content_language' => 1,
           'view_mode' => 'media_gallery_page',
         ),
@@ -1954,6 +1958,67 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gp_project-og_group_ref'.
+  $field_instances['node-gp_project-og_group_ref'] = array(
+    'bundle' => 'gp_project',
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_project-title_field'.
   $field_instances['node-gp_project-title_field'] = array(
     'bundle' => 'gp_project',
@@ -2021,6 +2086,7 @@ function farnet_gp_project_field_default_field_instances() {
   t('Figure');
   t('Flag');
   t('Gallery');
+  t('Groups audience');
   t('ID');
   t('Label');
   t('Lessons');

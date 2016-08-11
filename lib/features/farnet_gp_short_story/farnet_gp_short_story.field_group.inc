@@ -383,11 +383,11 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Funding',
     'weight' => '3',
     'children' => array(
-      0 => 'field_eu_contribution',
-      1 => 'field_other_public_contribution',
-      2 => 'field_private_contribution',
-      3 => 'field_total_cost',
-      4 => 'field_collection_project_phase',
+      0 => 'field_collection_project_phase',
+      1 => 'field_eu_contribution',
+      2 => 'field_other_public_contribution',
+      3 => 'field_private_contribution',
+      4 => 'field_total_cost',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -473,10 +473,11 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Metadata',
     'weight' => '9',
     'children' => array(
-      0 => 'metatags',
-      1 => 'path',
-      2 => 'xmlsitemap',
-      3 => 'language',
+      0 => 'og_group_ref',
+      1 => 'metatags',
+      2 => 'path',
+      3 => 'xmlsitemap',
+      4 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -45,7 +45,6 @@ features[field_instance][] = node-ms_fiche-field_possible_partners
 features[field_instance][] = node-ms_fiche-field_sea_basins
 features[field_instance][] = node-ms_fiche-field_term_theme
 features[field_instance][] = node-ms_fiche-field_type_of_area
-features[field_instance][] = node-ms_fiche-og_group_ref
 features[field_instance][] = node-ms_fiche-title_field
 features[node][] = ms_fiche
 features[variable][] = comment_anonymous_ms_fiche

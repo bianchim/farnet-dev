@@ -118,10 +118,10 @@ function farnet_gp_short_story_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '29',
+          'weight' => '30',
         ),
         'xmlsitemap' => array(
-          'weight' => '28',
+          'weight' => '29',
         ),
         'language' => array(
           'weight' => '27',
@@ -130,7 +130,7 @@ function farnet_gp_short_story_strongarm() {
           'weight' => '28',
         ),
         'metatags' => array(
-          'weight' => '30',
+          'weight' => '31',
         ),
       ),
       'display' => array(),

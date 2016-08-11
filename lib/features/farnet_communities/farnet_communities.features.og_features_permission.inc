@@ -836,7 +836,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:create gp_method content'
   $permissions['node:community_hidden:create gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:create ms_fiche content'
@@ -1191,7 +1193,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:delete own gp_method content'
   $permissions['node:community_hidden:delete own gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:delete own ms_fiche content'
@@ -1750,7 +1754,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:update own gp_method content'
   $permissions['node:community_hidden:update own gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:update own ms_fiche content'
@@ -1960,7 +1966,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:create gp_method content'
   $permissions['node:community_private:create gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:create ms_fiche content'
@@ -2315,7 +2323,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:delete own gp_method content'
   $permissions['node:community_private:delete own gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:delete own ms_fiche content'
@@ -2876,7 +2886,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:update own gp_method content'
   $permissions['node:community_private:update own gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:update own ms_fiche content'
@@ -3085,7 +3097,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:create gp_method content'
   $permissions['node:community_public:create gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:create ms_fiche content'
@@ -3440,7 +3454,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:delete own gp_method content'
   $permissions['node:community_public:delete own gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:delete own ms_fiche content'
@@ -3999,7 +4015,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:update own gp_method content'
   $permissions['node:community_public:update own gp_method content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:update own ms_fiche content'

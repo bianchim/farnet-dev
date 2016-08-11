@@ -137,3 +137,29 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
 
   return $form;
 }
+
+/**
+ * Callback function of a submit button, clone content and remove OG settings.
+ *
+ * @param object $form
+ *   The form of the original content.
+ * @param string $form_state
+ *   The form stae of the original content.
+ */
+function _push_public($form, &$form_state) {
+  global $base_url;
+  $node = node_form_submit_build_node($form, $form_state);
+  if (empty($node->nid)) {
+    return FALSE;
+  }
+  unset($node->nid);
+  unset($node->vid);
+  unset($node->path);
+  if (isset($node->og_group_ref)) {
+    unset($node->og_group_ref);
+  }
+  node_save($node);
+  $msg = "The content has been duplicated to a public version available " .
+         "<a href='" . $base_url . "/node/" . $node->nid . "' target='_blank'>here</a>.";
+  drupal_set_message($msg, 'status');
+}
