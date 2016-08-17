@@ -152,12 +152,20 @@ function _push_public($form, &$form_state) {
   if (empty($node->nid)) {
     return FALSE;
   }
+
   unset($node->nid);
   unset($node->vid);
-  unset($node->path);
+
+  // Reactivate pathauto URL generation.
+  $node->path = ['pathauto' => TRUE];
+
   if (isset($node->og_group_ref)) {
     unset($node->og_group_ref);
   }
+
+  // Create as draft.
+  $node->workbench_moderation_state_new = workbench_moderation_state_none();
+
   node_save($node);
   $msg = "The content has been duplicated to a public version available " .
          "<a href='" . $base_url . "/node/" . $node->nid . "' target='_blank'>here</a>.";
