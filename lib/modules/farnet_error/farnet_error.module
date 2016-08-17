@@ -38,11 +38,20 @@ function farnet_error_menu() {
     'description' => 'Manage farnet error pages',
     'page callback' => 'drupal_get_form',
     'page arguments' => ['farnet_error_admin'],
-    'access arguments' => ['administer content'],
+    'access callback' => 'farnet_error_access_role',
+    'access arguments' => [['administrator']],
     'type' => MENU_LOCAL_TASK,
   ];
 
   return $items;
+}
+
+/**
+ * Access callback checking user role.
+ */
+function farnet_error_access_role($roles) {
+  global $user;
+  return !empty(array_intersect($roles, $user->roles));
 }
 
 /**
@@ -105,6 +114,12 @@ function farnet_error_redirect() {
 
   // Get the aliased path in order to check if the community keyword is here.
   $path = drupal_lookup_path('alias', $_GET['destination']);
+
+  // Fall back to destination path if no alias was found.
+  if ($path === FALSE) {
+    $path = $_GET['destination'];
+  }
+
   $path = explode('/', $path);
 
   if ($path[0] === $keyword) {
