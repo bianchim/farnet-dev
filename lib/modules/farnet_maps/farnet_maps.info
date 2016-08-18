@@ -1,0 +1,5 @@
+name = "Farnet maps"
+description = "Manage the maps"
+package = "Farnet"
+core = 7.x
+dependencies[] = nexteuropa_geojson_feeds
