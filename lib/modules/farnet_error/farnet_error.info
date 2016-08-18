@@ -1,0 +1,6 @@
+name = Farnet Error
+description = handle error page in Farnet
+core = 7.x
+package = Farnet
+dependencies[] = farnet_core
+features[ctools][] = strongarm:strongarm:1
