@@ -1,0 +1,120 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet location module.
+ */
+
+/**
+ * Used to manage countries names and codes.
+ */
+include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_maps_menu() {
+  $items['interactive_map'] = [
+    'title' => 'Farnet interactive map',
+    'description' => 'Provide an interactive map',
+    'page callback' => ['drupal_get_form'],
+    'page arguments' => ['farnet_maps_form', 1],
+    'access arguments' => ['access content'],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+
+  return $items;
+}
+
+
+/**
+ * Build the module form.
+ */
+function farnet_maps_form($form, &$form_state) {
+  global $base_url;
+
+  $form = [];
+
+  $countries_select = array();
+  foreach (taxonomy_get_tree(6) as $term) {
+    if ($term->depth > 0) {
+      $countries_select[$term->tid] = $term->name;
+    }
+  }
+  // Country selected in the form.
+  $country = isset($form_state['input']['countries']) ? $form_state['input']['countries'] : 0;
+
+  $form['countries'] = array(
+    '#type' => 'select',
+    '#title' => t('Countries'),
+    '#options' => $countries_select,
+    '#default_value' => $country,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Update map'),
+  );
+
+  if ($country) {
+    // Webtools JSON definition for a map.
+    $json_map = '{
+      "service": "map",
+      "map": {
+        "zoom": "2",
+        "center": [
+          "42.0329",
+          "27.4218"
+        ]
+      },
+      "layers": [
+        {
+          "checkbox": {
+            "label": "Elements",
+            "features": [
+              {
+                "label": "flag factsheet",
+                "markers": [
+                  "http://myproject/url_to_get_geojson"
+                ]
+              },
+              {
+                "label": "organisation",
+                "markers": [
+                  "http://myproject/url_to_get_geojson"
+                ],
+                "options": {
+                  "color": "pink"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }';
+
+    // Use the webtools smart loader.
+    drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
+
+    $json_map_object = json_decode($json_map);
+    $json_map_object->layers[0]->checkbox->features[0]->markers[0] = $base_url . "/interactive_map/factsheet_flag/" . $country;
+    $json_map_object->layers[0]->checkbox->features[1]->markers[0] = $base_url . "/interactive_map/organisation/" . $country;
+
+    $json_map = json_encode($json_map_object);
+
+    $form['json_map'] = array(
+      '#type' => 'item',
+      '#markup' => "<script type=\"application/json\">" . strip_tags($json_map) . "</script>",
+    );
+  }
+
+  return $form;
+}
+
+
+/**
+ * Provide the form submit callback.
+ */
+function farnet_maps_form_submit($form, &$form_state) {
+  $form_state['rebuild'] = TRUE;
+}
