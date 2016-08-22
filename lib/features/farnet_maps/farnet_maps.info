@@ -1,0 +1,6 @@
+name = Farnet Maps
+description = Maps management for Farnet
+core = 7.x
+package = Farnet
+dependencies[] = nexteuropa_geojson_feeds
+features[features_api][] = api:2
