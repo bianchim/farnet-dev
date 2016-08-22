@@ -94,7 +94,7 @@ function farnet_maps_form($form, &$form_state) {
     }';
 
     // Use the webtools smart loader.
-    drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl',''), 'external');
+    drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
 
     $json_map_object = json_decode($json_map);
     $json_map_object->layers[0]->checkbox->features[0]->markers[0] = $base_url . "/interactive_map/factsheet_flag/" . $country;
