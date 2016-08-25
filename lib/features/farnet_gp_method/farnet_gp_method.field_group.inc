@@ -125,14 +125,14 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '8',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'field_objective',
-      2 => 'field_gpm_activities',
-      3 => 'field_gpm_lessons',
-      4 => 'field_gpm_main_achievements',
-      5 => 'field_gpm_transferability',
+      0 => 'field_gpm_activities',
+      1 => 'field_gpm_lessons',
+      2 => 'field_gpm_main_achievements',
+      3 => 'field_gpm_transferability',
+      4 => 'field_ne_body',
+      5 => 'field_objective',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -161,7 +161,7 @@ function farnet_gp_method_field_group_info() {
     'children' => array(
       0 => 'field_area',
       1 => 'field_term_country',
-      2 => 'field_term_region',
+      2 => 'field_region',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -191,11 +191,13 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '7',
+    'weight' => '4',
     'children' => array(
       0 => 'field_area',
       1 => 'field_term_country',
-      2 => 'field_term_region',
+      2 => 'field_region',
+      3 => 'field_latitude',
+      4 => 'field_longitude',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -220,7 +222,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -252,7 +254,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '11',
+    'weight' => '8',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -279,7 +281,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'og_group_ref',
     ),
@@ -304,9 +306,8 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Metadata',
     'weight' => '2',
     'children' => array(
-      0 => 'group_content_access',
-      1 => 'og_group_ref',
-      2 => 'language',
+      0 => 'og_group_ref',
+      1 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -363,7 +364,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisations',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_organisations',
     ),
@@ -390,7 +391,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -453,7 +454,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_gpm_financial_resources',
       1 => 'field_gpm_other_resources',
@@ -488,7 +489,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
-    'weight' => '9',
+    'weight' => '6',
     'children' => array(
       0 => 'field_gpm_financial_resources',
       1 => 'field_gpm_other_resources',
@@ -518,7 +519,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_tags',
@@ -553,12 +554,12 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '12',
+    'weight' => '11',
     'children' => array(
-      0 => 'field_term_theme',
-      1 => 'field_sea_basins',
-      2 => 'field_type_of_area',
-      3 => 'field_tags',
+      0 => 'field_sea_basins',
+      1 => 'field_tags',
+      2 => 'field_term_theme',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -583,7 +584,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_dates_start_end',
     ),
@@ -615,7 +616,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '10',
+    'weight' => '7',
     'children' => array(
       0 => 'field_dates_start_end',
     ),
