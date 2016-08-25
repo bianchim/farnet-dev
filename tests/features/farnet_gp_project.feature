@@ -22,7 +22,7 @@ Feature: Factsheet GP Project content type
     When I press the "Save" button
     Then I should not see the error message "title field is required"
 
-  @api @debug
+  @api 
   Scenario: Create the content
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/gp-project_en"
