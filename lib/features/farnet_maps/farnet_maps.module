@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Farnet Maps feature.
@@ -31,7 +32,6 @@ function farnet_maps_menu() {
 
   return $items;
 }
-
 
 /**
  * Build the module form.
@@ -116,7 +116,6 @@ function farnet_maps_form($form, &$form_state) {
 
   return $form;
 }
-
 
 /**
  * Provide the form submit callback.
