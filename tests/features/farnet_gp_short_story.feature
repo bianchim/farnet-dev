@@ -39,6 +39,7 @@ Feature: Factsheet GP Short Story content type
     And I fill in "field_eu_contribution[und][0][value]" with "42"
     And I fill in "field_other_public_contribution[und][0][value]" with "42"
     And I fill in "field_private_contribution[und][0][value]" with "42"
+    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     When I press the "Save" button
     Then I should see the heading "Test gp short story"
 
@@ -56,6 +57,7 @@ Feature: Factsheet GP Short Story content type
       | field_other_public_contribution | 42                    |
       | field_private_contribution      | 42                    |
       | status                          | 1                     |
+      | og_group_ref                    | Global editorial team |
     When I click "New draft"
     And I fill in "title_field[en][0][value]" with "Edited gp short story"
     And I press the "Save" button
@@ -75,6 +77,7 @@ Feature: Factsheet GP Short Story content type
       | field_other_public_contribution | 42                    |
       | field_private_contribution      | 42                    |
       | status                          | 1                     |
+      | og_group_ref                    | Global editorial team |
     When I click "New draft"
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test gp short story?"
