@@ -202,8 +202,16 @@ function farnet_error_public() {
   $title = i18n_variable_get('farnet_error_public_title', $language->language);
   $body = i18n_variable_get('farnet_error_public_body', $language->language);
 
+  if (is_null($title)) {
+    $title = 'Access denied';
+  }
+
+  if (is_null($body)) {
+    $body = "You don't have access to this content.";
+  }
+
   drupal_set_title($title);
-  return $body['value'];
+  return isset($body['value']) ? $body['value'] : $body;
 }
 
 /**
@@ -214,6 +222,14 @@ function farnet_error_myfarnet() {
   $title = i18n_variable_get('farnet_error_myfarnet_title', $language->language);
   $body = i18n_variable_get('farnet_error_myfarnet_body', $language->language);
 
+  if (is_null($title)) {
+    $title = 'Access denied';
+  }
+
+  if (is_null($body)) {
+    $body = "You don't have access to this content on myFarnet.";
+  }
+
   drupal_set_title($title);
-  return $body['value'];
+  return isset($body['value']) ? $body['value'] : $body;
 }
