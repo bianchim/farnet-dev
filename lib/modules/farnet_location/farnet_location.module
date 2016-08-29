@@ -207,8 +207,9 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       break;
 
     case 'factsheet_flag':
+      global $language;
       $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
-      foreach ($node->field_area['en'] as $area_index => $area) {
+      foreach ($node->field_area[$language->language] as $area_index => $area) {
         $city = $area['value'];
         $output = _farnet_location_geocoding($city . ', ' . $country);
         if ($output && is_array($output)) {
