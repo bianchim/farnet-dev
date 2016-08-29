@@ -74,17 +74,3 @@ function farnet_news_strongarm_alter(&$variables) {
     $variables['pathauto_node_nexteuropa_news_pattern']->value = "news-events/news/[node:source:title]";
   }
 }
-
-/**
- * Implements hook_node_view().
- * @todo remove if CT Nexteuropa News corrected on platform
- */
-function farnet_news_node_view($node, $view_mode, $langcode = NULL) {
-  if ($node->type === 'nexteuropa_news' && $view_mode === 'teaser' && !empty($node->content['title_field'][0]['#markup'])) {
-    global $base_url; 
-    $title = $node->content['title_field']['#items'][0]['value'];
-    $node_url = drupal_get_path_alias('node/' . $node->nid);
-    $node->content['title_field'][0]['#markup'] = '<h2><a href="' . $base_url . '/' . $node_url . '" class="">' . $title . '</a></h2>';
-  }
-  return $node;
-}
