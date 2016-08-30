@@ -1,6 +1,9 @@
-[![Build Status](https://status.continuousphp.com/git-hub/champcy/farnet-dev?token=6f9b7c54-03c7-417a-b8bf-280203a2a818&branch=master)](https://continuousphp.com/git-hub/champcy/farnet-dev)
+# NextEuropa Farnet Subsite
 
-# NextEuropa Subsite Starterkit
+Master:  
+[![Build Status](https://status.continuousphp.com/git-hub/champcy/farnet-dev?token=6f9b7c54-03c7-417a-b8bf-280203a2a818&branch=master)](https://continuousphp.com/git-hub/champcy/farnet-dev)  
+Develop:   
+[![Build Status](https://status.continuousphp.com/git-hub/champcy/farnet-dev?token=6f9b7c54-03c7-417a-b8bf-280203a2a818&branch=develop)](https://continuousphp.com/git-hub/champcy/farnet-dev)  
 
 ```
 T                                    \`.    T
