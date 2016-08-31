@@ -34,8 +34,8 @@ Feature: Farnet custom error
   @api @cleanFarnetErrorVariables
   Scenario: Check Public Access denied page
     Given I am an anonymous user
-	And I am viewing a "community_private" content:
-	  | title                 | A private community                  |
+    And I am viewing a "community_private" content:
+      | title                 | A private community                  |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should see the heading "Access denied"
@@ -65,4 +65,3 @@ Feature: Farnet custom error
     Then I should see the heading "Access denied"
     And I should see the text "You don't have access to this content."
 
-	
