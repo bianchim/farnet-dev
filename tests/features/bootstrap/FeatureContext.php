@@ -385,4 +385,26 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     return $node;
   }
 
+  /**
+   * Reinitialize farnet error variables.
+   *
+   * @AfterScenario @cleanFarnetErrorVariables
+   */
+  public function cleanFarnetErrorVariables() {
+    // Farnet error public variables.
+    i18n_variable_del("farnet_error_public_title", "en");
+    i18n_variable_del("farnet_error_public_body", "en");
+    i18n_variable_del("farnet_error_public_title", "fr");
+    i18n_variable_del("farnet_error_public_body", "fr");
+    variable_del('farnet_error_public_title');
+    variable_del('farnet_error_public_body');
+    // Farnet error MyFarnet variables.
+    i18n_variable_del("farnet_error_myfarnet_title", "en");
+    i18n_variable_del("farnet_error_myfarnet_body", "en");
+    i18n_variable_del("farnet_error_myfarnet_title", "fr");
+    i18n_variable_del("farnet_error_myfarnet_body", "fr");
+    variable_del('farnet_error_myfarnet_title');
+    variable_del('farnet_error_myfarnet_body');
+  }
+
 }
