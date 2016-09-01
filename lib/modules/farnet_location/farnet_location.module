@@ -209,7 +209,7 @@ function farnet_location_node_submit($node, $form, &$form_state) {
           $node->field_latitude[LANGUAGE_NONE][0]['value'] = $latitude;
         }
         else {
-          drupal_set_message(t("The coordinates of this :address could not be set. Please set them manually or contact an administrator.", array(':address' => $address )), 'warning');
+          drupal_set_message(t("The coordinates of this :address could not be set. Please set them manually or contact an administrator.", array(':address' => $address)), 'warning');
         }
       }
       break;
@@ -227,7 +227,7 @@ function farnet_location_node_submit($node, $form, &$form_state) {
           $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
         }
         else {
-          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city )), 'warning');
+          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
         }
       }
       break;
