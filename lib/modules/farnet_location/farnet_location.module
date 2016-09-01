@@ -84,8 +84,8 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     case 'gp_method_node_form':
-      $form['field_latitude'][LANGUAGE_NONE]['#type'] = 'hidden';
-      $form['field_longitude'][LANGUAGE_NONE]['#type'] = 'hidden';
+      $form['field_latitude']['#type'] = 'hidden';
+      $form['field_longitude']['#type'] = 'hidden';
     case 'factsheet_flag_node_form':
       // Configure the fields.
       $form['field_term_country'][LANGUAGE_NONE]['#attributes']['class'][] = 'country_field_form';
@@ -209,11 +209,11 @@ function farnet_location_node_submit($node, $form, &$form_state) {
     $node->field_latitude[LANGUAGE_NONE] = array();
     foreach ($form['field_area'][$lang] as $key => $value) {
       if (is_int($key) !== FALSE) {
-        if (isset($form['field_area'][$lang][$key]['value']['#default_value'])) {
-          if (strlen($form['field_area'][$lang][$key]['value']['#default_value']) > 0) {
-            $country = $form['field_term_country'][LANGUAGE_NONE]['#default_value'];
-            $region = $form['field_region'][LANGUAGE_NONE][0]['value']['#default_value'];
-            $city = $form['field_area'][$lang][$key]['value']['#default_value'];
+        if (isset($form['field_area'][$lang][$key]['value']['#value'])) {
+          if (strlen($form['field_area'][$lang][$key]['value']['#value']) > 0) {
+            $country = $form['field_term_country'][LANGUAGE_NONE]['#value'];
+            $region = $form['field_region'][LANGUAGE_NONE][0]['value']['#value'];
+            $city = $form['field_area'][$lang][$key]['value']['#value'];
             $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
             if ($output && is_array($output)) {
               $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
