@@ -231,27 +231,28 @@ function farnet_location_node_submit($node, $form, &$form_state) {
         }
       }
       break;
-  }
-  elseif ($node->type == 'gp_method') {
-    $lang = $form['title_field']['#language'];
-    $node->field_longitude[LANGUAGE_NONE] = array();
-    $node->field_latitude[LANGUAGE_NONE] = array();
-    foreach ($form['field_area'][$lang] as $key => $value) {
-      if (is_int($key) !== FALSE) {
-        if (isset($form['field_area'][$lang][$key]['value']['#value'])) {
-          if (strlen($form['field_area'][$lang][$key]['value']['#value']) > 0) {
-            $country = $form['field_term_country'][LANGUAGE_NONE]['#value'];
-            $region = $form['field_region'][LANGUAGE_NONE][0]['value']['#value'];
-            $city = $form['field_area'][$lang][$key]['value']['#value'];
-            $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
-            if ($output && is_array($output)) {
-              $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
-              $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
+
+    case 'gp_method':
+      $lang = $form['title_field']['#language'];
+      $node->field_longitude[LANGUAGE_NONE] = array();
+      $node->field_latitude[LANGUAGE_NONE] = array();
+      foreach ($form['field_area'][$lang] as $key => $value) {
+        if (is_int($key) !== FALSE) {
+          if (isset($form['field_area'][$lang][$key]['value']['#value'])) {
+            if (strlen($form['field_area'][$lang][$key]['value']['#value']) > 0) {
+              $country = $form['field_term_country'][LANGUAGE_NONE]['#value'];
+              $region = $form['field_region'][LANGUAGE_NONE][0]['value']['#value'];
+              $city = $form['field_area'][$lang][$key]['value']['#value'];
+              $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
+              if ($output && is_array($output)) {
+                $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
+                $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
+              }
             }
           }
         }
       }
-    }
+      break;
   }
 }
 
