@@ -29,7 +29,6 @@ function farnet_maps_menu() {
     'access arguments' => ['access content'],
     'type' => MENU_NORMAL_ITEM,
   ];
-
   return $items;
 }
 

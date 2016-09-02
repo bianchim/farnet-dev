@@ -129,7 +129,6 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_alter().
  */
 function farnet_location_form_alter(&$form, &$form_state, $form_id) {
-
   switch ($form_id) {
     case 'user_register_form':
     case 'user_profile_form':
@@ -175,6 +174,16 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
         }
       }
       break;
+
+    case 'factsheet_flag_node_form':
+      $form['field_latitude']['#type'] = 'hidden';
+      $form['field_longitude']['#type'] = 'hidden';
+      break;
+
+    case 'organisation_node_form':
+      $form['field_latitude']['#type'] = 'hidden';
+      $form['field_longitude']['#type'] = 'hidden';
+      break;
   }
 }
 
@@ -182,47 +191,68 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_node_submit().
  */
 function farnet_location_node_submit($node, $form, &$form_state) {
-  if ($node->type == 'organisation') {
-    $address_1 = isset($node->field_address_1[LANGUAGE_NONE][0]['value']) ? $node->field_address_1[LANGUAGE_NONE][0]['value'] : '';
-    $address_2 = isset($node->field_address_2[LANGUAGE_NONE][0]['value']) ? $node->field_address_2[LANGUAGE_NONE][0]['value'] : '';
-    $city = isset($node->field_city[LANGUAGE_NONE][0]['value']) ? $node->field_city[LANGUAGE_NONE][0]['value'] : '';
-    $zip_code = isset($node->field_zip_code[LANGUAGE_NONE][0]['value']) ? $node->field_zip_code[LANGUAGE_NONE][0]['value'] : '';
-    $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
-    if ((!empty($address_1) || !empty($address_2)) && (!empty($city) || !empty($zip_code)) && !empty($country)) {
-      $address = (isset($address_1) ? $address_1 . ', ' : '') . (isset($address_2) ? $address_2 . ', ' : '') .
-        (isset($zip_code) ? $zip_code . ' ' : '') . (isset($city) ? $city . ', ' : '') . $country;
-      $output = _farnet_location_geocoding($address);
-      if ($output && is_array($output)) {
-        $longitude = $output[0];
-        $latitude = $output[1];
-        $node->field_longitude[LANGUAGE_NONE][0]['value'] = $longitude;
-        $node->field_latitude[LANGUAGE_NONE][0]['value'] = $latitude;
+  switch ($node->type) {
+    case 'organisation':
+      $address_1 = isset($node->field_address_1[LANGUAGE_NONE][0]['value']) ? $node->field_address_1[LANGUAGE_NONE][0]['value'] : '';
+      $address_2 = isset($node->field_address_2[LANGUAGE_NONE][0]['value']) ? $node->field_address_2[LANGUAGE_NONE][0]['value'] : '';
+      $city = isset($node->field_city[LANGUAGE_NONE][0]['value']) ? $node->field_city[LANGUAGE_NONE][0]['value'] : '';
+      $zip_code = isset($node->field_zip_code[LANGUAGE_NONE][0]['value']) ? $node->field_zip_code[LANGUAGE_NONE][0]['value'] : '';
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      if ((!empty($address_1) || !empty($address_2)) && (!empty($city) || !empty($zip_code)) && !empty($country)) {
+        $address = (isset($address_1) ? $address_1 . ', ' : '') . (isset($address_2) ? $address_2 . ', ' : '') .
+          (isset($zip_code) ? $zip_code . ' ' : '') . (isset($city) ? $city . ', ' : '') . $country;
+        $output = _farnet_location_geocoding($address);
+        if ($output && is_array($output)) {
+          $longitude = $output[0];
+          $latitude = $output[1];
+          $node->field_longitude[LANGUAGE_NONE][0]['value'] = $longitude;
+          $node->field_latitude[LANGUAGE_NONE][0]['value'] = $latitude;
+        }
+        else {
+          drupal_set_message(t("The coordinates of this :address could not be set. Please set them manually or contact an administrator.", array(':address' => $address)), 'warning');
+        }
       }
-      else {
-        drupal_set_message("The coordinates of this location could not be set. Please set them manually or contact an administrator.", 'warning');
+      break;
+
+    case 'factsheet_flag':
+      global $language;
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      foreach ($node->field_area[$language->language] as $area_index => $area) {
+        $city = $area['value'];
+        $output = _farnet_location_geocoding($city . ', ' . $country);
+        if ($output && is_array($output)) {
+          $longitude = $output[0];
+          $latitude = $output[1];
+          $node->field_longitude[LANGUAGE_NONE][$area_index]['value'] = $longitude;
+          $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
+        }
+        else {
+          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
+        }
       }
-    }
-  }
-  elseif ($node->type == 'gp_method') {
-    $lang = $form['title_field']['#language'];
-    $node->field_longitude[LANGUAGE_NONE] = array();
-    $node->field_latitude[LANGUAGE_NONE] = array();
-    foreach ($form['field_area'][$lang] as $key => $value) {
-      if (is_int($key) !== FALSE) {
-        if (isset($form['field_area'][$lang][$key]['value']['#value'])) {
-          if (strlen($form['field_area'][$lang][$key]['value']['#value']) > 0) {
-            $country = $form['field_term_country'][LANGUAGE_NONE]['#value'];
-            $region = $form['field_region'][LANGUAGE_NONE][0]['value']['#value'];
-            $city = $form['field_area'][$lang][$key]['value']['#value'];
-            $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
-            if ($output && is_array($output)) {
-              $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
-              $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
+      break;
+
+    case 'gp_method':
+      $lang = $form['title_field']['#language'];
+      $node->field_longitude[LANGUAGE_NONE] = array();
+      $node->field_latitude[LANGUAGE_NONE] = array();
+      foreach ($form['field_area'][$lang] as $key => $value) {
+        if (is_int($key) !== FALSE) {
+          if (isset($form['field_area'][$lang][$key]['value']['#value'])) {
+            if (strlen($form['field_area'][$lang][$key]['value']['#value']) > 0) {
+              $country = $form['field_term_country'][LANGUAGE_NONE]['#value'];
+              $region = $form['field_region'][LANGUAGE_NONE][0]['value']['#value'];
+              $city = $form['field_area'][$lang][$key]['value']['#value'];
+              $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
+              if ($output && is_array($output)) {
+                $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
+                $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
+              }
             }
           }
         }
       }
-    }
+      break;
   }
 }
 
