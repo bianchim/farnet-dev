@@ -41,7 +41,11 @@ function farnet_event_field_default_field_instances_alter(&$fields) {
     if (isset($fields['node-nexteuropa_event-title_field']['display'])) {
       $fields['node-nexteuropa_event-title_field']['display']['teaser']['label'] = "hidden";
       $fields['node-nexteuropa_event-title_field']['display']['teaser']['module'] = "title";
-      $fields['node-nexteuropa_event-title_field']['display']['teaser']['settings'] = array('title_class' => '', 'title_link' => 'content', 'title_style' => 'h2');
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['settings'] = array(
+        'title_class' => '',
+        'title_link' => 'content',
+        'title_style' => 'h2',
+      );
       $fields['node-nexteuropa_event-title_field']['display']['teaser']['type'] = "title_linked";
       $fields['node-nexteuropa_event-title_field']['display']['teaser']['weight'] = 0;
     }
