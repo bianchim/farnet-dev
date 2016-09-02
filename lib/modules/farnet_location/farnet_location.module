@@ -83,6 +83,7 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
   $lang = $form['title_field']['#language'];
 
   switch ($form_id) {
+    case 'gp_short_story_node_form':
     case 'gp_method_node_form':
       $form['field_latitude']['#type'] = 'hidden';
       $form['field_longitude']['#type'] = 'hidden';
@@ -111,16 +112,16 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
       ];
 
       // Attach the javascript to the form.
-      $form['#attached']['js'] = [
-        [
-          'data' => ['farnet_location' => $js_settings],
-          'type' => 'setting',
-        ],
-        [
-          'data' => drupal_get_path('module', 'farnet_location') . '/js/farnet_location.js',
-          'type' => 'file',
-        ],
+      $form['#attached']['js'][] = [
+        'data' => ['farnet_location' => $js_settings],
+        'type' => 'setting',
       ];
+
+      $form['#attached']['js'][] = [
+        'data' => drupal_get_path('module', 'farnet_location') . '/js/farnet_location.js',
+        'type' => 'file',
+      ];
+
       break;
   }
 }
@@ -203,7 +204,7 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       }
     }
   }
-  elseif ($node->type == 'gp_method') {
+  elseif (($node->type == 'gp_method') || ($node->type == 'gp_short_story')) {
     $lang = $form['title_field']['#language'];
     $node->field_longitude[LANGUAGE_NONE] = array();
     $node->field_latitude[LANGUAGE_NONE] = array();
