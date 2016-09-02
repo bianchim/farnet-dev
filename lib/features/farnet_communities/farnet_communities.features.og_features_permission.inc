@@ -11,658 +11,6 @@
 function farnet_communities_og_features_default_permissions() {
   $permissions = array();
 
-  // Exported og permission: 'node:community:approve comment_node_community'
-  $permissions['node:community:approve comment_node_community'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_community_hidden'
-  $permissions['node:community:approve comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_community_private'
-  $permissions['node:community:approve comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_community_public'
-  $permissions['node:community:approve comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_cooperation_call'
-  $permissions['node:community:approve comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_cooperation_idea'
-  $permissions['node:community:approve comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_editorial_team'
-  $permissions['node:community:approve comment_node_editorial_team'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_factsheet_country'
-  $permissions['node:community:approve comment_node_factsheet_country'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_factsheet_flag'
-  $permissions['node:community:approve comment_node_factsheet_flag'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_farnet_article'
-  $permissions['node:community:approve comment_node_farnet_article'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_farnet_discussion'
-  $permissions['node:community:approve comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_gp_method'
-  $permissions['node:community:approve comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_ms_fiche'
-  $permissions['node:community:approve comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_nexteuropa_event'
-  $permissions['node:community:approve comment_node_nexteuropa_event'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_nexteuropa_faq'
-  $permissions['node:community:approve comment_node_nexteuropa_faq'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_nexteuropa_mediagallery'
-  $permissions['node:community:approve comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_nexteuropa_news'
-  $permissions['node:community:approve comment_node_nexteuropa_news'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:approve comment_node_page'
-  $permissions['node:community:approve comment_node_page'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_community'
-  $permissions['node:community:delete comment_node_community'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_community_hidden'
-  $permissions['node:community:delete comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_community_private'
-  $permissions['node:community:delete comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_community_public'
-  $permissions['node:community:delete comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_cooperation_call'
-  $permissions['node:community:delete comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_cooperation_idea'
-  $permissions['node:community:delete comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_editorial_team'
-  $permissions['node:community:delete comment_node_editorial_team'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_factsheet_country'
-  $permissions['node:community:delete comment_node_factsheet_country'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_factsheet_flag'
-  $permissions['node:community:delete comment_node_factsheet_flag'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_farnet_article'
-  $permissions['node:community:delete comment_node_farnet_article'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_farnet_discussion'
-  $permissions['node:community:delete comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_gp_method'
-  $permissions['node:community:delete comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_ms_fiche'
-  $permissions['node:community:delete comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_nexteuropa_event'
-  $permissions['node:community:delete comment_node_nexteuropa_event'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_nexteuropa_faq'
-  $permissions['node:community:delete comment_node_nexteuropa_faq'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_nexteuropa_mediagallery'
-  $permissions['node:community:delete comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_nexteuropa_news'
-  $permissions['node:community:delete comment_node_nexteuropa_news'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete comment_node_page'
-  $permissions['node:community:delete comment_node_page'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_community'
-  $permissions['node:community:delete own comment_node_community'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_community_hidden'
-  $permissions['node:community:delete own comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_community_private'
-  $permissions['node:community:delete own comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_community_public'
-  $permissions['node:community:delete own comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_cooperation_call'
-  $permissions['node:community:delete own comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_cooperation_idea'
-  $permissions['node:community:delete own comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_editorial_team'
-  $permissions['node:community:delete own comment_node_editorial_team'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_factsheet_country'
-  $permissions['node:community:delete own comment_node_factsheet_country'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_factsheet_flag'
-  $permissions['node:community:delete own comment_node_factsheet_flag'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_farnet_article'
-  $permissions['node:community:delete own comment_node_farnet_article'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_farnet_discussion'
-  $permissions['node:community:delete own comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_gp_method'
-  $permissions['node:community:delete own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_ms_fiche'
-  $permissions['node:community:delete own comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_nexteuropa_event'
-  $permissions['node:community:delete own comment_node_nexteuropa_event'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_nexteuropa_faq'
-  $permissions['node:community:delete own comment_node_nexteuropa_faq'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_nexteuropa_mediagallery'
-  $permissions['node:community:delete own comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_nexteuropa_news'
-  $permissions['node:community:delete own comment_node_nexteuropa_news'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:delete own comment_node_page'
-  $permissions['node:community:delete own comment_node_page'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_community'
-  $permissions['node:community:edit comment_node_community'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_community_hidden'
-  $permissions['node:community:edit comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_community_private'
-  $permissions['node:community:edit comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_community_public'
-  $permissions['node:community:edit comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_cooperation_call'
-  $permissions['node:community:edit comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_cooperation_idea'
-  $permissions['node:community:edit comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_editorial_team'
-  $permissions['node:community:edit comment_node_editorial_team'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_factsheet_country'
-  $permissions['node:community:edit comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_factsheet_flag'
-  $permissions['node:community:edit comment_node_factsheet_flag'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_farnet_article'
-  $permissions['node:community:edit comment_node_farnet_article'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_farnet_discussion'
-  $permissions['node:community:edit comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_gp_method'
-  $permissions['node:community:edit comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_ms_fiche'
-  $permissions['node:community:edit comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_nexteuropa_event'
-  $permissions['node:community:edit comment_node_nexteuropa_event'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_nexteuropa_faq'
-  $permissions['node:community:edit comment_node_nexteuropa_faq'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_nexteuropa_mediagallery'
-  $permissions['node:community:edit comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_nexteuropa_news'
-  $permissions['node:community:edit comment_node_nexteuropa_news'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit comment_node_page'
-  $permissions['node:community:edit comment_node_page'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_community'
-  $permissions['node:community:edit own comment_node_community'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_community_hidden'
-  $permissions['node:community:edit own comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_community_private'
-  $permissions['node:community:edit own comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_community_public'
-  $permissions['node:community:edit own comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_cooperation_call'
-  $permissions['node:community:edit own comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_cooperation_idea'
-  $permissions['node:community:edit own comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_editorial_team'
-  $permissions['node:community:edit own comment_node_editorial_team'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_factsheet_country'
-  $permissions['node:community:edit own comment_node_factsheet_country'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_factsheet_flag'
-  $permissions['node:community:edit own comment_node_factsheet_flag'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_farnet_article'
-  $permissions['node:community:edit own comment_node_farnet_article'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_farnet_discussion'
-  $permissions['node:community:edit own comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_gp_method'
-  $permissions['node:community:edit own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_ms_fiche'
-  $permissions['node:community:edit own comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_nexteuropa_event'
-  $permissions['node:community:edit own comment_node_nexteuropa_event'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_nexteuropa_faq'
-  $permissions['node:community:edit own comment_node_nexteuropa_faq'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_nexteuropa_mediagallery'
-  $permissions['node:community:edit own comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_nexteuropa_news'
-  $permissions['node:community:edit own comment_node_nexteuropa_news'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:edit own comment_node_page'
-  $permissions['node:community:edit own comment_node_page'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_community'
-  $permissions['node:community:post comment_node_community'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_community_hidden'
-  $permissions['node:community:post comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_community_private'
-  $permissions['node:community:post comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_community_public'
-  $permissions['node:community:post comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_cooperation_call'
-  $permissions['node:community:post comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_cooperation_idea'
-  $permissions['node:community:post comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_editorial_team'
-  $permissions['node:community:post comment_node_editorial_team'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_factsheet_country'
-  $permissions['node:community:post comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_factsheet_flag'
-  $permissions['node:community:post comment_node_factsheet_flag'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_farnet_article'
-  $permissions['node:community:post comment_node_farnet_article'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_farnet_discussion'
-  $permissions['node:community:post comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_gp_method'
-  $permissions['node:community:post comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_ms_fiche'
-  $permissions['node:community:post comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_nexteuropa_event'
-  $permissions['node:community:post comment_node_nexteuropa_event'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_nexteuropa_faq'
-  $permissions['node:community:post comment_node_nexteuropa_faq'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_nexteuropa_mediagallery'
-  $permissions['node:community:post comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_nexteuropa_news'
-  $permissions['node:community:post comment_node_nexteuropa_news'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community:post comment_node_page'
-  $permissions['node:community:post comment_node_page'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:View all unpublished content'
   $permissions['node:community_hidden:View all unpublished content'] = array(
     'roles' => array(),
@@ -764,11 +112,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:approve comment_node_ms_fiche'
-  $permissions['node:community_hidden:approve comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_hidden:approve comment_node_gp_project'
+  $permissions['node:community_hidden:approve comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:approve comment_node_gp_short_story'
+  $permissions['node:community_hidden:approve comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:approve comment_node_nexteuropa_event'
@@ -842,17 +193,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_hidden:create ms_fiche content'
-  $permissions['node:community_hidden:create ms_fiche content'] = array(
+  // Exported og permission: 'node:community_hidden:create gp_project content'
+  $permissions['node:community_hidden:create gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_hidden:create gp_short_story content'
+  $permissions['node:community_hidden:create gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_hidden:create nexteuropa_event content'
   $permissions['node:community_hidden:create nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:create nexteuropa_faq content'
@@ -867,7 +226,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:create nexteuropa_news content'
   $permissions['node:community_hidden:create nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:create page content'
@@ -916,11 +277,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:delete any ms_fiche content'
-  $permissions['node:community_hidden:delete any ms_fiche content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_hidden:delete any gp_project content'
+  $permissions['node:community_hidden:delete any gp_project content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:delete any gp_short_story content'
+  $permissions['node:community_hidden:delete any gp_short_story content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:delete any nexteuropa_event content'
@@ -1016,11 +380,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:delete comment_node_ms_fiche'
-  $permissions['node:community_hidden:delete comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_hidden:delete comment_node_gp_project'
+  $permissions['node:community_hidden:delete comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:delete comment_node_gp_short_story'
+  $permissions['node:community_hidden:delete comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:delete comment_node_nexteuropa_event'
@@ -1120,12 +487,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:delete own comment_node_ms_fiche'
-  $permissions['node:community_hidden:delete own comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_hidden:delete own comment_node_gp_project'
+  $permissions['node:community_hidden:delete own comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:delete own comment_node_gp_short_story'
+  $permissions['node:community_hidden:delete own comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:delete own comment_node_nexteuropa_event'
@@ -1199,17 +568,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_hidden:delete own ms_fiche content'
-  $permissions['node:community_hidden:delete own ms_fiche content'] = array(
+  // Exported og permission: 'node:community_hidden:delete own gp_project content'
+  $permissions['node:community_hidden:delete own gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_hidden:delete own gp_short_story content'
+  $permissions['node:community_hidden:delete own gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_hidden:delete own nexteuropa_event content'
   $permissions['node:community_hidden:delete own nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:delete own nexteuropa_faq content'
@@ -1224,7 +601,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:delete own nexteuropa_news content'
   $permissions['node:community_hidden:delete own nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:delete own page content'
@@ -1300,11 +679,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:edit comment_node_ms_fiche'
-  $permissions['node:community_hidden:edit comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_hidden:edit comment_node_gp_project'
+  $permissions['node:community_hidden:edit comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:edit comment_node_gp_short_story'
+  $permissions['node:community_hidden:edit comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:edit comment_node_nexteuropa_event'
@@ -1404,12 +786,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:edit own comment_node_ms_fiche'
-  $permissions['node:community_hidden:edit own comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_hidden:edit own comment_node_gp_project'
+  $permissions['node:community_hidden:edit own comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:edit own comment_node_gp_short_story'
+  $permissions['node:community_hidden:edit own comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:edit own comment_node_nexteuropa_event'
@@ -1564,11 +948,6 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:post comment_node_farnet_article'
-  $permissions['node:community_hidden:post comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:community_hidden:post comment_node_farnet_discussion'
   $permissions['node:community_hidden:post comment_node_farnet_discussion'] = array(
     'roles' => array(
@@ -1582,12 +961,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:post comment_node_ms_fiche'
-  $permissions['node:community_hidden:post comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_hidden:post comment_node_gp_project'
+  $permissions['node:community_hidden:post comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:post comment_node_gp_short_story'
+  $permissions['node:community_hidden:post comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:post comment_node_nexteuropa_event'
@@ -1675,11 +1056,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:update any ms_fiche content'
-  $permissions['node:community_hidden:update any ms_fiche content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_hidden:update any gp_project content'
+  $permissions['node:community_hidden:update any gp_project content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:update any gp_short_story content'
+  $permissions['node:community_hidden:update any gp_short_story content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:update any nexteuropa_event content'
@@ -1760,17 +1144,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_hidden:update own ms_fiche content'
-  $permissions['node:community_hidden:update own ms_fiche content'] = array(
+  // Exported og permission: 'node:community_hidden:update own gp_project content'
+  $permissions['node:community_hidden:update own gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_hidden:update own gp_short_story content'
+  $permissions['node:community_hidden:update own gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_hidden:update own nexteuropa_event content'
   $permissions['node:community_hidden:update own nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:update own nexteuropa_faq content'
@@ -1785,7 +1177,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:update own nexteuropa_news content'
   $permissions['node:community_hidden:update own nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:update own page content'
@@ -1894,11 +1288,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:approve comment_node_ms_fiche'
-  $permissions['node:community_private:approve comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_private:approve comment_node_gp_project'
+  $permissions['node:community_private:approve comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:approve comment_node_gp_short_story'
+  $permissions['node:community_private:approve comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:approve comment_node_nexteuropa_event'
@@ -1972,17 +1369,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_private:create ms_fiche content'
-  $permissions['node:community_private:create ms_fiche content'] = array(
+  // Exported og permission: 'node:community_private:create gp_project content'
+  $permissions['node:community_private:create gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_private:create gp_short_story content'
+  $permissions['node:community_private:create gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_private:create nexteuropa_event content'
   $permissions['node:community_private:create nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:create nexteuropa_faq content'
@@ -1997,7 +1402,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:create nexteuropa_news content'
   $permissions['node:community_private:create nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:create page content'
@@ -2046,11 +1453,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:delete any ms_fiche content'
-  $permissions['node:community_private:delete any ms_fiche content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_private:delete any gp_project content'
+  $permissions['node:community_private:delete any gp_project content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:delete any gp_short_story content'
+  $permissions['node:community_private:delete any gp_short_story content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:delete any nexteuropa_event content'
@@ -2146,11 +1556,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:delete comment_node_ms_fiche'
-  $permissions['node:community_private:delete comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_private:delete comment_node_gp_project'
+  $permissions['node:community_private:delete comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:delete comment_node_gp_short_story'
+  $permissions['node:community_private:delete comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:delete comment_node_nexteuropa_event'
@@ -2250,12 +1663,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:delete own comment_node_ms_fiche'
-  $permissions['node:community_private:delete own comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_private:delete own comment_node_gp_project'
+  $permissions['node:community_private:delete own comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:delete own comment_node_gp_short_story'
+  $permissions['node:community_private:delete own comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:delete own comment_node_nexteuropa_event'
@@ -2329,17 +1744,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_private:delete own ms_fiche content'
-  $permissions['node:community_private:delete own ms_fiche content'] = array(
+  // Exported og permission: 'node:community_private:delete own gp_project content'
+  $permissions['node:community_private:delete own gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_private:delete own gp_short_story content'
+  $permissions['node:community_private:delete own gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_private:delete own nexteuropa_event content'
   $permissions['node:community_private:delete own nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:delete own nexteuropa_faq content'
@@ -2354,7 +1777,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:delete own nexteuropa_news content'
   $permissions['node:community_private:delete own nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:delete own page content'
@@ -2430,11 +1855,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:edit comment_node_ms_fiche'
-  $permissions['node:community_private:edit comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_private:edit comment_node_gp_project'
+  $permissions['node:community_private:edit comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:edit comment_node_gp_short_story'
+  $permissions['node:community_private:edit comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:edit comment_node_nexteuropa_event'
@@ -2534,12 +1962,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:edit own comment_node_ms_fiche'
-  $permissions['node:community_private:edit own comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_private:edit own comment_node_gp_project'
+  $permissions['node:community_private:edit own comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:edit own comment_node_gp_short_story'
+  $permissions['node:community_private:edit own comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:edit own comment_node_nexteuropa_event'
@@ -2714,12 +2144,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:post comment_node_ms_fiche'
-  $permissions['node:community_private:post comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_private:post comment_node_gp_project'
+  $permissions['node:community_private:post comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:post comment_node_gp_short_story'
+  $permissions['node:community_private:post comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:post comment_node_nexteuropa_event'
@@ -2807,11 +2239,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:update any ms_fiche content'
-  $permissions['node:community_private:update any ms_fiche content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_private:update any gp_project content'
+  $permissions['node:community_private:update any gp_project content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_private:update any gp_short_story content'
+  $permissions['node:community_private:update any gp_short_story content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:update any nexteuropa_event content'
@@ -2892,17 +2327,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_private:update own ms_fiche content'
-  $permissions['node:community_private:update own ms_fiche content'] = array(
+  // Exported og permission: 'node:community_private:update own gp_project content'
+  $permissions['node:community_private:update own gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_private:update own gp_short_story content'
+  $permissions['node:community_private:update own gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_private:update own nexteuropa_event content'
   $permissions['node:community_private:update own nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:update own nexteuropa_faq content'
@@ -2917,7 +2360,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:update own nexteuropa_news content'
   $permissions['node:community_private:update own nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_private:update own page content'
@@ -3026,11 +2471,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:approve comment_node_ms_fiche'
-  $permissions['node:community_public:approve comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_public:approve comment_node_gp_project'
+  $permissions['node:community_public:approve comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:approve comment_node_gp_short_story'
+  $permissions['node:community_public:approve comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:approve comment_node_nexteuropa_event'
@@ -3103,17 +2551,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:create ms_fiche content'
-  $permissions['node:community_public:create ms_fiche content'] = array(
+  // Exported og permission: 'node:community_public:create gp_project content'
+  $permissions['node:community_public:create gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:create gp_short_story content'
+  $permissions['node:community_public:create gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_public:create nexteuropa_event content'
   $permissions['node:community_public:create nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:create nexteuropa_faq content'
@@ -3128,7 +2584,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:create nexteuropa_news content'
   $permissions['node:community_public:create nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:create page content'
@@ -3177,11 +2635,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:delete any ms_fiche content'
-  $permissions['node:community_public:delete any ms_fiche content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_public:delete any gp_project content'
+  $permissions['node:community_public:delete any gp_project content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete any gp_short_story content'
+  $permissions['node:community_public:delete any gp_short_story content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:delete any nexteuropa_event content'
@@ -3277,11 +2738,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:delete comment_node_ms_fiche'
-  $permissions['node:community_public:delete comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_public:delete comment_node_gp_project'
+  $permissions['node:community_public:delete comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete comment_node_gp_short_story'
+  $permissions['node:community_public:delete comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:delete comment_node_nexteuropa_event'
@@ -3381,12 +2845,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:delete own comment_node_ms_fiche'
-  $permissions['node:community_public:delete own comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_public:delete own comment_node_gp_project'
+  $permissions['node:community_public:delete own comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:delete own comment_node_gp_short_story'
+  $permissions['node:community_public:delete own comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:delete own comment_node_nexteuropa_event'
@@ -3460,17 +2926,25 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:delete own ms_fiche content'
-  $permissions['node:community_public:delete own ms_fiche content'] = array(
+  // Exported og permission: 'node:community_public:delete own gp_project content'
+  $permissions['node:community_public:delete own gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:delete own gp_short_story content'
+  $permissions['node:community_public:delete own gp_short_story content'] = array(
+    'roles' => array(
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_public:delete own nexteuropa_event content'
   $permissions['node:community_public:delete own nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:delete own nexteuropa_faq content'
@@ -3485,7 +2959,9 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:delete own nexteuropa_news content'
   $permissions['node:community_public:delete own nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:delete own page content'
@@ -3561,11 +3037,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:edit comment_node_ms_fiche'
-  $permissions['node:community_public:edit comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_public:edit comment_node_gp_project'
+  $permissions['node:community_public:edit comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:edit comment_node_gp_short_story'
+  $permissions['node:community_public:edit comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:edit comment_node_nexteuropa_event'
@@ -3665,12 +3144,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:edit own comment_node_ms_fiche'
-  $permissions['node:community_public:edit own comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_public:edit own comment_node_gp_project'
+  $permissions['node:community_public:edit own comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:edit own comment_node_gp_short_story'
+  $permissions['node:community_public:edit own comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:edit own comment_node_nexteuropa_event'
@@ -3843,12 +3324,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:post comment_node_ms_fiche'
-  $permissions['node:community_public:post comment_node_ms_fiche'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+  // Exported og permission: 'node:community_public:post comment_node_gp_project'
+  $permissions['node:community_public:post comment_node_gp_project'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:post comment_node_gp_short_story'
+  $permissions['node:community_public:post comment_node_gp_short_story'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:post comment_node_nexteuropa_event'
@@ -3936,11 +3419,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:update any ms_fiche content'
-  $permissions['node:community_public:update any ms_fiche content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+  // Exported og permission: 'node:community_public:update any gp_project content'
+  $permissions['node:community_public:update any gp_project content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:update any gp_short_story content'
+  $permissions['node:community_public:update any gp_short_story content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:update any nexteuropa_event content'
@@ -4021,17 +3507,18 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:update own ms_fiche content'
-  $permissions['node:community_public:update own ms_fiche content'] = array(
+  // Exported og permission: 'node:community_public:update own gp_project content'
+  $permissions['node:community_public:update own gp_project content'] = array(
     'roles' => array(
-      'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
 
   // Exported og permission: 'node:community_public:update own nexteuropa_event content'
   $permissions['node:community_public:update own nexteuropa_event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:update own nexteuropa_faq content'
@@ -4046,451 +3533,13 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:update own nexteuropa_news content'
   $permissions['node:community_public:update own nexteuropa_news content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:update own page content'
   $permissions['node:community_public:update own page content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_community'
-  $permissions['node:editorial_team:approve comment_node_community'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_community_hidden'
-  $permissions['node:editorial_team:approve comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_community_private'
-  $permissions['node:editorial_team:approve comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_community_public'
-  $permissions['node:editorial_team:approve comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_cooperation_call'
-  $permissions['node:editorial_team:approve comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_cooperation_idea'
-  $permissions['node:editorial_team:approve comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_editorial_team'
-  $permissions['node:editorial_team:approve comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_factsheet_country'
-  $permissions['node:editorial_team:approve comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_factsheet_flag'
-  $permissions['node:editorial_team:approve comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_farnet_article'
-  $permissions['node:editorial_team:approve comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_farnet_discussion'
-  $permissions['node:editorial_team:approve comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_gp_method'
-  $permissions['node:editorial_team:approve comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_ms_fiche'
-  $permissions['node:editorial_team:approve comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_nexteuropa_event'
-  $permissions['node:editorial_team:approve comment_node_nexteuropa_event'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_nexteuropa_faq'
-  $permissions['node:editorial_team:approve comment_node_nexteuropa_faq'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_nexteuropa_mediagallery'
-  $permissions['node:editorial_team:approve comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_nexteuropa_news'
-  $permissions['node:editorial_team:approve comment_node_nexteuropa_news'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:approve comment_node_page'
-  $permissions['node:editorial_team:approve comment_node_page'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:create farnet_discussion content'
-  $permissions['node:editorial_team:create farnet_discussion content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete any farnet_discussion content'
-  $permissions['node:editorial_team:delete any farnet_discussion content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_community'
-  $permissions['node:editorial_team:delete comment_node_community'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_community_hidden'
-  $permissions['node:editorial_team:delete comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_community_private'
-  $permissions['node:editorial_team:delete comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_community_public'
-  $permissions['node:editorial_team:delete comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_cooperation_call'
-  $permissions['node:editorial_team:delete comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_cooperation_idea'
-  $permissions['node:editorial_team:delete comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_editorial_team'
-  $permissions['node:editorial_team:delete comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_factsheet_country'
-  $permissions['node:editorial_team:delete comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_factsheet_flag'
-  $permissions['node:editorial_team:delete comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_farnet_article'
-  $permissions['node:editorial_team:delete comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_farnet_discussion'
-  $permissions['node:editorial_team:delete comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_gp_method'
-  $permissions['node:editorial_team:delete comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_ms_fiche'
-  $permissions['node:editorial_team:delete comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_nexteuropa_event'
-  $permissions['node:editorial_team:delete comment_node_nexteuropa_event'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_nexteuropa_faq'
-  $permissions['node:editorial_team:delete comment_node_nexteuropa_faq'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_nexteuropa_mediagallery'
-  $permissions['node:editorial_team:delete comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_nexteuropa_news'
-  $permissions['node:editorial_team:delete comment_node_nexteuropa_news'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete comment_node_page'
-  $permissions['node:editorial_team:delete comment_node_page'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_community'
-  $permissions['node:editorial_team:delete own comment_node_community'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_community_hidden'
-  $permissions['node:editorial_team:delete own comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_community_private'
-  $permissions['node:editorial_team:delete own comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_community_public'
-  $permissions['node:editorial_team:delete own comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_cooperation_call'
-  $permissions['node:editorial_team:delete own comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_cooperation_idea'
-  $permissions['node:editorial_team:delete own comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_editorial_team'
-  $permissions['node:editorial_team:delete own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_factsheet_country'
-  $permissions['node:editorial_team:delete own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_factsheet_flag'
-  $permissions['node:editorial_team:delete own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_farnet_article'
-  $permissions['node:editorial_team:delete own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_farnet_discussion'
-  $permissions['node:editorial_team:delete own comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_gp_method'
-  $permissions['node:editorial_team:delete own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_ms_fiche'
-  $permissions['node:editorial_team:delete own comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_nexteuropa_event'
-  $permissions['node:editorial_team:delete own comment_node_nexteuropa_event'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_nexteuropa_faq'
-  $permissions['node:editorial_team:delete own comment_node_nexteuropa_faq'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_nexteuropa_mediagallery'
-  $permissions['node:editorial_team:delete own comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_nexteuropa_news'
-  $permissions['node:editorial_team:delete own comment_node_nexteuropa_news'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own comment_node_page'
-  $permissions['node:editorial_team:delete own comment_node_page'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:delete own farnet_discussion content'
-  $permissions['node:editorial_team:delete own farnet_discussion content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_community'
-  $permissions['node:editorial_team:edit comment_node_community'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_community_hidden'
-  $permissions['node:editorial_team:edit comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_community_private'
-  $permissions['node:editorial_team:edit comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_community_public'
-  $permissions['node:editorial_team:edit comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_cooperation_call'
-  $permissions['node:editorial_team:edit comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_cooperation_idea'
-  $permissions['node:editorial_team:edit comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_editorial_team'
-  $permissions['node:editorial_team:edit comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_factsheet_country'
-  $permissions['node:editorial_team:edit comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_factsheet_flag'
-  $permissions['node:editorial_team:edit comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_farnet_article'
-  $permissions['node:editorial_team:edit comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_farnet_discussion'
-  $permissions['node:editorial_team:edit comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_gp_method'
-  $permissions['node:editorial_team:edit comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_ms_fiche'
-  $permissions['node:editorial_team:edit comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_nexteuropa_event'
-  $permissions['node:editorial_team:edit comment_node_nexteuropa_event'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_nexteuropa_faq'
-  $permissions['node:editorial_team:edit comment_node_nexteuropa_faq'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_nexteuropa_mediagallery'
-  $permissions['node:editorial_team:edit comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_nexteuropa_news'
-  $permissions['node:editorial_team:edit comment_node_nexteuropa_news'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit comment_node_page'
-  $permissions['node:editorial_team:edit comment_node_page'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_community'
-  $permissions['node:editorial_team:edit own comment_node_community'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_community_hidden'
-  $permissions['node:editorial_team:edit own comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_community_private'
-  $permissions['node:editorial_team:edit own comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_community_public'
-  $permissions['node:editorial_team:edit own comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_cooperation_call'
-  $permissions['node:editorial_team:edit own comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_cooperation_idea'
-  $permissions['node:editorial_team:edit own comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_editorial_team'
-  $permissions['node:editorial_team:edit own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_factsheet_country'
-  $permissions['node:editorial_team:edit own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_factsheet_flag'
-  $permissions['node:editorial_team:edit own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_farnet_article'
-  $permissions['node:editorial_team:edit own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_farnet_discussion'
-  $permissions['node:editorial_team:edit own comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_gp_method'
-  $permissions['node:editorial_team:edit own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_ms_fiche'
-  $permissions['node:editorial_team:edit own comment_node_ms_fiche'] = array(
     'roles' => array(),
   );
 
@@ -4499,123 +3548,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:editorial_team:edit own comment_node_nexteuropa_faq'
-  $permissions['node:editorial_team:edit own comment_node_nexteuropa_faq'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_nexteuropa_mediagallery'
-  $permissions['node:editorial_team:edit own comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_nexteuropa_news'
-  $permissions['node:editorial_team:edit own comment_node_nexteuropa_news'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:edit own comment_node_page'
-  $permissions['node:editorial_team:edit own comment_node_page'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_community'
-  $permissions['node:editorial_team:post comment_node_community'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_community_hidden'
-  $permissions['node:editorial_team:post comment_node_community_hidden'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_community_private'
-  $permissions['node:editorial_team:post comment_node_community_private'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_community_public'
-  $permissions['node:editorial_team:post comment_node_community_public'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_cooperation_call'
-  $permissions['node:editorial_team:post comment_node_cooperation_call'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_cooperation_idea'
-  $permissions['node:editorial_team:post comment_node_cooperation_idea'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_editorial_team'
-  $permissions['node:editorial_team:post comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_factsheet_country'
-  $permissions['node:editorial_team:post comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_factsheet_flag'
-  $permissions['node:editorial_team:post comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_farnet_article'
-  $permissions['node:editorial_team:post comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_farnet_discussion'
-  $permissions['node:editorial_team:post comment_node_farnet_discussion'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_gp_method'
-  $permissions['node:editorial_team:post comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_ms_fiche'
-  $permissions['node:editorial_team:post comment_node_ms_fiche'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_nexteuropa_event'
-  $permissions['node:editorial_team:post comment_node_nexteuropa_event'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_nexteuropa_faq'
-  $permissions['node:editorial_team:post comment_node_nexteuropa_faq'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_nexteuropa_mediagallery'
-  $permissions['node:editorial_team:post comment_node_nexteuropa_mediagallery'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_nexteuropa_news'
-  $permissions['node:editorial_team:post comment_node_nexteuropa_news'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:post comment_node_page'
-  $permissions['node:editorial_team:post comment_node_page'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:editorial_team:update any farnet_discussion content'
   $permissions['node:editorial_team:update any farnet_discussion content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:update own farnet_discussion content'
-  $permissions['node:editorial_team:update own farnet_discussion content'] = array(
     'roles' => array(),
   );
 
