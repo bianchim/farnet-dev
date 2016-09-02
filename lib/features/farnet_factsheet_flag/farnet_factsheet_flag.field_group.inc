@@ -252,6 +252,7 @@ function farnet_factsheet_flag_field_group_info() {
       4 => 'field_term_region',
       5 => 'field_title_official',
       6 => 'title_field',
+      7 => 'field_interactive_map',
     ),
     'format_type' => 'div',
     'format_settings' => array(

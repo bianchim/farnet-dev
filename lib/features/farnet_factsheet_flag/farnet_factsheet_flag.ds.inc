@@ -124,6 +124,7 @@ function farnet_factsheet_flag_ds_layout_settings_info() {
         76 => 'field_ff_linkedin',
         77 => 'field_ff_google',
         78 => 'field_collection_language',
+        79 => 'field_interactive_map',
       ),
     ),
     'fields' => array(
