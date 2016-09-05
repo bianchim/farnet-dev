@@ -36,7 +36,7 @@ default:
         primary_tabs: ".tabs-primary"
         content: "#layout-body"
         footer: "#layout-footer"
-        sidebar-left: "#sidebar-left"
-        sidebar-right: "#sidebar-right"
+        sidebar_left: "#sidebar-left"
+        sidebar_right: "#sidebar-right"
   formatters:
     ${behat.formatter.name}: ~
