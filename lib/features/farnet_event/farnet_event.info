@@ -67,6 +67,7 @@ features[field_instance][] = field_collection_item-field_speakers-description_fi
 features[field_instance][] = field_collection_item-field_speakers-field_job_position
 features[field_instance][] = field_collection_item-field_speakers-field_presentation
 features[field_instance][] = field_collection_item-field_speakers-name_field
+features[field_instance][] = file-document-filename_field
 features[field_instance][] = node-nexteuropa_event-field_city
 features[field_instance][] = node-nexteuropa_event-field_contact_position
 features[field_instance][] = node-nexteuropa_event-field_contact_title
