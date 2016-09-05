@@ -349,6 +349,7 @@ function farnet_event_field_group_info() {
       3 => 'field_registration',
       4 => 'field_twitter_hashtag',
       5 => 'field_website',
+      6 => 'field_presentation',
     ),
     'format_type' => 'div',
     'format_settings' => array(
