@@ -18,6 +18,8 @@ use Behat\Behat\Hook\Scope\BeforeScenarioScope;
  */
 class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
 
+  private $geonameUsername = FALSE;
+
   /**
    * Checks that a 403 Access Denied error occurred.
    *
@@ -405,6 +407,53 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     i18n_variable_del("farnet_error_myfarnet_body", "fr");
     variable_del('farnet_error_myfarnet_title');
     variable_del('farnet_error_myfarnet_body');
+  }
+
+  /**
+   * Prepare the configuration for the use of GeoNames.
+   *
+   * @beforeScenario @GeoNames
+   */
+  public function geonamesBeforeScenario() {
+    $this->geonameUsername = variable_get('geonames_username', FALSE);
+    variable_set('geonames_username', 'bianchim');
+  }
+
+  /**
+   * Restore the configuration after the use of GeoNames, and check for errors.
+   *
+   * @afterScenario @GeoNames
+   */
+  public function geonamesAfterScenario() {
+    if ($this->geonameUsername) {
+      variable_set('geonames_username', $this->geonameUsername);
+    }
+    else {
+      variable_del('geonames_username');
+    }
+
+    // Get all errors from GeoNames and display them.
+    $log = db_select('watchdog', 'w')
+      ->fields('w')
+      ->condition('w.type', 'GeoNames', '=')
+      ->execute()
+      ->fetchAll();
+
+    if (!empty($log)) {
+      $message = count($log) . " error(s) triggered by GeoNames API calls\n";
+      $message .= "Errors:" . PHP_EOL;
+      $message .= "----------" . PHP_EOL;
+      foreach ($log as $error) {
+        $error->variables = unserialize($error->variables);
+        $date = date('Y-m-d H:i:sP', $error->timestamp);
+        $message .= "Message: " . format_string($error->message, $error->variables) . PHP_EOL;
+        $message .= "Location: $error->location" . PHP_EOL;
+        $message .= "Referer: $error->referer" . PHP_EOL;
+        $message .= "Date/Time: $date" . PHP_EOL . PHP_EOL;
+      }
+      $message .= "----------" . PHP_EOL;
+      throw new \Exception($message);
+    }
   }
 
 }

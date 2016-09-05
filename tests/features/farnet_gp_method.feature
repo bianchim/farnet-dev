@@ -33,7 +33,7 @@ Feature: Factsheet GP Method content type
     And I should see the error message "Title field is required."
     And I should see the error message "You must select one or more groups for this content."
 
-  @api
+  @api @GeoNames
   Scenario: Create the content
     Given I am logged in as a user with the "administrator" role
     When I visit "node/add/gp-method_en"
