@@ -78,6 +78,7 @@ features[field_instance][] = node-nexteuropa_event-field_first_name
 features[field_instance][] = node-nexteuropa_event-field_gallery
 features[field_instance][] = node-nexteuropa_event-field_last_name
 features[field_instance][] = node-nexteuropa_event-field_picture
+features[field_instance][] = node-nexteuropa_event-field_presentation
 features[field_instance][] = node-nexteuropa_event-field_publication_abstract
 features[field_instance][] = node-nexteuropa_event-field_publication_date
 features[field_instance][] = node-nexteuropa_event-field_registration
