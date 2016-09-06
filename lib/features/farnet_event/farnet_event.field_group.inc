@@ -128,6 +128,7 @@ function farnet_event_field_group_info() {
     'children' => array(
       0 => 'field_documents',
       1 => 'field_gallery',
+      2 => 'field_picture',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
