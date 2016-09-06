@@ -291,11 +291,11 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   }
 
   /**
-   * Make a user with the OG role in the group (create it if it doesn't exist)
+   * Make a user with the OG role in the group (create it if it doesn't exist).
    *
    * @Given I am a/an :roles user, member of entity :entity_name of type :entity_type as :group_role
    */
-  public function iAmAMemberOfEntityHavingRole($roles, $group_role, $entity_name, $entity_type) {
+  public function iAmMemberOfEntityHavingRole($roles, $group_role, $entity_name, $entity_type) {
     $admin = user_load(1);
     // Create the user.
     $account = (object) array(
@@ -346,6 +346,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    *   (optional) The group's entity type.
    *
    * @throws \Exception
+   *   Throw an error if the membership or the group role has an issue.
    */
   protected function addMembertoGroup($account, $group_role, $group, $group_type = 'node') {
     list($gid,,) = entity_extract_ids($group_type, $group);
@@ -412,17 +413,17 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   /**
    * Prepare the configuration for the use of GeoNames.
    *
-   * @beforeScenario @GeoNames
+   * @beforeScenario
    */
   public function geonamesBeforeScenario() {
     $this->geonameUsername = variable_get('geonames_username', FALSE);
-    variable_set('geonames_username', 'bianchim');
+    variable_set('geonames_username', 'ec_europa_testing');
   }
 
   /**
    * Restore the configuration after the use of GeoNames, and check for errors.
    *
-   * @afterScenario @GeoNames
+   * @afterScenario
    */
   public function geonamesAfterScenario() {
     if ($this->geonameUsername) {

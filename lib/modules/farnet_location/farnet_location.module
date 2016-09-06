@@ -582,7 +582,20 @@ function _farnet_location_get_geonames_result($url) {
 
   // If an error occurred during JSON processing, log error and quit.
   if (json_last_error() !== JSON_ERROR_NONE) {
-    watchdog('GeoNames', 'GeoNames return was not a valid json, response : @response', ['@response' => $response->data], WATCHDOG_ERROR);
+    $variables = [
+      '@code' => $response->code,
+      '@url' => $url,
+      '@response' => $response->data,
+    ];
+
+    $message = [
+      'GeoNames return was not a valid json',
+      'response code : @code',
+      'request url : @url',
+      'response : @response',
+    ];
+
+    watchdog('GeoNames', implode('<br/>', $message), $variables, WATCHDOG_ERROR);
     return FALSE;
   }
 
