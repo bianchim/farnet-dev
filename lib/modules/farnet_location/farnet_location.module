@@ -600,7 +600,7 @@ function _farnet_location_get_geonames_result($url) {
   }
 
   // If GeoNames returned an error, log it and quit.
-  if (_farnet_location_get_geonames_error($geolocs)) {
+  if (_farnet_location_get_geonames_error($geolocs, $url)) {
     return FALSE;
   }
 
@@ -612,11 +612,13 @@ function _farnet_location_get_geonames_result($url) {
  *
  * @param array $json
  *   The tested GeoNames return value.
+ * @param string $url
+ *   The url called, used for error logging only.
  *
  * @return bool
  *    Returns TRUE if an error was found, else FALSE.
  */
-function _farnet_location_get_geonames_error($json) {
+function _farnet_location_get_geonames_error($json, $url) {
   // GeoNames webservices error codes.
   // See : http://www.geonames.org/export/webservice-exception.html.
   $errors = [
@@ -638,12 +640,19 @@ function _farnet_location_get_geonames_error($json) {
 
   // Log error if applicable.
   if (isset($json['status'])) {
-    $message = 'GeoNames error : @error | Message : @message';
+    $message = [
+      'GeoNames error : @error',
+      'Message : @message',
+      'url called : @url',
+    ];
+
     $vars = [
       '@error' => $errors[$json['status']['value']],
       '@message' => $json['status']['message'],
+      '@url' => $url,
     ];
-    watchdog('GeoNames', $message, $vars, WATCHDOG_ERROR);
+
+    watchdog('GeoNames', implode('<br/>', $message), $vars, WATCHDOG_ERROR);
     return TRUE;
   }
 
