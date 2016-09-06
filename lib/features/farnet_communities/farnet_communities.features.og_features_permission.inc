@@ -948,6 +948,11 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_hidden:post comment_node_farnet_article'
+  $permissions['node:community_hidden:post comment_node_farnet_article'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:community_hidden:post comment_node_farnet_discussion'
   $permissions['node:community_hidden:post comment_node_farnet_discussion'] = array(
     'roles' => array(
@@ -3509,6 +3514,13 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:update own gp_project content'
   $permissions['node:community_public:update own gp_project content'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:community_public:update own gp_short_story content'
+  $permissions['node:community_public:update own gp_short_story content'] = array(
     'roles' => array(
       'member' => 'member',
     ),
