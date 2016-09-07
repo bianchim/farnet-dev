@@ -70,7 +70,7 @@ function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
   }
   if (in_array($form_id, $form_ids_pushable_to_public)) {
     $form['group_content_access']['und']['#type'] = 'hidden';
-    if (!empty($form['og_group_ref']['und'][0]['default']['#default_value'])) {
+    if (!empty($form['og_group_ref']['und'][0]['default']['#default_value']) && !empty($form['nid']['#value'])) {
       $form['actions']['clone_public'] = array(
         '#type' => 'submit',
         '#value' => t('Push to public site'),
