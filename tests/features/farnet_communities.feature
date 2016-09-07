@@ -41,24 +41,41 @@ Feature: Communities feature
   Scenario: As an anonymous user, I cannot see any of the communities and their content
 
     Given I am not logged in
-    And I am viewing a "community_public" content:
+    When I am viewing a "community_public" content:
       | title                 | A public community                   |
     # And print last response
     Then I should get an access denied error
-
-    And I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a public community    |
+    And I am viewing a "nexteuropa_news" content:
+      | title                 | A News in a public community   |
       | og_group_ref          | A public community                   |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
+      | workbench_moderation_state     | published                   |
+      | workbench_moderation_state_new | published                   |
     Then I should get an access denied error
 
-    And I am viewing a "community_private" content:
+    When I am viewing a "community_private" content:
       | title                 | A private community                  |
     Then I should get an access denied error
+    And I am viewing a "nexteuropa_news" content:
+      | title                 | A News in a private community        |
+      | og_group_ref          | A private community                  |
+      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
+      | workbench_moderation_state     | published                   |
+      | workbench_moderation_state_new | published                   |
+    Then I should get an access denied error
 
-    And I am viewing a "community_hidden" content:
+    When I am viewing a "community_hidden" content:
       | title                 | A hidden community                   |
+    Then I should get an access denied error
+    And I am viewing a "nexteuropa_news" content:
+      | title                 | A News hidden community   |
+      | og_group_ref          | A hidden community                   |
+      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
+      | workbench_moderation_state     | published                   |
+      | workbench_moderation_state_new | published                   |
     Then I should get an access denied error
 
   @api 
@@ -70,122 +87,173 @@ Feature: Communities feature
     I can only see contents of public communities
 
     Given I am logged in as a user with the "authenticated user" role
-    And I am viewing a "community_public" content:
+    When I am viewing a "community_public" content:
       | title                 | A public community                   |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should see the heading "A public community"
     And I should see "Subscribe to group"
-    And I am viewing a "community_private" content:
+    And I am viewing a "nexteuropa_news" content:
+      | title                 | A News in a public community   |
+      | og_group_ref          | A public community                  |
+      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
+      | status                | 1                                    |
+      | workbench_moderation_state     | published                   |
+      | workbench_moderation_state_new | published                   |
+    Then I should see the heading "A News in a public community"
+
+    When I am viewing a "community_private" content:
       | title                 | A private community                  |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should see the heading "A private community"
     And I should see "Request group membership"
-    And I am viewing a "community_hidden" content:
+    And I am viewing a "nexteuropa_news" content:
+      | title                 | A News in a private community   |
+      | og_group_ref          | A private community                  |
+      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
+      | status                | 1                                    |
+      | workbench_moderation_state     | published                   |
+      | workbench_moderation_state_new | published                   |
+    Then I should get an access denied error
+
+    When I am viewing a "community_hidden" content:
       | title                 | A hidden community                   |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should get an access denied error
-    And I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a private community   |
-      | og_group_ref          | A private community                  |
+    And I am viewing a "nexteuropa_news" content:
+      | title                 | A News in a hidden community   |
+      | og_group_ref          | A hidden community                  |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
       | status                | 1                                    |
+      | workbench_moderation_state     | published                   |
+      | workbench_moderation_state_new | published                   |
     Then I should get an access denied error
-  # And I am viewing a "ms_fiche" content:
-  #   | title                 | An MS Fiche in a public community    |
-  #   | og_group_ref          | A public community                   |
-  #   | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-  #   | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-  #   | status                | 1                                    |
-  # And print last response
-  # Then I should see the heading "An MS Fiche in a public community"
 
-  @api 
-  Scenario:  As a member, I can add/edit/delete only my own contents of any of the communities where I am a member
-
-    Given I am an "authenticated user" user, member of entity "A public community" of type "community_public" as "member"
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    Given I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a public community    |
-      | og_group_ref          | A public community                   |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
-    Then I should not see "New draft"
-
-    Given I am an "authenticated user" user, member of entity "A private community" of type "community_private" as "member"
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    Given I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a private community   |
-      | og_group_ref          | A private community                  |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
-    Then I should not see "New draft"
-
-    Given I am an "authenticated user" user, member of entity "A hidden community" of type "community_hidden" as "member"
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    Given I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a hidden community    |
-      | og_group_ref          | A hidden community                   |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
-    Then I should not see "New draft"
-
-  @api 
-  Scenario:  As a community administrator, I can add/edit/delete any contents of any of the communities where I am a community administrator
-
-    Given I am an "authenticated user" user, member of entity "A public community" of type "community_public" as "administrator member"
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    Given I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a public community    |
-      | og_group_ref          | A public community                   |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
+  @api
+  Scenario Outline: As a member, I can add/edit/delete only my own contents of any of the communities where I am a member
+    Given I am logged in as a user with the "authenticated user" role and I have the following fields:
+      | name | Donald |
+    And a "<community-type>" with the title "<community-title>"
+    And I have the "member" role in the "<community-title>" group
+    And I visit "<community-path>"
+    Then I should see "<content-hname>" in the "sidebar_left" region
+    When I click "<content-hname>" in the "sidebar_left" region
+    Then I should see the heading "Create <content-hname>"
+    Given I am viewing a "<content-type>" content:
+      | title                          | My Content test                      |
+      | og_group_ref                   | <community-title>                    |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | status                         | 1                                    |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
+      | author                         | Donald                               |
+    Then I should see the heading "My Content test"
+    And I should see "New draft"
     When I click "New draft"
-    And I press the "Save" button
-    Then I should see "Cooperation MS Fiche An MS Fiche in a public community has been updated."
-    When I click "Edit draft"
-    And I press the "Delete" button
-    Then I should see "Are you sure you want to delete An MS Fiche in a public community?"
+    Then I see the button "Delete"
+    Given I am viewing a "<content-type>" content:
+      | title                          | Content test                         |
+      | og_group_ref                   | <community-title>                    |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | status                         | 1                                    |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
+    Then I should see the heading "Content test"
+    And I should not see "New draft"
 
-    Given I am an "authenticated user" user, member of entity "A private community" of type "community_private" as "administrator member"
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    Given I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a private community   |
-      | og_group_ref          | A private community                  |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
-    When I click "New draft"
-    And I press the "Save" button
-    Then I should see "Cooperation MS Fiche An MS Fiche in a private community has been updated."
-    When I click "Edit draft"
-    And I press the "Delete" button
-    Then I should see "Are you sure you want to delete An MS Fiche in a private community?"
+    Examples:
+      | community-title     |  community-type   |  community-path             | content-hname    | content-type      |
+      | A public community  | community_public  | community/public-community  | News             | nexteuropa_news   |
+      | A public community  | community_public  | community/public-community  | Discussion       | farnet_discussion |
+      | A public community  | community_public  | community/public-community  | Event            | nexteuropa_event  |
+      | A public community  | community_public  | community/public-community  | Cooperation Call | cooperation_call  |
+      | A public community  | community_public  | community/public-community  | Cooperation Idea | cooperation_idea  |
+      | A public community  | community_public  | community/public-community  | GP Method        | gp_method         |
+      | A public community  | community_public  | community/public-community  | GP Project       | gp_project        |
+      | A public community  | community_public  | community/public-community  | GP Short Story   | gp_short_story    |
+      | A private community | community_private | community/private-community | News             | nexteuropa_news   |
+      | A private community | community_private | community/private-community | Discussion       | farnet_discussion |
+      | A private community | community_private | community/private-community | Event            | nexteuropa_event  |
+      | A private community | community_private | community/private-community | Cooperation Call | cooperation_call  |
+      | A private community | community_private | community/private-community | Cooperation Idea | cooperation_idea  |
+      | A private community | community_private | community/private-community | GP Method        | gp_method         |
+      | A private community | community_private | community/private-community | GP Project       | gp_project        |
+      | A private community | community_private | community/private-community | GP Short Story   | gp_short_story    |
+      | A hidden community  | community_hidden  | community/hidden-community  | News             | nexteuropa_news   |
+      | A hidden community  | community_hidden  | community/hidden-community  | Discussion       | farnet_discussion |
+      | A hidden community  | community_hidden  | community/hidden-community  | Event            | nexteuropa_event  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Call | cooperation_call  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Idea | cooperation_idea  |
+      | A hidden community  | community_hidden  | community/hidden-community  | GP Method        | gp_method         |
+      | A hidden community  | community_hidden  | community/hidden-community  | GP Project       | gp_project        |
+      | A hidden community  | community_hidden  | community/hidden-community  | GP Short Story   | gp_short_story    |
 
-    Given I am an "authenticated user" user, member of entity "A hidden community" of type "community_hidden" as "administrator member"
-    And I visit "node/add/ms-fiche"
-    Then I should see the heading "Create Cooperation MS Fiche"
-    Given I am viewing a "ms_fiche" content:
-      | title                 | An MS Fiche in a hidden community    |
-      | og_group_ref          | A hidden community                   |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
+  @api
+  Scenario Outline: As a member, I can add/edit/delete only my own contents of any of the communities where I am a administrator
+    Given I am logged in as a user with the "authenticated user" role and I have the following fields:
+      | name | Donald |
+    And a "<community-type>" with the title "<community-title>"
+    And I have the "administrator member" role in the "<community-title>" group
+    And I visit "<community-path>"
+    Then I should see "<content-hname>" in the "sidebar_left" region
+    When I click "<content-hname>" in the "sidebar_left" region
+    Then I should see the heading "Create <content-hname>"
+    Given I am viewing a "<content-type>" content:
+      | title                       | My Content test                      |
+      | og_group_ref                | <community-title>                    |
+      | field_ne_body               | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract       | Lorem ipsum dolor sit amet abstract. |
+      | status                      | 1                                    |
+      | workbench_moderation_state  | published                            |
+      | workbench_moderation_state_new  | published                        |
+      | author                | Donald                                     |
+    Then I should see the heading "My Content test"
+    And I should see "New draft"
     When I click "New draft"
-    And I press the "Save" button
-    Then I should see "Cooperation MS Fiche An MS Fiche in a hidden community has been updated."  
-    When I click "Edit draft"
-    And I press the "Delete" button
-    Then I should see "Are you sure you want to delete An MS Fiche in a hidden community?"
+    Then I see the button "Delete"
+    Given I am viewing a "<content-type>" content:
+      | title                          | Content test                         |
+      | og_group_ref                   | <community-title>                    |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | status                         | 1                                    |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
+    Then I should see the heading "Content test"
+    And I should see "New draft"
+    When I click "New draft"
+    Then I see the button "Delete"
+
+    Examples:
+      | community-title     |  community-type   |  community-path             | content-hname    | content-type      |
+      | A public community  | community_public  | community/public-community  | News             | nexteuropa_news   |
+      | A public community  | community_public  | community/public-community  | Discussion       | farnet_discussion |
+      | A public community  | community_public  | community/public-community  | Event            | nexteuropa_event  |
+      | A public community  | community_public  | community/public-community  | Cooperation Call | cooperation_call  |
+      | A public community  | community_public  | community/public-community  | Cooperation Idea | cooperation_idea  |
+      | A public community  | community_public  | community/public-community  | GP Method        | gp_method         |
+      | A public community  | community_public  | community/public-community  | GP Project       | gp_project        |
+      | A public community  | community_public  | community/public-community  | GP Short Story   | gp_short_story    |
+      | A private community | community_private | community/private-community | News             | nexteuropa_news   |
+      | A private community | community_private | community/private-community | Discussion       | farnet_discussion |
+      | A private community | community_private | community/private-community | Event            | nexteuropa_event  |
+      | A private community | community_private | community/private-community | Cooperation Call | cooperation_call  |
+      | A private community | community_private | community/private-community | Cooperation Idea | cooperation_idea  |
+      | A private community | community_private | community/private-community | GP Method        | gp_method         |
+      | A private community | community_private | community/private-community | GP Project       | gp_project        |
+      | A private community | community_private | community/private-community | GP Short Story   | gp_short_story    |
+      | A hidden community  | community_hidden  | community/hidden-community  | News             | nexteuropa_news   |
+      | A hidden community  | community_hidden  | community/hidden-community  | Discussion       | farnet_discussion |
+      | A hidden community  | community_hidden  | community/hidden-community  | Event            | nexteuropa_event  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Call | cooperation_call  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Idea | cooperation_idea  |
+      | A hidden community  | community_hidden  | community/hidden-community  | GP Method        | gp_method         |
+      | A hidden community  | community_hidden  | community/hidden-community  | GP Project       | gp_project        |
+      | A hidden community  | community_hidden  | community/hidden-community  | GP Short Story   | gp_short_story    |

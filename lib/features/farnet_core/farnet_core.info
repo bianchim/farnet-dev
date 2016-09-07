@@ -66,6 +66,7 @@ features[field_base][] = field_website
 features[field_base][] = field_zip_code
 features[field_base][] = field_latitude
 features[field_base][] = field_longitude
+features[field_base][] = filename_field
 features[language][] = bg
 features[language][] = cs
 features[language][] = da
