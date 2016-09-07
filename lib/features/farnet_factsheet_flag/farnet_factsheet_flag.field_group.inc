@@ -1041,9 +1041,9 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Location',
     'weight' => '4',
     'children' => array(
-      0 => 'field_area',
-      1 => 'field_term_country',
-      2 => 'field_region',
+      0 => 'field_term_country',
+      1 => 'field_region',
+      2 => 'field_area',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

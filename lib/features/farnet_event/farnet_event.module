@@ -37,6 +37,20 @@ function farnet_event_field_group_info_alter($groups) {
  */
 function farnet_event_field_default_field_instances_alter(&$fields) {
 
+  if (isset($fields['node-nexteuropa_event-title_field'])) {
+    if (isset($fields['node-nexteuropa_event-title_field']['display'])) {
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['label'] = "hidden";
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['module'] = "title";
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['settings'] = array(
+        'title_class' => '',
+        'title_link' => 'content',
+        'title_style' => 'h2',
+      );
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['type'] = "title_linked";
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['weight'] = 0;
+    }
+  }
+
   if (isset($fields['node-nexteuropa_event-field_city'])) {
     if (isset($fields['node-nexteuropa_event-field_city']['display'])) {
       $fields['node-nexteuropa_event-field_city']['display']['newsletter']['label'] = "inline";
@@ -80,34 +94,33 @@ function farnet_event_views_default_views_alter(&$views) {
   if (isset($views['calendar'])) {
     $views['calendar']->display['page']->display_options['path'] = 'news-events/calendar';
   }
-
-  if (isset($views['events'])) {
+  if (isset($views['farnet_view_events'])) {
     $term = taxonomy_get_term_by_name('Transnational seminars');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
-      $views['events']->display['page_transnational_seminars']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_events']->display['page_transnational_seminars']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
     }
 
     $term = taxonomy_get_term_by_name('Managing authorities & National networks');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
-      $views['events']->display['page_managing_authorities']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_events']->display['page_managing_authorities']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
     }
 
     $term = taxonomy_get_term_by_name('National / regional / local events');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
-      $views['events']->display['page_national_regional_local']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_events']->display['page_national_regional_local']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
     }
 
     $term = taxonomy_get_term_by_name('Conferences');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
-      $views['events']->display['page_conferences']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_events']->display['page_conferences']->display_options['filters']['field_term_type_event_tid']['value'][$tid_term] = $tid_term;
     }
   }
 }

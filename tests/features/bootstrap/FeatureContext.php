@@ -18,6 +18,8 @@ use Behat\Behat\Hook\Scope\BeforeScenarioScope;
  */
 class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
 
+  private $geonameUsername = FALSE;
+
   /**
    * Checks that a 403 Access Denied error occurred.
    *
@@ -289,11 +291,11 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   }
 
   /**
-   * Make a user with the OG role in the group (create it if it doesn't exist)
+   * Make a user with the OG role in the group (create it if it doesn't exist).
    *
    * @Given I am a/an :roles user, member of entity :entity_name of type :entity_type as :group_role
    */
-  public function iAmAMemberOfEntityHavingRole($roles, $group_role, $entity_name, $entity_type) {
+  public function iAmMemberOfEntityHavingRole($roles, $group_role, $entity_name, $entity_type) {
     $admin = user_load(1);
     // Create the user.
     $account = (object) array(
@@ -344,6 +346,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    *   (optional) The group's entity type.
    *
    * @throws \Exception
+   *   Throw an error if the membership or the group role has an issue.
    */
   protected function addMembertoGroup($account, $group_role, $group, $group_type = 'node') {
     list($gid,,) = entity_extract_ids($group_type, $group);
@@ -383,6 +386,75 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     }
     $node = reset($node);
     return $node;
+  }
+
+  /**
+   * Reinitialize farnet error variables.
+   *
+   * @AfterScenario @cleanFarnetErrorVariables
+   */
+  public function cleanFarnetErrorVariables() {
+    // Farnet error public variables.
+    i18n_variable_del("farnet_error_public_title", "en");
+    i18n_variable_del("farnet_error_public_body", "en");
+    i18n_variable_del("farnet_error_public_title", "fr");
+    i18n_variable_del("farnet_error_public_body", "fr");
+    variable_del('farnet_error_public_title');
+    variable_del('farnet_error_public_body');
+    // Farnet error MyFarnet variables.
+    i18n_variable_del("farnet_error_myfarnet_title", "en");
+    i18n_variable_del("farnet_error_myfarnet_body", "en");
+    i18n_variable_del("farnet_error_myfarnet_title", "fr");
+    i18n_variable_del("farnet_error_myfarnet_body", "fr");
+    variable_del('farnet_error_myfarnet_title');
+    variable_del('farnet_error_myfarnet_body');
+  }
+
+  /**
+   * Prepare the configuration for the use of GeoNames.
+   *
+   * @beforeScenario
+   */
+  public function geonamesBeforeScenario() {
+    $this->geonameUsername = variable_get('geonames_username', FALSE);
+    variable_set('geonames_username', 'ec_europa_testing');
+  }
+
+  /**
+   * Restore the configuration after the use of GeoNames, and check for errors.
+   *
+   * @afterScenario
+   */
+  public function geonamesAfterScenario() {
+    if ($this->geonameUsername) {
+      variable_set('geonames_username', $this->geonameUsername);
+    }
+    else {
+      variable_del('geonames_username');
+    }
+
+    // Get all errors from GeoNames and display them.
+    $log = db_select('watchdog', 'w')
+      ->fields('w')
+      ->condition('w.type', 'GeoNames', '=')
+      ->execute()
+      ->fetchAll();
+
+    if (!empty($log)) {
+      $message = count($log) . " error(s) triggered by GeoNames API calls\n";
+      $message .= "Errors:" . PHP_EOL;
+      $message .= "----------" . PHP_EOL;
+      foreach ($log as $error) {
+        $error->variables = unserialize($error->variables);
+        $date = date('Y-m-d H:i:sP', $error->timestamp);
+        $message .= "Message: " . format_string($error->message, $error->variables) . PHP_EOL;
+        $message .= "Location: $error->location" . PHP_EOL;
+        $message .= "Referer: $error->referer" . PHP_EOL;
+        $message .= "Date/Time: $date" . PHP_EOL . PHP_EOL;
+      }
+      $message .= "----------" . PHP_EOL;
+      throw new \Exception($message);
+    }
   }
 
 }
