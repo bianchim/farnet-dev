@@ -132,13 +132,3 @@ function farnet_maps_form($form, &$form_state) {
 function farnet_maps_form_submit($form, &$form_state) {
   $form_state['rebuild'] = TRUE;
 }
-
-/**
- * Implements hook_node_view().
- */
-function farnet_maps_node_view($node, $view_mode, $langcode) {
-  if ($node->type == 'factsheet_flag' && $view_mode == 'full' && !empty($node->field_term_country[LANGUAGE_NONE][0]['tid'])) {
-    // Use the webtools smart loader.
-    drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
-  }
-}
