@@ -8,10 +8,31 @@
 /**
  * Implements hook_install().
  */
-/*
 function farnet_core_install() {
+  // Add a item in the breadcrumb menu.
+  $item = [
+    'link_path' => 'http://ec.europa.eu/fisheries/index_en.htm',
+    'link_title' => 'Fisheries',
+    'menu_name' => 'menu-breadcrumb-menu',
+    'weight' => '1',
+    'language' => 'en',
+    'plid' => 0,
+    'module' => 'menu',
+    'options' => [
+      'attributes' => [
+        'data-remove-class' => TRUE,
+      ]
+    ]
+  ];
+  menu_link_save($item);
+  menu_cache_clear_all();
+
+  // Site name weight is set to 0, we need to put a order in the breadcrumb.
+  db_update('menu_links')
+    ->fields(['weight' => '2'])
+    ->condition('link_title', '[site:name]', '=')
+    ->execute();
 }
-*/
 
 /**
  * Implements hook_enable().
