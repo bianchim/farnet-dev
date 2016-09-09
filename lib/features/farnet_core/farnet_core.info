@@ -5,6 +5,7 @@ package = Farnet
 dependencies[] = contact
 dependencies[] = ctools
 dependencies[] = date
+dependencies[] = date_all_day
 dependencies[] = easy_breadcrumb
 dependencies[] = email
 dependencies[] = entityreference
