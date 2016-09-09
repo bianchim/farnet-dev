@@ -43,7 +43,7 @@ function farnet_cooperation_ms_fiche_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_ms_fiche';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_ms_fiche'] = $strongarm;
 
   $strongarm = new stdClass();

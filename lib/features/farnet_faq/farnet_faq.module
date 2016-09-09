@@ -501,6 +501,6 @@ function farnet_faq_views_default_views_alter(&$views) {
  */
 function farnet_faq_strongarm_alter(&$variables) {
   if (isset($variables['comment_nexteuropa_faq'])) {
-    $variables['comment_nexteuropa_faq']->value = 1;
+    $variables['comment_nexteuropa_faq']->value = '0';
   }
 }
