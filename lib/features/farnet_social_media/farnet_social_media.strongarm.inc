@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_social_media.strongarm.inc
@@ -33,7 +32,7 @@ function farnet_social_media_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'social_media_links_link_attributes';
   $strongarm->value = array(
-    'target' => '<none>',
+    'target' => '_blank',
     'rel' => '<none>',
   );
   $export['social_media_links_link_attributes'] = $strongarm;
@@ -68,7 +67,7 @@ function farnet_social_media_strongarm() {
       'weight' => '-5',
     ),
     'pinterest' => array(
-      'platform_value' => '',
+      'platform_value' => 'EU_FARNET',
       'weight' => '-4',
     ),
     'vimeo' => array(
