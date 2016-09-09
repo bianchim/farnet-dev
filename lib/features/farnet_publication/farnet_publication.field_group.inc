@@ -113,8 +113,7 @@ function farnet_publication_field_group_info() {
     'label' => 'More info',
     'weight' => '1',
     'children' => array(
-      0 => 'field_related_publications',
-      1 => 'field_publication_more_info',
+      0 => 'field_publication_more_info',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
