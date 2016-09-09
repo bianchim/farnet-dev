@@ -111,6 +111,6 @@ function _farnet_communities_push_public($form, &$form_state) {
   // $node->workbench_moderation_state_new = workbench_moderation_state_none();
   node_save($node);
   $msg = t('The content has been duplicated to a public version available <a href="@link" target="_blank">here</a>.',
-      array('@link' => $base_url . '/node/' . $node->nid));
+      array('@link' => url('node/' . $node->nid)));
   drupal_set_message($msg, 'status');
 }
