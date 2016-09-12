@@ -791,7 +791,7 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_id_text',
-    'label' => 'ID_Text',
+    'label' => 'ID',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
@@ -1897,7 +1897,7 @@ function farnet_gp_method_field_default_field_instances() {
   t('Financial resources');
   t('Gallery');
   t('Groups audience');
-  t('ID_Text');
+  t('ID');
   t('Latitude');
   t('Lessons');
   t('Longitude');
