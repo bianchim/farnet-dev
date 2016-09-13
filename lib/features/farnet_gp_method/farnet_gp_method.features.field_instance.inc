@@ -780,7 +780,7 @@ function farnet_gp_method_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 27,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -837,7 +837,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 46,
+      'weight' => 5,
     ),
   );
 
