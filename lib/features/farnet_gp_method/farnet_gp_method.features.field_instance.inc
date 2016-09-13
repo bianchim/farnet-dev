@@ -829,7 +829,7 @@ function farnet_gp_method_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'text',
       'settings' => array(
         'maxlength_js' => 0,
