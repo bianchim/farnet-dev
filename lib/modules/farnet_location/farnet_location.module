@@ -84,9 +84,10 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     case 'gp_method_node_form':
+    case 'gp_project_node_form':
+    case 'factsheet_flag_node_form':
       $form['field_latitude']['#type'] = 'hidden';
       $form['field_longitude']['#type'] = 'hidden';
-    case 'factsheet_flag_node_form':
       // Configure the fields.
       $form['field_term_country'][LANGUAGE_NONE]['#attributes']['class'][] = 'country_field_form';
 
@@ -176,8 +177,6 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
       break;
 
     case 'factsheet_flag_node_form':
-      $form['field_latitude']['#type'] = 'hidden';
-      $form['field_longitude']['#type'] = 'hidden';
       $form['field_interactive_map']['#type'] = 'hidden';
       break;
 
@@ -370,6 +369,24 @@ function farnet_location_node_submit($node, $form, &$form_state) {
               }
             }
           }
+        }
+      }
+      break;
+
+    case 'gp_project':
+      global $language;
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      foreach ($node->field_area[$language->language] as $area_index => $area) {
+        $city = $area['value'];
+        $output = _farnet_location_geocoding($city . ', ' . $country);
+        if ($output && is_array($output)) {
+          $longitude = $output[0];
+          $latitude = $output[1];
+          $node->field_longitude[LANGUAGE_NONE][$area_index]['value'] = $longitude;
+          $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
+        }
+        else {
+          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
         }
       }
       break;
