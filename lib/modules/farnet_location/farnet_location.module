@@ -180,6 +180,10 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
       $form['field_interactive_map']['#type'] = 'hidden';
       break;
 
+    case 'factsheet_country_node_form':
+      $form['field_interactive_map']['#type'] = 'hidden';
+      break;
+
     case 'organisation_node_form':
       $form['field_latitude']['#type'] = 'hidden';
       $form['field_longitude']['#type'] = 'hidden';
@@ -268,6 +272,86 @@ function farnet_location_node_submit($node, $form, &$form_state) {
                     "markers": [
                       "' . $base_url . '/interactive_map/factsheet_flag/' . $country_id . '"
                     ]
+                  }
+                ]
+              }
+            }
+          ]
+      }';
+      $node->field_interactive_map[LANGUAGE_NONE][0]['value'] = $json_map;
+      break;
+
+    case 'factsheet_country':
+      global $language;
+      global $base_url;
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      $country_id = isset($node->field_term_country[LANGUAGE_NONE][0]['tid']) ? $node->field_term_country[LANGUAGE_NONE][0]['tid'] : '';
+      $output_country = _farnet_location_geocoding($country);
+      // Default: Brussels, Belgium.
+      $longitude_country = 4.35171;
+      $latitude_country = 50.85034;
+      if ($output_country && is_array($output_country)) {
+        $longitude_country = $output_country[0];
+        $latitude_country = $output_country[1];
+      }
+      else {
+        drupal_set_message(t("The coordinates of :country could not be set. Please set it manually or contact an administrator.", array(':country' => $country)), 'warning');
+      }
+      $json_map = '{
+          "service": "map",
+          "sidebar": {
+            "options": {
+              "collapse": true
+            }
+          },
+          "map": {
+            "zoom": "4",
+            "center": [
+              "' . $latitude_country . '",
+              "' . $longitude_country . '"
+            ]
+          },
+          "layers": [
+            {
+              "checkbox": {
+                "label": "Elements",
+                "features": [
+                  {
+                    "label": "flag factsheet",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/factsheet_flag/' . $country_id . '"
+                    ]
+                  },
+                  {
+                    "label": "organisation",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/organisation/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "pink"
+                    }
+                  },
+                  {
+                    "label": "gp method",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/gp_method/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "label": "gp project",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/gp_project/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "red"
+                    }
                   }
                 ]
               }
