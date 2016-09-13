@@ -342,6 +342,16 @@ function farnet_location_node_submit($node, $form, &$form_state) {
                     "options": {
                       "color": "green"
                     }
+                  },
+                  {
+                    "label": "gp project",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/gp_project/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "red"
+                    }
                   }
                 ]
               }
