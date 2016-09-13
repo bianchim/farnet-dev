@@ -84,6 +84,10 @@ function farnet_event_field_default_field_instances_alter(&$fields) {
       $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['type'] = "date_default";
       $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['weight'] = 0;
     }
+    if (isset($fields['node-nexteuropa_event-field_dates']['widget'])) {
+      $fields['node-nexteuropa_event-field_dates']['widget']['settings']['display_all_day'] = 1;
+      $fields['node-nexteuropa_event-field_dates']['widget']['settings']['increment'] = 1;
+    }
   }
 }
 
