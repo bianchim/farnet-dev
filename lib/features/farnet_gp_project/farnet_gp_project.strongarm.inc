@@ -118,19 +118,19 @@ function farnet_gp_project_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'scheduler_settings' => array(
           'weight' => '8',
         ),
         'xmlsitemap' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'language' => array(
           'weight' => '9',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '13',
         ),
       ),
       'display' => array(),

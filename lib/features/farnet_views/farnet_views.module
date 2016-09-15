@@ -12,7 +12,7 @@ include_once 'farnet_views.features.inc';
  */
 function farnet_views_views_default_views_alter(&$views) {
   if (isset($views['farnet_view_news'])) {
-    $term = taxonomy_get_term_by_name('Farnet News');
+    $term = taxonomy_get_term_by_name('News - FARNET');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
@@ -20,7 +20,7 @@ function farnet_views_views_default_views_alter(&$views) {
       $views['farnet_view_news']->display['default']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
     }
 
-    $term = taxonomy_get_term_by_name('Other News');
+    $term = taxonomy_get_term_by_name('News - Other');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;

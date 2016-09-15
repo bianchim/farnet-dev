@@ -124,6 +124,7 @@ function farnet_factsheet_flag_ds_layout_settings_info() {
         76 => 'field_ff_linkedin',
         77 => 'field_ff_google',
         78 => 'field_collection_language',
+        79 => 'field_interactive_map',
       ),
     ),
     'fields' => array(
@@ -136,6 +137,7 @@ function farnet_factsheet_flag_ds_layout_settings_info() {
       'field_term_region' => 'ds_content',
       'group_factsheet_flag_project_ex' => 'ds_content',
       'field_area' => 'ds_content',
+      'field_interactive_map' => 'ds_content',
       'group_factsheet_flag_project_cal' => 'ds_content',
       'group_factsheet_flag_thematic' => 'ds_content',
       'field_ff_code' => 'ds_content',

@@ -25,7 +25,7 @@ function farnet_gp_method_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_farnet_abstract',
-      1 => 'field_id',
+      1 => 'field_id_text',
       2 => 'field_picture',
       3 => 'field_title_official',
     ),
@@ -60,7 +60,7 @@ function farnet_gp_method_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_farnet_abstract',
-      1 => 'field_id',
+      1 => 'field_id_text',
       2 => 'field_picture',
       3 => 'field_title_official',
       4 => 'title_field',

@@ -70,14 +70,47 @@ function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
   }
   if (in_array($form_id, $form_ids_pushable_to_public)) {
     $form['group_content_access']['und']['#type'] = 'hidden';
-    if (!empty($form['og_group_ref']['und'][0]['default']['#default_value'])) {
+    if (!empty($form['og_group_ref']['und'][0]['default']['#default_value']) && !empty($form['nid']['#value'])) {
       $form['actions']['clone_public'] = array(
         '#type' => 'submit',
         '#value' => t('Push to public site'),
         '#name' => 'push_public',
         '#validate' => array('node_form_validate'),
-        '#submit' => array('node_form_submit', '_push_public'),
+        '#submit' => array('node_form_submit', '_farnet_communities_push_public'),
       );
     }
   }
+}
+
+/**
+ * Callback function of a submit button, clone content and remove OG settings.
+ *
+ * @param object $form
+ *   The form of the original content.
+ * @param string $form_state
+ *   The form stae of the original content.
+ */
+function _farnet_communities_push_public($form, &$form_state) {
+  global $base_url;
+  $node = node_form_submit_build_node($form, $form_state);
+  if (empty($node->nid)) {
+    return FALSE;
+  }
+
+  unset($node->nid);
+  unset($node->vid);
+
+  // Reactivate pathauto URL generation.
+  $node->path = ['pathauto' => TRUE];
+
+  if (isset($node->og_group_ref)) {
+    unset($node->og_group_ref);
+  }
+
+  // Create as draft.
+  // $node->workbench_moderation_state_new = workbench_moderation_state_none();
+  node_save($node);
+  $msg = t('The content has been duplicated to a public version available <a href="@link" target="_blank">here</a>.',
+      array('@link' => url('node/' . $node->nid)));
+  drupal_set_message($msg, 'status');
 }

@@ -782,6 +782,84 @@ function farnet_factsheet_country_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-factsheet_country-field_interactive_map'.
+  $field_instances['node-factsheet_country-field_interactive_map'] = array(
+    'bundle' => 'factsheet_country',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'nexteuropa_json_field',
+        'settings' => array(),
+        'type' => 'json_settings_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_interactive_map',
+    'label' => 'Interactive Map',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'full_html_track' => 'full_html_track',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'js_to_load' => array(
+        'nexteuropa_webtools_smartloader_prurl' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 43,
+    ),
+  );
+
   // Exported field_instance: 'node-factsheet_country-field_key_actors_roles'.
   $field_instances['node-factsheet_country-field_key_actors_roles'] = array(
     'bundle' => 'factsheet_country',
@@ -1752,6 +1830,7 @@ function farnet_factsheet_country_field_default_field_instances() {
   t('Group content visibility');
   t('Groups audience');
   t('Image');
+  t('Interactive Map');
   t('Key actors and roles');
   t('Key documents');
   t('Label');

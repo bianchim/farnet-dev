@@ -15,20 +15,20 @@ include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_ta
  */
 function farnet_location_menu() {
   $items['admin/config/content/farnet_location'] = [
-    'title' => 'Farnet location',
-    'description' => 'Configuration for farnet location module',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => ['farnet_location_admin'],
-    'access arguments' => ['access administration pages'],
-    'type' => MENU_NORMAL_ITEM,
+      'title' => 'Farnet location',
+      'description' => 'Configuration for farnet location module',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => ['farnet_location_admin'],
+      'access arguments' => ['access administration pages'],
+      'type' => MENU_NORMAL_ITEM,
   ];
 
   $items['farnet_location/autocomplete'] = [
-    'title' => 'Autocomplete for areas',
-    'page callback' => '_farnet_location_autocomplete',
-    'access arguments' => TRUE,
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
+      'title' => 'Autocomplete for areas',
+      'page callback' => '_farnet_location_autocomplete',
+      'access arguments' => TRUE,
+      'access callback' => TRUE,
+      'type' => MENU_CALLBACK,
   ];
 
   return $items;
@@ -41,35 +41,35 @@ function farnet_location_admin() {
   $form = [];
 
   $form['geonames_username'] = [
-    '#type' => 'textfield',
-    '#title' => t('GeoNames webservice username'),
-    '#default_value' => variable_get('geonames_username', ''),
-    '#required' => TRUE,
+      '#type' => 'textfield',
+      '#title' => t('GeoNames webservice username'),
+      '#default_value' => variable_get('geonames_username', ''),
+      '#required' => TRUE,
   ];
 
   $form['geonames_maxrows'] = [
-    '#type' => 'textfield',
-    '#title' => t('Maximum number results per request'),
-    '#default_value' => variable_get('geonames_maxrows', 10),
-    '#size' => 2,
-    '#maxlength' => 2,
-    '#required' => TRUE,
+      '#type' => 'textfield',
+      '#title' => t('Maximum number results per request'),
+      '#default_value' => variable_get('geonames_maxrows', 10),
+      '#size' => 2,
+      '#maxlength' => 2,
+      '#required' => TRUE,
   ];
 
   $form['geonames_baseurl'] = [
-    '#type' => 'textfield',
-    '#title' => t('Base url for the GeoNames service.'),
-    '#default_value' => variable_get('geonames_baseurl', 'http://api.geonames.org/'),
-    '#maxlength' => 255,
-    '#required' => TRUE,
+      '#type' => 'textfield',
+      '#title' => t('Base url for the GeoNames service.'),
+      '#default_value' => variable_get('geonames_baseurl', 'http://api.geonames.org/'),
+      '#maxlength' => 255,
+      '#required' => TRUE,
   ];
 
   $form['geocoding_baseurl'] = [
-    '#type' => 'textfield',
-    '#title' => t('Base url for Nexteuropa Webtools geocoding service.'),
-    '#default_value' => variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/'),
-    '#maxlength' => 255,
-    '#required' => TRUE,
+      '#type' => 'textfield',
+      '#title' => t('Base url for Nexteuropa Webtools geocoding service.'),
+      '#default_value' => variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/'),
+      '#maxlength' => 255,
+      '#required' => TRUE,
   ];
 
   return system_settings_form($form);
@@ -83,11 +83,12 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
   $lang = $form['title_field']['#language'];
 
   switch ($form_id) {
-    case 'gp_short_story_node_form':
     case 'gp_method_node_form':
-      $form['field_latitude']['#type'] = 'hidden';
-      $form['field_longitude']['#type'] = 'hidden';
+    case 'gp_project_node_form':
+    case 'gp_short_story_node_form':
     case 'factsheet_flag_node_form':
+      //$form['field_latitude']['#type'] = 'hidden';
+      //$form['field_longitude']['#type'] = 'hidden';
       // Configure the fields.
       $form['field_term_country'][LANGUAGE_NONE]['#attributes']['class'][] = 'country_field_form';
 
@@ -108,20 +109,19 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
 
       $js_settings = [
         // Convert undefined form language to english for GeoNames.
-        'form_lang' => $lang === 'und' ? 'en' : $lang,
+          'form_lang' => $lang === 'und' ? 'en' : $lang,
       ];
 
       // Attach the javascript to the form.
       $form['#attached']['js'][] = [
-        'data' => ['farnet_location' => $js_settings],
-        'type' => 'setting',
+          'data' => ['farnet_location' => $js_settings],
+          'type' => 'setting',
       ];
 
       $form['#attached']['js'][] = [
-        'data' => drupal_get_path('module', 'farnet_location') . '/js/farnet_location.js',
-        'type' => 'file',
+          'data' => drupal_get_path('module', 'farnet_location') . '/js/farnet_location.js',
+          'type' => 'file',
       ];
-
       break;
   }
 }
@@ -130,7 +130,6 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_alter().
  */
 function farnet_location_form_alter(&$form, &$form_state, $form_id) {
-
   switch ($form_id) {
     case 'user_register_form':
     case 'user_profile_form':
@@ -143,9 +142,9 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
       }
 
       $form['field_zip_code'][LANGUAGE_NONE][0]['value']['#ajax'] = array(
-        'event' => 'change',
-        'callback' => 'farnet_location_depend_dropdown_callback',
-        'wrapper' => 'dropdown-field-city-select',
+          'event' => 'change',
+          'callback' => 'farnet_location_depend_dropdown_callback',
+          'wrapper' => 'dropdown-field-city-select',
       );
 
       if (($form_id == 'user_profile_form') && ($country_selected_tid == 0)) {
@@ -159,9 +158,9 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
       }
 
       $form['field_user_country'][LANGUAGE_NONE]['#ajax'] = array(
-        'event' => 'change',
-        'callback' => 'farnet_location_depend_dropdown_callback',
-        'wrapper' => 'dropdown-field-city-select',
+          'event' => 'change',
+          'callback' => 'farnet_location_depend_dropdown_callback',
+          'wrapper' => 'dropdown-field-city-select',
       );
 
       $form['field_city_select'][LANGUAGE_NONE]['#title'] = 'City';
@@ -176,6 +175,19 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
         }
       }
       break;
+
+    case 'factsheet_flag_node_form':
+      $form['field_interactive_map']['#type'] = 'hidden';
+      break;
+
+    case 'factsheet_country_node_form':
+      $form['field_interactive_map']['#type'] = 'hidden';
+      break;
+
+    case 'organisation_node_form':
+      $form['field_latitude']['#type'] = 'hidden';
+      $form['field_longitude']['#type'] = 'hidden';
+      break;
   }
 }
 
@@ -183,47 +195,222 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_node_submit().
  */
 function farnet_location_node_submit($node, $form, &$form_state) {
-  if ($node->type == 'organisation') {
-    $address_1 = isset($node->field_address_1[LANGUAGE_NONE][0]['value']) ? $node->field_address_1[LANGUAGE_NONE][0]['value'] : '';
-    $address_2 = isset($node->field_address_2[LANGUAGE_NONE][0]['value']) ? $node->field_address_2[LANGUAGE_NONE][0]['value'] : '';
-    $city = isset($node->field_city[LANGUAGE_NONE][0]['value']) ? $node->field_city[LANGUAGE_NONE][0]['value'] : '';
-    $zip_code = isset($node->field_zip_code[LANGUAGE_NONE][0]['value']) ? $node->field_zip_code[LANGUAGE_NONE][0]['value'] : '';
-    $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
-    if ((!empty($address_1) || !empty($address_2)) && (!empty($city) || !empty($zip_code)) && !empty($country)) {
-      $address = (isset($address_1) ? $address_1 . ', ' : '') . (isset($address_2) ? $address_2 . ', ' : '') .
-        (isset($zip_code) ? $zip_code . ' ' : '') . (isset($city) ? $city . ', ' : '') . $country;
-      $output = _farnet_location_geocoding($address);
-      if ($output && is_array($output)) {
-        $longitude = $output[0];
-        $latitude = $output[1];
-        $node->field_longitude[LANGUAGE_NONE][0]['value'] = $longitude;
-        $node->field_latitude[LANGUAGE_NONE][0]['value'] = $latitude;
+  switch ($node->type) {
+    case 'organisation':
+      $address_1 = isset($node->field_address_1[LANGUAGE_NONE][0]['value']) ? $node->field_address_1[LANGUAGE_NONE][0]['value'] : '';
+      $address_2 = isset($node->field_address_2[LANGUAGE_NONE][0]['value']) ? $node->field_address_2[LANGUAGE_NONE][0]['value'] : '';
+      $city = isset($node->field_city[LANGUAGE_NONE][0]['value']) ? $node->field_city[LANGUAGE_NONE][0]['value'] : '';
+      $zip_code = isset($node->field_zip_code[LANGUAGE_NONE][0]['value']) ? $node->field_zip_code[LANGUAGE_NONE][0]['value'] : '';
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      if ((!empty($address_1) || !empty($address_2)) && (!empty($city) || !empty($zip_code)) && !empty($country)) {
+        $address = (isset($address_1) ? $address_1 . ', ' : '') . (isset($address_2) ? $address_2 . ', ' : '') .
+            (isset($zip_code) ? $zip_code . ' ' : '') . (isset($city) ? $city . ', ' : '') . $country;
+        $output = _farnet_location_geocoding($address);
+        if ($output && is_array($output)) {
+          $longitude = $output[0];
+          $latitude = $output[1];
+          $node->field_longitude[LANGUAGE_NONE][0]['value'] = $longitude;
+          $node->field_latitude[LANGUAGE_NONE][0]['value'] = $latitude;
+        }
+        else {
+          drupal_set_message(t("The coordinates of this :address could not be set. Please set them manually or contact an administrator.", array(':address' => $address)), 'warning');
+        }
+      }
+      break;
+
+    case 'factsheet_flag':
+      global $language;
+      global $base_url;
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      $country_id = isset($node->field_term_country[LANGUAGE_NONE][0]['tid']) ? $node->field_term_country[LANGUAGE_NONE][0]['tid'] : '';
+      foreach ($node->field_area[$language->language] as $area_index => $area) {
+        $city = $area['value'];
+        $output = _farnet_location_geocoding($city . ', ' . $country);
+        if ($output && is_array($output)) {
+          $longitude = $output[0];
+          $latitude = $output[1];
+          $node->field_longitude[LANGUAGE_NONE][$area_index]['value'] = $longitude;
+          $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
+        }
+        else {
+          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
+        }
+      }
+      $output_country = _farnet_location_geocoding($country);
+      // Default: Brussels, Belgium.
+      $longitude_country = 4.35171;
+      $latitude_country = 50.85034;
+      if ($output_country && is_array($output_country)) {
+        $longitude_country = $output_country[0];
+        $latitude_country = $output_country[1];
       }
       else {
-        drupal_set_message("The coordinates of this location could not be set. Please set them manually or contact an administrator.", 'warning');
+        drupal_set_message(t("The coordinates of :country could not be set. Please set it manually or contact an administrator.", array(':country' => $country)), 'warning');
       }
-    }
-  }
-  elseif (($node->type == 'gp_method') || ($node->type == 'gp_short_story')) {
-    $lang = $form['title_field']['#language'];
-    $node->field_longitude[LANGUAGE_NONE] = array();
-    $node->field_latitude[LANGUAGE_NONE] = array();
-    foreach ($form['field_area'][$lang] as $key => $value) {
-      if (is_int($key) !== FALSE) {
-        if (isset($form['field_area'][$lang][$key]['value']['#value'])) {
-          if (strlen($form['field_area'][$lang][$key]['value']['#value']) > 0) {
-            $country = $form['field_term_country'][LANGUAGE_NONE]['#value'];
-            $region = $form['field_region'][LANGUAGE_NONE][0]['value']['#value'];
-            $city = $form['field_area'][$lang][$key]['value']['#value'];
-            $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
-            if ($output && is_array($output)) {
-              $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
-              $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
+      $json_map = '{
+          "service": "map",
+          "sidebar": {
+            "options": {
+              "collapse": true
+            }
+          },
+          "map": {
+            "zoom": "4",
+            "center": [
+              "' . $latitude_country . '",
+              "' . $longitude_country . '"
+            ]
+          },
+          "layers": [
+            {
+              "checkbox": {
+                "label": "Elements",
+                "features": [
+                  {
+                    "label": "flag factsheet",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/factsheet_flag/' . $country_id . '"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+      }';
+      $node->field_interactive_map[LANGUAGE_NONE][0]['value'] = $json_map;
+      break;
+
+    case 'factsheet_country':
+      global $language;
+      global $base_url;
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      $country_id = isset($node->field_term_country[LANGUAGE_NONE][0]['tid']) ? $node->field_term_country[LANGUAGE_NONE][0]['tid'] : '';
+      $output_country = _farnet_location_geocoding($country);
+      // Default: Brussels, Belgium.
+      $longitude_country = 4.35171;
+      $latitude_country = 50.85034;
+      if ($output_country && is_array($output_country)) {
+        $longitude_country = $output_country[0];
+        $latitude_country = $output_country[1];
+      }
+      else {
+        drupal_set_message(t("The coordinates of :country could not be set. Please set it manually or contact an administrator.", array(':country' => $country)), 'warning');
+      }
+      $json_map = '{
+          "service": "map",
+          "sidebar": {
+            "options": {
+              "collapse": true
+            }
+          },
+          "map": {
+            "zoom": "4",
+            "center": [
+              "' . $latitude_country . '",
+              "' . $longitude_country . '"
+            ]
+          },
+          "layers": [
+            {
+              "checkbox": {
+                "label": "Elements",
+                "features": [
+                  {
+                    "label": "flag factsheet",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/factsheet_flag/' . $country_id . '"
+                    ]
+                  },
+                  {
+                    "label": "organisation",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/organisation/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "pink"
+                    }
+                  },
+                  {
+                    "label": "gp method",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/gp_method/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "label": "gp project",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/gp_project/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "label": "gp short story",
+                    "checked" : true,
+                    "markers": [
+                      "' . $base_url . '/interactive_map/gp_short_story/' . $country_id . '"
+                    ],
+                    "options": {
+                      "color": "yellow"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+      }';
+      $node->field_interactive_map[LANGUAGE_NONE][0]['value'] = $json_map;
+      break;
+
+    case 'gp_method':
+    case 'gp_short_story':
+      $lang = $form_state['values']['language'];
+      $node->field_longitude[LANGUAGE_NONE] = array();
+      $node->field_latitude[LANGUAGE_NONE] = array();
+      foreach ($form_state['values']['field_area'][$lang] as $key => $value) {
+        if (is_int($key) !== FALSE) {
+          if (isset($form_state['values']['field_area'][$lang][$key]['value'])) {
+            if (strlen($form_state['values']['field_area'][$lang][$key]['value']) > 0) {
+              $country = $form_state['values']['field_term_country'][LANGUAGE_NONE][0]['name'];
+              $region = $form_state['values']['field_region'][LANGUAGE_NONE][0]['value'];
+              $city = $form_state['values']['field_area'][$lang][$key]['value'];
+              $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
+              if ($output && is_array($output)) {
+                $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
+                $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
+              }
             }
           }
         }
       }
-    }
+      break;
+
+    case 'gp_project':
+      global $language;
+      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
+      foreach ($node->field_area[$language->language] as $area_index => $area) {
+        $city = $area['value'];
+        $output = _farnet_location_geocoding($city . ', ' . $country);
+        if ($output && is_array($output)) {
+          $longitude = $output[0];
+          $latitude = $output[1];
+          $node->field_longitude[LANGUAGE_NONE][$area_index]['value'] = $longitude;
+          $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
+        }
+        else {
+          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
+        }
+      }
+      break;
   }
 }
 
@@ -268,14 +455,14 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
 
   // Do the search.
   $params = [
-    'name_startsWith' => check_plain($search),
-    'maxRows' => $maxrows,
-    'username' => $username,
-    'type' => 'json',
-    'country' => $country_code,
-    'fcode' => $fcode,
-    'style' => 'FULL',
-    'lang' => strtoupper($lang),
+      'name_startsWith' => check_plain($search),
+      'maxRows' => $maxrows,
+      'username' => $username,
+      'type' => 'json',
+      'country' => $country_code,
+      'fcode' => $fcode,
+      'style' => 'FULL',
+      'lang' => strtoupper($lang),
   ];
 
   // Filter by region if available.
@@ -286,8 +473,10 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . http_build_query($params);
 
-  $geolocs = drupal_http_request($url);
-  $geolocs = drupal_json_decode($geolocs->data);
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+    drupal_json_output([]);
+    return;
+  }
 
   $result = [];
   foreach ($geolocs['geonames'] as $geoname) {
@@ -337,14 +526,14 @@ function _farnet_location_geocoding_by_city($lang, $region, $country, $city) {
 
   // Do the search.
   $params = [
-    'name_equals' => check_plain($city),
-    'maxRows' => $maxrows,
-    'username' => $username,
-    'type' => 'json',
-    'country' => $country_code,
-    'fcode' => $fcode,
-    'style' => 'SHORT',
-    'lang' => strtoupper($lang),
+      'name_equals' => check_plain($city),
+      'maxRows' => $maxrows,
+      'username' => $username,
+      'type' => 'json',
+      'country' => $country_code,
+      'fcode' => $fcode,
+      'style' => 'SHORT',
+      'lang' => strtoupper($lang),
   ];
 
   // Filter by region if available.
@@ -355,8 +544,9 @@ function _farnet_location_geocoding_by_city($lang, $region, $country, $city) {
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . http_build_query($params);
 
-  $geolocs = drupal_http_request($url);
-  $geolocs = drupal_json_decode($geolocs->data);
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+    return FALSE;
+  }
 
   $result = [];
   foreach ($geolocs['geonames'] as $geoname) {
@@ -400,21 +590,23 @@ function _farnet_location_get_country_code($country) {
  */
 function _farnet_location_get_region_code($lang, $region, $country_code) {
   $params = [
-    'name_equals' => check_plain($region),
-    'maxrows' => 1,
-    'username' => $username = variable_get('geonames_username'),
-    'type' => 'json',
-    'country' => $country_code,
-    'fcode' => 'adm1',
-    'style' => 'LONG',
-    'lang' => $lang,
+      'name_equals' => check_plain($region),
+      'maxrows' => 1,
+      'username' => $username = variable_get('geonames_username'),
+      'type' => 'json',
+      'country' => $country_code,
+      'fcode' => 'adm1',
+      'style' => 'LONG',
+      'lang' => $lang,
   ];
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . http_build_query($params);
 
-  $geolocs = drupal_http_request($url);
-  $geolocs = drupal_json_decode($geolocs->data);
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+    return FALSE;
+  }
+
   $result = reset($geolocs['geonames']);
 
   if ((int) $geolocs['totalResultsCount'] < 1) {
@@ -432,23 +624,21 @@ function _farnet_location_get_region_code($lang, $region, $country_code) {
  */
 function _farnet_location_geocoding($address) {
   $params = [
-    'address' => $address,
-    'mode' => 1,
+      'address' => $address,
+      'mode' => 1,
   ];
 
   $base_url = variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/');
   $url = $base_url . '?' . http_build_query($params);
 
-  $geolocs = drupal_http_request($url);
-  if ($geolocs->status_message !== 'OK') {
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     return FALSE;
   }
-  $geolocs = drupal_json_decode($geolocs->data);
 
   if (isset($geolocs['geocodingRequestsCollection'][0])) {
     $geoloc = $geolocs['geocodingRequestsCollection'][0];
     if (isset($geoloc['responseMessage']) && $geoloc['responseMessage'] === 'OK'
-      && isset($geoloc['result']['features'][0]['geometry']['coordinates'])) {
+        && isset($geoloc['result']['features'][0]['geometry']['coordinates'])) {
       $coordinates = $geoloc['result']['features'][0]['geometry']['coordinates'];
       return $coordinates;
     }
@@ -475,20 +665,21 @@ function _farnet_location_get_cities_list_from_postal_code($postal_code, $countr
 
   if (strlen($username) > 0) {
     $params = [
-      'postalcode' => check_plain($postal_code),
-      'maxrows' => 50,
-      'username' => $username,
-      'type' => 'json',
-      'country' => $country_code,
-      'style' => 'SHORT',
-      'lang' => $language->language,
+        'postalcode' => check_plain($postal_code),
+        'maxrows' => 50,
+        'username' => $username,
+        'type' => 'json',
+        'country' => $country_code,
+        'style' => 'SHORT',
+        'lang' => $language->language,
     ];
 
     $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
     $url = $base_url . 'postalCodeSearch?' . http_build_query($params);
 
-    $geolocs = drupal_http_request($url);
-    $geolocs = drupal_json_decode($geolocs->data);
+    if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+      return [];
+    }
 
     $result = [];
     foreach ($geolocs['postalCodes'] as $geoname) {
@@ -532,4 +723,96 @@ function _farnet_location_get_field_city_select_dropdown($country_selected, $pos
   }
 
   return $result;
+}
+
+/**
+ * Get the result of a GeoName request, and handle errors.
+ *
+ * @param string $url
+ *   The GeoNames url called.
+ *
+ * @return bool | array
+ *   Returns the result or FALSE if no result could be returned.
+ */
+function _farnet_location_get_geonames_result($url) {
+  $response = drupal_http_request($url);
+  $geolocs = drupal_json_decode($response->data);
+
+  // If an error occurred during JSON processing, log error and quit.
+  if (json_last_error() !== JSON_ERROR_NONE) {
+    $variables = [
+        '@code' => $response->code,
+        '@url' => $url,
+        '@response' => $response->data,
+    ];
+
+    $message = [
+        'GeoNames return was not a valid json',
+        'response code : @code',
+        'request url : @url',
+        'response : @response',
+    ];
+
+    watchdog('GeoNames', implode('<br/>', $message), $variables, WATCHDOG_ERROR);
+    return FALSE;
+  }
+
+  // If GeoNames returned an error, log it and quit.
+  if (_farnet_location_get_geonames_error($geolocs, $url)) {
+    return FALSE;
+  }
+
+  return $geolocs;
+}
+
+/**
+ * Check the GeoNames return value for any error.
+ *
+ * @param array $json
+ *   The tested GeoNames return value.
+ * @param string $url
+ *   The url called, used for error logging only.
+ *
+ * @return bool
+ *    Returns TRUE if an error was found, else FALSE.
+ */
+function _farnet_location_get_geonames_error($json, $url) {
+  // GeoNames webservices error codes.
+  // See : http://www.geonames.org/export/webservice-exception.html.
+  $errors = [
+      '10' => 'Authorization Exception',
+      '11' => 'record does not exist',
+      '12' => 'other error',
+      '13' => 'database timeout',
+      '14' => 'invalid parameter',
+      '15' => 'no result found',
+      '16' => 'duplicate exception',
+      '17' => 'postal code not found',
+      '18' => 'daily limit of credits exceeded',
+      '19' => 'hourly limit of credits exceeded',
+      '20' => 'weekly limit of credits exceeded',
+      '21' => 'invalid input',
+      '22' => 'server overloaded exception',
+      '23' => 'service not implemented',
+  ];
+
+  // Log error if applicable.
+  if (isset($json['status'])) {
+    $message = [
+        'GeoNames error : @error',
+        'Message : @message',
+        'url called : @url',
+    ];
+
+    $vars = [
+        '@error' => $errors[$json['status']['value']],
+        '@message' => $json['status']['message'],
+        '@url' => $url,
+    ];
+
+    watchdog('GeoNames', implode('<br/>', $message), $vars, WATCHDOG_ERROR);
+    return TRUE;
+  }
+
+  return FALSE;
 }
