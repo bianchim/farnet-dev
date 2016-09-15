@@ -106,7 +106,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
-      'countries' => 'countries',
+    'countries' => 'countries',
   );
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -123,7 +123,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-      'organisation' => 'organisation',
+    'organisation' => 'organisation',
   );
   $handler->display->display_options['path'] = 'interactive_map/organisation';
 
@@ -195,7 +195,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
-      'countries' => 'countries',
+    'countries' => 'countries',
   );
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -212,7 +212,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-      'gp_method' => 'gp_method',
+    'gp_method' => 'gp_method',
   );
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
@@ -290,7 +290,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
-      'countries' => 'countries',
+    'countries' => 'countries',
   );
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -307,7 +307,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-      'factsheet_flag' => 'factsheet_flag',
+    'factsheet_flag' => 'factsheet_flag',
   );
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
@@ -385,7 +385,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
-      'countries' => 'countries',
+    'countries' => 'countries',
   );
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -402,7 +402,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-      'gp_project' => 'gp_project',
+    'gp_project' => 'gp_project',
   );
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
@@ -480,7 +480,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
-      'countries' => 'countries',
+    'countries' => 'countries',
   );
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -497,7 +497,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-      'gp_short_story' => 'gp_short_story',
+    'gp_short_story' => 'gp_short_story',
   );
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
