@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_cooperation_ms_fiche.field_group.inc
@@ -195,14 +194,13 @@ function farnet_cooperation_ms_fiche_field_group_info() {
       1 => 'field_term_theme',
       2 => 'field_type_of_area',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ne-ms-fiche-taxonomy field-group-fieldset',
+        'classes' => 'group-ne-ms-fiche-taxonomy field-group-tab',
         'required_fields' => 1,
-        'id' => '',
       ),
     ),
   );
