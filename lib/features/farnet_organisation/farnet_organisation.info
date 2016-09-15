@@ -27,6 +27,7 @@ features[field_group][] = group_organisation_contact|node|organisation|form
 features[field_group][] = group_organisation_content|node|organisation|form
 features[field_group][] = group_organisation_metadata|node|organisation|form
 features[field_group][] = group_organisation_socialmedia|node|organisation|form
+features[field_group][] = group_postal_address|node|organisation|form
 features[field_instance][] = field_collection_item-field_organisation_contacts-field_email
 features[field_instance][] = field_collection_item-field_organisation_contacts-field_first_name
 features[field_instance][] = field_collection_item-field_organisation_contacts-field_job_title
