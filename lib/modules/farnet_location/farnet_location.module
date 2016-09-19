@@ -373,7 +373,6 @@ function farnet_location_node_submit($node, $form, &$form_state) {
 
     case 'gp_method':
     case 'gp_short_story':
-      dpm($form_state);
       $lang = $form_state['values']['language'];
       $node->field_longitude[LANGUAGE_NONE] = array();
       $node->field_latitude[LANGUAGE_NONE] = array();
