@@ -370,7 +370,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
   // Exported field_instance: 'node-cooperation_idea-field_term_theme'.
   $field_instances['node-cooperation_idea-field_term_theme'] = array(
     'bundle' => 'cooperation_idea',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -398,12 +398,13 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 11,
     ),
   );
