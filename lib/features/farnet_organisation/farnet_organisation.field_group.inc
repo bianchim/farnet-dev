@@ -114,7 +114,10 @@ function farnet_organisation_field_group_info() {
     'label' => 'Social Media',
     'weight' => '3',
     'children' => array(
-      0 => 'field_social_media',
+      0 => 'field_ff_twitter',
+      1 => 'field_ff_facebook',
+      2 => 'field_ff_linkedin',
+      3 => 'field_ff_google',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

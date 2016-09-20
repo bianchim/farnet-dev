@@ -530,7 +530,7 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
   // Exported field_instance: 'node-ms_fiche-field_term_theme'.
   $field_instances['node-ms_fiche-field_term_theme'] = array(
     'bundle' => 'ms_fiche',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -558,13 +558,13 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 15,
     ),
   );
