@@ -52,14 +52,14 @@ function farnet_event_ds_layout_settings_info() {
       'right' => array(
         0 => 'title',
         1 => 'field_publication_date',
-        2 => 'field_term_type_event',
+        2 => 'field_event_type',
         3 => 'field_farnet_abstract',
       ),
     ),
     'fields' => array(
       'title' => 'right',
       'field_publication_date' => 'right',
-      'field_term_type_event' => 'right',
+      'field_event_type' => 'right',
       'field_farnet_abstract' => 'right',
     ),
     'classes' => array(),

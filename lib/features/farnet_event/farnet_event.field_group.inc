@@ -222,7 +222,6 @@ function farnet_event_field_group_info() {
       1 => 'field_tags',
       2 => 'field_term_country',
       3 => 'field_term_theme',
-      4 => 'field_term_type_event',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -257,7 +256,8 @@ function farnet_event_field_group_info() {
       0 => 'field_tags',
       1 => 'field_term_country',
       2 => 'field_term_theme',
-      3 => 'field_term_type_event',
+      3 => 'field_tags',
+      4 => 'field_event_type',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
