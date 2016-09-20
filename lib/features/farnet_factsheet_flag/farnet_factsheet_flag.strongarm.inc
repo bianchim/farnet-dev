@@ -133,7 +133,7 @@ function farnet_factsheet_flag_strongarm() {
           'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '21',
         ),
       ),
       'display' => array(),
