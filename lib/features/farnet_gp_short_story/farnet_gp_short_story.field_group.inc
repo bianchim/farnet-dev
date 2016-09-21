@@ -27,7 +27,7 @@ function farnet_gp_short_story_field_group_info() {
       0 => 'field_area',
       1 => 'field_organisation',
       2 => 'field_term_country',
-      3 => 'field_term_region',
+      3 => 'field_region',
     ),
     'format_type' => 'div',
     'format_settings' => array(
