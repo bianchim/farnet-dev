@@ -403,6 +403,68 @@ function farnet_gp_project_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_gp_project_location|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_location';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_project';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Location',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_term_country',
+      1 => 'field_region',
+      2 => 'field_area',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-gp-project-location field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_gp_project_location|node|gp_project|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_gp_project_location|node|gp_project|form';
+  $field_group->group_name = 'group_gp_project_location';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_project';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Location',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_term_country',
+      1 => 'field_region',
+      2 => 'field_area',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-gp-project-location field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_gp_project_location|node|gp_project|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_gp_project_media|node|gp_project|default';
   $field_group->group_name = 'group_gp_project_media';
   $field_group->entity_type = 'node';
@@ -501,7 +563,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -624,6 +686,7 @@ function farnet_gp_project_field_group_info() {
   t('Content');
   t('Description');
   t('Flag');
+  t('Location');
   t('Media');
   t('Metatag');
   t('Project cost / Funding');

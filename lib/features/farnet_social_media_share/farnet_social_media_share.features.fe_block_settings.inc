@@ -33,10 +33,10 @@ admin/*',
         'weight' => 0,
       ),
       'ec_resp' => array(
-        'region' => 'content_top',
+        'region' => 'content',
         'status' => 1,
         'theme' => 'ec_resp',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'seven' => array(
         'region' => '',

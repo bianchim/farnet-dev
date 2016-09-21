@@ -278,6 +278,46 @@ function farnet_core_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_id_text'.
+  $field_bases['field_id_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_id_text',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_interactive_map'.
+  $field_bases['field_interactive_map'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_interactive_map',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'nexteuropa_json_field',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'json_settings',
+  );
+
   // Exported field_base: 'field_last_name'.
   $field_bases['field_last_name'] = array(
     'active' => 1,

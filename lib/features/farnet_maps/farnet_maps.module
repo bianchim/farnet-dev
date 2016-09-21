@@ -100,6 +100,24 @@ function farnet_maps_form($form, &$form_state) {
                 "options": {
                   "color": "green"
                 }
+              },
+              {
+                "label": "gp project",
+                "markers": [
+                  "http://myproject/url_to_get_geojson"
+                ],
+                "options": {
+                  "color": "red"
+                }
+              },
+              {
+                "label": "gp short story",
+                "markers": [
+                  "http://myproject/url_to_get_geojson"
+                ],
+                "options": {
+                  "color": "yellow"
+                }
               }
             ]
           }
@@ -114,6 +132,8 @@ function farnet_maps_form($form, &$form_state) {
     $json_map_object->layers[0]->checkbox->features[0]->markers[0] = $base_url . "/interactive_map/factsheet_flag/" . $country;
     $json_map_object->layers[0]->checkbox->features[1]->markers[0] = $base_url . "/interactive_map/organisation/" . $country;
     $json_map_object->layers[0]->checkbox->features[2]->markers[0] = $base_url . "/interactive_map/gp_method/" . $country;
+    $json_map_object->layers[0]->checkbox->features[3]->markers[0] = $base_url . "/interactive_map/gp_project/" . $country;
+    $json_map_object->layers[0]->checkbox->features[4]->markers[0] = $base_url . "/interactive_map/gp_short_story/" . $country;
 
     $json_map = json_encode($json_map_object);
 
