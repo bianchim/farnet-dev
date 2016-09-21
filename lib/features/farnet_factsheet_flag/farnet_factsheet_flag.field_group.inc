@@ -249,7 +249,7 @@ function farnet_factsheet_flag_field_group_info() {
       1 => 'field_ff_code',
       2 => 'field_ff_programming_period',
       3 => 'field_term_country',
-      4 => 'field_term_region',
+      4 => 'field_region',
       5 => 'field_title_official',
       6 => 'title_field',
       7 => 'field_interactive_map',
