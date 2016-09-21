@@ -419,7 +419,7 @@ function farnet_cooperation_call_field_default_field_instances() {
       'active' => 0,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 1,
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),

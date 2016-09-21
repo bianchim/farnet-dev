@@ -52,18 +52,18 @@ Feature: Publication content type
     And I should see the text "Magazines Commissioner states tax rulings are not in line with state aid rules."
 
   @api
-  Scenario: Create a publication with publication type Presentations and test view presentations
-    Given I am logged in as a user with the "administrator" role
-    When I am viewing an "publication" content:
-      | title                     | Presentations EC decides tax advantages for Fiat are illegal                        |
-      | field_farnet_abstract     | Presentations Commissioner states tax rulings are not in line with state aid rules. |
-      | field_type_of_publication | Presentation                                                                        |
-      | field_publication_date    | 1465294233                                                                          |
-      | status                    | 1                                                                                   |
-    Then I should see the heading "Presentations EC decides tax advantages for Fiat are illegal"
-    And I should see the text "Presentations Commissioner states tax rulings are not in line with state aid rules."
-    And I visit "library/presentations"
-    And I should see the heading "Presentations"
-    And I should see the text "Presentations EC decides tax advantages for Fiat are illegal"
-    And I should see the text "Presentations Commissioner states tax rulings are not in line with state aid rules."
-    And I should see the text "Read more"
+#  Scenario: Create a publication with publication type Presentations and test view presentations
+#    Given I am logged in as a user with the "administrator" role
+#    When I am viewing an "publication" content:
+#      | title                     | Presentations EC decides tax advantages for Fiat are illegal                        |
+#      | field_farnet_abstract     | Presentations Commissioner states tax rulings are not in line with state aid rules. |
+#      | field_type_of_publication | Presentation                                                                        |
+#      | field_publication_date    | 1465294233                                                                          |
+#      | status                    | 1                                                                                   |
+#    Then I should see the heading "Presentations EC decides tax advantages for Fiat are illegal"
+#    And I should see the text "Presentations Commissioner states tax rulings are not in line with state aid rules."
+#    And I visit "library/presentations"
+#    And I should see the heading "Presentations"
+#    And I should see the text "Presentations EC decides tax advantages for Fiat are illegal"
+#    And I should see the text "Presentations Commissioner states tax rulings are not in line with state aid rules."
+#    And I should see the text "Read more"

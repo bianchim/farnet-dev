@@ -27,14 +27,6 @@ function farnet_taxonomy_type_publications() {
       ),
     ),
     'Publication3' => (object) array(
-      'name' => t('Presentation'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Presentation',
-        'it' => 'Presentation IT',
-      ),
-    ),
-    'Publication4' => (object) array(
       'name' => t('Guide'),
       'language' => 'en',
       'translation' => array(
@@ -42,7 +34,7 @@ function farnet_taxonomy_type_publications() {
         'it' => 'Guide IT',
       ),
     ),
-    'Publication5' => (object) array(
+    'Publication4' => (object) array(
       'name' => t('Report'),
       'language' => 'en',
       'translation' => array(

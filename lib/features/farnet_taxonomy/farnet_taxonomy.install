@@ -113,23 +113,6 @@ function farnet_taxonomy_enable() {
     watchdog('farnet_taxonomy', "Import countries terms failed.", array(), WATCHDOG_ERROR);
   }
 
-  // Import Farnet Region terms.
-  if ($vocabulary = taxonomy_vocabulary_machine_name_load('regions')) {
-    $vid = $vocabulary->vid;
-    include_once 'includes/farnet_taxonomy_regions.php';
-    $regions_array = farnet_taxonomy_regions();
-    foreach ($regions_array as $item) {
-      $term = new stdClass();
-      $term->vid = $vid;
-      $term->name = $item->name;
-      $term->language = $item->language;
-      taxonomy_term_save($term);
-    }
-  }
-  else {
-    watchdog('farnet_taxonomy', "Import regions terms failed.", array(), WATCHDOG_ERROR);
-  }
-
   // Imports Type of Area terms.
   if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_of_area')) {
     include_once 'includes/farnet_taxonomy_type_of_areas.php';
@@ -206,13 +189,6 @@ function farnet_taxonomy_disable() {
 
   // Deletes the taxonomy term.
   $vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_organisation');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
-    taxonomy_vocabulary_delete($vid);
-  }
-
-  // Deletes the taxonomy term.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('field_term_region');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
     taxonomy_vocabulary_delete($vid);

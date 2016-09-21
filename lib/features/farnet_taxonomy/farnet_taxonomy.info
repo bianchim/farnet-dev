@@ -25,7 +25,6 @@ features[field_base][] = field_sea_basins
 features[field_base][] = field_term_country
 features[field_base][] = field_term_languages_spoken
 features[field_base][] = field_term_publication_channels
-features[field_base][] = field_term_region
 features[field_base][] = field_term_theme
 features[field_base][] = field_term_type_event
 features[field_base][] = field_term_type_news
