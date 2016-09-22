@@ -12,6 +12,39 @@ function farnet_organisation_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'field_collection_item-field_organisation_contacts-field_civility'.
+  $field_instances['field_collection_item-field_organisation_contacts-field_civility'] = array(
+    'bundle' => 'field_organisation_contacts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_civility',
+    'label' => 'Civility',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_organisation_contacts-field_email'.
   $field_instances['field_collection_item-field_organisation_contacts-field_email'] = array(
     'bundle' => 'field_organisation_contacts',
@@ -229,6 +262,39 @@ function farnet_organisation_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_organisation_contacts-field_organisation_position'.
+  $field_instances['field_collection_item-field_organisation_contacts-field_organisation_position'] = array(
+    'bundle' => 'field_organisation_contacts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_organisation_position',
+    'label' => 'Position',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 6,
     ),
   );
 
@@ -1432,6 +1498,7 @@ function farnet_organisation_field_default_field_instances() {
   t('Address 2');
   t('Body');
   t('City');
+  t('Civility');
   t('Country');
   t('Email');
   t('Facebook');
@@ -1445,6 +1512,7 @@ function farnet_organisation_field_default_field_instances() {
   t('Longitude');
   t('Name');
   t('Organisation contacts');
+  t('Position');
   t('Telephone');
   t('Twitter');
   t('Type');
