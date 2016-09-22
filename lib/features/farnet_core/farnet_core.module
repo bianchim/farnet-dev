@@ -137,3 +137,27 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
 
   return $form;
 }
+
+/**
+ * Implements hook_node_presave().
+ */
+function farnet_core_node_presave($node) {
+  if (($node->type == 'farnet_discussion')
+  || ($node->type == 'nexteuropa_news')
+  || ($node->type == 'nexteuropa_event')
+  || ($node->type == 'cooperation_call')
+  || ($node->type == 'cooperation_idea')
+  || ($node->type == 'gp_method')
+  || ($node->type == 'gp_project')
+  || ($node->type == 'gp_short_story')) {
+    if (isset($node->og_group_ref)) {
+      $node->comment = COMMENT_NODE_OPEN;
+    }
+    else {
+      $node->comment = COMMENT_NODE_HIDDEN;
+    }
+  }
+  else {
+    $node->comment = COMMENT_NODE_CLOSED;
+  }
+}
