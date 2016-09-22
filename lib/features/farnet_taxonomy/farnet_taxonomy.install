@@ -106,6 +106,10 @@ function farnet_taxonomy_enable() {
           'parent' => $tid,
         );
         taxonomy_term_save($subterm);
+
+        $term_w = entity_metadata_wrapper('taxonomy_term', $subterm->tid);
+        $term_w->field_code->set($country);
+        $term_w->save();
       }
     }
   }
@@ -263,9 +267,9 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
     taxonomy_term_save($term);
 
     if (isset($item->code)) {
-      $org_term = taxonomy_term_load($term->tid);
-      $org_term->field_code[LANGUAGE_NONE][0]['value'] = $item->code;
-      taxonomy_term_save($org_term);
+      $term_w = entity_metadata_wrapper('taxonomy_term', $term->tid);
+      $term_w->field_code->set($item->code);
+      $term_w->save();
     }
 
     foreach ($item->translation as $language => $value) {
