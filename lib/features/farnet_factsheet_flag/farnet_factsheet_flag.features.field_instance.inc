@@ -3822,6 +3822,54 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-factsheet_flag-field_gallery'.
+  $field_instances['node-factsheet_flag-field_gallery'] = array(
+    'bundle' => 'factsheet_flag',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 85,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_gallery',
+    'label' => 'Gallery',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 110,
+    ),
+  );
+
   // Exported field_instance: 'node-factsheet_flag-field_interactive_map'.
   $field_instances['node-factsheet_flag-field_interactive_map'] = array(
     'bundle' => 'factsheet_flag',
@@ -3896,7 +3944,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 108,
+      'weight' => 24,
     ),
   );
 
@@ -3968,7 +4016,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 107,
+      'weight' => 23,
     ),
   );
 
@@ -4040,7 +4088,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 105,
+      'weight' => 22,
     ),
   );
 
@@ -4298,6 +4346,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -5016,12 +5065,13 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Fishing');
   t('Fund URL');
   t('Fund name');
+  t('Gallery');
   t('Google+');
   t('Group content visibility');
   t('Groups audience');
   t('Image');
-  t('Interactive Map');
   t('Inter-territorial (within your MS)');
+  t('Interactive Map');
   t('Language');
   t('Latitude');
   t('Lead partner (Responsible Legal Entity)');
