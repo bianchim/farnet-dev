@@ -88,7 +88,6 @@ features[field_instance][] = node-nexteuropa_event-field_telephone
 features[field_instance][] = node-nexteuropa_event-field_term_country
 features[field_instance][] = node-nexteuropa_event-field_term_publication_channels
 features[field_instance][] = node-nexteuropa_event-field_term_theme
-features[field_instance][] = node-nexteuropa_event-field_term_type_event
 features[field_instance][] = node-nexteuropa_event-field_twitter_hashtag
 features[field_instance][] = node-nexteuropa_event-field_website
 features[user_permission][] = create nexteuropa_event content

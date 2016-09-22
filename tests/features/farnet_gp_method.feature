@@ -1,4 +1,4 @@
-Feature: Factsheet GP Method content type
+Feature: GP Method content type
   In order to manage gp_method on the website
   As an authorised user
   I want to be able to create, edit and delete publications
@@ -45,7 +45,9 @@ Feature: Factsheet GP Method content type
     # Metadata tab
     And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     # Location tab
-    And I fill in "edit-field-area-und-0-value" with "Test gp method"
+    And I fill in "field_term_country[und]" with "Belgium"
+    And I fill in "field_region[und][0][value]" with "Wallonia"
+    And I fill in "field_area[und][0][value]" with "Arlon"
     # Description tab
     And I fill in "field_objective[und][0][value]" with "Test gp method"
     And I fill in "field_gpm_activities[und][0][value]" with "Test gp method"
@@ -67,7 +69,9 @@ Feature: Factsheet GP Method content type
       | field_title_official        | Test gp method        |
       | field_picture               | behatTestImage        |
       | og_group_ref                | Global editorial team |
-      | field_area                  | Test gp method        |
+      | field_term_country          | Belgium               |
+      | field_region                | Wallonia              |
+      | field_area                  | Arlon                 |
       | field_objective             | Test gp method        |
       | field_gpm_activities        | Test gp method        |
       | field_gpm_main_achievements | Test gp method        |

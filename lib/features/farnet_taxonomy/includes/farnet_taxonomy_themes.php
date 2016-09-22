@@ -55,7 +55,7 @@ function farnet_taxonomy_themes() {
       'language' => 'en',
       'translation' => array(
         'fr' => 'Fisheries FR',
-        'it' => 'Aquaculture IT',
+        'it' => 'Fisheries IT',
       ),
       'parent' => 'Adding value to fisheries',
     ),

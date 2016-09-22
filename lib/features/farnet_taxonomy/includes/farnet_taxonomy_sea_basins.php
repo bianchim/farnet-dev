@@ -11,11 +11,11 @@
 function farnet_taxonomy_sea_basins() {
   $sea_basins_array = array(
     'SeaBasin1' => (object) array(
-      'name' => t('Baltic'),
+      'name' => t('Baltic Sea'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Baltic FR',
-        'it' => 'Baltic IT',
+        'fr' => 'Baltic Sea FR',
+        'it' => 'Baltic Sea IT',
       ),
     ),
     'SeaBasin2' => (object) array(
@@ -56,6 +56,14 @@ function farnet_taxonomy_sea_basins() {
       'translation' => array(
         'fr' => 'Rivers and Lakes FR',
         'it' => 'Rivers and Lakes IT',
+      ),
+    ),
+    'SeaBasin7' => (object) array(
+      'name' => t('Caribbean'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Caribbean FR',
+        'it' => 'Caribbean IT',
       ),
     ),
   );

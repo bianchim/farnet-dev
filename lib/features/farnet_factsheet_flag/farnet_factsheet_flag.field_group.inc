@@ -141,7 +141,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Budget',
-    'weight' => '14',
+    'weight' => '13',
     'children' => array(
       0 => 'field_collection_budget',
       1 => 'field_ff_emff',
@@ -210,12 +210,12 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Contact',
     'weight' => '15',
     'children' => array(
-      0 => 'field_address_1',
-      1 => 'field_address_2',
-      2 => 'field_city',
-      3 => 'field_email',
-      4 => 'field_ff_flag_manager',
-      5 => 'field_ff_flag_president',
+      0 => 'field_ff_flag_manager',
+      1 => 'field_ff_flag_president',
+      2 => 'field_address_1',
+      3 => 'field_address_2',
+      4 => 'field_city',
+      5 => 'field_email',
       6 => 'field_telephone',
       7 => 'field_website',
       8 => 'field_zip_code',
@@ -249,7 +249,7 @@ function farnet_factsheet_flag_field_group_info() {
       1 => 'field_ff_code',
       2 => 'field_ff_programming_period',
       3 => 'field_term_country',
-      4 => 'field_term_region',
+      4 => 'field_region',
       5 => 'field_title_official',
       6 => 'title_field',
       7 => 'field_interactive_map',
@@ -284,13 +284,13 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_farnet_abstract',
-      1 => 'field_ff_code',
-      2 => 'field_ff_programming_period',
-      3 => 'field_ne_body',
-      4 => 'field_picture',
-      5 => 'field_title_official',
-      6 => 'title_field',
+      0 => 'field_ff_code',
+      1 => 'field_ff_programming_period',
+      2 => 'field_ne_body',
+      3 => 'title_field',
+      4 => 'field_farnet_abstract',
+      5 => 'field_picture',
+      6 => 'field_title_official',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -506,6 +506,33 @@ function farnet_factsheet_flag_field_group_info() {
     ),
   );
   $field_groups['group_factsheet_flag_links|node|factsheet_flag|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_media|node|factsheet_flag|form';
+  $field_group->group_name = 'group_factsheet_flag_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Media',
+    'weight' => '14',
+    'children' => array(
+      0 => 'field_gallery',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-factsheet-flag-media field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_factsheet_flag_media|node|factsheet_flag|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -742,9 +769,9 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Publication',
     'weight' => '1',
     'children' => array(
-      0 => 'field_publication_abstract',
-      1 => 'field_publication_date',
-      2 => 'field_term_publication_channels',
+      0 => 'field_term_publication_channels',
+      1 => 'field_publication_abstract',
+      2 => 'field_publication_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1041,8 +1068,8 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Location',
     'weight' => '4',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_region',
+      0 => 'field_region',
+      1 => 'field_term_country',
       2 => 'field_area',
     ),
     'format_type' => 'tab',
@@ -1067,6 +1094,7 @@ function farnet_factsheet_flag_field_group_info() {
   t('Language information');
   t('Links with LEADER or other CLLD groups');
   t('Location');
+  t('Media');
   t('Metadata');
   t('Partnership');
   t('Project examples and ideas');

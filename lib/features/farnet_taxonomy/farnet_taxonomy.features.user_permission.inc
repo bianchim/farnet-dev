@@ -61,13 +61,6 @@ function farnet_taxonomy_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in regions'.
-  $permissions['delete terms in regions'] = array(
-    'name' => 'delete terms in regions',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in countries'.
   $permissions['edit terms in countries'] = array(
     'name' => 'edit terms in countries',
@@ -115,13 +108,6 @@ function farnet_taxonomy_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in regions'.
-  $permissions['edit terms in regions'] = array(
-    'name' => 'edit terms in regions',
-    'roles' => array(),
     'module' => 'taxonomy',
   );
 

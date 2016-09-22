@@ -106,28 +106,15 @@ function farnet_taxonomy_enable() {
           'parent' => $tid,
         );
         taxonomy_term_save($subterm);
+
+        $term_w = entity_metadata_wrapper('taxonomy_term', $subterm->tid);
+        $term_w->field_code->set($country);
+        $term_w->save();
       }
     }
   }
   else {
     watchdog('farnet_taxonomy', "Import countries terms failed.", array(), WATCHDOG_ERROR);
-  }
-
-  // Import Farnet Region terms.
-  if ($vocabulary = taxonomy_vocabulary_machine_name_load('regions')) {
-    $vid = $vocabulary->vid;
-    include_once 'includes/farnet_taxonomy_regions.php';
-    $regions_array = farnet_taxonomy_regions();
-    foreach ($regions_array as $item) {
-      $term = new stdClass();
-      $term->vid = $vid;
-      $term->name = $item->name;
-      $term->language = $item->language;
-      taxonomy_term_save($term);
-    }
-  }
-  else {
-    watchdog('farnet_taxonomy', "Import regions terms failed.", array(), WATCHDOG_ERROR);
   }
 
   // Imports Type of Area terms.
@@ -212,13 +199,6 @@ function farnet_taxonomy_disable() {
   }
 
   // Deletes the taxonomy term.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('field_term_region');
-  if ($vocabulary) {
-    $vid = $vocabulary->vid;
-    taxonomy_vocabulary_delete($vid);
-  }
-
-  // Deletes the taxonomy term.
   $vocabulary = taxonomy_vocabulary_machine_name_load('field_term_country');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
@@ -287,9 +267,9 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
     taxonomy_term_save($term);
 
     if (isset($item->code)) {
-      $org_term = taxonomy_term_load($term->tid);
-      $org_term->field_code[LANGUAGE_NONE][0]['value'] = $item->code;
-      taxonomy_term_save($org_term);
+      $term_w = entity_metadata_wrapper('taxonomy_term', $term->tid);
+      $term_w->field_code->set($item->code);
+      $term_w->save();
     }
 
     foreach ($item->translation as $language => $value) {
