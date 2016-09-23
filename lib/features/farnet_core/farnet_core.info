@@ -69,6 +69,7 @@ features[field_base][] = field_latitude
 features[field_base][] = field_longitude
 features[field_base][] = field_interactive_map
 features[field_base][] = filename_field
+features[field_base][] = group_content_access
 features[language][] = bg
 features[language][] = cs
 features[language][] = da

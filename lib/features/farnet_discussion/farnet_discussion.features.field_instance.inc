@@ -108,6 +108,70 @@ function farnet_discussion_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-farnet_discussion-field_document'.
+  $field_instances['node-farnet_discussion-field_document'] = array(
+    'bundle' => 'farnet_discussion',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_document',
+    'label' => 'Document',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx xls xlsx jpg jpeg png',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'avportal' => 0,
+          'dailymotion' => 0,
+          'node' => 0,
+          'oembed' => 0,
+          'private' => 'private',
+          'public' => 0,
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-farnet_discussion-field_ne_body'.
   $field_instances['node-farnet_discussion-field_ne_body'] = array(
     'bundle' => 'farnet_discussion',
@@ -185,6 +249,59 @@ function farnet_discussion_field_default_field_instances() {
       'type' => 'text_textarea_with_summary',
       'weight' => -4,
     ),
+  );
+
+  // Exported field_instance: 'node-farnet_discussion-group_content_access'.
+  $field_instances['node-farnet_discussion-group_content_access'] = array(
+    'bundle' => 'farnet_discussion',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+    'widget_type' => 'options_select',
   );
 
   // Exported field_instance: 'node-farnet_discussion-og_group_ref'.
@@ -308,6 +425,8 @@ function farnet_discussion_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Comment');
+  t('Document');
+  t('Group content visibility');
   t('Groups audience');
   t('Related documents');
   t('Title');
