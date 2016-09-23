@@ -120,12 +120,11 @@ function _farnet_communities_push_public($form, &$form_state) {
  */
 function farnet_communities_context_load_alter(&$context) {
   if ($context->name === 'communities' && isset($context->reactions['block'])) {
-      $context->reactions['block']['blocks']['views-members_list-block_members_list'] = array(
+    $context->reactions['block']['blocks']['views-members_list-block_members_list'] = array(
       'module' => 'views',
       'delta' => 'members_list-block_members_list',
       'region' => 'sidebar_left',
       'weight' => '-8',
     );
-    dpm($context->reactions['block']['blocks']);
   }
 }
