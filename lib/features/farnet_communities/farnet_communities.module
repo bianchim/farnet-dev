@@ -114,3 +114,17 @@ function _farnet_communities_push_public($form, &$form_state) {
       array('@link' => url('node/' . $node->nid)));
   drupal_set_message($msg, 'status');
 }
+
+/**
+ * Implements hook_context_load_alter().
+ */
+function farnet_communities_context_load_alter(&$context) {
+    if ($context->name === 'communities' && isset($context->reactions['block'])) {
+        $context->reactions['block']['blocks']['views_5ead44239ab611b2cd96c8b2c64b847c'] = array(
+            'module' => 'views',
+            'delta' => '5ead44239ab611b2cd96c8b2c64b847c',
+            'region' => 'sidebar_left',
+            'weight' => '-8',
+        );
+    }
+}
