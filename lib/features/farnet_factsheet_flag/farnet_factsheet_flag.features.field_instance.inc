@@ -503,7 +503,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 58,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -569,7 +569,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 59,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -689,7 +689,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -995,7 +995,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 83,
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -3832,12 +3832,9 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 85,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3882,7 +3879,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'nexteuropa_json_field',
         'settings' => array(),
         'type' => 'json_settings_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3944,7 +3941,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 24,
+      'weight' => 23,
     ),
   );
 
@@ -3959,7 +3956,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4016,7 +4013,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 2,
     ),
   );
 
@@ -4031,7 +4028,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4088,7 +4085,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 3,
     ),
   );
 
@@ -4171,7 +4168,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 82,
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -4244,7 +4241,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 77,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4313,7 +4310,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 78,
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -4425,7 +4422,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'size' => 100,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -4481,7 +4478,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 57,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4590,7 +4587,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 79,
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4796,7 +4793,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 60,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4862,7 +4859,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 81,
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4901,7 +4898,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 80,
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',

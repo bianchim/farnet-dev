@@ -121,10 +121,10 @@ function farnet_factsheet_flag_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '19',
+          'weight' => '20',
         ),
         'xmlsitemap' => array(
-          'weight' => '20',
+          'weight' => '21',
         ),
         'scheduler_settings' => array(
           'weight' => '9',
@@ -133,7 +133,7 @@ function farnet_factsheet_flag_strongarm() {
           'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '21',
+          'weight' => '22',
         ),
       ),
       'display' => array(),
