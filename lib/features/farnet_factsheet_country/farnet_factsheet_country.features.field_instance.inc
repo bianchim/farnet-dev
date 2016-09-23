@@ -424,7 +424,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -604,7 +604,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -680,7 +680,7 @@ function farnet_factsheet_country_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 27,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -794,7 +794,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'module' => 'nexteuropa_json_field',
         'settings' => array(),
         'type' => 'json_settings_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -945,7 +945,7 @@ function farnet_factsheet_country_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1050,7 +1050,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1169,7 +1169,7 @@ function farnet_factsheet_country_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 26,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1226,7 +1226,7 @@ function farnet_factsheet_country_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 28,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1304,7 +1304,7 @@ function farnet_factsheet_country_field_default_field_instances() {
           'scale' => 0,
           'thousand_separator' => ' ',
         ),
-        'type' => 'number_integer',
+        'type' => 'number_decimal',
         'weight' => 10,
       ),
       'teaser' => array(
@@ -1348,7 +1348,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1425,7 +1425,7 @@ function farnet_factsheet_country_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 22,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1458,6 +1458,7 @@ function farnet_factsheet_country_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -1567,7 +1568,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',

@@ -152,6 +152,24 @@ function farnet_factsheet_country_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
+      'newsletter_news_list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_plain' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_html' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_textalt' => array(
+        'custom_settings' => FALSE,
+      ),
+      'media_gallery_page' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -159,16 +177,19 @@ function farnet_factsheet_country_strongarm() {
           'weight' => '6',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'scheduler_settings' => array(
           'weight' => '18',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'language' => array(
           'weight' => '20',
+        ),
+        'metatags' => array(
+          'weight' => '14',
         ),
       ),
       'display' => array(),
