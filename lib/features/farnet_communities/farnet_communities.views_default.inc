@@ -77,11 +77,11 @@ function farnet_communities_views_default_views() {
   $export['farnet_communities'] = $view;
 
   $view = new view();
-  $view->name = 'latest_community_members';
-  $view->description = '';
+  $view->name = 'members_list';
+  $view->description = 'Latest community members';
   $view->tag = 'og';
   $view->base_table = 'users';
-  $view->human_name = 'Latest Community members';
+  $view->human_name = 'Members list';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -166,14 +166,14 @@ function farnet_communities_views_default_views() {
   );
 
   /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler = $view->new_display('block', 'Block', 'block_members_list');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler = $view->new_display('page', 'Page', 'page_members_list');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -187,7 +187,7 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['path'] = 'members-list/%';
-  $export['latest_community_members'] = $view;
+  $export['members_list'] = $view;
 
   return $export;
 }

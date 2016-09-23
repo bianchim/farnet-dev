@@ -13,10 +13,12 @@ function farnet_communities_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-5ead44239ab611b2cd96c8b2c64b847c'] = array(
+  $export['views-members_list-block_members_list'] = array(
     'cache' => -1,
-    'delta' => '5ead44239ab611b2cd96c8b2c64b847c',
+    'custom' => 0,
+    'delta' => 'members_list-block_members_list',
     'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
@@ -41,6 +43,8 @@ function farnet_communities_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-multisite_settings_core-block_1'] = array(
