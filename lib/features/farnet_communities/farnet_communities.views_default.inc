@@ -187,7 +187,7 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['path'] = 'members-list/%';
+  $handler->display->display_options['path'] = 'community/%community/members-list';
   $export['members_list'] = $view;
 
   return $export;
