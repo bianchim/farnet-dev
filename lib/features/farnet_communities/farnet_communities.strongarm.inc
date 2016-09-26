@@ -161,6 +161,24 @@ function farnet_communities_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'farnet_communities_push_public_bundles';
+  $strongarm->value = array(
+    'farnet_article' => 'farnet_article',
+    'cooperation_call' => 'cooperation_call',
+    'cooperation_idea' => 'cooperation_idea',
+    'nexteuropa_event' => 'nexteuropa_event',
+    'factsheet_country' => 'factsheet_country',
+    'factsheet_flag' => 'factsheet_flag',
+    'gp_method' => 'gp_method',
+    'gp_project' => 'gp_project',
+    'gp_short_story' => 'gp_short_story',
+    'nexteuropa_news' => 'nexteuropa_news',
+  );
+  $export['farnet_communities_push_public_bundles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__community_hidden';
   $strongarm->value = array(
     'view_modes' => array(

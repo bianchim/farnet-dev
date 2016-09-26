@@ -681,6 +681,7 @@ features[variable][] = comment_preview_community_public
 features[variable][] = comment_subject_field_community_hidden
 features[variable][] = comment_subject_field_community_private
 features[variable][] = comment_subject_field_community_public
+features[variable][] = farnet_communities_push_public_bundles
 features[variable][] = field_bundle_settings_node__community_hidden
 features[variable][] = field_bundle_settings_node__community_private
 features[variable][] = field_bundle_settings_node__community_public
