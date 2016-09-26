@@ -200,3 +200,21 @@ function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
     $form['group_access']['und']['#value'] = '1';
   }
 }
+
+/**
+ * Implements hook_context_load_alter().
+ */
+function farnet_communities_context_load_alter(&$context) {
+
+  if ($context->name === 'communities' && isset($context->reactions['block'])) {
+    if (isset($context->reactions['block']['blocks']['views-community_members-block_1'])) {
+      unset($context->reactions['block']['blocks']['views-community_members-block_1']);
+    }
+    $context->reactions['block']['blocks']['views-members_list-block_members_list'] = array(
+      'module' => 'views',
+      'delta' => 'members_list-block_members_list',
+      'region' => 'sidebar_left',
+      'weight' => '-8',
+    );
+  }
+}
