@@ -495,3 +495,12 @@ function farnet_faq_views_default_views_alter(&$views) {
 
   }
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ */
+function farnet_faq_strongarm_alter(&$variables) {
+  if (isset($variables['comment_nexteuropa_faq'])) {
+    $variables['comment_nexteuropa_faq']->value = '0';
+  }
+}

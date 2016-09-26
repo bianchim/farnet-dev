@@ -147,6 +147,9 @@ function farnet_event_strongarm_alter(&$variables) {
   if (isset($variables['pathauto_node_nexteuropa_event_pattern'])) {
     $variables['pathauto_node_nexteuropa_event_pattern']->value = "news-events/events/[node:field-event-type:name]/[node:source:title]";
   }
+  if (isset($variables['comment_nexteuropa_event'])) {
+    $variables['comment_nexteuropa_event']->value = '0';
+  }
 }
 
 /**

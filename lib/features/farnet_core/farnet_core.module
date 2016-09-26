@@ -137,3 +137,17 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
 
   return $form;
 }
+
+/**
+ * Hide the comments for nodes on the public site.
+ *
+ * Implements hook_node_presave().
+ */
+function farnet_core_node_presave($node) {
+  if (isset($node->og_group_ref) && !empty($node->og_group_ref)) {
+    $node->comment = COMMENT_NODE_OPEN;
+  }
+  else {
+    $node->comment = COMMENT_NODE_HIDDEN;
+  }
+}
