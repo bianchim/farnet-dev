@@ -119,7 +119,11 @@ function _farnet_communities_push_public($form, &$form_state) {
  * Implements hook_context_load_alter().
  */
 function farnet_communities_context_load_alter(&$context) {
+
   if ($context->name === 'communities' && isset($context->reactions['block'])) {
+    if(isset($context->reactions['block']['blocks']['views-community_members-block_1'])) {
+        unset($context->reactions['block']['blocks']['views-community_members-block_1']);
+    }
     $context->reactions['block']['blocks']['views-members_list-block_members_list'] = array(
       'module' => 'views',
       'delta' => 'members_list-block_members_list',
