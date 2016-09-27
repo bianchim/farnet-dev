@@ -32,6 +32,7 @@
             features and modules which need to be enabled after installation.
          -->
         <phingcall target="enable-install-modules" />
+        <!-- Rebuild node access after Subsites modules activation -->
         <phingcall target="rebuild-node-access" />
     </target>
 
