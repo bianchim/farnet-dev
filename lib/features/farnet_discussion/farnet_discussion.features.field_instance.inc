@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_discussion.features.field_instance.inc
@@ -47,25 +46,23 @@ function farnet_discussion_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'comment-comment_node_farnet_discussion-field_related_documents'.
-  $field_instances['comment-comment_node_farnet_discussion-field_related_documents'] = array(
+  // 'comment-comment_node_farnet_discussion-field_private_documents'.
+  $field_instances['comment-comment_node_farnet_discussion-field_private_documents'] = array(
     'bundle' => 'comment_node_farnet_discussion',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file_entity',
-        'settings' => array(
-          'text' => 'Download [file:name]',
-        ),
-        'type' => 'file_download_link',
-        'weight' => 1,
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'comment',
-    'field_name' => 'field_related_documents',
-    'label' => 'Related documents',
+    'field_name' => 'field_private_documents',
+    'label' => 'Attached documents',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -426,9 +423,9 @@ function farnet_discussion_field_default_field_instances() {
   t('Body');
   t('Comment');
   t('Document');
+  t('Documents');
   t('Group content visibility');
   t('Groups audience');
-  t('Related documents');
   t('Title');
 
   return $field_instances;

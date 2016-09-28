@@ -502,6 +502,32 @@ function farnet_core_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_private_documents'.
+  $field_bases['field_private_documents'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_private_documents',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'private',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
+  );
+
   // Exported field_base: 'field_publication_abstract'.
   $field_bases['field_publication_abstract'] = array(
     'active' => 1,

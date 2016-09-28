@@ -58,6 +58,7 @@ features[field_base][] = field_objective
 features[field_base][] = field_organisation
 features[field_base][] = field_organisations
 features[field_base][] = field_picture
+features[field_base][] = field_private_documents
 features[field_base][] = field_publication_abstract
 features[field_base][] = field_publication_date
 features[field_base][] = field_social_media
