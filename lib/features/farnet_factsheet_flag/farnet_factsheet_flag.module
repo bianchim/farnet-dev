@@ -20,5 +20,4 @@ function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$for
       'weight' => 100,
     ],
   ];
-
 }
