@@ -132,3 +132,16 @@ function farnet_communities_context_load_alter(&$context) {
     );
   }
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function farnet_communities_views_pre_render(&$view) {
+  if ($view->current_display === 'block_members_list') {
+    $title = str_replace(' ', '-', strtolower($view->build_info['substitutions']['%1']));
+    // Set to use 'custom_url'.
+    $view->display_handler->set_option('link_display', 'custom_url');
+    // Change the link url.
+    $view->display_handler->set_option('link_url', 'community/' . $title . '/members-list');
+  }
+}
