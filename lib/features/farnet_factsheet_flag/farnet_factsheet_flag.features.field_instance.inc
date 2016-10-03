@@ -370,7 +370,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -778,7 +778,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 80,
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1054,7 +1054,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 39,
+        'weight' => 86,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1428,7 +1428,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 41,
+        'weight' => 88,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1486,7 +1486,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 40,
+        'weight' => 87,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2686,7 +2686,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 38,
+        'weight' => 85,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2916,7 +2916,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2988,7 +2988,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3060,7 +3060,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3129,9 +3129,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'flag_organisation',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 40,
       ),
       'teaser' => array(
@@ -3177,7 +3179,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -3250,7 +3252,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3319,7 +3321,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -3530,7 +3532,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3708,6 +3710,105 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-factsheet_flag-field_view_cooperation_ideas'.
+  $field_instances['node-factsheet_flag-field_view_cooperation_ideas'] = array(
+    'bundle' => 'factsheet_flag',
+    'default_value' => array(
+      0 => array(
+        'vname' => 'cooperation_idea_by_flag|block_idea_by_flag',
+        'vargs' => '[node:nid]',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'viewfield',
+        'settings' => array(),
+        'type' => 'viewfield_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_view_cooperation_ideas',
+    'label' => 'View Cooperation Ideas',
+    'required' => 0,
+    'settings' => array(
+      'allowed_views' => array(
+        'Blocked_accounts' => 0,
+        'Maillog' => 0,
+        'calendar' => 0,
+        'communities' => 0,
+        'community_members' => 0,
+        'cooperation_idea_by_flag' => 'cooperation_idea_by_flag',
+        'core_content_administration' => 0,
+        'farnet_communities' => 0,
+        'farnet_maps' => 0,
+        'farnet_organisation_for_flag_display' => 0,
+        'farnet_taxonomy_term' => 0,
+        'farnet_view_events' => 0,
+        'farnet_view_factsheets_country' => 0,
+        'farnet_view_factsheets_flag' => 0,
+        'farnet_view_good_practices' => 0,
+        'farnet_view_gp_short_story' => 0,
+        'farnet_view_manage_users' => 0,
+        'farnet_view_news' => 0,
+        'farnet_view_news_feed' => 0,
+        'farnet_view_publication' => 0,
+        'farnet_view_themes' => 0,
+        'homepage_highlight' => 0,
+        'ical' => 0,
+        'media_default' => 0,
+        'multilingual_recent_translation_job_overview' => 0,
+        'multisite_settings_core' => 0,
+        'ne_faq' => 0,
+        'nexteuropa_galleries' => 0,
+        'nexteuropa_token_ckeditor_filter_view' => 0,
+        'og_all_user_group_content' => 0,
+        'og_members' => 0,
+        'og_members_admin' => 0,
+        'og_nodes' => 0,
+        'og_user_groups' => 0,
+        'rules_scheduler' => 0,
+        'simplenews_statistics_clicks' => 0,
+        'simplenews_statistics_opens' => 0,
+        'simplenews_statistics_overview' => 0,
+        'simplenews_statistics_summary' => 0,
+        'taxonomy_browser_header' => 0,
+        'tmgmt_local_manage_translate_task' => 0,
+        'tmgmt_local_task_items' => 0,
+        'tmgmt_local_task_overview' => 0,
+        'tmgmt_og_job_overview' => 0,
+        'tmgmt_ui_job_item_messages' => 0,
+        'tmgmt_ui_job_items' => 0,
+        'tmgmt_ui_job_messages' => 0,
+        'tmgmt_ui_job_overview' => 0,
+        'workbench_current_user' => 0,
+        'workbench_edited' => 0,
+        'workbench_moderation' => 0,
+        'workbench_recent_content' => 0,
+      ),
+      'entity_translation_sync' => FALSE,
+      'force_default' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'viewfield',
+      'settings' => array(),
+      'type' => 'viewfield_select',
+      'weight' => 123,
+    ),
+  );
+
   // Exported field_instance: 'node-factsheet_flag-group_content_access'.
   $field_instances['node-factsheet_flag-group_content_access'] = array(
     'bundle' => 'factsheet_flag',
@@ -3719,7 +3820,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3758,7 +3859,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3955,6 +4056,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Total public budget allocated to the FLAG for 2014-2020');
   t('Twitter');
   t('Type of area');
+  t('View Cooperation Ideas');
   t('Website');
   t('Women employment in fisheries');
 

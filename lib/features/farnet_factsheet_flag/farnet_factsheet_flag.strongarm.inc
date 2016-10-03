@@ -114,6 +114,9 @@ function farnet_factsheet_flag_strongarm() {
       'media_gallery_page' => array(
         'custom_settings' => FALSE,
       ),
+      'flag_organisation' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

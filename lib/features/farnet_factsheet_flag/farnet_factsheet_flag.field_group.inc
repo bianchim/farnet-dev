@@ -171,7 +171,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'FLAG Contacts',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_collection_language',
       1 => 'field_ff_flag_manager',
@@ -436,6 +436,38 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_factsheet_flag_ideas|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_ideas';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'factsheet_flag';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Cooperation ideas',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_view_cooperation_ideas',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Cooperation ideas',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-factsheet-flag-ideas field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_factsheet_flag_ideas|node|factsheet_flag|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_factsheet_flag_language|node|factsheet_flag|default';
   $field_group->group_name = 'group_factsheet_flag_language';
   $field_group->entity_type = 'node';
@@ -563,7 +595,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Map',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
       0 => 'field_interactive_map',
     ),
@@ -622,7 +654,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Visuals',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -711,7 +743,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Partnership',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_ff_environmental_actors',
       1 => 'field_ff_fisheries_actors',
@@ -969,7 +1001,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Social media',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'field_ff_facebook',
       1 => 'field_ff_google',
@@ -1295,6 +1327,7 @@ function farnet_factsheet_flag_field_group_info() {
   t('Area');
   t('Budget');
   t('Calls for proposals');
+  t('Cooperation ideas');
   t('Expertise & cooperation');
   t('FLAG');
   t('FLAG Contacts');
