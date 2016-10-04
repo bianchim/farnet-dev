@@ -101,41 +101,51 @@ Feature: Test the presence of the content menu
   @api @test
   Scenario: I check the Factsheet Flag menu
     Given I am logged in as a user with the "administrator" role
+    And "organisation" content:
+      | title        | status |
+      | Organisation | 1      |
+    And "nexteuropa_mediagallery" content:
+      | title        | status |
+      | MediaGallery | 1      |
+    And "gp_method" content:
+      | title        | status |
+      | GpMethod     | 1      |
     And I am viewing a "factsheet_flag" content:
-      | title                           | test flag factsheet |
-      | field_ff_description            | Lorem Ipsum         |
-      | field_ff_summary                | Lorem Ipsum         |
-      | field_ff_calls_for_projects     | Lorem Ipsum         |
-      | field_ff_thematic_text          | Lorem Ipsum         |
-      | field_ff_tc_interterritorial    | Lorem Ipsum         |
-      | field_ff_lead_partner           | Lorem Ipsum         |
-      | field_ff_flag_territory_details | Lorem Ipsum         |
-      | field_ff_emff                   | 42                  |
-      | field_ff_flag_manager           | Lorem Ipsum         |
-      | field_ff_number_staff           | 42                  |
-      | field_ff_twitter                | ok, ok              |
-      | status                          | 1                   |
-    And attach a "field_collection_project" field collection to a "node" named "test flag factsheet" with:
-      | field_project_title       | title       |
-      | field_project_description | description |
+      | title                           | test flag factsheet       |
+      | field_ff_description            | Area Description          |
+      | field_ff_summary                | FALG Strategy Summary     |
+      | field_ff_calls_for_projects     | Calls for projects        |
+      | field_ff_emff                   | 42                        |
+      | field_ff_project_title          | Project Title             |
+      | field_ff_good_practice          | GpMethod                  |
+      | field_ff_expertise_cooperation  | Expertise and cooperation |
+      | field_ff_links_description      | CLLD groups Description   |
+      | field_ff_accountable_body       | Partnership               |
+      | field_ff_number_staff           | 42                        |
+      | field_gallery                   | MediaGallery              |
+      | field_organisation              | Organisation              |
+      | field_ff_twitter                | ok, ok                    |
+      | field_interactive_map           | Map                       |
+      | status                          | 1                         |
     And attach a "field_collection_language" field collection to a "node" named "test flag factsheet" with:
       | field_term_language  | French |
       | field_language_level | Basic  |
     And I reload the page
-    Then I should see "Content" in the ".region-sidebar-left" element
+    Then I should see "FLAG" in the ".region-sidebar-left" element
     And I should see "Area" in the ".region-sidebar-left" element
-    And I should see "Strategy" in the ".region-sidebar-left" element
-    And I should see "Project examples and ideas" in the ".region-sidebar-left" element
-    And I should see "Calls for projects" in the ".region-sidebar-left" element
-    And I should see "Thematic expertise and cooperation" in the ".region-sidebar-left" element
-    And I should see "Type of cooperation foreseen" in the ".region-sidebar-left" element
-    And I should see "Partnership" in the ".region-sidebar-left" element
+    And I should see "FLAG Strategy" in the ".region-sidebar-left" element
+    And I should see "Funding" in the ".region-sidebar-left" element
+    And I should see "Project examples" in the ".region-sidebar-left" element
+    And I should see "Good Practice" in the ".region-sidebar-left" element
+    And I should see "Calls for proposals" in the ".region-sidebar-left" element
+    And I should see "Expertise & cooperation" in the ".region-sidebar-left" element
+    And I should see "Cooperation ideas" in the ".region-sidebar-left" element
     And I should see "Links with LEADER or other CLLD groups" in the ".region-sidebar-left" element
-    And I should see "Budget" in the ".region-sidebar-left" element
-    And I should see "Contact" in the ".region-sidebar-left" element
-    And I should see "Staff" in the ".region-sidebar-left" element
+    And I should see "Partnership" in the ".region-sidebar-left" element
+    And I should see "Visuals" in the ".region-sidebar-left" element
+    And I should see "FLAG Contacts" in the ".region-sidebar-left" element
     And I should see "Social media" in the ".region-sidebar-left" element
-    And I should see "Language information" in the ".region-sidebar-left" element
+    And I should see "Map" in the ".region-sidebar-left" element
 
   @api
   Scenario: I check the Factsheet country menu
