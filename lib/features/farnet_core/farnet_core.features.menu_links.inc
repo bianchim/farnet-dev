@@ -1432,9 +1432,9 @@ function farnet_core_menu_default_menu_links() {
     'parent_identifier' => 'main-menu_events:news-events/events',
   );
   // Exported menu link: main-menu_maps:<front>.
-  $menu_links['main-menu_maps:<front>'] = array(
+  $menu_links['main-menu_maps:on-the-ground/map'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'on-the-ground/map',
     'router_path' => '',
     'link_title' => 'Maps',
     'options' => array(
@@ -1453,7 +1453,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_maps:<front>',
+      'identifier' => 'main-menu_maps:on-the-ground/map',
     ),
     'module' => 'menu',
     'hidden' => 0,

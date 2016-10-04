@@ -21,7 +21,7 @@ include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_ta
  * Implements hook_menu().
  */
 function farnet_maps_menu() {
-  $items['interactive_map'] = [
+  $items['on-the-ground/map'] = [
     'title' => 'Farnet interactive map',
     'description' => 'Provide an interactive map',
     'page callback' => ['drupal_get_form'],
@@ -78,22 +78,13 @@ function farnet_maps_form($form, &$form_state) {
             "label": "Elements",
             "features": [
               {
-                "label": "flag factsheet",
+                "label": "FLAG Factsheet",
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ]
               },
               {
-                "label": "organisation",
-                "markers": [
-                  "http://myproject/url_to_get_geojson"
-                ],
-                "options": {
-                  "color": "pink"
-                }
-              },
-              {
-                "label": "gp method",
+                "label": "GP Method",
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ],
@@ -102,7 +93,7 @@ function farnet_maps_form($form, &$form_state) {
                 }
               },
               {
-                "label": "gp project",
+                "label": "GP Project",
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ],
@@ -111,7 +102,7 @@ function farnet_maps_form($form, &$form_state) {
                 }
               },
               {
-                "label": "gp short story",
+                "label": "GP Short Story",
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ],
@@ -129,11 +120,11 @@ function farnet_maps_form($form, &$form_state) {
     drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
 
     $json_map_object = json_decode($json_map);
-    $json_map_object->layers[0]->checkbox->features[0]->markers[0] = $base_url . "/interactive_map/factsheet_flag/" . $country;
-    $json_map_object->layers[0]->checkbox->features[1]->markers[0] = $base_url . "/interactive_map/organisation/" . $country;
-    $json_map_object->layers[0]->checkbox->features[2]->markers[0] = $base_url . "/interactive_map/gp_method/" . $country;
-    $json_map_object->layers[0]->checkbox->features[3]->markers[0] = $base_url . "/interactive_map/gp_project/" . $country;
-    $json_map_object->layers[0]->checkbox->features[4]->markers[0] = $base_url . "/interactive_map/gp_short_story/" . $country;
+    $json_map_object->layers[0]->checkbox->features[0]->markers[0] = $base_url . "/on-the-ground/map/factsheet_flag/" . $country;
+    /* $json_map_object->layers[0]->checkbox->features[1]->markers[0] = $base_url . "/on-the-ground/map/organisation/" . $country; */
+    $json_map_object->layers[0]->checkbox->features[2]->markers[0] = $base_url . "/on-the-ground/map/gp_method/" . $country;
+    $json_map_object->layers[0]->checkbox->features[3]->markers[0] = $base_url . "/on-the-ground/map/gp_project/" . $country;
+    $json_map_object->layers[0]->checkbox->features[4]->markers[0] = $base_url . "/on-the-ground/map/gp_short_story/" . $country;
 
     $json_map = json_encode($json_map_object);
 

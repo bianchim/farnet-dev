@@ -267,10 +267,10 @@ function farnet_location_node_submit($node, $form, &$form_state) {
               "label": "Elements",
               "features": [
                 {
-                  "label": "flag factsheet",
+                  "label": "FLAG Factsheet",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/interactive_map/factsheet_flag/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/map/factsheet_flag/' . $country_id . '"
                   ]
                 }
               ]
@@ -317,47 +317,37 @@ function farnet_location_node_submit($node, $form, &$form_state) {
               "label": "Elements",
               "features": [
                 {
-                  "label": "flag factsheet",
+                  "label": "FLAG Factsheet",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/interactive_map/factsheet_flag/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/map/factsheet_flag/' . $country_id . '"
                   ]
                 },
                 {
-                  "label": "organisation",
+                  "label": "GP Method",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/interactive_map/organisation/' . $country_id . '"
-                  ],
-                  "options": {
-                    "color": "pink"
-                  }
-                },
-                {
-                  "label": "gp method",
-                  "checked" : true,
-                  "markers": [
-                    "' . $base_url . '/interactive_map/gp_method/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/map/gp_method/' . $country_id . '"
                   ],
                   "options": {
                     "color": "green"
                   }
                 },
                 {
-                  "label": "gp project",
+                  "label": "GP Project",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/interactive_map/gp_project/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/map/gp_project/' . $country_id . '"
                   ],
                   "options": {
                     "color": "red"
                   }
                 },
                 {
-                  "label": "gp short story",
+                  "label": "GP Short Story",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/interactive_map/gp_short_story/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/map/gp_short_story/' . $country_id . '"
                   ],
                   "options": {
                     "color": "yellow"
