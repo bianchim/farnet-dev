@@ -55,7 +55,7 @@ function farnet_maps_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'interactive_map/all';
+  $handler->display->display_options['path'] = 'on-the-ground/map/all';
 
   /* Display: Feed Organisation */
   $handler = $view->new_display('feed', 'Feed Organisation', 'feed_organisation');
@@ -125,7 +125,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'organisation' => 'organisation',
   );
-  $handler->display->display_options['path'] = 'interactive_map/organisation';
+  $handler->display->display_options['path'] = 'on-the-ground/map/organisation';
 
   /* Display: Feed GP Method */
   $handler = $view->new_display('feed', 'Feed GP Method', 'feed_gp_method');
@@ -220,7 +220,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'delta_1';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'delta';
-  $handler->display->display_options['path'] = 'interactive_map/gp_method';
+  $handler->display->display_options['path'] = 'on-the-ground/map/gp_method';
 
   /* Display: Feed Factsheet Flag */
   $handler = $view->new_display('feed', 'Feed Factsheet Flag', 'feed_1');
@@ -315,7 +315,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'delta_1';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'delta';
-  $handler->display->display_options['path'] = 'interactive_map/factsheet_flag';
+  $handler->display->display_options['path'] = 'on-the-ground/map/factsheet_flag';
 
   /* Display: Feed CP Project */
   $handler = $view->new_display('feed', 'Feed GP Project', 'feed_project');
@@ -410,7 +410,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'delta_1';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'delta';
-  $handler->display->display_options['path'] = 'interactive_map/gp_project';
+  $handler->display->display_options['path'] = 'on-the-ground/map/gp_project';
 
   /* Display: Feed GP Short Story */
   $handler = $view->new_display('feed', 'Feed GP Short Story', 'feed_short_story');
@@ -505,7 +505,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'delta_1';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'delta';
-  $handler->display->display_options['path'] = 'interactive_map/gp_short_story';
+  $handler->display->display_options['path'] = 'on-the-ground/map/gp_short_story';
 
   $export['farnet_maps'] = $view;
 
