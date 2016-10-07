@@ -65,12 +65,14 @@ function farnet_maps_form($form, &$form_state) {
     // Webtools JSON definition for a map.
     $json_map = '{
       "service": "map",
+      "sidebar": {
+        "options": {
+          "collapse": true
+        }
+       },
       "map": {
-        "zoom": "2",
-        "center": [
-          "42.0329",
-          "27.4218"
-        ]
+        "zoom": "3",
+        "center": [50.85034,4.35171]
       },
       "layers": [
         {
@@ -79,12 +81,14 @@ function farnet_maps_form($form, &$form_state) {
             "features": [
               {
                 "label": "FLAG Factsheet",
+                "checked": true,
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ]
               },
               {
                 "label": "GP Method",
+                "checked": true,
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ],
@@ -94,6 +98,7 @@ function farnet_maps_form($form, &$form_state) {
               },
               {
                 "label": "GP Project",
+                "checked": true,
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ],
@@ -103,6 +108,7 @@ function farnet_maps_form($form, &$form_state) {
               },
               {
                 "label": "GP Short Story",
+                "checked": true,
                 "markers": [
                   "http://myproject/url_to_get_geojson"
                 ],
