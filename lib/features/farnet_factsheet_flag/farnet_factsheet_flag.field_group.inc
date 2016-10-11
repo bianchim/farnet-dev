@@ -209,10 +209,15 @@ function farnet_factsheet_flag_field_group_info() {
       0 => 'field_ff_code',
       1 => 'field_ff_programming_period',
       2 => 'field_ne_body',
-      3 => 'title_field',
-      4 => 'field_farnet_abstract',
-      5 => 'field_picture',
-      6 => 'field_title_official',
+      3 => 'field_region',
+      4 => 'field_term_country',
+      5 => 'title_field',
+      6 => 'field_area',
+      7 => 'field_farnet_abstract',
+      8 => 'field_latitude',
+      9 => 'field_longitude',
+      10 => 'field_picture',
+      11 => 'field_title_official',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1014,37 +1019,6 @@ function farnet_factsheet_flag_field_group_info() {
   );
   $field_groups['group_factsheet_good_practice|node|factsheet_flag|form'] = $field_group;
 
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_ff_location|node|factsheet_flag|form';
-  $field_group->group_name = 'group_ff_location';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'factsheet_flag';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Location',
-    'weight' => '1',
-    'children' => array(
-      0 => 'field_region',
-      1 => 'field_term_country',
-      2 => 'field_area',
-      3 => 'field_latitude',
-      4 => 'field_longitude',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_ff_location|node|factsheet_flag|form'] = $field_group;
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Area');
@@ -1058,7 +1032,6 @@ function farnet_factsheet_flag_field_group_info() {
   t('Funding');
   t('Good Practice');
   t('Links with LEADER or other CLLD groups');
-  t('Location');
   t('Map');
   t('Metadata');
   t('Partnership');

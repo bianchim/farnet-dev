@@ -123,7 +123,6 @@ features[field_group][] = group_factsheet_flag_strategy|node|factsheet_flag|form
 features[field_group][] = group_factsheet_flag_visuals|node|factsheet_flag|default
 features[field_group][] = group_factsheet_flag_visuals|node|factsheet_flag|form
 features[field_group][] = group_factsheet_good_practice|node|factsheet_flag|form
-features[field_group][] = group_ff_location|node|factsheet_flag|form
 features[field_instance][] = field_collection_item-field_collection_language-field_language_level
 features[field_instance][] = field_collection_item-field_collection_language-field_term_language
 features[field_instance][] = field_collection_item-field_collection_strategy-field_allocated_budget
