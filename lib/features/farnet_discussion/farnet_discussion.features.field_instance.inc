@@ -165,7 +165,7 @@ function farnet_discussion_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => -3,
     ),
   );
 
@@ -296,7 +296,7 @@ function farnet_discussion_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 4,
     ),
     'widget_type' => 'options_select',
   );
