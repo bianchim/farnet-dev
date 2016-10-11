@@ -114,6 +114,9 @@ function farnet_factsheet_flag_strongarm() {
       'media_gallery_page' => array(
         'custom_settings' => FALSE,
       ),
+      'flag_organisation' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -121,10 +124,10 @@ function farnet_factsheet_flag_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '20',
+          'weight' => '19',
         ),
         'xmlsitemap' => array(
-          'weight' => '21',
+          'weight' => '20',
         ),
         'scheduler_settings' => array(
           'weight' => '9',
@@ -133,7 +136,7 @@ function farnet_factsheet_flag_strongarm() {
           'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '22',
+          'weight' => '21',
         ),
       ),
       'display' => array(),

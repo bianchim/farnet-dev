@@ -21,4 +21,5 @@ function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$for
     ],
   ];
 
+  $form['field_view_cooperation_ideas']['#type'] = 'hidden';
 }

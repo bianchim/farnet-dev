@@ -26,6 +26,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 5,
       ),
+      'flag' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_civility',
@@ -58,6 +64,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'email_default',
         'weight' => 0,
+      ),
+      'flag' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -93,6 +105,13 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
+      ),
+      'flag' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -156,6 +175,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'flag' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_job_title',
@@ -217,6 +242,13 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'flag' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -280,6 +312,13 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 6,
       ),
+      'flag' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_organisation_position',
@@ -312,6 +351,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'flag' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -372,6 +417,12 @@ function farnet_organisation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'teaser' => array(
@@ -441,6 +492,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 9,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -507,6 +564,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -575,6 +638,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'email_default',
         'weight' => 2,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -614,6 +683,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -682,6 +757,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 25,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -739,6 +820,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 27,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -798,6 +885,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 26,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -856,6 +949,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 24,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -912,6 +1011,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 23,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -981,6 +1086,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 22,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1049,6 +1160,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 21,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1125,6 +1242,19 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'field_collection_view',
         'weight' => 11,
       ),
+      'flag_organisation' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => 1,
+          'edit' => 'Edit',
+          'view_mode' => 'flag',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1162,6 +1292,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1230,6 +1366,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 6,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1271,6 +1413,12 @@ function farnet_organisation_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 12,
       ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1310,6 +1458,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 3,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1368,6 +1522,12 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 10,
+      ),
+      'flag_organisation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1434,6 +1594,17 @@ function farnet_organisation_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'flag_organisation' => array(
+        'label' => 'inline',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => '',
+        ),
+        'type' => 'title_linked',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
