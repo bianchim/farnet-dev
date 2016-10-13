@@ -24,8 +24,9 @@ function farnet_discussion_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'title_field',
+      0 => 'field_document',
+      1 => 'field_ne_body',
+      2 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -52,8 +53,9 @@ function farnet_discussion_field_group_info() {
     'label' => 'Metadata',
     'weight' => '1',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'language',
+      0 => 'group_content_access',
+      1 => 'og_group_ref',
+      2 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
