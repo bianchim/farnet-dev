@@ -40,37 +40,73 @@ function farnet_maps_form($form, &$form_state) {
 
   $form = [];
 
-  $countries_select = array();
+  // Country selected in the form.
+  $country = isset($form_state['input']['countries']) ? $form_state['input']['countries'] : 0;
+
+  $countries_select = [];
+  if (!$country) {
+    $countries_select = ['none' => 'Select a country'];
+  }
+
   foreach (taxonomy_get_tree(6) as $term) {
     if ($term->depth > 0) {
       $countries_select[$term->tid] = $term->name;
     }
   }
-  // Country selected in the form.
-  $country = isset($form_state['input']['countries']) ? $form_state['input']['countries'] : 0;
 
   $form['countries'] = array(
     '#type' => 'select',
-    '#title' => t('Countries'),
+    '#title' => t('Country'),
     '#options' => $countries_select,
     '#default_value' => $country,
-  );
-
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Update map'),
+    '#attributes' => array('onchange' => 'this.form.submit();'),
   );
 
   if ($country) {
+
+    $cterm = taxonomy_term_load($country);
+
+    // Default, map shows whole europe.
+    $zoom = 3;
+    $coord = [
+      'lat' => "42.0329",
+      'lng' => "27.4218",
+    ];
+
+    // Get the coordinates of the capital either from the term or geonames.
+    if (empty($cterm->field_latitude) || empty($cterm->field_longitude)) {
+      $country_code = $cterm->field_code[LANGUAGE_NONE][0]['value'];
+      $new_coord = farnet_maps_get_country_coordinates($country_code);
+
+      // Save the  coordinates on the country.
+      if ($new_coord !== FALSE) {
+        $cterm->field_latitude[LANGUAGE_NONE][0]['value'] = [$coord['lat']];
+        $cterm->field_longitude[LANGUAGE_NONE][0]['value'] = [$coord['lng']];
+        taxonomy_term_save($cterm);
+
+        $coord = $new_coord;
+        $zoom = 5;
+      }
+    }
+    else {
+      $coord = [
+        'lat' => $cterm->field_latitude[LANGUAGE_NONE][0]['value'],
+        'lng' => $cterm->field_longitude[LANGUAGE_NONE][0]['value'],
+      ];
+      $zoom = 5;
+    }
+
+    $center = '[
+      "' . $coord['lat'] . '",
+      "' . $coord['lng'] . '"
+    ]';
+
     // Webtools JSON definition for a map.
     $json_map = '{
       "service": "map",
       "map": {
-        "zoom": "2",
-        "center": [
-          "42.0329",
-          "27.4218"
-        ]
+        "zoom": "' . $zoom . '",
+        "center": ' . $center . '
       },
       "layers": [
         {
@@ -142,4 +178,77 @@ function farnet_maps_form($form, &$form_state) {
  */
 function farnet_maps_form_submit($form, &$form_state) {
   $form_state['rebuild'] = TRUE;
+}
+
+/**
+ * Get a country's capital coordinates.
+ *
+ * @param string $country_code
+ *   The two letter country code.
+ *
+ * @return array | bool
+ *   Array with coordiantes lat / lng of the capital.
+ */
+function farnet_maps_get_country_coordinates($country_code) {
+  // Get API username.
+  $username = variable_get('geonames_username', FALSE);
+
+  if ($username === FALSE) {
+    return FALSE;
+  }
+
+  // Do the search.
+  $params = [
+    'username' => $username,
+    'type' => 'json',
+    'country' => $country_code,
+  ];
+
+  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
+  $url = $base_url . 'countryInfo?' . http_build_query($params);
+
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+    return FALSE;
+  }
+
+  $capital = $geolocs['geonames'][0]['capital'];
+  return farnet_maps_get_capital_coordinates($capital, $country_code);
+}
+
+/**
+ * Get a capital's coordinates.
+ *
+ * @param string $capital
+ *   Name of the capital to search.
+ * @param string $country_code
+ *   The two letter country code.
+ *
+ * @return array | bool
+ *   Array with coordiantes lat / lng.
+ */
+function farnet_maps_get_capital_coordinates($capital, $country_code) {
+  // Get API username.
+  $username = variable_get('geonames_username', FALSE);
+
+  if ($username === FALSE) {
+    return FALSE;
+  }
+
+  // Do the search.
+  $params = [
+    'username' => $username,
+    'type' => 'json',
+    'name_equals' => $capital,
+    'countryCode' => $country_code,
+  ];
+
+  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
+  $url = $base_url . 'search?' . http_build_query($params);
+
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+    return FALSE;
+  }
+
+  $coord = $geolocs['geonames'][0];
+  return ['lat' => $coord['lat'], 'lng' => $coord['lng']];
 }
