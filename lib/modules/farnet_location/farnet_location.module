@@ -92,8 +92,13 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
       // Configure the fields.
       $form['field_term_country'][LANGUAGE_NONE]['#attributes']['class'][] = 'country_field_form';
 
-      $form['field_region'][LANGUAGE_NONE][0]['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
-      $form['field_region'][LANGUAGE_NONE][0]['value']['#attributes']['class'][] = 'region_field_form';
+      foreach ($form['field_region'][LANGUAGE_NONE] as $index => &$region_field) {
+        // Only numbers are for actual field indexing.
+        if (is_int($index)) {
+          $region_field['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
+          $region_field['value']['#attributes']['class'][] = 'region_field_form';
+        }
+      }
 
       foreach ($form['field_area'][$lang] as $key => $value) {
         if (is_int($key) !== FALSE) {
@@ -371,9 +376,8 @@ function farnet_location_node_submit($node, $form, &$form_state) {
           if (isset($form_state['values']['field_area'][$lang][$key]['value'])) {
             if (strlen($form_state['values']['field_area'][$lang][$key]['value']) > 0) {
               $country = $form_state['values']['field_term_country'][LANGUAGE_NONE][0]['name'];
-              $region = $form_state['values']['field_region'][LANGUAGE_NONE][0]['value'];
               $city = $form_state['values']['field_area'][$lang][$key]['value'];
-              $output = _farnet_location_geocoding_by_city($lang, $region, $country, $city);
+              $output = _farnet_location_geocoding_by_city($lang, $country, $city);
               if ($output && is_array($output)) {
                 $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
                 $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
@@ -431,14 +435,13 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   // Reverse search of the country to get its country code.
   $country_code = _farnet_location_get_country_code($country);
 
-  // If searche for an area, we look back for the region in the GN database.
+  // If searche for an area,change the administrative level.
   if (isset($region)) {
-    $region = _farnet_location_get_region_code($lang, $region, $country_code);
     $fcode = 'adm4';
   }
 
   // Return an empty array on any error.
-  if ($username === FALSE || (int) $maxrows < 1 || $country_code === FALSE || $region === FALSE) {
+  if ($username === FALSE || (int) $maxrows < 1 || $country_code === FALSE) {
     drupal_json_output([]);
     return;
   }
@@ -454,11 +457,6 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     'style' => 'FULL',
     'lang' => strtoupper($lang),
   ];
-
-  // Filter by region if available.
-  if ($region !== FALSE) {
-    $params['adminCode1'] = $region;
-  }
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . http_build_query($params);
@@ -481,8 +479,6 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
  *
  * @param string $lang
  *   The lang in which we search.
- * @param string $region
- *   The region in which we search.
  * @param string $country
  *   The country in which we search.
  * @param string $city
@@ -491,7 +487,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
  * @return bool | array
  *   Return the the array with latitude and longitude for the city of FALSE.
  */
-function _farnet_location_geocoding_by_city($lang, $region, $country, $city) {
+function _farnet_location_geocoding_by_city($lang, $country, $city) {
   // Fcode is used to determine the administrative level of the target search.
   $fcode = 'adm4';
 
@@ -501,12 +497,6 @@ function _farnet_location_geocoding_by_city($lang, $region, $country, $city) {
 
   // Reverse search of the country to get its country code.
   $country_code = _farnet_location_get_country_code($country);
-
-  // If searche for an area, we look back for the region in the GN database.
-  if (isset($region)) {
-    $region = _farnet_location_get_region_code($lang, $region, $country_code);
-    $fcode = 'adm4';
-  }
 
   // Return an empty array on any error.
   if ($username === FALSE || $country_code === FALSE || $city === FALSE) {
@@ -525,11 +515,6 @@ function _farnet_location_geocoding_by_city($lang, $region, $country, $city) {
     'style' => 'SHORT',
     'lang' => strtoupper($lang),
   ];
-
-  // Filter by region if available.
-  if ($region !== FALSE) {
-    $params['adminCode1'] = $region;
-  }
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . http_build_query($params);
