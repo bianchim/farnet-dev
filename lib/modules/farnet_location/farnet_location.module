@@ -422,11 +422,8 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   // Define if it is a first level or second level search.
   if (!isset($search)) {
     $search = $region;
-    $region = NULL;
+    unset($region);
   }
-
-  // Fcode is used to determine the administrative level of the target search.
-  $fcode = 'adm1';
 
   // API options.
   $username = variable_get('geonames_username', FALSE);
@@ -434,11 +431,6 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
 
   // Reverse search of the country to get its country code.
   $country_code = _farnet_location_get_country_code($country);
-
-  // If searche for an area,change the administrative level.
-  if (isset($region)) {
-    $fcode = 'adm4';
-  }
 
   // Return an empty array on any error.
   if ($username === FALSE || (int) $maxrows < 1 || $country_code === FALSE) {
@@ -457,6 +449,13 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     'style' => 'FULL',
     'lang' => strtoupper($lang),
   ];
+
+  if (isset($region)) {
+    $params['featureClass'] = 'P';
+  }
+  else {
+    $params['fcode'] = 'adm1';
+  }
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . http_build_query($params);

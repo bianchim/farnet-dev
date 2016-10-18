@@ -77,11 +77,11 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Latitude */
+  /* Field: Field: Latitude */
   $handler->display->display_options['fields']['field_latitude']['id'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['field_latitude']['field'] = 'field_latitude';
-  /* Field: Content: Longitude */
+  /* Field: Field: Longitude */
   $handler->display->display_options['fields']['field_longitude']['id'] = 'field_longitude';
   $handler->display->display_options['fields']['field_longitude']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['field_longitude']['field'] = 'field_longitude';
@@ -98,7 +98,6 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
   $handler->display->display_options['arguments']['field_term_country_tid']['table'] = 'field_data_field_term_country';
   $handler->display->display_options['arguments']['field_term_country_tid']['field'] = 'field_term_country_tid';
-  $handler->display->display_options['arguments']['field_term_country_tid']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['format'] = 'default_summary';
@@ -148,13 +147,13 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Latitude */
+  /* Field: Field: Latitude */
   $handler->display->display_options['fields']['field_latitude']['id'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['field_latitude']['field'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_latitude']['delta_offset'] = '0';
-  /* Field: Content: Longitude */
+  /* Field: Field: Longitude */
   $handler->display->display_options['fields']['field_longitude']['id'] = 'field_longitude';
   $handler->display->display_options['fields']['field_longitude']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['field_longitude']['field'] = 'field_longitude';
@@ -168,14 +167,14 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
-  /* Field: Content: Latitude (field_latitude:delta) */
+  /* Field: Field: Latitude (field_latitude:delta) */
   $handler->display->display_options['fields']['delta']['id'] = 'delta';
   $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['delta']['field'] = 'delta';
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Longitude (field_longitude:delta) */
+  /* Field: Field: Longitude (field_longitude:delta) */
   $handler->display->display_options['fields']['delta_1']['id'] = 'delta_1';
   $handler->display->display_options['fields']['delta_1']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['delta_1']['field'] = 'delta';
@@ -187,7 +186,6 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
   $handler->display->display_options['arguments']['field_term_country_tid']['table'] = 'field_data_field_term_country';
   $handler->display->display_options['arguments']['field_term_country_tid']['field'] = 'field_term_country_tid';
-  $handler->display->display_options['arguments']['field_term_country_tid']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['format'] = 'default_summary';
@@ -243,13 +241,13 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Latitude */
+  /* Field: Field: Latitude */
   $handler->display->display_options['fields']['field_latitude']['id'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['field_latitude']['field'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_latitude']['delta_offset'] = '0';
-  /* Field: Content: Longitude */
+  /* Field: Field: Longitude */
   $handler->display->display_options['fields']['field_longitude']['id'] = 'field_longitude';
   $handler->display->display_options['fields']['field_longitude']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['field_longitude']['field'] = 'field_longitude';
@@ -263,14 +261,14 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
-  /* Field: Content: Latitude (field_latitude:delta) */
+  /* Field: Field: Latitude (field_latitude:delta) */
   $handler->display->display_options['fields']['delta']['id'] = 'delta';
   $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['delta']['field'] = 'delta';
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Longitude (field_longitude:delta) */
+  /* Field: Field: Longitude (field_longitude:delta) */
   $handler->display->display_options['fields']['delta_1']['id'] = 'delta_1';
   $handler->display->display_options['fields']['delta_1']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['delta_1']['field'] = 'delta';
@@ -282,7 +280,6 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
   $handler->display->display_options['arguments']['field_term_country_tid']['table'] = 'field_data_field_term_country';
   $handler->display->display_options['arguments']['field_term_country_tid']['field'] = 'field_term_country_tid';
-  $handler->display->display_options['arguments']['field_term_country_tid']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['format'] = 'default_summary';
@@ -317,7 +314,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'delta';
   $handler->display->display_options['path'] = 'on-the-ground/map/factsheet_flag';
 
-  /* Display: Feed CP Project */
+  /* Display: Feed GP Project */
   $handler = $view->new_display('feed', 'Feed GP Project', 'feed_project');
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
@@ -338,13 +335,13 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Latitude */
+  /* Field: Field: Latitude */
   $handler->display->display_options['fields']['field_latitude']['id'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['field_latitude']['field'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_latitude']['delta_offset'] = '0';
-  /* Field: Content: Longitude */
+  /* Field: Field: Longitude */
   $handler->display->display_options['fields']['field_longitude']['id'] = 'field_longitude';
   $handler->display->display_options['fields']['field_longitude']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['field_longitude']['field'] = 'field_longitude';
@@ -358,14 +355,14 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
-  /* Field: Content: Latitude (field_latitude:delta) */
+  /* Field: Field: Latitude (field_latitude:delta) */
   $handler->display->display_options['fields']['delta']['id'] = 'delta';
   $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['delta']['field'] = 'delta';
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Longitude (field_longitude:delta) */
+  /* Field: Field: Longitude (field_longitude:delta) */
   $handler->display->display_options['fields']['delta_1']['id'] = 'delta_1';
   $handler->display->display_options['fields']['delta_1']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['delta_1']['field'] = 'delta';
@@ -377,7 +374,6 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
   $handler->display->display_options['arguments']['field_term_country_tid']['table'] = 'field_data_field_term_country';
   $handler->display->display_options['arguments']['field_term_country_tid']['field'] = 'field_term_country_tid';
-  $handler->display->display_options['arguments']['field_term_country_tid']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['format'] = 'default_summary';
@@ -433,13 +429,13 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Latitude */
+  /* Field: Field: Latitude */
   $handler->display->display_options['fields']['field_latitude']['id'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['field_latitude']['field'] = 'field_latitude';
   $handler->display->display_options['fields']['field_latitude']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_latitude']['delta_offset'] = '0';
-  /* Field: Content: Longitude */
+  /* Field: Field: Longitude */
   $handler->display->display_options['fields']['field_longitude']['id'] = 'field_longitude';
   $handler->display->display_options['fields']['field_longitude']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['field_longitude']['field'] = 'field_longitude';
@@ -453,14 +449,14 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
-  /* Field: Content: Latitude (field_latitude:delta) */
+  /* Field: Field: Latitude (field_latitude:delta) */
   $handler->display->display_options['fields']['delta']['id'] = 'delta';
   $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_latitude';
   $handler->display->display_options['fields']['delta']['field'] = 'delta';
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Longitude (field_longitude:delta) */
+  /* Field: Field: Longitude (field_longitude:delta) */
   $handler->display->display_options['fields']['delta_1']['id'] = 'delta_1';
   $handler->display->display_options['fields']['delta_1']['table'] = 'field_data_field_longitude';
   $handler->display->display_options['fields']['delta_1']['field'] = 'delta';
@@ -472,7 +468,6 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
   $handler->display->display_options['arguments']['field_term_country_tid']['table'] = 'field_data_field_term_country';
   $handler->display->display_options['arguments']['field_term_country_tid']['field'] = 'field_term_country_tid';
-  $handler->display->display_options['arguments']['field_term_country_tid']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['format'] = 'default_summary';
@@ -506,7 +501,6 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'delta_1';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'delta';
   $handler->display->display_options['path'] = 'on-the-ground/map/gp_short_story';
-
   $export['farnet_maps'] = $view;
 
   return $export;
