@@ -64,11 +64,11 @@ function farnet_social_media_strongarm() {
       'weight' => '-6',
     ),
     'instagram' => array(
-      'platform_value' => '',
+      'platform_value' => 'eu_farnet',
       'weight' => '-5',
     ),
     'pinterest' => array(
-      'platform_value' => 'EU_FARNET',
+      'platform_value' => '',
       'weight' => '-4',
     ),
     'vimeo' => array(
