@@ -11,27 +11,94 @@
 function farnet_gp_short_story_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_collection_project_phase'.
-  $field_bases['field_collection_project_phase'] = array(
+  // Exported field_base: 'field_budget'.
+  $field_bases['field_budget'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_collection_project_phase',
-    'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
-      ),
-    ),
+    'field_name' => 'field_budget',
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'field_collection',
+    'module' => 'number',
     'settings' => array(
+      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
-      'hide_blank_items' => 1,
-      'path' => '',
     ),
     'translatable' => 0,
-    'type' => 'field_collection',
+    'type' => 'number_float',
+  );
+
+  // Exported field_base: 'field_eardf'.
+  $field_bases['field_eardf'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_eardf',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
+  // Exported field_base: 'field_emff'.
+  $field_bases['field_emff'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_emff',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
+  // Exported field_base: 'field_erdf'.
+  $field_bases['field_erdf'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_erdf',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
+  // Exported field_base: 'field_esf'.
+  $field_bases['field_esf'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_esf',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_eu_contribution'.
@@ -52,13 +119,34 @@ function farnet_gp_short_story_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_eu_contribution_eardf'.
-  $field_bases['field_eu_contribution_eardf'] = array(
+  // Exported field_base: 'field_funding_details'.
+  $field_bases['field_funding_details'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_eu_contribution_eardf',
+    'field_name' => 'field_funding_details',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_funding_local'.
+  $field_bases['field_funding_local'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_funding_local',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -70,13 +158,13 @@ function farnet_gp_short_story_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_eu_contribution_emff'.
-  $field_bases['field_eu_contribution_emff'] = array(
+  // Exported field_base: 'field_funding_national'.
+  $field_bases['field_funding_national'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_eu_contribution_emff',
+    'field_name' => 'field_funding_national',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -88,13 +176,13 @@ function farnet_gp_short_story_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_eu_contribution_erdf'.
-  $field_bases['field_eu_contribution_erdf'] = array(
+  // Exported field_base: 'field_funding_regional'.
+  $field_bases['field_funding_regional'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_eu_contribution_erdf',
+    'field_name' => 'field_funding_regional',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -106,31 +194,13 @@ function farnet_gp_short_story_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_eu_contribution_esf'.
-  $field_bases['field_eu_contribution_esf'] = array(
+  // Exported field_base: 'field_other_eu_funding'.
+  $field_bases['field_other_eu_funding'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_eu_contribution_esf',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'decimal_separator' => '.',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_float',
-  );
-
-  // Exported field_base: 'field_eu_contribution_oeu'.
-  $field_bases['field_eu_contribution_oeu'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_eu_contribution_oeu',
+    'field_name' => 'field_other_eu_funding',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -160,28 +230,6 @@ function farnet_gp_short_story_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_phase'.
-  $field_bases['field_phase'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_phase',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_private_contribution'.
   $field_bases['field_private_contribution'] = array(
     'active' => 1,
@@ -189,60 +237,6 @@ function farnet_gp_short_story_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_private_contribution',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'decimal_separator' => '.',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_float',
-  );
-
-  // Exported field_base: 'field_public_contrib_local'.
-  $field_bases['field_public_contrib_local'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_public_contrib_local',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'decimal_separator' => '.',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_float',
-  );
-
-  // Exported field_base: 'field_public_contrib_national'.
-  $field_bases['field_public_contrib_national'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_public_contrib_national',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'decimal_separator' => '.',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_float',
-  );
-
-  // Exported field_base: 'field_public_contrib_regional'.
-  $field_bases['field_public_contrib_regional'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_public_contrib_regional',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -295,24 +289,6 @@ function farnet_gp_short_story_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_total_cost'.
-  $field_bases['field_total_cost'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_total_cost',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'decimal_separator' => '.',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_float',
   );
 
   return $field_bases;

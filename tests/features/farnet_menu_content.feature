@@ -68,7 +68,7 @@ Feature: Test the presence of the content menu
     And I should not see "Publication" in the ".region-sidebar-left" element
     And I should not see "Metadata" in the ".region-sidebar-left" element
 
-  @api
+  @api @test
   Scenario: I check the GP Short Story menu
     Given I am logged in as a user with the "administrator" role
     And "organisation" content:
@@ -78,16 +78,19 @@ Feature: Test the presence of the content menu
       | title        | status |
       | MediaGallery | 1      |
     And I am viewing a "gp_short_story" content:
-      | title                  | test gp short story |
-      | field_farnet_abstract  | Lorem Ipsum         |
-      | field_quote_text       | Lorem Ipsum         |
-      | field_dates_start_end  | 1, 2                |
-      | field_total_cost       | 42                  |
-      | field_organisation     | Organisation        |
-      | field_term_theme       | Aquaculture         |
-      | field_gallery          | MediaGallery        |
-      | field_publication_date | 1                   |
-      | status                 | 1                   |
+      | title                           | test gp short story |
+      | field_farnet_abstract           | Lorem Ipsum         |
+      | field_quote_text                | Lorem Ipsum         |
+      | field_dates_start_end           | 1, 2                |
+      | field_budget                    | 42                  |
+      | field_eu_contribution           | 13                  |
+      | field_other_public_contribution | 13                  |
+      | field_private_contribution      | 13                  |
+      | field_organisation              | Organisation        |
+      | field_term_theme                | Aquaculture         |
+      | field_gallery                   | MediaGallery        |
+      | field_publication_date          | 1                   |
+      | status                          | 1                   |
     Then I should see "Content" in the ".region-sidebar-left" element
     And I should see "Quote" in the ".region-sidebar-left" element
     And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
@@ -98,7 +101,7 @@ Feature: Test the presence of the content menu
     And I should not see "Publication" in the ".region-sidebar-left" element
     And I should not see "Metadata" in the ".region-sidebar-left" element
 
-  @api @test
+  @api
   Scenario: I check the Factsheet Flag menu
     Given I am logged in as a user with the "administrator" role
     And "organisation" content:
