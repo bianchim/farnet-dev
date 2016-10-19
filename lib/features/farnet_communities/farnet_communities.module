@@ -53,7 +53,6 @@ function farnet_communities_push_form_admin($form, &$form_state) {
   return system_settings_form($form);
 }
 
-
 /**
  * Push a node to the public site.
  */
