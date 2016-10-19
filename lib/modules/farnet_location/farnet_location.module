@@ -92,25 +92,21 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
       // Configure the fields.
       $form['field_term_country'][LANGUAGE_NONE]['#attributes']['class'][] = 'country_field_form';
 
-      foreach ($form['field_region'][LANGUAGE_NONE] as $index => &$region_field) {
-        // Only numbers are for actual field indexing.
-        if (is_int($index)) {
-          $region_field['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
-          $region_field['value']['#attributes']['class'][] = 'region_field_form';
+      // Add autocomplete for each region field collection.
+      foreach ($form['field_collection_region'][LANGUAGE_NONE] as $region_index => &$region_field) {
+        if (is_int($region_index)) {
+          $region_field['field_region'][LANGUAGE_NONE][0]['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
+          $region_field['field_region'][LANGUAGE_NONE][0]['value']['#attributes']['class'][] = 'region_field_form';
+
+          // Add autocomplete for each area field.
+          foreach ($region_field['field_area'][LANGUAGE_NONE] as $area_index => &$area_field) {
+            if (is_int($area_index)) {
+              $area_field['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
+              $area_field['value']['#attributes']['class'][] = 'area_field_form';
+            }
+          }
         }
       }
-
-      foreach ($form['field_area'][$lang] as $key => $value) {
-        if (is_int($key) !== FALSE) {
-          $form['field_area'][$lang][$key]['value']['#autocomplete_path'] = 'farnet_location/autocomplete';
-          $form['field_area'][$lang][$key]['value']['#attributes']['class'][] = 'area_field_form';
-        }
-      }
-
-      // Manage form states.
-      $state = [":input[name='field_term_country[$lang]']" => ['empty' => FALSE]];
-      $form['field_region']['#states']['enabled'] = $state;
-      $form['field_area']['#states']['enabled'] = $state;
 
       $js_settings = [
         // Convert undefined form language to english for GeoNames.
@@ -200,6 +196,45 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_node_submit().
  */
 function farnet_location_node_submit($node, $form, &$form_state) {
+  // Manage the field area and the coordinates.
+  switch ($node->type) {
+    case 'gp_method':
+    case 'gp_project':
+    case 'gp_short_story':
+    case 'factsheet_flag':
+      // Remove previous values.
+      $node->field_latitude[LANGUAGE_NONE] = array();
+      $node->field_longitude[LANGUAGE_NONE] = array();
+
+      // Get form info.
+      $lang = $form_state['values']['language'];
+      $country = $form_state['values']['field_term_country'][LANGUAGE_NONE][0]['name'];
+
+      // For each area, store the geolocation.
+      foreach ($node->field_collection_region[LANGUAGE_NONE] as $region) {
+        $areas = isset($region['field_area'][$lang]) ? $region['field_area'][$lang] : $region['field_area'][LANGUAGE_NONE];
+        foreach ($areas as $area_index => $area) {
+          if (!is_int($area_index) || empty($area['value'])) {
+            continue;
+          }
+
+          $city = $area['value'];
+          // $output = _farnet_location_geocoding($city . ', ' . $country);.
+          $output = _farnet_location_geocoding_by_city($lang, $country, $city);
+          if ($output && is_array($output)) {
+            $longitude = $output['lng'];
+            $latitude = $output['lat'];
+            $node->field_longitude[LANGUAGE_NONE][$area_index]['value'] = $longitude;
+            $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
+          }
+          else {
+            drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
+          }
+        }
+      }
+      break;
+  }
+
   switch ($node->type) {
     case 'organisation':
       $address_1 = isset($node->field_address_1[LANGUAGE_NONE][0]['value']) ? $node->field_address_1[LANGUAGE_NONE][0]['value'] : '';
@@ -224,24 +259,12 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       break;
 
     case 'factsheet_flag':
-      global $language;
       global $base_url;
       $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
       $country_id = isset($node->field_term_country[LANGUAGE_NONE][0]['tid']) ? $node->field_term_country[LANGUAGE_NONE][0]['tid'] : '';
-      foreach ($node->field_area[$language->language] as $area_index => $area) {
-        $city = $area['value'];
-        $output = _farnet_location_geocoding($city . ', ' . $country);
-        if ($output && is_array($output)) {
-          $longitude = $output[0];
-          $latitude = $output[1];
-          $node->field_longitude[LANGUAGE_NONE][$area_index]['value'] = $longitude;
-          $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
-        }
-        else {
-          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
-        }
-      }
+
       $output_country = _farnet_location_geocoding($country);
+
       // Default: Brussels, Belgium.
       $longitude_country = 4.35171;
       $latitude_country = 50.85034;
@@ -287,7 +310,6 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       break;
 
     case 'factsheet_country':
-      global $language;
       global $base_url;
       $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
       $country_id = isset($node->field_term_country[LANGUAGE_NONE][0]['tid']) ? $node->field_term_country[LANGUAGE_NONE][0]['tid'] : '';
@@ -365,46 +387,6 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       }';
       $node->field_interactive_map[LANGUAGE_NONE][0]['value'] = $json_map;
       break;
-
-    case 'gp_method':
-    case 'gp_short_story':
-      $lang = $form_state['values']['language'];
-      $node->field_longitude[LANGUAGE_NONE] = array();
-      $node->field_latitude[LANGUAGE_NONE] = array();
-      foreach ($form_state['values']['field_area'][$lang] as $key => $value) {
-        if (is_int($key) !== FALSE) {
-          if (isset($form_state['values']['field_area'][$lang][$key]['value'])) {
-            if (strlen($form_state['values']['field_area'][$lang][$key]['value']) > 0) {
-              $country = $form_state['values']['field_term_country'][LANGUAGE_NONE][0]['name'];
-              $city = $form_state['values']['field_area'][$lang][$key]['value'];
-              $output = _farnet_location_geocoding_by_city($lang, $country, $city);
-              if ($output && is_array($output)) {
-                $node->field_longitude[LANGUAGE_NONE][$key]['value'] = $output['lng'];
-                $node->field_latitude[LANGUAGE_NONE][$key]['value'] = $output['lat'];
-              }
-            }
-          }
-        }
-      }
-      break;
-
-    case 'gp_project':
-      global $language;
-      $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
-      foreach ($node->field_area[$language->language] as $area_index => $area) {
-        $city = $area['value'];
-        $output = _farnet_location_geocoding($city . ', ' . $country);
-        if ($output && is_array($output)) {
-          $longitude = $output[0];
-          $latitude = $output[1];
-          $node->field_longitude[LANGUAGE_NONE][$area_index]['value'] = $longitude;
-          $node->field_latitude[LANGUAGE_NONE][$area_index]['value'] = $latitude;
-        }
-        else {
-          drupal_set_message(t("The coordinates of :city could not be set. Please set it manually or contact an administrator.", array(':city' => $city)), 'warning');
-        }
-      }
-      break;
   }
 }
 
@@ -432,8 +414,13 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   // Reverse search of the country to get its country code.
   $country_code = _farnet_location_get_country_code($country);
 
+  // If searching for an area, change the administrative level.
+  if (isset($region)) {
+    $region = _farnet_location_get_region_code($lang, $region, $country_code);
+  }
+
   // Return an empty array on any error.
-  if ($username === FALSE || (int) $maxrows < 1 || $country_code === FALSE) {
+  if ($username === FALSE || (int) $maxrows < 1 || $country_code === FALSE || $region === FALSE) {
     drupal_json_output([]);
     return;
   }
@@ -445,7 +432,6 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     'username' => $username,
     'type' => 'json',
     'country' => $country_code,
-    'fcode' => $fcode,
     'style' => 'FULL',
     'lang' => strtoupper($lang),
   ];
@@ -455,6 +441,11 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   }
   else {
     $params['fcode'] = 'adm1';
+  }
+
+  // Filter by region if available.
+  if ($region !== FALSE) {
+    $params['adminCode1'] = $region;
   }
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
