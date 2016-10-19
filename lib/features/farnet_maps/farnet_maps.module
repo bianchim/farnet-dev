@@ -40,6 +40,11 @@ function farnet_maps_form($form, &$form_state) {
 
   $form = [];
 
+  $vid_countries = 0;
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('countries')) {
+    $vid_countries = $vocabulary->vid;
+  }
+
   // Country selected in the form.
   $country = isset($form_state['input']['countries']) ? $form_state['input']['countries'] : 0;
 
@@ -48,8 +53,11 @@ function farnet_maps_form($form, &$form_state) {
     $countries_select = ['none' => 'Select a country'];
   }
 
-  foreach (taxonomy_get_tree(6) as $term) {
+  foreach (taxonomy_get_tree($vid_countries) as $term) {
     if ($term->depth > 0) {
+      $countries_select[$term->tid] = ' - ' . $term->name;
+    }
+    else {
       $countries_select[$term->tid] = $term->name;
     }
   }
@@ -71,28 +79,40 @@ function farnet_maps_form($form, &$form_state) {
 
   if ($country) {
     $cterm = taxonomy_term_load($country);
+    if ((count(taxonomy_get_parents_all($country)) - 1) > 0) {
 
-    // Get the coordinates of the capital either from the term or geonames.
-    if (empty($cterm->field_latitude) || empty($cterm->field_longitude)) {
-      $country_code = $cterm->field_code[LANGUAGE_NONE][0]['value'];
-      $new_coord = farnet_maps_get_country_coordinates($country_code);
+      // Get the coordinates of the capital either from the term or geonames.
+      if (empty($cterm->field_latitude) || empty($cterm->field_longitude)) {
+        $country_code = $cterm->field_code[LANGUAGE_NONE][0]['value'];
+        $new_coord = farnet_maps_get_country_coordinates($country_code);
 
-      // Save the  coordinates on the country.
-      if ($new_coord !== FALSE) {
-        $cterm->field_latitude[LANGUAGE_NONE][0]['value'] = [$coord['lat']];
-        $cterm->field_longitude[LANGUAGE_NONE][0]['value'] = [$coord['lng']];
-        taxonomy_term_save($cterm);
+        // Save the  coordinates on the country.
+        if ($new_coord !== FALSE) {
+          $cterm->field_latitude[LANGUAGE_NONE][0]['value'] = [$coord['lat']];
+          $cterm->field_longitude[LANGUAGE_NONE][0]['value'] = [$coord['lng']];
+          taxonomy_term_save($cterm);
 
-        $coord = $new_coord;
+          $coord = $new_coord;
+          $zoom = 5;
+        }
+      }
+      else {
+        $coord = [
+          'lat' => $cterm->field_latitude[LANGUAGE_NONE][0]['value'],
+          'lng' => $cterm->field_longitude[LANGUAGE_NONE][0]['value'],
+        ];
         $zoom = 5;
       }
     }
     else {
-      $coord = [
-        'lat' => $cterm->field_latitude[LANGUAGE_NONE][0]['value'],
-        'lng' => $cterm->field_longitude[LANGUAGE_NONE][0]['value'],
-      ];
-      $zoom = 5;
+      if ($cterm->name === 'Non-EU countries') {
+        $zoom = 2;
+      }
+      $countries_array = [];
+      foreach (taxonomy_get_tree($vid_countries, $country) as $term) {
+        $countries_array[] = $term->tid;
+      }
+      $country = implode(",", $countries_array);
     }
   }
   else {
