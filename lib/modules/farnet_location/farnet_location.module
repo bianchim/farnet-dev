@@ -206,6 +206,11 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       $node->field_latitude[LANGUAGE_NONE] = array();
       $node->field_longitude[LANGUAGE_NONE] = array();
 
+      // If no country was set, abort the process.
+      if (!isset($form_state['values']['field_term_country'][LANGUAGE_NONE][0])) {
+        break;
+      }
+
       // Get form info.
       $lang = $form_state['values']['language'];
       $country = $form_state['values']['field_term_country'][LANGUAGE_NONE][0]['name'];

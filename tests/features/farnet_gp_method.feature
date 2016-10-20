@@ -20,7 +20,6 @@ Feature: GP Method content type
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/gp-method"
     When I press the "Save" button
-    Then I should see the error message "Area (value 1) field is required."
     And I should see the error message "ID field is required."
     And I should see the error message "Objectives field is required."
     And I should see the error message "Picture field is required."
@@ -46,8 +45,8 @@ Feature: GP Method content type
     And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     # Location tab
     And I fill in "field_term_country[und]" with "Belgium"
-    And I fill in "field_region[und][0][value]" with "Wallonia"
-    And I fill in "field_area[und][0][value]" with "Arlon"
+    And I fill in "field_collection_region[und][0][field_region][und][0][value]" with "Wallonia"
+    And I fill in "field_collection_region[und][0][field_area][und][0][value]" with "Arlon"
     # Description tab
     And I fill in "field_objective[und][0][value]" with "Test gp method"
     And I fill in "field_gpm_activities[und][0][value]" with "Test gp method"
