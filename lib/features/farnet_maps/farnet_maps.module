@@ -88,12 +88,12 @@ function farnet_maps_form($form, &$form_state) {
 
         // Save the  coordinates on the country.
         if ($new_coord !== FALSE) {
+          $coord = $new_coord;
+          $zoom = 5;
+
           $cterm->field_latitude[LANGUAGE_NONE][0]['value'] = [$coord['lat']];
           $cterm->field_longitude[LANGUAGE_NONE][0]['value'] = [$coord['lng']];
           taxonomy_term_save($cterm);
-
-          $coord = $new_coord;
-          $zoom = 5;
         }
       }
       else {
