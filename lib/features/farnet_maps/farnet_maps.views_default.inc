@@ -107,7 +107,9 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
     'countries' => 'countries',
   );
+  $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['field_term_country_tid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -195,7 +197,9 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
     'countries' => 'countries',
   );
+  $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['field_term_country_tid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -221,7 +225,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['path'] = 'on-the-ground/map/gp_method';
 
   /* Display: Feed Factsheet Flag */
-  $handler = $view->new_display('feed', 'Feed Factsheet Flag', 'feed_1');
+  $handler = $view->new_display('feed', 'Feed Factsheet Flag', 'feed_factsheet_flag');
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -280,7 +284,8 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
   $handler->display->display_options['arguments']['field_term_country_tid']['table'] = 'field_data_field_term_country';
   $handler->display->display_options['arguments']['field_term_country_tid']['field'] = 'field_term_country_tid';
-  $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_term_country_tid']['default_argument_options']['index'] = '3';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_term_country_tid']['summary_options']['items_per_page'] = '25';
@@ -289,7 +294,9 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
     'countries' => 'countries',
   );
+  $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['field_term_country_tid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -383,7 +390,9 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
     'countries' => 'countries',
   );
+  $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['field_term_country_tid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -477,7 +486,9 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['vocabularies'] = array(
     'countries' => 'countries',
   );
+  $handler->display->display_options['arguments']['field_term_country_tid']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['field_term_country_tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['field_term_country_tid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

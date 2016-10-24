@@ -199,7 +199,7 @@ function farnet_taxonomy_disable() {
   }
 
   // Deletes the taxonomy term.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('field_term_country');
+  $vocabulary = taxonomy_vocabulary_machine_name_load('countries');
   if ($vocabulary) {
     $vid = $vocabulary->vid;
     taxonomy_vocabulary_delete($vid);
