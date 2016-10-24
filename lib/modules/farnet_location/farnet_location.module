@@ -463,7 +463,27 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
 
   $result = [];
   foreach ($geolocs['geonames'] as $geoname) {
-    $result[$geoname['name']] = $geoname['name'];
+    // Filter out results for administrative regions outside the country.
+    // For exemple : French Guiana.
+    if ($geoname['countryCode'] !== $country_code) {
+      continue;
+    }
+
+    // Check all alternatives names for the current name, else use the default
+    // name returned by geoname.
+    $name = NULL;
+    if (isset($geoname['alternateNames'])) {
+      foreach ($geoname['alternateNames'] as $alt_name) {
+        if (strtoupper($alt_name['lang']) === strtoupper($lang)) {
+          $name = $alt_name['name'];
+        }
+      }
+    }
+
+    $name = is_null($name) ? $geoname['name'] : $name;
+
+    $result[$name] = $name;
+
   }
 
   drupal_json_output($result);
