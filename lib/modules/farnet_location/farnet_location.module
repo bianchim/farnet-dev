@@ -412,6 +412,10 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     unset($region);
   }
 
+  // Sanitize input.
+  $lang = strtoupper(check_plain($lang));
+  $search = check_plain($search);
+
   // API options.
   $username = variable_get('geonames_username', FALSE);
   $maxrows = variable_get('geonames_maxrows', 10);
@@ -421,7 +425,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
 
   // If searching for an area, change the administrative level.
   if (isset($region)) {
-    $region = _farnet_location_get_region_code($lang, $region, $country_code);
+    $region = _farnet_location_get_region_code($lang, check_plain($region), $country_code);
   }
 
   // Return an empty array on any error.
@@ -432,13 +436,14 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
 
   // Do the search.
   $params = [
-    'name_startsWith' => check_plain($search),
+    'name_startsWith' => $search,
     'maxRows' => $maxrows,
     'username' => $username,
     'type' => 'json',
     'country' => $country_code,
     'style' => 'FULL',
-    'lang' => strtoupper($lang),
+    'lang' => $lang,
+    'searchlang' => strtolower($lang),
   ];
 
   if (isset($region)) {
