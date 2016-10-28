@@ -196,6 +196,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-list-heading',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -203,7 +206,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -336,6 +339,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-list-heading',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -343,7 +349,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -579,6 +585,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-link',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -586,7 +595,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -826,6 +835,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-list-heading',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -833,7 +845,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -859,6 +871,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-list-heading',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -866,7 +881,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -964,6 +979,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-link',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -971,7 +989,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -1069,6 +1087,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-link',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -1076,7 +1097,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -1106,6 +1127,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-list-heading',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -1113,7 +1137,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -1241,9 +1265,13 @@ function farnet_core_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Home',
     'options' => array(
+      'identifier' => 'main-menu_home:<front>',
       'attributes' => array(
         'data-display-title' => 0,
         'data-image' => 'home',
+        'class' => array(
+          0 => 'navigation-main-link',
+        ),
       ),
       'identifier' => 'main-menu_home:<front>',
     ),
@@ -1546,6 +1574,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-link',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -1553,7 +1584,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -2405,6 +2436,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'navigation-main-link',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -2412,7 +2446,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'navigation-main-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -2648,6 +2682,9 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-list-heading',
+        ),
         'data-remove-class' => 0,
       ),
       'item_attributes' => array(
@@ -2655,7 +2692,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item',
         'data-remove-class' => 0,
         'style' => '',
       ),
