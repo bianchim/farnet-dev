@@ -6,7 +6,9 @@ php = "5.6.9"
 
 base theme = ec_resp
 
+stylesheets[all][] = "css/vendor.css"
 stylesheets[all][] = "css/farnet.css"
+stylesheets[all][] = "css/menu.css"
 
 
 regions[header_top] = "Header Top"

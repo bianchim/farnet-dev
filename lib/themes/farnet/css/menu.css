@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  .om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-maximenu-content {
+    top: 50px;
+    position: absolute;
+    width: 815px;
+  }
+
+  .fr-megamenu-item--list {
+    position: relative !important;
+  }
+
+  .fr-megamenu-list > .fr-megamenu-item {
+    list-style: none;
+  }
+}

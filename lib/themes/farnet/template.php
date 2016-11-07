@@ -80,5 +80,10 @@ function farnet_preprocess_block(&$vars) {
  * Alter the main menu in order to add custom class.
  */
 function farnet_menu_tree__main_menu($variables) {
-  return '<ul class="fr-megamenu-list menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
+  $navbar = '';
+  if (strpos($variables['tree'], 'main-menu-top-level') !== FALSE) {
+    $navbar = 'nav navbar-nav';
+  }
+
+  return '<ul class="fr-megamenu-list menu clearfix ' . $navbar . '">' . $variables['tree'] . '</ul>';
 }
