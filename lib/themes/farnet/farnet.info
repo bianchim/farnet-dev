@@ -6,10 +6,12 @@ php = "5.6.9"
 
 base theme = ec_resp
 
-stylesheets[all][] = "css/vendor.css"
-stylesheets[all][] = "css/farnet.css"
+stylesheets[all][] = "framework/styles/vendor.css"
+stylesheets[all][] = "framework/styles/farnet.css"
 stylesheets[all][] = "css/menu.css"
 
+scripts[] = "framework/scripts/vendor.js"
+scripts[] = "framework/scripts/farnet.js"
 
 regions[header_top] = "Header Top"
 regions[header_right] = "Header Right"
