@@ -9,7 +9,10 @@
     position: relative !important;
   }
 
-  .fr-megamenu-list > .fr-megamenu-item {
-    list-style: none;
-  }
+}
+
+.fr-megamenu-list .fr-megamenu-item,
+.fr-megamenu-list li {
+  list-style-type: none !important;
+  list-style-image: none !important;
 }
