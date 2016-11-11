@@ -1,6 +1,8 @@
 name = Farnet User
 description = Feature for User
 core = 7.x
+php = 5.6
+multisite_version = 2.2
 package = Farnet
 dependencies[] = ctools
 dependencies[] = email
