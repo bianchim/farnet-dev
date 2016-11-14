@@ -188,14 +188,14 @@ function farnet_maps_form($form, &$form_state) {
   // Use the webtools smart loader.
   drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
 
-  $json_map_object = json_decode($json_map);
+  $json_map_object = drupal_json_decode($json_map);
   $json_map_object->layers[0]->checkbox->features[0]->markers[0] = $base_url . "/on-the-ground/map/factsheet_flag/" . $country;
   /* $json_map_object->layers[0]->checkbox->features[1]->markers[0] = $base_url . "/on-the-ground/map/organisation/" . $country; */
   $json_map_object->layers[0]->checkbox->features[2]->markers[0] = $base_url . "/on-the-ground/map/gp_method/" . $country;
   $json_map_object->layers[0]->checkbox->features[3]->markers[0] = $base_url . "/on-the-ground/map/gp_project/" . $country;
   $json_map_object->layers[0]->checkbox->features[4]->markers[0] = $base_url . "/on-the-ground/map/gp_short_story/" . $country;
 
-  $json_map = json_encode($json_map_object);
+  $json_map = drupal_json_encode($json_map_object);
 
   $form['json_map'] = array(
     '#type' => 'item',
@@ -237,7 +237,7 @@ function farnet_maps_get_country_coordinates($country_code) {
   ];
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
-  $url = $base_url . 'countryInfo?' . http_build_query($params);
+  $url = $base_url . 'countryInfo?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     return FALSE;
@@ -275,7 +275,7 @@ function farnet_maps_get_capital_coordinates($capital, $country_code) {
   ];
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
-  $url = $base_url . 'search?' . http_build_query($params);
+  $url = $base_url . 'search?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     return FALSE;
