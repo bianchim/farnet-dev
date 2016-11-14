@@ -23,7 +23,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'revision_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -46,7 +46,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'revision_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -65,7 +65,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_contribution_figure',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -87,7 +87,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -105,7 +105,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_a1_eu_contribution',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -123,7 +123,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_a2_public_contribution',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -141,7 +141,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_a3_public_contribution',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -159,7 +159,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_a4_public_contribution',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -177,7 +177,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_a_flag_grant',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -199,7 +199,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -216,7 +216,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_b2_lead_partner',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -234,7 +234,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_b_beneficiary',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -256,7 +256,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -277,7 +277,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -298,7 +298,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -319,7 +319,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -336,7 +336,7 @@ function farnet_gp_project_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_gpp_total_project_cost',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -358,7 +358,7 @@ function farnet_gp_project_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,

@@ -1,6 +1,8 @@
 name = Farnet communities
 description = Feature to manage Farnet organic groups (communities) and their contents, with different types of access rights
 core = 7.x
+php = 5.6
+multisite_version = 2.2
 package = Farnet
 dependencies[] = cce_basic_config
 dependencies[] = comment_og
