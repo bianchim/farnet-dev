@@ -34,3 +34,17 @@
   background: transparent;
   width: 100%;
 }
+
+.om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-maximenu-content {
+  border: none;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent;
+}
+.om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-link.active:hover,
+.om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-link.active:focus {
+  background-color: transparent;
+}
