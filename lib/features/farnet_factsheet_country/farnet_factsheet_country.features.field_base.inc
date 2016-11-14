@@ -19,7 +19,7 @@ function farnet_factsheet_country_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_average_budget_per_flag',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -41,7 +41,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -62,7 +62,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -83,7 +83,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -100,7 +100,7 @@ function farnet_factsheet_country_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_co_funding',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -122,7 +122,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -143,7 +143,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'fid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
@@ -168,7 +168,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'fid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'file',
     'settings' => array(
       'display_default' => 0,
@@ -190,7 +190,7 @@ function farnet_factsheet_country_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_emff_budget',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -212,7 +212,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'target_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -248,7 +248,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -269,7 +269,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -290,7 +290,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -312,7 +312,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'revision_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -335,7 +335,7 @@ function farnet_factsheet_country_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -352,7 +352,7 @@ function farnet_factsheet_country_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_number_flags',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -370,7 +370,7 @@ function farnet_factsheet_country_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_proportion_emff',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',
@@ -388,7 +388,7 @@ function farnet_factsheet_country_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_total_budget',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'decimal_separator' => ',',

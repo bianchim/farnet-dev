@@ -22,7 +22,7 @@ function _farnet_mega_menu_block_name_cleaner($string) {
   );
   $new_str = preg_replace('/[^a-zA-Z0-9\']/', '_', $new_str);
   $new_str = str_replace("'", '', $new_str);
-  return strtolower($new_str);
+  return drupal_strtolower($new_str);
 }
 
 /**

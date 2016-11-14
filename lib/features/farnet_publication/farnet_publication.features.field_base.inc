@@ -23,7 +23,7 @@ function farnet_publication_field_default_field_bases() {
         0 => 'fid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'file',
     'settings' => array(
       'display_default' => 0,
@@ -49,7 +49,7 @@ function farnet_publication_field_default_field_bases() {
         0 => 'revision_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -68,7 +68,7 @@ function farnet_publication_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_publication_more_info',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'link',
     'settings' => array(
       'attributes' => array(
@@ -102,7 +102,7 @@ function farnet_publication_field_default_field_bases() {
         0 => 'tid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
