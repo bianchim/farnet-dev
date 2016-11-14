@@ -1,18 +1,36 @@
 @media (min-width: 768px) {
-  .om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-maximenu-content {
-    top: 50px;
-    position: absolute;
-    width: 815px;
-  }
-
   .fr-megamenu-item--list {
     position: relative !important;
   }
 
+  .fr-megamenu-list > .fr-megamenu-item {
+    list-style: none;
+  }
 }
 
-.fr-megamenu-list .fr-megamenu-item,
-.fr-megamenu-list li {
-  list-style-type: none !important;
-  list-style-image: none !important;
+.fr-megamenu-list .fr-megamenu-item {
+  list-style: none;
+}
+
+
+@media (max-width: 768px) {
+  .menuDisplay {
+    display: block !important;
+  }
+}
+
+/** OM maximenu override */
+.om-maximenu ul.om-menu li.om-leaf {
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  list-style: none;
+  list-style-image: none;
+  position: initial;
+  z-index: 5;
+}
+.om-maximenu .om-maximenu-middle {
+  background: transparent;
+  width: 100%;
 }
