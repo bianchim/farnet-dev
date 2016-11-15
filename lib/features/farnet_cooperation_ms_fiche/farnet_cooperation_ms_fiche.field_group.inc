@@ -14,6 +14,35 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_ms_fiche_publication|node|ms_fiche|form';
+  $field_group->group_name = 'group_ms_fiche_publication';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'ms_fiche';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Publication',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_publication_date',
+      1 => 'field_publication_abstract',
+      2 => 'field_term_publication_channels',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-ms-fiche-publication field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_ms_fiche_publication|node|ms_fiche|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_ne_ms_fiche_content|node|ms_fiche|form';
   $field_group->group_name = 'group_ne_ms_fiche_content';
   $field_group->entity_type = 'node';
@@ -51,7 +80,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Financing and co-financing of your cooperation project',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_financing_and_co_financing',
     ),
@@ -106,7 +135,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Level at which cooperation is handled',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_level_at_which_cooperation',
     ),
@@ -135,9 +164,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
     'label' => 'Metadata',
     'weight' => '1',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'group_content_access',
-      2 => 'language',
+      0 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -189,7 +216,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_term_theme',
@@ -215,6 +242,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   t('Level at which cooperation is handled');
   t('Metadata');
   t('Possible partners');
+  t('Publication');
   t('Taxonomy');
 
   return $field_groups;
