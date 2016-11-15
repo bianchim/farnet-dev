@@ -129,7 +129,7 @@ function farnet_user_profile_validate($form, &$form_state) {
 
   // Check that if the field_telephone is valid.
   $telephone_number_str = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
-  if (strlen($telephone_number_str) > 0) {
+  if (drupal_strlen($telephone_number_str) > 0) {
     try {
       $telephone_number_proto = $phone_util->parse($telephone_number_str, $code_country);
       $is_valid = $phone_util->isValidNumber($telephone_number_proto);
@@ -145,7 +145,7 @@ function farnet_user_profile_validate($form, &$form_state) {
 
   // Check that if the field_phone_mobile is valid.
   $mobile_number_str = reset($form_state['values']['field_phone_mobile'][LANGUAGE_NONE])['value'];
-  if (strlen($mobile_number_str) > 0) {
+  if (drupal_strlen($mobile_number_str) > 0) {
     try {
       $mobile_number_proto = $phone_util->parse($mobile_number_str, $code_country);
       $is_valid = $phone_util->isValidNumber($mobile_number_proto);
@@ -161,7 +161,7 @@ function farnet_user_profile_validate($form, &$form_state) {
 
   // Check that if the field_website is filled, the url is valid.
   $url_website = reset($form_state['values']['field_website'][LANGUAGE_NONE])['url'];
-  if (strlen($url_website) > 0) {
+  if (drupal_strlen($url_website) > 0) {
     // Remove all illegal characters from a url.
     $url_website = filter_var($url_website, FILTER_SANITIZE_URL);
     if (filter_var($url_website, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED) === FALSE) {

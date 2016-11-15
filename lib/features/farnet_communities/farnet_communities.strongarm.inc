@@ -396,21 +396,21 @@ function farnet_communities_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_community_hidden';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_community_hidden'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_community_private';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_community_private'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_community_public';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_community_public'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -413,7 +413,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   }
 
   // Sanitize input.
-  $lang = strtoupper(check_plain($lang));
+  $lang = drupal_strtoupper(check_plain($lang));
   $search = check_plain($search);
 
   // API options.
@@ -443,7 +443,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     'country' => $country_code,
     'style' => 'FULL',
     'lang' => $lang,
-    'searchlang' => strtolower($lang),
+    'searchlang' => drupal_strtoupper($lang),
   ];
 
   if (isset($region)) {
@@ -459,7 +459,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   }
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
-  $url = $base_url . 'search?' . http_build_query($params);
+  $url = $base_url . 'search?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     drupal_json_output([]);
@@ -479,7 +479,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     $name = NULL;
     if (isset($geoname['alternateNames'])) {
       foreach ($geoname['alternateNames'] as $alt_name) {
-        if (strtoupper($alt_name['lang']) === strtoupper($lang)) {
+        if (drupal_strtoupper($alt_name['lang']) === drupal_strtoupper($lang)) {
           $name = $alt_name['name'];
         }
       }
@@ -533,11 +533,11 @@ function _farnet_location_geocoding_by_city($lang, $country, $city) {
     'country' => $country_code,
     'fcode' => $fcode,
     'style' => 'SHORT',
-    'lang' => strtoupper($lang),
+    'lang' => drupal_strtoupper($lang),
   ];
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
-  $url = $base_url . 'search?' . http_build_query($params);
+  $url = $base_url . 'search?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     return FALSE;
@@ -596,7 +596,7 @@ function _farnet_location_get_region_code($lang, $region, $country_code) {
   ];
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
-  $url = $base_url . 'search?' . http_build_query($params);
+  $url = $base_url . 'search?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     return FALSE;
@@ -624,7 +624,7 @@ function _farnet_location_geocoding($address) {
   ];
 
   $base_url = variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/');
-  $url = $base_url . '?' . http_build_query($params);
+  $url = $base_url . '?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     return FALSE;
@@ -658,7 +658,7 @@ function _farnet_location_get_cities_list_from_postal_code($postal_code, $countr
   // API options.
   $username = variable_get('geonames_username', FALSE);
 
-  if (strlen($username) > 0) {
+  if (drupal_strlen($username) > 0) {
     $params = [
       'postalcode' => check_plain($postal_code),
       'maxrows' => 50,
@@ -670,7 +670,7 @@ function _farnet_location_get_cities_list_from_postal_code($postal_code, $countr
     ];
 
     $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
-    $url = $base_url . 'postalCodeSearch?' . http_build_query($params);
+    $url = $base_url . 'postalCodeSearch?' . drupal_http_build_query($params);
 
     if (!$geolocs = _farnet_location_get_geonames_result($url)) {
       return [];
@@ -708,7 +708,7 @@ function farnet_location_depend_dropdown_callback($form, $form_state) {
  */
 function _farnet_location_get_field_city_select_dropdown($country_selected, $postal_code) {
 
-  if ($postal_code > 0 && (strlen($country_selected) > 0)) {
+  if ($postal_code > 0 && (drupal_strlen($country_selected) > 0)) {
     // Reverse search of the country to get its country code.
     $country_code = _farnet_location_get_country_code($country_selected);
     $result = _farnet_location_get_cities_list_from_postal_code($postal_code, $country_code);

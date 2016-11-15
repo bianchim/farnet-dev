@@ -23,7 +23,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -45,7 +45,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -67,7 +67,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -89,7 +89,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -111,7 +111,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'revision_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -130,7 +130,7 @@ function farnet_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_dates_start_end',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'date',
     'settings' => array(
       'cache_count' => 4,
@@ -160,7 +160,7 @@ function farnet_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_email',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'email',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -181,7 +181,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -202,7 +202,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -224,7 +224,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'target_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -260,7 +260,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'target_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -292,7 +292,7 @@ function farnet_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_id',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -313,7 +313,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -331,7 +331,7 @@ function farnet_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_interactive_map',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'nexteuropa_json_field',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -353,7 +353,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -375,7 +375,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -397,7 +397,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -419,7 +419,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -440,7 +440,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'target_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -476,7 +476,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'target_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -512,7 +512,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'fid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
@@ -537,7 +537,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'fid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'file',
     'settings' => array(
       'display_default' => 0,
@@ -563,7 +563,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -580,7 +580,7 @@ function farnet_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_publication_date',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'date',
     'settings' => array(
       'cache_count' => 4,
@@ -610,7 +610,7 @@ function farnet_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_social_media',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'link',
     'settings' => array(
       'attributes' => array(
@@ -644,7 +644,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -666,7 +666,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -684,7 +684,7 @@ function farnet_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_website',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'link',
     'settings' => array(
       'attributes' => array(
@@ -718,7 +718,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -740,7 +740,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'target_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -777,7 +777,7 @@ function farnet_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
