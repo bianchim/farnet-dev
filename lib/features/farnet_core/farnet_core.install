@@ -34,6 +34,7 @@ function farnet_core_install() {
     ->execute();
 
   // Set the new Farnet theme.
+  theme_enable(['farnet']);
   variable_set('theme_default', 'farnet');
 }
 
