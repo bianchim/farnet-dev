@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_cooperation_call.strongarm.inc
@@ -78,7 +77,7 @@ function farnet_cooperation_call_strongarm() {
           'weight' => '5',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
