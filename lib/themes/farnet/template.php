@@ -87,3 +87,33 @@ function farnet_menu_tree__main_menu($variables) {
 
   return '<ul class="fr-megamenu-list menu clearfix ' . $navbar . '">' . $variables['tree'] . '</ul>';
 }
+
+/**
+ * Returns HTML for a dropdown, modified version from ec_resp.
+ */
+function farnet_dropdown($variables) {
+  $items = $variables['items'];
+  $attributes = array();
+  $output = "";
+
+  if (!empty($items)) {
+    $output .= "<ul class='dropdown-menu'>";
+    $num_items = count($items);
+    foreach ($items as $i => $item) {
+      $data = '';
+      if (is_array($item)) {
+        foreach ($item as $key => $value) {
+          if ($key == 'data') {
+            $data = $value;
+          }
+        }
+      }
+      else {
+        $data = $item;
+      }
+      $output .= '<li>' . $data . "</li>\n";
+    }
+    $output .= "</ul>";
+  }
+  return $output;
+}
