@@ -1,6 +1,8 @@
 name = Farnet Cooperation Call
 description = Feature for content type Cooperation Call
 core = 7.x
+php = 5.6
+multisite_version = 2.2
 package = Farnet
 dependencies[] = ctools
 dependencies[] = entityreference
@@ -62,5 +64,4 @@ features[variable][] = xmlsitemap_settings_node_cooperation_call
 features_exclude[field_base][field_sea_basins] = field_sea_basins
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
-multisite_version = 2.2
 project path = sites/all/modules/features
