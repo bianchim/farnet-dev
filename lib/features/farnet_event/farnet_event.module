@@ -158,3 +158,14 @@ function farnet_event_strongarm_alter(&$variables) {
 function farnet_event_init() {
   drupal_add_css(drupal_get_path('module', 'farnet_event') . '/css/farnet_event.css');
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_event_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'nexteuropa_event_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
+    $form['field_farnet_abstract']['#weight'] = 2;
+    $form['field_ne_body']['#weight'] = 3;
+  }
+}

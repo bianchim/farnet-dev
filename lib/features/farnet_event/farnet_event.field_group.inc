@@ -129,6 +129,7 @@ function farnet_event_field_group_info() {
       0 => 'field_documents',
       1 => 'field_gallery',
       2 => 'field_picture',
+      3 => 'field_presentation',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -187,7 +188,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -251,13 +252,12 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_term_country',
-      2 => 'field_term_theme',
-      3 => 'field_tags',
-      4 => 'field_event_type',
+      0 => 'field_event_type',
+      1 => 'field_tags',
+      2 => 'field_term_country',
+      3 => 'field_term_theme',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -314,7 +314,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Agenda',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_sessions',
     ),
