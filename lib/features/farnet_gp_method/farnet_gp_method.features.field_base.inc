@@ -11,6 +11,27 @@
 function farnet_gp_method_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_context'.
+  $field_bases['field_context'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_context',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_gpm_activities'.
   $field_bases['field_gpm_activities'] = array(
     'active' => 1,
