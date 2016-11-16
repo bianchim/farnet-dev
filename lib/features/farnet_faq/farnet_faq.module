@@ -504,3 +504,12 @@ function farnet_faq_strongarm_alter(&$variables) {
     $variables['comment_nexteuropa_faq']->value = '0';
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_faq_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'nexteuropa_faq_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
+  }
+}
