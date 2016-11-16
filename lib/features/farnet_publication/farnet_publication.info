@@ -1,8 +1,8 @@
 name = Farnet Publication
 description = Feature for content type Publication
 core = 7.x
-core = 7.x
 php = 5.6
+multisite_version = 2.2
 package = Farnet
 dependencies[] = cce_basic_config
 dependencies[] = ctools
@@ -82,5 +82,4 @@ features[variable][] = xmlsitemap_settings_node_publication
 features_exclude[field_base][field_languages_spoken] = field_languages_spoken
 features_exclude[field_instance][node-publication-body] = node-publication-body
 features_exclude[dependencies][title] = title
-multisite_version = 2.2
 project path = sites/all/modules/features
