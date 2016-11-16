@@ -36,13 +36,14 @@ function farnet_pages_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -58,6 +59,9 @@ function farnet_pages_field_default_field_instances() {
             'full_html' => array(
               'weight' => -10,
             ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => -8,
             ),
@@ -65,7 +69,7 @@ function farnet_pages_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -205,6 +209,7 @@ function farnet_pages_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -214,7 +219,7 @@ function farnet_pages_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 35,
+      'weight' => 37,
     ),
   );
 
@@ -262,7 +267,7 @@ function farnet_pages_field_default_field_instances() {
   // Exported field_instance: 'node-page-field_term_publication_channels'.
   $field_instances['node-page-field_term_publication_channels'] = array(
     'bundle' => 'page',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -290,13 +295,13 @@ function farnet_pages_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 37,
+      'type' => 'options_buttons',
+      'weight' => 38,
     ),
   );
 
