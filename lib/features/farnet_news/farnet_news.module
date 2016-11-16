@@ -58,7 +58,7 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
     $fields['node-nexteuropa_news-field_image']['widget']['browser_plugins']['media_internet'] = 0;
     $fields['node-nexteuropa_news-field_image']['widget']['browser_plugins']['upload'] = 'upload';
     $fields['node-nexteuropa_news-field_image']['widget']['settings']['allowed_schemes']['public'] = 'public';
- 	 	$fields['node-nexteuropa_news-field_image']['widget']['settings']['allowed_types']['image'] = 'image';
+    $fields['node-nexteuropa_news-field_image']['widget']['settings']['allowed_types']['image'] = 'image';
     $fields['node-nexteuropa_news-field_image']['widget']['type'] = 'media_generic';
     if (isset($fields['node-nexteuropa_news-field_image']['display'])) {
       $fields['node-nexteuropa_news-field_image']['display']['newsletter']['label'] = "hidden";
@@ -92,14 +92,4 @@ function farnet_news_form_node_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'nexteuropa_news_node_form') {
     $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
   }
-}
-
-/**
- * Implements hook_field_group_info_alter().
- */
-function farnet_news_field_group_info_alter(&$groups) {
-  /*
-  dpm($groups);
-  $groups['group_news_more_information|node|nexteuropa_news|form']->data['weight'] = -3;
-  */
 }
