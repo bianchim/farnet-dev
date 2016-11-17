@@ -462,62 +462,6 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_short_story-field_dates_start_end'.
-  $field_instances['node-gp_short_story-field_dates_start_end'] = array(
-    'bundle' => 'gp_short_story',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-        ),
-        'type' => 'date_default',
-        'weight' => 19,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_dates_start_end',
-    'label' => 'Timeframe date',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'd/m/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'no_fieldset' => 0,
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'text_textarea',
-      'weight' => 22,
-    ),
-  );
-
   // Exported field_instance: 'node-gp_short_story-field_flag'.
   $field_instances['node-gp_short_story-field_flag'] = array(
     'bundle' => 'gp_short_story',
