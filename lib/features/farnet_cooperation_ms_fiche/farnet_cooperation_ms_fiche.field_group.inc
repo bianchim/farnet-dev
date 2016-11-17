@@ -22,7 +22,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_publication_date',
       1 => 'field_publication_abstract',
@@ -80,7 +80,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Financing and co-financing of your cooperation project',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_financing_and_co_financing',
     ),
@@ -107,7 +107,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Introduction',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_ne_body',
       1 => 'field_number_flags',
@@ -135,7 +135,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Level at which cooperation is handled',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_level_at_which_cooperation',
     ),
@@ -162,7 +162,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '1',
+    'weight' => '7',
     'children' => array(
       0 => 'language',
     ),
@@ -189,7 +189,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Possible partners',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_possible_partners',
     ),
@@ -216,7 +216,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_term_theme',
