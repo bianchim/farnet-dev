@@ -444,11 +444,13 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '10',
+    'weight' => '8',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_region',
-      2 => 'field_area',
+      0 => 'field_area',
+      1 => 'field_latitude',
+      2 => 'field_longitude',
+      3 => 'field_region',
+      4 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -506,7 +508,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
       1 => 'field_media_upload',
@@ -534,7 +536,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metatag',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'scheduler_settings',
@@ -597,7 +599,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -661,7 +663,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_tags',
