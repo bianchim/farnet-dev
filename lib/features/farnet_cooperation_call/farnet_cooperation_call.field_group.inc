@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_cooperation_call.field_group.inc
@@ -21,7 +22,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -81,7 +82,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '1',
+    'weight' => '4',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'language',
@@ -109,7 +110,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisation',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_organisation',
     ),
@@ -136,7 +137,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_term_theme',
