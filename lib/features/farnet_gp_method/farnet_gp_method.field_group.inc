@@ -61,10 +61,9 @@ function farnet_gp_method_field_group_info() {
     'children' => array(
       0 => 'field_farnet_abstract',
       1 => 'field_id_text',
-      2 => 'field_ne_body',
-      3 => 'field_picture',
-      4 => 'field_title_official',
-      5 => 'title_field',
+      2 => 'field_picture',
+      3 => 'field_title_official',
+      4 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -126,7 +125,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_gpm_activities',
       1 => 'field_gpm_lessons',
@@ -192,7 +191,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '2',
+    'weight' => '7',
     'children' => array(
       0 => 'field_area',
       1 => 'field_latitude',
@@ -255,7 +254,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -490,7 +489,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_gpm_financial_resources',
       1 => 'field_gpm_other_resources',
@@ -555,7 +554,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_tags',
@@ -617,7 +616,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_dates_start_end',
     ),

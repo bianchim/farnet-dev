@@ -82,7 +82,6 @@ features[field_instance][] = node-gp_method-field_gpm_transferability
 features[field_instance][] = node-gp_method-field_id_text
 features[field_instance][] = node-gp_method-field_latitude
 features[field_instance][] = node-gp_method-field_longitude
-features[field_instance][] = node-gp_method-field_ne_body
 features[field_instance][] = node-gp_method-field_objective
 features[field_instance][] = node-gp_method-field_organisations
 features[field_instance][] = node-gp_method-field_picture
