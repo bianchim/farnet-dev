@@ -443,7 +443,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     'country' => $country_code,
     'style' => 'FULL',
     'lang' => $lang,
-    'searchlang' => drupal_strtoupper($lang),
+    'searchlang' => drupal_strtolower($lang),
   ];
 
   if (isset($region)) {
