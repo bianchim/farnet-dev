@@ -14,35 +14,45 @@ function farnet_gp_short_story_user_default_permissions() {
   // Exported permission: 'create gp_short_story content'.
   $permissions['create gp_short_story content'] = array(
     'name' => 'create gp_short_story content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any gp_short_story content'.
   $permissions['delete any gp_short_story content'] = array(
     'name' => 'delete any gp_short_story content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own gp_short_story content'.
   $permissions['delete own gp_short_story content'] = array(
     'name' => 'delete own gp_short_story content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any gp_short_story content'.
   $permissions['edit any gp_short_story content'] = array(
     'name' => 'edit any gp_short_story content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own gp_short_story content'.
   $permissions['edit own gp_short_story content'] = array(
     'name' => 'edit own gp_short_story content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
