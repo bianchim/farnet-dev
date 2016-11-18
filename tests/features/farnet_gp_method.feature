@@ -31,7 +31,6 @@ Feature: GP Method content type
     And I should see the error message "Transferability field is required."
     And I should see the error message "Official Title field is required."
     And I should see the error message "Title field is required."
-    And I should see the error message "You must select one or more groups for this content."
 
   @api
   Scenario: Create the content
@@ -42,8 +41,6 @@ Feature: GP Method content type
     And I fill in "title_field[und][0][value]" with "Test gp method"
     And I fill in "field_title_official[und][0][value]" with "Test gp method"
     And I fill a media browser "field_picture[und][0][fid]" with an "image" named "behatTestImage.png"
-    # Metadata tab
-    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     # Location tab
     And I fill in "field_term_country[und]" with "Belgium"
     And I fill in "field_region[und][0][value]" with "Wallonia"
@@ -68,7 +65,6 @@ Feature: GP Method content type
       | field_id_text               | 42                    |
       | field_title_official        | Test gp method        |
       | field_picture               | behatTestImage        |
-      | og_group_ref                | Global editorial team |
       | field_term_country          | Belgium               |
       | field_region                | Wallonia              |
       | field_area                  | Arlon                 |
@@ -98,7 +94,6 @@ Feature: GP Method content type
       | field_id_text               | 42                    |
       | field_title_official        | Test gp method        |
       | field_picture               | behatTestImage        |
-      | og_group_ref                | Global editorial team |
       | field_area                  | Test gp method        |
       | field_objective             | Test gp method        |
       | field_gpm_activities        | Test gp method        |
