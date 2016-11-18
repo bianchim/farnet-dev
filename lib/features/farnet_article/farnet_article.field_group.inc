@@ -53,7 +53,7 @@ function farnet_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -82,7 +82,7 @@ function farnet_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_term_country',
@@ -111,7 +111,7 @@ function farnet_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'group_content_access',
       1 => 'og_group_ref',
