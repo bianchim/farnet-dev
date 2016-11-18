@@ -612,7 +612,7 @@ function farnet_publication_field_default_field_instances() {
   // Exported field_instance: 'node-publication-field_term_country'.
   $field_instances['node-publication-field_term_country'] = array(
     'bundle' => 'publication',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -640,12 +640,13 @@ function farnet_publication_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 14,
     ),
   );
@@ -766,7 +767,7 @@ function farnet_publication_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 13,
+      'weight' => 17,
     ),
   );
 
