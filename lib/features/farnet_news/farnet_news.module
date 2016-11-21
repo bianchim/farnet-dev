@@ -28,7 +28,6 @@ function farnet_news_field_group_info_alter($groups) {
   }
 }
 
-
 /**
  * Implements hook_COMPONENT_alter().
  *
