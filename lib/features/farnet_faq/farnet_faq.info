@@ -28,7 +28,6 @@ features[features_api][] = api:2
 features[field_base][] = field_short_title
 features[field_group][] = group_faq_publication|node|nexteuropa_faq|form
 features[field_group][] = group_faq_taxonomy|node|nexteuropa_faq|form
-features[field_instance][] = node-nexteuropa_faq-field_id
 features[field_instance][] = node-nexteuropa_faq-field_publication_abstract
 features[field_instance][] = node-nexteuropa_faq-field_publication_date
 features[field_instance][] = node-nexteuropa_faq-field_short_title

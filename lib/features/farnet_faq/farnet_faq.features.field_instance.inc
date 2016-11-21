@@ -11,53 +11,6 @@
 function farnet_faq_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-nexteuropa_faq-field_id'.
-  $field_instances['node-nexteuropa_faq-field_id'] = array(
-    'bundle' => 'nexteuropa_faq',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_id',
-    'label' => 'ID',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-nexteuropa_faq-field_publication_abstract'.
   $field_instances['node-nexteuropa_faq-field_publication_abstract'] = array(
     'bundle' => 'nexteuropa_faq',
@@ -122,7 +75,7 @@ function farnet_faq_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => '',
+        'maxlength_js' => 500,
         'maxlength_js_enforce' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'maxlength_js_truncate_html' => 0,
@@ -222,7 +175,7 @@ function farnet_faq_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_short_title',
     'label' => 'Short Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -267,14 +220,14 @@ function farnet_faq_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
   // Exported field_instance: 'node-nexteuropa_faq-field_term_country'.
   $field_instances['node-nexteuropa_faq-field_term_country'] = array(
     'bundle' => 'nexteuropa_faq',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -302,13 +255,14 @@ function farnet_faq_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'type' => 'options_select',
+      'weight' => 16,
     ),
   );
 
@@ -390,14 +344,13 @@ function farnet_faq_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Country');
-  t('ID');
   t('Publication abstract');
   t('Publication channels');
   t('Publication date');
