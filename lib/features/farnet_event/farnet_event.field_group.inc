@@ -188,7 +188,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -252,7 +252,7 @@ function farnet_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_event_type',
       1 => 'field_tags',

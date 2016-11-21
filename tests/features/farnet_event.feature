@@ -22,18 +22,13 @@ Feature: Event content type
     When I press the "Save" button
     Then I should see the error message "Title field is required."
     And I should see the error message "Abstract field is required."
-    And I should see the error message "Description field is required."
-    And I should see the error message "Country field is required."
-
+    
   @api
   Scenario: Create the content
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/nexteuropa-event"
     And fill in "title_field[und][0][value]" with "test event"
     And fill in "field_farnet_abstract[und][0][value]" with "test event abstract"
-    And fill in "field_term_country[und]" with "France"
-    And fill in "field_sessions[und][0][title_field][und][0][value]" with "Session"
-    And fill in "field_sessions[und][0][field_ff_description][und][0][value]" with "Session description"
     When I press the "Save" button
     Then I should see the heading "test event"
 
@@ -42,14 +37,10 @@ Feature: Event content type
     Given I am logged in as a user with the "administrator" role
     And I am viewing a "nexteuropa_event" content:
       | title                 | test event          |
-      | field_term_country    | France              |
       | field_farnet_abstract | test event abstract |
       | status                | 1                   |
     When I click "New draft"
     And I fill in "edit-title-field-en-0-value" with "Edited event"
-    # Fill field collection manually
-    And fill in "field_sessions[und][0][title_field][und][0][value]" with "Session"
-    And fill in "field_sessions[und][0][field_ff_description][und][0][value]" with "Session description"
     And I press the "Save" button
     Then I should see the heading "Edited event"
 
@@ -58,13 +49,9 @@ Feature: Event content type
     Given I am logged in as a user with the "administrator" role
     And I am viewing a "nexteuropa_event" content:
       | title                 | test event          |
-      | field_term_country    | France              |
       | field_farnet_abstract | test event abstract |
       | status                | 1                   |
     When I click "New draft"
-    # Fill field collection manually
-    And fill in "field_sessions[und][0][title_field][und][0][value]" with "Session"
-    And fill in "field_sessions[und][0][field_ff_description][und][0][value]" with "Session description"
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test event?"
     And I press the "Delete" button
