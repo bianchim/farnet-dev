@@ -82,7 +82,7 @@ function farnet_news_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_publication_abstract',
-    'label' => 'Teaser',
+    'label' => 'Publication abstract',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -90,6 +90,7 @@ function farnet_news_field_default_field_instances() {
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -105,6 +106,9 @@ function farnet_news_field_default_field_instances() {
             'full_html' => array(
               'weight' => -10,
             ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => -8,
             ),
@@ -112,7 +116,7 @@ function farnet_news_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -126,7 +130,7 @@ function farnet_news_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 37,
+      'weight' => 4,
     ),
   );
 
@@ -181,6 +185,7 @@ function farnet_news_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -190,14 +195,14 @@ function farnet_news_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 35,
+      'weight' => 5,
     ),
   );
 
   // Exported field_instance: 'node-nexteuropa_news-field_term_country'.
   $field_instances['node-nexteuropa_news-field_term_country'] = array(
     'bundle' => 'nexteuropa_news',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -225,12 +230,13 @@ function farnet_news_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 41,
     ),
   );
@@ -239,7 +245,7 @@ function farnet_news_field_default_field_instances() {
   // 'node-nexteuropa_news-field_term_publication_channels'.
   $field_instances['node-nexteuropa_news-field_term_publication_channels'] = array(
     'bundle' => 'nexteuropa_news',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -273,7 +279,7 @@ function farnet_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_buttons',
-      'weight' => 36,
+      'weight' => 6,
     ),
   );
 
@@ -322,9 +328,9 @@ function farnet_news_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Country');
   t('Page');
+  t('Publication abstract');
   t('Publication channels');
   t('Publication date');
-  t('Teaser');
   t('Theme');
 
   return $field_instances;
