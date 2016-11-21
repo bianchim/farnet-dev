@@ -131,13 +131,14 @@ function farnet_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -151,6 +152,9 @@ function farnet_publication_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -167,6 +171,10 @@ function farnet_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -239,7 +247,7 @@ function farnet_publication_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -273,7 +281,7 @@ function farnet_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_picture',
     'label' => 'Picture',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -294,6 +302,7 @@ function farnet_publication_field_default_field_instances() {
           'avportal' => 0,
           'dailymotion' => 0,
           'node' => 0,
+          'oembed' => 0,
           'private' => 0,
           'public' => 'public',
           'vimeo' => 0,
@@ -310,11 +319,10 @@ function farnet_publication_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
           'upload' => 0,
-          'youtube' => 0,
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -341,7 +349,7 @@ function farnet_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_publication_abstract',
-    'label' => 'Teaser',
+    'label' => 'Publication abstract',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -349,6 +357,7 @@ function farnet_publication_field_default_field_instances() {
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -364,6 +373,9 @@ function farnet_publication_field_default_field_instances() {
             'full_html' => array(
               'weight' => -10,
             ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => -8,
             ),
@@ -371,13 +383,17 @@ function farnet_publication_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -436,6 +452,7 @@ function farnet_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -479,7 +496,7 @@ function farnet_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_publication_files',
     'label' => 'Files',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -489,7 +506,7 @@ function farnet_publication_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -595,7 +612,7 @@ function farnet_publication_field_default_field_instances() {
   // Exported field_instance: 'node-publication-field_term_country'.
   $field_instances['node-publication-field_term_country'] = array(
     'bundle' => 'publication',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -623,13 +640,14 @@ function farnet_publication_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'type' => 'options_select',
+      'weight' => 14,
     ),
   );
 
@@ -637,7 +655,7 @@ function farnet_publication_field_default_field_instances() {
   // 'node-publication-field_term_publication_channels'.
   $field_instances['node-publication-field_term_publication_channels'] = array(
     'bundle' => 'publication',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -665,12 +683,12 @@ function farnet_publication_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 10,
     ),
   );
@@ -678,7 +696,7 @@ function farnet_publication_field_default_field_instances() {
   // Exported field_instance: 'node-publication-field_term_theme'.
   $field_instances['node-publication-field_term_theme'] = array(
     'bundle' => 'publication',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -707,9 +725,11 @@ function farnet_publication_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 14,
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 15,
     ),
   );
 
@@ -737,7 +757,7 @@ function farnet_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_type_of_publication',
     'label' => 'Type of Publication',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -747,7 +767,7 @@ function farnet_publication_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 13,
+      'weight' => 17,
     ),
   );
 
@@ -815,9 +835,9 @@ function farnet_publication_field_default_field_instances() {
   t('Language');
   t('More info');
   t('Picture');
+  t('Publication abstract');
   t('Publication channels');
   t('Publication date');
-  t('Teaser');
   t('Theme');
   t('Title');
   t('Type of Publication');
