@@ -108,6 +108,9 @@ function farnet_publication_strongarm() {
         'language' => array(
           'weight' => '2',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),
