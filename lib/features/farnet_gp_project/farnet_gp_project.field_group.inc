@@ -119,10 +119,10 @@ function farnet_gp_project_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_farnet_abstract',
-      1 => 'field_picture',
-      2 => 'field_title_official',
-      3 => 'title_field',
-      4 => 'field_id_text',
+      1 => 'field_id_text',
+      2 => 'field_picture',
+      3 => 'field_title_official',
+      4 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -446,11 +446,8 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Location',
     'weight' => '9',
     'children' => array(
-      0 => 'field_area',
-      1 => 'field_latitude',
-      2 => 'field_longitude',
-      3 => 'field_region',
-      4 => 'field_term_country',
+      0 => 'field_collection_region',
+      1 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

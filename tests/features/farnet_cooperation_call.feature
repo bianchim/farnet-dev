@@ -29,7 +29,6 @@ Feature: Cooperation Cooperation call content type
     And I fill in "title_field[und][0][value]" with "test Cooperation Call"    
     And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
     And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
-    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     When I press the "Save" button
     Then I should see the heading "test Cooperation Call"
 
@@ -41,7 +40,6 @@ Feature: Cooperation Cooperation call content type
       | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
-      | og_group_ref          | Global editorial team                |
     When I click "New draft"
     And I fill in "edit-title-field-en-0-value" with "Edited Cooperation Call"
     And I press the "Save" button
@@ -55,7 +53,6 @@ Feature: Cooperation Cooperation call content type
       | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
-      | og_group_ref          | Global editorial team                |
     When I click "New draft"
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test Cooperation Call?"

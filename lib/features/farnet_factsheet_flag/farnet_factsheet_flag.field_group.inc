@@ -209,15 +209,14 @@ function farnet_factsheet_flag_field_group_info() {
       0 => 'field_ff_code',
       1 => 'field_ff_programming_period',
       2 => 'field_ne_body',
-      3 => 'field_region',
-      4 => 'field_term_country',
-      5 => 'title_field',
-      6 => 'field_area',
-      7 => 'field_farnet_abstract',
-      8 => 'field_latitude',
-      9 => 'field_longitude',
-      10 => 'field_picture',
-      11 => 'field_title_official',
+      3 => 'field_term_country',
+      4 => 'title_field',
+      5 => 'field_farnet_abstract',
+      6 => 'field_latitude',
+      7 => 'field_longitude',
+      8 => 'field_picture',
+      9 => 'field_title_official',
+      10 => 'field_collection_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1023,12 +1022,10 @@ function farnet_factsheet_flag_field_group_info() {
   // Included for use with string extractors like potx.
   t('Area');
   t('Calls for proposals');
-  t('Cooperation ideas');
   t('Expertise & cooperation');
   t('FLAG');
   t('FLAG Contacts');
   t('FLAG Strategy');
-  t('FLAG strategy');
   t('Funding');
   t('Good Practice');
   t('Links with LEADER or other CLLD groups');
