@@ -1556,7 +1556,7 @@ function farnet_factsheet_country_field_default_field_instances() {
   // Exported field_instance: 'node-factsheet_country-field_term_country'.
   $field_instances['node-factsheet_country-field_term_country'] = array(
     'bundle' => 'factsheet_country',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1585,12 +1585,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 14,
     ),
   );
