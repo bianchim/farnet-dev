@@ -36,7 +36,7 @@ function farnet_event_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_dates',
     'label' => 'Dates',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -82,13 +82,14 @@ function farnet_event_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_ff_description',
     'label' => 'Description',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -102,6 +103,9 @@ function farnet_event_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -187,13 +191,14 @@ function farnet_event_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'title_field',
     'label' => 'Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -207,6 +212,9 @@ function farnet_event_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -1064,7 +1072,7 @@ function farnet_event_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1207,14 +1215,14 @@ function farnet_event_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1284,7 +1292,7 @@ function farnet_event_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 12,
     ),
   );
 
@@ -1318,7 +1326,7 @@ function farnet_event_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_publication_abstract',
-    'label' => 'Teaser',
+    'label' => 'Publication abstract',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -1326,6 +1334,7 @@ function farnet_event_field_default_field_instances() {
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -1341,6 +1350,9 @@ function farnet_event_field_default_field_instances() {
             'full_html' => array(
               'weight' => -10,
             ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => -8,
             ),
@@ -1348,7 +1360,7 @@ function farnet_event_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1627,7 +1639,7 @@ function farnet_event_field_default_field_instances() {
   // Exported field_instance: 'node-nexteuropa_event-field_term_country'.
   $field_instances['node-nexteuropa_event-field_term_country'] = array(
     'bundle' => 'nexteuropa_event',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1655,19 +1667,20 @@ function farnet_event_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_term_country',
     'label' => 'Country',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 4,
     ),
   );
@@ -1676,7 +1689,7 @@ function farnet_event_field_default_field_instances() {
   // 'node-nexteuropa_event-field_term_publication_channels'.
   $field_instances['node-nexteuropa_event-field_term_publication_channels'] = array(
     'bundle' => 'nexteuropa_event',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1710,12 +1723,12 @@ function farnet_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 27,
     ),
   );
@@ -1762,7 +1775,7 @@ function farnet_event_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -1922,17 +1935,16 @@ function farnet_event_field_default_field_instances() {
   t('Picture');
   t('Position');
   t('Presentation');
+  t('Publication abstract');
   t('Publication channels');
   t('Publication date');
   t('Registration');
   t('Sessions');
   t('Speakers');
-  t('Teaser');
   t('Telephone');
   t('Theme');
   t('Title');
   t('Twitter Hashtag');
-  t('Type of event');
   t('Website');
 
   return $field_instances;
