@@ -33,7 +33,7 @@ function farnet_factsheet_flag_views_api($module = NULL, $api = NULL) {
 function farnet_factsheet_flag_node_info() {
   $items = array(
     'factsheet_flag' => array(
-      'name' => t('Factsheet Flag'),
+      'name' => t('Flag Factsheet'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

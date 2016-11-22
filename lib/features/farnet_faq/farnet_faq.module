@@ -11,7 +11,7 @@ include_once 'farnet_faq.features.inc';
  */
 function farnet_faq_field_group_info_alter($groups) {
   if (!empty($groups['group_ne_faq_content|node|nexteuropa_faq|form'])) {
-    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_id';
+    $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_id_text';
     $groups['group_ne_faq_content|node|nexteuropa_faq|form']->data['children'][] = 'field_short_title';
   }
 }
@@ -50,6 +50,7 @@ function farnet_faq_field_default_field_instances_alter(&$fields) {
   }
 
   if (isset($fields['node-nexteuropa_faq-field_ne_body'])) {
+    $fields['node-nexteuropa_faq-field_ne_body']['required'] = 1;
     if (isset($fields['node-nexteuropa_faq-field_ne_body']['display'])) {
       $fields['node-nexteuropa_faq-field_ne_body']['display']['teaser']['label'] = "hidden";
       $fields['node-nexteuropa_faq-field_ne_body']['display']['teaser']['module'] = "text";
@@ -502,5 +503,14 @@ function farnet_faq_views_default_views_alter(&$views) {
 function farnet_faq_strongarm_alter(&$variables) {
   if (isset($variables['comment_nexteuropa_faq'])) {
     $variables['comment_nexteuropa_faq']->value = '0';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_faq_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'nexteuropa_faq_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
   }
 }

@@ -25,9 +25,6 @@ Feature: Article content type
     And I press the "Save" button
     Then I should see the error message "Title field is required."
     And I should see the error message "Abstract field is required."
-    And I should see the error message "Body field is required."
-    And I should see the error message "Theme field is required."
-    And I should see the error message "Image field is required."
 
   @api
    Scenario: Create article
@@ -35,20 +32,15 @@ Feature: Article content type
     When I visit "node/add/farnet-article"
     Then I should see the heading "Create Article"
     When I fill in "title_field[und][0][value]" with "Behat Article Test #1"
-    And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
     And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
-    And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I should see "Page" in the "div.form-item-field-page-und" element
     And I should see "Country" in the "div.form-item-field-term-country-und" element
-    And I select "Diversification" from "Theme"
-    And I should see "Teaser" in the "div.form-item-field-publication-abstract-und-0-value" element
+    And I should see "Publication abstract" in the "div.form-item-field-publication-abstract-und-0-value" element
     And I should see "Publication Channels" in the "div.form-item-field-term-publication-channels-und" element
     And I should see "Publication date" in the "div.field-name-field-publication-date" element
-    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     And I press the "Save" button
     Then I should see the success message "Article Behat Article Test #1 has been created."
     And I should see the heading "Behat Article Test #1"
-    And I should see "Lorem ipsum dolor sit amet body."
     And I should see "Lorem ipsum dolor sit amet abstract."
 
   @api
@@ -63,11 +55,9 @@ Feature: Article content type
       | status                      | 1                                     |
       | field_term_theme            | Diversification                       |
       | field_publication_date      | 1465294233                            |
-      | og_group_ref                | Global editorial team                 |
     Then I should see the heading "Behat Article Test #2"
     And I click "New draft"
     And I fill in "title_field[en][0][value]" with "Behat Article Test #2.1"
-    And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I press the "Save" button
     And I should see the success message "Article Behat Article Test #2.1 has been updated."
     And I should see the heading "Behat Article Test #2.1"
@@ -84,10 +74,8 @@ Feature: Article content type
       | status                      | 1                                         |
       | field_term_theme            | Diversification                           |
       | field_publication_date      | 1465294233                                |
-      | og_group_ref                | Global editorial team                     |
     Then I should see the heading "Behat Article Test #3"
     When I click "New draft"
-    And I attach the file "profiles/multisite_drupal_standard/themes/ec_resp/logo.png" to "edit-field-picture-und-0-upload"
     And I press "Delete"
     Then I should see the heading "Are you sure you want to delete Behat Article Test #3?"
     When I press "Delete"

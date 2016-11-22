@@ -20,8 +20,7 @@ Feature: FAQ content type
     And I visit "node/add/nexteuropa-faq"
     When I press the "Save" button
     Then I should see the error message "Question field is required."
-    And I should see the error message "ID field is required."
-    And I should see the error message "Short Title field is required."
+    And I should see the error message "Answer field is required."
 
   @api
   Scenario: Create FAQ content
@@ -30,9 +29,6 @@ Feature: FAQ content type
     Then I should see the heading "Create FAQ"
     When I fill in "title_field[und][0][value]" with "Behat FAQ Question #1"
     And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
-    And I fill in "field_short_title[und][0][value]" with "Behat FAQ Question Short #1"
-    And I fill in "field_id[und][0][value]" with "125"
-    And I fill in "og_group_ref[und][0][admin][0][target_id]" with "Global editorial team (1)"
     When I select "Eligibility" from "Categories"
     And I press the "Save" button
     Then I should see the success message "FAQ Behat FAQ Question #1 has been created."
@@ -45,11 +41,8 @@ Feature: FAQ content type
     When I am viewing an "nexteuropa_faq" content:
       | title                    | Behat FAQ Question #2                      |
       | field_ne_body            | Proin ornare condimentum lectus id iaculis |
-      | field_short_title        | Behat FAQ Question Short #1                |
-      | field_id                 | 125                                        |
       | field_ne_faq_categories  | CLLD overview                              |
       | status                   | 1                                          |
-      | og_group_ref             | Global editorial team                      |
     Then I should see the heading "Behat FAQ Question #2"
     And I click "New draft"
     And I fill in "title_field[en][0][value]" with "Behat FAQ Question #2.1"
@@ -63,11 +56,8 @@ Feature: FAQ content type
     When I am viewing an "nexteuropa_faq" content:
       | title                   | <title>                                    |
       | field_ne_body           | Proin ornare condimentum lectus id iaculis |
-      | field_short_title       | Behat FAQ Question Short                   |
-      | field_id                | 125                                        |
       | field_ne_faq_categories | <category>                                 |
       | status                  | 1                                          |
-      | og_group_ref            | Global editorial team                      |
     Then I should see the heading "<title>"
     And I should see the text "Proin ornare condimentum lectus id iaculis"
     And I go to "<url>"

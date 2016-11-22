@@ -1,38 +1,38 @@
-Feature: Factsheet Flag content type
-  In order to manage factsheet flag on the website
+Feature: Flag Factsheet content type
+  In order to manage Flag Factsheet on the website
   As an authorised user
   I want to be able to create, edit and delete publications
 
   @api
-  Scenario Outline: Access to Factsheet Flag form
+  Scenario Outline: Access to Flag Factsheet form
     Given I am logged in as a user with the <role> role
     When I visit "node/add/factsheet-flag"
-    Then I should see the heading "Create Factsheet Flag"
+    Then I should see the heading "Create Flag Factsheet"
   Examples:
       | role          |
       | administrator |
 
   @api
-  Scenario: Access denied to Factsheet Flag form
+  Scenario: Access denied to Flag Factsheet form
     Given I am an anonymous user
     When I go to "node/add/factsheet-flag"
     Then I should get an access denied error
 
   @api @error
-  Scenario: Factsheet Flag check mandatory fields
+  Scenario: Flag Factsheet check mandatory fields
     Given I am logged in as a user with the "administrator" role
     When I visit "node/add/factsheet-flag"
     And I press the "Save" button
     Then I should see the error message "Name field is required."
-    And I should see the error message "Name (official) field is required."
-    And I should see the error message "Code field is required."
     And I should see the error message "Abstract field is required."
+    #And I should see the error message "Name (official) field is required."
+    #And I should see the error message "Code field is required."
 
   @api @create
-  Scenario: Create factsheet flag
+  Scenario: Create Flag factsheet
     Given I am logged in as a user with the "administrator" role
     When I visit "node/add/factsheet-flag"
-    Then I should see the heading "Create Factsheet Flag"
+    Then I should see the heading "Create Flag Factsheet"
     # Content tab
     And I fill in "title_field[und][0][value]" with "Behat Factsheet Flag Test #1"
     And I fill in "field_title_official[und][0][value]" with "Behat Factsheet Flag Test #1"
@@ -41,8 +41,8 @@ Feature: Factsheet Flag content type
     And I check the box "2007-2013"
     # Location tab
     And I fill in "field_term_country[und]" with "France"
-    And I fill in "field_region[und][0][value]" with "Grand-Est"
-    And I fill in "field_area[und][0][value]" with "Metz"
+    And I fill in "field_collection_region[und][0][field_region][und][0][value]" with "Grand-Est"
+    And I fill in "field_collection_region[und][0][field_area][und][0][value]" with "Metz"
     # Area tab
     And I fill in "field_ff_description[und][0][value]" with "Lorem ipsum dolor sit amet description"
     And I fill in "field_ff_population[und][0][value]" with "42"
@@ -76,10 +76,10 @@ Feature: Factsheet Flag content type
     And I press the "Save" button
     Then I should see the heading "Behat Factsheet Flag Test #1"
     And I should see "Lorem ipsum dolor sit amet description"
-    And I should see the success message "Factsheet Flag Behat Factsheet Flag Test #1 has been created."
+    And I should see the success message "Flag Factsheet Behat Factsheet Flag Test #1 has been created."
 
   @api @edit
-  Scenario: Edit factsheet flag
+  Scenario: Edit Flag Factsheet
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "factsheet_flag" content:
       | title                         | Behat Factsheet Flag Test #2           |
@@ -130,10 +130,10 @@ Feature: Factsheet Flag content type
     And fill in "title_field[en][0][value]" with "Behat Factsheet Flag Test #2.1"
     And I press the "Save" button
     And I should see the heading "Behat Factsheet Flag Test #2.1"
-    And I should see the success message "Factsheet Flag Behat Factsheet Flag Test #2.1 has been updated."
+    And I should see the success message "Flag Factsheet Behat Factsheet Flag Test #2.1 has been updated."
 
   @api @delete
-  Scenario: Delete factsheet flag
+  Scenario: Delete Flag Factsheet
     Given I am logged in as a user with the "administrator" role
     When I am viewing an "factsheet_flag" content:
       | title                         | Behat Factsheet Flag Test #3           |
@@ -181,8 +181,8 @@ Feature: Factsheet Flag content type
       | field_allocated_budget | 10000       |
     Then I should see the heading "Behat Factsheet Flag Test #3"
     When I click "New draft"
-    Then I should see the heading "Edit Factsheet Flag Behat Factsheet Flag Test #3"
+    Then I should see the heading "Edit Flag Factsheet Behat Factsheet Flag Test #3"
     And I press "Delete"
     Then I should see "Are you sure you want to delete Behat Factsheet Flag Test #3?"
     When I press "Delete"
-    Then I should see the success message "Factsheet Flag Behat Factsheet Flag Test #3 has been deleted."
+    Then I should see the success message "Flag Factsheet Behat Factsheet Flag Test #3 has been deleted."

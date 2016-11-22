@@ -13,5 +13,15 @@ include_once 'farnet_pages.features.inc';
 function farnet_pages_field_group_info_alter($groups) {
   if (!empty($groups['group_page_content|node|page|form'])) {
     $groups['group_page_content|node|page|form']->data['children'][1] = 'field_farnet_abstract';
+    $groups['group_page_content|node|page|form']->data['children'][2] = 'field_ne_body';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_pages_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'page_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
   }
 }

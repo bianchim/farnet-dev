@@ -22,11 +22,11 @@ function farnet_faq_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_publication_abstract',
-      1 => 'field_term_publication_channels',
-      2 => 'field_publication_date',
+      1 => 'field_publication_date',
+      2 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -51,7 +51,7 @@ function farnet_faq_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '4',
+    'weight' => '1',
     'children' => array(
       0 => 'field_term_country',
       1 => 'field_term_theme',
