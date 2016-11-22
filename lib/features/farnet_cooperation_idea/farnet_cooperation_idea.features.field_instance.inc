@@ -42,6 +42,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -55,6 +56,9 @@ function farnet_cooperation_idea_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(

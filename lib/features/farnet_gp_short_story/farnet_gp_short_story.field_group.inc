@@ -59,12 +59,11 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Project information',
     'weight' => '5',
     'children' => array(
-      0 => 'field_area',
-      1 => 'field_organisation',
-      2 => 'field_term_country',
-      3 => 'field_latitude',
-      4 => 'field_longitude',
-      5 => 'field_region',
+      0 => 'field_latitude',
+      1 => 'field_longitude',
+      2 => 'field_organisation',
+      3 => 'field_term_country',
+      4 => 'field_collection_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
