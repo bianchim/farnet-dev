@@ -127,12 +127,12 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Description',
     'weight' => '2',
     'children' => array(
-      0 => 'field_gpm_activities',
-      1 => 'field_gpm_lessons',
-      2 => 'field_gpm_main_achievements',
-      3 => 'field_gpm_transferability',
-      4 => 'field_objective',
-      5 => 'field_context',
+      0 => 'field_context',
+      1 => 'field_gpm_activities',
+      2 => 'field_gpm_lessons',
+      3 => 'field_gpm_main_achievements',
+      4 => 'field_gpm_transferability',
+      5 => 'field_objective',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -193,11 +193,10 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Location',
     'weight' => '7',
     'children' => array(
-      0 => 'field_area',
+      0 => 'field_collection_region',
       1 => 'field_latitude',
       2 => 'field_longitude',
-      3 => 'field_region',
-      4 => 'field_term_country',
+      3 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

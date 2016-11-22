@@ -41,8 +41,8 @@ Feature: Factsheet Flag content type
     And I check the box "2007-2013"
     # Location tab
     And I fill in "field_term_country[und]" with "France"
-    And I fill in "field_region[und][0][value]" with "Grand-Est"
-    And I fill in "field_area[und][0][value]" with "Metz"
+    And I fill in "field_collection_region[und][0][field_region][und][0][value]" with "Grand-Est"
+    And I fill in "field_collection_region[und][0][field_area][und][0][value]" with "Metz"
     # Area tab
     And I fill in "field_ff_description[und][0][value]" with "Lorem ipsum dolor sit amet description"
     And I fill in "field_ff_population[und][0][value]" with "42"

@@ -24,10 +24,10 @@ function farnet_publication_field_group_info() {
     'label' => 'Categorisation',
     'weight' => '2',
     'children' => array(
-      0 => 'field_type_of_publication',
-      1 => 'field_term_theme',
-      2 => 'field_term_country',
-      3 => 'field_tags',
+      0 => 'field_tags',
+      1 => 'field_term_country',
+      2 => 'field_term_theme',
+      3 => 'field_type_of_publication',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -54,12 +54,11 @@ function farnet_publication_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'body',
-      1 => 'title_field',
-      2 => 'field_farnet_abstract',
-      3 => 'field_picture',
-      4 => 'field_publication_files',
-      5 => 'field_ne_body',
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
+      2 => 'field_picture',
+      3 => 'field_publication_files',
+      4 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
