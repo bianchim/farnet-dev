@@ -193,11 +193,10 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Location',
     'weight' => '4',
     'children' => array(
-      0 => 'field_area',
-      1 => 'field_term_country',
-      2 => 'field_region',
-      3 => 'field_latitude',
-      4 => 'field_longitude',
+      0 => 'field_latitude',
+      1 => 'field_longitude',
+      2 => 'field_term_country',
+      3 => 'field_collection_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

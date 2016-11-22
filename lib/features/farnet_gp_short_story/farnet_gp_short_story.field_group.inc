@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_gp_short_story.field_group.inc
@@ -59,12 +58,11 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Project information',
     'weight' => '5',
     'children' => array(
-      0 => 'field_area',
-      1 => 'field_latitude',
-      2 => 'field_longitude',
-      3 => 'field_organisation',
-      4 => 'field_region',
-      5 => 'field_term_country',
+      0 => 'field_latitude',
+      1 => 'field_longitude',
+      2 => 'field_organisation',
+      3 => 'field_term_country',
+      4 => 'field_collection_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

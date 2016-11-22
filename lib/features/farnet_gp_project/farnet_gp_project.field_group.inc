@@ -447,8 +447,7 @@ function farnet_gp_project_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_term_country',
-      1 => 'field_region',
-      2 => 'field_area',
+      1 => 'field_collection_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
