@@ -33,7 +33,7 @@ function farnet_factsheet_country_views_api($module = NULL, $api = NULL) {
 function farnet_factsheet_country_node_info() {
   $items = array(
     'factsheet_country' => array(
-      'name' => t('Factsheet Country'),
+      'name' => t('Country Factsheet'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
