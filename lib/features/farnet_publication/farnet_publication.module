@@ -12,25 +12,19 @@ include_once 'farnet_publication.features.inc';
  */
 function farnet_publication_views_default_views_alter(&$views) {
   if (isset($views['farnet_publication_view'])) {
-    $brochure = taxonomy_get_term_by_name('Brochure');
-    if ((isset($brochure)) && (!empty($brochure))) {
-      $brochure_term = current($brochure);
-      $tid_brochure = $brochure_term->tid;
-      $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_brochure] = $tid_brochure;
-    }
 
-    $report = taxonomy_get_term_by_name('Report');
-    if ((isset($report)) && (!empty($report))) {
-      $report_term = current($report);
-      $tid_report = $report_term->tid;
-      $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_report] = $tid_report;
+    $publication = taxonomy_get_term_by_name('Publication');
+    if ((isset($publication)) && (!empty($publication))) {
+      $publication_term = current($publication);
+      $tid_publication = $publication_term->tid;
+      $views['farnet_publication_view']->display['page_publications']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_publication] = $tid_publication;
     }
 
     $guide = taxonomy_get_term_by_name('Guide');
     if ((isset($guide)) && (!empty($guide))) {
       $guide_term = current($guide);
       $tid_guide = $guide_term->tid;
-      $views['farnet_publication_view']->display['page_brochures']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_guide] = $tid_guide;
+      $views['farnet_publication_view']->display['page_guides']->display_options['filters']['field_type_of_publication_tid']['value'][$tid_guide] = $tid_guide;
     }
 
     $magazine = taxonomy_get_term_by_name('FARNET Magazine');

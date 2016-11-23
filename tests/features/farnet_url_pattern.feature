@@ -47,6 +47,6 @@ Feature: Content types URL patterns
     And I should see the heading "<title>"
 
     Examples:
-      | title                        | type             | url                                                      | parameter_field           | parameter   |
-      | Test url pattern event       | nexteuropa_event | news-events/events/conferences/test-url-pattern-event_en | field_event_type          | conferences |
-      | Test url pattern publication | publication      | library/brochure/test-url-pattern-publication_en         | field_type_of_publication | brochure    |
+      | title                        | type             | url                                                      | parameter_field           | parameter    |
+      | Test url pattern event       | nexteuropa_event | news-events/events/conferences/test-url-pattern-event_en | field_event_type          | conferences  |
+      | Test url pattern publication | publication      | library/presentation/test-url-pattern-publication_en    | field_type_of_publication | presentation |
