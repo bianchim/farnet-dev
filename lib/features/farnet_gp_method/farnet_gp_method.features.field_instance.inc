@@ -55,6 +55,81 @@ function farnet_gp_method_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gp_method-field_context'.
+  $field_instances['node-gp_method-field_context'] = array(
+    'bundle' => 'gp_method',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_context',
+    'label' => 'Context, needs, opportunity',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'full_html_track' => 'full_html_track',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_method-field_dates_start_end'.
   $field_instances['node-gp_method-field_dates_start_end'] = array(
     'bundle' => 'gp_method',
@@ -85,7 +160,7 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_dates_start_end',
     'label' => 'Dates (Start/End)',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -98,6 +173,7 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -135,13 +211,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -157,13 +234,15 @@ function farnet_gp_method_field_default_field_instances() {
             'full_html' => array(
               'weight' => -10,
             ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => -8,
             ),
           ),
         ),
       ),
-      'display_summary' => 0,
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -172,10 +251,14 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -253,13 +336,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_gpm_activities',
     'label' => 'Activities',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -273,6 +357,9 @@ function farnet_gp_method_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -289,10 +376,14 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 4,
     ),
   );
 
@@ -387,13 +478,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_gpm_lessons',
     'label' => 'Lessons',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -407,6 +499,9 @@ function farnet_gp_method_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -423,10 +518,14 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 7,
     ),
   );
 
@@ -454,13 +553,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_gpm_main_achievements',
     'label' => 'Main achievements',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -474,6 +574,9 @@ function farnet_gp_method_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -490,10 +593,14 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 5,
     ),
   );
 
@@ -588,13 +695,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_gpm_skills',
     'label' => 'Skills',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -608,6 +716,9 @@ function farnet_gp_method_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -624,6 +735,10 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -702,13 +817,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_gpm_transferability',
     'label' => 'Transferability',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -722,6 +838,9 @@ function farnet_gp_method_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -738,10 +857,14 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 6,
     ),
   );
 
@@ -769,7 +892,7 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_id_text',
     'label' => 'ID',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -806,7 +929,7 @@ function farnet_gp_method_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'maxlength_js' => 0,
@@ -814,7 +937,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 9,
     ),
   );
 
@@ -962,75 +1085,6 @@ function farnet_gp_method_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_method-field_ne_body'.
-  $field_instances['node-gp_method-field_ne_body'] = array(
-    'bundle' => 'gp_method',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_ne_body',
-    'label' => 'Context, needs, opportunity',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
-      'display_summary' => 0,
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 11,
-    ),
-  );
-
   // Exported field_instance: 'node-gp_method-field_objective'.
   $field_instances['node-gp_method-field_objective'] = array(
     'bundle' => 'gp_method',
@@ -1055,13 +1109,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_objective',
     'label' => 'Objectives',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -1075,6 +1130,9 @@ function farnet_gp_method_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -1091,10 +1149,14 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 3,
     ),
   );
 
@@ -1178,11 +1240,11 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_picture',
     'label' => 'Picture',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -1199,6 +1261,7 @@ function farnet_gp_method_field_default_field_instances() {
           'avportal' => 0,
           'dailymotion' => 0,
           'node' => 0,
+          'oembed' => 0,
           'private' => 0,
           'public' => 'public',
           'vimeo' => 0,
@@ -1211,15 +1274,14 @@ function farnet_gp_method_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
-          'youtube' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1255,6 +1317,7 @@ function farnet_gp_method_field_default_field_instances() {
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -1270,6 +1333,9 @@ function farnet_gp_method_field_default_field_instances() {
             'full_html' => array(
               'weight' => -10,
             ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => -8,
             ),
@@ -1277,13 +1343,17 @@ function farnet_gp_method_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -1342,6 +1412,7 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -1358,7 +1429,7 @@ function farnet_gp_method_field_default_field_instances() {
   // Exported field_instance: 'node-gp_method-field_sea_basins'.
   $field_instances['node-gp_method-field_sea_basins'] = array(
     'bundle' => 'gp_method',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1386,13 +1457,13 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'type' => 'options_buttons',
+      'weight' => 21,
     ),
   );
 
@@ -1419,7 +1490,7 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Tags',
+    'label' => 'Keywords',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1433,7 +1504,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 20,
     ),
   );
 
@@ -1481,7 +1552,7 @@ function farnet_gp_method_field_default_field_instances() {
   // Exported field_instance: 'node-gp_method-field_term_publication_channels'.
   $field_instances['node-gp_method-field_term_publication_channels'] = array(
     'bundle' => 'gp_method',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1509,20 +1580,20 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'type' => 'options_buttons',
+      'weight' => 13,
     ),
   );
 
   // Exported field_instance: 'node-gp_method-field_term_theme'.
   $field_instances['node-gp_method-field_term_theme'] = array(
     'bundle' => 'gp_method',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1550,13 +1621,14 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'type' => 'options_select',
+      'weight' => 19,
     ),
   );
 
@@ -1584,13 +1656,14 @@ function farnet_gp_method_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_title_official',
     'label' => 'Official Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -1604,6 +1677,9 @@ function farnet_gp_method_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -1620,17 +1696,19 @@ function farnet_gp_method_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
   // Exported field_instance: 'node-gp_method-field_type_of_area'.
   $field_instances['node-gp_method-field_type_of_area'] = array(
     'bundle' => 'gp_method',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1658,13 +1736,13 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 16,
+      'type' => 'options_buttons',
+      'weight' => 22,
     ),
   );
 
@@ -1738,7 +1816,7 @@ function farnet_gp_method_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
@@ -1801,6 +1879,7 @@ function farnet_gp_method_field_default_field_instances() {
   t('Gallery');
   t('Groups audience');
   t('ID');
+  t('Keywords');
   t('Latitude');
   t('Lessons');
   t('Longitude');
@@ -1817,7 +1896,6 @@ function farnet_gp_method_field_default_field_instances() {
   t('Sea Basins');
   t('Skills');
   t('Staff resources (FTE)');
-  t('Tags');
   t('Theme');
   t('Title');
   t('Transferability');
