@@ -24,6 +24,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Croate',
       ),
     ),
+    /*
     'cs' => (object) array(
       'name' => t('Czech'),
       'language' => 'en',
@@ -31,6 +32,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Tchèque',
       ),
     ),
+    */
     'da' => (object) array(
       'name' => t('Danish'),
       'language' => 'en',
@@ -38,6 +40,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Danois',
       ),
     ),
+    /*
     'nl' => (object) array(
       'name' => t('Dutch'),
       'language' => 'en',
@@ -45,6 +48,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Néerlandais',
       ),
     ),
+    */
     'en' => (object) array(
       'name' => t('English'),
       'language' => 'en',
@@ -73,6 +77,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Français',
       ),
     ),
+    /*
     'gl' => (object) array(
       'name' => t('Galician'),
       'language' => 'en',
@@ -80,6 +85,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Galicien',
       ),
     ),
+    */
     'de' => (object) array(
       'name' => t('German'),
       'language' => 'en',
@@ -94,6 +100,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Grec',
       ),
     ),
+    /*
     'hu' => (object) array(
       'name' => t('Hungarian'),
       'language' => 'en',
@@ -101,6 +108,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Hongrois',
       ),
     ),
+    */
     'it' => (object) array(
       'name' => t('Italian'),
       'language' => 'en',
@@ -122,6 +130,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Lituanien',
       ),
     ),
+    /*
     'mt' => (object) array(
       'name' => t('Maltese'),
       'language' => 'en',
@@ -129,6 +138,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Maltais',
       ),
     ),
+    */
     'pl' => (object) array(
       'name' => t('Polish'),
       'language' => 'en',
@@ -150,6 +160,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Roumain',
       ),
     ),
+    /*
     'sk' => (object) array(
       'name' => t('Slovak'),
       'language' => 'en',
@@ -157,6 +168,7 @@ function farnet_taxonomy_languages_spoken() {
         'fr' => 'Slovaque',
       ),
     ),
+    */
     'sl' => (object) array(
       'name' => t('Slovenian'),
       'language' => 'en',

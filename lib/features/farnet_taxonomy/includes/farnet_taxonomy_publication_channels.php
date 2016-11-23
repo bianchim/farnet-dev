@@ -26,28 +26,12 @@ function farnet_taxonomy_publication_channels() {
         'it' => 'News - Other IT',
       ),
     ),
-    'CooperationWhyHow' => (object) array(
-      'name' => t('Cooperation - Why & How to'),
+    'CooperationInAction' => (object) array(
+      'name' => t('Cooperation in action'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Cooperation - Why & How to FR',
-        'it' => 'Cooperation - Why & How to IT',
-      ),
-    ),
-    'CooperationEuropean' => (object) array(
-      'name' => t('Cooperation - European overview'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Cooperation - European overview FR',
-        'it' => 'Cooperation - European overview IT',
-      ),
-    ),
-    'CooperationActivities' => (object) array(
-      'name' => t('Cooperation - Activities'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Cooperation - Activities FR',
-        'it' => 'Cooperation - Activities IT',
+        'fr' => 'Cooperation in action FR',
+        'it' => 'Cooperation in action IT',
       ),
     ),
   );

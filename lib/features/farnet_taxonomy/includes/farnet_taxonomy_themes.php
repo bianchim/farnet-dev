@@ -51,15 +51,6 @@ function farnet_taxonomy_themes() {
       ),
     ),
     'Theme6' => (object) array(
-      'name' => t('Fisheries'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Fisheries FR',
-        'it' => 'Fisheries IT',
-      ),
-      'parent' => 'Adding value to fisheries',
-    ),
-    'Theme7' => (object) array(
       'name' => t('Aquaculture'),
       'language' => 'en',
       'translation' => array(
@@ -68,12 +59,21 @@ function farnet_taxonomy_themes() {
       ),
       'parent' => 'Adding value to fisheries',
     ),
-    'Theme8' => (object) array(
-      'name' => t('Short circuits'),
+    'Theme7' => (object) array(
+      'name' => t('Business support'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Short circuits FR',
-        'it' => 'Short circuits IT',
+        'fr' => 'Business support FR',
+        'it' => 'Business support IT',
+      ),
+      'parent' => 'Adding value to fisheries',
+    ),
+    'Theme8' => (object) array(
+      'name' => t('Labelling'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Labelling FR',
+        'it' => 'Labelling IT',
       ),
       'parent' => 'Adding value to fisheries',
     ),
@@ -87,33 +87,6 @@ function farnet_taxonomy_themes() {
       'parent' => 'Adding value to fisheries',
     ),
     'Theme10' => (object) array(
-      'name' => t('Traceability'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Traceability FR',
-        'it' => 'Traceability IT',
-      ),
-      'parent' => 'Adding value to fisheries',
-    ),
-    'Theme11' => (object) array(
-      'name' => t('Labelling'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Labelling FR',
-        'it' => 'Labelling IT',
-      ),
-      'parent' => 'Adding value to fisheries',
-    ),
-    'Theme12' => (object) array(
-      'name' => t('Marketing'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Marketing FR',
-        'it' => 'Marketing IT',
-      ),
-      'parent' => 'Adding value to fisheries',
-    ),
-    'Theme13' => (object) array(
       'name' => t('Promotion'),
       'language' => 'en',
       'translation' => array(
@@ -122,25 +95,25 @@ function farnet_taxonomy_themes() {
       ),
       'parent' => 'Adding value to fisheries',
     ),
-    'Theme14' => (object) array(
-      'name' => t('Business support'),
+    'Them11' => (object) array(
+      'name' => t('Short circuits'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Business support FR',
-        'it' => 'Business support IT',
+        'fr' => 'Short circuits FR',
+        'it' => 'Short circuits IT',
       ),
       'parent' => 'Adding value to fisheries',
     ),
-    'Theme15' => (object) array(
-      'name' => t('Tourism'),
+    'Theme12' => (object) array(
+      'name' => t('Traceability'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Tourism FR',
-        'it' => 'Tourism IT',
+        'fr' => 'Traceability FR',
+        'it' => 'Traceability IT',
       ),
-      'parent' => 'Diversification',
+      'parent' => 'Adding value to fisheries',
     ),
-    'Theme16' => (object) array(
+    'Theme13' => (object) array(
       'name' => t('Arts and crafts'),
       'language' => 'en',
       'translation' => array(
@@ -149,7 +122,25 @@ function farnet_taxonomy_themes() {
       ),
       'parent' => 'Diversification',
     ),
-    'Theme17' => (object) array(
+    'Theme14' => (object) array(
+      'name' => t('Fisheries by-products'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Fisheries by-products FR',
+        'it' => 'Fisheries by-products IT',
+      ),
+      'parent' => 'Diversification',
+    ),
+    'Theme15' => (object) array(
+      'name' => t('Gastronomy'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Gastronomy FR',
+        'it' => 'Gastronomy IT',
+      ),
+      'parent' => 'Diversification',
+    ),
+    'Theme16' => (object) array(
       'name' => t('Marine activities'),
       'language' => 'en',
       'translation' => array(
@@ -158,43 +149,25 @@ function farnet_taxonomy_themes() {
       ),
       'parent' => 'Diversification',
     ),
-    'Theme18' => (object) array(
-      'name' => t('Water quality'),
+    'Theme17' => (object) array(
+      'name' => t('Pesca-tourism'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Water quality FR',
-        'it' => 'Water quality IT',
+        'fr' => 'Pesca-tourism FR',
+        'it' => 'Pesca-tourism IT',
       ),
-      'parent' => 'Environment',
+      'parent' => 'Diversification',
+    ),
+    'Theme18' => (object) array(
+      'name' => t('Tourism'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Tourism FR',
+        'it' => 'Tourism IT',
+      ),
+      'parent' => 'Diversification',
     ),
     'Theme19' => (object) array(
-      'name' => t('Marine litter'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Marine litter FR',
-        'it' => 'Marine litter IT',
-      ),
-      'parent' => 'Environment',
-    ),
-    'Theme20' => (object) array(
-      'name' => t('Climate change'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Climate change FR',
-        'it' => 'Climate change IT',
-      ),
-      'parent' => 'Environment',
-    ),
-    'Theme21' => (object) array(
-      'name' => t('Energy'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Energy FR',
-        'it' => 'Energy IT',
-      ),
-      'parent' => 'Environment',
-    ),
-    'Theme22' => (object) array(
       'name' => t('Cultural heritage'),
       'language' => 'en',
       'translation' => array(
@@ -203,7 +176,7 @@ function farnet_taxonomy_themes() {
       ),
       'parent' => 'Society and culture',
     ),
-    'Theme23' => (object) array(
+    'Theme20' => (object) array(
       'name' => t('Education and training'),
       'language' => 'en',
       'translation' => array(
@@ -212,43 +185,7 @@ function farnet_taxonomy_themes() {
       ),
       'parent' => 'Society and culture',
     ),
-    'Theme24' => (object) array(
-      'name' => t('Instrastucture'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Instrastucture FR',
-        'it' => 'Instrastucture IT',
-      ),
-      'parent' => 'Society and culture',
-    ),
-    'Theme25' => (object) array(
-      'name' => t('Women'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Women FR',
-        'it' => 'Women IT',
-      ),
-      'parent' => 'Society and culture',
-    ),
-    'Theme26' => (object) array(
-      'name' => t('Youth'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Youth FR',
-        'it' => 'Youth IT',
-      ),
-      'parent' => 'Society and culture',
-    ),
-    'Theme27' => (object) array(
-      'name' => t('Migrants'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Migrants FR',
-        'it' => 'Migrants IT',
-      ),
-      'parent' => 'Society and culture',
-    ),
-    'Theme28' => (object) array(
+    'Theme21' => (object) array(
       'name' => t('Elderly'),
       'language' => 'en',
       'translation' => array(
@@ -257,21 +194,84 @@ function farnet_taxonomy_themes() {
       ),
       'parent' => 'Society and culture',
     ),
-    'Theme29' => (object) array(
-      'name' => t('Involving fishermen'),
+    'Theme22' => (object) array(
+      'name' => t('Infrastructure'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Involving fishermen FR',
-        'it' => 'Involving fishermen IT',
+        'fr' => 'Infrastructure FR',
+        'it' => 'Infrastructure IT',
       ),
-      'parent' => 'Governance',
+      'parent' => 'Society and culture',
+    ),
+    'Theme23' => (object) array(
+      'name' => t('Migrants and refugees'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Migrants and refugees FR',
+        'it' => 'Migrants and refugees IT',
+      ),
+      'parent' => 'Society and culture',
+    ),
+    'Theme24' => (object) array(
+      'name' => t('Women'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Women FR',
+        'it' => 'Women IT',
+      ),
+      'parent' => 'Society and culture',
+    ),
+    'Theme25' => (object) array(
+      'name' => t('Youth'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Youth FR',
+        'it' => 'Youth IT',
+      ),
+      'parent' => 'Society and culture',
+    ),
+    'Theme26' => (object) array(
+      'name' => t('Climate change'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Climate change FR',
+        'it' => 'Climate change IT',
+      ),
+      'parent' => 'Environment',
+    ),
+    'Theme27' => (object) array(
+      'name' => t('Energy'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Energy FR',
+        'it' => 'Energy IT',
+      ),
+      'parent' => 'Environment',
+    ),
+    'Theme28' => (object) array(
+      'name' => t('Marine litter'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Marine litter FR',
+        'it' => 'Marine litter IT',
+      ),
+      'parent' => 'Environment',
+    ),
+    'Theme29' => (object) array(
+      'name' => t('Water quality'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Water quality FR',
+        'it' => 'Water quality IT',
+      ),
+      'parent' => 'Environment',
     ),
     'Theme30' => (object) array(
-      'name' => t('Integrated funding'),
+      'name' => t('Complementary funding'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Integrated funding FR',
-        'it' => 'Integrated funding IT',
+        'fr' => 'Complementary funding FR',
+        'it' => 'Complementary funding IT',
       ),
       'parent' => 'Governance',
     ),
@@ -290,6 +290,15 @@ function farnet_taxonomy_themes() {
       'translation' => array(
         'fr' => 'Integrated coastal management FR',
         'it' => 'Integrated coastal management IT',
+      ),
+      'parent' => 'Governance',
+    ),
+    'Theme33' => (object) array(
+      'name' => t('Small-scale and coastal fisheries'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Small-scale and coastal fisheries FR',
+        'it' => 'Small-scale and coastal fisheries IT',
       ),
       'parent' => 'Governance',
     ),
