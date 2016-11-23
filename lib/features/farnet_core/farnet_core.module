@@ -151,3 +151,22 @@ function farnet_core_node_presave($node) {
     $node->comment = COMMENT_NODE_HIDDEN;
   }
 }
+
+/**
+ * Implements hook_menu_alter().
+ */
+function farnet_core_menu_alter(&$items) {
+  if (isset($items['node/add/community'])) {
+    $items['node/add/community']['access callback'] = 'multisite_drupal_toolbox_is_admin';
+    unset($items['node/add/community']);
+  }
+  if (isset($items['node/add/editorial-team'])) {
+    $items['node/add/editorial-team']['access callback'] = 'multisite_drupal_toolbox_is_admin';
+  }
+  if (isset($items['admin/workbench/create/node/add/community'])) {
+    $items['admin/workbench/create/node/add/community']['access callback'] = 'multisite_drupal_toolbox_is_admin';
+  }
+  if (isset($items['admin/workbench/create/node/add/editorial-team'])) {
+    $items['admin/workbench/create/node/add/editorial-team']['access callback'] = 'multisite_drupal_toolbox_is_admin';
+  }
+}
