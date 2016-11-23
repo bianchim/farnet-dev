@@ -158,7 +158,6 @@ function farnet_core_node_presave($node) {
 function farnet_core_menu_alter(&$items) {
   if (isset($items['node/add/community'])) {
     $items['node/add/community']['access callback'] = 'multisite_drupal_toolbox_is_admin';
-    unset($items['node/add/community']);
   }
   if (isset($items['node/add/editorial-team'])) {
     $items['node/add/editorial-team']['access callback'] = 'multisite_drupal_toolbox_is_admin';
