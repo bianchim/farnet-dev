@@ -54,7 +54,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Beneficiary',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_organisation',
     ),
@@ -119,7 +119,7 @@ function farnet_gp_project_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_farnet_abstract',
-      1 => 'field_id',
+      1 => 'field_id_text',
       2 => 'field_picture',
       3 => 'field_title_official',
       4 => 'title_field',
@@ -444,10 +444,10 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '10',
+    'weight' => '9',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_collection_region',
+      0 => 'field_collection_region',
+      1 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -533,7 +533,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metatag',
-    'weight' => '9',
+    'weight' => '11',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'scheduler_settings',
@@ -596,7 +596,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -660,7 +660,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '8',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_tags',
