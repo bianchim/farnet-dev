@@ -107,6 +107,7 @@ features[field_group][] = group_factsheet_flag_funding|node|factsheet_flag|form
 features[field_group][] = group_factsheet_flag_ideas|node|factsheet_flag|default
 features[field_group][] = group_factsheet_flag_links|node|factsheet_flag|default
 features[field_group][] = group_factsheet_flag_links|node|factsheet_flag|form
+features[field_group][] = group_factsheet_flag_location|node|factsheet_flag|form
 features[field_group][] = group_factsheet_flag_map|node|factsheet_flag|default
 features[field_group][] = group_factsheet_flag_map|node|factsheet_flag|form
 features[field_group][] = group_factsheet_flag_metadata|node|factsheet_flag|form
