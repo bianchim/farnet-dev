@@ -22,7 +22,7 @@ function farnet_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'More information',
-    'weight' => '39',
+    'weight' => '2',
     'children' => array(
       0 => 'field_page',
     ),
@@ -49,11 +49,11 @@ function farnet_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '36',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_publication_date',
-      1 => 'field_term_publication_channels',
-      2 => 'field_publication_abstract',
+      0 => 'field_publication_abstract',
+      1 => 'field_publication_date',
+      2 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -78,10 +78,10 @@ function farnet_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '36',
+    'weight' => '1',
     'children' => array(
-      0 => 'field_term_theme',
-      1 => 'field_term_country',
+      0 => 'field_term_country',
+      1 => 'field_term_theme',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
