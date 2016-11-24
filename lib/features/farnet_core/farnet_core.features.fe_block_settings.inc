@@ -20,7 +20,13 @@ function farnet_core_default_fe_block_settings() {
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'farnet_core',
-    'node_types' => array(),
+    'node_types' => array(
+      0 => 'factsheet_country',
+      1 => 'factsheet_flag',
+      2 => 'gp_method',
+      3 => 'gp_project',
+      4 => 'gp_short_story',
+    ),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
@@ -50,7 +56,7 @@ function farnet_core_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['print-print-top'] = array(
