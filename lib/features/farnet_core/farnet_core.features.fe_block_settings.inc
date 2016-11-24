@@ -20,12 +20,14 @@ function farnet_core_default_fe_block_settings() {
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'farnet_core',
-    'node_types' => array(),
-    'pages' => 'on-the-ground/country-factsheets/*
-on-the-ground/flag-factsheets/*
-on-the-ground/good-practice/projects/*
-on-the-ground/good-practice/methods/*
-on-the-ground/good-practice/short-stories/*',
+    'node_types' => array(
+      0 => 'factsheet_country',
+      1 => 'factsheet_flag',
+      2 => 'gp_method',
+      3 => 'gp_project',
+      4 => 'gp_short_story',
+    ),
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -38,6 +40,12 @@ on-the-ground/good-practice/short-stories/*',
         'region' => 'content_bottom',
         'status' => 1,
         'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => 'content_bottom',
+        'status' => 1,
+        'theme' => 'farnet',
         'weight' => 0,
       ),
       'seven' => array(
@@ -74,6 +82,12 @@ on-the-ground/good-practice/short-stories/*',
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -106,6 +120,12 @@ on-the-ground/good-practice/short-stories/*',
         'region' => '',
         'status' => 0,
         'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
         'weight' => 0,
       ),
       'seven' => array(
@@ -142,6 +162,12 @@ on-the-ground/good-practice/short-stories/*',
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -174,6 +200,12 @@ on-the-ground/good-practice/short-stories/*',
         'region' => 'content_bottom',
         'status' => 1,
         'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => 'content_bottom',
+        'status' => 1,
+        'theme' => 'farnet',
         'weight' => 0,
       ),
       'seven' => array(
