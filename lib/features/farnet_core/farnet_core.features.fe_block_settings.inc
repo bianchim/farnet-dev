@@ -21,7 +21,11 @@ function farnet_core_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'farnet_core',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'on-the-ground/country-factsheets/*
+on-the-ground/flag-factsheets/*
+on-the-ground/good-practice/projects/*
+on-the-ground/good-practice/methods/*
+on-the-ground/good-practice/short-stories/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -44,7 +48,7 @@ function farnet_core_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['print-print-top'] = array(
