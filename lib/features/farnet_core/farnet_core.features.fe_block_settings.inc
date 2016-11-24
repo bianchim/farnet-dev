@@ -36,6 +36,12 @@ function farnet_core_default_fe_block_settings() {
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
+      'farnet' => array(
+        'region' => 'content_bottom',
+        'status' => 1,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -68,6 +74,12 @@ function farnet_core_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
         'weight' => 0,
       ),
       'seven' => array(
@@ -104,6 +116,12 @@ function farnet_core_default_fe_block_settings() {
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -138,6 +156,12 @@ function farnet_core_default_fe_block_settings() {
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -170,6 +194,12 @@ function farnet_core_default_fe_block_settings() {
         'region' => 'content_bottom',
         'status' => 1,
         'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => 'content_bottom',
+        'status' => 1,
+        'theme' => 'farnet',
         'weight' => 0,
       ),
       'seven' => array(

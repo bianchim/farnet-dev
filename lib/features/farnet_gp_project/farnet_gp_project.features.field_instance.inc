@@ -259,7 +259,7 @@ function farnet_gp_project_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -394,6 +394,7 @@ function farnet_gp_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -431,13 +432,14 @@ function farnet_gp_project_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -451,6 +453,9 @@ function farnet_gp_project_field_default_field_instances() {
               'weight' => -9,
             ),
             'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
               'weight' => -10,
             ),
             'plain_text' => array(
@@ -467,6 +472,10 @@ function farnet_gp_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -667,7 +676,7 @@ function farnet_gp_project_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -715,7 +724,7 @@ function farnet_gp_project_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -763,7 +772,7 @@ function farnet_gp_project_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -877,7 +886,7 @@ function farnet_gp_project_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -924,7 +933,7 @@ function farnet_gp_project_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -971,7 +980,7 @@ function farnet_gp_project_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1105,7 +1114,7 @@ function farnet_gp_project_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -1172,7 +1181,7 @@ function farnet_gp_project_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -1239,7 +1248,7 @@ function farnet_gp_project_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1353,12 +1362,12 @@ function farnet_gp_project_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
-  // Exported field_instance: 'node-gp_project-field_id'.
-  $field_instances['node-gp_project-field_id'] = array(
+  // Exported field_instance: 'node-gp_project-field_id_text'.
+  $field_instances['node-gp_project-field_id_text'] = array(
     'bundle' => 'gp_project',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1366,15 +1375,10 @@ function farnet_gp_project_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 3,
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1384,23 +1388,54 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_id',
+    'field_name' => 'field_id_text',
     'label' => 'ID',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'full_html_track' => 'full_html_track',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 9,
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 14,
     ),
   );
 
@@ -1472,7 +1507,7 @@ function farnet_gp_project_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 17,
     ),
   );
 
@@ -1544,7 +1579,7 @@ function farnet_gp_project_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 18,
     ),
   );
 
@@ -1703,7 +1738,7 @@ function farnet_gp_project_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -1720,6 +1755,7 @@ function farnet_gp_project_field_default_field_instances() {
           'avportal' => 0,
           'dailymotion' => 0,
           'node' => 0,
+          'oembed' => 0,
           'private' => 0,
           'public' => 'public',
           'vimeo' => 0,
@@ -1732,15 +1768,14 @@ function farnet_gp_project_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
-          'youtube' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 
@@ -1776,6 +1811,7 @@ function farnet_gp_project_field_default_field_instances() {
           'basic_html' => 'basic_html',
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'full_html_track' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -1791,6 +1827,9 @@ function farnet_gp_project_field_default_field_instances() {
             'full_html' => array(
               'weight' => -10,
             ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => -8,
             ),
@@ -1798,13 +1837,17 @@ function farnet_gp_project_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => 500,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -1863,6 +1906,7 @@ function farnet_gp_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -1879,7 +1923,7 @@ function farnet_gp_project_field_default_field_instances() {
   // Exported field_instance: 'node-gp_project-field_sea_basins'.
   $field_instances['node-gp_project-field_sea_basins'] = array(
     'bundle' => 'gp_project',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1907,13 +1951,13 @@ function farnet_gp_project_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 12,
+      'type' => 'options_buttons',
+      'weight' => 15,
     ),
   );
 
@@ -1940,7 +1984,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Tags',
+    'label' => 'Keywords',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -2002,7 +2046,7 @@ function farnet_gp_project_field_default_field_instances() {
   // Exported field_instance: 'node-gp_project-field_term_publication_channels'.
   $field_instances['node-gp_project-field_term_publication_channels'] = array(
     'bundle' => 'gp_project',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2034,8 +2078,8 @@ function farnet_gp_project_field_default_field_instances() {
       'settings' => array(
         'apply_chosen' => '',
       ),
-      'type' => 'options_select',
-      'weight' => 29,
+      'type' => 'options_buttons',
+      'weight' => 30,
     ),
   );
 
@@ -2075,7 +2119,7 @@ function farnet_gp_project_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -2142,14 +2186,14 @@ function farnet_gp_project_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
   // Exported field_instance: 'node-gp_project-field_type_of_area'.
   $field_instances['node-gp_project-field_type_of_area'] = array(
     'bundle' => 'gp_project',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2177,13 +2221,13 @@ function farnet_gp_project_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 13,
+      'type' => 'options_buttons',
+      'weight' => 16,
     ),
   );
 
@@ -2292,7 +2336,7 @@ function farnet_gp_project_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -2318,6 +2362,7 @@ function farnet_gp_project_field_default_field_instances() {
   t('Gallery');
   t('Groups audience');
   t('ID');
+  t('Keywords');
   t('Label');
   t('Latitude');
   t('Lessons');
@@ -2332,7 +2377,6 @@ function farnet_gp_project_field_default_field_instances() {
   t('Region');
   t('Results');
   t('Sea Basins');
-  t('Tags');
   t('Theme');
   t('Title');
   t('Total project cost');
