@@ -1023,11 +1023,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'Objective 1' => 'Objective 1',
-        'Objective 2' => 'Objective 2',
-        'Objective 3' => 'Objective 3',
-        'Objective 4' => 'Objective 4',
-        'Objective 5' => 'Objective 5',
+        'Adding value, creating jobs, and promoting innovation along the fisheries chain' => 'Adding value, creating jobs, and promoting innovation along the fisheries chain',
+        'Supporting diversification' => 'Supporting diversification',
+        'Enhancing and capitalising on the environmental assets' => 'Enhancing and capitalising on the environmental assets',
+        'Promoting social wellbeing and cultural heritage' => 'Promoting social wellbeing and cultural heritage',
+        'Strengthening the role of fisheries communities in local development' => 'Strengthening the role of fisheries communities in local development',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
