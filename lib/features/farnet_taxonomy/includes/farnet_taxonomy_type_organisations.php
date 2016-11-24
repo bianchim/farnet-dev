@@ -11,23 +11,23 @@
 function farnet_taxonomy_type_organisations() {
   $type_organisations_array = array(
     'Organisation1' => (object) array(
-      'name' => t('Managing Authorities'),
+      'name' => t('MA National'),
       'code' => 'MA',
       'description' => 'description',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Managing Authorities FR',
-        'it' => 'Managing Authorities IT',
+        'fr' => 'MA National FR',
+        'it' => 'MA National IT',
       ),
     ),
     'Organisation2' => (object) array(
-      'name' => t('Intermediate Bodies'),
+      'name' => t('MA Regional'),
       'code' => 'IB',
       'description' => 'description',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Intermediate Bodies FR',
-        'it' => 'Intermediate Bodies IT',
+        'fr' => 'MA Regional FR',
+        'it' => 'MA Regional IT',
       ),
     ),
     'Organisation3' => (object) array(
@@ -58,6 +58,15 @@ function farnet_taxonomy_type_organisations() {
       ),
     ),
     'Organisation6' => (object) array(
+      'name' => t('FARNET Local Action Group'),
+      'code' => 'FLAG',
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'FARNET Local Action Group FR',
+        'it' => 'FARNET Local Action Group IT',
+      ),
+    ),
+    'Organisation7' => (object) array(
       'name' => t('FARNET Local Action Group'),
       'code' => 'FLAG',
       'language' => 'en',

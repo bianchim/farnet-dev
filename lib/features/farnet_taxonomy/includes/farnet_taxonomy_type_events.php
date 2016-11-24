@@ -19,11 +19,11 @@ function farnet_taxonomy_type_events() {
       ),
     ),
     'Event2' => (object) array(
-      'name' => t('Managing authorities & National networks'),
+      'name' => t('Managing authorities'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Les autorités de gestion et les réseaux nationaux',
-        'it' => 'Managing authorities & National networks IT',
+        'fr' => 'Les autorités de gestion',
+        'it' => 'Managing authorities IT',
       ),
     ),
     'Event3' => (object) array(

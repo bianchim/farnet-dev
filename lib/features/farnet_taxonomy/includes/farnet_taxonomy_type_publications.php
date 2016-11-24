@@ -19,14 +19,6 @@ function farnet_taxonomy_type_publications() {
       ),
     ),
     'Publication2' => (object) array(
-      'name' => t('Brochure'),
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'Brochure',
-        'it' => 'Brochure IT',
-      ),
-    ),
-    'Publication3' => (object) array(
       'name' => t('Guide'),
       'language' => 'en',
       'translation' => array(
@@ -34,12 +26,20 @@ function farnet_taxonomy_type_publications() {
         'it' => 'Guide IT',
       ),
     ),
-    'Publication4' => (object) array(
-      'name' => t('Report'),
+    'Publication3' => (object) array(
+      'name' => t('Publication'),
       'language' => 'en',
       'translation' => array(
-        'fr' => 'Rapport',
-        'it' => 'Report IT',
+        'fr' => 'Publication',
+        'it' => 'Publication IT',
+      ),
+    ),
+    'Publication4' => (object) array(
+      'name' => t('Presentation'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Presentation',
+        'it' => 'Presentation IT',
       ),
     ),
   );
