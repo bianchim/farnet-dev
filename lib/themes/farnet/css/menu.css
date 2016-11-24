@@ -48,3 +48,7 @@
 .om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-link.active:focus {
   background-color: transparent;
 }
+
+li.navigation-main-item > .om-maximenu-content {
+  width: 100%;
+}
