@@ -23,7 +23,7 @@ function farnet_publication_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Brochures';
+  $handler->display->display_options['title'] = 'Master';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -76,6 +76,9 @@ function farnet_publication_views_default_views() {
 
   /* Display: guides */
   $handler = $view->new_display('page', 'guides', 'page_guides');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Guides';
+  $handler->display->display_options['display_description'] = 'Guides';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -112,11 +115,10 @@ function farnet_publication_views_default_views() {
   $handler = $view->new_display('page', 'magazines', 'page_magazines');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Magazines';
-  $handler->display->display_options['display_description'] = 'Magazines';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['guides'] = 'status';
+  $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
@@ -183,6 +185,8 @@ function farnet_publication_views_default_views() {
 
   /* Display: publications */
   $handler = $view->new_display('page', 'publications', 'page_publications');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Publications';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

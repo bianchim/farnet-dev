@@ -45,7 +45,6 @@ Feature: Publication content type
     Then I should see the heading "Magazines EC decides tax advantages for Fiat are illegal"
     And I should see the text "Magazines Commissioner states tax rulings are not in line with state aid rules."
     And I should see the text "FARNET Magazine"
-    And I should see the text "2016"
     And I visit "library/magazines"
     And I should see the heading "Magazines"
     And I should see the text "Magazines EC decides tax advantages for Fiat are illegal"
