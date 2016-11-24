@@ -46,6 +46,12 @@ node/add/*',
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
+      'farnet' => array(
+        'region' => 'sidebar_left',
+        'status' => 1,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,

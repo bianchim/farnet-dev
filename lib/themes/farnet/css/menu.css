@@ -1,0 +1,50 @@
+@media (min-width: 768px) {
+  .fr-megamenu-item--list {
+    position: relative !important;
+  }
+
+  .fr-megamenu-list > .fr-megamenu-item {
+    list-style: none;
+  }
+}
+
+.fr-megamenu-list .fr-megamenu-item {
+  list-style: none;
+}
+
+
+@media (max-width: 768px) {
+  .menuDisplay {
+    display: block !important;
+  }
+}
+
+/** OM maximenu override */
+.om-maximenu ul.om-menu li.om-leaf {
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  list-style: none;
+  list-style-image: none;
+  position: initial;
+  z-index: 5;
+}
+.om-maximenu .om-maximenu-middle {
+  background: transparent;
+  width: 100%;
+}
+
+.om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-maximenu-content {
+  border: none;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent;
+}
+.om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-link.active:hover,
+.om-maximenu.om-maximenu-block.om-maximenu-row ul.om-menu li.om-leaf .om-link.active:focus {
+  background-color: transparent;
+}

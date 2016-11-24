@@ -32,6 +32,10 @@ function farnet_core_install() {
     ->fields(['weight' => '2'])
     ->condition('link_title', '[site:name]', '=')
     ->execute();
+
+  // Set the new Farnet theme.
+  theme_enable(['farnet']);
+  variable_set('theme_default', 'farnet');
 }
 
 /**
