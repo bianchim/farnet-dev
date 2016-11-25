@@ -37,6 +37,27 @@ function farnet_organisation_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_comment'.
+  $field_bases['field_comment'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_comment',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_fax'.
   $field_bases['field_fax'] = array(
     'active' => 1,
