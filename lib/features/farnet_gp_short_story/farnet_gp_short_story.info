@@ -148,5 +148,4 @@ features_exclude[field_base][field_organisation] = field_organisation
 features_exclude[field_base][field_sea_basins] = field_sea_basins
 features_exclude[field_base][field_type_of_area] = field_type_of_area
 features_exclude[field_base][og_group_ref] = og_group_ref
-multisite_version = 2.2
 project path = sites/all/modules/features
