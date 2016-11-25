@@ -23,7 +23,7 @@ function farnet_organisation_field_default_field_bases() {
         0 => 'value',
       ),
     ),
-    'locked' => 1,
+    'locked' => 0,
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
@@ -49,7 +49,7 @@ function farnet_organisation_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 1,
+    'locked' => 0,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -70,7 +70,7 @@ function farnet_organisation_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 1,
+    'locked' => 0,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -92,7 +92,7 @@ function farnet_organisation_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 1,
+    'locked' => 0,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -114,7 +114,7 @@ function farnet_organisation_field_default_field_bases() {
         0 => 'revision_id',
       ),
     ),
-    'locked' => 1,
+    'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -137,12 +137,14 @@ function farnet_organisation_field_default_field_bases() {
         0 => 'value',
       ),
     ),
-    'locked' => 1,
+    'locked' => 0,
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'FLAG Manager' => 'FLAG Manager',
-        'FLAG President' => 'FLAG President',
+        'Main contact' => 'Main contact',
+        'Cooperation contact' => 'Cooperation contact',
+        'Manager' => 'Manager',
+        'President' => 'President',
         'Project Promoter' => 'Project Promoter',
       ),
       'allowed_values_function' => '',
