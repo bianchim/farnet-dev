@@ -56,7 +56,7 @@ Feature: Flag Factsheet content type
     And I fill in "field_ff_women_employment[und][0][value]" with "42"
     # Strategy tab
     And I fill in "field_ff_summary[und][0][value]" with "Lorem ipsum dolor sit amet summary"
-    And I select "Objective 1" from "field_collection_strategy[und][0][field_list_objective][und]"
+    And I select "Supporting diversification" from "field_collection_strategy[und][0][field_list_objective][und]"
     And I fill in "field_collection_strategy[und][0][field_priority][und][0][value]" with "42"
     And I fill in "field_collection_strategy[und][0][field_allocated_budget][und][0][value]" with "42"
     # Partnership tab
