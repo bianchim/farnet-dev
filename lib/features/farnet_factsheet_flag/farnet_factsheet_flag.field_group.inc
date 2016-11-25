@@ -237,7 +237,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Expertise & cooperation',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_ff_budget_cooperation',
       1 => 'field_ff_expertise_cooperation',
@@ -299,7 +299,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Funding',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_ff_emff',
       1 => 'field_ff_funds',
@@ -370,7 +370,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Cooperation ideas',
-    'weight' => '9',
+    'weight' => '8',
     'children' => array(
       0 => 'field_view_cooperation_ideas',
     ),
@@ -402,7 +402,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links with LEADER or other CLLD groups',
-    'weight' => '10',
+    'weight' => '9',
     'children' => array(
       0 => 'field_ff_links_description',
     ),
@@ -647,24 +647,24 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_factsheet_flag_practice|node|factsheet_flag|default';
-  $field_group->group_name = 'group_factsheet_flag_practice';
+  $field_group->identifier = 'group_factsheet_flag_practices|node|factsheet_flag|default';
+  $field_group->group_name = 'group_factsheet_flag_practices';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'factsheet_flag';
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Good Practice',
-    'weight' => '6',
+    'label' => 'Good Practices',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_ff_good_practice',
+      0 => 'field_view_good_practices',
     ),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Good Practice',
       'instance_settings' => array(
-        'id' => 'group_factsheet_flag_practice',
-        'classes' => 'group-factsheet-flag-practice field-group-div',
+        'id' => 'group_factsheet_flag_practices',
+        'classes' => 'group-factsheet-flag-practices field-group-div',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -674,7 +674,7 @@ function farnet_factsheet_flag_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_factsheet_flag_practice|node|factsheet_flag|default'] = $field_group;
+  $field_groups['group_factsheet_flag_practices|node|factsheet_flag|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -687,7 +687,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Calls for proposals',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_ff_calls_for_projects',
       1 => 'field_ff_calls_for_projects_url',
@@ -749,7 +749,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Project examples',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_ff_project_title',
     ),
@@ -903,7 +903,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'FLAG strategy',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_collection_strategy',
       1 => 'field_ff_summary',
@@ -1016,33 +1016,6 @@ function farnet_factsheet_flag_field_group_info() {
   );
   $field_groups['group_factsheet_flag_visuals|node|factsheet_flag|form'] = $field_group;
 
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_factsheet_good_practice|node|factsheet_flag|form';
-  $field_group->group_name = 'group_factsheet_good_practice';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'factsheet_flag';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Good Practice',
-    'weight' => '5',
-    'children' => array(
-      0 => 'field_ff_good_practice',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-factsheet-good-practice field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_factsheet_good_practice|node|factsheet_flag|form'] = $field_group;
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Area');
@@ -1054,7 +1027,7 @@ function farnet_factsheet_flag_field_group_info() {
   t('FLAG Strategy');
   t('FLAG strategy');
   t('Funding');
-  t('Good Practice');
+  t('Good Practices');
   t('Links with LEADER or other CLLD groups');
   t('Location');
   t('Map');

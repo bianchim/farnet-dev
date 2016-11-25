@@ -354,7 +354,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 41,
+        'weight' => 91,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -655,7 +655,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 78,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1100,7 +1100,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 76,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1171,7 +1171,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 86,
+        'weight' => 91,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1349,54 +1349,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_ff_good_practice'.
-  $field_instances['node-factsheet_flag-field_ff_good_practice'] = array(
-    'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 73,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_ff_good_practice',
-    'label' => 'Good Practice',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-factsheet_flag-field_ff_google'.
   $field_instances['node-factsheet_flag-field_ff_google'] = array(
     'bundle' => 'factsheet_flag',
@@ -1409,7 +1361,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 88,
+        'weight' => 93,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1467,7 +1419,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 87,
+        'weight' => 92,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2667,7 +2619,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 85,
+        'weight' => 90,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3115,7 +3067,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'view_mode' => 'flag_organisation',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 40,
+        'weight' => 90,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3730,6 +3682,107 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-factsheet_flag-field_view_good_practices'.
+  $field_instances['node-factsheet_flag-field_view_good_practices'] = array(
+    'bundle' => 'factsheet_flag',
+    'default_value' => array(
+      0 => array(
+        'vname' => 'farnet_gp_by_flag_display|block_gp_by_flag',
+        'vargs' => '[node:nid]',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'viewfield',
+        'settings' => array(),
+        'type' => 'viewfield_default',
+        'weight' => 74,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_view_good_practices',
+    'label' => 'View Good Practices
+    ',
+    'required' => 0,
+    'settings' => array(
+      'allowed_views' => array(
+        'Blocked_accounts' => 0,
+        'Maillog' => 0,
+        'calendar' => 0,
+        'communities' => 0,
+        'community_members' => 0,
+        'cooperation_idea_by_flag' => 0,
+        'core_content_administration' => 0,
+        'farnet_communities' => 0,
+        'farnet_gp_by_flag_display' => 'farnet_gp_by_flag_display',
+        'farnet_maps' => 0,
+        'farnet_taxonomy_term' => 0,
+        'farnet_view_events' => 0,
+        'farnet_view_factsheets_country' => 0,
+        'farnet_view_factsheets_flag' => 0,
+        'farnet_view_good_practices' => 0,
+        'farnet_view_gp_short_story' => 0,
+        'farnet_view_manage_users' => 0,
+        'farnet_view_news' => 0,
+        'farnet_view_news_feed' => 0,
+        'farnet_view_publication' => 0,
+        'farnet_view_themes' => 0,
+        'homepage_highlight' => 0,
+        'ical' => 0,
+        'media_default' => 0,
+        'members_list' => 0,
+        'multilingual_recent_translation_job_overview' => 0,
+        'multisite_settings_core' => 0,
+        'ne_faq' => 0,
+        'nexteuropa_galleries' => 0,
+        'nexteuropa_token_ckeditor_filter_view' => 0,
+        'nexteuropa_webtools_filter_view' => 0,
+        'og_all_user_group_content' => 0,
+        'og_members' => 0,
+        'og_members_admin' => 0,
+        'og_nodes' => 0,
+        'og_user_groups' => 0,
+        'rules_scheduler' => 0,
+        'simplenews_statistics_clicks' => 0,
+        'simplenews_statistics_opens' => 0,
+        'simplenews_statistics_overview' => 0,
+        'simplenews_statistics_summary' => 0,
+        'taxonomy_browser_header' => 0,
+        'tmgmt_local_manage_translate_task' => 0,
+        'tmgmt_local_task_items' => 0,
+        'tmgmt_local_task_overview' => 0,
+        'tmgmt_og_job_overview' => 0,
+        'tmgmt_ui_job_item_messages' => 0,
+        'tmgmt_ui_job_items' => 0,
+        'tmgmt_ui_job_messages' => 0,
+        'tmgmt_ui_job_overview' => 0,
+        'workbench_current_user' => 0,
+        'workbench_edited' => 0,
+        'workbench_moderation' => 0,
+        'workbench_recent_content' => 0,
+      ),
+      'entity_translation_sync' => FALSE,
+      'force_default' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'viewfield',
+      'settings' => array(),
+      'type' => 'viewfield_select',
+      'weight' => 122,
+    ),
+  );
+
   // Exported field_instance: 'node-factsheet_flag-group_content_access'.
   $field_instances['node-factsheet_flag-group_content_access'] = array(
     'bundle' => 'factsheet_flag',
@@ -3934,7 +3987,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Fishing');
   t('Funds');
   t('Gallery');
-  t('Good Practice');
   t('Google+');
   t('Group content visibility');
   t('Groups audience');
@@ -3976,6 +4028,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Twitter');
   t('Type of area');
   t('View Cooperation Ideas');
+  t('View Good Practices
+    ');
   t('Website');
   t('Women employment in fisheries');
 
