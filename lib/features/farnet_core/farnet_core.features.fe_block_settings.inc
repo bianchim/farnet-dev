@@ -56,7 +56,7 @@ function farnet_core_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
   $export['print-print-top'] = array(
