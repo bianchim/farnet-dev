@@ -125,7 +125,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_context',
       1 => 'field_gpm_activities',
@@ -145,6 +145,34 @@ function farnet_gp_method_field_group_info() {
     ),
   );
   $field_groups['group_gp_method_description|node|gp_method|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_gp_method_flag|node|gp_method|form';
+  $field_group->group_name = 'group_gp_method_flag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_method';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Flag',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_flag',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Flag',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-gp-method-flag field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $field_groups['group_gp_method_flag|node|gp_method|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -191,7 +219,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_collection_region',
       1 => 'field_latitude',
@@ -253,7 +281,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -303,7 +331,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'language',
@@ -363,7 +391,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisations',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_organisations',
     ),
@@ -424,7 +452,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -488,7 +516,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_gpm_financial_resources',
       1 => 'field_gpm_other_resources',
@@ -553,7 +581,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_tags',
@@ -615,7 +643,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_dates_start_end',
     ),
@@ -635,6 +663,7 @@ function farnet_gp_method_field_group_info() {
   // Included for use with string extractors like potx.
   t('Content');
   t('Description');
+  t('Flag');
   t('Location');
   t('Media');
   t('Metadata');

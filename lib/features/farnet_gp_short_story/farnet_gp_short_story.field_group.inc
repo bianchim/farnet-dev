@@ -144,6 +144,33 @@ function farnet_gp_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_gp_short_story_flag|node|gp_short_story|form';
+  $field_group->group_name = 'group_gp_short_story_flag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_short_story';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Flag',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_flag',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-gp-short-story-flag field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_gp_short_story_flag|node|gp_short_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_other_public_contribution|field_collection_item|field_collection_project_phase|default';
   $field_group->group_name = 'group_other_public_contribution';
   $field_group->entity_type = 'field_collection_item';
@@ -317,11 +344,10 @@ function farnet_gp_short_story_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_farnet_abstract',
-      1 => 'field_flag',
-      2 => 'field_ne_body',
-      3 => 'field_picture',
-      4 => 'field_website',
-      5 => 'title_field',
+      1 => 'field_ne_body',
+      2 => 'field_picture',
+      3 => 'field_website',
+      4 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -382,7 +408,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Funding',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_budget',
       1 => 'field_eardf',
@@ -453,7 +479,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
     ),
@@ -607,7 +633,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Quote',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_quote_author',
       1 => 'field_quote_text',
@@ -670,7 +696,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_tags',
@@ -732,7 +758,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_dates_start_end',
     ),
@@ -752,6 +778,7 @@ function farnet_gp_short_story_field_group_info() {
   // Included for use with string extractors like potx.
   t('Content');
   t('Eu Contribution');
+  t('Flag');
   t('Funding');
   t('Media');
   t('Metadata');

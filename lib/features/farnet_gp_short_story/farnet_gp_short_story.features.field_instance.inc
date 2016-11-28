@@ -98,7 +98,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 30,
+      'weight' => 31,
     ),
   );
 
@@ -202,7 +202,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -296,7 +296,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -343,7 +343,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -589,7 +589,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -636,7 +636,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -683,7 +683,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -730,7 +730,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -857,7 +857,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 31,
+      'weight' => 32,
     ),
   );
 
@@ -930,7 +930,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 33,
     ),
   );
 
@@ -1094,7 +1094,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1142,7 +1142,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -1264,7 +1264,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1471,7 +1471,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 5,
     ),
   );
 
@@ -1538,7 +1538,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 

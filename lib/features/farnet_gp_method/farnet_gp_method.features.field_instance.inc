@@ -183,7 +183,7 @@ function farnet_gp_method_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -259,6 +259,54 @@ function farnet_gp_method_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-gp_method-field_flag'.
+  $field_instances['node-gp_method-field_flag'] = array(
+    'bundle' => 'gp_method',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flag',
+    'label' => 'Flag',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 15,
     ),
   );
 
@@ -1186,7 +1234,7 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_organisations',
-    'label' => 'Organisation / FLAG',
+    'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1206,7 +1254,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 9,
     ),
   );
 
@@ -1463,7 +1511,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 15,
     ),
   );
 
@@ -1504,7 +1552,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 20,
+      'weight' => 14,
     ),
   );
 
@@ -1586,7 +1634,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_buttons',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1628,7 +1676,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 19,
+      'weight' => 13,
     ),
   );
 
@@ -1742,7 +1790,7 @@ function farnet_gp_method_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_buttons',
-      'weight' => 22,
+      'weight' => 17,
     ),
   );
 
@@ -1816,7 +1864,7 @@ function farnet_gp_method_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 8,
+      'weight' => 14,
     ),
   );
 
@@ -1876,6 +1924,7 @@ function farnet_gp_method_field_default_field_instances() {
   t('Country');
   t('Dates (Start/End)');
   t('Financial resources');
+  t('Flag');
   t('Gallery');
   t('Groups audience');
   t('ID');
@@ -1886,7 +1935,7 @@ function farnet_gp_method_field_default_field_instances() {
   t('Main achievements');
   t('Objectives');
   t('Official Title');
-  t('Organisation / FLAG');
+  t('Organisation');
   t('Other resources');
   t('Picture');
   t('Publication Channels');
