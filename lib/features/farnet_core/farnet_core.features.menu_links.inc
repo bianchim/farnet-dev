@@ -120,13 +120,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
   );
-  // Exported menu link: main-menu_arts-and-crafts:taxonomy/term/57.
-  $menu_links['main-menu_arts-and-crafts:taxonomy/term/57'] = array(
+  // Exported menu link: main-menu_arts-and-crafts:themes/diversification/arts-and-crafts.
+  $menu_links['main-menu_arts-and-crafts:themes/diversification/arts-and-crafts'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/57',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/diversification/arts-and-crafts',
+    'router_path' => 'themes',
     'link_title' => 'Arts and crafts',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_arts-and-crafts:themes/diversification/arts-and-crafts',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -144,8 +146,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_arts-and-crafts:taxonomy/term/57',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -156,7 +156,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_diversification:taxonomy/term/43',
+    'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
   // Exported menu link: main-menu_at-a-glance:<front>.
   $menu_links['main-menu_at-a-glance:<front>'] = array(
@@ -310,13 +310,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news--events:node/2',
   );
-  // Exported menu link: main-menu_climate-change:taxonomy/term/61.
-  $menu_links['main-menu_climate-change:taxonomy/term/61'] = array(
+  // Exported menu link: main-menu_climate-change:themes/environment/climate-change.
+  $menu_links['main-menu_climate-change:themes/environment/climate-change'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/61',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/environment/climate-change',
+    'router_path' => 'themes',
     'link_title' => 'Climate change',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_climate-change:themes/environment/climate-change',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -334,8 +336,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_climate-change:taxonomy/term/61',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -346,7 +346,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_environment:taxonomy/term/44',
+    'parent_identifier' => 'main-menu_environment:themes/environment',
   );
   // Exported menu link: main-menu_clld-at-a-glance:<front>.
   $menu_links['main-menu_clld-at-a-glance:<front>'] = array(
@@ -800,13 +800,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_on-the-ground:node/2',
   );
-  // Exported menu link: main-menu_cultural-heritage:taxonomy/term/63.
-  $menu_links['main-menu_cultural-heritage:taxonomy/term/63'] = array(
+  // Exported menu link: main-menu_cultural-heritage:themes/society-and-culture/cultural-heritage.
+  $menu_links['main-menu_cultural-heritage:themes/society-and-culture/cultural-heritage'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/63',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/society-and-culture/cultural-heritage',
+    'router_path' => 'themes',
     'link_title' => 'Cultural heritage',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_cultural-heritage:themes/society-and-culture/cultural-heritage',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -824,8 +826,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_cultural-heritage:taxonomy/term/63',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -876,15 +876,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_whos-who:<front>',
   );
-  // Exported menu link: main-menu_diversification:taxonomy/term/43.
-  $menu_links['main-menu_diversification:taxonomy/term/43'] = array(
+  // Exported menu link: main-menu_diversification:themes/diversification.
+  $menu_links['main-menu_diversification:themes/diversification'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/43',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/diversification',
+    'router_path' => 'themes',
     'link_title' => 'Diversification',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_diversification:taxonomy/term/43',
+      'identifier' => 'main-menu_diversification:themes/diversification',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -914,13 +914,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_themes:themes',
   );
-  // Exported menu link: main-menu_education-and-training:taxonomy/term/64.
-  $menu_links['main-menu_education-and-training:taxonomy/term/64'] = array(
+  // Exported menu link: main-menu_education-and-training:themes/society-and-culture/education-and-training.
+  $menu_links['main-menu_education-and-training:themes/society-and-culture/education-and-training'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/64',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/society-and-culture/education-and-training',
+    'router_path' => 'themes',
     'link_title' => 'Education and training',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_education-and-training:themes/society-and-culture/education-and-training',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -938,8 +940,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_education-and-training:taxonomy/term/64',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -952,13 +952,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
   );
-  // Exported menu link: main-menu_elderly:taxonomy/term/69.
-  $menu_links['main-menu_elderly:taxonomy/term/69'] = array(
+  // Exported menu link: main-menu_elderly:themes/society-and-culture/elderly.
+  $menu_links['main-menu_elderly:themes/society-and-culture/elderly'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/69',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/society-and-culture/elderly',
+    'router_path' => 'themes',
     'link_title' => 'Elderly',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_elderly:themes/society-and-culture/elderly',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -976,8 +978,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_elderly:taxonomy/term/69',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1028,13 +1028,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_faqs:tools/faq',
   );
-  // Exported menu link: main-menu_energy:taxonomy/term/62.
-  $menu_links['main-menu_energy:taxonomy/term/62'] = array(
+  // Exported menu link: main-menu_energy:themes/environment/energy.
+  $menu_links['main-menu_energy:themes/environment/energy'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/62',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/environment/energy',
+    'router_path' => 'themes',
     'link_title' => 'Energy',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_energy:themes/environment/energy',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1052,8 +1054,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_energy:taxonomy/term/62',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1064,17 +1064,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_environment:taxonomy/term/44',
+    'parent_identifier' => 'main-menu_environment:themes/environment',
   );
-  // Exported menu link: main-menu_environment:taxonomy/term/44.
-  $menu_links['main-menu_environment:taxonomy/term/44'] = array(
+  // Exported menu link: main-menu_environment:themes/environment.
+  $menu_links['main-menu_environment:themes/environment'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/44',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/environment',
+    'router_path' => 'themes',
     'link_title' => 'Environment',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_environment:taxonomy/term/44',
+      'identifier' => 'main-menu_environment:themes/environment',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1482,7 +1482,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_diversification:taxonomy/term/43',
+    'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
   // Exported menu link: main-menu_fisheries-resources:themes/governance-management/fisheries resources.
   $menu_links['main-menu_fisheries-resources:themes/governance-management/fisheries resources'] = array(
@@ -1616,7 +1616,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_diversification:taxonomy/term/43',
+    'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
   // Exported menu link: main-menu_glossary:<front>.
   $menu_links['main-menu_glossary:<front>'] = array(
@@ -2068,13 +2068,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_on-the-ground:node/2',
   );
-  // Exported menu link: main-menu_marine-activities:taxonomy/term/58.
-  $menu_links['main-menu_marine-activities:taxonomy/term/58'] = array(
+  // Exported menu link: main-menu_marine-activities:themes/diversification/marine-activities.
+  $menu_links['main-menu_marine-activities:themes/diversification/marine-activities'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/58',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/diversification/marine-activities',
+    'router_path' => 'themes',
     'link_title' => 'Marine activities',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_marine-activities:themes/diversification/marine-activities',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2092,8 +2094,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_marine-activities:taxonomy/term/58',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2104,15 +2104,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_diversification:taxonomy/term/43',
+    'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
-  // Exported menu link: main-menu_marine-litter:taxonomy/term/60.
-  $menu_links['main-menu_marine-litter:taxonomy/term/60'] = array(
+  // Exported menu link: main-menu_marine-litter:themes/environment/marine-litter.
+  $menu_links['main-menu_marine-litter:themes/environment/marine-litter'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/60',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/environment/marine-litter',
+    'router_path' => 'themes',
     'link_title' => 'Marine litter',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_marine-litter:themes/environment/marine-litter',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2130,8 +2132,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_marine-litter:taxonomy/term/60',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2142,7 +2142,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_environment:taxonomy/term/44',
+    'parent_identifier' => 'main-menu_environment:themes/environment',
   );
   // Exported menu link: main-menu_methods:on-the-ground/good-practices/methods.
   $menu_links['main-menu_methods:on-the-ground/good-practices/methods'] = array(
@@ -2499,7 +2499,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_diversification:taxonomy/term/43',
+    'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
   // Exported menu link: main-menu_photos:<front>.
   $menu_links['main-menu_photos:<front>'] = array(
@@ -3158,13 +3158,15 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_tourism:taxonomy/term/56.
-  $menu_links['main-menu_tourism:taxonomy/term/56'] = array(
+  // Exported menu link: main-menu_tourism:themes/diversification/tourism.
+  $menu_links['main-menu_tourism:themes/diversification/tourism'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/56',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/diversification/tourism',
+    'router_path' => 'themes',
     'link_title' => 'Tourism',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_tourism:themes/diversification/tourism',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3182,8 +3184,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_tourism:taxonomy/term/56',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -3194,7 +3194,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_diversification:taxonomy/term/43',
+    'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
   // Exported menu link: main-menu_traceability:themes/adding-values-fisheries/traceability.
   $menu_links['main-menu_traceability:themes/adding-values-fisheries/traceability'] = array(
@@ -3203,6 +3203,8 @@ function farnet_core_menu_default_menu_links() {
     'router_path' => 'themes',
     'link_title' => 'Traceability',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_traceability:themes/adding-values-fisheries/traceability',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3220,8 +3222,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_traceability:themes/adding-values-fisheries/traceability',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -3310,13 +3310,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_library:node/2',
   );
-  // Exported menu link: main-menu_water-quality:taxonomy/term/59.
-  $menu_links['main-menu_water-quality:taxonomy/term/59'] = array(
+  // Exported menu link: main-menu_water-quality:themes/environment/water-quality.
+  $menu_links['main-menu_water-quality:themes/environment/water-quality'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/59',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/environment/water-quality',
+    'router_path' => 'themes',
     'link_title' => 'Water quality',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_water-quality:themes/environment/water-quality',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3334,8 +3336,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_water-quality:taxonomy/term/59',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -3346,7 +3346,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_environment:taxonomy/term/44',
+    'parent_identifier' => 'main-menu_environment:themes/environment',
   );
   // Exported menu link: main-menu_whos-who:<front>.
   $menu_links['main-menu_whos-who:<front>'] = array(
@@ -3386,13 +3386,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_about:node/2',
   );
-  // Exported menu link: main-menu_women:taxonomy/term/66.
-  $menu_links['main-menu_women:taxonomy/term/66'] = array(
+  // Exported menu link: main-menu_women:themes/society-and-culture/women.
+  $menu_links['main-menu_women:themes/society-and-culture/women'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/66',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/society-and-culture/women',
+    'router_path' => 'themes',
     'link_title' => 'Women',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_women:themes/society-and-culture/women',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3410,8 +3412,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_women:taxonomy/term/66',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -3424,13 +3424,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
   );
-  // Exported menu link: main-menu_youth:taxonomy/term/67.
-  $menu_links['main-menu_youth:taxonomy/term/67'] = array(
+  // Exported menu link: main-menu_youth:themes/society-and-culture/youth.
+  $menu_links['main-menu_youth:themes/society-and-culture/youth'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'taxonomy/term/67',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'themes/society-and-culture/youth',
+    'router_path' => 'themes',
     'link_title' => 'Youth',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_youth:themes/society-and-culture/youth',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3448,8 +3450,6 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_youth:taxonomy/term/67',
     ),
     'module' => 'menu',
     'hidden' => 0,
