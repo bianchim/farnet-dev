@@ -23,6 +23,10 @@ projects[field_collection][patch][] = https://www.drupal.org/files/issues/field_
 projects[workbench_moderation][subdir] = "contrib"
 projects[workbench_moderation][version] = "1.4"
 projects[workbench_moderation][patch][] = https://www.drupal.org/files/issues/workbench_moderation-pathauto_alias_issue-2308095-20.patch
+; Prevent errors from happening in workbench moderation when using behat
+; https://www.drupal.org/node/2645622
+projects[workbench_moderation][patch][] = https://www.drupal.org/files/issues/node-deleted-before-shutdown-function-2645622-4.patch
+
 
 projects[comment_og][subdir] = "contrib"
 projects[comment_og][version] = "1.0"
