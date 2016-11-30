@@ -14,6 +14,33 @@ function farnet_organisation_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_organisation_comment|node|organisation|form';
+  $field_group->group_name = 'group_organisation_comment';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'organisation';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Comment',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_comment',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-organisation-comment field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_organisation_comment|node|organisation|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_organisation_contact|node|organisation|form';
   $field_group->group_name = 'group_organisation_contact';
   $field_group->entity_type = 'node';
@@ -53,13 +80,13 @@ function farnet_organisation_field_group_info() {
     'children' => array(
       0 => 'field_email',
       1 => 'field_fax',
-      2 => 'field_ne_body',
-      3 => 'field_telephone',
-      4 => 'field_term_type_organisation',
-      5 => 'field_website',
-      6 => 'title_field',
-      7 => 'field_latitude',
-      8 => 'field_longitude',
+      2 => 'field_latitude',
+      3 => 'field_longitude',
+      4 => 'field_ne_body',
+      5 => 'field_telephone',
+      6 => 'field_term_type_organisation',
+      7 => 'field_website',
+      8 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -84,7 +111,7 @@ function farnet_organisation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'scheduler_settings',
       1 => 'language',
@@ -114,10 +141,10 @@ function farnet_organisation_field_group_info() {
     'label' => 'Social Media',
     'weight' => '3',
     'children' => array(
-      0 => 'field_ff_twitter',
-      1 => 'field_ff_facebook',
+      0 => 'field_ff_facebook',
+      1 => 'field_ff_google',
       2 => 'field_ff_linkedin',
-      3 => 'field_ff_google',
+      3 => 'field_ff_twitter',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -165,6 +192,7 @@ function farnet_organisation_field_group_info() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Comment');
   t('Contact person');
   t('Content');
   t('Metadata');
