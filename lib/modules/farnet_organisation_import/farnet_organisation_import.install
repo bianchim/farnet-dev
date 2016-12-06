@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet organisation import setup.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function farnet_organisation_import_schema() {
+  $schema['import_contact_persons'] = [
+    'description' => 'The saved information of imported contacts',
+    'fields' => [
+      'cid' => [
+        'description' => 'The contact unique ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'info' => [
+        'description' => 'The JSON encoded info of the contact.',
+        'type' => 'varchar',
+        'length' => 500,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'imported' => [
+        'description' => 'Indicated if the contact has been imported.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+      ],
+      'nid' => [
+        'description' => 'The contact inserted nid.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'unique keys' => [
+      'cid' => ['cid'],
+    ],
+    'primary key' => ['cid'],
+  ];
+
+  $schema['import_organisations'] = [
+    'description' => 'The saved information of imported organisations',
+    'fields' => [
+      'oid' => [
+        'description' => 'The organisation unique ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'info' => [
+        'description' => 'The JSON encoded info of the organisation.',
+        'type' => 'varchar',
+        'length' => 500,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'imported' => [
+        'description' => 'Indicated if the contact has been imported.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+      ],
+      'nid' => [
+        'description' => 'The organisation inserted nid.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'unique keys' => [
+      'oid' => ['oid'],
+    ],
+    'primary key' => ['oid'],
+  ];
+  return $schema;
+}
