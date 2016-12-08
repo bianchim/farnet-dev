@@ -64,7 +64,7 @@ function farnet_organisation_import_confirm($form, &$form_state) {
   $form['import_from_db'] = [
     '#type' => 'fieldset',
     '#title' => t('Extract and save from database'),
-    '#weight' => 0,
+    '#weight' => 1,
     '#collapsible' => FALSE,
     '#collapsed' => FALSE,
   ];
