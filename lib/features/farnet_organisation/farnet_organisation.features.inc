@@ -25,6 +25,14 @@ function farnet_organisation_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function farnet_organisation_node_info() {
   $items = array(
+    'contact_person' => array(
+      'name' => t('Contact person'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Name'),
+      'help' => '',
+    ),
     'organisation' => array(
       'name' => t('Organisation'),
       'base' => 'node_content',

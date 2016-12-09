@@ -11,32 +11,6 @@
 function farnet_organisation_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_civility'.
-  $field_bases['field_civility'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_civility',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'Mr' => 'Mr',
-        'Ms' => 'Ms',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_comment'.
   $field_bases['field_comment'] = array(
     'active' => 1,
@@ -56,6 +30,43 @@ function farnet_organisation_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_contact_person'.
+  $field_bases['field_contact_person'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_contact_person',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'entityreference',
+    'settings' => array(
+      'behaviors' => array(),
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'contact_person' => 'contact_person',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_fax'.
@@ -141,11 +152,15 @@ function farnet_organisation_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'Basic contact' => 'Basic contact',
         'Main contact' => 'Main contact',
+        'Call contact' => 'Call contact',
         'Cooperation contact' => 'Cooperation contact',
         'Manager' => 'Manager',
         'President' => 'President',
-        'Project Promoter' => 'Project Promoter',
+        'Project promoter' => 'Project promoter',
+        'Network contact' => 'Network contact',
+        'Partnership contact' => 'Partnership contact',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
