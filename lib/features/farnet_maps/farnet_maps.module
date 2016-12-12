@@ -47,7 +47,6 @@ function farnet_maps_form($form, &$form_state) {
 
   // Country selected in the form.
   $country = isset($form_state['input']['countries']) ? $form_state['input']['countries'] : 0;
-  dpm($country);
 
   $countries_select = [];
   if (!$country) {
@@ -79,7 +78,6 @@ function farnet_maps_form($form, &$form_state) {
   ];
 
   if ($country) {
-    dpm ('in country');
     $cterm = taxonomy_term_load($country);
     if ((count(taxonomy_get_parents_all($country)) - 1) > 0) {
 
