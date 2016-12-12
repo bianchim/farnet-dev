@@ -19,6 +19,7 @@ dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = i18n_taxonomy
 dependencies[] = image
+dependencies[] = inline_entity_form
 dependencies[] = link
 dependencies[] = media
 dependencies[] = nexteuropa_mediagallery

@@ -13,6 +13,7 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = i18n_taxonomy
 dependencies[] = image
+dependencies[] = inline_entity_form
 dependencies[] = media
 dependencies[] = nexteuropa_core
 dependencies[] = nexteuropa_multilingual
