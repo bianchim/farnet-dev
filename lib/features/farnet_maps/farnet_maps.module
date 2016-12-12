@@ -47,6 +47,7 @@ function farnet_maps_form($form, &$form_state) {
 
   // Country selected in the form.
   $country = isset($form_state['input']['countries']) ? $form_state['input']['countries'] : 0;
+  dpm($country);
 
   $countries_select = [];
   if (!$country) {
@@ -78,6 +79,7 @@ function farnet_maps_form($form, &$form_state) {
   ];
 
   if ($country) {
+    dpm ('in country');
     $cterm = taxonomy_term_load($country);
     if ((count(taxonomy_get_parents_all($country)) - 1) > 0) {
 
@@ -190,11 +192,9 @@ function farnet_maps_form($form, &$form_state) {
 
   $json_map_object = drupal_json_decode($json_map);
   $json_map_object->layers[0]->checkbox->features[0]->markers[0] = $base_url . "/on-the-ground/map/factsheet_flag/" . $country;
-  /* $json_map_object->layers[0]->checkbox->features[1]->markers[0] = $base_url . "/on-the-ground/map/organisation/" . $country; */
-  $json_map_object->layers[0]->checkbox->features[2]->markers[0] = $base_url . "/on-the-ground/map/gp_method/" . $country;
-  $json_map_object->layers[0]->checkbox->features[3]->markers[0] = $base_url . "/on-the-ground/map/gp_project/" . $country;
-  $json_map_object->layers[0]->checkbox->features[4]->markers[0] = $base_url . "/on-the-ground/map/gp_short_story/" . $country;
-
+  $json_map_object->layers[0]->checkbox->features[1]->markers[0] = $base_url . "/on-the-ground/map/gp_method/" . $country;
+  $json_map_object->layers[0]->checkbox->features[2]->markers[0] = $base_url . "/on-the-ground/map/gp_project/" . $country;
+  $json_map_object->layers[0]->checkbox->features[3]->markers[0] = $base_url . "/on-the-ground/map/gp_short_story/" . $country;
   $json_map = drupal_json_encode($json_map_object);
 
   $form['json_map'] = array(

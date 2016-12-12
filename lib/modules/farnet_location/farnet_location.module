@@ -186,12 +186,6 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
       }
       break;
 
-    /*
-    case 'factsheet_country_node_form':
-      $form['field_interactive_map']['#type'] = 'hidden';
-      break;
-    */
-
     case 'organisation_node_form':
       $form['field_latitude']['#type'] = 'hidden';
       $form['field_longitude']['#type'] = 'hidden';

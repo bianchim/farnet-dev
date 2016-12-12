@@ -107,7 +107,7 @@ function farnet_factsheet_flag_field_group_info() {
     'weight' => '13',
     'children' => array(
       0 => 'field_collection_language',
-      1 => 'field_organisation',
+      1 => 'field_organisations',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -140,7 +140,7 @@ function farnet_factsheet_flag_field_group_info() {
     'weight' => '11',
     'children' => array(
       0 => 'field_collection_language',
-      1 => 'field_organisation',
+      1 => 'field_organisations',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
