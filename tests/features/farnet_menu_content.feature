@@ -20,7 +20,7 @@ Feature: Test the presence of the content menu
       | field_flag                   | Flag            |
       | field_gpp_objectives         | Lorem Ipsum     |
       | field_gpp_total_project_cost | 42              |
-      | field_organisation           | Organisation    |
+      | field_organisations          | Organisation    |
       | field_term_theme             | Aquaculture     |
       | field_gallery                | MediaGallery    |
       | field_publication_abstract   | Lorem Ipsum     |
@@ -86,7 +86,7 @@ Feature: Test the presence of the content menu
       | field_eu_contribution           | 13                  |
       | field_other_public_contribution | 13                  |
       | field_private_contribution      | 13                  |
-      | field_organisation              | Organisation        |
+      | field_organisations             | Organisation        |
       | field_term_theme                | Aquaculture         |
       | field_gallery                   | MediaGallery        |
       | field_publication_date          | 1                   |
@@ -126,7 +126,7 @@ Feature: Test the presence of the content menu
       | field_ff_accountable_body       | Partnership               |
       | field_ff_number_staff           | 42                        |
       | field_gallery                   | MediaGallery              |
-      | field_organisation              | Organisation              |
+      | field_organisations             | Organisation              |
       | field_ff_twitter                | ok, ok                    |
       | field_interactive_map           | Map                       |
       | status                          | 1                         |
