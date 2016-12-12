@@ -1006,8 +1006,8 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_short_story-field_organisation'.
-  $field_instances['node-gp_short_story-field_organisation'] = array(
+  // Exported field_instance: 'node-gp_short_story-field_organisations'.
+  $field_instances['node-gp_short_story-field_organisations'] = array(
     'bundle' => 'gp_short_story',
     'default_value' => array(),
     'default_value_function' => '',
@@ -1031,7 +1031,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Organisation',
     'required' => 0,
     'settings' => array(

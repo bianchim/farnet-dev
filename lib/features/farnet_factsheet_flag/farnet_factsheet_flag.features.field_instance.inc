@@ -3050,8 +3050,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_organisation'.
-  $field_instances['node-factsheet_flag-field_organisation'] = array(
+  // Exported field_instance: 'node-factsheet_flag-field_organisations'.
+  $field_instances['node-factsheet_flag-field_organisations'] = array(
     'bundle' => 'factsheet_flag',
     'default_value' => array(),
     'default_value_function' => '',
@@ -3077,7 +3077,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Organisation',
     'required' => 0,
     'settings' => array(

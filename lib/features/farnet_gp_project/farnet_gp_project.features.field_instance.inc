@@ -1649,8 +1649,8 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_project-field_organisation'.
-  $field_instances['node-gp_project-field_organisation'] = array(
+  // Exported field_instance: 'node-gp_project-field_organisations'.
+  $field_instances['node-gp_project-field_organisations'] = array(
     'bundle' => 'gp_project',
     'default_value' => array(),
     'default_value_function' => '',
@@ -1674,7 +1674,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Beneficiary',
     'required' => 0,
     'settings' => array(

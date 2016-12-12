@@ -131,7 +131,6 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_alter().
  */
 function farnet_location_form_alter(&$form, &$form_state, $form_id) {
-  dpm($form_id);
   switch ($form_id) {
     case 'user_register_form':
     case 'user_profile_form':
@@ -183,7 +182,7 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
       $form['field_interactive_map']['#type'] = 'hidden';
       if(isset($form['field_organisations'][LANGUAGE_NONE]['form'])) {
         $form['field_organisations'][LANGUAGE_NONE]['form']['field_latitude']['#type'] = 'hidden';
-        $form['field_organisations'][LANGUAGE_NONE]['form']['#type'] = 'hidden';
+        $form['field_organisations'][LANGUAGE_NONE]['form']['field_longitude']['#type'] = 'hidden';
       }
       break;
 
@@ -205,7 +204,7 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
     case 'gp_short_story_node_form':
       if(isset($form['field_organisations'][LANGUAGE_NONE]['form'])) {
         $form['field_organisations'][LANGUAGE_NONE]['form']['field_latitude']['#type'] = 'hidden';
-        $form['field_organisations'][LANGUAGE_NONE]['form']['#type'] = 'hidden';
+        $form['field_organisations'][LANGUAGE_NONE]['form']['field_longitude']['#type'] = 'hidden';
       }
       break;
   }

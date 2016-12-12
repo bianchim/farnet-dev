@@ -234,8 +234,8 @@ function farnet_cooperation_call_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_call-field_organisation'.
-  $field_instances['node-cooperation_call-field_organisation'] = array(
+  // Exported field_instance: 'node-cooperation_call-field_organisations'.
+  $field_instances['node-cooperation_call-field_organisations'] = array(
     'bundle' => 'cooperation_call',
     'default_value' => array(),
     'default_value_function' => '',
@@ -259,7 +259,7 @@ function farnet_cooperation_call_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
