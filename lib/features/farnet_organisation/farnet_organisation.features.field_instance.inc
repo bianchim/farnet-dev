@@ -88,11 +88,7 @@ function farnet_organisation_field_default_field_instances() {
   // 'field_collection_item-field_organisation_contacts-field_organisation_position'.
   $field_instances['field_collection_item-field_organisation_contacts-field_organisation_position'] = array(
     'bundle' => 'field_organisation_contacts',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Basic contact',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
