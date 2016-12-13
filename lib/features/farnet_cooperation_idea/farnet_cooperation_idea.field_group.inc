@@ -138,7 +138,7 @@ function farnet_cooperation_idea_field_group_info() {
     'label' => 'Organisation',
     'weight' => '2',
     'children' => array(
-      0 => 'field_organisation',
+      0 => 'field_organisations',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

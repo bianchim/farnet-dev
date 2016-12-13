@@ -473,7 +473,7 @@ function farnet_gp_short_story_field_default_field_instances() {
   // Exported field_instance: 'node-gp_short_story-field_flag'.
   $field_instances['node-gp_short_story-field_flag'] = array(
     'bundle' => 'gp_short_story',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -509,11 +509,14 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 25,
     ),
   );
@@ -1003,10 +1006,10 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_short_story-field_organisation'.
-  $field_instances['node-gp_short_story-field_organisation'] = array(
+  // Exported field_instance: 'node-gp_short_story-field_organisations'.
+  $field_instances['node-gp_short_story-field_organisations'] = array(
     'bundle' => 'gp_short_story',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -1028,7 +1031,7 @@ function farnet_gp_short_story_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
@@ -1042,11 +1045,21 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'inline_entity_form',
       'settings' => array(
         'apply_chosen' => '',
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'Organisations',
+          'label_singular' => 'Organisation',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
-      'type' => 'options_select',
+      'type' => 'inline_entity_form',
       'weight' => 28,
     ),
   );

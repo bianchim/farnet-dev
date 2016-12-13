@@ -24,7 +24,7 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Beneficiary',
     'weight' => '5',
     'children' => array(
-      0 => 'field_organisation',
+      0 => 'field_organisations',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -56,7 +56,7 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Beneficiary',
     'weight' => '6',
     'children' => array(
-      0 => 'field_organisation',
+      0 => 'field_organisations',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

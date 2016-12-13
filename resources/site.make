@@ -35,6 +35,9 @@ projects[comment_og][patch][] = "https://www.drupal.org/files/issues/comment_og-
 projects[viewfield][subdir] = "contrib"
 projects[viewfield][version] = "2.0"
 
+projects[inline_entity_form][subdir] = "contrib"
+projects[inline_entity_form][version] = "1.8"
+
 ; =========
 ; Libraries
 ; =========

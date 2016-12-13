@@ -234,10 +234,10 @@ function farnet_cooperation_call_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cooperation_call-field_organisation'.
-  $field_instances['node-cooperation_call-field_organisation'] = array(
+  // Exported field_instance: 'node-cooperation_call-field_organisations'.
+  $field_instances['node-cooperation_call-field_organisations'] = array(
     'bundle' => 'cooperation_call',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -259,7 +259,7 @@ function farnet_cooperation_call_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
@@ -273,13 +273,20 @@ function farnet_cooperation_call_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'inline_entity_form',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'Organisations',
+          'label_singular' => 'Organisation',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'inline_entity_form',
       'weight' => 6,
     ),
   );

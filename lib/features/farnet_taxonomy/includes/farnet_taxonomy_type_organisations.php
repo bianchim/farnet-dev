@@ -66,15 +66,6 @@ function farnet_taxonomy_type_organisations() {
         'it' => 'FARNET Local Action Group IT',
       ),
     ),
-    'Organisation7' => (object) array(
-      'name' => t('FARNET Local Action Group'),
-      'code' => 'FLAG',
-      'language' => 'en',
-      'translation' => array(
-        'fr' => 'FARNET Local Action Group FR',
-        'it' => 'FARNET Local Action Group IT',
-      ),
-    ),
   );
   return $type_organisations_array;
 }
