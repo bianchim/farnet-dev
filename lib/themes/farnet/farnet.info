@@ -15,6 +15,7 @@ stylesheets[all][] = "css/styleguide.css"
 scripts[] = "framework/scripts/vendors.js"
 scripts[] = "framework/scripts/farnet.js"
 scripts[] = "js/menu.js"
+scripts[] = "js/styleguide.js"
 
 regions[header_top] = "Header Top"
 regions[header_right] = "Header Right"
