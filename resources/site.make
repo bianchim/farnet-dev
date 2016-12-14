@@ -9,13 +9,13 @@ projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = "1.0"
 
 projects[media_oembed][subdir] = "contrib"
-projects[media_oembed][version] = "2.6"
+projects[media_oembed][version] = "2.7"
 
 projects[social_media_links][subdir] = "contrib"
 projects[social_media_links][version] = "1.5"
 
 projects[field_collection][subdir] = "contrib"
-projects[field_collection][version] = "1.0-beta11"
+projects[field_collection][version] = "1.0-beta12"
 ; Prevent error when managing content type with workbench moderation and field collections.
 ; https://www.drupal.org/node/2619550
 projects[field_collection][patch][] = https://www.drupal.org/files/issues/field_collection-n2619550-21.patch
@@ -26,7 +26,6 @@ projects[workbench_moderation][patch][] = https://www.drupal.org/files/issues/wo
 ; Prevent errors from happening in workbench moderation when using behat
 ; https://www.drupal.org/node/2645622
 projects[workbench_moderation][patch][] = https://www.drupal.org/files/issues/node-deleted-before-shutdown-function-2645622-4.patch
-
 
 projects[comment_og][subdir] = "contrib"
 projects[comment_og][version] = "1.0"
