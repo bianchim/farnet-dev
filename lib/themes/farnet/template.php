@@ -70,6 +70,7 @@ function farnet_preprocess_block(&$vars) {
 
   switch ($block_id) {
     case 'om_maximenu-om-maximenu-1':
+      // NB - Libetho: It seems that this case is not used.
       $vars['classes_array'][] = 'navigation-main';
       break;
 
@@ -84,7 +85,6 @@ function farnet_menu_tree__main_menu($variables) {
   if (strpos($variables['tree'], 'main-menu-top-level') !== FALSE) {
     $navbar = 'nav navbar-nav';
   }
-
   return '<ul class="fr-megamenu-list menu clearfix ' . $navbar . '">' . $variables['tree'] . '</ul>';
 }
 
@@ -116,4 +116,34 @@ function farnet_dropdown($variables) {
     $output .= "</ul>";
   }
   return $output;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'farnet_core_printpdf_multilingual_form') {
+    $form['#attributes'] = array('class' => 'c-file-download');
+    $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
+    $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#fuffix'] = '</div>';
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function farnet_preprocess_field(&$variables, $hook) {
+  if ($variables['element']['#field_name'] == 'field_collection_strategy') {
+    foreach ($variables['items'] as $delta => $item) {
+      array_push($variables['items'][$delta]["#attributes"]["class"], 'field-collection-view-final');
+      if ($delta > 0) {
+        $nid = key($item['entity']['field_collection_item']);
+        $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_allocated_budget']['#label_display'] = 'hidden';
+        $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_list_objective']['#label_display'] = 'hidden';
+        $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_priority']['#label_display'] = 'hidden';
+      }
+    }
+  }
 }
