@@ -1,0 +1,248 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet User feature.
+ */
+
+include_once 'farnet_user.features.inc';
+
+include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
+
+use libphonenumber\NumberParseException;
+use libphonenumber\PhoneNumberUtil;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_user_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_profile_completed']['#access'] = FALSE;
+  $form['#validate'][] = 'farnet_user_profile_validate';
+  $form['#validate'][] = 'farnet_user_profile_validate_field_organisation';
+
+  $form['field_organisation'][LANGUAGE_NONE][0]['target_id']['#autocomplete_path'] = "farnet_user/autocomplete/field_organisation";
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'farnet_user') . '/js/farnet_user.js',
+  );
+}
+
+/**
+ * Implements hook_FORM_ID_alter().
+ */
+function farnet_user_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  $form['#validate'][] = 'farnet_user_profile_validate';
+  $form['#validate'][] = 'farnet_user_profile_validate_field_organisation';
+
+  $form['field_organisation'][LANGUAGE_NONE][0]['target_id']['#autocomplete_path'] = "farnet_user/autocomplete/field_organisation";
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'farnet_user') . '/js/farnet_user.js',
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_user_menu() {
+  $items = array();
+
+  $items['farnet_user/autocomplete/field_organisation'] = array(
+    'title' => 'Field organisation autocomplete',
+    'page callback' => 'farnet_user_field_organisation_callback',
+    'page arguments' => array(3, 4),
+    'access callback' => 'farnet_user_field_access_callback',
+    'access arguments' => array('field_organisation', 'user', 'user'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Perform own validation.
+ */
+function farnet_user_profile_validate($form, &$form_state) {
+
+  $magazines = $form_state['values']['field_farnet_magazine_subscribe'][LANGUAGE_NONE];
+  $languages = array();
+  $qte = 0;
+  foreach ($magazines as $key => $value) {
+    $selected_language = $value['field_magazine_language'][LANGUAGE_NONE][0]['tid'];
+    if (in_array($selected_language, $languages)) {
+      form_set_error('field_farnet_magazine_subscribe', t('A language must be selected once.'));
+    }
+    else {
+      if (!is_null($selected_language)) {
+        $languages[] = $selected_language;
+      }
+    }
+    $qte += $value['field_magazine_quantity'][LANGUAGE_NONE][0]['value'];
+  }
+  if ($qte > 5) {
+    form_set_error('field_farnet_magazine_subscribe', t('The overall total cannot exceed 5 (e.g. FR=2 / EN=2 / ES=1).'));
+  }
+
+  // Check that the magazine is sent in at least one language.
+  $get_paper_magazine = reset($form_state['values']['field_farnet_magazine_paper'][LANGUAGE_NONE]);
+  $get_paper_magazine = (int) $get_paper_magazine['value'] == TRUE;
+
+  if ($get_paper_magazine && ($qte == 0 || empty($languages))) {
+    form_set_error('field_farnet_magazine_subscribe', t('Please specify at least one language and a quantity to receive the FARNET magazine.'));
+  }
+
+  // Check that an address has been set.
+  if ($get_paper_magazine) {
+    $empty_address1 = empty(reset($form_state['values']['field_address_1'][LANGUAGE_NONE])['value']);
+    $empty_address2 = empty(reset($form_state['values']['field_address_2'][LANGUAGE_NONE])['value']);
+    $empty_zip_code = empty(reset($form_state['values']['field_zip_code'][LANGUAGE_NONE])['value']);
+
+    if ($empty_address1 && $empty_address2) {
+      form_set_error('field_address_1', t('Please enter an address to receive your FARNET magazine.'));
+    }
+
+    if ($empty_zip_code) {
+      form_set_error('field_zip_code', t('Please enter a zip code to receive your FARNET magazine.'));
+    }
+  }
+
+  // Get country from form.
+  $tid_country = reset($form_state['values']['field_user_country'][LANGUAGE_NONE])['tid'];
+  $term_country = taxonomy_term_load($tid_country);
+
+  // Get countries from farnet Taxonomy.
+  $countries_raw = farnet_taxonomy_countries();
+  $countries = array();
+  foreach ($countries_raw as $subcountries) {
+    $countries += $subcountries;
+  }
+  $countries = array_flip($countries);
+
+  // Get countries from farnet Taxonomy.
+  $code_country = '';
+  if (isset($term_country->name)) {
+    $code_country = $countries[$term_country->name];
+  }
+
+  // Init instance of PhoneNumberUtil.
+  $phone_util = PhoneNumberUtil::getInstance();
+
+  // Check that if the field_telephone is valid.
+  $telephone_number_str = reset($form_state['values']['field_telephone'][LANGUAGE_NONE])['value'];
+  if (drupal_strlen($telephone_number_str) > 0) {
+    try {
+      $telephone_number_proto = $phone_util->parse($telephone_number_str, $code_country);
+      $is_valid = $phone_util->isValidNumber($telephone_number_proto);
+      if (!$is_valid) {
+        form_set_error('field_telephone', t('Please enter a valid telephone number.'));
+      }
+    }
+    catch (NumberParseException $e) {
+      form_set_error('field_telephone', t('Please enter a valid telephone number.'));
+      /* dpm($e); */
+    }
+  }
+
+  // Check that if the field_phone_mobile is valid.
+  $mobile_number_str = reset($form_state['values']['field_phone_mobile'][LANGUAGE_NONE])['value'];
+  if (drupal_strlen($mobile_number_str) > 0) {
+    try {
+      $mobile_number_proto = $phone_util->parse($mobile_number_str, $code_country);
+      $is_valid = $phone_util->isValidNumber($mobile_number_proto);
+      if (!$is_valid) {
+        form_set_error('field_phone_mobile', t('Please enter a valid mobile phone.'));
+      }
+    }
+    catch (NumberParseException $e) {
+      form_set_error('field_website', t('Please enter a valid mobile phone.'));
+      /* dpm($e); */
+    }
+  }
+
+  // Check that if the field_website is filled, the url is valid.
+  $url_website = reset($form_state['values']['field_website'][LANGUAGE_NONE])['url'];
+  if (drupal_strlen($url_website) > 0) {
+    // Remove all illegal characters from a url.
+    $url_website = filter_var($url_website, FILTER_SANITIZE_URL);
+    if (filter_var($url_website, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED) === FALSE) {
+      form_set_error('field_website', t('Please enter a valid url for the website. URL must include host name'));
+    }
+  }
+
+}
+
+/**
+ * Performs a check on the organisation fields.
+ */
+function farnet_user_profile_validate_field_organisation($form, &$form_state) {
+  $field_organisation = $form_state['values']['field_organisation'][LANGUAGE_NONE];
+  $field_organisation = reset($field_organisation)['target_id'];
+
+  $field_organisation_other = $form_state['values']['field_organisation_other'][LANGUAGE_NONE];
+  $field_organisation_other = reset($field_organisation_other)['value'];
+
+  if (empty($field_organisation) && empty($field_organisation_other)) {
+    form_set_error('field_organisation_user_profile', t('One organisation field must be filled.'));
+  }
+}
+
+/**
+ * Field access callback used for organisation autocomplete.
+ */
+function farnet_user_field_access_callback($field_name, $entity_type, $bundle_name) {
+  $field = field_info_field($field_name);
+
+  $instance = field_info_instance($entity_type, $field_name, $bundle_name);
+
+  if (!$field || !$instance || $field['type'] != 'entityreference' || !field_access('edit', $field, $entity_type)) {
+    return FALSE;
+  }
+  return TRUE;
+}
+
+/**
+ * Callback of field organisation autocomplete widget.
+ */
+function farnet_user_field_organisation_callback($country, $search = NULL) {
+  if (is_null($search)) {
+    $search = $country;
+    $country = NULL;
+  }
+
+  $matches = array();
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'organisation')
+    ->propertyCondition('status', 1)
+    ->propertyCondition('title', $search . '%', 'like')
+    ->range(0, 10);
+
+  if (!is_null($country)) {
+    $query->fieldCondition('field_term_country', 'tid', $country, '=');
+  }
+
+  $result = $query->execute();
+
+  $organisations = array();
+  if (isset($result['node'])) {
+    $organisations = $result['node'];
+    $fields = field_info_instances('node', 'organisation');
+    $field_id = $fields['field_organisation']['field_id'];
+    field_attach_load('node', $organisations, FIELD_LOAD_CURRENT, array('field_id' => $field_id));
+  }
+
+  foreach ($organisations as $nid => $organisation) {
+    $label = reset($organisation->title_field['en'])['value'];
+    $key = "$label ($nid)";
+    // Strip things like starting/trailing white spaces, line breaks and tags.
+    $key = preg_replace('/\s\s+/', ' ', str_replace("\n", '', trim(decode_entities(strip_tags($key)))));
+    // Names containing commas or quotes must be wrapped in quotes.
+    if (strpos($key, ',') !== FALSE || strpos($key, '"') !== FALSE) {
+      $key = '"' . str_replace('"', '""', $key) . '"';
+    }
+    $matches[$key] = '<div class="reference-autocomplete">' . $label . '</div>';
+  }
+
+  drupal_json_output($matches);
+}

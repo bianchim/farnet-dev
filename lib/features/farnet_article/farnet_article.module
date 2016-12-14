@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Article feature.
+ */
+
+include_once 'farnet_article.features.inc';
+
+/**
+ * Implements hook_node_info_alter().
+ */
+function farnet_article_node_info_alter(&$items) {
+  if (isset($items['article'])) {
+    unset($items['article']);
+  }
+}

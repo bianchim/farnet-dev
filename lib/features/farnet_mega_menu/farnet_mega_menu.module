@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Mega Menu feature.
+ */
+
+include_once 'farnet_mega_menu.features.inc';
+include_once 'farnet_mega_menu.functions.inc';
+
+/**
+ * Implements hook_init().
+ */
+function farnet_mega_menu_init() {
+  _array_for_block_creation('main-menu');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_mega_menu_menu() {
+  $items = array();
+  $items['admin/config/content/fmm'] = array(
+    'title' => 'FMM settings',
+    'description' => 'Configure which menues to slice',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('farnet_mega_menu_admin_form'),
+    'access arguments' => array('administer fmm'),
+    'position' => 'left',
+    'weight' => -15,
+    'file' => 'farnet_mega_menu.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function farnet_mega_menu_permission() {
+  return array(
+    'administer fmm' => array(
+      'title' => t('Administer fmm module'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function farnet_mega_menu_block_info() {
+  $blocks = array();
+  $info_array = _array_for_block_creation('main-menu');
+  // In case infoarray is empty return empty blocks.
+  if (empty($info_array)) {
+    return $blocks;
+  }
+
+  // Create the blocks info.
+  foreach ($info_array as $name => $menu_array) {
+    $blocks[_farnet_mega_menu_block_name_cleaner($name)] = array(
+      'info' => 'FMM: ' . $name,
+      'cache' => DRUPAL_NO_CACHE,
+    );
+  }
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function farnet_mega_menu_block_view($block_name = '') {
+  $block = array();
+  $menu_collector = _array_for_block_creation('main-menu');
+  if (empty($menu_collector)) {
+    return $block;
+  }
+
+  // Create the blocks view.
+  foreach ($menu_collector as $name => $value) {
+    if ($block_name == _farnet_mega_menu_block_name_cleaner($name)) {
+      $block['subject'] = $name;
+      $block['content'] = menu_tree_output($value);
+      return $block;
+    }
+  }
+}

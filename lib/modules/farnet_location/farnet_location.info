@@ -1,0 +1,7 @@
+name = "Farnet location"
+description = "Manage the location fields on a some content types"
+package = "Farnet"
+core = 7.x
+php = 5.6
+multisite_version = 2.2
+dependencies[] = farnet_factsheet_flag
