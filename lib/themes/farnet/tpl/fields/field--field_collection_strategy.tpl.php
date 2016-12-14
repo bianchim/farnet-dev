@@ -45,7 +45,7 @@
 
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
-    <?php if ($elseement['#object']->nid): ?>
+    <?php if (isset($element['#object']->nid)): ?>
       <h2 class="fr-heading"><span><?php print $label ?>:</span></h2>
     <?php else: ?>
       <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
