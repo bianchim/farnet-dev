@@ -15,7 +15,8 @@ function farnet_organisation_field_default_field_instances() {
   // 'field_collection_item-field_organisation_contacts-field_contact_person'.
   $field_instances['field_collection_item-field_organisation_contacts-field_contact_person'] = array(
     'bundle' => 'field_organisation_contacts',
-    'default_value' => NULL,
+    'default_value' => array(),
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -32,19 +33,33 @@ function farnet_organisation_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_contact_person',
     'label' => 'Contact person',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'entityreference',
+      'active' => 1,
+      'module' => 'inline_entity_form',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_clone' => 0,
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'contacts',
+          'label_singular' => 'contact',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
-      'type' => 'entityreference_autocomplete_tags',
+      'type' => 'inline_entity_form',
       'weight' => 0,
     ),
   );
