@@ -35,6 +35,7 @@ features[field_base][] = field_fax
 features[field_base][] = field_job_title
 features[field_base][] = field_organisation_contacts
 features[field_base][] = field_organisation_position
+features[field_group][] = group_content|node|contact_person|form
 features[field_group][] = group_organisation_comment|node|organisation|form
 features[field_group][] = group_organisation_contact|node|organisation|form
 features[field_group][] = group_organisation_content|node|organisation|form
