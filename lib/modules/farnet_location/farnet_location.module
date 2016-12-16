@@ -87,8 +87,8 @@ function farnet_location_form_node_form_alter(&$form, &$form_state, $form_id) {
     case 'gp_project_node_form':
     case 'gp_short_story_node_form':
     case 'factsheet_flag_node_form':
-      $form['field_latitude']['#type'] = 'hidden';
-      $form['field_longitude']['#type'] = 'hidden';
+      //$form['field_latitude']['#type'] = 'hidden';
+      //$form['field_longitude']['#type'] = 'hidden';
       // Configure the fields.
       $form['field_term_country'][LANGUAGE_NONE]['#attributes']['class'][] = 'country_field_form';
 
@@ -181,8 +181,8 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
     case 'factsheet_flag_node_form':
       $form['field_interactive_map']['#type'] = 'hidden';
       if (isset($form['field_organisations'][LANGUAGE_NONE]['form'])) {
-        $form['field_organisations'][LANGUAGE_NONE]['form']['field_latitude']['#type'] = 'hidden';
-        $form['field_organisations'][LANGUAGE_NONE]['form']['field_longitude']['#type'] = 'hidden';
+        //$form['field_organisations'][LANGUAGE_NONE]['form']['field_latitude']['#type'] = 'hidden';
+        //$form['field_organisations'][LANGUAGE_NONE]['form']['field_longitude']['#type'] = 'hidden';
       }
       break;
 
@@ -520,8 +520,6 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
  *   Return the the array with latitude and longitude for the city of FALSE.
  */
 function _farnet_location_geocoding_by_city($lang, $country, $city) {
-  // Fcode is used to determine the administrative level of the target search.
-  $fcode = 'adm4';
 
   // API options.
   $username = variable_get('geonames_username', FALSE);
@@ -543,13 +541,13 @@ function _farnet_location_geocoding_by_city($lang, $country, $city) {
     'username' => $username,
     'type' => 'json',
     'country' => $country_code,
-    'fcode' => $fcode,
     'style' => 'SHORT',
     'lang' => drupal_strtoupper($lang),
   ];
 
   $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . drupal_http_build_query($params);
+  dpm($url);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
     return FALSE;
