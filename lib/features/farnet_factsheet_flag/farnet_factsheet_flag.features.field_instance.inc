@@ -1972,7 +1972,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2019,7 +2019,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2217,7 +2217,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2482,7 +2482,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3062,14 +3062,9 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 1,
-          'use_content_language' => 1,
-          'view_mode' => 'flag_organisation',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 90,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3316,7 +3311,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   // Exported field_instance: 'node-factsheet_flag-field_sea_basins'.
   $field_instances['node-factsheet_flag-field_sea_basins'] = array(
     'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3325,7 +3320,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 9,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3344,12 +3339,12 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 7,
     ),
   );
@@ -3440,7 +3435,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   // Exported field_instance: 'node-factsheet_flag-field_term_theme'.
   $field_instances['node-factsheet_flag-field_term_theme'] = array(
     'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3468,12 +3463,13 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 24,
     ),
   );
@@ -3554,7 +3550,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   // Exported field_instance: 'node-factsheet_flag-field_type_of_area'.
   $field_instances['node-factsheet_flag-field_type_of_area'] = array(
     'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3582,12 +3578,12 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 6,
     ),
   );
