@@ -95,6 +95,20 @@ function farnet_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'multisite_wysiwyg';
+  $strongarm->value = array(
+    'change_tracking' => array(
+      'action' => 'enable',
+      'profile' => 'full_html',
+    ),
+    'dis_change_track_on_create' => 1,
+    'en_change_track_on_edit' => 0,
+  );
+  $export['multisite_wysiwyg'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'nexteuropa_communities_private_area';
   $strongarm->value = 1;
   $export['nexteuropa_communities_private_area'] = $strongarm;
