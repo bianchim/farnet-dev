@@ -452,7 +452,7 @@ function farnet_organisation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -490,7 +490,7 @@ function farnet_organisation_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -517,7 +517,7 @@ function farnet_organisation_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_phone_mobile',
-    'label' => 'Phone (mobile)',
+    'label' => 'Mobile',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -590,7 +590,7 @@ function farnet_organisation_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_skype_id',
-    'label' => 'Skype ID',
+    'label' => 'SkypeID',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -663,7 +663,7 @@ function farnet_organisation_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_telephone',
-    'label' => 'Phone',
+    'label' => 'Telephone',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -825,7 +825,7 @@ function farnet_organisation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -2190,10 +2190,7 @@ function farnet_organisation_field_default_field_instances() {
   t('Mobile');
   t('Name');
   t('Organisation contacts');
-  t('Phone');
-  t('Phone (mobile)');
   t('Position');
-  t('Skype ID');
   t('SkypeID');
   t('Telephone');
   t('Twitter');
