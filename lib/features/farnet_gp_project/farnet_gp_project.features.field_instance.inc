@@ -1077,7 +1077,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_gpp_lessons',
-    'label' => 'Lessons',
+    'label' => 'Lessons & contribution to CLLD objectives',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -1114,6 +1114,10 @@ function farnet_gp_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -1583,69 +1587,6 @@ function farnet_gp_project_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 18,
-    ),
-  );
-
-  // Exported field_instance: 'node-gp_project-field_media_upload'.
-  $field_instances['node-gp_project-field_media_upload'] = array(
-    'bundle' => 'gp_project',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'mediafield',
-        'settings' => array(
-          'file_view_mode' => 'default',
-        ),
-        'type' => 'media',
-        'weight' => 21,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_media_upload',
-    'label' => 'Media upload',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'avportal' => 'avportal',
-          'dailymotion' => 'dailymotion',
-          'node' => 0,
-          'private' => 0,
-          'public' => 'public',
-          'vimeo' => 'vimeo',
-          'youtube' => 'youtube',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 'video',
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
-          'youtube' => 0,
-        ),
-      ),
-      'type' => 'media_generic',
-      'weight' => 32,
     ),
   );
 
@@ -2368,9 +2309,8 @@ function farnet_gp_project_field_default_field_instances() {
   t('Keywords');
   t('Label');
   t('Latitude');
-  t('Lessons');
+  t('Lessons & contribution to CLLD objectives');
   t('Longitude');
-  t('Media upload');
   t('Objectives');
   t('Official Title');
   t('Picture');
