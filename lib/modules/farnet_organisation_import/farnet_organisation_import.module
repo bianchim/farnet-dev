@@ -387,7 +387,18 @@ function _farnet_organisation_import_contacts_from_db() {
     }
 
     // Set contact person infos.
-    $wrapper->field_gender->set(drupal_strtolower($info[1]));
+    $gender = drupal_strtolower($info[1]);
+    if ($gender === 'm') {
+      $gender = 'male';
+    }
+    elseif ($gender === 'f') {
+      $gender = 'female';
+    }
+    elseif (!empty($gender) && $gender !== 'male' && $gender !== 'female') {
+      $gender = 'other';
+    }
+
+    $wrapper->field_gender->set($gender);
     $wrapper->field_firstname->set($info[2]);
 
     // Last name acts as title.
