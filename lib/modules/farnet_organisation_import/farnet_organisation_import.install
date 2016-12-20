@@ -9,45 +9,27 @@
  * Implements hook_schema().
  */
 function farnet_organisation_import_schema() {
-  $schema['import_contact_persons'] = [
-    'description' => 'The saved information of imported contacts',
-    'fields' => [
-      'cid' => [
-        'description' => 'The contact unique ID.',
-        'type' => 'int',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-        'default' => 0,
-      ],
-      'info' => [
-        'description' => 'The JSON encoded info of the contact.',
-        'type' => 'varchar',
-        'length' => 500,
-        'not null' => TRUE,
-        'default' => '',
-      ],
-      'imported' => [
-        'description' => 'Indicated if the contact has been imported.',
-        'type' => 'int',
-        'not null' => TRUE,
-        'default' => 0,
-        'size' => 'tiny',
-      ],
-      'nid' => [
-        'description' => 'The contact inserted nid.',
-        'type' => 'int',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-        'default' => 0,
-      ],
-    ],
-    'unique keys' => [
-      'cid' => ['cid'],
-    ],
-    'primary key' => ['cid'],
+  $schema = [
+    'import_contact_persons' => _import_contact_persons_info(),
+    'import_organisations' => _import_organisations_info(),
+    'import_contact_link' => _import_contact_link_info(),
   ];
 
-  $schema['import_organisations'] = [
+  return $schema;
+}
+
+/**
+ * Add import_contact_link table.
+ */
+function farnet_organisation_import_update_7001() {
+  db_create_table('import_contact_link', _import_contact_link_info());
+}
+
+/**
+ * Helper function of database schema for organisation import.
+ */
+function _import_organisations_info() {
+  return [
     'description' => 'The saved information of imported organisations',
     'fields' => [
       'oid' => [
@@ -84,5 +66,87 @@ function farnet_organisation_import_schema() {
     ],
     'primary key' => ['oid'],
   ];
-  return $schema;
+}
+
+/**
+ * Helper function of database schema for contact import.
+ */
+function _import_contact_persons_info() {
+  return [
+    'description' => 'The saved information of imported contacts',
+    'fields' => [
+      'cid' => [
+        'description' => 'The contact unique ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'info' => [
+        'description' => 'The JSON encoded info of the contact.',
+        'type' => 'varchar',
+        'length' => 500,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'imported' => [
+        'description' => 'Indicated if the contact has been imported.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+      ],
+      'nid' => [
+        'description' => 'The contact inserted nid.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'unique keys' => [
+      'cid' => ['cid'],
+    ],
+    'primary key' => ['cid'],
+  ];
+}
+
+/**
+ * Helper function of database schema for contact link import.
+ */
+function _import_contact_link_info() {
+  return [
+    'description' => 'The saved information of link between contacts and organisations',
+    'fields' => [
+      'oid' => [
+        'description' => 'The organisation unique ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'cid' => [
+        'description' => 'The contact unique ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'position' => [
+        'description' => 'The position of the contact in the organisation.',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'info' => [
+        'description' => 'The JSON encoded info of the contact in the organisation.',
+        'type' => 'varchar',
+        'length' => 500,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['cid', 'oid'],
+  ];
 }
