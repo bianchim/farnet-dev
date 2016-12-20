@@ -486,7 +486,7 @@ function farnet_gp_project_field_default_field_instances() {
   // Exported field_instance: 'node-gp_project-field_flag'.
   $field_instances['node-gp_project-field_flag'] = array(
     'bundle' => 'gp_project',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -522,11 +522,14 @@ function farnet_gp_project_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 14,
     ),
   );
@@ -1646,10 +1649,10 @@ function farnet_gp_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gp_project-field_organisation'.
-  $field_instances['node-gp_project-field_organisation'] = array(
+  // Exported field_instance: 'node-gp_project-field_organisations'.
+  $field_instances['node-gp_project-field_organisations'] = array(
     'bundle' => 'gp_project',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -1671,7 +1674,7 @@ function farnet_gp_project_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Beneficiary',
     'required' => 0,
     'settings' => array(

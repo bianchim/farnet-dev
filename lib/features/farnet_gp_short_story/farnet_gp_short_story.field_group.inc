@@ -25,7 +25,7 @@ function farnet_gp_short_story_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_area',
-      1 => 'field_organisation',
+      1 => 'field_organisations',
       2 => 'field_term_country',
       3 => 'field_region',
     ),
@@ -62,7 +62,7 @@ function farnet_gp_short_story_field_group_info() {
       0 => 'field_collection_region',
       1 => 'field_latitude',
       2 => 'field_longitude',
-      3 => 'field_organisation',
+      3 => 'field_organisations',
       4 => 'field_term_country',
     ),
     'format_type' => 'tab',

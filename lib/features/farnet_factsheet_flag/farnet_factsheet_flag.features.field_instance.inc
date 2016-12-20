@@ -2724,9 +2724,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'media_gallery_page',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 13,
       ),
       'teaser' => array(
@@ -3050,10 +3052,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-factsheet_flag-field_organisation'.
-  $field_instances['node-factsheet_flag-field_organisation'] = array(
+  // Exported field_instance: 'node-factsheet_flag-field_organisations'.
+  $field_instances['node-factsheet_flag-field_organisations'] = array(
     'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -3077,7 +3079,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organisation',
+    'field_name' => 'field_organisations',
     'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
@@ -3091,13 +3093,20 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'inline_entity_form',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'Organisations',
+          'label_singular' => 'Organisation',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'inline_entity_form',
       'weight' => 14,
     ),
   );
