@@ -520,8 +520,6 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
  *   Return the the array with latitude and longitude for the city of FALSE.
  */
 function _farnet_location_geocoding_by_city($lang, $country, $city) {
-  // Fcode is used to determine the administrative level of the target search.
-  $fcode = 'adm4';
 
   // API options.
   $username = variable_get('geonames_username', FALSE);
@@ -543,7 +541,6 @@ function _farnet_location_geocoding_by_city($lang, $country, $city) {
     'username' => $username,
     'type' => 'json',
     'country' => $country_code,
-    'fcode' => $fcode,
     'style' => 'SHORT',
     'lang' => drupal_strtoupper($lang),
   ];
