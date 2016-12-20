@@ -104,7 +104,6 @@ features[field_instance][] = node-gp_project-field_gpp_transferability
 features[field_instance][] = node-gp_project-field_id_text
 features[field_instance][] = node-gp_project-field_latitude
 features[field_instance][] = node-gp_project-field_longitude
-features[field_instance][] = node-gp_project-field_media_upload
 features[field_instance][] = node-gp_project-field_organisations
 features[field_instance][] = node-gp_project-field_picture
 features[field_instance][] = node-gp_project-field_publication_abstract

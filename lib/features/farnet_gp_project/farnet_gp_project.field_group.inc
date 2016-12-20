@@ -508,7 +508,6 @@ function farnet_gp_project_field_group_info() {
     'weight' => '7',
     'children' => array(
       0 => 'field_gallery',
-      1 => 'field_media_upload',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
