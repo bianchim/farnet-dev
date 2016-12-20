@@ -20,3 +20,12 @@ function farnet_mediagallery_field_default_field_instances_alter(&$fields) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_mediagallery_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'nexteuropa_mediagallery_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
+  }
+}
