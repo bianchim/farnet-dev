@@ -24,10 +24,9 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Project information',
     'weight' => '4',
     'children' => array(
-      0 => 'field_area',
+      0 => 'field_collection_region',
       1 => 'field_organisations',
       2 => 'field_term_country',
-      3 => 'field_region',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -307,11 +306,10 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_farnet_abstract',
-      1 => 'field_flag',
-      2 => 'field_ne_body',
-      3 => 'field_picture',
-      4 => 'field_website',
+      0 => 'field_flag',
+      1 => 'field_ne_body',
+      2 => 'field_picture',
+      3 => 'field_website',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -374,11 +372,19 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Funding',
     'weight' => '3',
     'children' => array(
-      0 => 'field_collection_project_phase',
-      1 => 'field_eu_contribution',
-      2 => 'field_other_public_contribution',
-      3 => 'field_private_contribution',
-      4 => 'field_total_cost',
+      0 => 'field_budget',
+      1 => 'field_eardf',
+      2 => 'field_emff',
+      3 => 'field_erdf',
+      4 => 'field_esf',
+      5 => 'field_eu_contribution',
+      6 => 'field_funding_details',
+      7 => 'field_funding_local',
+      8 => 'field_funding_national',
+      9 => 'field_funding_regional',
+      10 => 'field_other_eu_funding',
+      11 => 'field_other_public_contribution',
+      12 => 'field_private_contribution',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -539,9 +545,7 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Publication',
     'weight' => '7',
     'children' => array(
-      0 => 'field_publication_abstract',
-      1 => 'field_publication_date',
-      2 => 'field_term_publication_channels',
+      0 => 'field_publication_date',
     ),
     'format_type' => 'div',
     'format_settings' => array(

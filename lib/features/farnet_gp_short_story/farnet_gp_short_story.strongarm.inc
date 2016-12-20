@@ -114,6 +114,9 @@ function farnet_gp_short_story_strongarm() {
       'email_textalt' => array(
         'custom_settings' => FALSE,
       ),
+      'flag_organisation' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
