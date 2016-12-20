@@ -132,4 +132,3 @@ features_exclude[field_base][field_social_media] = field_social_media
 features_exclude[field_base][field_longitude] = field_longitude
 features_exclude[field_base][field_latitude] = field_latitude
 features_exclude[dependencies][ds] = ds
-project path = sites/all/modules/features

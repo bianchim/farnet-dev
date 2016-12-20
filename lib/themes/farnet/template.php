@@ -19,7 +19,7 @@ function farnet_om_menu_content_render($content = array()) {
   uasort($content, 'om_sort_by_weight');
   $total = count($content);
   $out = '';
-  foreach ($content as $key => $prop) {
+  foreach ($content as $prop) {
     $count++;
 
     $module     = $prop['module'];
@@ -93,13 +93,11 @@ function farnet_menu_tree__main_menu($variables) {
  */
 function farnet_dropdown($variables) {
   $items = $variables['items'];
-  $attributes = array();
   $output = "";
 
   if (!empty($items)) {
     $output .= "<ul class='dropdown-menu'>";
-    $num_items = count($items);
-    foreach ($items as $i => $item) {
+    foreach ($items as $item) {
       $data = '';
       if (is_array($item)) {
         foreach ($item as $key => $value) {

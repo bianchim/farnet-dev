@@ -123,4 +123,3 @@ features[variable][] = pathauto_node_gp_method_pattern
 features[variable][] = xmlsitemap_settings_node_gp_method
 features_exclude[field_base][group_content_access] = group_content_access
 features_exclude[field_base][og_group_ref] = og_group_ref
-project path = sites/all/modules/features

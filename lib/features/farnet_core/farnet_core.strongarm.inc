@@ -151,13 +151,6 @@ function farnet_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_html_sys_link_pages';
-  $strongarm->value = '';
-  $export['print_html_sys_link_pages'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'print_html_sys_link_visibility';
   $strongarm->value = '1';
   $export['print_html_sys_link_visibility'] = $strongarm;
@@ -189,13 +182,6 @@ function farnet_core_strongarm() {
   $strongarm->name = 'print_mail_link_use_alias';
   $strongarm->value = 0;
   $export['print_mail_link_use_alias'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_mail_sys_link_pages';
-  $strongarm->value = '';
-  $export['print_mail_sys_link_pages'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

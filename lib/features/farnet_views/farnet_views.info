@@ -26,4 +26,3 @@ features[views_view][] = farnet_view_themes
 features[views_view][] = farnet_view_news
 features[views_view][] = good_practices
 features[views_view][] = homepage_highlight
-project path = sites/all/modules/features

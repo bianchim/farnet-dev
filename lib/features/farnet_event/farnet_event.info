@@ -105,4 +105,4 @@ features_exclude[field_base][field_telephone] = field_telephone
 features_exclude[field_base][field_website] = field_website
 features_exclude[field_base][field_first_name] = field_first_name
 features_exclude[field_base][field_last_name] = field_last_name
-project path = sites/all/modules/features
+stylesheets[all][] = css/farnet_event.css

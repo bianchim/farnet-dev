@@ -154,4 +154,3 @@ features[variable][] = scheduler_use_vertical_tabs_gp_project
 features[variable][] = xmlsitemap_settings_node_gp_project
 features_exclude[field_instance][node-gp_project-body] = node-gp_project-body
 features_exclude[field_base][og_group_ref] = og_group_ref
-project path = sites/all/modules/features

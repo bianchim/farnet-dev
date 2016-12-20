@@ -82,4 +82,3 @@ features[variable][] = xmlsitemap_settings_taxonomy_term_farnet_theme
 features[variable][] = xmlsitemap_settings_taxonomy_term_farnet_type_organisation
 features[variable][] = xmlsitemap_settings_taxonomy_term_regions
 features[views_view][] = farnet_taxonomy_term
-project path = sites/all/modules/features

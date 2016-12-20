@@ -12,6 +12,7 @@ function farnet_error_menu() {
   $items['error/403'] = [
     'title callback' => 'farnet_error_title',
     'page callback' => 'farnet_error_page',
+    // Since it's a error page, anybody should be able to see it.
     'access callback' => TRUE,
     'type' => MENU_LOCAL_TASK,
   ];
@@ -21,7 +22,7 @@ function farnet_error_menu() {
     'description' => 'Manage farnet error pages',
     'page callback' => 'drupal_get_form',
     'page arguments' => ['farnet_error_admin'],
-    'access arguments' => ['access administration pages'],
+    'access arguments' => ['administer site configuration'],
     'type' => MENU_LOCAL_TASK,
   ];
 
@@ -127,7 +128,6 @@ function farnet_error_is_myfarnet_page() {
   // $_GET['destination'] is used on error page ($_GET['q'] is rewrite
   // with error page URL).
   $current_path = (isset($_GET['destination'])) ? $_GET['destination'] : $_GET['q'];
-  $myfarnet = FALSE;
   $keyword = variable_get('nexteuropa_communities_url_keyword', 'community');
 
   // Get the aliased path in order to check if the community keyword is here.

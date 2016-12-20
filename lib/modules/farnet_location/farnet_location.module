@@ -19,7 +19,7 @@ function farnet_location_menu() {
     'description' => 'Configuration for farnet location module',
     'page callback' => 'drupal_get_form',
     'page arguments' => ['farnet_location_admin'],
-    'access arguments' => ['access administration pages'],
+    'access arguments' => ['administer site configuration'],
     'type' => MENU_NORMAL_ITEM,
   ];
 
@@ -27,6 +27,7 @@ function farnet_location_menu() {
     'title' => 'Autocomplete for areas',
     'page callback' => '_farnet_location_autocomplete',
     'access arguments' => TRUE,
+    // Autocomplete callback being used as interface for GeoNames.
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   ];
@@ -40,34 +41,34 @@ function farnet_location_menu() {
 function farnet_location_admin() {
   $form = [];
 
-  $form['geonames_username'] = [
+  $form['farnet_location_geonames_username'] = [
     '#type' => 'textfield',
     '#title' => t('GeoNames webservice username'),
-    '#default_value' => variable_get('geonames_username', ''),
+    '#default_value' => variable_get('farnet_location_geonames_username', ''),
     '#required' => TRUE,
   ];
 
-  $form['geonames_maxrows'] = [
+  $form['farnet_location_geonames_maxrows'] = [
     '#type' => 'textfield',
     '#title' => t('Maximum number results per request'),
-    '#default_value' => variable_get('geonames_maxrows', 10),
+    '#default_value' => variable_get('farnet_location_geonames_maxrows', 10),
     '#size' => 2,
     '#maxlength' => 2,
     '#required' => TRUE,
   ];
 
-  $form['geonames_baseurl'] = [
+  $form['farnet_location_geonames_baseurl'] = [
     '#type' => 'textfield',
     '#title' => t('Base url for the GeoNames service.'),
-    '#default_value' => variable_get('geonames_baseurl', 'http://api.geonames.org/'),
+    '#default_value' => variable_get('farnet_location_geonames_baseurl', 'http://api.geonames.org/'),
     '#maxlength' => 255,
     '#required' => TRUE,
   ];
 
-  $form['geocoding_baseurl'] = [
+  $form['farnet_location_geocoding_baseurl'] = [
     '#type' => 'textfield',
     '#title' => t('Base url for Nexteuropa Webtools geocoding service.'),
-    '#default_value' => variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/'),
+    '#default_value' => variable_get('farnet_location_geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/'),
     '#maxlength' => 255,
     '#required' => TRUE,
   ];
@@ -208,6 +209,8 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_node_submit().
  */
 function farnet_location_node_submit($node, $form, &$form_state) {
+  global $base_url;
+
   // Manage the field area and the coordinates.
   switch ($node->type) {
     case 'gp_method':
@@ -276,7 +279,6 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       break;
 
     case 'factsheet_flag':
-      global $base_url;
       $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
       $country_id = isset($node->field_term_country[LANGUAGE_NONE][0]['tid']) ? $node->field_term_country[LANGUAGE_NONE][0]['tid'] : '';
 
@@ -327,7 +329,6 @@ function farnet_location_node_submit($node, $form, &$form_state) {
       break;
 
     case 'factsheet_country':
-      global $base_url;
       $country = isset($node->field_term_country[LANGUAGE_NONE][0]['name']) ? $node->field_term_country[LANGUAGE_NONE][0]['name'] : '';
       $country_id = isset($node->field_term_country[LANGUAGE_NONE][0]['tid']) ? $node->field_term_country[LANGUAGE_NONE][0]['tid'] : '';
       $output_country = _farnet_location_geocoding($country);
@@ -429,8 +430,8 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
   $search = check_plain($search);
 
   // API options.
-  $username = variable_get('geonames_username', FALSE);
-  $maxrows = variable_get('geonames_maxrows', 10);
+  $username = variable_get('farnet_location_geonames_username', FALSE);
+  $maxrows = variable_get('farnet_location_geonames_maxrows', 10);
 
   // Reverse search of the country to get its country code.
   $country_code = _farnet_location_get_country_code($country);
@@ -470,7 +471,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
     $params['adminCode1'] = $region;
   }
 
-  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
+  $base_url = variable_get('farnet_location_geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
@@ -522,7 +523,7 @@ function _farnet_location_autocomplete($lang, $country, $region, $search) {
 function _farnet_location_geocoding_by_city($lang, $country, $city) {
 
   // API options.
-  $username = variable_get('geonames_username', FALSE);
+  $username = variable_get('farnet_location_geonames_username', FALSE);
   $maxrows = 1;
 
   // Reverse search of the country to get its country code.
@@ -545,7 +546,7 @@ function _farnet_location_geocoding_by_city($lang, $country, $city) {
     'lang' => drupal_strtoupper($lang),
   ];
 
-  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
+  $base_url = variable_get('farnet_location_geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
@@ -596,7 +597,7 @@ function _farnet_location_get_region_code($lang, $region, $country_code) {
   $params = [
     'name_equals' => check_plain($region),
     'maxrows' => 1,
-    'username' => $username = variable_get('geonames_username'),
+    'username' => variable_get('farnet_location_geonames_username'),
     'type' => 'json',
     'country' => $country_code,
     'fcode' => 'adm1',
@@ -604,7 +605,7 @@ function _farnet_location_get_region_code($lang, $region, $country_code) {
     'lang' => $lang,
   ];
 
-  $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
+  $base_url = variable_get('farnet_location_geonames_baseurl', 'http://api.geonames.org/');
   $url = $base_url . 'search?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
@@ -632,7 +633,7 @@ function _farnet_location_geocoding($address) {
     'mode' => 1,
   ];
 
-  $base_url = variable_get('geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/');
+  $base_url = variable_get('farnet_location_geocoding_baseurl', 'http://europa.eu/webtools/rest/geocoding/');
   $url = $base_url . '?' . drupal_http_build_query($params);
 
   if (!$geolocs = _farnet_location_get_geonames_result($url)) {
@@ -665,7 +666,7 @@ function _farnet_location_get_cities_list_from_postal_code($postal_code, $countr
   global $language;
 
   // API options.
-  $username = variable_get('geonames_username', FALSE);
+  $username = variable_get('farnet_location_geonames_username', FALSE);
 
   if (drupal_strlen($username) > 0) {
     $params = [
@@ -678,7 +679,7 @@ function _farnet_location_get_cities_list_from_postal_code($postal_code, $countr
       'lang' => $language->language,
     ];
 
-    $base_url = variable_get('geonames_baseurl', 'http://api.geonames.org/');
+    $base_url = variable_get('farnet_location_geonames_baseurl', 'http://api.geonames.org/');
     $url = $base_url . 'postalCodeSearch?' . drupal_http_build_query($params);
 
     if (!$geolocs = _farnet_location_get_geonames_result($url)) {
@@ -691,7 +692,7 @@ function _farnet_location_get_cities_list_from_postal_code($postal_code, $countr
     }
   }
   else {
-    drupal_set_message('API geonames_username not configured !', 'error');
+    drupal_set_message(t('API geonames_username not configured !'), 'error');
     $result = [];
   }
   return (array) $result;

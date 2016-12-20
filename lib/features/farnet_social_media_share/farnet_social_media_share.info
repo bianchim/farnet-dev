@@ -10,4 +10,3 @@ dependencies[] = nexteuropa_json_field
 dependencies[] = nexteuropa_webtools
 features[fe_block_settings][] = bean-bean-social-links
 features[features_api][] = api:2
-project path = sites/all/modules/features

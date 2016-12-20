@@ -716,4 +716,3 @@ features_exclude[field_base][group_access] = group_access
 features_exclude[field_base][group_group] = group_group
 features_exclude[field_base][field_ne_body] = field_ne_body
 features_exclude[field_base][title_field] = title_field
-project path = sites/all/modules/features

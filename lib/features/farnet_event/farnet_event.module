@@ -153,13 +153,6 @@ function farnet_event_strongarm_alter(&$variables) {
 }
 
 /**
- * Implements hook_init().
- */
-function farnet_event_init() {
-  drupal_add_css(drupal_get_path('module', 'farnet_event') . '/css/farnet_event.css');
-}
-
-/**
  * Implements hook_form_FORM_ID_alter().
  */
 function farnet_event_form_node_form_alter(&$form, &$form_state, $form_id) {

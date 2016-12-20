@@ -30,4 +30,3 @@ features[user_permission][] = edit any nexteuropa_mediagallery content
 features[user_permission][] = edit own nexteuropa_mediagallery content
 features[variable][] = xmlsitemap_settings_node_nexteuropa_mediagallery
 features_exclude[dependencies][strongarm] = strongarm
-project path = sites/all/modules/features
