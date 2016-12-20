@@ -180,4 +180,3 @@ features[variable][] = xmlsitemap_settings_node_factsheet_country
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
 features_exclude[field_base][field_organisations] = field_organisations
-project path = sites/all/modules/features

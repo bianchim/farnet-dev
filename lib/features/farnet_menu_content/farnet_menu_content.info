@@ -12,4 +12,3 @@ dependencies[] = farnet_gp_method
 dependencies[] = fe_block
 features[fe_block_settings][] = farnet_menu_content-farnet_menu_content_menu_page
 features[features_api][] = api:2
-project path = sites/all/modules/features

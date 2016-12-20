@@ -324,20 +324,6 @@ function farnet_factsheet_country_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_pdf_orientation_factsheet_country';
-  $strongarm->value = '';
-  $export['print_pdf_orientation_factsheet_country'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_pdf_size_factsheet_country';
-  $strongarm->value = '';
-  $export['print_pdf_size_factsheet_country'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'save_continue_factsheet_country';
   $strongarm->value = 'Save and add fields';
   $export['save_continue_factsheet_country'] = $strongarm;
@@ -390,13 +376,6 @@ function farnet_factsheet_country_strongarm() {
   $strongarm->name = 'scheduler_publish_touch_factsheet_country';
   $strongarm->value = 0;
   $export['scheduler_publish_touch_factsheet_country'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_unpublish_default_time_factsheet_country';
-  $strongarm->value = '';
-  $export['scheduler_unpublish_default_time_factsheet_country'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

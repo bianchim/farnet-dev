@@ -28,7 +28,7 @@ function _farnet_mega_menu_block_name_cleaner($string) {
 /**
  * Function to create array for block creation.
  */
-function _array_for_block_creation($menu_name) {
+function _farnet_mega_menu_array_for_block_creation($menu_name) {
   $tree = menu_tree_all_data($menu_name);
   $menu_collector = array();
   foreach ($tree as $branch) {
@@ -37,6 +37,5 @@ function _array_for_block_creation($menu_name) {
       $menu_collector[$menu_level1_title] = $branch['below'];
     }
   }
-  /* dpm($menu_collector); */
   return $menu_collector;
 }

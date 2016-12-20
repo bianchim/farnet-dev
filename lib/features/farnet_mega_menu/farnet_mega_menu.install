@@ -15,8 +15,7 @@ function farnet_mega_menu_enable() {
 
   features_revert_module("multisite_megamenu");
 
-  /* drupal_flush_all_caches(); */
-  _array_for_block_creation('main-menu');
+  _farnet_mega_menu_array_for_block_creation('main-menu');
 
   $om_maximenu = array(
     1 => array(
@@ -54,15 +53,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => '',
         ),
         2 => array(
@@ -81,15 +72,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => array(
             'farnet_mega_menu___about' => array(
               'title' => '<none>',
@@ -119,15 +102,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => array(
             'farnet_mega_menu___news_events' => array(
               'title' => '<none>',
@@ -157,15 +132,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => array(
             'farnet_mega_menu___on_the_ground' => array(
               'title' => '<none>',
@@ -195,15 +162,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => array(
             'farnet_mega_menu___themes' => array(
               'title' => '<none>',
@@ -233,15 +192,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => array(
             'farnet_mega_menu___cooperation' => array(
               'title' => '<none>',
@@ -271,15 +222,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => array(
             'farnet_mega_menu___tools' => array(
               'title' => '<none>',
@@ -309,15 +252,7 @@ function farnet_mega_menu_enable() {
           'target' => '_self',
           'description' => '',
           'description_option' => 'hover',
-          'roles' => array(
-            1 => 0,
-            2 => 0,
-            3 => 0,
-            4 => 0,
-            5 => 0,
-            6 => 0,
-            7 => 0,
-          ),
+          'roles' => [],
           'content' => array(
             'farnet_mega_menu___library' => array(
               'title' => '<none>',

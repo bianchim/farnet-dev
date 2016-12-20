@@ -57,4 +57,3 @@ features_exclude[field_base][body] = body
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][field_ne_body] = field_ne_body
 features_exclude[field_base][title_field] = title_field
-project path = sites/all/modules/features

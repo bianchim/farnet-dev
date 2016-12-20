@@ -67,7 +67,7 @@ function farnet_user_profile_validate($form, &$form_state) {
   $magazines = $form_state['values']['field_farnet_magazine_subscribe'][LANGUAGE_NONE];
   $languages = array();
   $qte = 0;
-  foreach ($magazines as $key => $value) {
+  foreach ($magazines as $value) {
     $selected_language = $value['field_magazine_language'][LANGUAGE_NONE][0]['tid'];
     if (in_array($selected_language, $languages)) {
       form_set_error('field_farnet_magazine_subscribe', t('A language must be selected once.'));
@@ -139,7 +139,6 @@ function farnet_user_profile_validate($form, &$form_state) {
     }
     catch (NumberParseException $e) {
       form_set_error('field_telephone', t('Please enter a valid telephone number.'));
-      /* dpm($e); */
     }
   }
 
@@ -155,7 +154,6 @@ function farnet_user_profile_validate($form, &$form_state) {
     }
     catch (NumberParseException $e) {
       form_set_error('field_website', t('Please enter a valid mobile phone.'));
-      /* dpm($e); */
     }
   }
 
@@ -204,7 +202,9 @@ function farnet_user_field_access_callback($field_name, $entity_type, $bundle_na
  * Callback of field organisation autocomplete widget.
  */
 function farnet_user_field_organisation_callback($country, $search = NULL) {
-  if (is_null($search)) {
+  global $language;
+
+  if (is_null($search) || empty($search)) {
     $search = $country;
     $country = NULL;
   }
@@ -233,7 +233,8 @@ function farnet_user_field_organisation_callback($country, $search = NULL) {
   }
 
   foreach ($organisations as $nid => $organisation) {
-    $label = reset($organisation->title_field['en'])['value'];
+    $langcode = isset($organisation->title_field[$language->language]) ? $language->language : 'en';
+    $label = reset($organisation->title_field[$langcode])['value'];
     $key = "$label ($nid)";
     // Strip things like starting/trailing white spaces, line breaks and tags.
     $key = preg_replace('/\s\s+/', ' ', str_replace("\n", '', trim(decode_entities(strip_tags($key)))));

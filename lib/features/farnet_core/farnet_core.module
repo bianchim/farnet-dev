@@ -49,7 +49,7 @@ function farnet_core_block_view($delta = '') {
 function farnet_core_printpdf_multilingual_form($form, &$form_state) {
   global $language;
 
-  $node = node_load(arg(1));
+  $node = menu_get_object();
   $language_list = language_list();
   $translations = $node->translations;
 
