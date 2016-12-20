@@ -348,6 +348,7 @@ function farnet_gp_short_story_field_group_info() {
       2 => 'field_picture',
       3 => 'field_website',
       4 => 'title_field',
+      5 => 'field_id_text',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

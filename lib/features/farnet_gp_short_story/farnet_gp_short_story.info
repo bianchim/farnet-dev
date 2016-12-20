@@ -94,6 +94,7 @@ features[field_instance][] = node-gp_short_story-field_funding_local
 features[field_instance][] = node-gp_short_story-field_funding_national
 features[field_instance][] = node-gp_short_story-field_funding_regional
 features[field_instance][] = node-gp_short_story-field_gallery
+features[field_instance][] = node-gp_short_story-field_id_text
 features[field_instance][] = node-gp_short_story-field_latitude
 features[field_instance][] = node-gp_short_story-field_longitude
 features[field_instance][] = node-gp_short_story-field_ne_body
