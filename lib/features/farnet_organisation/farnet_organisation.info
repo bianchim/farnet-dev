@@ -7,6 +7,7 @@ package = Farnet
 dependencies[] = cce_basic_config
 dependencies[] = ctools
 dependencies[] = email
+dependencies[] = entityreference
 dependencies[] = farnet_factsheet_flag
 dependencies[] = farnet_taxonomy
 dependencies[] = features

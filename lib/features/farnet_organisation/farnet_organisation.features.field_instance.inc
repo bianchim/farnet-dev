@@ -506,7 +506,7 @@ function farnet_organisation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -579,7 +579,7 @@ function farnet_organisation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -762,9 +762,10 @@ function farnet_organisation_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
