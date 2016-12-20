@@ -528,7 +528,7 @@ function farnet_factsheet_country_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_diagram_delivery',
-    'label' => 'Diagram of the delivery system for CLLD',
+    'label' => 'Delivery of CLLD',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -1865,7 +1865,7 @@ function farnet_factsheet_country_field_default_field_instances() {
   t('Co-funding');
   t('Cooperation');
   t('Country');
-  t('Diagram of the delivery system for CLLD');
+  t('Delivery of CLLD');
   t('Document');
   t('EMFF budget for CLLD');
   t('FLAG areas');
