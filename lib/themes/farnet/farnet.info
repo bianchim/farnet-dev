@@ -10,12 +10,11 @@ base theme = ec_resp
 stylesheets[all][] = "framework/styles/vendor.css"
 stylesheets[all][] = "framework/styles/farnet.css"
 stylesheets[all][] = "css/menu.css"
-stylesheets[all][] = "css/styleguide.css"
+stylesheets[all][] = "css/farnet.css"
 
 scripts[] = "framework/scripts/vendors.js"
 scripts[] = "framework/scripts/farnet.js"
 scripts[] = "js/menu.js"
-scripts[] = "js/styleguide.js"
 
 regions[header_top] = "Header Top"
 regions[header_right] = "Header Right"
