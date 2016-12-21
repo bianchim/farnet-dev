@@ -19,7 +19,7 @@ function farnet_om_menu_content_render($content = array()) {
   uasort($content, 'om_sort_by_weight');
   $total = count($content);
   $out = '';
-  foreach ($content as $key => $prop) {
+  foreach ($content as $prop) {
     $count++;
 
     $module     = $prop['module'];
@@ -93,13 +93,11 @@ function farnet_menu_tree__main_menu($variables) {
  */
 function farnet_dropdown($variables) {
   $items = $variables['items'];
-  $attributes = array();
   $output = "";
 
   if (!empty($items)) {
     $output .= "<ul class='dropdown-menu'>";
-    $num_items = count($items);
-    foreach ($items as $i => $item) {
+    foreach ($items as $item) {
       $data = '';
       if (is_array($item)) {
         foreach ($item as $key => $value) {
@@ -179,10 +177,10 @@ function farnet_preprocess_field(&$variables, $hook) {
     }
     $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col">';
     $variables['suffix'] .= '</div></div></div>';
-  } 
+  }
   elseif ($variables['element']['#field_name'] == 'field_ff_total_employment') {
-    if (!$variables['element']['#object']->field_ff_population and 
-      !$variables['element']['#object']->field_ff_surface_area and 
+    if (!$variables['element']['#object']->field_ff_population and
+      !$variables['element']['#object']->field_ff_surface_area and
       !$variables['element']['#object']->field_ff_population_density) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats">';
     }
@@ -190,8 +188,8 @@ function farnet_preprocess_field(&$variables, $hook) {
     $variables['suffix'] .= '</div>';
   }
   elseif ($variables['element']['#field_name'] == 'field_ff_fishing') {
-     if (!$variables['element']['#object']->field_ff_population and 
-      !$variables['element']['#object']->field_ff_surface_area and 
+    if (!$variables['element']['#object']->field_ff_population and
+      !$variables['element']['#object']->field_ff_surface_area and
       !$variables['element']['#object']->field_ff_population_density and
       !$variables['element']['#object']->field_ff_total_employment) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row">';
@@ -199,10 +197,10 @@ function farnet_preprocess_field(&$variables, $hook) {
     $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
   }
   elseif ($variables['element']['#field_name'] == 'field_ff_processing') {
-     if (!$variables['element']['#object']->field_ff_population and 
-      !$variables['element']['#object']->field_ff_surface_area and 
+    if (!$variables['element']['#object']->field_ff_population and
+      !$variables['element']['#object']->field_ff_surface_area and
       !$variables['element']['#object']->field_ff_population_density and
-      !$variables['element']['#object']->field_ff_total_employment and 
+      !$variables['element']['#object']->field_ff_total_employment and
       !$variables['element']['#object']->field_ff_fishing) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 flag-stats__col--blue-bg">';
       $variables['suffix'] .= '</div></div></div></div></div>';
