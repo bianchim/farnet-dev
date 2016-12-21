@@ -12,8 +12,8 @@ function farnet_factsheet_country_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'field_collection_item-field_key_documents-field_document'.
-  $field_instances['field_collection_item-field_key_documents-field_document'] = array(
+  // 'field_collection_item-field_key_documents-field_fc_document'.
+  $field_instances['field_collection_item-field_key_documents-field_fc_document'] = array(
     'bundle' => 'field_key_documents',
     'deleted' => 0,
     'description' => '',
@@ -27,7 +27,7 @@ function farnet_factsheet_country_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_document',
+    'field_name' => 'field_fc_document',
     'label' => 'Document',
     'required' => 0,
     'settings' => array(

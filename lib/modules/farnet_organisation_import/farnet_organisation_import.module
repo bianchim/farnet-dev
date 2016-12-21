@@ -507,31 +507,31 @@ function _farnet_organisation_import_organisations_from_db() {
     }
 
     // Social media links.
-    $link = explode(';', $info[16]);
+    $link = explode(';', $info[15]);
     $wrapper->field_ff_twitter->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $link = explode(';', $info[17]);
+    $link = explode(';', $info[16]);
     $wrapper->field_ff_facebook->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $link = explode(';', $info[18]);
+    $link = explode(';', $info[17]);
     $wrapper->field_ff_linkedin->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $link = explode(';', $info[19]);
+    $link = explode(';', $info[18]);
     $wrapper->field_ff_google->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $wrapper->field_comment->set(['value' => $info[20]]);
+    $wrapper->field_comment->set(['value' => $info[19]]);
 
     $wrapper->status->set(NODE_PUBLISHED);
     $wrapper->save();
@@ -547,7 +547,8 @@ function _farnet_organisation_import_organisations_from_db() {
     $node->workbench_moderation_state_new = workbench_moderation_state_published();
     $node->field_organisation_contacts = NULL;
     node_save($node);
-
+    
+    // Manage field collection contact.
     $contact_links = db_select('import_contact_link', 'icl')
       ->fields('icl')
       ->condition('oid', $oid, '=')

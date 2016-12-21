@@ -24,7 +24,7 @@ function farnet_discussion_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_document',
+      0 => 'field_fc_document',
       1 => 'field_ne_body',
       2 => 'title_field',
     ),
