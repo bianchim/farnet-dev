@@ -83,10 +83,9 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_farnet_abstract',
-      1 => 'field_id',
-      2 => 'field_picture',
-      3 => 'field_title_official',
+      0 => 'field_id_text',
+      1 => 'field_picture',
+      2 => 'field_title_official',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -413,9 +412,8 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Location',
     'weight' => '8',
     'children' => array(
-      0 => 'field_term_country',
-      1 => 'field_region',
-      2 => 'field_area',
+      0 => 'field_collection_region',
+      1 => 'field_term_country',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -475,7 +473,6 @@ function farnet_gp_project_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
-      1 => 'field_media_upload',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -563,9 +560,7 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Publication',
     'weight' => '9',
     'children' => array(
-      0 => 'field_publication_abstract',
-      1 => 'field_publication_date',
-      2 => 'field_term_publication_channels',
+      0 => 'field_publication_date',
     ),
     'format_type' => 'div',
     'format_settings' => array(

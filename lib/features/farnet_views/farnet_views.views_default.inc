@@ -12,6 +12,485 @@ function farnet_views_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'farnet_view_good_practices';
+  $view->description = 'Views for CT Good Practice : GP Project, GP Method, GP Short Stories';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Farnet Good Practices Views';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Good practices';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
+  $handler->display->display_options['fields']['field_picture']['field'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_picture']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_picture']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'teaser',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Country */
+  $handler->display->display_options['fields']['field_term_country']['id'] = 'field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['table'] = 'field_data_field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['field'] = 'field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['label'] = '';
+  $handler->display->display_options['fields']['field_term_country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_country']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_term_country']['delta_offset'] = '0';
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_term_theme']['id'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['field'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_term_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_theme']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_term_theme']['delta_offset'] = '0';
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'gp_method' => 'gp_method',
+    'gp_project' => 'gp_project',
+    'gp_short_story' => 'gp_short_story',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_gp_all');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
+  $handler->display->display_options['fields']['field_picture']['field'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_picture']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_picture']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'teaser',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Country */
+  $handler->display->display_options['fields']['field_term_country']['id'] = 'field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['table'] = 'field_data_field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['field'] = 'field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['label'] = '';
+  $handler->display->display_options['fields']['field_term_country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_country']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_term_country']['delta_offset'] = '0';
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_term_theme']['id'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['field'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_term_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_theme']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_term_theme']['delta_offset'] = '0';
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  $handler->display->display_options['path'] = 'on-the-ground/good-practices';
+  $handler->display->display_options['menu']['title'] = 'Good Practices';
+  $handler->display->display_options['menu']['description'] = 'Good Practices';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: GP Projects */
+  $handler = $view->new_display('page', 'GP Projects', 'page_gp_projects');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Projects';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'gp_project' => 'gp_project',
+  );
+  $handler->display->display_options['path'] = 'on-the-ground/good-practices/projects';
+  $handler->display->display_options['menu']['title'] = 'Projects';
+  $handler->display->display_options['menu']['description'] = 'Projects';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: GP Methods */
+  $handler = $view->new_display('page', 'GP Methods', 'page_gp_methods');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Methods';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'gp_method' => 'gp_method',
+  );
+  $handler->display->display_options['path'] = 'on-the-ground/good-practices/methods';
+  $handler->display->display_options['menu']['title'] = 'Methods';
+  $handler->display->display_options['menu']['description'] = 'Methods';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: GP Short Stories */
+  $handler = $view->new_display('page', 'GP Short Stories', 'page_gp_short_stories');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Short stories';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'gp_short_story' => 'gp_short_story',
+  );
+  $handler->display->display_options['path'] = 'on-the-ground/good-practices/short-stories';
+  $handler->display->display_options['menu']['title'] = 'Methods';
+  $handler->display->display_options['menu']['description'] = 'Methods';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['farnet_view_good_practices'] = $view;
+
+  $view = new view();
+  $view->name = 'farnet_view_news';
+  $view->description = 'Views for the news Farnet and other';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Farnet News';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'News';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'teaser',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_abstract']['id'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'page' => 'page',
+    'nexteuropa_event' => 'nexteuropa_event',
+    'nexteuropa_faq' => 'nexteuropa_faq',
+    'factsheet_country' => 'factsheet_country',
+    'factsheet_flag' => 'factsheet_flag',
+    'nexteuropa_news' => 'nexteuropa_news',
+    'gp_short_story' => 'gp_short_story',
+    'publication' => 'publication',
+    'gp_method' => 'gp_method',
+  );
+  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array(
+    93 => '93',
+    94 => '94',
+  );
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'news-events/news';
+
+  /* Display: Farnet */
+  $handler = $view->new_display('page', 'Farnet', 'page_news_farnet');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'FARNET news';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'page' => 'page',
+    'nexteuropa_event' => 'nexteuropa_event',
+    'nexteuropa_faq' => 'nexteuropa_faq',
+    'nexteuropa_news' => 'nexteuropa_news',
+  );
+  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array(
+    93 => '93',
+  );
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
+  $handler->display->display_options['path'] = 'news-events/news/farnet';
+
+  /* Display: Other */
+  $handler = $view->new_display('page', 'Other', 'page_news_other');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Other news';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'farnet_article' => 'farnet_article',
+    'page' => 'page',
+    'cooperation_call' => 'cooperation_call',
+    'cooperation_idea' => 'cooperation_idea',
+    'ms_fiche' => 'ms_fiche',
+    'nexteuropa_event' => 'nexteuropa_event',
+    'nexteuropa_faq' => 'nexteuropa_faq',
+    'factsheet_flag' => 'factsheet_flag',
+    'gp_method' => 'gp_method',
+    'gp_project' => 'gp_project',
+    'gp_short_story' => 'gp_short_story',
+    'nexteuropa_mediagallery' => 'nexteuropa_mediagallery',
+    'nexteuropa_news' => 'nexteuropa_news',
+    'publication' => 'publication',
+  );
+  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array(
+    94 => '94',
+  );
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
+  $handler->display->display_options['path'] = 'news-events/news/other';
+  $export['farnet_view_news'] = $view;
+
+  $view = new view();
   $view->name = 'farnet_view_themes';
   $view->description = '';
   $view->tag = 'default';
@@ -27,11 +506,46 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
+  $handler->display->display_options['fields']['field_picture']['field'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_picture']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_picture']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -39,6 +553,42 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'teaser',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_abstract']['id'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
   $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
@@ -87,8 +637,8 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
 
-  /* Display: themes */
-  $handler = $view->new_display('page', 'themes', 'page_themes');
+  /* Display: Themes */
+  $handler = $view->new_display('page', 'Themes', 'page_themes');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Themes';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -105,286 +655,31 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'farnet_article' => 'farnet_article',
     'page' => 'page',
+    'cooperation_call' => 'cooperation_call',
+    'cooperation_idea' => 'cooperation_idea',
+    'ms_fiche' => 'ms_fiche',
+    'factsheet_country' => 'factsheet_country',
     'nexteuropa_event' => 'nexteuropa_event',
     'nexteuropa_faq' => 'nexteuropa_faq',
-    'factsheet_country' => 'factsheet_country',
     'factsheet_flag' => 'factsheet_flag',
-    'nexteuropa_news' => 'nexteuropa_news',
-    'gp_short_story' => 'gp_short_story',
-    'publication' => 'publication',
     'gp_method' => 'gp_method',
-    'farnet_article' => 'farnet_article',
+    'gp_project' => 'gp_project',
+    'gp_short_story' => 'gp_short_story',
+    'nexteuropa_news' => 'nexteuropa_news',
+    'publication' => 'publication',
   );
-  /* Filter criterion: Content: Publication date (field_publication_date) */
-  $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
-  $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['filters']['field_publication_date_value']['field'] = 'field_publication_date_value';
-  $handler->display->display_options['filters']['field_publication_date_value']['operator'] = '<';
-  $handler->display->display_options['filters']['field_publication_date_value']['granularity'] = 'minute';
-  $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
   $handler->display->display_options['filters']['field_term_theme_tid']['field'] = 'field_term_theme_tid';
-  /* $handler->display->display_options['filters']['field_term_theme_tid']['value'] = array(); */
   $handler->display->display_options['filters']['field_term_theme_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_term_theme_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'themes';
   $export['farnet_view_themes'] = $view;
-
-  $view = new view();
-  $view->name = 'farnet_view_news';
-  $view->description = 'Views for the news Farnet and other';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Farnet News';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'News';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'page' => 'page',
-    'nexteuropa_event' => 'nexteuropa_event',
-    'nexteuropa_faq' => 'nexteuropa_faq',
-    'factsheet_country' => 'factsheet_country',
-    'factsheet_flag' => 'factsheet_flag',
-    'nexteuropa_news' => 'nexteuropa_news',
-    'gp_short_story' => 'gp_short_story',
-    'publication' => 'publication',
-    'gp_method' => 'gp_method',
-  );
-  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array();
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'news-events/news';
-
-  /* Display: Farnet */
-  $handler = $view->new_display('page', 'Farnet', 'page_news_farnet');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'FARNET news';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'page' => 'page',
-    'nexteuropa_event' => 'nexteuropa_event',
-    'nexteuropa_faq' => 'nexteuropa_faq',
-    'nexteuropa_news' => 'nexteuropa_news',
-  );
-  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array();
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
-  $handler->display->display_options['path'] = 'news-events/news/farnet';
-
-  /* Display: Other */
-  $handler = $view->new_display('page', 'Other', 'page_news_other');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Other news';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'page' => 'page',
-    'nexteuropa_event' => 'nexteuropa_event',
-    'nexteuropa_faq' => 'nexteuropa_faq',
-    'nexteuropa_news' => 'nexteuropa_news',
-  );
-  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array();
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
-  $handler->display->display_options['path'] = 'news-events/news/other';
-  $export['farnet_view_news'] = $view;
-
-  $view = new view();
-  $view->name = 'farnet_view_good_practices';
-  $view->description = 'GP Project + GP Method';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Farnet Good Practices Views';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Good practices';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'gp_project' => 'gp_project',
-    'gp_method' => 'gp_method',
-  );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'on-the-ground/good-practices';
-  $handler->display->display_options['menu']['title'] = 'Good Practices';
-  $handler->display->display_options['menu']['description'] = 'Good Practices';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: GP Project */
-  $handler = $view->new_display('page', 'GP Project', 'page_projects');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Projects';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'gp_project' => 'gp_project',
-  );
-  $handler->display->display_options['path'] = 'on-the-ground/good-practices/projects';
-  $handler->display->display_options['menu']['title'] = 'Projects';
-  $handler->display->display_options['menu']['description'] = 'Projects';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: GP Method */
-  $handler = $view->new_display('page', 'GP Method', 'page_methods');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Methods';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'gp_method' => 'gp_method',
-  );
-  $handler->display->display_options['path'] = 'on-the-ground/good-practices/methods';
-  $handler->display->display_options['menu']['title'] = 'Methods';
-  $handler->display->display_options['menu']['description'] = 'Methods';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $export['farnet_view_good_practices'] = $view;
 
   $view = new view();
   $view->name = 'homepage_highlight';

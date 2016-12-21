@@ -156,13 +156,13 @@ function farnet_factsheet_country_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_document'.
-  $field_bases['field_document'] = array(
+  // Exported field_base: 'field_fc_document'.
+  $field_bases['field_fc_document'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_document',
+    'field_name' => 'field_fc_document',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
