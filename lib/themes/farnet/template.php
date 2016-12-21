@@ -19,7 +19,7 @@ function farnet_om_menu_content_render($content = array()) {
   uasort($content, 'om_sort_by_weight');
   $total = count($content);
   $out = '';
-  foreach ($content as $prop) {
+  foreach ($content as $key => $prop) {
     $count++;
 
     $module     = $prop['module'];
@@ -70,6 +70,7 @@ function farnet_preprocess_block(&$vars) {
 
   switch ($block_id) {
     case 'om_maximenu-om-maximenu-1':
+      // NB - Libetho: It seems that this case is not used.
       $vars['classes_array'][] = 'navigation-main';
       break;
 
@@ -84,7 +85,6 @@ function farnet_menu_tree__main_menu($variables) {
   if (strpos($variables['tree'], 'main-menu-top-level') !== FALSE) {
     $navbar = 'nav navbar-nav';
   }
-
   return '<ul class="fr-megamenu-list menu clearfix ' . $navbar . '">' . $variables['tree'] . '</ul>';
 }
 
@@ -93,11 +93,13 @@ function farnet_menu_tree__main_menu($variables) {
  */
 function farnet_dropdown($variables) {
   $items = $variables['items'];
+  $attributes = array();
   $output = "";
 
   if (!empty($items)) {
     $output .= "<ul class='dropdown-menu'>";
-    foreach ($items as $item) {
+    $num_items = count($items);
+    foreach ($items as $i => $item) {
       $data = '';
       if (is_array($item)) {
         foreach ($item as $key => $value) {
@@ -114,4 +116,97 @@ function farnet_dropdown($variables) {
     $output .= "</ul>";
   }
   return $output;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'farnet_core_printpdf_multilingual_form') {
+    $form['#attributes'] = array('class' => 'c-file-download');
+    $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
+    $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#fuffix'] = '</div>';
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function farnet_preprocess_field(&$variables, $hook) {
+  $variables['prefix'] = NULL;
+  $variables['suffix'] = NULL;
+  if ($variables['element']['#field_name'] == 'field_collection_strategy') {
+    foreach ($variables['items'] as $delta => $item) {
+      array_push($variables['items'][$delta]["#attributes"]["class"], 'field-collection-view-final');
+      if ($delta > 0) {
+        $nid = key($item['entity']['field_collection_item']);
+        $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_allocated_budget']['#label_display'] = 'hidden';
+        $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_list_objective']['#label_display'] = 'hidden';
+        $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_priority']['#label_display'] = 'hidden';
+      }
+    }
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_population') {
+    $variables['suffix'] = '</div>';
+    if (!$variables['element']['#object']->field_ff_population_density and
+        !$variables['element']['#object']->field_ff_surface_area) {
+      $variables['prefix'] .= '<p>start here</p><div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row"><div class="col-sm-4 flag-stats__col">';
+      $variables['suffix'] .= '</div></div>';
+    }
+    else {
+      $variables['prefix'] .= '<p>start here</p><div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row"><div class="col-sm-4 flag-stats__col flag-stats__col--with-border">';
+    }
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_surface_area') {
+    if (!$variables['element']['#object']->field_ff_population) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row">';
+    }
+    $variables['suffix'] = '</div>';
+    if (!$variables['element']['#object']->field_ff_population_density) {
+      $variables['suffix'] .= '</div></div>';
+      $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col">';
+    }
+    else {
+      $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col flag-stats__col--with-border">';
+    }
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_population_density') {
+    if (!$variables['element']['#object']->field_ff_population and
+        !$variables['element']['#object']->field_ff_surface_area) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row">';
+    }
+    $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col">';
+    $variables['suffix'] .= '</div></div></div>';
+  } 
+  elseif ($variables['element']['#field_name'] == 'field_ff_total_employment') {
+    if (!$variables['element']['#object']->field_ff_population and 
+      !$variables['element']['#object']->field_ff_surface_area and 
+      !$variables['element']['#object']->field_ff_population_density) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats">';
+    }
+    $variables['prefix'] .= '<div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-4 flag-stats__col">';
+    $variables['suffix'] .= '</div>';
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_fishing') {
+     if (!$variables['element']['#object']->field_ff_population and 
+      !$variables['element']['#object']->field_ff_surface_area and 
+      !$variables['element']['#object']->field_ff_population_density and
+      !$variables['element']['#object']->field_ff_total_employment) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row">';
+    }
+    $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_processing') {
+     if (!$variables['element']['#object']->field_ff_population and 
+      !$variables['element']['#object']->field_ff_surface_area and 
+      !$variables['element']['#object']->field_ff_population_density and
+      !$variables['element']['#object']->field_ff_total_employment and 
+      !$variables['element']['#object']->field_ff_fishing) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 flag-stats__col--blue-bg">';
+      $variables['suffix'] .= '</div></div></div></div></div>';
+    }
+    $variables['suffix'] .= '</div></div></div></div></div><p>End here<p>';
+  }
 }
