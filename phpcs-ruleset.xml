@@ -5,7 +5,6 @@
     <description>Drupal coding standard for NextEuropa subsites</description>
 
     <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal" />
-    <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice" />
     <rule ref="./vendor/ec-europa/qa-automation/DrupalSecure" />
     <rule ref="./vendor/ec-europa/qa-automation/QualityAssurance" />
 
