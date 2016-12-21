@@ -27,5 +27,12 @@ function farnet_views_views_default_views_alter(&$views) {
       $views['farnet_view_news']->display['page_news_other']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
       $views['farnet_view_news']->display['default']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
     }
+
+    $term = taxonomy_get_term_by_name('Cooperation in action');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_view_news']->display['page_cp_in_action']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
+    }
   }
 }
