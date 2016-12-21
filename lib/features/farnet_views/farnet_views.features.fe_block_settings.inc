@@ -36,6 +36,12 @@ function farnet_views_default_fe_block_settings() {
         'theme' => 'ec_resp',
         'weight' => -40,
       ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
