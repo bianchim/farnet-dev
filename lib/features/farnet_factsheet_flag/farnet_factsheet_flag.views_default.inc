@@ -201,13 +201,6 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Picture */
   $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
   $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
@@ -221,6 +214,13 @@ function farnet_factsheet_flag_views_default_views() {
     'image_style' => 'medium',
     'image_link' => '',
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Publication date */
   $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
   $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
@@ -241,6 +241,14 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['fields']['field_ff_code']['field'] = 'field_ff_code';
   $handler->display->display_options['fields']['field_ff_code']['label'] = '';
   $handler->display->display_options['fields']['field_ff_code']['element_label_colon'] = FALSE;
+  /* Field: Content: Country */
+  $handler->display->display_options['fields']['field_term_country']['id'] = 'field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['table'] = 'field_data_field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['field'] = 'field_term_country';
+  $handler->display->display_options['fields']['field_term_country']['label'] = '';
+  $handler->display->display_options['fields']['field_term_country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_country']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_term_country']['delta_offset'] = '0';
   /* Field: Content: Abstract */
   $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
@@ -272,6 +280,47 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'factsheet_flag' => 'factsheet_flag',
   );
+  /* Filter criterion: Content: Country (field_term_country) */
+  $handler->display->display_options['filters']['field_term_country_tid']['id'] = 'field_term_country_tid';
+  $handler->display->display_options['filters']['field_term_country_tid']['table'] = 'field_data_field_term_country';
+  $handler->display->display_options['filters']['field_term_country_tid']['field'] = 'field_term_country_tid';
+  $handler->display->display_options['filters']['field_term_country_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['operator_id'] = 'field_term_country_tid_op';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['label'] = 'Country';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['operator'] = 'field_term_country_tid_op';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['identifier'] = 'field_term_country_tid';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  /* Filter criterion: Content: Theme (field_term_theme) */
+  $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
+  $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['filters']['field_term_theme_tid']['field'] = 'field_term_theme_tid';
+  $handler->display->display_options['filters']['field_term_theme_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_term_theme_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['operator_id'] = 'field_term_theme_tid_op';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['operator'] = 'field_term_theme_tid_op';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['identifier'] = 'field_term_theme_tid';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_factsheet_flag');

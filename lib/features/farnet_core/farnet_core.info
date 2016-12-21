@@ -21,7 +21,6 @@ dependencies[] = image
 dependencies[] = link
 dependencies[] = locale
 dependencies[] = media_oembed
-dependencies[] = menu
 dependencies[] = metatag_twitter_cards
 dependencies[] = multisite_maxlength
 dependencies[] = nexteuropa_communities
