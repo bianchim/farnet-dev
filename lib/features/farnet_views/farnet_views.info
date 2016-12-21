@@ -22,6 +22,7 @@ dependencies[] = views_bootstrap
 features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-homepage_highlight-block
 features[features_api][] = api:2
+features[views_view][] = farnet_cooperation_views
 features[views_view][] = farnet_view_good_practices
 features[views_view][] = farnet_view_news
 features[views_view][] = farnet_view_themes
