@@ -44,15 +44,15 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_adding-value-to-fisheries:themes/adding-values-fisheries.
-  $menu_links['main-menu_adding-value-to-fisheries:themes/adding-values-fisheries'] = array(
+  // Exported menu link: main-menu_adding-value-to-fisheries:themes/adding-value-fisheries.
+  $menu_links['main-menu_adding-value-to-fisheries:themes/adding-value-fisheries'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries',
+    'link_path' => 'themes/adding-value-fisheries',
     'router_path' => 'themes',
     'link_title' => 'Adding value to fisheries',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+      'identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -82,10 +82,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_themes:themes',
   );
-  // Exported menu link: main-menu_aquaculture:themes/adding-values-fisheries/aquaculture.
-  $menu_links['main-menu_aquaculture:themes/adding-values-fisheries/aquaculture'] = array(
+  // Exported menu link: main-menu_aquaculture:themes/adding-value-fisheries/aquaculture.
+  $menu_links['main-menu_aquaculture:themes/adding-value-fisheries/aquaculture'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries/aquaculture',
+    'link_path' => 'themes/adding-value-fisheries/aquaculture',
     'router_path' => 'themes',
     'link_title' => 'Aquaculture',
     'options' => array(
@@ -107,7 +107,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_aquaculture:themes/adding-values-fisheries/aquaculture',
+      'identifier' => 'main-menu_aquaculture:themes/adding-value-fisheries/aquaculture',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -118,7 +118,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
   // Exported menu link: main-menu_arts-and-crafts:themes/diversification/arts-and-crafts.
   $menu_links['main-menu_arts-and-crafts:themes/diversification/arts-and-crafts'] = array(
@@ -234,10 +234,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_library:node/2',
   );
-  // Exported menu link: main-menu_business-support:themes/adding-values-fisheries/business-support.
-  $menu_links['main-menu_business-support:themes/adding-values-fisheries/business-support'] = array(
+  // Exported menu link: main-menu_business-support:themes/adding-value-fisheries/business-support.
+  $menu_links['main-menu_business-support:themes/adding-value-fisheries/business-support'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries/business-support',
+    'link_path' => 'themes/adding-value-fisheries/business-support',
     'router_path' => 'themes',
     'link_title' => 'Business support',
     'options' => array(
@@ -259,7 +259,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_business-support:themes/adding-values-fisheries/business-support',
+      'identifier' => 'main-menu_business-support:themes/adding-value-fisheries/business-support',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -270,7 +270,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
   // Exported menu link: main-menu_calendar:<front>.
   $menu_links['main-menu_calendar:<front>'] = array(
@@ -538,15 +538,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_about:node/2',
   );
-  // Exported menu link: main-menu_cooperation-by-member-state:<front>.
-  $menu_links['main-menu_cooperation-by-member-state:<front>'] = array(
+  // Exported menu link: main-menu_cooperation-by-member-state:cooperation/member-by-state.
+  $menu_links['main-menu_cooperation-by-member-state:cooperation/member-by-state'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'cooperation/member-by-state',
     'router_path' => '',
     'link_title' => 'Cooperation by Member State',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-by-member-state:<front>',
+      'identifier' => 'main-menu_cooperation-by-member-state:cooperation/member-by-state',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -577,14 +577,14 @@ function farnet_core_menu_default_menu_links() {
     'parent_identifier' => 'main-menu_cooperation:<front>',
   );
   // Exported menu link: main-menu_cooperation-calls:<front>.
-  $menu_links['main-menu_cooperation-calls:<front>'] = array(
+  $menu_links['main-menu_cooperation-calls:cooperation/calls'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'cooperation/calls',
     'router_path' => '',
     'link_title' => 'Cooperation calls',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-calls:<front>',
+      'identifier' => 'main-menu_cooperation-calls:cooperation/calls',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -614,15 +614,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_cooperation:<front>',
   );
-  // Exported menu link: main-menu_cooperation-ideas:<front>.
-  $menu_links['main-menu_cooperation-ideas:<front>'] = array(
+  // Exported menu link: main-menu_cooperation-ideas:cooperation/ideas.
+  $menu_links['main-menu_cooperation-ideas:cooperation/ideas'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'cooperation/ideas',
     'router_path' => '',
     'link_title' => 'Cooperation ideas',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-ideas:<front>',
+      'identifier' => 'main-menu_cooperation-ideas:cooperation/ideas',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -652,15 +652,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_cooperation:<front>',
   );
-  // Exported menu link: main-menu_cooperation-in-action:<front>.
-  $menu_links['main-menu_cooperation-in-action:<front>'] = array(
+  // Exported menu link: main-menu_cooperation-in-action:cooperation/in-action.
+  $menu_links['main-menu_cooperation-in-action:cooperation/in-action'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
     'router_path' => '',
     'link_title' => 'Cooperation in action',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-in-action:<front>',
+      'identifier' => 'main-menu_cooperation-in-action:cooperation/in-action',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -836,7 +836,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
+    'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
   // Exported menu link: main-menu_dg-mare:<front>.
   $menu_links['main-menu_dg-mare:<front>'] = array(
@@ -950,7 +950,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
+    'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
   // Exported menu link: main-menu_elderly:themes/society-and-culture/elderly.
   $menu_links['main-menu_elderly:themes/society-and-culture/elderly'] = array(
@@ -988,7 +988,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
+    'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
   // Exported menu link: main-menu_eligibility:tools/faq/eligibility.
   $menu_links['main-menu_eligibility:tools/faq/eligibility'] = array(
@@ -1446,10 +1446,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_faqs:tools/faq',
   );
-  // Exported menu link: main-menu_fisheries-by-products:themes/diversification/fisheries-by-products.
-  $menu_links['main-menu_fisheries-by-products:themes/diversification/fisheries-by-products'] = array(
+  // Exported menu link: main-menu_fisheries-products:themes/diversification/fisheries-products.
+  $menu_links['main-menu_fisheries-products:themes/diversification/fisheries-products'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/diversification/fisheries-by-products',
+    'link_path' => 'themes/diversification/fisheries-products',
     'router_path' => 'themes',
     'link_title' => 'Fisheries by-products',
     'options' => array(
@@ -1471,7 +1471,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_fisheries-by-products:themes/diversification/fisheries-by-products',
+      'identifier' => 'main-menu_fisheries-products:themes/diversification/fisheries-products',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1804,7 +1804,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
+    'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
   // Exported menu link: main-menu_integrated-coastal-management:themes/governance-management/integrated-coastal-management.
   $menu_links['main-menu_integrated-coastal-management:themes/governance-management/integrated-coastal-management'] = array(
@@ -1844,10 +1844,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_governance-and-management:themes/governance-management',
   );
-  // Exported menu link: main-menu_labelling:themes/adding-values-fisheries/labelling.
-  $menu_links['main-menu_labelling:themes/adding-values-fisheries/labelling'] = array(
+  // Exported menu link: main-menu_labelling:themes/adding-value-fisheries/labelling.
+  $menu_links['main-menu_labelling:themes/adding-value-fisheries/labelling'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries/labelling',
+    'link_path' => 'themes/adding-value-fisheries/labelling',
     'router_path' => 'themes',
     'link_title' => 'Labelling',
     'options' => array(
@@ -1869,7 +1869,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_labelling:themes/adding-values-fisheries/labelling',
+      'identifier' => 'main-menu_labelling:themes/adding-value-fisheries/labelling',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1880,7 +1880,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
   // Exported menu link: main-menu_lessons-from-farnet-1-2007-2013:<front>.
   $menu_links['main-menu_lessons-from-farnet-1-2007-2013:<front>'] = array(
@@ -2218,7 +2218,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
+    'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
   // Exported menu link: main-menu_national--regional--local-events-capacity-building-events:news-events/events/other.
   $menu_links['main-menu_national--regional--local-events-capacity-building-events:news-events/events/other'] = array(
@@ -2577,10 +2577,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_library:node/2',
   );
-  // Exported menu link: main-menu_processing:themes/adding-values-fisheries/processing.
-  $menu_links['main-menu_processing:themes/adding-values-fisheries/processing'] = array(
+  // Exported menu link: main-menu_processing:themes/adding-value-fisheries/processing.
+  $menu_links['main-menu_processing:themes/adding-value-fisheries/processing'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries/processing',
+    'link_path' => 'themes/adding-value-fisheries/processing',
     'router_path' => 'themes',
     'link_title' => 'Processing',
     'options' => array(
@@ -2602,7 +2602,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_processing:themes/adding-values-fisheries/processing',
+      'identifier' => 'main-menu_processing:themes/adding-value-fisheries/processing',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2613,7 +2613,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
   // Exported menu link: main-menu_projects:on-the-ground/good-practices/projects.
   $menu_links['main-menu_projects:on-the-ground/good-practices/projects'] = array(
@@ -2653,10 +2653,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_good-practice:on-the-ground/good-practices',
   );
-  // Exported menu link: main-menu_promotion:themes/adding-values-fisheries/promotion.
-  $menu_links['main-menu_promotion:themes/adding-values-fisheries/promotion'] = array(
+  // Exported menu link: main-menu_promotion:themes/adding-value-fisheries/promotion.
+  $menu_links['main-menu_promotion:themes/adding-value-fisheries/promotion'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries/promotion',
+    'link_path' => 'themes/adding-value-fisheries/promotion',
     'router_path' => 'themes',
     'link_title' => 'Promotion',
     'options' => array(
@@ -2678,7 +2678,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_promotion:themes/adding-values-fisheries/promotion',
+      'identifier' => 'main-menu_promotion:themes/adding-value-fisheries/promotion',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2689,7 +2689,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
   // Exported menu link: main-menu_qa-on-clld:<front>.
   $menu_links['main-menu_qa-on-clld:<front>'] = array(
@@ -2787,10 +2787,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_qa-on-clld:<front>',
   );
-  // Exported menu link: main-menu_short-circuits:themes/adding-values-fisheries/short-circuits.
-  $menu_links['main-menu_short-circuits:themes/adding-values-fisheries/short-circuits'] = array(
+  // Exported menu link: main-menu_short-circuits:themes/adding-value-fisheries/short-circuits.
+  $menu_links['main-menu_short-circuits:themes/adding-value-fisheries/short-circuits'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries/short-circuits',
+    'link_path' => 'themes/adding-value-fisheries/short-circuits',
     'router_path' => 'themes',
     'link_title' => 'Short circuits',
     'options' => array(
@@ -2812,7 +2812,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_short-circuits:themes/adding-values-fisheries/short-circuits',
+      'identifier' => 'main-menu_short-circuits:themes/adding-value-fisheries/short-circuits',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2823,7 +2823,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
   // Exported menu link: main-menu_short-stories:on-the-ground/good-practices/short-stories.
   $menu_links['main-menu_short-stories:on-the-ground/good-practices/short-stories'] = array(
@@ -2939,15 +2939,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news:news-events/news',
   );
-  // Exported menu link: main-menu_society-and-culture:themes/society-culture.
-  $menu_links['main-menu_society-and-culture:themes/society-culture'] = array(
+  // Exported menu link: main-menu_society-and-culture:themes/society-and-culture.
+  $menu_links['main-menu_society-and-culture:themes/society-and-culture'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/society-culture',
+    'link_path' => 'themes/society-and-culture',
     'router_path' => 'themes',
     'link_title' => 'Society and culture',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_society-and-culture:themes/society-culture',
+      'identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3196,15 +3196,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
-  // Exported menu link: main-menu_traceability:themes/adding-values-fisheries/traceability.
-  $menu_links['main-menu_traceability:themes/adding-values-fisheries/traceability'] = array(
+  // Exported menu link: main-menu_traceability:themes/adding-value-fisheries/traceability.
+  $menu_links['main-menu_traceability:themes/adding-value-fisheries/traceability'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes/adding-values-fisheries/traceability',
+    'link_path' => 'themes/adding-value-fisheries/traceability',
     'router_path' => 'themes',
     'link_title' => 'Traceability',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_traceability:themes/adding-values-fisheries/traceability',
+      'identifier' => 'main-menu_traceability:themes/adding-value-fisheries/traceability',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3232,7 +3232,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-values-fisheries',
+    'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
   // Exported menu link: main-menu_transnational-seminars:news-events/events/transnational-seminars.
   $menu_links['main-menu_transnational-seminars:news-events/events/transnational-seminars'] = array(
@@ -3422,7 +3422,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
+    'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
   // Exported menu link: main-menu_youth:themes/society-and-culture/youth.
   $menu_links['main-menu_youth:themes/society-and-culture/youth'] = array(
@@ -3460,7 +3460,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_society-and-culture:themes/society-culture',
+    'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
 
   // Translatables

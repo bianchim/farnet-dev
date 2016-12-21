@@ -69,7 +69,6 @@ features[variable][] = menu_parent_farnet_article
 features[variable][] = node_options_farnet_article
 features[variable][] = node_preview_farnet_article
 features[variable][] = node_submitted_farnet_article
-features[variable][] = pathauto_node_farnet_article_pattern
 features[variable][] = xmlsitemap_settings_node_farnet_article
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
