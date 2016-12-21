@@ -41,7 +41,7 @@ function farnet_factsheet_country_form_validate($form, &$form_state) {
   }
 
   foreach ($key_docs as $key_doc) {
-    $has_document = $key_doc['field_document'][LANGUAGE_NONE][0]['fid'] !== 0;
+    $has_document = $key_doc['field_fc_document'][LANGUAGE_NONE][0]['fid'] !== 0;
     $has_label = $key_doc['field_key_document_label'][LANGUAGE_NONE][0]['value'] !== "";
 
     // Check that if one field has a value, the other has one too.
