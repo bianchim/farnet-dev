@@ -39,7 +39,6 @@ Feature: Country Factsheet content type
     And I press the "Save" button
     And I should see the success message "Country Factsheet Behat Factsheet Country Test #1 has been created."
     And I should see the heading "Behat Factsheet Country Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
 
   @api
   Scenario: Edit Country Factsheet

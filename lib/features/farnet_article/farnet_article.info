@@ -73,4 +73,3 @@ features[variable][] = pathauto_node_farnet_article_pattern
 features[variable][] = xmlsitemap_settings_node_farnet_article
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
-project path = sites/all/modules/features

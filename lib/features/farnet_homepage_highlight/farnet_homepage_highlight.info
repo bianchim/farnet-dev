@@ -39,4 +39,3 @@ features[variable][] = menu_parent_homepage_highlight
 features[variable][] = node_options_homepage_highlight
 features[variable][] = node_preview_homepage_highlight
 features[variable][] = node_submitted_homepage_highlight
-project path = sites/all/modules/features

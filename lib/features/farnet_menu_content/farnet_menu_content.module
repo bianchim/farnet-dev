@@ -51,16 +51,16 @@ function farnet_menu_content_block_view($delta = '') {
 function _farnet_menu_content_menu_page_content() {
   global $language;
 
-  $node = node_load(arg(1));
+  $node = menu_get_object();
   $field_groups = field_group_info_groups('node', $node->type, 'default');
   $field_groups_sorted = array();
 
-  foreach ($field_groups as $key => $field_group) {
+  foreach ($field_groups as $field_group) {
     if ($field_group->format_type == 'div') {
       // Check if children are empty.
       $is_empty = TRUE;
 
-      foreach ($field_group->children as $key => $field) {
+      foreach ($field_group->children as $field) {
         // Check for data in the field.
         if (!empty($node->{$field})) {
           // Check if there is data in the current language.
@@ -81,7 +81,7 @@ function _farnet_menu_content_menu_page_content() {
 
   ksort($field_groups_sorted);
   $output = '<div><nav id="navbar-node-page" class="navbar"><h3>Page contents</h3><ul class="nav">';
-  foreach ($field_groups_sorted as $key => $field_group) {
+  foreach ($field_groups_sorted as $field_group) {
     $classes = $field_group->format_settings['instance_settings']['classes'];
 
     if (strpos($classes, 'no-menu-content') !== FALSE) {

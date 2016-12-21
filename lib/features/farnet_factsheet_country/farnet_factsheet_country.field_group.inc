@@ -215,11 +215,10 @@ function farnet_factsheet_country_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_farnet_abstract',
-      1 => 'field_ne_body',
-      2 => 'field_organisations',
-      3 => 'field_picture',
-      4 => 'title_field',
+      0 => 'field_ne_body',
+      1 => 'field_organisations',
+      2 => 'field_picture',
+      3 => 'title_field',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -645,9 +644,7 @@ function farnet_factsheet_country_field_group_info() {
     'label' => 'Publication',
     'weight' => '10',
     'children' => array(
-      0 => 'field_publication_abstract',
-      1 => 'field_publication_date',
-      2 => 'field_term_publication_channels',
+      0 => 'field_publication_date',
     ),
     'format_type' => 'div',
     'format_settings' => array(

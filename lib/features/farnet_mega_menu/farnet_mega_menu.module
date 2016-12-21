@@ -12,7 +12,7 @@ include_once 'farnet_mega_menu.functions.inc';
  * Implements hook_init().
  */
 function farnet_mega_menu_init() {
-  _array_for_block_creation('main-menu');
+  _farnet_mega_menu_array_for_block_creation('main-menu');
 }
 
 /**
@@ -49,7 +49,7 @@ function farnet_mega_menu_permission() {
  */
 function farnet_mega_menu_block_info() {
   $blocks = array();
-  $info_array = _array_for_block_creation('main-menu');
+  $info_array = _farnet_mega_menu_array_for_block_creation('main-menu');
   // In case infoarray is empty return empty blocks.
   if (empty($info_array)) {
     return $blocks;
@@ -71,7 +71,7 @@ function farnet_mega_menu_block_info() {
  */
 function farnet_mega_menu_block_view($block_name = '') {
   $block = array();
-  $menu_collector = _array_for_block_creation('main-menu');
+  $menu_collector = _farnet_mega_menu_array_for_block_creation('main-menu');
   if (empty($menu_collector)) {
     return $block;
   }

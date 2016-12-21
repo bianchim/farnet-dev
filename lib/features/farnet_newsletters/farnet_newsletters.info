@@ -39,4 +39,3 @@ features[field_instance][] = node-simplenews-field_related_events
 features[field_instance][] = node-simplenews-field_related_news
 features[user_permission][] = delete any simplenews content
 features[user_permission][] = edit any simplenews content
-project path = sites/all/modules/features

@@ -12,8 +12,8 @@ function farnet_factsheet_country_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'field_collection_item-field_key_documents-field_document'.
-  $field_instances['field_collection_item-field_key_documents-field_document'] = array(
+  // 'field_collection_item-field_key_documents-field_fc_document'.
+  $field_instances['field_collection_item-field_key_documents-field_fc_document'] = array(
     'bundle' => 'field_key_documents',
     'deleted' => 0,
     'description' => '',
@@ -27,7 +27,7 @@ function farnet_factsheet_country_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_document',
+    'field_name' => 'field_fc_document',
     'label' => 'Document',
     'required' => 0,
     'settings' => array(
@@ -528,7 +528,7 @@ function farnet_factsheet_country_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_diagram_delivery',
-    'label' => 'Diagram of the delivery system for CLLD',
+    'label' => 'Delivery of CLLD',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -624,10 +624,9 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -704,7 +703,7 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 3,
@@ -1073,7 +1072,7 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -1203,10 +1202,10 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1256,7 +1255,7 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -1381,9 +1380,8 @@ function farnet_factsheet_country_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 13,
       ),
       'teaser' => array(
@@ -1521,9 +1519,8 @@ function farnet_factsheet_country_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 21,
       ),
       'teaser' => array(
@@ -1561,10 +1558,10 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -1606,9 +1603,8 @@ function farnet_factsheet_country_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 14,
       ),
       'teaser' => array(
@@ -1693,9 +1689,8 @@ function farnet_factsheet_country_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 23,
       ),
       'teaser' => array(
@@ -1733,9 +1728,8 @@ function farnet_factsheet_country_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1792,10 +1786,15 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
+        'label' => 'inline',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => '',
+        ),
+        'type' => 'title_linked',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1865,7 +1864,7 @@ function farnet_factsheet_country_field_default_field_instances() {
   t('Co-funding');
   t('Cooperation');
   t('Country');
-  t('Diagram of the delivery system for CLLD');
+  t('Delivery of CLLD');
   t('Document');
   t('EMFF budget for CLLD');
   t('FLAG areas');

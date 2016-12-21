@@ -104,10 +104,9 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'FLAG Contacts',
-    'weight' => '13',
+    'weight' => '12',
     'children' => array(
       0 => 'field_collection_language',
-      1 => 'field_organisations',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -492,7 +491,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Map',
-    'weight' => '15',
+    'weight' => '14',
     'children' => array(
       0 => 'field_interactive_map',
     ),
@@ -580,7 +579,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Partnership',
-    'weight' => '11',
+    'weight' => '10',
     'children' => array(
       0 => 'field_ff_accountable_body',
       1 => 'field_ff_environmental_actors',
@@ -838,7 +837,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Social media',
-    'weight' => '14',
+    'weight' => '13',
     'children' => array(
       0 => 'field_ff_facebook',
       1 => 'field_ff_google',
@@ -967,7 +966,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Visuals',
-    'weight' => '12',
+    'weight' => '11',
     'children' => array(
       0 => 'field_gallery',
     ),

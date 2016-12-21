@@ -15,7 +15,8 @@ function farnet_organisation_field_default_field_instances() {
   // 'field_collection_item-field_organisation_contacts-field_contact_person'.
   $field_instances['field_collection_item-field_organisation_contacts-field_contact_person'] = array(
     'bundle' => 'field_organisation_contacts',
-    'default_value' => NULL,
+    'default_value' => array(),
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -32,19 +33,33 @@ function farnet_organisation_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_contact_person',
     'label' => 'Contact person',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'entityreference',
+      'active' => 1,
+      'module' => 'inline_entity_form',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_clone' => 0,
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'contacts',
+          'label_singular' => 'contact',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
       ),
-      'type' => 'entityreference_autocomplete_tags',
+      'type' => 'inline_entity_form',
       'weight' => 0,
     ),
   );
@@ -437,7 +452,7 @@ function farnet_organisation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -475,7 +490,7 @@ function farnet_organisation_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -491,7 +506,7 @@ function farnet_organisation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -502,7 +517,7 @@ function farnet_organisation_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_phone_mobile',
-    'label' => 'Phone (mobile)',
+    'label' => 'Mobile',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -564,7 +579,7 @@ function farnet_organisation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -575,7 +590,7 @@ function farnet_organisation_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_skype_id',
-    'label' => 'Skype ID',
+    'label' => 'SkypeID',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -648,7 +663,7 @@ function farnet_organisation_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_telephone',
-    'label' => 'Phone',
+    'label' => 'Telephone',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -747,9 +762,10 @@ function farnet_organisation_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -810,7 +826,7 @@ function farnet_organisation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -2175,10 +2191,7 @@ function farnet_organisation_field_default_field_instances() {
   t('Mobile');
   t('Name');
   t('Organisation contacts');
-  t('Phone');
-  t('Phone (mobile)');
   t('Position');
-  t('Skype ID');
   t('SkypeID');
   t('Telephone');
   t('Twitter');

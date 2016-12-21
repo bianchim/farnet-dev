@@ -1,0 +1,4 @@
+oid,cid,position,email,telephone,mobile phone,skype ID
+1,1,Main contact,contact@override.com,666,333,specific skype
+1,2,President,contact2@override.com,,,specific skype for president
+2,1,President, newmail@inhere.com,999,0,another specific skype

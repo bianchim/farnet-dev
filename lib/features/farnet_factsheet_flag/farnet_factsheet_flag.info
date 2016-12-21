@@ -239,4 +239,3 @@ features_exclude[field_group][group_factsheet_flag_language|node|factsheet_flag|
 features_exclude[field_group][group_factsheet_flag_language|node|factsheet_flag|form] = group_factsheet_flag_language|node|factsheet_flag|form
 features_exclude[field_group][group_factsheet_flag_staff|node|factsheet_flag|default] = group_factsheet_flag_staff|node|factsheet_flag|default
 features_exclude[field_group][group_factsheet_flag_staff|node|factsheet_flag|form] = group_factsheet_flag_staff|node|factsheet_flag|form
-project path = sites/all/modules/features

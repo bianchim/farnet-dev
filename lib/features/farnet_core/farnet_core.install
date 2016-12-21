@@ -11,7 +11,7 @@
 function farnet_core_install() {
   // Add a item in the breadcrumb menu.
   $item = [
-    'link_path' => 'http://ec.europa.eu/fisheries/index_en.htm',
+    'link_path' => 'https://ec.europa.eu/fisheries',
     'link_title' => 'Fisheries',
     'menu_name' => 'menu-breadcrumb-menu',
     'weight' => '1',
@@ -21,8 +21,8 @@ function farnet_core_install() {
     'options' => [
       'attributes' => [
         'data-remove-class' => TRUE,
-      ]
-    ]
+      ],
+    ],
   ];
   menu_link_save($item);
   menu_cache_clear_all();
@@ -52,7 +52,6 @@ function farnet_core_enable() {
   $ft = file_type_load("document");
   $ft->mimetypes[] = "text/oembed";
   file_type_save($ft);
-
 
   // Set the print links configuration to avoid duplicate with custom block.
   variable_set('print_pdf_link_pos', array());
