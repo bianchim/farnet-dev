@@ -135,6 +135,8 @@ function farnet_form_alter(&$form, &$form_state, $form_id) {
  * Implements template_preprocess_field().
  */
 function farnet_preprocess_field(&$variables, $hook) {
+  $variables['prefix'] = NULL;
+  $variables['suffix'] = NULL;
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     foreach ($variables['items'] as $delta => $item) {
       array_push($variables['items'][$delta]["#attributes"]["class"], 'field-collection-view-final');
@@ -145,5 +147,71 @@ function farnet_preprocess_field(&$variables, $hook) {
         $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_priority']['#label_display'] = 'hidden';
       }
     }
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_population') {
+    $variables['suffix'] = '</div>';
+    if (!$variables['element']['#object']->field_ff_population_density and
+        !$variables['element']['#object']->field_ff_surface_area) {
+      $variables['prefix'] .= '<p>start here</p><div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row"><div class="col-sm-4 flag-stats__col">';
+      $variables['suffix'] .= '</div></div>';
+    }
+    else {
+      $variables['prefix'] .= '<p>start here</p><div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row"><div class="col-sm-4 flag-stats__col flag-stats__col--with-border">';
+    }
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_surface_area') {
+    if (!$variables['element']['#object']->field_ff_population) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row">';
+    }
+    $variables['suffix'] = '</div>';
+    if (!$variables['element']['#object']->field_ff_population_density) {
+      $variables['suffix'] .= '</div></div>';
+      $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col">';
+    }
+    else {
+      $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col flag-stats__col--with-border">';
+    }
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_population_density') {
+    if (!$variables['element']['#object']->field_ff_population and
+        !$variables['element']['#object']->field_ff_surface_area) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__left-col"><div class="row">';
+    }
+    $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col">';
+    $variables['suffix'] .= '</div></div></div>';
+  } 
+  elseif ($variables['element']['#field_name'] == 'field_ff_total_employment') {
+    if (!$variables['element']['#object']->field_ff_population and 
+      !$variables['element']['#object']->field_ff_surface_area and 
+      !$variables['element']['#object']->field_ff_population_density) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats">';
+    }
+    $variables['prefix'] .= '<div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-4 flag-stats__col">';
+    $variables['suffix'] .= '</div>';
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_fishing') {
+     if (!$variables['element']['#object']->field_ff_population and 
+      !$variables['element']['#object']->field_ff_surface_area and 
+      !$variables['element']['#object']->field_ff_population_density and
+      !$variables['element']['#object']->field_ff_total_employment) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row">';
+    } 
+    elseif (!$variables['element']['#object']->field_ff_processing) {
+      $variables['suffix'] .= '</div></div></div></div></div>';
+    }
+    $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
+  }
+  elseif ($variables['element']['#field_name'] == 'field_ff_processing') {
+     if (!$variables['element']['#object']->field_ff_population and 
+      !$variables['element']['#object']->field_ff_surface_area and 
+      !$variables['element']['#object']->field_ff_population_density and
+      !$variables['element']['#object']->field_ff_total_employment and 
+      !$variables['element']['#object']->field_ff_fishing) {
+      $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 flag-stats__col--blue-bg">';
+      $variables['suffix'] .= '</div></div></div></div></div>';
+    } elseif (!$variables['element']['#object']->field_ff_fishing) {
+      $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
+    }
+    $variables['suffix'] .= '</div></div></div></div></div>';
   }
 }
