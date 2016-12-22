@@ -35,7 +35,6 @@ Feature: Content types URL patterns
     | Test url pattern short story           | gp_short_story       | on-the-ground/good-practice/short-stories/test-url-pattern-short-story_en      |
     | Test url pattern project summary sheet | gp_project           | on-the-ground/good-practice/projects/test-url-pattern-project-summary-sheet_en |
     | Test url pattern summary sheet method  | gp_method            | on-the-ground/good-practice/methods/test-url-pattern-summary-sheet-method_en   |
-    | Test url pattern article               | farnet_article       | themes/test-url-pattern-article_en                                             |
 
   @api @test
   Scenario Outline: View content alias URL with parameter
