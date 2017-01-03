@@ -105,20 +105,22 @@ function _farnet_organisation_import_save_to_db() {
   // Get csv files path.
   $csv_contact = drupal_get_path('module', 'farnet_organisation_import') . '/csv/contacts.csv';
   $csv_orga = drupal_get_path('module', 'farnet_organisation_import') . '/csv/organisations.csv';
+  $csv_link = drupal_get_path('module', 'farnet_organisation_import') . '/csv/contact_link.csv';
 
   // Try to open files.
   $handle_contact = FALSE;
   $handle_orga = FALSE;
 
   try {
-    if (!file_exists($csv_contact) || !file_exists($csv_orga)) {
+    if (!file_exists($csv_contact) || !file_exists($csv_orga) || !file_exists($csv_link)) {
       throw new Exception(t('File not found.'));
     }
 
     $handle_contact = fopen($csv_contact, "r");
     $handle_orga = fopen($csv_orga, "r");
+    $handle_link = fopen($csv_link, "r");
 
-    if (!$handle_orga || !$handle_contact) {
+    if (!$handle_orga || !$handle_contact || !$handle_link) {
       throw new Exception(t('File open failed.'));
     }
   }
@@ -156,6 +158,8 @@ function _farnet_organisation_import_save_to_db() {
     $operations[] = array('_farnet_organisation_import_organisations_to_db', $params);
   }
 
+  $operations[] = array('_farnet_organisation_import_contact_link_to_db', [$csv_link]);
+
   // Set batch.
   $batch = array(
     'title' => t('Importing contacts and organisations'),
@@ -187,7 +191,7 @@ function _farnet_organisation_import_contacts_to_db($start, $file) {
 
   $handle = fopen($file, "r");
 
-  while (($data = fgetcsv($handle, 1000, ",")) !== FALSE && $done < 50) {
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 50) {
     // Skip process entries.
     if ($row_num < $start) {
       $row_num++;
@@ -217,6 +221,41 @@ function _farnet_organisation_import_contacts_to_db($start, $file) {
 }
 
 /**
+ * Batch process function for contact link to organisation import from CSV file.
+ */
+function _farnet_organisation_import_contact_link_to_db($file) {
+  $handle = fopen($file, "r");
+  $first = TRUE;
+
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE) {
+    if ($first) {
+      $first = FALSE;
+      continue;
+    }
+
+    // Trim all cells at once.
+    $data = array_map('trim', $data);
+
+    $oid = $data[0];
+    $cid = $data[1];
+    $position = $data[2];
+    unset($data[0], $data[1], $data[2]);
+
+    db_merge('import_contact_link')
+      ->key(['oid' => $oid, 'cid' => $cid])
+      ->fields([
+        'oid' => $oid,
+        'cid' => $cid,
+        'position' => $position,
+        'info' => drupal_json_encode($data),
+      ])
+      ->execute();
+  }
+
+  fclose($handle);
+}
+
+/**
  * Batch process function for organisation import from CSV file.
  */
 function _farnet_organisation_import_organisations_to_db($start, $file) {
@@ -225,7 +264,7 @@ function _farnet_organisation_import_organisations_to_db($start, $file) {
 
   $handle = fopen($file, "r");
 
-  while (($data = fgetcsv($handle, 1000, ",")) !== FALSE && $done < 50) {
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 50) {
     // Skip process entries.
     if ($row_num < $start) {
       $row_num++;
@@ -332,18 +371,34 @@ function _farnet_organisation_import_contacts_from_db() {
 
     $info = drupal_json_decode($contact_import->info);
 
+    $wrapper = FALSE;
     if ($contact_import->nid != 0) {
       $node = node_load($contact_import->nid);
-      $wrapper = entity_metadata_wrapper('node', $node);
+      if ($node !== FALSE) {
+        $wrapper = entity_metadata_wrapper('node', $node);
+      }
     }
-    else {
+
+    // If we could not load a previous node, create it.
+    if ($wrapper === FALSE) {
       $entity = entity_create('node', ['type' => 'contact_person']);
       $wrapper = entity_metadata_wrapper('node', $entity);
       $wrapper->language->set('en');
     }
 
     // Set contact person infos.
-    $wrapper->field_gender->set(drupal_strtolower($info[1]));
+    $gender = drupal_strtolower($info[1]);
+    if ($gender === 'm') {
+      $gender = 'male';
+    }
+    elseif ($gender === 'f') {
+      $gender = 'female';
+    }
+    elseif (!empty($gender) && $gender !== 'male' && $gender !== 'female') {
+      $gender = 'other';
+    }
+
+    $wrapper->field_gender->set($gender);
     $wrapper->field_firstname->set($info[2]);
 
     // Last name acts as title.
@@ -452,31 +507,31 @@ function _farnet_organisation_import_organisations_from_db() {
     }
 
     // Social media links.
-    $link = explode(';', $info[17]);
+    $link = explode(';', $info[15]);
     $wrapper->field_ff_twitter->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $link = explode(';', $info[18]);
+    $link = explode(';', $info[16]);
     $wrapper->field_ff_facebook->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $link = explode(';', $info[19]);
+    $link = explode(';', $info[17]);
     $wrapper->field_ff_linkedin->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $link = explode(';', $info[20]);
+    $link = explode(';', $info[18]);
     $wrapper->field_ff_google->set([
       'title' => $link[0],
       'url' => $link[1],
     ]);
 
-    $wrapper->field_comment->set(['value' => $info[21]]);
+    $wrapper->field_comment->set(['value' => $info[19]]);
 
     $wrapper->status->set(NODE_PUBLISHED);
     $wrapper->save();
@@ -494,13 +549,18 @@ function _farnet_organisation_import_organisations_from_db() {
     node_save($node);
 
     // Manage field collection contact.
-    $contacts = explode(';', $info[15]);
-    $positions = explode(';', $info[16]);
+    $contact_links = db_select('import_contact_link', 'icl')
+      ->fields('icl')
+      ->condition('oid', $oid, '=')
+      ->execute()
+      ->fetchAll();
 
-    foreach ($contacts as $key => $contact) {
-      // First get the contact.
+    foreach ($contact_links as $contact_link) {
+      // First get the contact node.
       $query = "SELECT nid FROM {import_contact_persons} WHERE cid=:contact";
-      $contact_nid = db_query($query, [':contact' => $contact])->fetchField();
+      $contact_nid = db_query($query, [':contact' => $contact_link->cid])->fetchField();
+
+      $info = drupal_json_decode($contact_link->info);
 
       if ($contact_nid) {
         $collection = entity_create('field_collection_item', ['field_name' => 'field_organisation_contacts']);
@@ -508,7 +568,11 @@ function _farnet_organisation_import_organisations_from_db() {
 
         $fc_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
         $fc_wrapper->field_contact_person->set($contact_nid);
-        $fc_wrapper->field_organisation_position->set($positions[$key]);
+        $fc_wrapper->field_organisation_position->set([$contact_link->position]);
+        $fc_wrapper->field_email->set($info['3']);
+        $fc_wrapper->field_telephone->set($info['4']);
+        $fc_wrapper->field_phone_mobile->set($info['5']);
+        $fc_wrapper->field_skype_id->set($info['6']);
         $fc_wrapper->save();
       }
     }

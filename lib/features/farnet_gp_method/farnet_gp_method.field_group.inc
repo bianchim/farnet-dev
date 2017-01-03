@@ -24,10 +24,9 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_farnet_abstract',
-      1 => 'field_id_text',
-      2 => 'field_picture',
-      3 => 'field_title_official',
+      0 => 'field_id_text',
+      1 => 'field_picture',
+      2 => 'field_title_official',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -88,13 +87,13 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_gpm_activities',
-      1 => 'field_gpm_lessons',
-      2 => 'field_gpm_main_achievements',
-      3 => 'field_gpm_transferability',
-      4 => 'field_ne_body',
+      0 => 'field_context',
+      1 => 'field_gpm_activities',
+      2 => 'field_gpm_lessons',
+      3 => 'field_gpm_main_achievements',
+      4 => 'field_gpm_transferability',
       5 => 'field_objective',
     ),
     'format_type' => 'div',
@@ -149,6 +148,37 @@ function farnet_gp_method_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_gp_method_flag|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_flag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_method';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Flag',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_flag',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-gp-method-flag field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_gp_method_flag|node|gp_method|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_gp_method_flag|node|gp_method|form';
   $field_group->group_name = 'group_gp_method_flag';
   $field_group->entity_type = 'node';
@@ -185,11 +215,10 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_area',
+      0 => 'field_collection_region',
       1 => 'field_term_country',
-      2 => 'field_region',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -309,9 +338,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->data = array(
     'label' => 'Metadata',
     'weight' => '10',
-    'children' => array(
-      0 => 'og_group_ref',
-    ),
+    'children' => array(),
     'format_type' => 'hidden',
     'format_settings' => array(
       'formatter' => '',
@@ -359,7 +386,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisations',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_organisations',
     ),
@@ -420,9 +447,7 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Publication',
     'weight' => '9',
     'children' => array(
-      0 => 'field_publication_abstract',
-      1 => 'field_publication_date',
-      2 => 'field_term_publication_channels',
+      0 => 'field_publication_date',
     ),
     'format_type' => 'div',
     'format_settings' => array(

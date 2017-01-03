@@ -9,4 +9,3 @@ dependencies[] = fe_block
 dependencies[] = nexteuropa_webtools
 features[fe_block_settings][] = bean-bean-twitter-block
 features[features_api][] = api:2
-project path = sites/all/modules/features

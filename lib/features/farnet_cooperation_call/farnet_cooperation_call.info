@@ -72,4 +72,3 @@ features[variable][] = xmlsitemap_settings_node_cooperation_call
 features_exclude[field_base][field_sea_basins] = field_sea_basins
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
-project path = sites/all/modules/features

@@ -28,7 +28,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 30,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -66,7 +66,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
@@ -109,7 +109,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -176,7 +176,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 34,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -223,7 +223,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 31,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -270,7 +270,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 33,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -317,7 +317,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 32,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -355,7 +355,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
@@ -364,7 +364,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 13,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -403,9 +403,8 @@ function farnet_gp_short_story_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -482,7 +481,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 23,
@@ -533,7 +532,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 38,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -578,7 +577,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -613,7 +612,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 37,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -660,7 +659,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 35,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -707,7 +706,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 36,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -750,10 +749,6 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
-          'nexteuropa_listing_columns' => 'default',
-          'nexteuropa_listing_modifier' => '',
-          'nexteuropa_listing_wrapper_modifier' => '',
-          'show_translations' => '',
           'use_content_language' => 1,
           'view_mode' => 'media_gallery_page',
         ),
@@ -791,6 +786,79 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gp_short_story-field_id_text'.
+  $field_instances['node-gp_short_story-field_id_text'] = array(
+    'bundle' => 'gp_short_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_text',
+    'label' => 'ID',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'full_html_track' => 'full_html_track',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 24,
+    ),
+  );
+
   // Exported field_instance: 'node-gp_short_story-field_latitude'.
   $field_instances['node-gp_short_story-field_latitude'] = array(
     'bundle' => 'gp_short_story',
@@ -800,9 +868,8 @@ function farnet_gp_short_story_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 27,
       ),
       'teaser' => array(
@@ -873,9 +940,8 @@ function farnet_gp_short_story_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 28,
       ),
       'teaser' => array(
@@ -945,11 +1011,11 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1015,7 +1081,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
           'link' => FALSE,
@@ -1081,7 +1147,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 39,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1120,7 +1186,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
@@ -1129,7 +1195,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 14,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1166,7 +1232,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -1230,7 +1296,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -1242,7 +1308,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
@@ -1251,7 +1317,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 15,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1289,10 +1355,9 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 18,
       ),
       'teaser' => array(
@@ -1363,7 +1428,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -1563,10 +1628,10 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 14,
       ),
       'teaser' => array(
@@ -1604,10 +1669,10 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 13,
       ),
       'teaser' => array(
@@ -1645,7 +1710,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
@@ -1688,10 +1753,9 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 16,
       ),
       'teaser' => array(
@@ -1728,7 +1792,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
@@ -1770,10 +1834,10 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 15,
       ),
       'teaser' => array(
@@ -1811,11 +1875,11 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 11,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1871,11 +1935,8 @@ function farnet_gp_short_story_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 26,
       ),
       'teaser' => array(
@@ -1988,6 +2049,7 @@ function farnet_gp_short_story_field_default_field_instances() {
   t('Funding details');
   t('Gallery');
   t('Groups audience');
+  t('ID');
   t('Keywords');
   t('Latitude');
   t('Local');

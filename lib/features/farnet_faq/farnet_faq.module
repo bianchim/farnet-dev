@@ -44,7 +44,6 @@ function farnet_faq_field_default_field_instances_alter(&$fields) {
       $fields['node-nexteuropa_faq-title_field']['display']['teaser']['module'] = "text";
       $fields['node-nexteuropa_faq-title_field']['display']['teaser']['settings'] = array();
       $fields['node-nexteuropa_faq-title_field']['display']['teaser']['type'] = "text_plain";
-      /* $fields['node-nexteuropa_faq-title_field']['display']['teaser']['type'] = "title_linked";*/
       $fields['node-nexteuropa_faq-title_field']['display']['teaser']['weight'] = 0;
     }
   }
@@ -177,15 +176,6 @@ function farnet_faq_views_default_views_alter(&$views) {
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
     $handler->display->display_options['path'] = 'tools/faq/clld-overview';
-    /*
-    $term = taxonomy_get_term_by_name('CLLD overview');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['ne_faq']->display['page_faq_clld_overview']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
-    }
-    */
-
     /* Display: faq-eligibility */
     $handler = $view->new_display('page', 'faq-eligibility', 'page_faq_eligibility');
     $handler->display->display_options['defaults']['title'] = FALSE;
@@ -254,15 +244,6 @@ function farnet_faq_views_default_views_alter(&$views) {
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
     $handler->display->display_options['path'] = 'tools/faq/eligibility';
-    /*
-    $term = taxonomy_get_term_by_name('Eligibility');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['ne_faq']->display['page_faq_eligibility']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
-    }
-    */
-
     /* Display: faq-finance-administration */
     $handler = $view->new_display('page', 'faq-finance-administration', 'page_faq_finance_administration');
     $handler->display->display_options['defaults']['title'] = FALSE;
@@ -331,15 +312,6 @@ function farnet_faq_views_default_views_alter(&$views) {
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
     $handler->display->display_options['path'] = 'tools/faq/finance-administration';
-    /*
-    $term = taxonomy_get_term_by_name('Finance and administration');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['ne_faq']->display['page_faq_finance_administration']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
-    }
-    */
-
     /* Display: faq-flag-set-up */
     $handler = $view->new_display('page', 'faq-flag-set-up', 'page_faq_flag_set_up');
     $handler->display->display_options['defaults']['title'] = FALSE;
@@ -408,15 +380,6 @@ function farnet_faq_views_default_views_alter(&$views) {
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
     $handler->display->display_options['path'] = 'tools/faq/flag-set-up';
-    /*
-    $term = taxonomy_get_term_by_name('Setting up FLAGs');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['ne_faq']->display['page_faq_flag_set_up']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
-    }
-    */
-
     /* Display: faq-cooperation */
     $handler = $view->new_display('page', 'faq-cooperation', 'page_faq_cooperation');
     $handler->display->display_options['defaults']['title'] = FALSE;
@@ -485,15 +448,6 @@ function farnet_faq_views_default_views_alter(&$views) {
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['type'] = 'select';
     $handler->display->display_options['filters']['field_ne_faq_categories_tid']['vocabulary'] = 'faq_categories';
     $handler->display->display_options['path'] = 'tools/faq/cooperation';
-    /*
-    $term = taxonomy_get_term_by_name('Cooperation');
-    if ((isset($term)) && (!empty($term))) {
-      $filter_term = current($term);
-      $tid_term = $filter_term->tid;
-      $views['ne_faq']->display['page_faq_cooperation']->display_options['filters']['field_ne_faq_categories_tid']['value'][$tid_term] = $tid_term;
-    }
-    */
-
   }
 }
 

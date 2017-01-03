@@ -245,7 +245,7 @@ function farnet_user_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max_length' => 20,
+      'max_length' => 50,
     ),
     'translatable' => 0,
     'type' => 'text',

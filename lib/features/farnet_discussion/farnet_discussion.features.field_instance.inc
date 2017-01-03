@@ -105,8 +105,8 @@ function farnet_discussion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-farnet_discussion-field_document'.
-  $field_instances['node-farnet_discussion-field_document'] = array(
+  // Exported field_instance: 'node-farnet_discussion-field_fc_document'.
+  $field_instances['node-farnet_discussion-field_fc_document'] = array(
     'bundle' => 'farnet_discussion',
     'deleted' => 0,
     'description' => '',
@@ -126,7 +126,7 @@ function farnet_discussion_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_document',
+    'field_name' => 'field_fc_document',
     'label' => 'Document',
     'required' => 0,
     'settings' => array(

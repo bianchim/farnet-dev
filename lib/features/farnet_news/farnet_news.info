@@ -42,4 +42,3 @@ features[user_permission][] = delete own nexteuropa_news content
 features[user_permission][] = edit any nexteuropa_news content
 features[user_permission][] = edit own nexteuropa_news content
 features[variable][] = xmlsitemap_settings_node_nexteuropa_news
-project path = sites/all/modules/features

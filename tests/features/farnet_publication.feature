@@ -31,7 +31,6 @@ Feature: Publication content type
     And I should see the heading "Guides"
     And I should see the text "Guides EC decides tax advantages for Fiat are illegal"
     And I should see the text "Guides Commissioner states tax rulings are not in line with state aid rules."
-    And I should see the text "Read more"
 
   @api
   Scenario: Create a publication with publication type FARNET Magazines and test view magazines
@@ -65,4 +64,3 @@ Feature: Publication content type
     And I should see the heading "Presentations"
     And I should see the text "Presentations EC decides tax advantages for Fiat are illegal"
     And I should see the text "Presentations Commissioner states tax rulings are not in line with state aid rules."
-    And I should see the text "Read more"

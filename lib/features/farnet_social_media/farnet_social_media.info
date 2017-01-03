@@ -15,4 +15,3 @@ features[variable][] = social_media_links_appearance
 features[variable][] = social_media_links_icon_style
 features[variable][] = social_media_links_link_attributes
 features[variable][] = social_media_links_platforms
-project path = sites/all/modules/features
