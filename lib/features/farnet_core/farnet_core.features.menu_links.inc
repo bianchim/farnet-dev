@@ -2258,13 +2258,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_events:news-events/events',
   );
-  // Exported menu link: main-menu_national-authorities:<front>.
-  $menu_links['main-menu_national-authorities:<front>'] = array(
+  // Exported menu link: main-menu_national-authorities:about/who-is-who/national-authorities.
+  $menu_links['main-menu_national-authorities:about/who-is-who/national-authorities'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'about/who-is-who/national-authorities',
+    'router_path' => 'about/who-is-who/national-authorities',
     'link_title' => 'National authorities',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_national-authorities:about/who-is-who/national-authorities',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2282,12 +2284,10 @@ function farnet_core_menu_default_menu_links() {
         'data-remove-class' => 1,
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_national-authorities:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
     'weight' => -48,

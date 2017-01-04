@@ -15,10 +15,7 @@ projects[social_media_links][subdir] = "contrib"
 projects[social_media_links][version] = "1.5"
 
 projects[field_collection][subdir] = "contrib"
-projects[field_collection][version] = "1.0-beta11"
-; Prevent error when managing content type with workbench moderation and field collections.
-; https://www.drupal.org/node/2619550
-projects[field_collection][patch][] = https://www.drupal.org/files/issues/field_collection-n2619550-21.patch
+projects[field_collection][version] = "1.0-beta12"
 
 projects[workbench_moderation][subdir] = "contrib"
 projects[workbench_moderation][version] = "1.4"
@@ -41,11 +38,6 @@ projects[inline_entity_form][version] = "1.8"
 ; =========
 ; Libraries
 ; =========
-
-; libphonenumber-for-php
-libraries[libphonenumber-for-php][destination] = "libraries"
-libraries[libphonenumber-for-php][download][type] = "git"
-libraries[libphonenumber-for-php][download][url] = "https://github.com/giggsey/libphonenumber-for-php.git"
 
 ; ======
 ; Themes
