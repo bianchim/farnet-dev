@@ -137,6 +137,19 @@ function farnet_form_alter(&$form, &$form_state, $form_id) {
 function farnet_preprocess_field(&$variables, $hook) {
   $variables['prefix'] = NULL;
   $variables['suffix'] = NULL;
+  $variables['label_class'] = NULL;
+  $element_with_additional_label_class = array(
+    'field_ff_public_actors',
+    'field_ff_fisheries_actors',
+    'field_ff_other_non_fisheries',
+    'field_ff_environmental_actors',
+    'field_ff_number_decision',
+    'field_ff_number_assembly',
+    'field_ff_number_staff',
+  )
+  if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
+    $variables['label_class'] = ' u-fw-normal';
+  }
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     foreach ($variables['items'] as $delta => $item) {
       array_push($variables['items'][$delta]["#attributes"]["class"], 'field-collection-view-final');
@@ -179,10 +192,10 @@ function farnet_preprocess_field(&$variables, $hook) {
     }
     $variables['prefix'] .= '<div class="col-sm-4 flag-stats__col">';
     $variables['suffix'] .= '</div></div></div>';
-  } 
+  }
   elseif ($variables['element']['#field_name'] == 'field_ff_total_employment') {
-    if (!$variables['element']['#object']->field_ff_population and 
-      !$variables['element']['#object']->field_ff_surface_area and 
+    if (!$variables['element']['#object']->field_ff_population and
+      !$variables['element']['#object']->field_ff_surface_area and
       !$variables['element']['#object']->field_ff_population_density) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats">';
     }
@@ -190,26 +203,27 @@ function farnet_preprocess_field(&$variables, $hook) {
     $variables['suffix'] .= '</div>';
   }
   elseif ($variables['element']['#field_name'] == 'field_ff_fishing') {
-     if (!$variables['element']['#object']->field_ff_population and 
-      !$variables['element']['#object']->field_ff_surface_area and 
+    if (!$variables['element']['#object']->field_ff_population and
+      !$variables['element']['#object']->field_ff_surface_area and
       !$variables['element']['#object']->field_ff_population_density and
       !$variables['element']['#object']->field_ff_total_employment) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row">';
-    } 
+    }
     elseif (!$variables['element']['#object']->field_ff_processing) {
       $variables['suffix'] .= '</div></div></div></div></div>';
     }
     $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
   }
   elseif ($variables['element']['#field_name'] == 'field_ff_processing') {
-     if (!$variables['element']['#object']->field_ff_population and 
-      !$variables['element']['#object']->field_ff_surface_area and 
+    if (!$variables['element']['#object']->field_ff_population and
+      !$variables['element']['#object']->field_ff_surface_area and
       !$variables['element']['#object']->field_ff_population_density and
-      !$variables['element']['#object']->field_ff_total_employment and 
+      !$variables['element']['#object']->field_ff_total_employment and
       !$variables['element']['#object']->field_ff_fishing) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 flag-stats__col--blue-bg">';
       $variables['suffix'] .= '</div></div></div></div></div>';
-    } elseif (!$variables['element']['#object']->field_ff_fishing) {
+    }
+    elseif (!$variables['element']['#object']->field_ff_fishing) {
       $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
     }
     $variables['suffix'] .= '</div></div></div></div></div>';
@@ -239,13 +253,13 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       $element['field_ff_public_actors']['#prefix'] = $prefix_percent;
       if ($element['field_ff_environmental_actors']) {
         $element['field_ff_environmental_actors']['#suffix'] = $suffix;
-      } 
+      }
       elseif ($element['field_ff_other_non_fisheries']) {
         $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
-      } 
+      }
       elseif ($element['field_ff_fisheries_actors']) {
         $element['field_ff_fisheries_actors']['#suffix'] = $suffix;
-      } 
+      }
       else {
         $element['field_ff_public_actors']['#suffix'] = $suffix;
       }
@@ -254,10 +268,10 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       $element['field_ff_fisheries_actors']['#prefix'] = $prefix_percent;
       if ($element['field_ff_environmental_actors']) {
         $element['field_ff_environmental_actors']['#suffix'] = $suffix;
-      } 
+      }
       elseif ($element['field_ff_other_non_fisheries']) {
         $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
-      } 
+      }
       else {
         $element['field_ff_fisheries_actors']['#suffix'] = $suffix;
       }
@@ -266,7 +280,7 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       $element['field_ff_other_non_fisheries']['#prefix'] = $prefix_percent;
       if ($element['field_ff_environmental_actors']) {
         $element['field_ff_environmental_actors']['#suffix'] = $suffix;
-      } 
+      }
       else {
         $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
       }
@@ -283,11 +297,11 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       }
       elseif ($element['field_ff_number_assembly']) {
         $element['field_ff_number_assembly']['#suffix'] = $suffix;
-      } 
+      }
       else {
         $element['field_ff_number_decision']['#suffix'] = $suffix;
       }
-    } 
+    }
     elseif ($element['field_ff_number_assembly']) {
       $element['field_ff_number_assembly']['#prefix'] = $prefix;
       if ($element['field_ff_number_staff']) {
@@ -296,7 +310,7 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       else {
         $element['field_ff_number_assembly']['#suffix'] = $suffix;
       }
-    } 
+    }
     elseif ($element['field_ff_number_staff']) {
       $element['field_ff_number_staff']['#prefix'] = $prefix;
       $element['field_ff_number_staff']['#suffix'] = $suffix;
