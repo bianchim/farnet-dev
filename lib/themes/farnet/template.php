@@ -146,7 +146,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_decision',
     'field_ff_number_assembly',
     'field_ff_number_staff',
-  )
+  );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
   }
