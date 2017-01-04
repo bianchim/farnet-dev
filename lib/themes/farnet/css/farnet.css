@@ -188,8 +188,7 @@
   border: none;
   background-color: #fff;
   background-image: url('../images/wave.svg'), linear-gradient(to bottom, transparent, transparent 59px, #65aefd 59px, #65aefd);
-  background-position: top right,
-    top left;
+  background-position: top right, top left;
   background-repeat: repeat-x, no-repeat;
   background-size: auto 60px, auto auto;
 }
