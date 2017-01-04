@@ -180,3 +180,30 @@
   overflow-wrap: normal;
   width: 100%;
 }
+/* Footer */
+#layout-footer {
+  width: 100%;
+  margin: 2em 0 0;
+  padding: 0 0 1em;
+  border: none;
+  background-color: #fff;
+  background-image: url('../images/wave.svg'), linear-gradient(to bottom, transparent, transparent 59px, #65aefd 59px, #65aefd);
+  background-position: top right,
+    top left;
+  background-repeat: repeat-x, no-repeat;
+  background-size: auto 60px, auto auto;
+}
+#layout-footer .content {
+  padding-top: 70px;
+}
+#layout-footer .logo {
+  display: none;
+}
+@media (min-width: 768px) {
+  #layout-footer .logo {
+    display: block;
+    position: relative;
+    top: -1em;
+    left: 0;
+  }
+}

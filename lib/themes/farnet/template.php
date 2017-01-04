@@ -67,13 +67,10 @@ function farnet_om_menu_content_render($content = array()) {
  */
 function farnet_preprocess_block(&$vars) {
   $block_id = $vars['block']->module . '-' . $vars['block']->delta;
-
   switch ($block_id) {
     case 'om_maximenu-om-maximenu-1':
-      // NB - Libetho: It seems that this case is not used.
       $vars['classes_array'][] = 'navigation-main';
       break;
-
   }
 }
 

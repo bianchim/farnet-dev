@@ -4,6 +4,7 @@
 @green-light: #8fc726;
 
 /* Less Variables - dimensions */
+@waveHeight: 60px;
 @screen-sm-min: 768px;
 
 /* File download pattern */
@@ -231,6 +232,42 @@
       color: #fff;
       overflow-wrap: normal;
       width: 100%;
+    }
+  }
+}
+
+/* Footer */
+#layout-footer {
+  width: 100%;
+  margin: 2em 0 0;
+  padding: 0 0 1em;
+  border: none;
+  background-color: #fff;
+  background-image:
+    url('../images/wave.svg'),
+    linear-gradient(to bottom, transparent, transparent (@waveHeight - 1), #65aefd (@waveHeight - 1), #65aefd);
+  background-position:
+    top right,
+    top left;
+  background-repeat:
+    repeat-x,
+    no-repeat;
+  background-size:
+    auto @waveHeight,
+    auto auto;
+
+  .content {
+    padding-top: (@waveHeight + 10);
+  }
+
+  .logo {
+    display: none;
+
+    @media (min-width: @screen-sm-min) {
+      display: block;
+      position: relative;
+      top: -1em;
+      left: 0;
     }
   }
 }
