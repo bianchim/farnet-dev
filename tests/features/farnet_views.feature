@@ -39,7 +39,7 @@ Feature: Check Views
     And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "news-events/news/farnet"
-    And I should see the heading "FARNET news"
+    And I should see the heading "FARNET News"
     And I should see the text "Behat News Test #2"
     And I should see "Lorem ipsum dolor sit amet abstract."
 
@@ -59,7 +59,7 @@ Feature: Check Views
     And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "news-events/news/other"
-    And I should see the heading "Other news"
+    And I should see the heading "Other News"
     And I should see the text "Behat News Test #3"
     And I should see "Lorem ipsum dolor sit amet abstract."
 
