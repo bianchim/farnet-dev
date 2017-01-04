@@ -32,6 +32,27 @@ function farnet_cooperation_ms_fiche_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_further_information'.
+  $field_bases['field_further_information'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_further_information',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_level_at_which_cooperation'.
   $field_bases['field_level_at_which_cooperation'] = array(
     'active' => 1,
