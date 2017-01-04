@@ -184,9 +184,9 @@ function farnet_communities_node_grants($account, $op) {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_BASE_FORM_ID_alter().
  */
-function farnet_communities_form_alter(&$form, &$form_state, $form_id) {
+function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'community_public_node_form') {
     $form['group_access'][LANGUAGE_NONE]['#disabled'] = TRUE;
     $form['group_access'][LANGUAGE_NONE]['#type'] = 'hidden';
