@@ -151,3 +151,32 @@
 .field-name-field-collection-strategy .content .field-items {
   padding: 8px 0;
 }
+/* Partnership */
+.flag-partnership {
+  display: table;
+  border-collapse: collapse;
+  background-color: #deeefe;
+}
+.flag-partnership .field {
+  display: table-row;
+}
+.flag-partnership__group {
+  display: table-row-group;
+  border-bottom: 8px solid #fff;
+}
+.flag-partnership .field-label {
+  display: table-cell;
+  padding: 8px 12px;
+}
+.flag-partnership .field-items {
+  border-left: 1px solid #fff;
+  display: table-cell;
+  padding: 8px 12px;
+}
+.flag-partnership__percent .field-item {
+  background-color: #8fc726;
+  padding-left: 8px;
+  color: #fff;
+  overflow-wrap: normal;
+  width: 100%;
+}

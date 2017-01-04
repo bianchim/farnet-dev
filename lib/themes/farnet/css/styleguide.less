@@ -197,3 +197,40 @@
     }
   }
 }
+
+/* Partnership */
+.flag-partnership {
+  display: table;
+  border-collapse: collapse;
+  background-color: @blue-lightest;
+
+  .field {
+    display: table-row;
+  }
+
+  &__group {
+    display: table-row-group;
+    border-bottom: 8px solid #fff;
+  }
+
+  .field-label {
+    display: table-cell;
+    padding: 8px 12px;
+  }
+
+  .field-items {
+    border-left: 1px solid #fff;
+    display: table-cell;
+    padding: 8px 12px;
+  }
+
+  &__percent {
+    .field-item {
+      background-color: @green-light;
+      padding-left: 8px;
+      color: #fff;
+      overflow-wrap: normal;
+      width: 100%;
+    }
+  }
+}
