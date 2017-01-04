@@ -14,6 +14,33 @@ function farnet_cooperation_call_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_coop_call_flag|node|cooperation_call|form';
+  $field_group->group_name = 'group_coop_call_flag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'cooperation_call';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Flag',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_flag',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-coop-call-flag field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_coop_call_flag|node|cooperation_call|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_coop_call_publication|node|cooperation_call|form';
   $field_group->group_name = 'group_coop_call_publication';
   $field_group->entity_type = 'node';
@@ -22,7 +49,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -58,6 +85,7 @@ function farnet_cooperation_call_field_group_info() {
       2 => 'field_ne_body',
       3 => 'field_picture',
       4 => 'title_field',
+      5 => 'field_deadline',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -82,7 +110,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'language',
@@ -110,7 +138,7 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisation',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_organisations',
     ),
@@ -137,10 +165,11 @@ function farnet_cooperation_call_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_term_theme',
+      2 => 'field_term_country',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -157,6 +186,7 @@ function farnet_cooperation_call_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Flag');
   t('Metadata');
   t('Organisation');
   t('Publication');
