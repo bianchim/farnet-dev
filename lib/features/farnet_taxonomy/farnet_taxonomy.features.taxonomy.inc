@@ -19,6 +19,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => -1,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -44,6 +45,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => -4,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -69,6 +71,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -94,6 +97,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -119,6 +123,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => -10,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -144,6 +149,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -169,6 +175,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => -6,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -194,6 +201,7 @@ function farnet_taxonomy_taxonomy_default_vocabularies() {
       'weight' => -7,
       'language' => 'und',
       'i18n_mode' => 0,
+      'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
