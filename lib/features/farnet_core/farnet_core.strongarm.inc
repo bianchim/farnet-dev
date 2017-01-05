@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_core.strongarm.inc
@@ -98,6 +97,15 @@ function farnet_core_strongarm() {
     'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'link_extra_domains';
+  $strongarm->value = array(
+    0 => 'scot',
+  );
+  $export['link_extra_domains'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
