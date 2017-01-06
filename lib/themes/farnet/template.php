@@ -231,7 +231,7 @@ function farnet_preprocess_field(&$variables, $hook) {
  * Implements hook_field_group_pre_render_alter().
  */
 function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
-  if ($element['#id'] == 'group-factsheet-flag-partnership') {
+  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-partnership') {
     $prefix = '<div class="flag-partnership__group">';
     $prefix_percent = '<div class="flag-partnership__group flag-partnership__percent">';
     $suffix = '</div>';
