@@ -207,6 +207,7 @@ features[variable][] = easy_breadcrumb-include_title_segment
 features[variable][] = easy_breadcrumb-title_from_page_when_available
 features[variable][] = easy_breadcrumb-title_segment_as_link
 features[variable][] = entity_translation_entity_types
+features[variable][] = link_extra_domains
 features[variable][] = multisite_wysiwyg
 features[variable][] = nexteuropa_communities_private_area
 features[variable][] = pathauto_file_image_pattern
