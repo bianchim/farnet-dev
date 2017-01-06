@@ -22,7 +22,7 @@ function farnet_pages_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '2',
+    'weight' => '4',
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -51,7 +51,7 @@ function farnet_pages_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'field_term_country',
       1 => 'field_term_theme',
@@ -82,8 +82,9 @@ function farnet_pages_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'title_field',
-      1 => 'field_farnet_abstract',
-      2 => 'field_ne_body',
+      1 => 'field_ne_body',
+      2 => 'field_farnet_abstract',
+      3 => 'field_picture',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -99,6 +100,33 @@ function farnet_pages_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_page_media|node|page|form';
+  $field_group->group_name = 'group_page_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Media',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_gallery',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-page-media field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_page_media|node|page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_page_metadata|node|page|form';
   $field_group->group_name = 'group_page_metadata';
   $field_group->entity_type = 'node';
@@ -107,7 +135,7 @@ function farnet_pages_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'group_content_access',
@@ -129,6 +157,7 @@ function farnet_pages_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Media');
   t('Metadata');
   t('Publication');
   t('Taxonomy');
