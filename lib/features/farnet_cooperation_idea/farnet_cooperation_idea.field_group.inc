@@ -24,8 +24,8 @@ function farnet_cooperation_idea_field_group_info() {
     'label' => 'Publication',
     'weight' => '4',
     'children' => array(
-      0 => 'field_publication_date',
-      1 => 'field_publication_abstract',
+      0 => 'field_publication_abstract',
+      1 => 'field_publication_date',
       2 => 'field_term_publication_channels',
     ),
     'format_type' => 'tab',
@@ -57,6 +57,7 @@ function farnet_cooperation_idea_field_group_info() {
       1 => 'field_ne_body',
       2 => 'field_picture',
       3 => 'title_field',
+      4 => 'field_status',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -168,6 +169,8 @@ function farnet_cooperation_idea_field_group_info() {
       0 => 'field_sea_basins',
       1 => 'field_term_theme',
       2 => 'field_type_of_area',
+      3 => 'field_term_country',
+      4 => 'field_preferred_countries',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

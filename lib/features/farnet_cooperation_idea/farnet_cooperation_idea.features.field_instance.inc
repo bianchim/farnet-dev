@@ -343,6 +343,46 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cooperation_idea-field_preferred_countries'.
+  $field_instances['node-cooperation_idea-field_preferred_countries'] = array(
+    'bundle' => 'cooperation_idea',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_preferred_countries',
+    'label' => 'Preferred countries',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-cooperation_idea-field_publication_abstract'.
   $field_instances['node-cooperation_idea-field_publication_abstract'] = array(
@@ -510,7 +550,90 @@ function farnet_cooperation_idea_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-cooperation_idea-field_status'.
+  $field_instances['node-cooperation_idea-field_status'] = array(
+    'bundle' => 'cooperation_idea',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_status',
+    'label' => 'Status',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-cooperation_idea-field_term_country'.
+  $field_instances['node-cooperation_idea-field_term_country'] = array(
+    'bundle' => 'cooperation_idea',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_term_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 10,
     ),
   );
 
@@ -594,7 +717,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -632,7 +755,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -747,14 +870,17 @@ function farnet_cooperation_idea_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Abstract');
   t('Body');
+  t('Country');
   t('Flag');
   t('Groups audience');
   t('Organisation');
   t('Picture');
+  t('Preferred countries');
   t('Publication abstract');
   t('Publication channels');
   t('Publication date');
   t('Sea Basins');
+  t('Status');
   t('Theme');
   t('Title');
   t('Type of area');
