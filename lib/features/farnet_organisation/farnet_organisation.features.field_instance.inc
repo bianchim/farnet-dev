@@ -716,7 +716,7 @@ function farnet_organisation_field_default_field_instances() {
   // Exported field_instance: 'node-contact_person-field_user_country'.
   $field_instances['node-contact_person-field_user_country'] = array(
     'bundle' => 'contact_person',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -744,11 +744,13 @@ function farnet_organisation_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => '',
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 4,
     ),
   );
