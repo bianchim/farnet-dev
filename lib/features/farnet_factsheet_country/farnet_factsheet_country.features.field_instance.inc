@@ -34,7 +34,7 @@ function farnet_factsheet_country_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'txt pdf doc docx xls xlsx',
+      'file_extensions' => 'txt pdf doc docx xls xlsx zip 7z ppt pptx odt ods odp odg',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
