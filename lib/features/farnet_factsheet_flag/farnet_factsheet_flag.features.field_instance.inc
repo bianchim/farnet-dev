@@ -3301,7 +3301,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label_position' => 'above',
         'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+3',
       ),
       'type' => 'date_popup',
       'weight' => 119,
@@ -3316,10 +3316,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -3555,10 +3555,10 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -4033,8 +4033,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Twitter');
   t('Type of area');
   t('View Cooperation Ideas');
-  t('View Good Practices
-    ');
+  t('View Good Practices');
   t('Website');
   t('Women employment in fisheries');
 

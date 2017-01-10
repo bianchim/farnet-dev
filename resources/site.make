@@ -39,11 +39,6 @@ projects[inline_entity_form][version] = "1.8"
 ; Libraries
 ; =========
 
-; libphonenumber-for-php
-libraries[libphonenumber-for-php][destination] = "libraries"
-libraries[libphonenumber-for-php][download][type] = "git"
-libraries[libphonenumber-for-php][download][url] = "https://github.com/giggsey/libphonenumber-for-php.git"
-
 ; ======
 ; Themes
 ; ======

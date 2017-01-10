@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_views.views_default.inc
@@ -406,6 +407,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -426,6 +428,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Sea Basins (field_sea_basins) */
   $handler->display->display_options['filters']['field_sea_basins_tid']['id'] = 'field_sea_basins_tid';
   $handler->display->display_options['filters']['field_sea_basins_tid']['table'] = 'field_data_field_sea_basins';
@@ -587,6 +590,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -607,6 +611,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Sea Basins (field_sea_basins) */
   $handler->display->display_options['filters']['field_sea_basins_tid']['id'] = 'field_sea_basins_tid';
   $handler->display->display_options['filters']['field_sea_basins_tid']['table'] = 'field_data_field_sea_basins';
@@ -797,6 +802,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -817,6 +823,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_gp_all');
@@ -940,6 +947,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -960,6 +968,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/projects';
   $handler->display->display_options['menu']['title'] = 'Projects';
   $handler->display->display_options['menu']['description'] = 'Projects';
@@ -1008,6 +1017,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -1028,6 +1038,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/methods';
   $handler->display->display_options['menu']['title'] = 'Methods';
   $handler->display->display_options['menu']['description'] = 'Methods';
@@ -1076,6 +1087,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -1096,6 +1108,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'on-the-ground/good-practices/short-stories';
   $handler->display->display_options['menu']['title'] = 'Methods';
   $handler->display->display_options['menu']['description'] = 'Methods';
@@ -1262,6 +1275,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -1282,6 +1296,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
   $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['id'] = 'field_term_publication_channels_tid_1';
   $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['table'] = 'field_data_field_term_publication_channels';
@@ -1339,6 +1354,20 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = [];
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['expose']['operator_id'] = 'field_term_publication_channels_tid_op';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['expose']['label'] = 'Publication channels (field_term_publication_channels)';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['expose']['operator'] = 'field_term_publication_channels_tid_op';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['expose']['identifier'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+  );
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -1361,6 +1390,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -1381,26 +1411,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
-  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['id'] = 'field_term_publication_channels_tid_1';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['table'] = 'field_data_field_term_publication_channels';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['field'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['expose']['operator_id'] = 'field_term_publication_channels_tid_1_op';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['expose']['label'] = 'Type of News';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['expose']['operator'] = 'field_term_publication_channels_tid_1_op';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['expose']['identifier'] = 'field_term_publication_channels_tid_1';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    6 => 0,
-    5 => 0,
-    3 => 0,
-    4 => 0,
-    7 => 0,
-  );
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid_1']['vocabulary'] = 'farnet_publication_channels';
+  $handler->display->display_options['filters']['field_term_theme_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'news-events/news';
 
   /* Display: Farnet */
@@ -1532,6 +1543,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -1552,6 +1564,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'news-events/news/farnet';
 
   /* Display: Other */
@@ -1686,6 +1699,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -1706,6 +1720,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'news-events/news/other';
 
   /* Display: Cooperation in action */
@@ -1860,6 +1875,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -1880,6 +1896,7 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Sea Basins (field_sea_basins) */
   $handler->display->display_options['filters']['field_sea_basins_tid']['id'] = 'field_sea_basins_tid';
   $handler->display->display_options['filters']['field_sea_basins_tid']['table'] = 'field_data_field_sea_basins';
@@ -1922,6 +1939,94 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_area_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_area_tid']['vocabulary'] = 'farnet_type_of_area';
   $handler->display->display_options['path'] = 'cooperation/in-action';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_news_farnet');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'teaser',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_abstract']['id'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'farnet_article' => 'farnet_article',
+    'page' => 'page',
+    'cooperation_call' => 'cooperation_call',
+    'cooperation_idea' => 'cooperation_idea',
+    'ms_fiche' => 'ms_fiche',
+    'factsheet_country' => 'factsheet_country',
+    'nexteuropa_event' => 'nexteuropa_event',
+    'nexteuropa_faq' => 'nexteuropa_faq',
+    'factsheet_flag' => 'factsheet_flag',
+    'gp_method' => 'gp_method',
+    'gp_project' => 'gp_project',
+    'gp_short_story' => 'gp_short_story',
+    'nexteuropa_news' => 'nexteuropa_news',
+    'publication' => 'publication',
+  );
+  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = [];
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
   $export['farnet_view_news'] = $view;
 
   $view = new view();

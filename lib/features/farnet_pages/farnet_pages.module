@@ -14,6 +14,7 @@ function farnet_pages_field_group_info_alter($groups) {
   if (!empty($groups['group_page_content|node|page|form'])) {
     $groups['group_page_content|node|page|form']->data['children'][1] = 'field_farnet_abstract';
     $groups['group_page_content|node|page|form']->data['children'][2] = 'field_ne_body';
+    $groups['group_page_content|node|page|form']->data['children'][3] = 'field_picture';
   }
 }
 

@@ -153,6 +153,81 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-ms_fiche-field_further_information'.
+  $field_instances['node-ms_fiche-field_further_information'] = array(
+    'bundle' => 'ms_fiche',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_further_information',
+    'label' => 'Further information',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'full_html_track' => 'full_html_track',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'full_html_track' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 24,
+    ),
+  );
+
   // Exported field_instance: 'node-ms_fiche-field_level_at_which_cooperation'.
   $field_instances['node-ms_fiche-field_level_at_which_cooperation'] = array(
     'bundle' => 'ms_fiche',
@@ -347,6 +422,63 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-ms_fiche-field_organisations'.
+  $field_instances['node-ms_fiche-field_organisations'] = array(
+    'bundle' => 'ms_fiche',
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_organisations',
+    'label' => 'Organisation',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_clone' => 0,
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'Organisations',
+          'label_singular' => 'Organisation',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 23,
     ),
   );
 
@@ -617,7 +749,7 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
         'label_position' => 'above',
         'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+3',
       ),
       'type' => 'date_popup',
       'weight' => 20,
@@ -659,6 +791,48 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-ms_fiche-field_term_country'.
+  $field_instances['node-ms_fiche-field_term_country'] = array(
+    'bundle' => 'ms_fiche',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_term_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'apply_chosen' => '',
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 14,
     ),
   );
 
@@ -827,9 +1001,12 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Abstract');
   t('Body');
+  t('Country');
   t('Financing and co-financing of your cooperation project');
+  t('Further information');
   t('Level at which cooperation is handled');
   t('Number of FLAGs');
+  t('Organisation');
   t('Picture');
   t('Possible partners');
   t('Publication abstract');

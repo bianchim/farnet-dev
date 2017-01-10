@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_factsheet_country.views_default.inc
@@ -38,6 +37,7 @@ function farnet_factsheet_country_views_default_views() {
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Picture */
   $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';

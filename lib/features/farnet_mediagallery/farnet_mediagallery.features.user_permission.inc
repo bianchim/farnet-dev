@@ -14,35 +14,45 @@ function farnet_mediagallery_user_default_permissions() {
   // Exported permission: 'create nexteuropa_mediagallery content'.
   $permissions['create nexteuropa_mediagallery content'] = array(
     'name' => 'create nexteuropa_mediagallery content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any nexteuropa_mediagallery content'.
   $permissions['delete any nexteuropa_mediagallery content'] = array(
     'name' => 'delete any nexteuropa_mediagallery content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own nexteuropa_mediagallery content'.
   $permissions['delete own nexteuropa_mediagallery content'] = array(
     'name' => 'delete own nexteuropa_mediagallery content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any nexteuropa_mediagallery content'.
   $permissions['edit any nexteuropa_mediagallery content'] = array(
     'name' => 'edit any nexteuropa_mediagallery content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own nexteuropa_mediagallery content'.
   $permissions['edit own nexteuropa_mediagallery content'] = array(
     'name' => 'edit own nexteuropa_mediagallery content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 

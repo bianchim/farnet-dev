@@ -169,3 +169,12 @@ function farnet_core_menu_alter(&$items) {
     $items['admin/workbench/create/node/add/editorial-team']['access callback'] = 'multisite_drupal_toolbox_is_admin';
   }
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ */
+function farnet_core_strongarm_alter(&$variables) {
+  if (isset($variables['date_first_day'])) {
+    $variables['date_first_day']->value = '1';
+  }
+}

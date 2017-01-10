@@ -80,6 +80,63 @@ function farnet_cooperation_call_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cooperation_call-field_deadline'.
+  $field_instances['node-cooperation_call-field_deadline'] = array(
+    'bundle' => 'cooperation_call',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_deadline',
+    'label' => 'Deadline',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-10:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-cooperation_call-field_farnet_abstract'.
   $field_instances['node-cooperation_call-field_farnet_abstract'] = array(
     'bundle' => 'cooperation_call',
@@ -152,6 +209,56 @@ function farnet_cooperation_call_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-cooperation_call-field_flag'.
+  $field_instances['node-cooperation_call-field_flag'] = array(
+    'bundle' => 'cooperation_call',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flag',
+    'label' => 'Flag',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 15,
     ),
   );
 
@@ -488,7 +595,7 @@ function farnet_cooperation_call_field_default_field_instances() {
         'label_position' => 'above',
         'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+3',
       ),
       'type' => 'date_popup',
       'weight' => 12,
@@ -530,6 +637,47 @@ function farnet_cooperation_call_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-cooperation_call-field_term_country'.
+  $field_instances['node-cooperation_call-field_term_country'] = array(
+    'bundle' => 'cooperation_call',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_term_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 8,
     ),
   );
 
@@ -729,6 +877,9 @@ function farnet_cooperation_call_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Call');
+  t('Country');
+  t('Deadline');
+  t('Flag');
   t('Groups audience');
   t('Organisation');
   t('Picture');
