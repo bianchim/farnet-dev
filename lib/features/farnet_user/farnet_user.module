@@ -162,6 +162,12 @@ function farnet_user_profile_validate($form, &$form_state) {
   if (drupal_strlen($url_website) > 0) {
     // Remove all illegal characters from a url.
     $url_website = filter_var($url_website, FILTER_SANITIZE_URL);
+
+    // Add http if not present for checks.
+    if (str_split($url_website, 4) !== 'http') {
+      $url_website = 'http://' . $url_website;
+    }
+
     if (filter_var($url_website, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED) === FALSE) {
       form_set_error('field_website', t('Please enter a valid url for the website. URL must include host name'));
     }

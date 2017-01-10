@@ -19,7 +19,7 @@ function farnet_om_menu_content_render($content = array()) {
   uasort($content, 'om_sort_by_weight');
   $total = count($content);
   $out = '';
-  foreach ($content as $prop) {
+  foreach ($content as $key => $prop) {
     $count++;
 
     $module     = $prop['module'];
@@ -67,13 +67,10 @@ function farnet_om_menu_content_render($content = array()) {
  */
 function farnet_preprocess_block(&$vars) {
   $block_id = $vars['block']->module . '-' . $vars['block']->delta;
-
   switch ($block_id) {
     case 'om_maximenu-om-maximenu-1':
-      // NB - Libetho: It seems that this case is not used.
       $vars['classes_array'][] = 'navigation-main';
       break;
-
   }
 }
 
@@ -93,11 +90,13 @@ function farnet_menu_tree__main_menu($variables) {
  */
 function farnet_dropdown($variables) {
   $items = $variables['items'];
+  $attributes = array();
   $output = "";
 
   if (!empty($items)) {
     $output .= "<ul class='dropdown-menu'>";
-    foreach ($items as $item) {
+    $num_items = count($items);
+    foreach ($items as $i => $item) {
       $data = '';
       if (is_array($item)) {
         foreach ($item as $key => $value) {
@@ -117,14 +116,16 @@ function farnet_dropdown($variables) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_alter().
  */
-function farnet_core_form_farnet_core_printpdf_multilingual_form_alter(&$form, &$form_state) {
-  $form['#attributes'] = array('class' => 'c-file-download');
-  $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
-  $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
-  $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
-  $form['fields_pdf_print']['submit-pdfprint-lang']['#fuffix'] = '</div>';
+function farnet_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'farnet_core_printpdf_multilingual_form') {
+    $form['#attributes'] = array('class' => 'c-file-download');
+    $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
+    $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#fuffix'] = '</div>';
+  }
 }
 
 /**
@@ -133,6 +134,19 @@ function farnet_core_form_farnet_core_printpdf_multilingual_form_alter(&$form, &
 function farnet_preprocess_field(&$variables, $hook) {
   $variables['prefix'] = NULL;
   $variables['suffix'] = NULL;
+  $variables['label_class'] = NULL;
+  $element_with_additional_label_class = array(
+    'field_ff_public_actors',
+    'field_ff_fisheries_actors',
+    'field_ff_other_non_fisheries',
+    'field_ff_environmental_actors',
+    'field_ff_number_decision',
+    'field_ff_number_assembly',
+    'field_ff_number_staff',
+  );
+  if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
+    $variables['label_class'] = ' u-fw-normal';
+  }
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     foreach ($variables['items'] as $delta => $item) {
       array_push($variables['items'][$delta]["#attributes"]["class"], 'field-collection-view-final');
@@ -192,6 +206,9 @@ function farnet_preprocess_field(&$variables, $hook) {
       !$variables['element']['#object']->field_ff_total_employment) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row">';
     }
+    elseif (!$variables['element']['#object']->field_ff_processing) {
+      $variables['suffix'] .= '</div></div></div></div></div>';
+    }
     $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
   }
   elseif ($variables['element']['#field_name'] == 'field_ff_processing') {
@@ -203,6 +220,97 @@ function farnet_preprocess_field(&$variables, $hook) {
       $variables['prefix'] .= '<div class="container"><div class="row flag-stats"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 flag-stats__col--blue-bg">';
       $variables['suffix'] .= '</div></div></div></div></div>';
     }
-    $variables['suffix'] .= '</div></div></div></div></div><p>End here<p>';
+    elseif (!$variables['element']['#object']->field_ff_fishing) {
+      $variables['prefix'] .= '<div class="col-sm-8 flag-stats__col--blue-bg">';
+    }
+    $variables['suffix'] .= '</div></div></div></div></div>';
+  }
+}
+
+/**
+ * Implements hook_field_group_pre_render_alter().
+ */
+function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
+  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-partnership') {
+    $prefix = '<div class="flag-partnership__group">';
+    $prefix_percent = '<div class="flag-partnership__group flag-partnership__percent">';
+    $suffix = '</div>';
+    $element['#prefix'] = str_replace('<h3', '<h3 class="fr-heading"', $element['#prefix']) . '<div class="flag-partnership">';
+    $element['#suffix'] .= $suffix;
+    if ($element['field_ff_accountable_body']) {
+      $element['field_ff_accountable_body']['#prefix'] = $prefix;
+      $element['field_ff_accountable_body']['#suffix'] = $suffix;
+    }
+    if ($element['field_ff_members_partnership']) {
+      $element['field_ff_members_partnership']['#prefix'] = $prefix;
+      $element['field_ff_members_partnership']['#suffix'] = $suffix;
+    }
+    // Third group of fields.
+    if ($element['field_ff_public_actors']) {
+      $element['field_ff_public_actors']['#prefix'] = $prefix_percent;
+      if ($element['field_ff_environmental_actors']) {
+        $element['field_ff_environmental_actors']['#suffix'] = $suffix;
+      }
+      elseif ($element['field_ff_other_non_fisheries']) {
+        $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
+      }
+      elseif ($element['field_ff_fisheries_actors']) {
+        $element['field_ff_fisheries_actors']['#suffix'] = $suffix;
+      }
+      else {
+        $element['field_ff_public_actors']['#suffix'] = $suffix;
+      }
+    }
+    elseif ($element['field_ff_fisheries_actors']) {
+      $element['field_ff_fisheries_actors']['#prefix'] = $prefix_percent;
+      if ($element['field_ff_environmental_actors']) {
+        $element['field_ff_environmental_actors']['#suffix'] = $suffix;
+      }
+      elseif ($element['field_ff_other_non_fisheries']) {
+        $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
+      }
+      else {
+        $element['field_ff_fisheries_actors']['#suffix'] = $suffix;
+      }
+    }
+    elseif ($element['field_ff_other_non_fisheries']) {
+      $element['field_ff_other_non_fisheries']['#prefix'] = $prefix_percent;
+      if ($element['field_ff_environmental_actors']) {
+        $element['field_ff_environmental_actors']['#suffix'] = $suffix;
+      }
+      else {
+        $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
+      }
+    }
+    elseif ($element['field_ff_environmental_actors']) {
+      $element['field_ff_environmental_actors']['#prefix'] = $prefix_percent;
+      $element['field_ff_environmental_actors']['#suffix'] = $suffix;
+    }
+    // Fourth group of fields.
+    if ($element['field_ff_number_decision']) {
+      $element['field_ff_number_decision']['#prefix'] = $prefix;
+      if ($element['field_ff_number_staff']) {
+        $element['field_ff_number_staff']['#suffix'] = $suffix;
+      }
+      elseif ($element['field_ff_number_assembly']) {
+        $element['field_ff_number_assembly']['#suffix'] = $suffix;
+      }
+      else {
+        $element['field_ff_number_decision']['#suffix'] = $suffix;
+      }
+    }
+    elseif ($element['field_ff_number_assembly']) {
+      $element['field_ff_number_assembly']['#prefix'] = $prefix;
+      if ($element['field_ff_number_staff']) {
+        $element['field_ff_number_staff']['#suffix'] = $suffix;
+      }
+      else {
+        $element['field_ff_number_assembly']['#suffix'] = $suffix;
+      }
+    }
+    elseif ($element['field_ff_number_staff']) {
+      $element['field_ff_number_staff']['#prefix'] = $prefix;
+      $element['field_ff_number_staff']['#suffix'] = $suffix;
+    }
   }
 }
