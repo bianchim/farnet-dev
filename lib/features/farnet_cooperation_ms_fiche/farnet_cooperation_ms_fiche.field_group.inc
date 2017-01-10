@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_cooperation_ms_fiche.field_group.inc
@@ -20,19 +21,20 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'More Information',
+    'label' => 'Further information',
     'weight' => '6',
     'children' => array(
       0 => 'field_further_information',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Further information',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-ms-fiche-more-information field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-ms-fiche-more-information field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups['group_ms_fiche_more_information|node|ms_fiche|form'] = $field_group;
@@ -132,19 +134,20 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Financing and co-financing of your cooperation project',
+    'label' => 'Eligibility & financing rules',
     'weight' => '5',
     'children' => array(
       0 => 'field_financing_and_co_financing',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Eligibility & financing rules',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-ne-ms-fiche-facfoycp field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-ne-ms-fiche-facfoycp field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups['group_ne_ms_fiche_facfoycp|node|ms_fiche|form'] = $field_group;
@@ -187,19 +190,20 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Level at which cooperation is handled',
-    'weight' => '4',
+    'label' => 'Organising cooperation',
+    'weight' => '3',
     'children' => array(
       0 => 'field_level_at_which_cooperation',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Organising cooperation',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-ne-ms-fiche-lawoih field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-ne-ms-fiche-lawoih field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups['group_ne_ms_fiche_lawoih|node|ms_fiche|form'] = $field_group;
@@ -242,7 +246,7 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Possible partners',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_possible_partners',
     ),
@@ -272,9 +276,9 @@ function farnet_cooperation_ms_fiche_field_group_info() {
     'weight' => '7',
     'children' => array(
       0 => 'field_sea_basins',
-      1 => 'field_term_theme',
-      2 => 'field_type_of_area',
-      3 => 'field_term_country',
+      1 => 'field_term_country',
+      2 => 'field_term_theme',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -291,12 +295,12 @@ function farnet_cooperation_ms_fiche_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
-  t('Financing and co-financing of your cooperation project');
+  t('Eligibility & financing rules');
+  t('Further information');
   t('Introduction');
-  t('Level at which cooperation is handled');
   t('Metadata');
-  t('More Information');
   t('Organisations');
+  t('Organising cooperation');
   t('Possible partners');
   t('Publication');
   t('Taxonomy');
