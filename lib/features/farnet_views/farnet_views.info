@@ -1,8 +1,6 @@
 name = Farnet Views
 description = Feature for Farnet Views
 core = 7.x
-php = 5.6
-multisite_version = 2.2
 package = Farnet
 dependencies[] = ctools
 dependencies[] = farnet_article
@@ -27,3 +25,4 @@ features[views_view][] = farnet_view_good_practices
 features[views_view][] = farnet_view_news
 features[views_view][] = farnet_view_themes
 features[views_view][] = homepage_highlight
+multisite_version = 2.2
