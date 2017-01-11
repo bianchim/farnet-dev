@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Override of views-view-fields.tpl.php.
+ */
+?>
 <li class="media farnet-listing__item">
     <div class="media-left">
         <?php if (!empty($fields['field_picture'])) : ?>

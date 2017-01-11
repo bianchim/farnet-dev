@@ -1,5 +1,9 @@
 <?php
-// dpm($fields);
+
+/**
+ * @file
+ * Override of views-view-fields.tpl.php.
+ */
 ?>
 
 <li class="media farnet-listing__item">

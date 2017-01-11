@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Override of views-view-unformatted.tpl.php.
+ */
+?>
 <?php if (!empty($title)): ?>
     <h3><?php print $title; ?></h3>
 <?php endif; ?>
