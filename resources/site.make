@@ -35,10 +35,35 @@ projects[viewfield][version] = "2.0"
 projects[inline_entity_form][subdir] = "contrib"
 projects[inline_entity_form][version] = "1.8"
 
+
 ; =========
 ; Libraries
 ; =========
 
+
 ; ======
 ; Themes
 ; ======
+
+; Farnet theme
+; projects[themes_farnet_framework][type] = "theme"
+;projects[themes_farnet_framework][destination] =  "themes/farnet"
+;projects[themes_farnet_framework][directory_name] = framework
+;projects[themes_farnet_framework][download][type] = "file"
+;projects[themes_farnet_framework][download][request_type] = "get"
+;projects[themes_farnet_framework][download][file_type] = "zip"
+;projects[themes_farnet_framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v2.1.0/framework.zip"
+
+; projects[themes_farnet_framework][type] = "theme"
+libraries[themes_farnet_framework][destination] =  "../lib/themes/farnet"
+libraries[themes_farnet_framework][directory_name] = framework
+libraries[themes_farnet_framework][download][type] = "file"
+libraries[themes_farnet_framework][download][request_type] = "get"
+libraries[themes_farnet_framework][download][file_type] = "zip"
+libraries[themes_farnet_framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v2.1.0/framework.zip"
+
+; Farnet theme framework
+; libraries[framework][download][type] = "git"
+; libraries[framework][destination] = "themes/farnet"
+; libraries[framework][download][url] = https://github.com/ec-europa/farnet-styleguide.git
+; libraries[framework][download][tag] = "2.1.0"

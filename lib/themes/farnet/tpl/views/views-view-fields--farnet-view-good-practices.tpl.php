@@ -5,13 +5,11 @@
  * Override of views-view-fields.tpl.php.
  */
 ?>
+
 <li class="media farnet-listing__item">
   <div class="media-left">
     <?php if (!empty($fields['field_picture'])) : ?>
       <?php print $fields['field_picture']->content; ?>
-    <?php endif; ?>
-    <?php if (!empty($fields['field_image'])) : ?>
-      <?php print $fields['field_image']->content; ?>
     <?php endif; ?>
   </div>
   <div class="media-body">
@@ -26,12 +24,17 @@
         - <span class="farnet-listing__important"><?php print $fields['type']->content; ?></span>
       <?php endif; ?>
     </div>
+    <div class="farnet-listing__subheading">
+      <?php if (!empty($fields['field_term_country'])) : ?>
+      <?php print $fields['field_term_country']->content; ?>
+      <?php endif; ?>
+      <?php if (!empty($fields['field_term_theme'])) : ?>
+        , <?php print $fields['field_term_theme']->content; ?>
+      <?php endif; ?>
+    </div>
     <div class="farnet-listing__abstract">
       <?php if (!empty($fields['field_farnet_abstract'])) : ?>
         <?php print $fields['field_farnet_abstract']->content; ?>
-      <?php endif; ?>
-      <?php if (!empty($fields['field_abstract'])) : ?>
-        <?php print $fields['field_abstract']->content; ?>
       <?php endif; ?>
     </div>
     <!-- a href="#" class="btn btn-default farnet-listing__read-more">Read more</a -->

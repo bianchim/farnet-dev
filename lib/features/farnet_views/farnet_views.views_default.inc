@@ -971,7 +971,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
-  $handler->display->display_options['path'] = 'on-the-ground/good-practices/projects';
+  $handler->display->display_options['path'] = 'on-the-ground/good-practice/projects';
   $handler->display->display_options['menu']['title'] = 'Projects';
   $handler->display->display_options['menu']['description'] = 'Projects';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -1123,6 +1123,7 @@ function farnet_views_views_default_views() {
   $view = new view();
   $view->name = 'farnet_view_news';
   $view->description = 'Views for the news Farnet and other';
+  $view->tag = 'default';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Farnet News';
