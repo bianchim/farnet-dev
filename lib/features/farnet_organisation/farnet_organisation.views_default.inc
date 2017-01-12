@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_organisation.views_default.inc
@@ -39,6 +40,7 @@ function farnet_organisation_views_default_views() {
     ),
   );
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_term_country']['id'] = 'field_term_country';
   $handler->display->display_options['fields']['field_term_country']['table'] = 'field_data_field_term_country';
@@ -91,6 +93,14 @@ function farnet_organisation_views_default_views() {
     'organisation' => 'organisation',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_term_type_organisation) */
+  $handler->display->display_options['filters']['field_term_type_organisation_tid']['id'] = 'field_term_type_organisation_tid_1';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid']['table'] = 'field_data_field_term_type_organisation';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid']['field'] = 'field_term_type_organisation_tid';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid']['value'] = [];
+  $handler->display->display_options['filters']['field_term_type_organisation_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_term_type_organisation_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid']['vocabulary'] = 'farnet_type_organisation';
   /* Filter criterion: Content: Country (field_term_country) */
   $handler->display->display_options['filters']['field_term_country_tid']['id'] = 'field_term_country_tid';
   $handler->display->display_options['filters']['field_term_country_tid']['table'] = 'field_data_field_term_country';
@@ -111,21 +121,23 @@ function farnet_organisation_views_default_views() {
     4 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['field_term_country_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Type (field_term_type_organisation) */
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['id'] = 'field_term_type_organisation_tid';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['table'] = 'field_data_field_term_type_organisation';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['field'] = 'field_term_type_organisation_tid';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['expose']['operator_id'] = 'field_term_type_organisation_tid_op';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['expose']['operator'] = 'field_term_type_organisation_tid_op';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['expose']['identifier'] = 'field_term_type_organisation_tid';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['id'] = 'field_term_type_organisation_tid';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['table'] = 'field_data_field_term_type_organisation';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['field'] = 'field_term_type_organisation_tid';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['value'] = '';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['expose']['operator_id'] = 'field_term_type_organisation_tid_op';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['expose']['operator'] = 'field_term_type_organisation_tid_op';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['expose']['identifier'] = 'field_term_type_organisation_tid';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     6 => 0,
@@ -134,11 +146,11 @@ function farnet_organisation_views_default_views() {
     4 => 0,
     7 => 0,
   );
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['vocabulary'] = 'farnet_type_organisation';
-  $handler->display->display_options['filters']['field_term_type_organisation_tid']['error_message'] = FALSE;
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['vocabulary'] = 'farnet_type_organisation';
+  $handler->display->display_options['filters']['field_term_type_organisation_tid_1']['error_message'] = FALSE;
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  $handler = $view->new_display('page', 'Page', 'page_national_authorities');
   $handler->display->display_options['path'] = 'about/who-is-who/national-authorities';
   $export['farnet_national_authorities'] = $view;
 
