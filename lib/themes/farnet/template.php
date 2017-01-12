@@ -158,7 +158,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       }
     }
   }
-  // Flag Stats
+  // Flag Stats.
   elseif ($variables['element']['#field_name'] == 'field_ff_population') {
     $variables['suffix'] = '</div>';
     if (!$variables['element']['#object']->field_ff_population_density and
@@ -206,7 +206,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       !$variables['element']['#object']->field_ff_population_density and
       !$variables['element']['#object']->field_ff_total_employment) {
       $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 flag-stats__right-col"><div class="row">';
-    } 
+    }
     elseif (!$variables['element']['#object']->field_ff_total_employment) {
       $variables['prefix'] .= '<div class="col-md-6 flag-stats__right-col"><div class="row">';
     }
@@ -225,7 +225,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       !$variables['element']['#object']->field_ff_fishing) {
       $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 farnet-stats__col--blue-bg">';
     }
-    elseif (!$variables['element']['#object']->field_ff_total_employment and 
+    elseif (!$variables['element']['#object']->field_ff_total_employment and
       !$variables['element']['#object']->field_ff_fishing) {
       $variables['prefix'] .= '<div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 farnet-stats__col--blue-bg">';
     }
@@ -250,7 +250,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       !$variables['element']['#object']->field_ff_aquaculture) {
       $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
     }
-    if(!$variables['element']['#object']->field_ff_women_employment) {
+    if (!$variables['element']['#object']->field_ff_women_employment) {
       $variables['suffix'] .= '</div></div></div></div></div>';
     }
   }
