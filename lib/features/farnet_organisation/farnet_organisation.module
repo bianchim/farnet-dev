@@ -11,29 +11,29 @@ include_once 'farnet_organisation.features.inc';
  * Implements hook_views_default_views_alter().
  */
 function farnet_organisation_views_default_views_alter(&$views) {
-    if (isset($views['farnet_national_authorities'])) {
-        $term = taxonomy_get_term_by_name('MA National');
-        if ((isset($term)) && (!empty($term))) {
-            $filter_term = current($term);
-            $tid_term = $filter_term->tid;
-            $views['farnet_national_authorities']->display['default']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
-            $views['farnet_national_authorities']->display['page_national_authorities']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
-        }
-
-        $term = taxonomy_get_term_by_name('MA Regional');
-        if ((isset($term)) && (!empty($term))) {
-            $filter_term = current($term);
-            $tid_term = $filter_term->tid;
-            $views['farnet_national_authorities']->display['default']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
-            $views['farnet_national_authorities']->display['page_national_authorities']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
-        }
-
-        $term = taxonomy_get_term_by_name('National network');
-        if ((isset($term)) && (!empty($term))) {
-            $filter_term = current($term);
-            $tid_term = $filter_term->tid;
-            $views['farnet_national_authorities']->display['default']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
-            $views['farnet_national_authorities']->display['page_national_authorities']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
-        }
+  if (isset($views['farnet_national_authorities'])) {
+    $term = taxonomy_get_term_by_name('MA National');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_national_authorities']->display['default']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_national_authorities']->display['page_national_authorities']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
     }
+
+    $term = taxonomy_get_term_by_name('MA Regional');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_national_authorities']->display['default']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_national_authorities']->display['page_national_authorities']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
+    }
+
+    $term = taxonomy_get_term_by_name('National network');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_national_authorities']->display['default']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_national_authorities']->display['page_national_authorities']->display_options['filters']['field_term_type_organisation_tid']['value'][$tid_term] = $tid_term;
+    }
+  }
 }

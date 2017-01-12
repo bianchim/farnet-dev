@@ -71,8 +71,8 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'NAT-NET',
       'language' => 'en',
       'translation' => array(
-          'fr' => 'National network',
-          'it' => 'National network',
+        'fr' => 'National network',
+        'it' => 'National network',
       ),
     ),
   );
