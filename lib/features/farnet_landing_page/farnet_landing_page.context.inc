@@ -24,7 +24,18 @@ function farnet_landing_page_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-a08df1144b562a45ee98fd5815edcc6b' => array(
+          'module' => 'views',
+          'delta' => 'a08df1144b562a45ee98fd5815edcc6b',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables
