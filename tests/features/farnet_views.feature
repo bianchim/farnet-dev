@@ -69,8 +69,8 @@ Feature: Check Views
     When "gp_project" content:
       | title                     | status  | field_publication_date  |
       | Behat GP Projects Test #1 | 1       | 1465294233              |
-    When I visit "on-the-ground/good-practices"
-    And I should see the heading "Good practices"
+    When I visit "on-the-ground/good-practice"
+    And I should see the heading "Good practice"
     And I should see the text "Behat GP Projects Test #1"
 
   @api
@@ -79,7 +79,7 @@ Feature: Check Views
     When "gp_project" content:
       | title                     | status  | field_publication_date  |
       | Behat GP Projects Test #1 | 1       | 1465294233              |
-    When I visit "on-the-ground/good-practices/projects"
+    When I visit "on-the-ground/good-practice/projects"
     And I should see the heading "Projects"
     And I should see the text "Behat GP Projects Test #1"
 
@@ -89,7 +89,7 @@ Feature: Check Views
     When "gp_method" content:
       | title                   | status  | field_publication_date  |
       | Behat GP Method Test #1 | 1       | 1465294233              |
-    When I visit "on-the-ground/good-practices/methods"
+    When I visit "on-the-ground/good-practice/methods"
     And I should see the text "Behat GP Method Test #1"
 
   @api

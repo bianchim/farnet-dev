@@ -36,7 +36,6 @@ Feature: Check Views Farnet Taxonomy Term
       | field_term_theme            | Environment                           |
       | field_publication_date      | 1465294233                            |
     Then I should see the heading "Behat News Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "themes/environment"
     And I should see the heading "Environment"
@@ -56,7 +55,6 @@ Feature: Check Views Farnet Taxonomy Term
       | field_term_theme            | Governance                            |
       | field_publication_date      | 1465294233                            |
     Then I should see the heading "Behat Event Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "themes/governance"
     And I should see the heading "Governance"

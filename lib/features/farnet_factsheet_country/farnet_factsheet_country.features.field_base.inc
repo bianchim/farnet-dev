@@ -156,6 +156,24 @@ function farnet_factsheet_country_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_emff_budget'.
+  $field_bases['field_emff_budget'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_emff_budget',
+    'indexes' => array(),
+    'locked' => 1,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => ',',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
   // Exported field_base: 'field_fc_document'.
   $field_bases['field_fc_document'] = array(
     'active' => 1,
@@ -180,24 +198,6 @@ function farnet_factsheet_country_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'file',
-  );
-
-  // Exported field_base: 'field_emff_budget'.
-  $field_bases['field_emff_budget'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_emff_budget',
-    'indexes' => array(),
-    'locked' => 1,
-    'module' => 'number',
-    'settings' => array(
-      'decimal_separator' => ',',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_flag_areas'.
@@ -311,12 +311,16 @@ function farnet_factsheet_country_field_default_field_bases() {
       'revision_id' => array(
         0 => 'revision_id',
       ),
+      'value' => array(
+        0 => 'value',
+      ),
     ),
     'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'hide_blank_items' => 1,
+      'hide_initial_item' => FALSE,
       'path' => '',
     ),
     'translatable' => 0,
