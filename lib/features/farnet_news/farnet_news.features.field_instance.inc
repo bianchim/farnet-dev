@@ -26,7 +26,7 @@ function farnet_news_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 17,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -68,9 +68,8 @@ function farnet_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 20,
       ),
       'teaser' => array(
@@ -141,7 +140,7 @@ function farnet_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -152,7 +151,7 @@ function farnet_news_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 15,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -207,11 +206,11 @@ function farnet_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 19,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -250,10 +249,9 @@ function farnet_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 16,
       ),
       'teaser' => array(
@@ -291,11 +289,11 @@ function farnet_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 18,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',

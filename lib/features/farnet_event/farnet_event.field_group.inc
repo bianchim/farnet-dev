@@ -155,24 +155,11 @@ function farnet_event_field_group_info() {
   $field_group->data = array(
     'label' => 'Publication',
     'weight' => '6',
-    'children' => array(
-      0 => 'field_publication_abstract',
-      1 => 'field_publication_date',
-      2 => 'field_term_publication_channels',
-    ),
-    'format_type' => 'div',
+    'children' => array(),
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'label' => 'Publication',
-      'instance_settings' => array(
-        'id' => 'group_event_publication',
-        'classes' => 'group_event_publication field-group-tab',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_event_publication|node|nexteuropa_event|default'] = $field_group;
@@ -219,10 +206,8 @@ function farnet_event_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '5',
     'children' => array(
-      0 => 'field_event_type',
-      1 => 'field_tags',
-      2 => 'field_term_country',
-      3 => 'field_term_theme',
+      0 => 'field_tags',
+      1 => 'field_term_theme',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -258,6 +243,12 @@ function farnet_event_field_group_info() {
       1 => 'field_tags',
       2 => 'field_term_country',
       3 => 'field_term_theme',
+      4 => 'field_tags',
+      5 => 'field_event_type',
+      6 => 'field_tags',
+      7 => 'field_event_type',
+      8 => 'field_tags',
+      9 => 'field_event_type',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -343,13 +334,16 @@ function farnet_event_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'field_city',
-      2 => 'field_farnet_abstract',
-      3 => 'field_registration',
-      4 => 'field_twitter_hashtag',
-      5 => 'field_website',
-      6 => 'field_presentation',
+      0 => 'field_event_type',
+      1 => 'field_ne_body',
+      2 => 'field_city',
+      3 => 'field_picture',
+      4 => 'field_presentation',
+      5 => 'field_publication_date',
+      6 => 'field_registration',
+      7 => 'field_term_country',
+      8 => 'field_twitter_hashtag',
+      9 => 'field_website',
     ),
     'format_type' => 'div',
     'format_settings' => array(

@@ -24,6 +24,7 @@ function farnet_event_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events';
+  $handler->display->display_options['css_class'] = 'listing-views';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -33,6 +34,28 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
+  $handler->display->display_options['fields']['field_picture']['field'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_picture']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_picture']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_picture']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -41,12 +64,20 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Abstract */
-  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
-  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
-  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
-  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  /* Field: Field: Dates */
+  $handler->display->display_options['fields']['field_dates']['id'] = 'field_dates';
+  $handler->display->display_options['fields']['field_dates']['table'] = 'field_data_field_dates';
+  $handler->display->display_options['fields']['field_dates']['field'] = 'field_dates';
+  $handler->display->display_options['fields']['field_dates']['label'] = '';
+  $handler->display->display_options['fields']['field_dates']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_dates']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_term_country']['id'] = 'field_term_country';
   $handler->display->display_options['fields']['field_term_country']['table'] = 'field_data_field_term_country';
@@ -61,36 +92,20 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['label'] = '';
   $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
-  /* Field: Content: Dates (Start/End) */
-  $handler->display->display_options['fields']['field_dates_start_end']['id'] = 'field_dates_start_end';
-  $handler->display->display_options['fields']['field_dates_start_end']['table'] = 'field_data_field_dates_start_end';
-  $handler->display->display_options['fields']['field_dates_start_end']['field'] = 'field_dates_start_end';
-  $handler->display->display_options['fields']['field_dates_start_end']['label'] = '';
-  $handler->display->display_options['fields']['field_dates_start_end']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_dates_start_end']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-  );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_farnet_abstract']['hide_empty'] = TRUE;
+  /* Sort criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -124,7 +139,9 @@ function farnet_event_views_default_views() {
     4 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['field_term_country_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
@@ -145,7 +162,9 @@ function farnet_event_views_default_views() {
     4 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_theme_tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['field_term_theme_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Type (field_event_type) */
   $handler->display->display_options['filters']['field_event_type_tid']['id'] = 'field_event_type_tid';
@@ -166,7 +185,9 @@ function farnet_event_views_default_views() {
     4 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_event_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_type_tid']['vocabulary'] = 'nexteuropa_event_type';
+  $handler->display->display_options['filters']['field_event_type_tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['field_event_type_tid']['error_message'] = FALSE;
 
   /* Display: Page */

@@ -22,7 +22,7 @@ function farnet_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'More information',
-    'weight' => '2',
+    'weight' => 1,
     'children' => array(
       0 => 'field_page',
     ),
@@ -49,7 +49,7 @@ function farnet_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '3',
+    'weight' => 3,
     'children' => array(
       0 => 'field_publication_abstract',
       1 => 'field_publication_date',
@@ -78,7 +78,7 @@ function farnet_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '1',
+    'weight' => 2,
     'children' => array(
       0 => 'field_term_country',
       1 => 'field_term_theme',
