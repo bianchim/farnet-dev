@@ -161,4 +161,26 @@ class OverrideContext extends DrupalContext implements SnippetAcceptingContext {
     $this->fieldCollections[$fc_node->item_id] = $fc_node;
   }
 
+  /**
+   * Fill an autocomplete tags style ( includes the node id ).
+   *
+   * @Given I fill in the autocomplete :field with :value
+   */
+  public function fillTagsAutocomplete($field, $value) {
+
+    foreach ($this->nodes as $node) {
+      if ($node->title === $value) {
+        $nid = $node->nid;
+      }
+    }
+
+    if (!isset($nid)) {
+      throw new \Exception('No node found with name ' . $value);
+    }
+
+    $value .= ' (' . $nid . ')';
+    $element = $this->getSession()->getPage();
+    $element->fillField($field, $value);
+  }
+
 }

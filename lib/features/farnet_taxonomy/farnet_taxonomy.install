@@ -255,6 +255,13 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
     $term->language = $item->language;
     $term->uid = 1;
 
+    // Check if term exist.
+    $term_existing = taxonomy_get_term_by_name($item->name);
+    if (!empty($term_existing)) {
+      $tid_existing = array_pop($term_existing)->tid;
+      $term->tid = [$tid_existing];
+    }
+
     // Attempt to get the parent if it exists.
     if (isset($item->parent)) {
       $parent_term = taxonomy_get_term_by_name($item->parent);
@@ -297,4 +304,19 @@ function save_multilingual_farnet_taxonomy($items_array, $vid) {
       taxonomy_term_save($org_term);
     }
   };
+}
+
+/**
+ * Update farnet_taxonomy for farnet_txonomy_type_organisation.
+ */
+function farnet_taxonomy_update_7101() {
+  // Update Farnet Type Organisation terms.
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('farnet_type_organisation')) {
+    include_once 'includes/farnet_taxonomy_type_organisations.php';
+    $type_organisations_array = farnet_taxonomy_type_organisations();
+    save_multilingual_farnet_taxonomy($type_organisations_array, $vocabulary->vid);
+  }
+  else {
+    watchdog('farnet_taxonomy', "Update farnet_type_organisation terms failed.", array(), WATCHDOG_ERROR);
+  }
 }

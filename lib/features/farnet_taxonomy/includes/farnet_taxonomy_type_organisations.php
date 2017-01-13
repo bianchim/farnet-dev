@@ -12,22 +12,22 @@ function farnet_taxonomy_type_organisations() {
   $type_organisations_array = array(
     'Organisation1' => (object) array(
       'name' => t('MA National'),
-      'code' => 'MA',
+      'code' => 'MA-NAT',
       'description' => 'description',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'MA National FR',
-        'it' => 'MA National IT',
+        'fr' => 'MA National',
+        'it' => 'MA National',
       ),
     ),
     'Organisation2' => (object) array(
       'name' => t('MA Regional'),
-      'code' => 'IB',
+      'code' => 'MA-REG',
       'description' => 'description',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'MA Regional FR',
-        'it' => 'MA Regional IT',
+        'fr' => 'MA Regional',
+        'it' => 'MA Regional',
       ),
     ),
     'Organisation3' => (object) array(
@@ -35,17 +35,17 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'FSU',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'FARNET Support Unit FR',
-        'it' => 'FARNET Support Unit IT',
+        'fr' => 'FARNET Support Unit',
+        'it' => 'FARNET Support Unit',
       ),
     ),
     'Organisation4' => (object) array(
       'name' => t('DG MARE'),
-      'code' => 'DG MARE',
+      'code' => 'EC_MARE',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'DG MARE FR',
-        'it' => 'DG MARE IT',
+        'fr' => 'DG MARE',
+        'it' => 'DG MARE',
       ),
     ),
     'Organisation5' => (object) array(
@@ -53,8 +53,8 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'EC',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'European Commission FR',
-        'it' => 'European Commission IT',
+        'fr' => 'European Commission',
+        'it' => 'European Commission',
       ),
     ),
     'Organisation6' => (object) array(
@@ -62,8 +62,17 @@ function farnet_taxonomy_type_organisations() {
       'code' => 'FLAG',
       'language' => 'en',
       'translation' => array(
-        'fr' => 'FARNET Local Action Group FR',
-        'it' => 'FARNET Local Action Group IT',
+        'fr' => 'FARNET Local Action Group',
+        'it' => 'FARNET Local Action Group',
+      ),
+    ),
+    'Organisation7' => (object) array(
+      'name' => t('National network'),
+      'code' => 'NAT-NET',
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'National network',
+        'it' => 'National network',
       ),
     ),
   );
