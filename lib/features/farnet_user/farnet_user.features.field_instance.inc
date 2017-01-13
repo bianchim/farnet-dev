@@ -490,7 +490,7 @@ function farnet_user_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_organisation'.
   $field_instances['user-user-field_organisation'] = array(
     'bundle' => 'user',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -527,7 +527,7 @@ function farnet_user_field_default_field_instances() {
         'path' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 8,
     ),
   );
