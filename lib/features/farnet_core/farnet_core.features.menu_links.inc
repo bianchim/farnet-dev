@@ -10,15 +10,15 @@
 function farnet_core_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_about:node/2.
-  $menu_links['main-menu_about:node/2'] = array(
+  // Exported menu link: main-menu_about:about.
+  $menu_links['main-menu_about:about'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/2',
+    'link_path' => 'about',
     'router_path' => 'node/%',
     'link_title' => 'About',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_about:node/2',
+      'identifier' => 'main-menu_about:about',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -194,7 +194,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:node/2',
+    'parent_identifier' => 'main-menu_about:about',
   );
   // Exported menu link: main-menu_brochures:library/brochures.
   $menu_links['main-menu_brochures:library/brochures'] = array(
@@ -232,7 +232,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:node/2',
+    'parent_identifier' => 'main-menu_library:library',
   );
   // Exported menu link: main-menu_business-support:themes/adding-value-fisheries/business-support.
   $menu_links['main-menu_business-support:themes/adding-value-fisheries/business-support'] = array(
@@ -308,7 +308,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news--events:node/2',
+    'parent_identifier' => 'main-menu_news--events:news-events',
   );
   // Exported menu link: main-menu_climate-change:themes/environment/climate-change.
   $menu_links['main-menu_climate-change:themes/environment/climate-change'] = array(
@@ -536,17 +536,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:node/2',
+    'parent_identifier' => 'main-menu_about:about',
   );
-  // Exported menu link: main-menu_cooperation-by-member-state:cooperation/member-by-state.
-  $menu_links['main-menu_cooperation-by-member-state:cooperation/member-by-state'] = array(
+  // Exported menu link: main-menu_cooperation-by-member-state:on-the-ground/cooperation/member-by-state.
+  $menu_links['main-menu_cooperation-by-member-state:on-the-ground/cooperation/member-by-state'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'cooperation/member-by-state',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/cooperation/member-by-state',
+    'router_path' => 'on-the-ground/cooperation/member-by-state',
     'link_title' => 'Cooperation by Member State',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-by-member-state:cooperation/member-by-state',
+      'identifier' => 'main-menu_cooperation-by-member-state:on-the-ground/cooperation/member-by-state',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -574,17 +574,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_cooperation:<front>',
+    'parent_identifier' => 'main-menu_cooperation:on-the-ground/cooperation',
   );
   // Exported menu link: main-menu_cooperation-calls:<front>.
-  $menu_links['main-menu_cooperation-calls:cooperation/calls'] = array(
+  $menu_links['main-menu_cooperation-calls:on-the-ground/cooperation/calls'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'cooperation/calls',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/cooperation/calls',
+    'router_path' => 'on-the-ground/cooperation/calls',
     'link_title' => 'Cooperation calls',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-calls:cooperation/calls',
+      'identifier' => 'main-menu_cooperation-calls:on-the-ground/cooperation/calls',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -612,17 +612,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_cooperation:<front>',
+    'parent_identifier' => 'main-menu_cooperation:on-the-ground/cooperation',
   );
-  // Exported menu link: main-menu_cooperation-ideas:cooperation/ideas.
-  $menu_links['main-menu_cooperation-ideas:cooperation/ideas'] = array(
+  // Exported menu link: main-menu_cooperation-ideas:on-the-ground/cooperation/ideas.
+  $menu_links['main-menu_cooperation-ideas:on-the-ground/cooperation/ideas'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'cooperation/ideas',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/cooperation/ideas',
+    'router_path' => 'on-the-ground/cooperation/ideas',
     'link_title' => 'Cooperation ideas',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-ideas:cooperation/ideas',
+      'identifier' => 'main-menu_cooperation-ideas:on-the-ground/cooperation/ideas',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -650,17 +650,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_cooperation:<front>',
+    'parent_identifier' => 'main-menu_cooperation:on-the-ground/cooperation',
   );
-  // Exported menu link: main-menu_cooperation-in-action:cooperation/in-action.
-  $menu_links['main-menu_cooperation-in-action:cooperation/in-action'] = array(
+  // Exported menu link: main-menu_cooperation-in-action:on-the-ground/cooperation/in-action.
+  $menu_links['main-menu_cooperation-in-action:on-the-ground/cooperation/in-action'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/cooperation/in-action',
+    'router_path' => 'on-the-ground/cooperation/in-action',
     'link_title' => 'Cooperation in action',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-in-action:cooperation/in-action',
+      'identifier' => 'main-menu_cooperation-in-action:on-the-ground/cooperation/in-action',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -688,13 +688,13 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_cooperation:<front>',
+    'parent_identifier' => 'main-menu_cooperation:on-the-ground/cooperation',
   );
-  // Exported menu link: main-menu_cooperation:<front>.
-  $menu_links['main-menu_cooperation:<front>'] = array(
+  // Exported menu link: main-menu_cooperation:on-the-ground/cooperation.
+  $menu_links['main-menu_cooperation:on-the-ground/cooperation'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'on-the-ground/cooperation',
+    'router_path' => 'on-the-ground/cooperation',
     'link_title' => 'Cooperation',
     'options' => array(
       'attributes' => array(
@@ -712,7 +712,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation:<front>',
+      'identifier' => 'main-menu_cooperation:on-the-ground/cooperation',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -798,7 +798,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:node/2',
+    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
   );
   // Exported menu link: main-menu_cultural-heritage:themes/society-and-culture/cultural-heritage.
   $menu_links['main-menu_cultural-heritage:themes/society-and-culture/cultural-heritage'] = array(
@@ -1140,7 +1140,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_cooperation:<front>',
+    'parent_identifier' => 'main-menu_cooperation:on-the-ground/cooperation',
   );
   // Exported menu link: main-menu_events:news-events/events.
   $menu_links['main-menu_events:news-events/events'] = array(
@@ -1178,7 +1178,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news--events:node/2',
+    'parent_identifier' => 'main-menu_news--events:news-events',
   );
   // Exported menu link: main-menu_faqs:tools/faq.
   $menu_links['main-menu_faqs:tools/faq'] = array(
@@ -1216,7 +1216,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:node/2',
+    'parent_identifier' => 'main-menu_tools:tools',
   );
   // Exported menu link: main-menu_farnet-data:<front>.
   $menu_links['main-menu_farnet-data:<front>'] = array(
@@ -1254,7 +1254,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:node/2',
+    'parent_identifier' => 'main-menu_about:about',
   );
   // Exported menu link: main-menu_farnet-flash:<front>.
   $menu_links['main-menu_farnet-flash:<front>'] = array(
@@ -1292,7 +1292,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:node/2',
+    'parent_identifier' => 'main-menu_library:library',
   );
   // Exported menu link: main-menu_farnet-news:news-events/news/farnet.
   $menu_links['main-menu_farnet-news:news-events/news/farnet'] = array(
@@ -1558,7 +1558,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:node/2',
+    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
   );
   // Exported menu link: main-menu_galleries:galleries.
   $menu_links['main-menu_galleries:galleries'] = array(
@@ -1656,15 +1656,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_at-a-glance:<front>',
   );
-  // Exported menu link: main-menu_good-practice:on-the-ground/good-practices.
-  $menu_links['main-menu_good-practice:on-the-ground/good-practices'] = array(
+  // Exported menu link: main-menu_good-practice:on-the-ground/good-practice.
+  $menu_links['main-menu_good-practice:on-the-ground/good-practice'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'on-the-ground/good-practices',
-    'router_path' => 'on-the-ground/good-practices',
+    'link_path' => 'on-the-ground/good-practice',
+    'router_path' => 'on-the-ground/good-practice',
     'link_title' => 'Good practice',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_good-practice:on-the-ground/good-practices',
+      'identifier' => 'main-menu_good-practice:on-the-ground/good-practice',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1692,7 +1692,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:node/2',
+    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
   );
   // Exported menu link: main-menu_governance-and-management:themes/governance-management.
   $menu_links['main-menu_governance-and-management:themes/governance-management'] = array(
@@ -1918,17 +1918,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:node/2',
+    'parent_identifier' => 'main-menu_tools:tools',
   );
-  // Exported menu link: main-menu_library:node/2.
-  $menu_links['main-menu_library:node/2'] = array(
+  // Exported menu link: main-menu_library:library.
+  $menu_links['main-menu_library:library'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/2',
+    'link_path' => 'library',
     'router_path' => 'node/%',
     'link_title' => 'Library',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_library:node/2',
+      'identifier' => 'main-menu_library:library',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1990,7 +1990,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:node/2',
+    'parent_identifier' => 'main-menu_library:library',
   );
   // Exported menu link: main-menu_managing-authorities:news-events/events/ma-nn.
   $menu_links['main-menu_managing-authorities:news-events/events/ma-nn'] = array(
@@ -2066,7 +2066,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:node/2',
+    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
   );
   // Exported menu link: main-menu_marine-activities:themes/diversification/marine-activities.
   $menu_links['main-menu_marine-activities:themes/diversification/marine-activities'] = array(
@@ -2144,11 +2144,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_environment:themes/environment',
   );
-  // Exported menu link: main-menu_methods:on-the-ground/good-practices/methods.
-  $menu_links['main-menu_methods:on-the-ground/good-practices/methods'] = array(
+  // Exported menu link: main-menu_methods:on-the-ground/good-practice/methods.
+  $menu_links['main-menu_methods:on-the-ground/good-practice/methods'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'on-the-ground/good-practices/methods',
-    'router_path' => 'on-the-ground/good-practices/methods',
+    'link_path' => 'on-the-ground/good-practice/methods',
+    'router_path' => 'on-the-ground/good-practice/methods',
     'link_title' => 'Methods',
     'options' => array(
       'attributes' => array(
@@ -2169,7 +2169,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_methods:on-the-ground/good-practices/methods',
+      'identifier' => 'main-menu_methods:on-the-ground/good-practice/methods',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2180,7 +2180,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_good-practice:on-the-ground/good-practices',
+    'parent_identifier' => 'main-menu_good-practice:on-the-ground/good-practice',
   );
   // Exported menu link: main-menu_migrants-and-refugees:themes/society-and-culture/migrants-and-refugees.
   $menu_links['main-menu_migrants-and-refugees:themes/society-and-culture/migrants-and-refugees'] = array(
@@ -2296,15 +2296,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_whos-who:<front>',
   );
-  // Exported menu link: main-menu_news--events:node/2.
-  $menu_links['main-menu_news--events:node/2'] = array(
+  // Exported menu link: main-menu_news--events:news-events.
+  $menu_links['main-menu_news--events:news-events'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/2',
+    'link_path' => 'news-events',
     'router_path' => 'node/%',
     'link_title' => 'News & Events',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_news--events:node/2',
+      'identifier' => 'main-menu_news--events:news-events',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2366,7 +2366,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news--events:node/2',
+    'parent_identifier' => 'main-menu_news--events:news-events',
   );
   // Exported menu link: main-menu_newsletters:my_subscriptions.
   $menu_links['main-menu_newsletters:my_subscriptions'] = array(
@@ -2388,15 +2388,15 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_on-the-ground:node/2.
-  $menu_links['main-menu_on-the-ground:node/2'] = array(
+  // Exported menu link: main-menu_on-the-ground:on-the-ground.
+  $menu_links['main-menu_on-the-ground:on-the-ground'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/2',
+    'link_path' => 'on-the-ground',
     'router_path' => 'node/%',
     'link_title' => 'On the ground',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_on-the-ground:node/2',
+      'identifier' => 'main-menu_on-the-ground:on-the-ground',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2537,7 +2537,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:node/2',
+    'parent_identifier' => 'main-menu_library:library',
   );
   // Exported menu link: main-menu_presentations:library/presentations.
   $menu_links['main-menu_presentations:library/presentations'] = array(
@@ -2575,7 +2575,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:node/2',
+    'parent_identifier' => 'main-menu_library:library',
   );
   // Exported menu link: main-menu_processing:themes/adding-value-fisheries/processing.
   $menu_links['main-menu_processing:themes/adding-value-fisheries/processing'] = array(
@@ -2615,11 +2615,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
-  // Exported menu link: main-menu_projects:on-the-ground/good-practices/projects.
-  $menu_links['main-menu_projects:on-the-ground/good-practices/projects'] = array(
+  // Exported menu link: main-menu_projects:on-the-ground/good-practice/projects.
+  $menu_links['main-menu_projects:on-the-ground/good-practice/projects'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'on-the-ground/good-practices/projects',
-    'router_path' => 'on-the-ground/good-practices/projects',
+    'link_path' => 'on-the-ground/good-practice/projects',
+    'router_path' => 'on-the-ground/good-practice/projects',
     'link_title' => 'Projects',
     'options' => array(
       'attributes' => array(
@@ -2640,7 +2640,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_projects:on-the-ground/good-practices/projects',
+      'identifier' => 'main-menu_projects:on-the-ground/good-practice/projects',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2651,7 +2651,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_good-practice:on-the-ground/good-practices',
+    'parent_identifier' => 'main-menu_good-practice:on-the-ground/good-practice',
   );
   // Exported menu link: main-menu_promotion:themes/adding-value-fisheries/promotion.
   $menu_links['main-menu_promotion:themes/adding-value-fisheries/promotion'] = array(
@@ -2727,7 +2727,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:node/2',
+    'parent_identifier' => 'main-menu_tools:tools',
   );
   // Exported menu link: main-menu_search:search/site.
   $menu_links['main-menu_search:search/site'] = array(
@@ -2825,11 +2825,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
-  // Exported menu link: main-menu_short-stories:on-the-ground/good-practices/short-stories.
-  $menu_links['main-menu_short-stories:on-the-ground/good-practices/short-stories'] = array(
+  // Exported menu link: main-menu_short-stories:on-the-ground/good-practice/short-stories.
+  $menu_links['main-menu_short-stories:on-the-ground/good-practice/short-stories'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'on-the-ground/good-practices/short-stories',
-    'router_path' => 'on-the-ground/good-practices',
+    'link_path' => 'on-the-ground/good-practice/short-stories',
+    'router_path' => 'on-the-ground/good-practice',
     'link_title' => 'Short stories',
     'options' => array(
       'attributes' => array(
@@ -2850,7 +2850,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_short-stories:on-the-ground/good-practices/short-stories',
+      'identifier' => 'main-menu_short-stories:on-the-ground/good-practice/short-stories',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2861,7 +2861,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_good-practice:on-the-ground/good-practices',
+    'parent_identifier' => 'main-menu_good-practice:on-the-ground/good-practice',
   );
   // Exported menu link: main-menu_small-scale-and-coastal-fisheries:themes/governance-management/small-scale-and-coastal-fisheries.
   $menu_links['main-menu_small-scale-and-coastal-fisheries:themes/governance-management/small-scale-and-coastal-fisheries'] = array(
@@ -3084,7 +3084,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:node/2',
+    'parent_identifier' => 'main-menu_tools:tools',
   );
   // Exported menu link: main-menu_tools-for-managing-authorities:<front>.
   $menu_links['main-menu_tools-for-managing-authorities:<front>'] = array(
@@ -3122,17 +3122,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:node/2',
+    'parent_identifier' => 'main-menu_tools:tools',
   );
-  // Exported menu link: main-menu_tools:node/2.
-  $menu_links['main-menu_tools:node/2'] = array(
+  // Exported menu link: main-menu_tools:tools.
+  $menu_links['main-menu_tools:tools'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/2',
+    'link_path' => 'tools',
     'router_path' => 'node/%',
     'link_title' => 'Tools',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_tools:node/2',
+      'identifier' => 'main-menu_tools:tools',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3308,7 +3308,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:node/2',
+    'parent_identifier' => 'main-menu_library:library',
   );
   // Exported menu link: main-menu_water-quality:themes/environment/water-quality.
   $menu_links['main-menu_water-quality:themes/environment/water-quality'] = array(
@@ -3384,7 +3384,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:node/2',
+    'parent_identifier' => 'main-menu_about:about',
   );
   // Exported menu link: main-menu_women:themes/society-and-culture/women.
   $menu_links['main-menu_women:themes/society-and-culture/women'] = array(
