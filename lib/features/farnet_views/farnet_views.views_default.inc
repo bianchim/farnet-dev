@@ -1294,7 +1294,7 @@ function farnet_views_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';''
+  $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_news');
