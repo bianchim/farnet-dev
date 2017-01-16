@@ -167,6 +167,13 @@ function farnet_landing_page_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_existing';
+  $strongarm->value = 'skip';
+  $export['node_export_existing'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_landing_page';
   $strongarm->value = array(
     0 => 'moderation',
@@ -187,6 +194,13 @@ function farnet_landing_page_strongarm() {
   $strongarm->name = 'node_submitted_landing_page';
   $strongarm->value = 0;
   $export['node_submitted_landing_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_landing_page_pattern';
+  $strongarm->value = '[node:source:title]';
+  $export['pathauto_node_landing_page_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
