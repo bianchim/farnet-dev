@@ -185,7 +185,7 @@ function farnet_core_strongarm_alter(&$variables) {
 function farnet_core_easy_breadcrumb_breadcrumb_alter(&$breadcrumb) {
   foreach ($breadcrumb as $key => $value) {
     if ($value['content'] == 'Flag factsheets') {
-      $breadcrumb[$key]['content'] = 'FLAG2 Factsheets';
+      $breadcrumb[$key]['content'] = 'FLAG Factsheets';
     }
   }
 }
