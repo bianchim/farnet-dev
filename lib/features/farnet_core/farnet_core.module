@@ -178,3 +178,14 @@ function farnet_core_strongarm_alter(&$variables) {
     $variables['date_first_day']->value = '1';
   }
 }
+
+/**
+ * Implements hook_easy_breadcrumb_breadcrumb_alter().
+ */
+function farnet_core_easy_breadcrumb_breadcrumb_alter(&$breadcrumb) {
+  foreach ($breadcrumb as $key => $value) {
+    if ($value['content'] == 'Flag factsheets') {
+      $breadcrumb[$key]['content'] = 'FLAG2 Factsheets';
+    }
+  }
+}

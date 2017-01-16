@@ -35,6 +35,9 @@ projects[viewfield][version] = "2.0"
 projects[inline_entity_form][subdir] = "contrib"
 projects[inline_entity_form][version] = "1.8"
 
+projects[easy_breadcrumb][subdir] = "contrib"
+projects[easy_breadcrumb][version] = "2.12"
+projects[easy_breadcrumb][patch][] = "https://www.drupal.org/files/issues/easy_breadcrumb-alter_links-2476339-7.patch"
 
 ; =========
 ; Libraries
