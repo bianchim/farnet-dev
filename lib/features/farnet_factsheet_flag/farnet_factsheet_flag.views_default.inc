@@ -95,7 +95,7 @@ function farnet_factsheet_flag_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet GP By Flag Display';
+  $view->human_name = 'Farnet GP By FLAG Display';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -176,7 +176,7 @@ function farnet_factsheet_flag_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet Factsheets Flag';
+  $view->human_name = 'Farnet Factsheets FLAG';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -328,7 +328,7 @@ function farnet_factsheet_flag_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_factsheet_flag');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Flag Factsheets';
+  $handler->display->display_options['title'] = 'FLAG Factsheets';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
   $export['farnet_view_factsheets_flag'] = $view;
 

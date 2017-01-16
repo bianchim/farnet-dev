@@ -7,13 +7,9 @@ multisite_version=2.2
 
 base theme = ec_resp
 
-stylesheets[all][] = "framework/styles/vendor.css"
 stylesheets[all][] = "framework/styles/farnet.css"
-stylesheets[all][] = "css/farnet_custom.css"
 stylesheets[all][] = "css/menu.css"
-stylesheets[all][] = "css/icon.css"
 
-scripts[] = "framework/scripts/vendors.js"
 scripts[] = "framework/scripts/farnet.js"
 scripts[] = "js/menu.js"
 

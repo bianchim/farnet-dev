@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Landing Page feature.
+ */
+
+include_once 'farnet_landing_page.features.inc';
