@@ -549,3 +549,11 @@ h3 {
 .f-twitter-tweet__content {
   margin: 0;
 }
+
+.farnet-listing__subheading span {
+  display: inline;
+}
+
+.farnet-listing__subheading div {
+  display: inline;
+}
