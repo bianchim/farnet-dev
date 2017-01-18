@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @file
- * Override of node.tpl.php for GP Short Story
+ * Override of node.tpl.php for GP Short Story.
  */
-
 ?>
 
 <div class="content clearfix">
@@ -31,9 +31,6 @@
               </div>
             </div>
             <?php endif; ?>
-            <!-- div class="farnet-quote__illustration">
-                <img class="farnet-quote__picture" src="https://unsplash.it/400/300?random" alt="Illustration" />
-            </div -->
             <blockquote class="farnet-quote__main">
               <?php if (!empty($content['group_short_story_quote']['field_quote_text'])) : ?>
                 <div class="farnet-quote__citation">
@@ -159,4 +156,3 @@
     <?php print render($content['group_short_story_media']); ?>
 
 </div>
-
