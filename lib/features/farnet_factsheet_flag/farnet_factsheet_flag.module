@@ -24,3 +24,20 @@ function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$for
   $form['field_view_cooperation_ideas']['#type'] = 'hidden';
   $form['field_view_good_practices']['#type'] = 'hidden';
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_factsheet_flag_form_alter(&$form, &$form_state, $form_id) {
+  $array_flag_countries = array('Bulgaria', 'Croatia', 'Cyprus', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Poland', 'Portugal', 'Romania', 'Slovenia', 'Spain', 'Sweden', 'United Kingdom',
+  );
+  if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-flag-page-factsheet-flag') {
+    foreach ($form['field_term_country_tid']['#options'] as $term_key => $term) {
+      if ($term_key !== 'All') {
+        if (!in_array($term, $array_flag_countries)) {
+          unset($form['field_term_country_tid']['#options'][$term_key]);
+        }
+      }
+    }
+  }
+}

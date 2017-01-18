@@ -301,7 +301,6 @@ function farnet_factsheet_flag_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
-  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_term_theme) */
   $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
   $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
@@ -323,8 +322,6 @@ function farnet_factsheet_flag_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
-  $handler->display->display_options['filters']['field_term_theme_tid']['hierarchy'] = 1;
-
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_factsheet_flag');
   $handler->display->display_options['defaults']['title'] = FALSE;
