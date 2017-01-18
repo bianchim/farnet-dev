@@ -137,7 +137,7 @@ function farnet_cooperation_ms_fiche_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ms_fiche_pattern';
-  $strongarm->value = '[site:nexteuropa_communities_keyword]/[node:og_group_ref]/[node:content-type]/[node:title]';
+  $strongarm->value = 'on-the-ground/cooperation/by-member-state/[node:source:title]';
   $export['pathauto_node_ms_fiche_pattern'] = $strongarm;
 
   return $export;

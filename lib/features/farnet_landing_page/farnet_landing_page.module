@@ -6,3 +6,15 @@
  */
 
 include_once 'farnet_landing_page.features.inc';
+
+/**
+ * Implements hook_node_export_after_import_alter().
+ */
+function farnet_landing_page_node_export_after_import_alter(&$nodes, $format, $save) {
+  foreach ($nodes as $node) {
+    if ($node->title === 'On The Ground') {
+      $node->path = array('alias' => 'on-the-ground', 'pathauto' => FALSE);
+      node_save($node);
+    }
+  }
+}
