@@ -551,33 +551,33 @@ h3 {
 }
 
 .farnet-quote__citation div {
-  display:inline;
+  display: inline;
 }
 .farnet-quote__author div {
-  display:inline;
+  display: inline;
 }
 
 .field-group-tab h3 {
-  color:#5fadff;
-  font-size:16px;
-  font-weight:700;
-  padding:5px 0
+  color: #5fadff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 0;
 }
 .field-group-tab h3 {
-  overflow:hidden
+  overflow: hidden;
 }
 .field-group-tab h3 span {
-  display:block;
-  position:relative
+  display: block;
+  position: relative;
 }
 .field-group-tab h3 span:after {
-  content:"";
-  position:absolute;
-  height:5px;
-  border-bottom:1px solid #cbcbcb;
-  bottom:2px;
-  width:100%;
-  margin-left:15px
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #cbcbcb;
+  bottom: 2px;
+  width: 100%;
+  margin-left: 15px;
 }
 
 .multi-country ul {
