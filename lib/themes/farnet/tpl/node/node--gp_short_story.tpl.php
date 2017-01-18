@@ -129,25 +129,25 @@
       <?php print render($content['group_short_story_funding']['#suffix']); ?>
     <?php endif; ?>
 
-    <?php if (!empty($content['group__gp_short_story_info'])) : ?>
-      <?php print render($content['group__gp_short_story_info']['#prefix']); ?>
+    <?php if (!empty($content['group_gp_short_story_info'])) : ?>
+      <?php print render($content['group_gp_short_story_info']['#prefix']); ?>
         <table class="table table-responsive table-blue table--white-borders">
           <tbody>
             <tr>
-              <th scope="row"><?php print $content['group__gp_short_story_info']['field_term_country']['#title']; ?></th>
-              <td class="multi-country"><?php print render($content['group__gp_short_story_info']['field_term_country']); ?></td>
+              <th scope="row"><?php print $content['group_gp_short_story_info']['field_term_country']['#title']; ?></th>
+              <td class="multi-country"><?php print render($content['group_gp_short_story_info']['field_term_country']); ?></td>
             </tr>
             <tr>
-              <th scope="row"><?php print $content['group__gp_short_story_info']['field_organisations']['#title']; ?></th>
-              <td><?php print render($content['group__gp_short_story_info']['field_organisations']); ?></td>
+              <th scope="row"><?php print $content['group_gp_short_story_info']['field_organisations']['#title']; ?></th>
+              <td><?php print render($content['group_gp_short_story_info']['field_organisations']); ?></td>
             </tr>
             <tr>
-              <th scope="row"><?php print $content['group__gp_short_story_info']['field_collection_region']['#title']; ?></th>
-              <td><?php print render($content['group__gp_short_story_info']['field_collection_region']); ?></td>
+              <th scope="row"><?php print $content['group_gp_short_story_info']['field_collection_region']['#title']; ?></th>
+              <td><?php print render($content['group_gp_short_story_info']['field_collection_region']); ?></td>
             </tr>
           </tbody>
         </table>
-      <?php print render($content['group__gp_short_story_info']['#suffix']); ?>
+      <?php print render($content['group_gp_short_story_info']['#suffix']); ?>
     <?php endif; ?>
 
     <div class="link-wrapper right"></div>
