@@ -21,6 +21,13 @@ function farnet_gp_short_story_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function farnet_gp_short_story_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function farnet_gp_short_story_node_info() {

@@ -14,8 +14,8 @@ function farnet_gp_short_story_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group__gp_short_story_info|node|gp_short_story|default';
-  $field_group->group_name = 'group__gp_short_story_info';
+  $field_group->identifier = 'group_gp_short_story_info|node|gp_short_story|default';
+  $field_group->group_name = 'group_gp_short_story_info';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'gp_short_story';
   $field_group->mode = 'default';
@@ -32,8 +32,8 @@ function farnet_gp_short_story_field_group_info() {
     'format_settings' => array(
       'label' => 'Project information',
       'instance_settings' => array(
-        'id' => 'group__gp_short_story_info',
-        'classes' => 'group__gp_short_story_info field-group-tab',
+        'id' => 'group_gp_short_story_info',
+        'classes' => 'group_gp_short_story_info field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -43,13 +43,13 @@ function farnet_gp_short_story_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group__gp_short_story_info|node|gp_short_story|default'] = $field_group;
+  $field_groups['group_gp_short_story_info|node|gp_short_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group__gp_short_story_info|node|gp_short_story|form';
-  $field_group->group_name = 'group__gp_short_story_info';
+  $field_group->identifier = 'group_gp_short_story_info|node|gp_short_story|form';
+  $field_group->group_name = 'group_gp_short_story_info';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'gp_short_story';
   $field_group->mode = 'form';
@@ -74,7 +74,7 @@ function farnet_gp_short_story_field_group_info() {
       ),
     ),
   );
-  $field_groups['group__gp_short_story_info|node|gp_short_story|form'] = $field_group;
+  $field_groups['group_gp_short_story_info|node|gp_short_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -306,10 +306,9 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'field_picture',
+      0 => 'field_id_text',
+      1 => 'field_ne_body',
       2 => 'field_website',
-      3 => 'field_id_text',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -638,8 +637,9 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Quote',
     'weight' => '2',
     'children' => array(
-      0 => 'field_quote_author',
-      1 => 'field_quote_text',
+      0 => 'field_picture',
+      1 => 'field_quote_author',
+      2 => 'field_quote_text',
     ),
     'format_type' => 'div',
     'format_settings' => array(
