@@ -29,7 +29,7 @@ function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$for
  * Implements hook_form_alter().
  */
 function farnet_factsheet_flag_form_alter(&$form, &$form_state, $form_id) {
-  $array_flag_countries = array('Bulgaria', 'Croatia', 'Cyprus', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Poland', 'Portugal', 'Romania', 'Slovenia', 'Spain', 'Sweden', 'United Kingdom',
+  $array_flag_countries = array(t('Bulgaria'), t('Croatia'), t('Cyprus'), t('Denmark'), t('Estonia'), t('Finland'), t('France'), t('Germany'), t('Greece'), t('Ireland'), t('Italy'), t('Latvia'), t('Lithuania'), t('Poland'), t('Portugal'), t('Romania'), t('Slovenia'), t('Spain'), t('Sweden'), t('United Kingdom'),
   );
   if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-flag-page-factsheet-flag') {
     foreach ($form['field_term_country_tid']['#options'] as $term_key => $term) {
