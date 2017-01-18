@@ -323,7 +323,6 @@ function farnet_factsheet_flag_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
-  $handler->display->display_options['filters']['field_term_theme_tid']['hierarchy'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_factsheet_flag');
