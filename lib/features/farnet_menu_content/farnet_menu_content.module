@@ -61,6 +61,19 @@ function _farnet_menu_content_menu_page_content() {
       $is_empty = TRUE;
 
       foreach ($field_group->children as $field) {
+        $field_info = field_info_field($field);
+
+        // Manage viewfield.
+        if ($field_info['type'] == 'viewfield') {
+          $field_info_instance = field_info_instance('node', $field, 'factsheet_flag');
+          $view_params = explode("|", $field_info_instance['default_value'][0]['vname']);
+          $results = views_get_view_result($view_params[0], $view_params[1], $node->nid);
+          if (count($results) == 0) {
+            // View empty.
+            break;
+          }
+        }
+
         // Check for data in the field.
         if (!empty($node->{$field})) {
           // Check if there is data in the current language.
