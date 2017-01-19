@@ -120,11 +120,12 @@ function farnet_dropdown($variables) {
  */
 function farnet_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'farnet_core_printpdf_multilingual_form') {
-    $form['#attributes'] = array('class' => 'c-file-download');
+    dpm($form);
+	$form['#attributes'] = array('class' => 'c-file-download');
     $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
     $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
     $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
-    $form['fields_pdf_print']['submit-pdfprint-lang']['#fuffix'] = '</div>';
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#suffix'] = '</div>';
   }
 }
 
