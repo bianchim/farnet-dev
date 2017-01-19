@@ -139,7 +139,6 @@ Feature: Test the presence of the content menu
     And I should see "FLAG Strategy" in the ".region-sidebar-left" element
     And I should see "Funding" in the ".region-sidebar-left" element
     And I should see "Project examples" in the ".region-sidebar-left" element
-    And I should see "Good Practice" in the ".region-sidebar-left" element
     And I should see "Calls for proposals" in the ".region-sidebar-left" element
     And I should see "Expertise & cooperation" in the ".region-sidebar-left" element
     And I should see "Cooperation ideas" in the ".region-sidebar-left" element
