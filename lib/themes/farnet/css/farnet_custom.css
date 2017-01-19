@@ -550,6 +550,14 @@ h3 {
   margin: 0;
 }
 
+.farnet-listing__subheading span {
+  display: inline;
+}
+
+.farnet-listing__subheading div {
+  display: inline;
+}
+
 .farnet-quote__citation div {
   display: inline;
 }

@@ -164,7 +164,6 @@ function farnet_event_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
-  $handler->display->display_options['filters']['field_term_theme_tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['field_term_theme_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Type (field_event_type) */
   $handler->display->display_options['filters']['field_event_type_tid']['id'] = 'field_event_type_tid';
