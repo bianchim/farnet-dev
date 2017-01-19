@@ -66,7 +66,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
@@ -358,10 +358,10 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 2,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 1,
@@ -528,7 +528,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -1081,7 +1081,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => FALSE,
@@ -1142,8 +1142,8 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 1,
+          'scale' => 0,
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
@@ -1189,10 +1189,10 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 2,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 8,
@@ -1311,10 +1311,10 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 2,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 12,
@@ -1494,7 +1494,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -1561,7 +1561,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -1710,7 +1710,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
