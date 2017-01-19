@@ -67,7 +67,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['style_options']['data_source']['longitude'] = 'field_longitude';
   $handler->display->display_options['style_options']['data_source']['wkt'] = 'title';
   $handler->display->display_options['style_options']['data_source']['name_field'] = 'title';
-  $handler->display->display_options['style_options']['data_source']['description_field'] = 'field_ne_body';
+  $handler->display->display_options['style_options']['data_source']['description_field'] = 'nothing';
   $handler->display->display_options['style_options']['jsonp_prefix'] = '';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -93,6 +93,23 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_term_theme']['id'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['field'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['delta_offset'] = '0';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="mapitem_theme">[field_term_theme]</div>
+<div class="mapitem_type">[type]</div>
+<br>
+<div class="mapitem_abstract">[field_farnet_abstract]</div>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Country (field_term_country) */
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
@@ -139,7 +156,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['style_options']['data_source']['longitude'] = 'field_longitude';
   $handler->display->display_options['style_options']['data_source']['wkt'] = 'title';
   $handler->display->display_options['style_options']['data_source']['name_field'] = 'title';
-  $handler->display->display_options['style_options']['data_source']['description_field'] = 'field_ne_body';
+  $handler->display->display_options['style_options']['data_source']['description_field'] = 'nothing';
   $handler->display->display_options['style_options']['jsonp_prefix'] = '';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -183,6 +200,23 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['delta_1']['label'] = '';
   $handler->display->display_options['fields']['delta_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_term_theme']['id'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['field'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['delta_offset'] = '0';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="mapitem_theme">[field_term_theme]</div>
+<div class="mapitem_type">[type]</div>
+<br>
+<div class="mapitem_abstract">[field_farnet_abstract]</div>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Country (field_term_country) */
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
@@ -235,7 +269,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['style_options']['data_source']['longitude'] = 'field_longitude';
   $handler->display->display_options['style_options']['data_source']['wkt'] = 'title';
   $handler->display->display_options['style_options']['data_source']['name_field'] = 'title';
-  $handler->display->display_options['style_options']['data_source']['description_field'] = 'field_ne_body';
+  $handler->display->display_options['style_options']['data_source']['description_field'] = 'nothing';
   $handler->display->display_options['style_options']['jsonp_prefix'] = '';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -279,6 +313,23 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['delta_1']['label'] = '';
   $handler->display->display_options['fields']['delta_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_term_theme']['id'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['field'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['delta_offset'] = '0';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="mapitem_theme">[field_term_theme]</div>
+<div class="mapitem_type">[type]</div>
+<br>
+<div class="mapitem_abstract">[field_farnet_abstract]</div>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Country (field_term_country) */
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
@@ -332,7 +383,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['style_options']['data_source']['longitude'] = 'field_longitude';
   $handler->display->display_options['style_options']['data_source']['wkt'] = 'title';
   $handler->display->display_options['style_options']['data_source']['name_field'] = 'title';
-  $handler->display->display_options['style_options']['data_source']['description_field'] = 'field_ne_body';
+  $handler->display->display_options['style_options']['data_source']['description_field'] = 'nothing';
   $handler->display->display_options['style_options']['jsonp_prefix'] = '';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -376,6 +427,23 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['delta_1']['label'] = '';
   $handler->display->display_options['fields']['delta_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_term_theme']['id'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['field'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['delta_offset'] = '0';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="mapitem_theme">[field_term_theme]</div>
+<div class="mapitem_type">[type]</div>
+<br>
+<div class="mapitem_abstract">[field_farnet_abstract]</div>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Country (field_term_country) */
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
@@ -428,7 +496,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['style_options']['data_source']['longitude'] = 'field_longitude';
   $handler->display->display_options['style_options']['data_source']['wkt'] = 'title';
   $handler->display->display_options['style_options']['data_source']['name_field'] = 'title';
-  $handler->display->display_options['style_options']['data_source']['description_field'] = 'field_ne_body';
+  $handler->display->display_options['style_options']['data_source']['description_field'] = 'nothing';
   $handler->display->display_options['style_options']['jsonp_prefix'] = '';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -472,6 +540,23 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['fields']['delta_1']['label'] = '';
   $handler->display->display_options['fields']['delta_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_term_theme']['id'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['field'] = 'field_term_theme';
+  $handler->display->display_options['fields']['field_term_theme']['delta_offset'] = '0';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="mapitem_theme">[field_term_theme]</div>
+<div class="mapitem_type">[type]</div>
+<br>
+<div class="mapitem_abstract">[field_farnet_abstract]</div>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Country (field_term_country) */
   $handler->display->display_options['arguments']['field_term_country_tid']['id'] = 'field_term_country_tid';
