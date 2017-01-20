@@ -225,3 +225,19 @@ function farnet_core_menu_link_alter(&$item) {
   }
 
 }
+
+/**
+ * Implements hook_context_load_alter().
+ */
+function farnet_core_context_load_alter(&$context) {
+  if ($context->name == 'homepage') {
+    if (isset($context->reactions['block']['blocks']['views-multisite_settings_core-block_1'])) {
+      unset($context->reactions['block']['blocks']['views-multisite_settings_core-block_1']);
+    }
+  }
+
+  if ($context->name == 'site_wide') {
+    unset($context->reactions['block']['blocks']['user-menu']);
+    unset($context->reactions['block']['blocks']['create-content-button']);
+  }
+}

@@ -86,7 +86,7 @@ function farnet_core_locale_default_languages() {
     'plurals' => 0,
     'formula' => '',
     'domain' => '',
-    'prefix' => '',
+    'prefix' => 'en',
     'weight' => 0,
   );
   // Exported language: es.
