@@ -26,3 +26,30 @@ function farnet_pages_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
   }
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_instances.
+ */
+function farnet_pages_field_default_field_instances_alter(&$fields) {
+  if (isset($fields['node-page-field_ne_body'])) {
+    if (isset($fields['node-page-field_ne_body']['display'])) {
+      $fields['node-nexteuropa_news-title_field']['display']['default']['weight'] = 4;
+    }
+  }
+  if (isset($fields['node-page-group_content_access'])) {
+    if (isset($fields['node-page-group_content_access']['display'])) {
+      $fields['node-page-group_content_access']['display']['default']['label'] = "inline";
+      $fields['node-page-group_content_access']['display']['default']['settings'] = array();
+      $fields['node-page-group_content_access']['display']['default']['type'] = "hidden";
+    }
+  }
+  if (isset($fields['node-page-og_group_ref'])) {
+    if (isset($fields['node-page-og_group_ref']['display'])) {
+      $fields['node-page-og_group_ref']['display']['default']['label'] = "inline";
+      $fields['node-page-og_group_ref']['display']['default']['settings'] = array();
+      $fields['node-page-og_group_ref']['display']['default']['type'] = "hidden";
+    }
+  }
+}
