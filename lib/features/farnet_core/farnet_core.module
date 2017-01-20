@@ -189,3 +189,12 @@ function farnet_core_easy_breadcrumb_breadcrumb_alter(&$breadcrumb) {
     }
   }
 }
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_core_block_view_alter(&$data, $block) {
+  if ($block->delta == 'print-links') {
+    $data = array();
+  }
+}
