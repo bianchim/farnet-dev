@@ -9,7 +9,6 @@ base theme = ec_resp
 
 stylesheets[all][] = "framework/styles/farnet.css"
 stylesheets[all][] = "css/menu.css"
-stylesheets[all][] = "css/farnet_custom.css"
 
 scripts[] = "framework/scripts/farnet.js"
 scripts[] = "js/menu.js"

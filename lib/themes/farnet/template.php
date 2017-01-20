@@ -135,6 +135,7 @@ function farnet_preprocess_field(&$variables, $hook) {
   $variables['prefix'] = NULL;
   $variables['suffix'] = NULL;
   $variables['label_class'] = NULL;
+  $variables['field_item_class'] = NULL;
   $element_with_additional_label_class = array(
     'field_ff_public_actors',
     'field_ff_fisheries_actors',
@@ -144,8 +145,16 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly',
     'field_ff_number_staff',
   );
+  $element_with_additional_field_item_class = array(
+    'field_ff_number_decision',
+    'field_ff_number_assembly',
+    'field_ff_number_staff',
+  );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
+  }
+  if (in_array($variables['element']['#field_name'], $element_with_additional_field_item_class)) {
+    $variables['field_item_class'] = ' u-color-green u-fw-bold';
   }
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     foreach ($variables['items'] as $delta => $item) {
