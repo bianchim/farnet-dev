@@ -30,7 +30,7 @@ function farnet_core_context_default_contexts() {
         'views-homepage_highlight-block' => array(
           'module' => 'views',
           'delta' => 'homepage_highlight-block',
-          'region' => 'content',
+          'region' => 'content_top',
           'weight' => '-10',
         ),
         'views-a08df1144b562a45ee98fd5815edcc6b' => array(
