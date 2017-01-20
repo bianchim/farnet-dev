@@ -213,7 +213,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     if (!$variables['element']['#object']->field_ff_aquaculture and
       !$variables['element']['#object']->field_ff_processing and
       !$variables['element']['#object']->field_ff_women_employment) {
-      $variables['suffix'] .= '</div></div></div></div></div></div>';
+      $variables['suffix'] .= '</div></div></div></div></div>';
     }
     $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
   }
@@ -273,21 +273,6 @@ function farnet_preprocess_field(&$variables, $hook) {
  * Implements hook_field_group_pre_render_alter().
  */
 function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
-  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-practices') {
-    // Check related view results.
-    $results = views_get_view_result('farnet_gp_by_flag_display', "block_gp_by_flag", $element['field_view_good_practices']['#object']->nid);
-    if (count($results) == 0) {
-      hide($element);
-    }
-  }
-  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-ideas') {
-    // Check related view results.
-    $results = views_get_view_result('cooperation_idea_by_flag', "block_idea_by_flag", $element['field_view_cooperation_ideas']['#object']->nid);
-    if (count($results) == 0) {
-      hide($element);
-    }
-  }
-
   if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-partnership') {
     $prefix = '<div class="flag-partnership__group">';
     $prefix_percent = '<div class="flag-partnership__group flag-partnership__percent">';
