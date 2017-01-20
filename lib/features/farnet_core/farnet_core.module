@@ -189,3 +189,39 @@ function farnet_core_easy_breadcrumb_breadcrumb_alter(&$breadcrumb) {
     }
   }
 }
+
+/**
+ * Implements hook_menu_link_alter().
+ */
+function farnet_core_menu_link_alter(&$item) {
+
+  if (strpos($item['link_path'], 'TOKENUUID_') !== FALSE) {
+    $pos = strpos($item['link_path'], 'TOKENUUID_');
+    $uuid = (drupal_substr($item['link_path'], $pos + drupal_strlen('TOKENUUID_')));
+    // Echo '$uuid:'. $uuid . PHP_EOL;.
+    $entities = entity_uuid_load('node', array($uuid));
+    if (count($entities) > 0) {
+      $entity = reset($entities);
+      echo $item['link_title'] . ' => $nid:' . $entity->nid . PHP_EOL;
+      $item['link_path'] = 'node/' . $entity->nid;
+      // $item['identifier'] = str_replace('TOKENUUID_'.$uuid
+      // , 'node/' . $entity->nid, $item['identifier']);
+      // var_dump($item);
+    }
+  }
+
+  if (isset($item['parent_identifier'])) {
+    if (strpos($item['parent_identifier'], 'TOKENUUID_') !== FALSE) {
+      $pos = strpos($item['parent_identifier'], 'TOKENUUID_');
+      $uuid_parent = (drupal_substr($item['parent_identifier'], $pos + drupal_strlen('TOKENUUID_')));
+      // Echo '$uuid_parent:'. $uuid_parent . PHP_EOL;.
+      $entities = entity_uuid_load('node', array($uuid_parent));
+      if (count($entities) > 0) {
+        $entity = reset($entities);
+        // Echo $item['link_title'].' => $nid_parent:'. $entity->nid . PHP_EOL;.
+        $item['parent_identifier'] = str_replace('TOKENUUID_' . $uuid_parent, 'node/' . $entity->nid, $item['parent_identifier']);
+      }
+    }
+  }
+
+}
