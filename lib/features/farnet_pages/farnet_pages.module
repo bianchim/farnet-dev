@@ -40,14 +40,14 @@ function farnet_pages_field_default_field_instances_alter(&$fields) {
   }
   if (isset($fields['node-page-group_content_access'])) {
     if (isset($fields['node-page-group_content_access']['display'])) {
-      $fields['node-page-group_content_access']['display']['default']['label'] = "inline";
+      $fields['node-page-group_content_access']['display']['default']['label'] = "hidden";
       $fields['node-page-group_content_access']['display']['default']['settings'] = array();
       $fields['node-page-group_content_access']['display']['default']['type'] = "hidden";
     }
   }
   if (isset($fields['node-page-og_group_ref'])) {
     if (isset($fields['node-page-og_group_ref']['display'])) {
-      $fields['node-page-og_group_ref']['display']['default']['label'] = "inline";
+      $fields['node-page-og_group_ref']['display']['default']['label'] = "hidden";
       $fields['node-page-og_group_ref']['display']['default']['settings'] = array();
       $fields['node-page-og_group_ref']['display']['default']['type'] = "hidden";
     }
