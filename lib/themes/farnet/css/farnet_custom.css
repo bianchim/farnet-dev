@@ -1,0 +1,42 @@
+
+.farnet-listing__subheading span {
+  display: inline;
+}
+
+.farnet-listing__subheading div {
+  display: inline;
+}
+
+.farnet-quote__citation div {
+  display: inline;
+}
+.farnet-quote__author div {
+  display: inline;
+}
+
+.field-group-tab h3 {
+  color: #5fadff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 0;
+}
+.field-group-tab h3 {
+  overflow: hidden;
+}
+.field-group-tab h3 span {
+  display: block;
+  position: relative;
+}
+.field-group-tab h3 span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #cbcbcb;
+  bottom: 2px;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.multi-country ul {
+  list-style-type: none;
+}
