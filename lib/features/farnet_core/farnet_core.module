@@ -191,10 +191,9 @@ function farnet_core_easy_breadcrumb_breadcrumb_alter(&$breadcrumb) {
 }
 
 /**
- * Implements hook_block_view_alter().
+ * Implements hook_block_block_info_alter().
  */
-function farnet_core_block_view_alter(&$data, $block) {
-  if ($block->delta == 'print-links') {
-    $data = array();
-  }
+function farnet_core_block_info_alter(&$blocks, $theme, $code_blocks) {
+  $blocks['print_ui']['print-links']['status'] = 0;
+  $blocks['print_ui']['print-links']['region'] = '';
 }
