@@ -131,7 +131,8 @@ function farnet_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_cp_all');
-  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Cooperation';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
@@ -197,8 +198,8 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'on-the-ground/cooperation';
-  $handler->display->display_options['menu']['title'] = 'Good Practices';
-  $handler->display->display_options['menu']['description'] = 'Good Practices';
+  $handler->display->display_options['menu']['title'] = 'Cooperation';
+  $handler->display->display_options['menu']['description'] = 'Cooperation';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
