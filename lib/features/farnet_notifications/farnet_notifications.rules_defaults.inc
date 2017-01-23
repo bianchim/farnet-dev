@@ -23,7 +23,7 @@ function farnet_notifications_default_rules_configuration() {
             "roles" : { "value" : { "6" : "6" } },
             "subject" : "FARNET Users - New user",
             "message" : "First login of the user [site:current-user].",
-            "from" : "web@farnet.eu"
+            "from" : "[site:mail]"
           }
         }
       ]
