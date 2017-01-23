@@ -236,8 +236,10 @@ function farnet_core_context_load_alter(&$context) {
     }
   }
 
+  /*
   if ($context->name == 'site_wide') {
     unset($context->reactions['block']['blocks']['user-menu']);
     unset($context->reactions['block']['blocks']['create-content-button']);
   }
+  */
 }
