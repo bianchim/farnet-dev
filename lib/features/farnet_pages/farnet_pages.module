@@ -28,77 +28,22 @@ function farnet_pages_form_node_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Implements hook_COMPONENT_alter().
- *
- * COMPONENT = field_default_field_instances.
+ * Implements hook_field_display_alter().
  */
-function farnet_pages_field_default_field_instances_alter(&$fields) {
+function farnet_pages_field_display_alter(&$display, $context) {
 
-  foreach ($fields as $key => $field) {
-    if (strpos($field['field_name'], 'group_content_access') !== false) {
-      dpm($key);
-      dpm($field);
-    }
-    if (strpos($field['field_name'], 'og_group_ref') !== false) {
-      dpm($key);
-      dpm($field);
+  if (($context['field']['field_name'] === 'group_content_access')
+    && ($context['entity']->type == 'page')) {
+    if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
+      $display['label'] = 'hidden';
+      $display['type'] = "hidden";
     }
   }
-
-  if (isset($fields['group_content_access'])) {
-    dpm($fields['group_content_access']);
-  }
-  if (isset($fields['og_group_ref'])) {
-    dpm($fields['og_group_ref']);
-  }
-
-  if (isset($fields['node-nexteuropa_pages-field_ne_body'])) {
-    dpm($fields['node-nexteuropa_pages-field_ne_body']);
-  }
-  if (isset($fields['node-nexteuropa_pages-group_content_access'])) {
-    dpm($fields['node-nexteuropa_pages-group_content_access']);
-  }
-  if (isset($fields['node-nexteuropa_pages-og_group_ref'])) {
-    dpm($fields['node-nexteuropa_pages-og_group_ref']);
-  }
-
-  if (isset($fields['node-farnet_pages-field_ne_body'])) {
-    dpm($fields['node-farnet_pages-field_ne_body']);
-  }
-  if (isset($fields['node-farnet_pages-group_content_access'])) {
-    dpm($fields['node-farnet_pages-group_content_access']);
-  }
-  if (isset($fields['node-farnet_pages-og_group_ref'])) {
-    dpm($fields['node-farnet_pages-og_group_ref']);
-  }
-
-  if (isset($fields['node-page-field_ne_body'])) {
-    dpm($fields['node-page-field_ne_body']);
-  }
-  if (isset($fields['node-page-group_content_access'])) {
-    dpm($fields['node-page-group_content_access']);
-  }
-  if (isset($fields['node-page-og_group_ref'])) {
-    dpm($fields['node-page-og_group_ref']);
-  }
-
-  if (isset($fields['node-page-field_ne_body'])) {
-    if (isset($fields['node-page-field_ne_body']['display'])) {
-      $fields['node-page-title_field']['display']['default']['weight'] = 4;
-    }
-  }
-  if (isset($fields['node-page-group_content_access'])) {
-    if (isset($fields['node-page-group_content_access']['display'])) {
-      $fields['node-page-group_content_access']['display']['default']['label'] = "hidden";
-      $fields['node-page-group_content_access']['display']['default']['settings'] = array();
-      $fields['node-page-group_content_access']['display']['default']['type'] = "hidden";
-    }
-  }
-  if (isset($fields['node-page-og_group_ref'])) {
-    if (isset($fields['node-page-og_group_ref']['display'])) {
-      $fields['node-page-og_group_ref']['display']['default']['label'] = "hidden";
-      $fields['node-page-og_group_ref']['display']['default']['settings'] = array();
-      $fields['node-page-og_group_ref']['display']['default']['type'] = "hidden";
+  if (($context['field']['field_name'] === 'og_group_ref')
+    && ($context['entity']->type == 'page')) {
+    if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
+      $display['label'] = 'hidden';
+      $display['type'] = "hidden";
     }
   }
 }
