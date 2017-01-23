@@ -223,5 +223,12 @@ function farnet_core_menu_link_alter(&$item) {
       }
     }
   }
+}
 
+/**
+ * Implements hook_block_block_info_alter().
+ */
+function farnet_core_block_info_alter(&$blocks, $theme, $code_blocks) {
+  $blocks['print_ui']['print-links']['status'] = 0;
+  $blocks['print_ui']['print-links']['region'] = '';
 }
