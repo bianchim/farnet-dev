@@ -36,6 +36,12 @@ function farnet_social_media_default_fe_block_settings() {
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
+      'farnet' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,

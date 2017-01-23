@@ -124,7 +124,7 @@ function farnet_form_alter(&$form, &$form_state, $form_id) {
     $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
     $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
     $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
-    $form['fields_pdf_print']['submit-pdfprint-lang']['#fuffix'] = '</div>';
+    $form['fields_pdf_print']['submit-pdfprint-lang']['#suffix'] = '</div>';
   }
 }
 
@@ -135,6 +135,7 @@ function farnet_preprocess_field(&$variables, $hook) {
   $variables['prefix'] = NULL;
   $variables['suffix'] = NULL;
   $variables['label_class'] = NULL;
+  $variables['field_item_class'] = NULL;
   $element_with_additional_label_class = array(
     'field_ff_public_actors',
     'field_ff_fisheries_actors',
@@ -144,8 +145,16 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly',
     'field_ff_number_staff',
   );
+  $element_with_additional_field_item_class = array(
+    'field_ff_number_decision',
+    'field_ff_number_assembly',
+    'field_ff_number_staff',
+  );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
+  }
+  if (in_array($variables['element']['#field_name'], $element_with_additional_field_item_class)) {
+    $variables['field_item_class'] = ' u-color-green u-fw-bold';
   }
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     foreach ($variables['items'] as $delta => $item) {
@@ -213,7 +222,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     if (!$variables['element']['#object']->field_ff_aquaculture and
       !$variables['element']['#object']->field_ff_processing and
       !$variables['element']['#object']->field_ff_women_employment) {
-      $variables['suffix'] .= '</div></div></div></div></div></div>';
+      $variables['suffix'] .= '</div></div></div></div></div>';
     }
     $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
   }

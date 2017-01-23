@@ -75,7 +75,7 @@ function farnet_notifications_default_rules_configuration() {
       ],
       "DO" : [
         { "mail" : {
-            "to" : "[site:mail]",
+            "to" : "web@farnet.eu",
             "subject" : "FARNET Users - New organisation",
             "message" : "[account:name] has updated his profile with a new organisation named \\u0022[account:field-organisation-other]\\u0022",
             "language" : [ "" ]
