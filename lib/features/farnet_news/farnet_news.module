@@ -107,6 +107,15 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
   if (isset($fields['node-nexteuropa_news-field_tags'])) {
     $fields['node-nexteuropa_news-field_tags']['label'] = 'Keywords';
   }
+
+
+  if (isset($fields['node-nexteuropa_news-group_content_access'])) {
+    //dpm($fields['node-nexteuropa_news-group_content_access']);
+  }
+
+  if (isset($fields['node-nexteuropa_news-og_group_ref'])) {
+    //dpm($fields['node-nexteuropa_news-og_group_ref']);
+  }
 }
 
 /**

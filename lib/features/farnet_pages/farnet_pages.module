@@ -33,9 +33,58 @@ function farnet_pages_form_node_form_alter(&$form, &$form_state, $form_id) {
  * COMPONENT = field_default_field_instances.
  */
 function farnet_pages_field_default_field_instances_alter(&$fields) {
+
+  foreach ($fields as $key => $field) {
+    if (strpos($field['field_name'], 'group_content_access') !== false) {
+      dpm($key);
+      dpm($field);
+    }
+    if (strpos($field['field_name'], 'og_group_ref') !== false) {
+      dpm($key);
+      dpm($field);
+    }
+  }
+
+  if (isset($fields['group_content_access'])) {
+    dpm($fields['group_content_access']);
+  }
+  if (isset($fields['og_group_ref'])) {
+    dpm($fields['og_group_ref']);
+  }
+
+  if (isset($fields['node-nexteuropa_pages-field_ne_body'])) {
+    dpm($fields['node-nexteuropa_pages-field_ne_body']);
+  }
+  if (isset($fields['node-nexteuropa_pages-group_content_access'])) {
+    dpm($fields['node-nexteuropa_pages-group_content_access']);
+  }
+  if (isset($fields['node-nexteuropa_pages-og_group_ref'])) {
+    dpm($fields['node-nexteuropa_pages-og_group_ref']);
+  }
+
+  if (isset($fields['node-farnet_pages-field_ne_body'])) {
+    dpm($fields['node-farnet_pages-field_ne_body']);
+  }
+  if (isset($fields['node-farnet_pages-group_content_access'])) {
+    dpm($fields['node-farnet_pages-group_content_access']);
+  }
+  if (isset($fields['node-farnet_pages-og_group_ref'])) {
+    dpm($fields['node-farnet_pages-og_group_ref']);
+  }
+
+  if (isset($fields['node-page-field_ne_body'])) {
+    dpm($fields['node-page-field_ne_body']);
+  }
+  if (isset($fields['node-page-group_content_access'])) {
+    dpm($fields['node-page-group_content_access']);
+  }
+  if (isset($fields['node-page-og_group_ref'])) {
+    dpm($fields['node-page-og_group_ref']);
+  }
+
   if (isset($fields['node-page-field_ne_body'])) {
     if (isset($fields['node-page-field_ne_body']['display'])) {
-      $fields['node-nexteuropa_news-title_field']['display']['default']['weight'] = 4;
+      $fields['node-page-title_field']['display']['default']['weight'] = 4;
     }
   }
   if (isset($fields['node-page-group_content_access'])) {
