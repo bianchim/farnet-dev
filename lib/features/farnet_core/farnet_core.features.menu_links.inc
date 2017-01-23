@@ -10,15 +10,15 @@
 function farnet_core_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_about:about.
-  $menu_links['main-menu_about:about'] = array(
+  // Exported menu link: main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826.
+  $menu_links['main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'about',
+    'link_path' => 'TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
     'router_path' => 'node/%',
     'link_title' => 'About',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_about:about',
+      'identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -44,6 +44,7 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+
   // Exported menu link: main-menu_adding-value-to-fisheries:themes/adding-value-fisheries.
   $menu_links['main-menu_adding-value-to-fisheries:themes/adding-value-fisheries'] = array(
     'menu_name' => 'main-menu',
@@ -158,12 +159,12 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
-  // Exported menu link: main-menu_at-a-glance:<front>.
-  $menu_links['main-menu_at-a-glance:<front>'] = array(
+  // Exported menu link: main-menu_farnet-at-a-glance:TOKENUUID_809bcdc6-2ddb-4123-8d3d-8670deba1ee0.
+  $menu_links['main-menu_farnet-at-a-glance:TOKENUUID_809bcdc6-2ddb-4123-8d3d-8670deba1ee0'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_809bcdc6-2ddb-4123-8d3d-8670deba1ee0',
     'router_path' => '',
-    'link_title' => 'At a glance',
+    'link_title' => 'FARNET at a glance',
     'options' => array(
       'attributes' => array(
         'data-display-title' => 1,
@@ -183,7 +184,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_at-a-glance:<front>',
+      'identifier' => 'main-menu_farnet-at-a-glance:TOKENUUID_809bcdc6-2ddb-4123-8d3d-8670deba1ee0',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -194,7 +195,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:about',
+    'parent_identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
   );
   // Exported menu link: main-menu_brochures:library/brochures.
   $menu_links['main-menu_brochures:library/brochures'] = array(
@@ -232,7 +233,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:library',
+    'parent_identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
   );
   // Exported menu link: main-menu_business-support:themes/adding-value-fisheries/business-support.
   $menu_links['main-menu_business-support:themes/adding-value-fisheries/business-support'] = array(
@@ -308,7 +309,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news--events:news-events',
+    'parent_identifier' => 'main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52',
   );
   // Exported menu link: main-menu_climate-change:themes/environment/climate-change.
   $menu_links['main-menu_climate-change:themes/environment/climate-change'] = array(
@@ -348,20 +349,20 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_environment:themes/environment',
   );
-  // Exported menu link: main-menu_clld-at-a-glance:<front>.
-  $menu_links['main-menu_clld-at-a-glance:<front>'] = array(
+  // Exported menu link: main-menu_clld-at-a-glance:TOKENUUID_a6732329-8c83-4448-bf02-f0d597c3fdbe.
+  $menu_links['main-menu_clld-at-a-glance:TOKENUUID_a6732329-8c83-4448-bf02-f0d597c3fdbe'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_a6732329-8c83-4448-bf02-f0d597c3fdbe',
     'router_path' => '',
     'link_title' => 'CLLD at a glance',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_clld-at-a-glance:<front>',
+      'identifier' => 'main-menu_clld-at-a-glance:TOKENUUID_a6732329-8c83-4448-bf02-f0d597c3fdbe',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-link',
+          0 => 'fr-megamenu-list-heading',
         ),
         'data-remove-class' => 1,
       ),
@@ -384,7 +385,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_at-a-glance:<front>',
+    'parent_identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
   );
   // Exported menu link: main-menu_clld-overview:tools/faq/clld-overview.
   $menu_links['main-menu_clld-overview:tools/faq/clld-overview'] = array(
@@ -532,26 +533,26 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -44,
+    'weight' => -43,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:about',
+    'parent_identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
   );
-  // Exported menu link: main-menu_cooperation-by-member-state:on-the-ground/cooperation/member-by-state.
-  $menu_links['main-menu_cooperation-by-member-state:on-the-ground/cooperation/member-by-state'] = array(
+  // Exported menu link: main-menu_cooperation-by-member-state:on-the-ground/cooperation/by-member-state.
+  $menu_links['main-menu_cooperation-by-member-state:on-the-ground/cooperation/by-member-state'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'on-the-ground/cooperation/member-by-state',
-    'router_path' => 'on-the-ground/cooperation/member-by-state',
+    'link_path' => 'on-the-ground/cooperation/by-member-state',
+    'router_path' => 'on-the-ground/cooperation/by-member-state',
     'link_title' => 'Cooperation by Member State',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_cooperation-by-member-state:on-the-ground/cooperation/member-by-state',
+      'identifier' => 'main-menu_cooperation-by-member-state:on-the-ground/cooperation/by-member-state',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-list-heading',
+          0 => 'fr-megamenu-link',
         ),
         'data-remove-class' => 1,
       ),
@@ -560,8 +561,8 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => 'fr-megamenu-item main-menu-top-level',
-        'data-remove-class' => 0,
+        'class' => 'fr-megamenu-item',
+        'data-remove-class' => 1,
         'style' => '',
       ),
     ),
@@ -570,13 +571,13 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => 0,
+    'weight' => 2,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_cooperation:on-the-ground/cooperation',
   );
-  // Exported menu link: main-menu_cooperation-calls:<front>.
+  // Exported menu link: main-menu_cooperation-calls:on-the-ground/cooperation/calls.
   $menu_links['main-menu_cooperation-calls:on-the-ground/cooperation/calls'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'on-the-ground/cooperation/calls',
@@ -589,7 +590,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-list-heading',
+          0 => 'fr-megamenu-link',
         ),
         'data-remove-class' => 1,
       ),
@@ -598,8 +599,8 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => 'fr-megamenu-item main-menu-top-level',
-        'data-remove-class' => 0,
+        'class' => 'fr-megamenu-item',
+        'data-remove-class' => 1,
         'style' => '',
       ),
     ),
@@ -608,7 +609,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => 0,
+    'weight' => 3,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -627,7 +628,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-list-heading',
+          0 => 'fr-megamenu-link',
         ),
         'data-remove-class' => 1,
       ),
@@ -636,8 +637,8 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => 'fr-megamenu-item main-menu-top-level',
-        'data-remove-class' => 0,
+        'class' => 'fr-megamenu-item',
+        'data-remove-class' => 1,
         'style' => '',
       ),
     ),
@@ -646,7 +647,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => 0,
+    'weight' => 4,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -656,7 +657,7 @@ function farnet_core_menu_default_menu_links() {
   $menu_links['main-menu_cooperation-in-action:on-the-ground/cooperation/in-action'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'on-the-ground/cooperation/in-action',
-    'router_path' => 'on-the-ground/cooperation/in-action',
+    'router_path' => 'on-the-ground/cooperation',
     'link_title' => 'Cooperation in action',
     'options' => array(
       'alter' => TRUE,
@@ -665,7 +666,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-list-heading',
+          0 => 'fr-megamenu-link',
         ),
         'data-remove-class' => 1,
       ),
@@ -674,8 +675,8 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => 'fr-megamenu-item main-menu-top-level',
-        'data-remove-class' => 0,
+        'class' => 'fr-megamenu-item',
+        'data-remove-class' => 1,
         'style' => '',
       ),
     ),
@@ -684,7 +685,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => 0,
+    'weight' => 5,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -700,14 +701,17 @@ function farnet_core_menu_default_menu_links() {
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
-        'data-remove-class' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-list-heading',
+        ),
+        'data-remove-class' => 1,
       ),
       'item_attributes' => array(
         'data-image' => '',
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => '',
+        'class' => 'fr-megamenu-item fr-megamenu-item--list',
         'data-remove-class' => 0,
         'style' => '',
       ),
@@ -719,10 +723,11 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 1,
     'expanded' => 1,
-    'weight' => -45,
+    'weight' => -47,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219',
   );
   // Exported menu link: main-menu_cooperation:tools/faq/cooperation.
   $menu_links['main-menu_cooperation:tools/faq/cooperation'] = array(
@@ -798,7 +803,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
+    'parent_identifier' => 'main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219',
   );
   // Exported menu link: main-menu_cultural-heritage:themes/society-and-culture/cultural-heritage.
   $menu_links['main-menu_cultural-heritage:themes/society-and-culture/cultural-heritage'] = array(
@@ -838,15 +843,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
-  // Exported menu link: main-menu_dg-mare:<front>.
-  $menu_links['main-menu_dg-mare:<front>'] = array(
+  // Exported menu link: main-menu_dg-mare:TOKENUUID_d1c99c2e-1ced-49e8-ad88-5948cc3890c0.
+  $menu_links['main-menu_dg-mare:TOKENUUID_d1c99c2e-1ced-49e8-ad88-5948cc3890c0'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_d1c99c2e-1ced-49e8-ad88-5948cc3890c0',
     'router_path' => '',
     'link_title' => 'DG MARE',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_dg-mare:<front>',
+      'identifier' => 'main-menu_dg-mare:TOKENUUID_d1c99c2e-1ced-49e8-ad88-5948cc3890c0',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -874,7 +879,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_whos-who:<front>',
+    'parent_identifier' => 'main-menu_whos-who:TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f',
   );
   // Exported menu link: main-menu_diversification:themes/diversification.
   $menu_links['main-menu_diversification:themes/diversification'] = array(
@@ -1117,7 +1122,7 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-list-heading',
+          0 => 'fr-megamenu-link',
         ),
         'data-remove-class' => 1,
       ),
@@ -1126,8 +1131,8 @@ function farnet_core_menu_default_menu_links() {
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'id' => '',
-        'class' => 'fr-megamenu-item main-menu-top-level',
-        'data-remove-class' => 0,
+        'class' => 'fr-megamenu-item',
+        'data-remove-class' => 1,
         'style' => '',
       ),
     ),
@@ -1136,7 +1141,7 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => 0,
+    'weight' => 1,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -1178,7 +1183,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news--events:news-events',
+    'parent_identifier' => 'main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52',
   );
   // Exported menu link: main-menu_faqs:tools/faq.
   $menu_links['main-menu_faqs:tools/faq'] = array(
@@ -1216,12 +1221,12 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:tools',
+    'parent_identifier' => 'main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a',
   );
-  // Exported menu link: main-menu_farnet-data:<front>.
-  $menu_links['main-menu_farnet-data:<front>'] = array(
+  // Exported menu link: main-menu_farnet-data:TOKENUUID_16f7787d-ad7f-4645-a40f-a5bbcbd9e416.
+  $menu_links['main-menu_farnet-data:TOKENUUID_16f7787d-ad7f-4645-a40f-a5bbcbd9e416'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_16f7787d-ad7f-4645-a40f-a5bbcbd9e416',
     'router_path' => '',
     'link_title' => 'FARNET Data',
     'options' => array(
@@ -1243,7 +1248,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_farnet-data:<front>',
+      'identifier' => 'main-menu_farnet-data:TOKENUUID_16f7787d-ad7f-4645-a40f-a5bbcbd9e416',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1254,7 +1259,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:about',
+    'parent_identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
   );
   // Exported menu link: main-menu_farnet-flash:<front>.
   $menu_links['main-menu_farnet-flash:<front>'] = array(
@@ -1292,7 +1297,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:library',
+    'parent_identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
   );
   // Exported menu link: main-menu_farnet-news:news-events/news/farnet.
   $menu_links['main-menu_farnet-news:news-events/news/farnet'] = array(
@@ -1332,10 +1337,10 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news:news-events/news',
   );
-  // Exported menu link: main-menu_farnet-support-unit:<front>.
-  $menu_links['main-menu_farnet-support-unit:<front>'] = array(
+  // Exported menu link: main-menu_farnet-support-unit:83c03175-7f0f-46a8-bb94-68c149e0545b.
+  $menu_links['main-menu_farnet-support-unit:83c03175-7f0f-46a8-bb94-68c149e0545b'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_',
     'router_path' => '',
     'link_title' => 'FARNET Support Unit',
     'options' => array(
@@ -1357,7 +1362,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_farnet-support-unit:<front>',
+      'identifier' => 'main-menu_farnet-support-unit:83c03175-7f0f-46a8-bb94-68c149e0545b',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1368,45 +1373,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_whos-who:<front>',
-  );
-  // Exported menu link: main-menu_farnet:<front>.
-  $menu_links['main-menu_farnet:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'FARNET',
-    'options' => array(
-      'alter' => TRUE,
-      'identifier' => 'main-menu_farnet:<front>',
-      'attributes' => array(
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'class' => array(
-          0 => 'fr-megamenu-link',
-        ),
-        'data-remove-class' => 1,
-      ),
-      'item_attributes' => array(
-        'data-image' => '',
-        'data-display-title' => 1,
-        'data-hide-children' => 0,
-        'id' => '',
-        'class' => 'fr-megamenu-item',
-        'data-remove-class' => 1,
-        'style' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 1,
-    'weight' => -50,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_at-a-glance:<front>',
+    'parent_identifier' => 'main-menu_whos-who:TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f',
   );
   // Exported menu link: main-menu_finance-and-administration:tools/faq/finance-dministration.
   $menu_links['main-menu_finance-and-administration:tools/faq/finance-dministration'] = array(
@@ -1558,7 +1525,45 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
+    'parent_identifier' => 'main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219',
+  );
+  // Exported menu link: main-menu_flags:about/who-is-who/flags.
+  $menu_links['main-menu_flags:about/who-is-who/flags'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'about/who-is-who/flags',
+    'router_path' => 'about/who-is-who/flags',
+    'link_title' => 'FLAGs',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_flags:about/who-is-who/flags',
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'class' => array(
+          0 => 'fr-megamenu-link',
+        ),
+        'data-remove-class' => 1,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => 'fr-megamenu-item',
+        'data-remove-class' => 1,
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -48,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+    'parent_identifier' => 'main-menu_whos-who:TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f',
   );
   // Exported menu link: main-menu_galleries:galleries.
   $menu_links['main-menu_galleries:galleries'] = array(
@@ -1618,20 +1623,20 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_diversification:themes/diversification',
   );
-  // Exported menu link: main-menu_glossary:<front>.
-  $menu_links['main-menu_glossary:<front>'] = array(
+  // Exported menu link: main-menu_glossary:TOKENUUID_b5430f79-addb-4850-acff-5f907724920d.
+  $menu_links['main-menu_glossary:TOKENUUID_b5430f79-addb-4850-acff-5f907724920d'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_b5430f79-addb-4850-acff-5f907724920d',
     'router_path' => '',
     'link_title' => 'Glossary',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_glossary:<front>',
+      'identifier' => 'main-menu_glossary:TOKENUUID_b5430f79-addb-4850-acff-5f907724920d',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-link',
+          0 => 'fr-megamenu-list-heading',
         ),
         'data-remove-class' => 1,
       ),
@@ -1650,18 +1655,18 @@ function farnet_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -48,
+    'weight' => -44,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_at-a-glance:<front>',
+    'parent_identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
   );
   // Exported menu link: main-menu_good-practice:on-the-ground/good-practice.
   $menu_links['main-menu_good-practice:on-the-ground/good-practice'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'on-the-ground/good-practice',
     'router_path' => 'on-the-ground/good-practice',
-    'link_title' => 'Good practice',
+    'link_title' => 'Good Practice',
     'options' => array(
       'alter' => TRUE,
       'identifier' => 'main-menu_good-practice:on-the-ground/good-practice',
@@ -1692,7 +1697,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
+    'parent_identifier' => 'main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219',
   );
   // Exported menu link: main-menu_governance-and-management:themes/governance-management.
   $menu_links['main-menu_governance-and-management:themes/governance-management'] = array(
@@ -1918,17 +1923,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:tools',
+    'parent_identifier' => 'main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a',
   );
-  // Exported menu link: main-menu_library:library.
-  $menu_links['main-menu_library:library'] = array(
+  // Exported menu link: main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30.
+  $menu_links['main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'library',
+    'link_path' => 'TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
     'router_path' => 'node/%',
     'link_title' => 'Library',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_library:library',
+      'identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1990,7 +1995,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:library',
+    'parent_identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
   );
   // Exported menu link: main-menu_managing-authorities:news-events/events/ma-nn.
   $menu_links['main-menu_managing-authorities:news-events/events/ma-nn'] = array(
@@ -2066,7 +2071,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_on-the-ground:on-the-ground',
+    'parent_identifier' => 'main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219',
   );
   // Exported menu link: main-menu_marine-activities:themes/diversification/marine-activities.
   $menu_links['main-menu_marine-activities:themes/diversification/marine-activities'] = array(
@@ -2225,7 +2230,7 @@ function farnet_core_menu_default_menu_links() {
     'menu_name' => 'main-menu',
     'link_path' => 'news-events/events/other',
     'router_path' => 'news-events/events/other',
-    'link_title' => 'National / regional / local events (Capacity building events)',
+    'link_title' => 'National / regional / local events',
     'options' => array(
       'alter' => TRUE,
       'identifier' => 'main-menu_national--regional--local-events-capacity-building-events:news-events/events/other',
@@ -2258,15 +2263,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_events:news-events/events',
   );
-  // Exported menu link: main-menu_national-authorities:about/who-is-who/national-authorities.
-  $menu_links['main-menu_national-authorities:about/who-is-who/national-authorities'] = array(
+  // Exported menu link: main-menu_who-managing-authorities:about/who-is-who/managing-authorities.
+  $menu_links['main-menu_who-managing-authorities:about/who-is-who/managing-authorities'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'about/who-is-who/national-authorities',
-    'router_path' => 'about/who-is-who/national-authorities',
-    'link_title' => 'National authorities',
+    'link_path' => 'about/who-is-who/managing-authorities',
+    'router_path' => 'about/who-is-who/managing-authorities',
+    'link_title' => 'Managing authorities',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_national-authorities:about/who-is-who/national-authorities',
+      'identifier' => 'main-menu_who-managing-authorities:about/who-is-who/managing-authorities',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2294,17 +2299,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_whos-who:<front>',
+    'parent_identifier' => 'main-menu_whos-who:TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f',
   );
-  // Exported menu link: main-menu_news--events:news-events.
-  $menu_links['main-menu_news--events:news-events'] = array(
+  // Exported menu link: main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52.
+  $menu_links['main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'news-events',
+    'link_path' => 'TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52',
     'router_path' => 'node/%',
     'link_title' => 'News & Events',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_news--events:news-events',
+      'identifier' => 'main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2366,7 +2371,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news--events:news-events',
+    'parent_identifier' => 'main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52',
   );
   // Exported menu link: main-menu_newsletters:my_subscriptions.
   $menu_links['main-menu_newsletters:my_subscriptions'] = array(
@@ -2388,15 +2393,15 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_on-the-ground:on-the-ground.
-  $menu_links['main-menu_on-the-ground:on-the-ground'] = array(
+  // Exported menu link: main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219.
+  $menu_links['main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'on-the-ground',
+    'link_path' => 'TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219',
     'router_path' => 'node/%',
     'link_title' => 'On the ground',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_on-the-ground:on-the-ground',
+      'identifier' => 'main-menu_on-the-ground:TOKENUUID_4f580f75-5363-4a5d-8c8e-c8141047e219',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2537,7 +2542,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:library',
+    'parent_identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
   );
   // Exported menu link: main-menu_presentations:library/presentations.
   $menu_links['main-menu_presentations:library/presentations'] = array(
@@ -2575,7 +2580,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:library',
+    'parent_identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
   );
   // Exported menu link: main-menu_processing:themes/adding-value-fisheries/processing.
   $menu_links['main-menu_processing:themes/adding-value-fisheries/processing'] = array(
@@ -2727,7 +2732,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:tools',
+    'parent_identifier' => 'main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a',
   );
   // Exported menu link: main-menu_search:search/site.
   $menu_links['main-menu_search:search/site'] = array(
@@ -2901,20 +2906,20 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_governance-and-management:themes/governance-management',
   );
-  // Exported menu link: main-menu_social-media:news-events/news/social-media.
-  $menu_links['main-menu_social-media:news-events/news/social-media'] = array(
+  // Exported menu link: main-menu_social-media:TOKENUUID_99d9499d-bf58-4439-8d51-14951ccb61a8.
+  $menu_links['main-menu_social-media:TOKENUUID_99d9499d-bf58-4439-8d51-14951ccb61a8'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'news-events/news/social-media',
-    'router_path' => 'news-events/news',
+    'link_path' => 'TOKENUUID_99d9499d-bf58-4439-8d51-14951ccb61a8',
+    'router_path' => 'node/%',
     'link_title' => 'Social media',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_social-media:news-events/news/social-media',
+      'identifier' => 'main-menu_social-media:TOKENUUID_99d9499d-bf58-4439-8d51-14951ccb61a8',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
         'class' => array(
-          0 => 'fr-megamenu-link',
+          0 => 'fr-megamenu-list-heading',
         ),
         'data-remove-class' => 1,
       ),
@@ -2937,7 +2942,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_news:news-events/news',
+    'parent_identifier' => 'main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e52',
   );
   // Exported menu link: main-menu_society-and-culture:themes/society-and-culture.
   $menu_links['main-menu_society-and-culture:themes/society-and-culture'] = array(
@@ -3048,15 +3053,15 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_tools-for-flags:<front>.
-  $menu_links['main-menu_tools-for-flags:<front>'] = array(
+  // Exported menu link: main-menu_tools-for-flags:TOKENUUID_cb73e428-1827-4a3e-bcfd-57c6ffd229ca.
+  $menu_links['main-menu_tools-for-flags:TOKENUUID_cb73e428-1827-4a3e-bcfd-57c6ffd229ca'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_cb73e428-1827-4a3e-bcfd-57c6ffd229ca',
     'router_path' => '',
     'link_title' => 'Tools for FLAGs',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_tools-for-flags:<front>',
+      'identifier' => 'main-menu_tools-for-flags:TOKENUUID_cb73e428-1827-4a3e-bcfd-57c6ffd229ca',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3084,17 +3089,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:tools',
+    'parent_identifier' => 'main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a',
   );
-  // Exported menu link: main-menu_tools-for-managing-authorities:<front>.
-  $menu_links['main-menu_tools-for-managing-authorities:<front>'] = array(
+  // Exported menu link: main-menu_tools-for-managing-authorities:TOKENUUID_4f105583-9bc2-412f-8913-4501a69e2dce.
+  $menu_links['main-menu_tools-for-managing-authorities:TOKENUUID_4f105583-9bc2-412f-8913-4501a69e2dce'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_4f105583-9bc2-412f-8913-4501a69e2dce',
     'router_path' => '',
     'link_title' => 'Tools for Managing Authorities',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_tools-for-managing-authorities:<front>',
+      'identifier' => 'main-menu_tools-for-managing-authorities:TOKENUUID_4f105583-9bc2-412f-8913-4501a69e2dce',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3122,17 +3127,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_tools:tools',
+    'parent_identifier' => 'main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a',
   );
-  // Exported menu link: main-menu_tools:tools.
-  $menu_links['main-menu_tools:tools'] = array(
+  // Exported menu link: main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a.
+  $menu_links['main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'tools',
+    'link_path' => 'TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a',
     'router_path' => 'node/%',
     'link_title' => 'Tools',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_tools:tools',
+      'identifier' => 'main-menu_tools:TOKENUUID_0139e8dd-fb20-4f26-8a8b-887e38a5db2a',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3308,7 +3313,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_library:library',
+    'parent_identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
   );
   // Exported menu link: main-menu_water-quality:themes/environment/water-quality.
   $menu_links['main-menu_water-quality:themes/environment/water-quality'] = array(
@@ -3348,15 +3353,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_environment:themes/environment',
   );
-  // Exported menu link: main-menu_whos-who:<front>.
-  $menu_links['main-menu_whos-who:<front>'] = array(
+  // Exported menu link: main-menu_whos-who:TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f.
+  $menu_links['main-menu_whos-who:TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f',
     'router_path' => '',
     'link_title' => 'Who\'s who',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_whos-who:<front>',
+      'identifier' => 'main-menu_whos-who:TOKENUUID_5a5ef6df-4d32-4d11-aa73-3d4b3d9b138f',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3384,7 +3389,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_about:about',
+    'parent_identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
   );
   // Exported menu link: main-menu_women:themes/society-and-culture/women.
   $menu_links['main-menu_women:themes/society-and-culture/women'] = array(
@@ -3469,7 +3474,7 @@ function farnet_core_menu_default_menu_links() {
   t('Adding value to fisheries');
   t('Aquaculture');
   t('Arts and crafts');
-  t('At a glance');
+  t('FARNET at a glance');
   t('Brochures');
   t('Business support');
   t('CLLD at a glance');
@@ -3496,12 +3501,12 @@ function farnet_core_menu_default_menu_links() {
   t('European overview');
   t('Events');
   t('FAQs');
-  t('FARNET');
   t('FARNET Data');
   t('FARNET Flash');
   t('FARNET Support Unit');
   t('FARNET news');
   t('FLAG factsheets');
+  t('FLAGs');
   t('Finance and administration');
   t('Fisheries by-products');
   t('Fisheries resources');
@@ -3523,8 +3528,8 @@ function farnet_core_menu_default_menu_links() {
   t('Marine litter');
   t('Methods');
   t('Migrants and refugees');
-  t('National / regional / local events (Capacity building events)');
-  t('National authorities');
+  t('National / regional / local events');
+  t('Managing authorities');
   t('News');
   t('News & Events');
   t('Newsletters');
