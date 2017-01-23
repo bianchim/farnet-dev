@@ -227,6 +227,7 @@ features[variable][] = print_mail_link_teaser
 features[variable][] = print_mail_link_use_alias
 features[variable][] = print_mail_sys_link_visibility
 features[variable][] = print_pdf_pdf_tool
+features[variable][] = site_mail
 features[variable][] = site_map_categories_depth
 features[variable][] = site_map_css
 features[variable][] = site_map_forum_threshold
