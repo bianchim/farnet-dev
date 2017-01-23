@@ -1,3 +1,7 @@
+.farnet-listing__heading div {
+  display: inline;
+}
+
 .farnet-listing__subheading span {
   display: inline;
 }
@@ -9,6 +13,7 @@
 .farnet-quote__citation div {
   display: inline;
 }
+
 .farnet-quote__author div {
   display: inline;
 }
@@ -19,13 +24,16 @@
   font-weight: 700;
   padding: 5px 0;
 }
+
 .field-group-tab h3 {
   overflow: hidden;
 }
+
 .field-group-tab h3 span {
   display: block;
   position: relative;
 }
+
 .field-group-tab h3 span:after {
   content: "";
   position: absolute;
