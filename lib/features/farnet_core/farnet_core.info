@@ -4,6 +4,7 @@ core = 7.x
 php = 5.6
 multisite_version = 2.2
 package = Farnet
+dependencies[] = bean
 dependencies[] = contact
 dependencies[] = ctools
 dependencies[] = date
