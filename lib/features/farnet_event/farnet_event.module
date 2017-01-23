@@ -117,7 +117,7 @@ function farnet_event_views_default_views_alter(&$views) {
       $views['farnet_view_events']->display['page_transnational_seminars']->display_options['filters']['field_event_type_tid']['value'][$tid_term] = $tid_term;
     }
 
-    $term = taxonomy_get_term_by_name('Managing authorities & National networks');
+    $term = taxonomy_get_term_by_name('Managing authorities');
     if ((isset($term)) && (!empty($term))) {
       $filter_term = current($term);
       $tid_term = $filter_term->tid;
