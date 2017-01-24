@@ -51,14 +51,12 @@ function farnet_pages_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_publication_date',
-        2 => 'field_farnet_abstract',
-        3 => 'node_link',
+        1 => 'field_farnet_abstract',
+        2 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_publication_date' => 'ds_content',
       'field_farnet_abstract' => 'ds_content',
       'node_link' => 'ds_content',
     ),

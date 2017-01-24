@@ -26,3 +26,24 @@ function farnet_pages_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
   }
 }
+
+/**
+ * Implements hook_field_display_alter().
+ */
+function farnet_pages_field_display_alter(&$display, $context) {
+
+  if (($context['field']['field_name'] === 'group_content_access')
+    && ($context['entity']->type == 'page')) {
+    if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
+      $display['label'] = 'hidden';
+      $display['type'] = "hidden";
+    }
+  }
+  if (($context['field']['field_name'] === 'og_group_ref')
+    && ($context['entity']->type == 'page')) {
+    if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
+      $display['label'] = 'hidden';
+      $display['type'] = "hidden";
+    }
+  }
+}
