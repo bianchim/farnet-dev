@@ -2715,7 +2715,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   // Exported field_instance: 'node-factsheet_flag-field_gallery'.
   $field_instances['node-factsheet_flag-field_gallery'] = array(
     'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -2753,11 +2753,14 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 6,
     ),
   );
@@ -4033,7 +4036,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Twitter');
   t('Type of area');
   t('View Cooperation Ideas');
-  t('View Good Practices');
+  t('View Good Practices
+    ');
   t('Website');
   t('Women employment in fisheries');
 
