@@ -160,6 +160,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_fisheries_actors',
     'field_ff_other_non_fisheries',
     'field_ff_environmental_actors',
+    'field_allocated_budget',
   );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
