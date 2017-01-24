@@ -1,0 +1,128 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet News feature.
+ */
+
+include_once 'farnet_news.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function farnet_news_field_group_info_alter($groups) {
+  if (!empty($groups['group_ne_news_content|node|nexteuropa_news|form'])) {
+    $groups['group_ne_news_content|node|nexteuropa_news|form']->data['weight'] = 0;
+  }
+  if (!empty($groups['group_news_more_information|node|nexteuropa_news|form'])) {
+    $groups['group_news_more_information|node|nexteuropa_news|form']->data['weight'] = 1;
+  }
+  if (!empty($groups['group_news_taxonomy|node|nexteuropa_news|form'])) {
+    $groups['group_news_taxonomy|node|nexteuropa_news|form']->data['weight'] = 2;
+  }
+  if (!empty($groups['group_news_publication|node|nexteuropa_news|form'])) {
+    $groups['group_news_publication|node|nexteuropa_news|form']->data['weight'] = 3;
+  }
+  if (!empty($groups['group_ne_news_metadata|node|nexteuropa_news|form'])) {
+    $groups['group_ne_news_metadata|node|nexteuropa_news|form']->data['weight'] = 4;
+  }
+}
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_instances.
+ */
+function farnet_news_field_default_field_instances_alter(&$fields) {
+
+  if (isset($fields['node-nexteuropa_news-title_field'])) {
+    $fields['node-nexteuropa_news-title_field']['widget']['weight'] = 0;
+    if (isset($fields['node-nexteuropa_news-title_field']['display'])) {
+      $fields['node-nexteuropa_news-title_field']['display']['teaser']['label'] = "hidden";
+      $fields['node-nexteuropa_news-title_field']['display']['teaser']['module'] = "text";
+      $fields['node-nexteuropa_news-title_field']['display']['teaser']['settings'] = array();
+      $fields['node-nexteuropa_news-title_field']['display']['teaser']['type'] = "text_plain";
+      $fields['node-nexteuropa_news-title_field']['display']['teaser']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_news-field_abstract'])) {
+    $fields['node-nexteuropa_news-field_abstract']['settings']['text_processing'] = 0;
+    $fields['node-nexteuropa_news-field_abstract']['widget']['weight'] = 1;
+    $fields['node-nexteuropa_news-field_abstract']['widget']['module'] = 'text';
+    $fields['node-nexteuropa_news-field_abstract']['widget']['settings']['maxlength_js'] = '400';
+    $fields['node-nexteuropa_news-field_abstract']['widget']['settings']['maxlength_js_label'] = 'Content limited to @limit characters, remaining: <strong>@remaining</strong>';
+    $fields['node-nexteuropa_news-field_abstract']['widget']['settings']['rows'] = 5;
+    $fields['node-nexteuropa_news-field_abstract']['widget']['type'] = 'text_textarea';
+    if (isset($fields['node-nexteuropa_news-field_abstract']['display'])) {
+      $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['label'] = "hidden";
+      $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['module'] = "text";
+      $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['settings'] = array();
+      $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['type'] = "text_plain";
+      $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['weight'] = 2;
+
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['label'] = "hidden";
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['module'] = "text";
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['settings'] = array();
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['type'] = "text_plain";
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['weight'] = 0;
+
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter_news_list']['label'] = "hidden";
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter_news_list']['module'] = "text";
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter_news_list']['settings'] = array();
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter_news_list']['type'] = "text_plain";
+      $fields['node-nexteuropa_news-field_abstract']['display']['newsletter_news_list']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_news-field_image'])) {
+    $fields['node-nexteuropa_news-field_image']['widget']['module'] = 'media';
+    $fields['node-nexteuropa_news-field_image']['widget']['settings']['browser_plugins']['media_default--media_browser_1'] = 'media_default--media_browser_1';
+    $fields['node-nexteuropa_news-field_image']['widget']['settings']['browser_plugins']['media_default--media_browser_my_files'] = 'media_default--media_browser_my_files';
+    $fields['node-nexteuropa_news-field_image']['widget']['settings']['browser_plugins']['media_internet'] = 'media_internet';
+    $fields['node-nexteuropa_news-field_image']['widget']['settings']['browser_plugins']['upload'] = 'upload';
+    $fields['node-nexteuropa_news-field_image']['widget']['settings']['allowed_schemes']['public'] = 'public';
+    $fields['node-nexteuropa_news-field_image']['widget']['settings']['allowed_types']['image'] = 'image';
+    $fields['node-nexteuropa_news-field_image']['widget']['type'] = 'media_generic';
+    $fields['node-nexteuropa_news-field_image']['widget']['weight'] = 4;
+    if (isset($fields['node-nexteuropa_news-field_image']['display'])) {
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter']['label'] = "hidden";
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter']['module'] = "image";
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter']['settings']['image_link'] = "";
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter']['settings']['image_style'] = "";
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter']['type'] = "image";
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter']['weight'] = 0;
+
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter_news_list']['label'] = "hidden";
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter_news_list']['settings'] = array();
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter_news_list']['type'] = "hidden";
+      $fields['node-nexteuropa_news-field_image']['display']['newsletter_news_list']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_news-field_ne_body'])) {
+    $fields['node-nexteuropa_news-field_ne_body']['widget']['weight'] = 3;
+  }
+
+  if (isset($fields['node-nexteuropa_news-field_tags'])) {
+    $fields['node-nexteuropa_news-field_tags']['label'] = 'Keywords';
+  }
+}
+
+/**
+ * Implements hook_COMPONENT_alter().
+ */
+function farnet_news_strongarm_alter(&$variables) {
+  if (isset($variables['pathauto_node_nexteuropa_news_pattern'])) {
+    $variables['pathauto_node_nexteuropa_news_pattern']->value = "news-events/news/[node:source:title]";
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_news_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'nexteuropa_news_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="My Subsite" default="help">
+	<!-- Activate and revert required features after installation of the profile. -->
+	<target name="activate-features">
+		<!-- Enable farnet features -->
+		<phingcall target="enable-modules">
+			<property name="drupal.modules" value="${subsite.install.features}" />
+		</phingcall>
+
+		<!-- Revert farnet features -->
+		<phingcall target="features-revert">
+			<property name="drupal.features" value="${subsite.install.features}" />
+		</phingcall>
+
+		<!-- Clear all caches (to ensure all hook/views are correctly detected). -->
+		<phingcall target="cache-clear-all"/>
+
+		<!-- Rebuild node access -->
+		<phingcall target="rebuild-node-access"/>
+	</target>
+
+	<!-- Revert features. -->
+	<target name="features-revert">
+		<drush
+		command="features-revert"
+		assume="yes"
+		root="${platform.build.dir}"
+		bin="${drush.bin}"
+		verbose="${drush.verbose}">
+		<param>${drupal.features}</param>
+		</drush>
+	</target>
+
+    <!-- Clear all drupal caches. -->
+    <target name="cache-clear-all">
+        <drush
+            command="cache-clear"
+            assume="yes"
+            root="${platform.build.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}">
+            <param>all</param>
+        </drush>
+    </target>
+</project>

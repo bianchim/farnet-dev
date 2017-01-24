@@ -1,0 +1,232 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet communities feature.
+ */
+
+include_once 'farnet_communities.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_communities_menu() {
+  $items['node/%node/push'] = array(
+    'title' => 'Push to public site',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['_farnet_communities_push_form', 1],
+    'access callback' => '_farnet_communities_push_access',
+    'access arguments' => [1],
+    'weight' => 10,
+    'type' => MENU_LOCAL_TASK,
+    'context' => MENU_CONTEXT_PAGE,
+  );
+
+  $items['admin/config/group/push_content'] = array(
+    'title' => 'Push to public site',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['_farnet_communities_push_form_admin'],
+    'access callback' => 'user_access',
+    'access arguments' => ['administer content'],
+    'weight' => 10,
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/**
+ * Configure the content types that can be pushed to the public site.
+ */
+function _farnet_communities_push_form_admin($form, &$form_state) {
+  $group_content_types = og_get_all_group_content_bundle();
+
+  $form['farnet_communities_push_public_bundles'] = [
+    '#type' => 'select',
+    '#title' => t('Content types'),
+    '#multiple' => TRUE,
+    '#options' => $group_content_types['node'],
+    '#default_value' => variable_get('farnet_communities_push_public_bundles', []),
+    '#description' => t('Set the content types that can be pushed to the public site.'),
+  ];
+
+  return system_settings_form($form);
+}
+
+/**
+ * Push a node to the public site.
+ */
+function _farnet_communities_push_form($form, &$form_state, $node) {
+  $form['confirm_text'] = [
+    '#markup' => t('Are you sure you want to push the node "<i>@node</i>" to the public site ?', ['@node' => $node->title]),
+    '#prefix' => '<div>',
+    '#suffix' => '</div>',
+  ];
+
+  $form['nid'] = [
+    '#type' => 'hidden',
+    '#value' => $node->nid,
+  ];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Confirm'),
+  ];
+
+  return $form;
+}
+
+/**
+ * Submit function for the node push functionality.
+ */
+function farnet_communities_push_form_submit($form, &$form_state) {
+  $node = node_load($form_state['values']['nid']);
+
+  // Go back to original node page.
+  $form_state['redirect'] = 'node/' . $node->nid;
+
+  // Remove the node id and version id to create a new node.
+  $node->status = 0;
+  unset($node->nid);
+  unset($node->vid);
+  unset($node->workbench_moderation);
+  $node->workbench_moderation_state_new = 'needs_review';
+
+  // Remove OG group.
+  unset($node->og_group_ref);
+
+  // Reactivate pathauto URL generation.
+  $node->path = ['pathauto' => TRUE];
+
+  // Create the node.
+  node_save($node);
+
+  // Link to the new node.
+  drupal_set_message(t('The content has been duplicated to a public version available at !link.', ['!link' => l($node->title, 'node/' . $node->nid)]), 'status');
+}
+
+/**
+ * Check if a node can be pushed to the public site.
+ */
+function _farnet_communities_push_access($node) {
+  // In case a nid was passed as param.
+  if (ctype_digit($node)) {
+    $node = node_load($node);
+  }
+
+  // Check the status.
+  if ((bool) $node->status !== TRUE) {
+    return FALSE;
+  }
+
+  // Check the node type.
+  $can_push = variable_get('farnet_communities_push_public_bundles', []);
+
+  if (!in_array($node->type, $can_push) || empty($node->og_group_ref)) {
+    return FALSE;
+  }
+
+  // Check if the user can administer at least one group of this node.
+  if (!user_access('administer content')) {
+    $has_access = FALSE;
+    foreach ($node->og_group_ref[LANGUAGE_NONE] as $group) {
+      if (og_user_access('node', $group['target_id'], 'administer group')) {
+        $has_access = TRUE;
+        break;
+      }
+    }
+
+    if ($has_access === FALSE) {
+      return FALSE;
+    }
+  }
+
+  return TRUE;
+}
+
+/**
+ * Implements hook_node_access_records().
+ */
+function farnet_communities_node_access_records($node) {
+  $grants = array();
+
+  if ($node->type == 'community_public' || $node->type == 'community_private') {
+    $grants[] = array(
+      'realm' => 'farnet_communities',
+      'gid' => 1,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+      'priority' => 1,
+    );
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_grants().
+ */
+function farnet_communities_node_grants($account, $op) {
+  if ($op != 'view') {
+    return;
+  }
+  $grants = array();
+
+  if ($account->uid == 0) {
+    $grants['farnet_communities'][] = 0;
+  }
+  else {
+    $grants['farnet_communities'][] = 1;
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'community_public_node_form') {
+    $form['group_access'][LANGUAGE_NONE]['#disabled'] = TRUE;
+    $form['group_access'][LANGUAGE_NONE]['#type'] = 'hidden';
+    $form['group_access'][LANGUAGE_NONE]['#value'] = '0';
+  }
+
+  if ($form_id == 'community_private_node_form' || $form_id == 'community_hidden_node_form') {
+    $form['group_access'][LANGUAGE_NONE]['#disabled'] = TRUE;
+    $form['group_access'][LANGUAGE_NONE]['#type'] = 'hidden';
+    $form['group_access'][LANGUAGE_NONE]['#value'] = '1';
+  }
+}
+
+/**
+ * Implements hook_context_load_alter().
+ */
+function farnet_communities_context_load_alter(&$context) {
+
+  if ($context->name === 'communities' && isset($context->reactions['block'])) {
+    if (isset($context->reactions['block']['blocks']['views-community_members-block_1'])) {
+      unset($context->reactions['block']['blocks']['views-community_members-block_1']);
+    }
+    $context->reactions['block']['blocks']['views-members_list-block_members_list'] = array(
+      'module' => 'views',
+      'delta' => 'members_list-block_members_list',
+      'region' => 'sidebar_left',
+      'weight' => '-8',
+    );
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function farnet_communities_views_pre_render(&$view) {
+  if ($view->current_display === 'block_members_list') {
+    $title = str_replace(' ', '-', drupal_strtolower($view->build_info['substitutions']['%1']));
+    // Set to use 'custom_url'.
+    $view->display_handler->set_option('link_display', 'custom_url');
+    // Change the link url.
+    $view->display_handler->set_option('link_url', 'community/' . $title . '/members-list');
+  }
+}

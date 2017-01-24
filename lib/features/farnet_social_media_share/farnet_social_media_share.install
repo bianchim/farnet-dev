@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Installs the Farnet Social Block.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_social_media_share_enable() {
+  $bean = bean_create(array('type' => 'webtools'));
+  $bean->label = 'Farnet Social Links to Share';
+  $bean->title = '';
+  $bean->delta = 'bean-social-links';
+  $bean->field_json_object = array(
+    LANGUAGE_NONE => array(
+      array(
+        'value' => '{
+  "service": "sbkm",
+  "popup": false,
+  "to": [
+    "more",
+    "e-mail",
+    "facebook",
+    "twitter",
+    "googleplus",
+    "linkedin"
+  ],
+  "via": "EU_FARNET",
+  "selection": false
+}',
+      ),
+    ),
+  );
+  $bean->save();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_social_media_share_disable() {
+  if ($block = bean_delta_load('bean-social-links')) {
+    bean_delete($block);
+  }
+}

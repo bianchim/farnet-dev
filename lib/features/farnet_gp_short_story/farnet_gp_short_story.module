@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet GP Short Story feature.
+ */
+
+include_once 'farnet_gp_short_story.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_gp_short_story_form_gp_short_story_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_gp_short_story');
+
+  // Add JS files.
+  $form['#attached']['js'] = [
+    [
+      'data' => $path . '/js/farnet_gp_short_story.js',
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    ],
+  ];
+
+  // Add CSS files.
+  $form['#attached']['css'] = array(
+    $path . '/css/farnet_gp_short_story.css',
+  );
+
+  $form['field_budget'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_eu_contribution'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_other_public_contribution'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_budget'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+}
