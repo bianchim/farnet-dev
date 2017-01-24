@@ -4036,8 +4036,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Twitter');
   t('Type of area');
   t('View Cooperation Ideas');
-  t('View Good Practices
-    ');
+  t('View Good Practices');
   t('Website');
   t('Women employment in fisheries');
 
