@@ -18,6 +18,7 @@ function farnet_views_views_default_views_alter(&$views) {
       $tid_term = $filter_term->tid;
       $views['farnet_view_news']->display['page_news_farnet']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
       $views['farnet_view_news']->display['block_news_farnet']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_news']->display['block_news_on_news_events']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
       $views['farnet_view_news']->display['page_news']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
     }
 
@@ -27,6 +28,7 @@ function farnet_views_views_default_views_alter(&$views) {
       $tid_term = $filter_term->tid;
       $views['farnet_view_news']->display['page_news_other']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
       $views['farnet_view_news']->display['block_news_farnet']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
+      $views['farnet_view_news']->display['block_news_on_news_events']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
       $views['farnet_view_news']->display['page_news']->display_options['filters']['field_term_publication_channels_tid']['value'][$tid_term] = $tid_term;
     }
 

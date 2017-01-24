@@ -16,7 +16,6 @@ Feature: Check Views
       | field_term_publication_channels | News - FARNET                        |
       | field_publication_date          | 1465294233                           |
     Then I should see the heading "Behat News Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "news-events/news"
     And I should see the heading "News"
@@ -36,7 +35,6 @@ Feature: Check Views
       | field_term_publication_channels | News - FARNET                        |
       | field_publication_date          | 1465294233                           |
     Then I should see the heading "Behat News Test #2"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "news-events/news/farnet"
     And I should see the heading "FARNET News"
@@ -56,7 +54,6 @@ Feature: Check Views
       | field_term_publication_channels | News - Other                         |
       | field_publication_date          | 1465294233                           |
     Then I should see the heading "Behat News Test #3"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "news-events/news/other"
     And I should see the heading "Other News"
@@ -105,7 +102,6 @@ Feature: Check Views
       | field_term_theme            | Aquaculture                           |
       | field_publication_date      | 1465294233                            |
     Then I should see the heading "Behat News Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     #And I visit "themes"
     And I visit "themes_en"

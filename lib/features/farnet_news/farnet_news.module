@@ -61,6 +61,10 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
       $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['type'] = "text_plain";
       $fields['node-nexteuropa_news-field_abstract']['display']['teaser']['weight'] = 2;
 
+      $fields['node-nexteuropa_news-field_abstract']['display']['default']['label'] = "hidden";
+      $fields['node-nexteuropa_news-field_abstract']['display']['default']['settings'] = array();
+      $fields['node-nexteuropa_news-field_abstract']['display']['default']['type'] = "hidden";
+
       $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['label'] = "hidden";
       $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['module'] = "text";
       $fields['node-nexteuropa_news-field_abstract']['display']['newsletter']['settings'] = array();
@@ -102,11 +106,27 @@ function farnet_news_field_default_field_instances_alter(&$fields) {
 
   if (isset($fields['node-nexteuropa_news-field_ne_body'])) {
     $fields['node-nexteuropa_news-field_ne_body']['widget']['weight'] = 3;
+    if (isset($fields['node-nexteuropa_news-field_ne_body']['display'])) {
+      $fields['node-nexteuropa_news-field_ne_body']['display']['default']['label'] = "hidden";
+    }
   }
 
   if (isset($fields['node-nexteuropa_news-field_tags'])) {
     $fields['node-nexteuropa_news-field_tags']['label'] = 'Keywords';
   }
+
+  if (isset($fields['node-nexteuropa_news-group_content_access'])) {
+    $fields['node-nexteuropa_news-group_content_access']['display']['default']['label'] = "hidden";
+    $fields['node-nexteuropa_news-group_content_access']['display']['default']['settings'] = array();
+    $fields['node-nexteuropa_news-group_content_access']['display']['default']['type'] = "hidden";
+  }
+
+  if (isset($fields['node-nexteuropa_news-og_group_ref'])) {
+    $fields['node-nexteuropa_news-og_group_ref']['display']['default']['label'] = "hidden";
+    $fields['node-nexteuropa_news-og_group_ref']['display']['default']['settings'] = array();
+    $fields['node-nexteuropa_news-og_group_ref']['display']['default']['type'] = "hidden";
+  }
+
 }
 
 /**

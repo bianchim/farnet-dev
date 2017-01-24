@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_landing_page.context.inc
@@ -27,11 +26,17 @@ function farnet_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-a08df1144b562a45ee98fd5815edcc6b' => array(
+        'views-5a0c0d1995c4bd498fa2422a5992b6e7' => array(
           'module' => 'views',
-          'delta' => 'a08df1144b562a45ee98fd5815edcc6b',
+          'delta' => '5a0c0d1995c4bd498fa2422a5992b6e7',
           'region' => 'content',
           'weight' => '-10',
+        ),
+        'views-8d556d2632413042cb393089786bb956' => array(
+          'module' => 'views',
+          'delta' => '8d556d2632413042cb393089786bb956',
+          'region' => 'content',
+          'weight' => '-9',
         ),
       ),
     ),
