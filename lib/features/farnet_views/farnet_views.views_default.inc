@@ -1191,8 +1191,6 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
   $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
   $handler->display->display_options['fields']['field_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
   /* Field: Content: Abstract */
   $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
@@ -1512,8 +1510,6 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
   $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
   $handler->display->display_options['fields']['field_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
   /* Field: Content: Abstract */
   $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
@@ -1673,8 +1669,6 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
   $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
   $handler->display->display_options['fields']['field_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
   /* Field: Content: Abstract */
   $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
@@ -1726,9 +1720,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['table'] = 'field_data_field_term_publication_channels';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['field'] = 'field_term_publication_channels_tid';
-  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = array(
-    95 => '95',
-  );
+  $handler->display->display_options['filters']['field_term_publication_channels_tid']['value'] = [];
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['vocabulary'] = 'farnet_publication_channels';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -1855,8 +1847,6 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
   $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
   $handler->display->display_options['fields']['field_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_abstract']['hide_empty'] = TRUE;
   /* Field: Content: Abstract */
@@ -1977,8 +1967,6 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
   $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
   $handler->display->display_options['fields']['field_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_abstract']['hide_empty'] = TRUE;
   /* Field: Content: Type */
@@ -2119,8 +2107,6 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
   $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
   $handler->display->display_options['fields']['field_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_abstract']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
