@@ -155,11 +155,23 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly',
     'field_ff_number_staff',
   );
+  $element_percent_formated = array(
+    'field_ff_public_actors',
+    'field_ff_fisheries_actors',
+    'field_ff_other_non_fisheries',
+    'field_ff_environmental_actors',
+  );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
   }
   if (in_array($variables['element']['#field_name'], $element_with_additional_field_item_class)) {
     $variables['field_item_class'] = ' u-color-green u-fw-bold';
+  }
+  if (in_array($variables['element']['#field_name'], $element_percent_formated)) {
+    $variables['field_item_class'] .= ' farnet-progress progress';
+    foreach ($variables['items'] as $key => $item) {
+      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $item['#markup'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $item['#markup'] . '%">' . $item['#markup'] . '%</div>';
+    }
   }
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     foreach ($variables['items'] as $delta => $item) {
