@@ -3500,7 +3500,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_title_official',
-    'label' => 'Name (official)',
+    'label' => 'Official name',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -4008,7 +4008,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Members of the partnership');
   t('Multi-funding');
   t('Name');
-  t('Name (official)');
+  t('Official name');
   t('Number of contracted staff in FLAG');
   t('Number of individuals on main decision-making body/board');
   t('Number of individuals/organisations in partnership/general assembly');
