@@ -69,5 +69,55 @@ function farnet_landing_page_context_default_contexts() {
   t('landing page');
   $export['on_the_ground'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'tools';
+  $context->description = '';
+  $context->tag = 'landing page';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'tools' => 'tools',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => '1',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'block-4' => array(
+          'module' => 'block',
+          'delta' => '4',
+          'region' => 'content',
+          'weight' => '-7',
+        ),
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+        'block-2' => array(
+          'module' => 'block',
+          'delta' => '2',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('landing page');
+  $export['tools'] = $context;
+
   return $export;
 }

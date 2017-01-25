@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_landing_page.features.field_instance.inc

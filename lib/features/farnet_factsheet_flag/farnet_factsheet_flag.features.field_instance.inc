@@ -2715,7 +2715,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   // Exported field_instance: 'node-factsheet_flag-field_gallery'.
   $field_instances['node-factsheet_flag-field_gallery'] = array(
     'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -2753,11 +2753,14 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 6,
     ),
   );
@@ -3497,7 +3500,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_title_official',
-    'label' => 'Name (official)',
+    'label' => 'Official name',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -4005,7 +4008,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Members of the partnership');
   t('Multi-funding');
   t('Name');
-  t('Name (official)');
+  t('Official name');
   t('Number of contracted staff in FLAG');
   t('Number of individuals on main decision-making body/board');
   t('Number of individuals/organisations in partnership/general assembly');

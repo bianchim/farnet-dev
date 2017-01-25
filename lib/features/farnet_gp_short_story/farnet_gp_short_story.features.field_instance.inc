@@ -739,7 +739,7 @@ function farnet_gp_short_story_field_default_field_instances() {
   // Exported field_instance: 'node-gp_short_story-field_gallery'.
   $field_instances['node-gp_short_story-field_gallery'] = array(
     'bundle' => 'gp_short_story',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -777,11 +777,14 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 26,
     ),
   );
