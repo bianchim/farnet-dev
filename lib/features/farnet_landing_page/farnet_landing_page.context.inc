@@ -61,7 +61,36 @@ function farnet_landing_page_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-7dabd414d359435e91fad754dab94e7f' => array(
+          'module' => 'views',
+          'delta' => '7dabd414d359435e91fad754dab94e7f',
+          'region' => 'content',
+          'weight' => '0',
+        ),
+        'views-79352059f92f38e8b7c026bd2e334732' => array(
+          'module' => 'views',
+          'delta' => '79352059f92f38e8b7c026bd2e334732',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => '1',
+          'region' => 'content',
+          'weight' => '2',
+        ),
+        'block-2' => array(
+          'module' => 'block',
+          'delta' => '2',
+          'region' => 'content',
+          'weight' => '3',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables
