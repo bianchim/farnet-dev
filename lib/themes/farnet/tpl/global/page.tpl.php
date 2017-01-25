@@ -202,12 +202,6 @@ global $base_url;
 
           <a id="content"></a>
 
-          <?php if ($title): ?>
-          <h1 class="title" id="content-title">
-            <?php print $title; ?>
-          </h1>
-          <?php endif; ?>
-
           <?php print $regions['content_top']; ?>
 
           <a id="main-content"></a>
