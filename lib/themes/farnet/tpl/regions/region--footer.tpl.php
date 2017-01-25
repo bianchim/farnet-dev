@@ -30,15 +30,15 @@
 ?>
 <?php if ($content): ?>
   <div class="container <?php print $classes; ?>">
-  	<div class="col-sm-3 hidden-xs">
+    <div class="col-sm-3 hidden-xs">
       <a href="#" class="logo" title="<?php print t('Home'); ?>"></a>
     </div>
     <div class="col-sm-3 col-sm-push-6 farnet-footer-websites">
       <strong>Other websites:</strong>
       <ul>
-        <li><a href="#">Maritime affairs</a></li>
-        <li><a href="#">Fisheries</a></li>
-        <li><a href="#">Atlas of the Seas</a></li>
+        <li><?php print l(t('Maritime affairs'),'#'); ?></li>
+        <li><?php print l(t('Fisheries'),'#'); ?></li>
+        <li><?php print l(t('Atlas of the Seas'),'#'); ?></li>
       </ul>
     </div>
     <div class="col-sm-6 col-sm-pull-3">

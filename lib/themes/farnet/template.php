@@ -82,7 +82,7 @@ function farnet_preprocess_block(&$vars) {
 
     case 'cce_basic_config-footer_ipg':
       $vars['elements']['#block']->subject = NULL;
-      $vars['content'] = substr($vars['content'], strpos($vars['content'], '<ul'));
+      $vars['content'] = drupal_substr($vars['content'], strpos($vars['content'], '<ul'));
       break;
   }
 }
@@ -398,7 +398,6 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
 function farnet_social_media_links_platforms(&$variables) {
   $output = '';
   $platforms = $variables['platforms'];
-  // $attributes = $variables['attributes'];
   foreach ($platforms as $name => $platform) {
     // Render the platform item.
     $output .= drupal_render($platform);
