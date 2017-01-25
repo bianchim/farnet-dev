@@ -71,6 +71,19 @@ function farnet_preprocess_block(&$vars) {
     case 'om_maximenu-om-maximenu-1':
       $vars['classes_array'][] = 'navigation-main';
       break;
+
+    case 'farnet_core-farnet_core_printpdf':
+      $vars['panel'] = FALSE;
+      break;
+
+    case 'social_media_links-social-media-links':
+      $vars['elements']['#block']->subject = t('Follow FARNET on:');
+      break;
+
+    case 'cce_basic_config-footer_ipg':
+      $vars['elements']['#block']->subject = NULL;
+      $vars['content'] = drupal_substr($vars['content'], strpos($vars['content'], '<ul'));
+      break;
   }
 }
 
@@ -150,11 +163,24 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly',
     'field_ff_number_staff',
   );
+  $element_percent_formated = array(
+    'field_ff_public_actors',
+    'field_ff_fisheries_actors',
+    'field_ff_other_non_fisheries',
+    'field_ff_environmental_actors',
+    'field_allocated_budget',
+  );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
   }
   if (in_array($variables['element']['#field_name'], $element_with_additional_field_item_class)) {
     $variables['field_item_class'] = ' u-color-green u-fw-bold';
+  }
+  if (in_array($variables['element']['#field_name'], $element_percent_formated)) {
+    $variables['field_item_class'] .= ' farnet-progress progress';
+    foreach ($variables['items'] as $key => $item) {
+      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $item['#markup'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $item['#markup'] . '%">' . $item['#markup'] . '%</div>';
+    }
   }
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     foreach ($variables['items'] as $delta => $item) {
@@ -269,10 +295,12 @@ function farnet_preprocess_field(&$variables, $hook) {
       !$variables['element']['#object']->field_ff_population_density and
       !$variables['element']['#object']->field_ff_total_employment and
       !$variables['element']['#object']->field_ff_fishing and
-      !$variables['element']['#object']->field_ff_fishing and
       !$variables['element']['#object']->field_ff_aquaculture) {
       $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 farnet-stats__col--blue-bg">';
       $variables['suffix'] .= '</div></div></div></div></div>';
+    }
+    elseif (!$variables['element']['#object']->field_ff_fishing) {
+      $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
     }
     $variables['suffix'] .= '</div></div></div></div></div>';
   }
@@ -282,21 +310,6 @@ function farnet_preprocess_field(&$variables, $hook) {
  * Implements hook_field_group_pre_render_alter().
  */
 function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
-  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-practices') {
-    // Check related view results.
-    $results = views_get_view_result('farnet_gp_by_flag_display', "block_gp_by_flag", $element['field_view_good_practices']['#object']->nid);
-    if (count($results) == 0) {
-      hide($element);
-    }
-  }
-  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-ideas') {
-    // Check related view results.
-    $results = views_get_view_result('cooperation_idea_by_flag', "block_idea_by_flag", $element['field_view_cooperation_ideas']['#object']->nid);
-    if (count($results) == 0) {
-      hide($element);
-    }
-  }
-
   if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-partnership') {
     $prefix = '<div class="flag-partnership__group">';
     $prefix_percent = '<div class="flag-partnership__group flag-partnership__percent">';
@@ -379,4 +392,36 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       $element['field_ff_number_staff']['#suffix'] = $suffix;
     }
   }
+}
+
+/**
+ * Theme function for the platforms.
+ */
+function farnet_social_media_links_platforms(&$variables) {
+  $output = '';
+  $platforms = $variables['platforms'];
+  foreach ($platforms as $name => $platform) {
+    // Render the platform item.
+    $output .= drupal_render($platform);
+  }
+  return $output;
+}
+
+/**
+ * Theme function for a single platform element.
+ */
+function farnet_social_media_links_platform(&$variables) {
+  $output = '';
+  $options = array();
+  $options['attributes'] = $variables['attributes'];
+  $options['html'] = TRUE;
+  $options['attributes']['class'] = 'farnet-footer-social-icon farnet-footer-' . $variables['name'];
+  if (!empty($variables['appearance']['show_name'])) {
+    if ($variables['appearance']['orientation'] == 'h') {
+      $output .= '<br />';
+    }
+    $title = check_plain($variables['attributes']['title']);
+    $output .= l($title, $variables['link'], $options);
+  }
+  return $output;
 }
