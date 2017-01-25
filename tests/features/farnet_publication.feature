@@ -63,4 +63,4 @@ Feature: Publication content type
     And I visit "library/presentations"
     And I should see the heading "Presentations"
     And I should see the text "Presentations EC decides tax advantages for Fiat are illegal"
-    And I should see the text "Presentations Commissioner states tax rulings are not in li5ne with state aid rules."
+    And I should see the text "Presentations Commissioner states tax rulings are not in line with state aid rules."
