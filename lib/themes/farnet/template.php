@@ -71,11 +71,19 @@ function farnet_preprocess_block(&$vars) {
     case 'om_maximenu-om-maximenu-1':
       $vars['classes_array'][] = 'navigation-main';
       break;
-  }
-  switch ($block_id) {
+
     case 'farnet_core-farnet_core_printpdf':
-    $vars['panel'] = FALSE;
-    break;
+      $vars['panel'] = FALSE;
+      break;
+
+    case 'social_media_links-social-media-links':
+      $vars['elements']['#block']->subject = t('Follow FARNET on:');
+      break;
+
+    case 'cce_basic_config-footer_ipg':
+      $vars['elements']['#block']->subject = NULL;
+      $vars['content'] = substr($vars['content'], strpos($vars['content'], '<ul'));
+      break;
   }
 }
 
@@ -382,4 +390,37 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       $element['field_ff_number_staff']['#suffix'] = $suffix;
     }
   }
+}
+
+/**
+ * Theme function for the platforms.
+ */
+function farnet_social_media_links_platforms(&$variables) {
+  $output = '';
+  $platforms = $variables['platforms'];
+  // $attributes = $variables['attributes'];
+  foreach ($platforms as $name => $platform) {
+    // Render the platform item.
+    $output .= drupal_render($platform);
+  }
+  return $output;
+}
+
+/**
+ * Theme function for a single platform element.
+ */
+function farnet_social_media_links_platform(&$variables) {
+  $output = '';
+  $options = array();
+  $options['attributes'] = $variables['attributes'];
+  $options['html'] = TRUE;
+  $options['attributes']['class'] = 'farnet-footer-social-icon farnet-footer-' . $variables['name'];
+  if (!empty($variables['appearance']['show_name'])) {
+    if ($variables['appearance']['orientation'] == 'h') {
+      $output .= '<br />';
+    }
+    $title = check_plain($variables['attributes']['title']);
+    $output .= l($title, $variables['link'], $options);
+  }
+  return $output;
 }

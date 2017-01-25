@@ -259,7 +259,5 @@ global $base_url;
   </a>
 
   <div id="layout-footer">
-    <div class="container">
-      <?php print $regions['footer']; ?>
-    </div>
+    <?php print $regions['footer']; ?>
   </div><!-- /#layout-footer -->
