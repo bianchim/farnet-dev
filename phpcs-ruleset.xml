@@ -48,9 +48,36 @@
         <exclude-pattern>src/Phing</exclude-pattern>
     </rule>
 
+    <!-- Phing tasks require to use CamelCaps for argument names. -->
+    <rule ref="Drupal.Commenting.FileComment.Missing">
+        <exclude-pattern>src/Phing</exclude-pattern>
+        <exclude-pattern>tests/src/Context</exclude-pattern>
+    </rule>
+
     <!-- Wysiwyg profiles exported in Features do not have a trailing period. -->
     <!-- Remove this once https://www.drupal.org/node/2724173 is in. -->
     <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
         <exclude-pattern>*.features.wysiwyg.inc</exclude-pattern>
     </rule>
+	
+    <!-- Farnet Exclude Files -->
+    <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
+    <exclude-pattern>*.farnet_core.install</exclude-pattern>
+    <exclude-pattern>*.farnet_faq.module</exclude-pattern>
+    <!-- Farnet theme excludes -->
+    <exclude-pattern>farnet/framework/*</exclude-pattern>
+
+    <!-- OG permission not strictly follow LineLength and comment inline. -->
+    <rule ref="Drupal.Files.LineLength">
+        <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
+    </rule>
+    <rule ref="Drupal.Commenting.InlineComment">
+        <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
+    </rule>
+
+    <!-- Exclude the blocks of landing pages, menu blocks are not exportable so the HTML is exported as is. -->
+    <rule ref="QualityAssurance.Functions.HardcodedLink.HardcodedLink">
+        <exclude-pattern>farnet_core.features.fe_block_boxes.inc</exclude-pattern>
+    </rule>
+
 </ruleset>

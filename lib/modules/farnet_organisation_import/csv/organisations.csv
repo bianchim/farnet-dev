@@ -1,0 +1,4 @@
+id,Name,type,body,Email,Website,Telephone,Fax,Longitude,Latitude,Adress 1,Adress 2,Zip Code,City,Country code,Twitter,Facebook,LinkedIn,Google+,Comment
+1,Organisation FR 1,DG MARE,"test organisation, FR",test@organisation.fr,testorga.fr,111111111,123456789,50,50,26 rue principale,,57580,Luppy,FR,,,,,No comment
+2,Organisation DE 1,MA National,"test organisation, DE",test@organisation.de,testorga.de,111111111,123456789,50,50,12 rue de l'organisation,,57000,Berlin,FR,,,,,No comment
+3,Organisation IT 1,MA Regional,"test organisation, IT",test@organisation.it,testorga.it,111111111,123456789,50,50,12 rue de l'organisation,,57000,Roma,FR,,,,,No comment

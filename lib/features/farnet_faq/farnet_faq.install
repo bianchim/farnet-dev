@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Installs the Farnet faq feature.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function farnet_faq_install() {
+  $t = get_t();
+  drupal_set_message($t('The FARNET Faq feature is now installed on your site.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function farnet_faq_uninstall() {
+  $t = get_t();
+  drupal_set_message($t('The FARNET Faq feature is now uninstalled from your site.'));
+}

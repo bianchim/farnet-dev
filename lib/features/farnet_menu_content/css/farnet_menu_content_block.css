@@ -1,0 +1,18 @@
+#navbar-node-page h3 {
+  margin: 10px 0 10px 10px;
+  text-transform: uppercase;
+}
+
+#navbar-node-page a {
+  color: #0065a2;
+}
+
+#navbar-node-page li.active a {
+  background-color: #0065a2;
+  color: white;
+}
+
+#layout-body .affix {
+  top: 70px;
+  width: 261px;
+}

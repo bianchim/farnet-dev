@@ -40,6 +40,9 @@
     <import file="build.test.xml" />
     <import file="resources/build.custom.xml" />
 
+    <!-- Specific to Farnet project -->
+    <import file="build.farnet.xml" />
+
     <import file="./vendor/continuousphp/aws-sdk-phing/tasks.xml" />
     <property name="aws.profile" value="" />
 
