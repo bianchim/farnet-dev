@@ -1022,7 +1022,7 @@ function farnet_event_field_default_field_instances() {
   // Exported field_instance: 'node-nexteuropa_event-field_gallery'.
   $field_instances['node-nexteuropa_event-field_gallery'] = array(
     'bundle' => 'nexteuropa_event',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -1066,11 +1066,14 @@ function farnet_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 11,
     ),
   );

@@ -24,19 +24,6 @@ function farnet_core_locale_default_languages() {
     'prefix' => 'bg',
     'weight' => 0,
   );
-  // Exported language: cs.
-  $languages['cs'] = array(
-    'language' => 'cs',
-    'name' => 'Czech',
-    'native' => 'Čeština',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'cs',
-    'weight' => 0,
-  );
   // Exported language: da.
   $languages['da'] = array(
     'language' => 'da',
@@ -141,19 +128,6 @@ function farnet_core_locale_default_languages() {
     'prefix' => 'fr',
     'weight' => 0,
   );
-  // Exported language: gl.
-  $languages['gl'] = array(
-    'language' => 'gl',
-    'name' => 'Galician',
-    'native' => 'Galego',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'gl',
-    'weight' => 0,
-  );
   // Exported language: hr.
   $languages['hr'] = array(
     'language' => 'hr',
@@ -165,19 +139,6 @@ function farnet_core_locale_default_languages() {
     'formula' => '',
     'domain' => '',
     'prefix' => 'hr',
-    'weight' => 0,
-  );
-  // Exported language: hu.
-  $languages['hu'] = array(
-    'language' => 'hu',
-    'name' => 'Hungarian',
-    'native' => 'Magyar',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'hu',
     'weight' => 0,
   );
   // Exported language: it.
@@ -219,32 +180,6 @@ function farnet_core_locale_default_languages() {
     'prefix' => 'lv',
     'weight' => 0,
   );
-  // Exported language: mt.
-  $languages['mt'] = array(
-    'language' => 'mt',
-    'name' => 'Maltese',
-    'native' => 'Malti',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'mt',
-    'weight' => 0,
-  );
-  // Exported language: nl.
-  $languages['nl'] = array(
-    'language' => 'nl',
-    'name' => 'Dutch',
-    'native' => 'Nederlands',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'nl',
-    'weight' => 0,
-  );
   // Exported language: pl.
   $languages['pl'] = array(
     'language' => 'pl',
@@ -282,19 +217,6 @@ function farnet_core_locale_default_languages() {
     'formula' => '',
     'domain' => '',
     'prefix' => 'ro',
-    'weight' => 0,
-  );
-  // Exported language: sk.
-  $languages['sk'] = array(
-    'language' => 'sk',
-    'name' => 'Slovak',
-    'native' => 'Slovenčina',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'sk',
     'weight' => 0,
   );
   // Exported language: sl.
