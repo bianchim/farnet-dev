@@ -27,9 +27,9 @@ function farnet_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-homepage_highlight-block' => array(
+        'views-58e5c6f1d271df53704192d4182faec3' => array(
           'module' => 'views',
-          'delta' => 'homepage_highlight-block',
+          'delta' => '58e5c6f1d271df53704192d4182faec3',
           'region' => 'content_top',
           'weight' => '-10',
         ),
