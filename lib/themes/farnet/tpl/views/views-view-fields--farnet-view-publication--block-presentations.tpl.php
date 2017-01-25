@@ -32,6 +32,6 @@
         <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
-    <a href="/library/presentations" class="btn btn-default farnet-listing__read-more"><?php print t('More presentations'); ?></a>
+    <a href="<?php print url('/library/presentations'); ?>" class="btn btn-default farnet-listing__read-more"><?php print t('More presentations'); ?></a>
   </div>
 </li>
