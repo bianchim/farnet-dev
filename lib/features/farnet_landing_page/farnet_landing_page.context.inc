@@ -114,33 +114,33 @@ function farnet_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-2' => array(
+        'block-7' => array(
           'module' => 'block',
-          'delta' => '2',
+          'delta' => '7',
           'region' => 'content',
           'weight' => '-10',
         ),
-        'block-3' => array(
+        'block-8' => array(
           'module' => 'block',
-          'delta' => '3',
+          'delta' => '8',
           'region' => 'content',
           'weight' => '-9',
         ),
-        'block-5' => array(
+        'block-9' => array(
           'module' => 'block',
-          'delta' => '5',
+          'delta' => '9',
           'region' => 'content',
           'weight' => '-7',
         ),
-        'block-6' => array(
+        'block-10' => array(
           'module' => 'block',
-          'delta' => '6',
+          'delta' => '10',
           'region' => 'content',
           'weight' => '-6',
         ),
-        'block-4' => array(
+        'block-11' => array(
           'module' => 'block',
-          'delta' => '4',
+          'delta' => '11',
           'region' => 'content',
           'weight' => '-8',
         ),
@@ -170,9 +170,9 @@ function farnet_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-1' => array(
+        'block-5' => array(
           'module' => 'block',
-          'delta' => '1',
+          'delta' => '5',
           'region' => 'content',
           'weight' => '-10',
         ),
@@ -188,9 +188,9 @@ function farnet_landing_page_context_default_contexts() {
           'region' => 'content',
           'weight' => '-8',
         ),
-        'block-2' => array(
+        'block-6' => array(
           'module' => 'block',
-          'delta' => '2',
+          'delta' => '6',
           'region' => 'content',
           'weight' => '-9',
         ),
