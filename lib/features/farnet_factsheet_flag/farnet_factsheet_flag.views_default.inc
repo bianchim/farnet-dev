@@ -115,7 +115,7 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['empty']['messages']['id'] = 'messages';
   $handler->display->display_options['empty']['messages']['table'] = 'views';
   $handler->display->display_options['empty']['messages']['field'] = 'messages';
-  $handler->display->display_options['empty']['messages']['label'] = 'No good practices';
+  $handler->display->display_options['empty']['messages']['label'] = 'No good practice';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';

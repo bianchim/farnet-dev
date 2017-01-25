@@ -664,7 +664,7 @@ function farnet_views_views_default_views() {
   $view->description = 'Views for CT Good Practice : GP Project, GP Method, GP Short Stories';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet Good Practices Views';
+  $view->human_name = 'Farnet Good Practice Views';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -887,8 +887,8 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'on-the-ground/good-practice';
-  $handler->display->display_options['menu']['title'] = 'Good Practices';
-  $handler->display->display_options['menu']['description'] = 'Good Practices';
+  $handler->display->display_options['menu']['title'] = 'Good Practice';
+  $handler->display->display_options['menu']['description'] = 'Good Practice';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
