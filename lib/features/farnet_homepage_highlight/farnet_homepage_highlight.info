@@ -1,6 +1,7 @@
 name = Farnet Homepage Highlight
 description = Homepage Highlight for farnet
 core = 7.x
+php = 5.6
 package = Farnet
 dependencies[] = ctools
 dependencies[] = ec_content_slider
