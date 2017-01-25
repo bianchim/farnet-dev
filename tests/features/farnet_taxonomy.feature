@@ -74,7 +74,6 @@ Feature: Check Views Farnet Taxonomy Term
       | field_term_theme            | Aquaculture                           |
       | field_publication_date      | 1465294233                            |
     Then I should see the heading "Behat News Test #2"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "themes/adding-value-fisheries"
     And I should see the heading "Adding value to fisheries"
@@ -94,7 +93,6 @@ Feature: Check Views Farnet Taxonomy Term
       | field_term_theme            | Aquaculture                           |
       | field_publication_date      | 1465294233                            |
     Then I should see the heading "Behat News Test #3"
-    And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "themes/adding-value-fisheries/aquaculture"
     And I should see the heading "Aquaculture"

@@ -242,11 +242,10 @@ function farnet_core_context_load_alter(&$context) {
       unset($context->reactions['block']['blocks']['views-multisite_settings_core-block_1']);
     }
   }
-
-  /*
   if ($context->name == 'site_wide') {
-  unset($context->reactions['block']['blocks']['user-menu']);
-  unset($context->reactions['block']['blocks']['create-content-button']);
+    unset($context->reactions['block']['blocks']['create-content-button']);
+    if (isset($context->reactions['block']['blocks']['user-menu'])) {
+      $context->reactions['block']['blocks']['user-menu']['region'] = 'header_top';
+    }
   }
-   */
 }
