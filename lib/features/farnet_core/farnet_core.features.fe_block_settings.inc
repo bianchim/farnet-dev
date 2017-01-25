@@ -12,10 +12,9 @@ function farnet_core_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-block-quick-links'] = array(
+  $export['block-block_quick_links'] = array(
     'cache' => -1,
-    'custom' => 2,
-    'delta' => 'block-quick-links',
+    'custom' => 0,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'machine_name' => 'block_quick_links',

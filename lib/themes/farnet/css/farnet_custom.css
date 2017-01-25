@@ -51,3 +51,14 @@
 #layout-body .affix-bottom {
   position: absolute;
 }
+
+#block-quick-links div {
+  margin: 0;
+}
+
+#block-quick-links div ul {
+  list-style-type: none;
+  /*margin-top: 1em;*/
+  margin-bottom: 0;
+  padding: 1em
+}

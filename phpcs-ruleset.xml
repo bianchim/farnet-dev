@@ -75,4 +75,9 @@
         <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
     </rule>
 
+    <!-- Exclude the blocks of landing pages, menu blocks are not exportable so the HTML is exported as is. -->
+    <rule ref="QualityAssurance.Functions.HardcodedLink.HardcodedLink">
+        <exclude-pattern>farnet_core.features.fe_block_boxes.inc</exclude-pattern>
+    </rule>
+
 </ruleset>
