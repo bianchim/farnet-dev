@@ -3718,7 +3718,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_view_good_practices',
-    'label' => 'View Good Practices
+    'label' => 'View Good Practice
     ',
     'required' => 0,
     'settings' => array(
@@ -4036,7 +4036,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Twitter');
   t('Type of area');
   t('View Cooperation Ideas');
-  t('View Good Practices');
+  t('View Good Practice');
   t('Website');
   t('Women employment in fisheries');
 
