@@ -69,5 +69,61 @@ function farnet_landing_page_context_default_contexts() {
   t('landing page');
   $export['on_the_ground'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'themes';
+  $context->description = '';
+  $context->tag = 'landing page';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'themes' => 'themes',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-2' => array(
+          'module' => 'block',
+          'delta' => '2',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+        'block-5' => array(
+          'module' => 'block',
+          'delta' => '5',
+          'region' => 'content',
+          'weight' => '-7',
+        ),
+        'block-6' => array(
+          'module' => 'block',
+          'delta' => '6',
+          'region' => 'content',
+          'weight' => '-6',
+        ),
+        'block-4' => array(
+          'module' => 'block',
+          'delta' => '4',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('landing page');
+  $export['themes'] = $context;
+
   return $export;
 }
