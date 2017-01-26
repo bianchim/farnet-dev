@@ -179,6 +179,14 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_decision' => array('field-label-inline', 'clearfix'),
     'field_ff_number_assembly' => array('field-label-inline', 'clearfix'),
     'field_ff_number_staff' => array('field-label-inline', 'clearfix'),
+    'field_ff_sources_co_funding' => array('field-label-above'),
+    'field_ff_multi_funding_txt' => array('field-type-list-boolean','field-name-field-ff-multi-funding'),
+    'field_ff_funds' => array('field-label-above'),
+  );
+  $element_add_field_classes = array(
+    'field_ff_sources_co_funding' => array('field-label-inline', 'clearfix'),
+    'field_ff_multi_funding' => array('field-type-text-long', 'field-name-field-ff-multi-funding-txt'),
+    'field_ff_funds' => array('field-label-inline', 'clearfix'),
   );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
@@ -192,6 +200,15 @@ function farnet_preprocess_field(&$variables, $hook) {
       $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $item['#markup'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $item['#markup'] . '%">' . $item['#markup'] . '%</div>';
     }
   }
+
+  // Add classes.
+  if (in_array($variables['element']['#field_name'], array_keys($element_add_field_classes))) {
+    foreach($element_add_field_classes[$variables['element']['#field_name']] as $class) {
+      array_push($variables['classes_array'], $class);
+    }
+  }
+
+  // Remove classes.
   if (in_array($variables['element']['#field_name'], array_keys($element_remove_field_classes))) {
     foreach ($variables['classes_array'] as $key => $class) {
       if (in_array($class, $element_remove_field_classes[$variables['element']['#field_name']])) {
@@ -320,6 +337,71 @@ function farnet_preprocess_field(&$variables, $hook) {
       $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
     }
     $variables['suffix'] .= '</div></div></div></div></div>';
+  }
+
+  // Flag factsheet - Funding.
+  switch ($variables['element']['#field_name']) {
+    case 'field_ff_emff':
+      $variables['container_tag'] = 'li';
+      $variables['prefix'] = '<ul class="fr-u-ul">';
+      if (!$variables['element']['#object']->field_ff_multi_funding and
+        !$variables['element']['#object']->field_ff_funds and!
+        $variables['element']['#object']->field_ff_sources_co_funding and
+        $variables['element']['#object']->field_ff_ms_co_financing) {
+        $variables['suffix'] = '</ul>';
+      }
+      break;
+    
+    case 'field_ff_ms_co_financing':
+      $variables['container_tag'] = 'li';
+      if (!$variables['element']['#object']->field_ff_multi_funding and
+        !$variables['element']['#object']->field_ff_funds and
+        !$variables['element']['#object']->field_ff_sources_co_funding) {
+        $variables['suffix'] = '</ul>';
+      }
+      if (!$variables['element']['#object']->field_ff_emff) {
+        $variables['prefix'] = '<ul class="fr-u-ul">';
+      }
+      break;
+
+    case 'field_ff_sources_co_funding':
+      $variables['container_tag'] = 'li';
+      if (!$variables['element']['#object']->field_ff_multi_funding and
+        !$variables['element']['#object']->field_ff_funds) {
+        $variables['suffix'] = '</ul>';
+      }
+      if (!$variables['element']['#object']->field_ff_emff and
+        !$variables['element']['#object']->field_ff_ms_co_financing) {
+        $variables['prefix'] = '<ul class="fr-u-ul">';
+      }
+      break;
+
+    case 'field_ff_multi_funding':
+      $variables['container_tag'] = 'li';
+      if (!$variables['element']['#object']->field_ff_funds) {
+        $variables['suffix'] = '</ul>';
+      }
+      if (!$variables['element']['#object']->field_ff_emff and
+        !$variables['element']['#object']->field_ff_ms_co_financing and
+        !$variables['element']['#object']->field_ff_sources_co_funding) {
+        $variables['prefix'] = '<ul class="fr-u-ul">';
+      }
+      break;
+
+    case 'field_ff_funds':
+      $variables['container_tag'] = 'li';
+      $variables['suffix'] = '</ul>';
+      if (!$variables['element']['#object']->field_ff_emff and
+        !$variables['element']['#object']->field_ff_ms_co_financing and
+        !$variables['element']['#object']->field_ff_sources_co_funding and
+        !$variables['element']['#object']->field_ff_multi_funding) {
+        $variables['prefix'] = '<ul class="fr-u-ul">';
+      }
+      break;
+    
+    default:
+      $variables['container_tag'] = 'div';
+      break;
   }
 }
 
@@ -451,4 +533,6 @@ function farnet_social_media_links_platform(&$variables) {
 function farnet_field_group_build_pre_render_alter(&$element) {
   $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><div class="highlight--background">';
   $element['group_factsheet_flag_content']['#suffix'] = '</div></div>';
+  $element['group_factsheet_flag_funding']['#prefix'] = '<div id="group-factsheet-flag-funding" class="group-factsheet-flag-funding field-group-tab flag-funding"><h3 class="fr-heading"><span>' . $element['#groups']['group_factsheet_flag_funding']->label . '</span></h3><div class="highlight--background">';
+  $element['group_factsheet_flag_funding']['#suffix'] = '</div></div>';
 }
