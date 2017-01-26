@@ -13,6 +13,126 @@ function farnet_core_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-block_bottom_1'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'block_bottom_1',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ec_resp' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['block-block_bottom_2'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'block_bottom_2',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ec_resp' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['block-block_bottom_3'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'block_bottom_3',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ec_resp' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
   $export['farnet_core-farnet_core_printpdf'] = array(
     'cache' => 1,
     'custom' => 0,

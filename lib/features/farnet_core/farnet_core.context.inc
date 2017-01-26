@@ -45,6 +45,24 @@ function farnet_core_context_default_contexts() {
           'region' => 'content_right',
           'weight' => '-10',
         ),
+        'block-12' => array(
+          'module' => 'block',
+          'delta' => '12',
+          'region' => 'content_bottom',
+          'weight' => '-10',
+        ),
+        'block-13' => array(
+          'module' => 'block',
+          'delta' => '13',
+          'region' => 'content_bottom',
+          'weight' => '-9',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'content_bottom',
+          'weight' => '-8',
+        ),
       ),
     ),
   );

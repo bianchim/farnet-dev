@@ -56,3 +56,12 @@
 .js #block-menu-menu-service-tools .menu {
   left: 200px;
 }
+
+.navbar-header .affix-top {
+  z-index: 999;
+}
+
+.region-content-bottom .block-block .content {
+  border: 1px solid #cbcbcb;
+  padding: 5px;
+}
