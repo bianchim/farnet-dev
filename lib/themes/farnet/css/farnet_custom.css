@@ -71,3 +71,8 @@
   float: left;
   margin: 5px;
 }
+
+.js #services,
+.js #block-menu-menu-service-tools .menu {
+  left: 200px;
+}
