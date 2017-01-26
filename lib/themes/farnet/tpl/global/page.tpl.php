@@ -166,20 +166,6 @@ global $base_url;
   <div id="layout-body">
     <div class="container">
       <div class="row">
-        <?php print render($title_prefix); ?>
-
-        <?php if ($title): ?>
-          <?php $title_image = (isset($node->field_thumbnail[LANGUAGE_NONE][0]['uri']) && $node->type == 'community' ? image_style_url('communities_thumbnail', $node->field_thumbnail[LANGUAGE_NONE][0]['uri']) : '');?>
-          <h1 class="col-lg-<?php print $cols['title']['lg']; ?> col-md-<?php print $cols['title']['md']; ?> col-sm-<?php print $cols['title']['sm']; ?> col-xs-<?php print $cols['title']['xs']; ?>" id="page-title">
-            <?php if ($title_image): ?>
-              <img src="<?php print $title_image; ?>" alt="<?php print $title; ?>" />
-            <?php endif; ?>
-            <?php print $title; ?>
-          </h1>
-        <?php endif; ?>
-
-        <?php print render($title_suffix); ?>
-
         <div class="col-lg-<?php print $cols['tools']['lg']; ?> col-md-<?php print $cols['tools']['md']; ?> col-sm-<?php print $cols['tools']['sm']; ?> col-xs-<?php print $cols['tools']['xs']; ?>">
           <?php print $regions['tools']; ?>
         </div>
@@ -201,6 +187,12 @@ global $base_url;
         <div id="content-wrapper" class="col-lg-<?php print $cols['content_main']['lg']; ?> col-md-<?php print $cols['content_main']['md']; ?> col-sm-<?php print $cols['content_main']['sm']; ?> col-md-<?php print $cols['content_main']['xs']; ?>">
 
           <a id="content"></a>
+
+          <?php if ($title): ?>
+            <h1 class="title" id="content-title">
+              <?php print $title; ?>
+            </h1>
+          <?php endif; ?>
 
           <?php print $regions['content_top']; ?>
 
