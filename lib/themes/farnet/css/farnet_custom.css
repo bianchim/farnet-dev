@@ -52,6 +52,7 @@
   position: absolute;
 }
 
-.js #services, .js #block-menu-menu-service-tools .menu {
-    left: 200px;
+.js #services,
+.js #block-menu-menu-service-tools .menu {
+  left: 200px;
 }
