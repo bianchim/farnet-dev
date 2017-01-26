@@ -64,6 +64,7 @@
     <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
     <exclude-pattern>*.farnet_core.install</exclude-pattern>
     <exclude-pattern>*.farnet_faq.module</exclude-pattern>
+    <exclude-pattern>*.features.fe_block_boxes.inc</exclude-pattern>
     <!-- Farnet theme excludes -->
     <exclude-pattern>farnet/framework/*</exclude-pattern>
 
@@ -79,5 +80,4 @@
     <rule ref="QualityAssurance.Functions.HardcodedLink.HardcodedLink">
         <exclude-pattern>farnet_core.features.fe_block_boxes.inc</exclude-pattern>
     </rule>
-
 </ruleset>
