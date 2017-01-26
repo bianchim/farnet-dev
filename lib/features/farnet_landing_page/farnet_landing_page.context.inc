@@ -246,6 +246,7 @@ function farnet_landing_page_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('landing page');
+  $export['library'] = $context;
 
   return $export;
 }
