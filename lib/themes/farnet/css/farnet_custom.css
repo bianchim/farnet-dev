@@ -51,3 +51,7 @@
 #layout-body .affix-bottom {
   position: absolute;
 }
+
+.js #services, .js #block-menu-menu-service-tools .menu {
+    left: 200px;
+}
