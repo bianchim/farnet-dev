@@ -15,7 +15,7 @@ function farnet_taxonomy_type_publications() {
       'language' => 'en',
       'translation' => array(
         'fr' => 'FARNET Magazine',
-        'it' => 'FARNET Magazine IT',
+        'it' => 'FARNET Magazine',
       ),
     ),
     'Publication2' => (object) array(
@@ -23,7 +23,7 @@ function farnet_taxonomy_type_publications() {
       'language' => 'en',
       'translation' => array(
         'fr' => 'Guide',
-        'it' => 'Guide IT',
+        'it' => 'Guide',
       ),
     ),
     'Publication3' => (object) array(
@@ -31,7 +31,7 @@ function farnet_taxonomy_type_publications() {
       'language' => 'en',
       'translation' => array(
         'fr' => 'Publication',
-        'it' => 'Publication IT',
+        'it' => 'Publication',
       ),
     ),
     'Publication4' => (object) array(
@@ -39,7 +39,7 @@ function farnet_taxonomy_type_publications() {
       'language' => 'en',
       'translation' => array(
         'fr' => 'Presentation',
-        'it' => 'Presentation IT',
+        'it' => 'Presentation',
       ),
     ),
   );

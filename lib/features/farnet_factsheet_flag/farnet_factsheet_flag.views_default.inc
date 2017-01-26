@@ -115,7 +115,7 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['empty']['messages']['id'] = 'messages';
   $handler->display->display_options['empty']['messages']['table'] = 'views';
   $handler->display->display_options['empty']['messages']['field'] = 'messages';
-  $handler->display->display_options['empty']['messages']['label'] = 'No good practices';
+  $handler->display->display_options['empty']['messages']['label'] = 'No good practice';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -327,6 +327,15 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['title'] = 'FLAG Factsheets';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
   $export['farnet_view_factsheets_flag'] = $view;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'ff_on_the_ground');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'FLAG Factsheets On the Ground';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
 
   return $export;
 }

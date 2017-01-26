@@ -260,7 +260,7 @@ function farnet_event_views_default_views() {
   $handler->display->display_options['filters']['field_event_type_tid']['field'] = 'field_event_type_tid';
   $handler->display->display_options['filters']['field_event_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_type_tid']['vocabulary'] = 'nexteuropa_event_type';
-  $handler->display->display_options['path'] = 'news-events/events/ma-nn';
+  $handler->display->display_options['path'] = 'news-events/events/managing-authorities';
   $handler->display->display_options['menu']['title'] = 'Managing authorities & National networks';
   $handler->display->display_options['menu']['description'] = 'Managing authorities & National networks';
   $handler->display->display_options['menu']['weight'] = '0';
