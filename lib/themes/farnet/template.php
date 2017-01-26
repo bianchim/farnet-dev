@@ -180,7 +180,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly' => array('field-label-inline', 'clearfix'),
     'field_ff_number_staff' => array('field-label-inline', 'clearfix'),
     'field_ff_sources_co_funding' => array('field-label-above'),
-    'field_ff_multi_funding_txt' => array('field-type-list-boolean','field-name-field-ff-multi-funding'),
+    'field_ff_multi_funding_txt' => array('field-type-list-boolean', 'field-name-field-ff-multi-funding'),
     'field_ff_funds' => array('field-label-above'),
   );
   $element_add_field_classes = array(
@@ -203,7 +203,7 @@ function farnet_preprocess_field(&$variables, $hook) {
 
   // Add classes.
   if (in_array($variables['element']['#field_name'], array_keys($element_add_field_classes))) {
-    foreach($element_add_field_classes[$variables['element']['#field_name']] as $class) {
+    foreach ($element_add_field_classes[$variables['element']['#field_name']] as $class) {
       array_push($variables['classes_array'], $class);
     }
   }
@@ -345,13 +345,13 @@ function farnet_preprocess_field(&$variables, $hook) {
       $variables['container_tag'] = 'li';
       $variables['prefix'] = '<ul class="fr-u-ul">';
       if (!$variables['element']['#object']->field_ff_multi_funding and
-        !$variables['element']['#object']->field_ff_funds and!
-        $variables['element']['#object']->field_ff_sources_co_funding and
-        $variables['element']['#object']->field_ff_ms_co_financing) {
+        !$variables['element']['#object']->field_ff_funds and
+        !$variables['element']['#object']->field_ff_sources_co_funding and
+        !$variables['element']['#object']->field_ff_ms_co_financing) {
         $variables['suffix'] = '</ul>';
       }
       break;
-    
+
     case 'field_ff_ms_co_financing':
       $variables['container_tag'] = 'li';
       if (!$variables['element']['#object']->field_ff_multi_funding and
@@ -398,7 +398,7 @@ function farnet_preprocess_field(&$variables, $hook) {
         $variables['prefix'] = '<ul class="fr-u-ul">';
       }
       break;
-    
+
     default:
       $variables['container_tag'] = 'div';
       break;
