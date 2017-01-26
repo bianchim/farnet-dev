@@ -653,7 +653,7 @@ function farnet_factsheet_flag_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Good Practices',
+    'label' => 'Good Practice',
     'weight' => '5',
     'children' => array(
       0 => 'field_view_good_practices',
@@ -1026,7 +1026,7 @@ function farnet_factsheet_flag_field_group_info() {
   t('FLAG Strategy');
   t('FLAG strategy');
   t('Funding');
-  t('Good Practices');
+  t('Good Practice');
   t('Links with LEADER or other CLLD groups');
   t('Location');
   t('Map');

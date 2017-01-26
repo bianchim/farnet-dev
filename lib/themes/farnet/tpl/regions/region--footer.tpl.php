@@ -36,9 +36,9 @@
     <div class="col-sm-3 col-sm-push-6 farnet-footer-websites">
       <strong>Other websites:</strong>
       <ul>
-        <li><?php print l(t('Maritime affairs'), '#'); ?></li>
-        <li><?php print l(t('Fisheries'), '#'); ?></li>
-        <li><?php print l(t('Atlas of the Seas'), '#'); ?></li>
+        <li><?php print l(t('Maritime affairs'), 'https://ec.europa.eu/maritimeaffairs/home_en'); ?></li>
+        <li><?php print l(t('Fisheries'), 'https://ec.europa.eu/fisheries/home_en'); ?></li>
+        <li><?php print l(t('Atlas of the Seas'), 'http://ec.europa.eu/maritimeaffairs/atlas/maritime_atlas/#lang=EN'); ?></li>
       </ul>
     </div>
     <div class="col-sm-6 col-sm-pull-3">

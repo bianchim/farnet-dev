@@ -101,6 +101,62 @@ function farnet_landing_page_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'themes';
+  $context->description = '';
+  $context->tag = 'landing page';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'themes' => 'themes',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+        'block-9' => array(
+          'module' => 'block',
+          'delta' => '9',
+          'region' => 'content',
+          'weight' => '-7',
+        ),
+        'block-10' => array(
+          'module' => 'block',
+          'delta' => '10',
+          'region' => 'content',
+          'weight' => '-6',
+        ),
+        'block-11' => array(
+          'module' => 'block',
+          'delta' => '11',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('landing page');
+  $export['themes'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'tools';
   $context->description = '';
   $context->tag = 'landing page';
@@ -114,9 +170,9 @@ function farnet_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-1' => array(
+        'block-5' => array(
           'module' => 'block',
-          'delta' => '1',
+          'delta' => '5',
           'region' => 'content',
           'weight' => '-10',
         ),
@@ -132,9 +188,9 @@ function farnet_landing_page_context_default_contexts() {
           'region' => 'content',
           'weight' => '-8',
         ),
-        'block-2' => array(
+        'block-6' => array(
           'module' => 'block',
-          'delta' => '2',
+          'delta' => '6',
           'region' => 'content',
           'weight' => '-9',
         ),
