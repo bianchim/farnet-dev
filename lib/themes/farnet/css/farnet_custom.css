@@ -61,3 +61,13 @@
   margin-bottom: 0;
   padding: 1em;
 }
+
+.block-block:nth-child(even) {
+    clear: both;
+}
+
+.region-content .block-block {
+  width: 49%;
+  float: left;
+  margin: 5px; 
+} 
