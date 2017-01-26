@@ -18,9 +18,7 @@ function farnet_social_media_share_enable() {
       array(
         'value' => '{
   "service": "sbkm",
-  "popup": false,
   "to": [
-    "more",
     "e-mail",
     "facebook",
     "twitter",
