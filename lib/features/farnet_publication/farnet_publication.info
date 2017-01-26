@@ -81,5 +81,4 @@ features[variable][] = pathauto_node_publication_pattern
 features[variable][] = xmlsitemap_settings_node_publication
 features[views_view][] = farnet_view_publication
 features_exclude[field_base][field_languages_spoken] = field_languages_spoken
-features_exclude[field_instance][node-publication-body] = node-publication-body
 features_exclude[dependencies][title] = title
