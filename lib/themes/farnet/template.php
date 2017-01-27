@@ -217,6 +217,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     }
   }
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
+    $variables['label_hidden'] = TRUE;
     foreach ($variables['items'] as $delta => $item) {
       array_push($variables['items'][$delta]["#attributes"]["class"], 'field-collection-view-final');
       if ($delta > 0) {
@@ -226,7 +227,13 @@ function farnet_preprocess_field(&$variables, $hook) {
         $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_priority']['#label_display'] = 'hidden';
       }
     }
+  } 
+  
+  // Remove label from field collection language.
+  elseif ($variables['element']['#field_name'] == 'field_collection_language') {
+    $variables['label_hidden'] = TRUE;
   }
+
   // Flag Stats.
   elseif ($variables['element']['#field_name'] == 'field_ff_population') {
     $variables['suffix'] = '</div>';
