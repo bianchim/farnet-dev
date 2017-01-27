@@ -8,19 +8,21 @@
  * Implements template_preprocess_page().
  */
 function farnet_preprocess_page(&$variables) {
-  $cols['content_right'] = array(
-    'lg' => (!empty($regions['content_right']) ? 4 : 4),
-    'md' => (!empty($regions['content_right']) ? 4 : 4),
-    'sm' => (!empty($regions['content_right']) ? 12 : 0),
-    'xs' => (!empty($regions['content_right']) ? 12 : 0),
-  );
-  $cols['content'] = array(
-    'lg' => 12 - $cols['content_right']['lg'],
-    'md' => 12 - $cols['content_right']['md'],
-    'sm' => 12,
-    'xs' => 12,
-  );
-  $variables['cols'] = $cols;
+  if ($variables['is_front'] ==  TRUE) {
+    $cols['content_right'] = array(
+      'lg' => (!empty($regions['content_right']) ? 4 : 4),
+      'md' => (!empty($regions['content_right']) ? 4 : 4),
+      'sm' => (!empty($regions['content_right']) ? 12 : 0),
+      'xs' => (!empty($regions['content_right']) ? 12 : 0),
+    );
+    $cols['content'] = array(
+      'lg' => 12 - $cols['content_right']['lg'],
+      'md' => 12 - $cols['content_right']['md'],
+      'sm' => 12,
+      'xs' => 12,
+    );
+    $variables['cols'] = $cols;
+  }
 }
 
 /**
