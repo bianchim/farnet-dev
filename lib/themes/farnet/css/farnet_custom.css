@@ -70,3 +70,12 @@
 #block-farnet-menu-content-farnet-menu-content-menu-page {
   max-width: 260px;
 }
+
+.navbar-header .affix-top {
+  z-index: 999;
+}
+
+.region-content-bottom .block-block .content {
+  border: 1px solid #cbcbcb;
+  padding: 5px;
+}
