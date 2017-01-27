@@ -66,3 +66,7 @@
 .js #block-menu-menu-service-tools .menu {
   left: 200px;
 }
+
+#block-farnet-menu-content-farnet-menu-content-menu-page {
+  max-width: 260px;
+}
