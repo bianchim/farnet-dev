@@ -11,7 +11,7 @@
 function farnet_twitter_enable() {
   drupal_flush_all_caches();
   features_revert_module("nexteuropa_webtools");
-  
+
   $bean = bean_create(array('type' => 'webtools'));
   $bean->label = 'Twitter Block';
   $bean->title = '';
