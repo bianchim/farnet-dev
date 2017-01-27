@@ -7,7 +7,7 @@
 /**
  * Implements template_preprocess_page().
  */
-function farnet_preprocess_page (&$variables) {
+function farnet_preprocess_page(&$variables) {
   $cols['content_right'] = array(
     'lg' => (!empty($regions['content_right']) ? 4 : 4),
     'md' => (!empty($regions['content_right']) ? 4 : 4),
