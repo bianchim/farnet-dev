@@ -51,3 +51,18 @@
 #layout-body .affix-bottom {
   position: absolute;
 }
+
+#block-quick-links div {
+  margin: 0;
+}
+
+#block-quick-links div ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding: 1em;
+}
+
+.js #services,
+.js #block-menu-menu-service-tools .menu {
+  left: 200px;
+}
