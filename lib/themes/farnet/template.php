@@ -8,7 +8,7 @@
  * Implements template_preprocess_page().
  */
 function farnet_preprocess_page(&$variables) {
-  if ($variables['is_front'] ==  TRUE) {
+  if ($variables['is_front'] == TRUE) {
     $cols['content_right'] = array(
       'lg' => (!empty($regions['content_right']) ? 4 : 4),
       'md' => (!empty($regions['content_right']) ? 4 : 4),
