@@ -204,5 +204,49 @@ function farnet_landing_page_context_default_contexts() {
   t('landing page');
   $export['tools'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'library';
+  $context->description = '';
+  $context->tag = 'landing page';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'library' => 'library',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-43942680651afca7750d9faac6513a16' => array(
+          'module' => 'views',
+          'delta' => '43942680651afca7750d9faac6513a16',
+          'region' => 'content',
+          'weight' => '0',
+        ),
+        'views-e1afc8ac226e4752516e50409df8f248' => array(
+          'module' => 'views',
+          'delta' => 'e1afc8ac226e4752516e50409df8f248',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+        'views-e3e941f8456604ac95162b631eb95d94' => array(
+          'module' => 'views',
+          'delta' => 'e3e941f8456604ac95162b631eb95d94',
+          'region' => 'content',
+          'weight' => '5',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('landing page');
+  $export['library'] = $context;
+
   return $export;
 }
