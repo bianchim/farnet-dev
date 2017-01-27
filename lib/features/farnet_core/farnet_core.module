@@ -237,7 +237,7 @@ function farnet_core_block_info_alter(&$blocks, $theme, $code_blocks) {
  * Implements hook_preprocess_block().
  */
 function farnet_core_preprocess_block(&$variables) {
-  if ($variables['block']->module == 'block' && $variables['block']->delta == '1') {
+  if ($variables['block']->module == 'block' && $variables['block']->delta == '12') {
     $variables['block_html_id'] = drupal_html_id('block-quick-links');
   }
 }
