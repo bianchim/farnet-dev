@@ -227,8 +227,8 @@ function farnet_preprocess_field(&$variables, $hook) {
         $variables['items'][$delta]['entity']['field_collection_item'][$nid]['field_priority']['#label_display'] = 'hidden';
       }
     }
-  } 
-  
+  }
+
   // Remove label from field collection language.
   elseif ($variables['element']['#field_name'] == 'field_collection_language') {
     $variables['label_hidden'] = TRUE;
