@@ -24,7 +24,7 @@
  * - $feed_icon: Feed icon to display, if any
  * - $more: A link to view more, if any
  *
- * @ingroup views_templates
+ * @ingroup views_templates.
  */
 ?>
 <?php if ($rows): ?>
