@@ -93,7 +93,7 @@ function _farnet_menu_content_menu_page_content() {
   }
 
   ksort($field_groups_sorted);
-  $output = '<div><nav id="navbar-node-page" class="navbar"><h3>Page contents</h3><ul class="nav">';
+  $output = '<div><nav id="navbar-node-page" class="navbar"><ul class="nav">';
   foreach ($field_groups_sorted as $field_group) {
     $classes = $field_group->format_settings['instance_settings']['classes'];
 
