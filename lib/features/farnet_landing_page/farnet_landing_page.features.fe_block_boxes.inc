@@ -12,6 +12,22 @@ function farnet_landing_page_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'About block at a glance';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'about_block_ataglance';
+  $fe_block_boxes->body = '<h2>FARNET</h2><p style="text-align: right;"><a href="farnet-glance">Read more</a></p><h2>CLLD</h2><p style="text-align: right;"><a href="clld-glance">Read more</a></p><h2>Glossary</h2><p style="text-align: right;"><a href="glossary">Read more</a></p>';
+
+  $export['about_block_ataglance'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'About block who\'s who';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'about_block_whos_who';
+  $fe_block_boxes->body = '<h2>DG MARE</h2><p style="text-align: right;"><a href="dg-mare">Read more</a></p>';
+
+  $export['about_block_whos_who'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Cooperation block on On the Ground page';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'cooperation_block';
