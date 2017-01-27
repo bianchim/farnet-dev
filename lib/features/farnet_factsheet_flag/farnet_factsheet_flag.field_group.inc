@@ -172,7 +172,8 @@ function farnet_factsheet_flag_field_group_info() {
       2 => 'field_term_country',
       3 => 'title_field',
       4 => 'field_collection_region',
-      5 => 'field_title_official',
+      5 => 'field_picture',
+      6 => 'field_title_official',
     ),
     'format_type' => 'div',
     'format_settings' => array(
