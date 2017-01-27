@@ -464,10 +464,14 @@ function _farnet_core_display_contact_details($node) {
 function _farnet_core_get_organisations($node) {
   // Only keep the first flag.
   $flag = $node->field_flag->value();
-  $flag = reset($flag);
 
-  $flag = entity_metadata_wrapper('node', $flag);
+  if (!empty($flag)) {
+    $flag = reset($flag);
+    $flag = entity_metadata_wrapper('node', $flag);
+    // Return flag and current node organisations.
+    return array_merge($flag->field_organisations->value(), $node->field_organisations->value());
+  }
 
-  // Return flag and current node organisations.
-  return array_merge($flag->field_organisations->value(), $node->field_organisations->value());
+  // If no flag, return only the node organisations.
+  return $node->field_organisations->value();
 }
