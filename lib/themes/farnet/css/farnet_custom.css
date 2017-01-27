@@ -67,6 +67,10 @@
   left: 200px;
 }
 
+#block-farnet-menu-content-farnet-menu-content-menu-page {
+  max-width: 260px;
+}
+
 .navbar-header .affix-top {
   z-index: 999;
 }
