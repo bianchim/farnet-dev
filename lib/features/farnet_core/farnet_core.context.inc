@@ -39,11 +39,17 @@ function farnet_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
+        'bean-bean-social-links' => array(
+          'delta' => 'bean-social-links',
+          'module' => 'bean',
+          'region' => 'content_right',
+          'weight' => -10,
+        ),
         'bean-bean-twitter-block' => array(
           'module' => 'bean',
           'delta' => 'bean-twitter-block',
           'region' => 'content_right',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'block-12' => array(
           'module' => 'block',
