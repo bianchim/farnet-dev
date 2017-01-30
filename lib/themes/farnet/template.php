@@ -179,10 +179,11 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly',
     'field_ff_number_staff',
   );
-  $element_with_additional_field_item_class = array(
-    'field_ff_number_decision',
-    'field_ff_number_assembly',
-    'field_ff_number_staff',
+  $element_with_additional_field_item_class_2 = array(
+    'field_ff_number_decision' => array('u-color-green', 'u-fw-bold'),
+    'field_ff_number_assembly' => array('u-color-green', 'u-fw-bold'),
+    'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
+    'field_type_of_area' => array('fr-u-ul'),
   );
   $element_percent_formated = array(
     'field_ff_public_actors',
@@ -203,17 +204,16 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_sources_co_funding' => array('field-label-above'),
     'field_ff_multi_funding_txt' => array('field-type-list-boolean', 'field-name-field-ff-multi-funding'),
     'field_ff_funds' => array('field-label-above'),
+    'field_type_of_area' => array('field-label-inline'),
   );
   $element_add_field_classes = array(
     'field_ff_sources_co_funding' => array('field-label-inline', 'clearfix'),
     'field_ff_multi_funding' => array('field-type-text-long', 'field-name-field-ff-multi-funding-txt'),
     'field_ff_funds' => array('field-label-inline', 'clearfix'),
+    'field_type_of_area' => array('field-label-above'),
   );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
-  }
-  if (in_array($variables['element']['#field_name'], $element_with_additional_field_item_class)) {
-    $variables['field_item_class'] = ' u-color-green u-fw-bold';
   }
   if (in_array($variables['element']['#field_name'], $element_percent_formated)) {
     $variables['field_item_class'] .= ' farnet-progress progress';
@@ -237,6 +237,12 @@ function farnet_preprocess_field(&$variables, $hook) {
       }
     }
   }
+
+  // Add class on field item.
+  if (in_array($variables['element']['#field_name'], array_keys($element_with_additional_field_item_class_2))) {
+    $variables['field_item_class'] = ' ' . implode(' ', $element_with_additional_field_item_class_2[$variables['element']['#field_name']]);
+  }
+
   if ($variables['element']['#field_name'] == 'field_collection_strategy') {
     $variables['label_hidden'] = TRUE;
     foreach ($variables['items'] as $delta => $item) {
@@ -253,6 +259,11 @@ function farnet_preprocess_field(&$variables, $hook) {
   // Remove label from field collection language.
   elseif ($variables['element']['#field_name'] == 'field_collection_language') {
     $variables['label_hidden'] = TRUE;
+  }
+
+  // Format field field_type_of_area.
+  elseif ($variables['element']['#field_name'] == 'field_type_of_area') {
+    dpm($variables);
   }
 
   // Flag Stats.

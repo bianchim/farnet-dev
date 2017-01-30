@@ -216,7 +216,7 @@ global $base_url;
             <div class="col-lg-<?php print $cols['content']['lg']; ?> col-md-<?php print $cols['content']['md']; ?> col-sm-<?php print $cols['content']['sm']; ?> col-xs-<?php print $cols['content']['xs']; ?>">
             <?php print $regions['content']; ?>
             </div>
-
+            
             <div class="col-lg-<?php print $cols['content_right']['lg']; ?> col-md-<?php print $cols['content_right']['md']; ?> col-sm-<?php print $cols['content_right']['sm']; ?> col-xs-<?php print $cols['content_right']['xs']; ?>">
             <?php print $regions['content_right']; ?>
             </div>
