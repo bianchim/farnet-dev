@@ -280,6 +280,8 @@ function farnet_core_field_extra_fields() {
   // Add the pseudo field to display.
   foreach ($content_types as $content_type) {
     $extra['node'][$content_type]['display'] = $field;
+    $extra['node'][$content_type]['display']['contact_details']['default']['type'] = "visible";
+    $extra['node'][$content_type]['display']['contact_details']['default']['weight'] = 1000;
   }
 
   return $extra;
@@ -446,7 +448,7 @@ function _farnet_core_display_contact_details($node) {
   }
 
   if (!$no_value) {
-    $output .= '</fieldset></div>';
+    $output .= '</div></fieldset>';
   }
 
   return $output;
