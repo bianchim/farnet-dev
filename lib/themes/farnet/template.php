@@ -184,6 +184,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly' => array('u-color-green', 'u-fw-bold'),
     'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
     'field_type_of_area' => array('fr-u-ul'),
+    'field_sea_basins' => array('fr-u-ul'),
   );
   $element_percent_formated = array(
     'field_ff_public_actors',
@@ -205,12 +206,14 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_multi_funding_txt' => array('field-type-list-boolean', 'field-name-field-ff-multi-funding'),
     'field_ff_funds' => array('field-label-above'),
     'field_type_of_area' => array('field-label-inline'),
+    'field_sea_basins' => array('field-label-inline'),
   );
   $element_add_field_classes = array(
     'field_ff_sources_co_funding' => array('field-label-inline', 'clearfix'),
     'field_ff_multi_funding' => array('field-type-text-long', 'field-name-field-ff-multi-funding-txt'),
     'field_ff_funds' => array('field-label-inline', 'clearfix'),
     'field_type_of_area' => array('field-label-above'),
+    'field_sea_basins' => array('field-label-above'),
   );
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
