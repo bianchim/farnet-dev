@@ -21,7 +21,7 @@ include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_ta
  * Implements hook_menu().
  */
 function farnet_maps_menu() {
-  $items['on-the-ground/map'] = [
+  $items['on-the-ground/maps'] = [
     'title' => 'Farnet interactive map',
     'description' => 'Provide an interactive map',
     'page callback' => ['drupal_get_form'],
@@ -189,10 +189,10 @@ function farnet_maps_form($form, &$form_state) {
   drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
 
   $json_map_object = drupal_json_decode($json_map);
-  $json_map_object['layers'][0]['checkbox']['features'][0]['markers'][0] = $base_url . "/on-the-ground/map/factsheet_flag/" . $country;
-  $json_map_object['layers'][0]['checkbox']['features'][1]['markers'][0] = $base_url . "/on-the-ground/map/gp_method/" . $country;
-  $json_map_object['layers'][0]['checkbox']['features'][2]['markers'][0] = $base_url . "/on-the-ground/map/gp_project/" . $country;
-  $json_map_object['layers'][0]['checkbox']['features'][3]['markers'][0] = $base_url . "/on-the-ground/map/gp_short_story/" . $country;
+  $json_map_object['layers'][0]['checkbox']['features'][0]['markers'][0] = $base_url . "/on-the-ground/maps/factsheet_flag/" . $country;
+  $json_map_object['layers'][0]['checkbox']['features'][1]['markers'][0] = $base_url . "/on-the-ground/maps/gp_method/" . $country;
+  $json_map_object['layers'][0]['checkbox']['features'][2]['markers'][0] = $base_url . "/on-the-ground/maps/gp_project/" . $country;
+  $json_map_object['layers'][0]['checkbox']['features'][3]['markers'][0] = $base_url . "/on-the-ground/maps/gp_short_story/" . $country;
   $json_map = drupal_json_encode($json_map_object);
 
   $form['json_map'] = array(
