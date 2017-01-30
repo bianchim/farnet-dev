@@ -158,15 +158,15 @@ function farnet_landing_page_context_default_contexts() {
           'region' => 'content',
           'weight' => '1',
         ),
-        'block-1' => array(
+        'block-3' => array(
           'module' => 'block',
-          'delta' => '1',
+          'delta' => '3',
           'region' => 'content',
           'weight' => '2',
         ),
-        'block-2' => array(
+        'block-4' => array(
           'module' => 'block',
-          'delta' => '2',
+          'delta' => '4',
           'region' => 'content',
           'weight' => '3',
         ),
@@ -196,17 +196,11 @@ function farnet_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-7' => array(
+        'block-11' => array(
           'module' => 'block',
-          'delta' => '7',
+          'delta' => '11',
           'region' => 'content',
-          'weight' => '-10',
-        ),
-        'block-8' => array(
-          'module' => 'block',
-          'delta' => '8',
-          'region' => 'content',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'block-9' => array(
           'module' => 'block',
@@ -220,11 +214,17 @@ function farnet_landing_page_context_default_contexts() {
           'region' => 'content',
           'weight' => '-6',
         ),
-        'block-11' => array(
+        'block-12' => array(
           'module' => 'block',
-          'delta' => '11',
+          'delta' => '12',
           'region' => 'content',
-          'weight' => '-8',
+          'weight' => '-5',
+        ),
+        'block-13' => array(
+          'module' => 'block',
+          'delta' => '13',
+          'region' => 'content',
+          'weight' => '-4',
         ),
       ),
     ),
@@ -258,23 +258,23 @@ function farnet_landing_page_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'block-4' => array(
-          'module' => 'block',
-          'delta' => '4',
-          'region' => 'content',
-          'weight' => '-7',
-        ),
-        'block-3' => array(
-          'module' => 'block',
-          'delta' => '3',
-          'region' => 'content',
-          'weight' => '-8',
-        ),
         'block-6' => array(
           'module' => 'block',
           'delta' => '6',
           'region' => 'content',
           'weight' => '-9',
+        ),
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'content',
+          'weight' => '-7',
         ),
       ),
     ),
