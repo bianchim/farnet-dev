@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Template implementation to display the value of a taxonomy term reference field.
+ * Template to display the value of a taxonomy term reference field.
  *
  * @see theme_field()
  * Available variables:
