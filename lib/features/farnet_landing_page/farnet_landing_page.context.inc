@@ -26,15 +26,15 @@ function farnet_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-16' => array(
+        'block-1' => array(
           'module' => 'block',
-          'delta' => '16',
+          'delta' => '1',
           'region' => 'content',
           'weight' => '-10',
         ),
-        'block-17' => array(
+        'block-2' => array(
           'module' => 'block',
-          'delta' => '17',
+          'delta' => '2',
           'region' => 'content',
           'weight' => '-9',
         ),

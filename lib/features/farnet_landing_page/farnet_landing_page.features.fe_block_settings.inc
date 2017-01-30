@@ -89,7 +89,7 @@ function farnet_landing_page_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'At a glance',
+    'title' => 'Who\'s who',
     'visibility' => 0,
   );
 
