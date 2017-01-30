@@ -513,21 +513,21 @@ function farnet_communities_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_community_hidden';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_community_hidden'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_community_private';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_community_private'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_community_public';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_community_public'] = $strongarm;
 
   $strongarm = new stdClass();

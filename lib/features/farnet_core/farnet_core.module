@@ -237,7 +237,7 @@ function farnet_core_block_info_alter(&$blocks, $theme, $code_blocks) {
  * Implements hook_preprocess_block().
  */
 function farnet_core_preprocess_block(&$variables) {
-  if ($variables['block']->module == 'block' && $variables['block']->delta == '1') {
+  if ($variables['block']->module == 'block' && $variables['block']->delta == '12') {
     $variables['block_html_id'] = drupal_html_id('block-quick-links');
   }
 }
@@ -301,6 +301,19 @@ function farnet_core_node_view($node, $view_mode, $langcode) {
         '#markup' => _farnet_core_display_contact_details($node),
         '#weight' => 1000,
       ];
+    }
+  }
+}
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_instances.
+ */
+function farnet_core_field_default_field_instances_alter(&$fields) {
+  foreach ($fields as $field => $info) {
+    if (strpos($field, 'group_content_access') || strpos($field, 'og_group_ref')) {
+      $fields[$field]['display']['default']['type'] = 'hidden';
     }
   }
 }
@@ -476,4 +489,21 @@ function _farnet_core_get_organisations($node) {
 
   // If no flag, return only the node organisations.
   return $node->field_organisations->value();
+}
+
+/**
+ * Implements hook_post_features_revert().
+ */
+function farnet_core_post_features_revert($component) {
+  if ($component === 'variable') {
+    variable_set('node_submitted_page', 0);
+    variable_set('node_submitted_community', 0);
+    variable_set('node_submitted_editorial_team', 0);
+    variable_set('node_submitted_nexteuropa_event', 0);
+    variable_set('node_submitted_nexteuropa_faq', 0);
+    variable_set('node_submitted_nexteuropa_mediagallery', 0);
+    variable_set('node_submitted_nexteuropa_news', 0);
+    variable_set('node_submitted_article', 0);
+    variable_set('node_submitted_simplenews', 0);
+  }
 }
