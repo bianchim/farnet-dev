@@ -10,7 +10,7 @@
  */
 function farnet_pages_node_export_features_default() {
   $node_export = array(
-  'code_string' => 'array(
+    'code_string' => 'array(
   (object) array(
       \'vid\' => \'2\',
       \'uid\' => \'0\',
@@ -2331,6 +2331,6 @@ function farnet_pages_node_export_features_default() {
       \'workbench_moderation_state_new\' => \'published\',
     ),
 )',
-);
+  );
   return $node_export;
 }

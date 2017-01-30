@@ -55,43 +55,55 @@ function farnet_pages_node_export_after_import_alter(&$nodes, $format, $save) {
   foreach ($nodes as $node) {
 
     switch ($node->title) {
-      case 'FARNET at a glance' :
+      case 'FARNET at a glance':
         $node_alias = 'about/farnet-at-a-glance';
         break;
-      case 'CLLD at a glance' :
+
+      case 'CLLD at a glance':
         $node_alias = 'about/clld-at-a-glance';
         break;
-      case 'Who\'s who' :
+
+      case 'Who\'s who':
         $node_alias = 'about/who-is-who';
         break;
-      case 'DG MARE' :
+
+      case 'DG MARE':
         $node_alias = 'about/who-is-who/dg-mare';
         break;
-      case 'FARNET Support Unit' :
+
+      case 'FARNET Support Unit':
         $node_alias = 'about/who-is-who/farnet-support-unit';
         break;
-      case 'FARNET Data' :
+
+      case 'FARNET Data':
         $node_alias = 'about/data';
         break;
-      case 'Glossary' :
+
+      case 'Glossary':
         $node_alias = 'about/glossary';
         break;
-      case 'Social media' :
+
+      case 'Social media':
         $node_alias = 'news-events/social-media';
         break;
-      case 'European overview' :
+
+      case 'European overview':
         $node_alias = 'cooperation/european-overview';
         break;
-      case 'Tools for FLAGs' :
+
+      case 'Tools for FLAGs':
         $node_alias = 'tools/flags';
         break;
-      case 'Tools for Managing Authorities' :
+
+      case 'Tools for Managing Authorities':
         $node_alias = 'tools/managing-authorities';
         break;
-      case 'Lessons from FARNET 1 (2007-2013)' :
+
+      case 'Lessons from FARNET 1 (2007-2013)':
         $node_alias = 'tools/2007-2013-lessons';
         break;
-      case 'FARNET Flash' :
+
+      case 'FARNET Flash':
         $node_alias = 'library/newsletters';
         break;
     }
