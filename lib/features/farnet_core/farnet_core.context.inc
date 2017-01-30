@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_core.context.inc
@@ -39,11 +38,41 @@ function farnet_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
+        'bean-bean-social-links' => array(
+          'module' => 'bean',
+          'delta' => 'bean-social-links',
+          'region' => 'content_right',
+          'weight' => '-8',
+        ),
         'bean-bean-twitter-block' => array(
           'module' => 'bean',
           'delta' => 'bean-twitter-block',
           'region' => 'content_right',
+          'weight' => '-9',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'content_right',
           'weight' => '-10',
+        ),
+        'block-15' => array(
+          'module' => 'block',
+          'delta' => '15',
+          'region' => 'content_bottom',
+          'weight' => '-8',
+        ),
+        'block-16' => array(
+          'module' => 'block',
+          'delta' => '16',
+          'region' => 'content_bottom',
+          'weight' => '-7',
+        ),
+        'block-17' => array(
+          'module' => 'block',
+          'delta' => '17',
+          'region' => 'content_bottom',
+          'weight' => '-6',
         ),
       ),
     ),

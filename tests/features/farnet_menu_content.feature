@@ -26,8 +26,8 @@ Feature: Test the presence of the content menu
       | field_publication_abstract   | Lorem Ipsum     |
       | field_dates_start_end        | 1, 2            |
       | status                       | 1               |
-    Then I should see "Content" in the ".region-sidebar-left" element
-    And I should see "Flag" in the ".region-sidebar-left" element
+    #Then I should see "Content" in the ".region-sidebar-left" element
+    Then I should see "Flag" in the ".region-sidebar-left" element
     And I should see "Description" in the ".region-sidebar-left" element
     And I should see "Project Cost / Funding" in the ".region-sidebar-left" element
     And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
@@ -57,8 +57,8 @@ Feature: Test the presence of the content menu
       | field_gallery         | MediaGallery   |
       | field_term_theme      | Aquaculture    |
       | status                | 1              |
-    Then I should see "Content" in the ".region-sidebar-left" element
-    And I should see "Organisations" in the ".region-sidebar-left" element
+    #Then I should see "Content" in the ".region-sidebar-left" element
+    Then I should see "Organisations" in the ".region-sidebar-left" element
     And I should see "Location" in the ".region-sidebar-left" element
     And I should see "Description" in the ".region-sidebar-left" element
     And I should see "Resources" in the ".region-sidebar-left" element
@@ -91,8 +91,8 @@ Feature: Test the presence of the content menu
       | field_gallery                   | MediaGallery        |
       | field_publication_date          | 1                   |
       | status                          | 1                   |
-    Then I should see "Content" in the ".region-sidebar-left" element
-    And I should see "Quote" in the ".region-sidebar-left" element
+    #Then I should see "Content" in the ".region-sidebar-left" element
+    Then I should see "Quote" in the ".region-sidebar-left" element
     And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
     And I should see "Funding" in the ".region-sidebar-left" element
     And I should see "Project information" in the ".region-sidebar-left" element
@@ -171,8 +171,8 @@ Feature: Test the presence of the content menu
       | field_key_document_label | document pdf |
       | field_document           | behatTestPdf |
     And I reload the page
-    Then I should see "Content" in the ".region-sidebar-left" element
-    And I should see "CLLD Programme" in the ".region-sidebar-left" element
+    #Then I should see "Content" in the ".region-sidebar-left" element
+    Then I should see "CLLD Programme" in the ".region-sidebar-left" element
     And I should see "CLLD Budget" in the ".region-sidebar-left" element
     And I should see "Areas" in the ".region-sidebar-left" element
     And I should see "National Network" in the ".region-sidebar-left" element

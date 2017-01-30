@@ -15,7 +15,6 @@ Feature: Publication content type
       | status                     | 1                                                                     |
     Then I should see the heading "EC decides tax advantages for Fiat are illegal"
     And I should see the text "Magazines Commissioner states tax rulings are not in line body."
-    And I should see the text "Published by Anonymous"
 
   @api
   Scenario: Create a publication with publication type Guides and test view guides
