@@ -261,11 +261,6 @@ function farnet_preprocess_field(&$variables, $hook) {
     $variables['label_hidden'] = TRUE;
   }
 
-  // Format field field_type_of_area.
-  elseif ($variables['element']['#field_name'] == 'field_type_of_area') {
-    dpm($variables);
-  }
-
   // Flag Stats.
   elseif ($variables['element']['#field_name'] == 'field_ff_population') {
     $variables['suffix'] = '</div>';
