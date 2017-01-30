@@ -1,10 +1,10 @@
 <?php
+
 /**
- * @file field--taxonomy-term-reference.tpl.php
+ * @file
  * Template implementation to display the value of a taxonomy term reference field.
  *
  * @see theme_field()
- *
  * Available variables:
  * - $items: An array of field values. Use render() to output them.
  * - $label: The item label.
@@ -51,4 +51,4 @@
       </li>
   <?php endforeach; ?>
   </ul>
-</div><!-- /field terms -->
+</div>
