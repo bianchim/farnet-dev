@@ -14,9 +14,6 @@
 
 <div class="content clearfix">
 
-  <?php dpm($content); ?>
-
-
   <?php if (!empty($content['group_short_story_content'])) : ?>
     <div id="group-short-story-content" class="group-short-story-content field-group-tab">
       <!--h3 class="fr-heading"><span>Content</span></h3 -->
@@ -170,23 +167,6 @@
             <td class="multi-country"><?php print render($content['group_short_story_taxonomy']['field_term_theme']); ?></td>
           </tr>
         <?php endif; ?>
-
-        <?php
-        /*
-        <?php if (!empty($content['group_gp_short_story_info']['field_organisations'])) : ?>
-          <tr>
-            <th scope="row"><?php print $content['group_gp_short_story_info']['field_organisations']['#title']; ?></th>
-            <td><?php print render($content['group_gp_short_story_info']['field_organisations']); ?></td>
-          </tr>
-        <?php endif; ?>
-        <?php if (!empty($content['group_gp_short_story_info']['field_collection_region'])) : ?>
-          <tr>
-            <th scope="row"><?php print $content['group_gp_short_story_info']['field_collection_region']['#title']; ?></th>
-            <td><?php print render($content['group_gp_short_story_info']['field_collection_region']); ?></td>
-          </tr>
-        <?php endif; ?>
-        */
-        ?>
         </tbody>
       </table>
     </div>
