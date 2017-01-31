@@ -392,6 +392,20 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       $element['field_ff_number_staff']['#suffix'] = $suffix;
     }
   }
+  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-practices') {
+    // Check related view results.
+    $results = views_get_view_result('farnet_gp_by_flag_display', "block_gp_by_flag", $element['field_view_good_practices']['#object']->nid);
+    if (count($results) == 0) {
+      hide($element);
+    }
+  }
+  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-ideas') {
+    // Check related view results.
+    $results = views_get_view_result('cooperation_idea_by_flag', "block_idea_by_flag", $element['field_view_cooperation_ideas']['#object']->nid);
+    if (count($results) == 0) {
+      hide($element);
+    }
+  }
 }
 
 /**
