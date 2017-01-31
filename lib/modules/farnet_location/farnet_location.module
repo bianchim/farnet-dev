@@ -317,7 +317,7 @@ function farnet_location_node_submit($node, $form, &$form_state) {
                   "label": "FLAG Factsheet",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/on-the-ground/map/factsheet_flag/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/maps/factsheet_flag/' . $country_id . '"
                   ]
                 }
               ]
@@ -365,14 +365,14 @@ function farnet_location_node_submit($node, $form, &$form_state) {
                   "label": "FLAG Factsheet",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/on-the-ground/map/factsheet_flag/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/maps/factsheet_flag/' . $country_id . '"
                   ]
                 },
                 {
                   "label": "GP Method",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/on-the-ground/map/gp_method/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/maps/gp_method/' . $country_id . '"
                   ],
                   "options": {
                     "color": "green"
@@ -382,7 +382,7 @@ function farnet_location_node_submit($node, $form, &$form_state) {
                   "label": "GP Project",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/on-the-ground/map/gp_project/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/maps/gp_project/' . $country_id . '"
                   ],
                   "options": {
                     "color": "red"
@@ -392,7 +392,7 @@ function farnet_location_node_submit($node, $form, &$form_state) {
                   "label": "GP Short Story",
                   "checked" : true,
                   "markers": [
-                    "' . $base_url . '/on-the-ground/map/gp_short_story/' . $country_id . '"
+                    "' . $base_url . '/on-the-ground/maps/gp_short_story/' . $country_id . '"
                   ],
                   "options": {
                     "color": "yellow"

@@ -418,7 +418,7 @@ function farnet_landing_page_node_export_features_default() {
       \'path\' => array(
         \'pid\' => \'332\',
         \'source\' => \'node/14\',
-        \'alias\' => \'themes-0\',
+        \'alias\' => \'themes\',
         \'language\' => \'und\',
       ),
       \'cid\' => 0,

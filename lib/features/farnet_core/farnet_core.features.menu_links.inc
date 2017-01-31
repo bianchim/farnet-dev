@@ -49,7 +49,7 @@ function farnet_core_menu_default_menu_links() {
   $menu_links['main-menu_adding-value-to-fisheries:themes/adding-value-fisheries'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'themes/adding-value-fisheries',
-    'router_path' => 'themes',
+    'router_path' => 'themes/adding-value-fisheries',
     'link_title' => 'Adding value to fisheries',
     'options' => array(
       'alter' => TRUE,
@@ -81,7 +81,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_themes:themes',
+    'parent_identifier' => 'main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9',
   );
   // Exported menu link: main-menu_aquaculture:themes/adding-value-fisheries/aquaculture.
   $menu_links['main-menu_aquaculture:themes/adding-value-fisheries/aquaculture'] = array(
@@ -273,15 +273,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
-  // Exported menu link: main-menu_calendar:<front>.
-  $menu_links['main-menu_calendar:<front>'] = array(
+  // Exported menu link: main-menu_calendar:news-events/calendar.
+  $menu_links['main-menu_calendar:news-events/calendar'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'news-events/calendar',
+    'router_path' => 'news-events/calendar',
     'link_title' => 'Calendar',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_calendar:<front>',
+      'identifier' => 'main-menu_calendar:news-events/calendar',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -501,15 +501,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_events:news-events/events',
   );
-  // Exported menu link: main-menu_contact-us:<front>.
-  $menu_links['main-menu_contact-us:<front>'] = array(
+  // Exported menu link: main-menu_contact-us:about/contact-us.
+  $menu_links['main-menu_contact-us:about/contact-us'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'contact',
     'router_path' => '',
     'link_title' => 'Contact us',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_contact-us:<front>',
+      'identifier' => 'main-menu_contact-us:about/contact-us',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -917,7 +917,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_themes:themes',
+    'parent_identifier' => 'main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9',
   );
   // Exported menu link: main-menu_education-and-training:themes/society-and-culture/education-and-training.
   $menu_links['main-menu_education-and-training:themes/society-and-culture/education-and-training'] = array(
@@ -1107,17 +1107,17 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_themes:themes',
+    'parent_identifier' => 'main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9',
   );
-  // Exported menu link: main-menu_european-overview:<front>.
-  $menu_links['main-menu_european-overview:<front>'] = array(
+  // Exported menu link: main-menu_european-overview:TOKENUUID_45a49ccb-a3bf-42e5-b6e9-0fa971c31e5f.
+  $menu_links['main-menu_european-overview:TOKENUUID_45a49ccb-a3bf-42e5-b6e9-0fa971c31e5f'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'TOKENUUID_45a49ccb-a3bf-42e5-b6e9-0fa971c31e5f',
+    'router_path' => 'node/%',
     'link_title' => 'European overview',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_european-overview:<front>',
+      'identifier' => 'main-menu_european-overview:TOKENUUID_45a49ccb-a3bf-42e5-b6e9-0fa971c31e5f',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -1261,11 +1261,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_about:TOKENUUID_0d99b021-5fc6-44ea-8698-228e4eac3826',
   );
-  // Exported menu link: main-menu_farnet-flash:<front>.
-  $menu_links['main-menu_farnet-flash:<front>'] = array(
+  // Exported menu link: main-menu_farnet-flash:TOKENUUID_db00e3c2-a5d5-4678-b297-bc235890a2f6.
+  $menu_links['main-menu_farnet-flash:TOKENUUID_db00e3c2-a5d5-4678-b297-bc235890a2f6'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'TOKENUUID_db00e3c2-a5d5-4678-b297-bc235890a2f6',
+    'router_path' => 'node/%',
     'link_title' => 'FARNET Flash',
     'options' => array(
       'attributes' => array(
@@ -1286,7 +1286,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_farnet-flash:<front>',
+      'identifier' => 'main-menu_farnet-flash:TOKENUUID_db00e3c2-a5d5-4678-b297-bc235890a2f6',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1337,10 +1337,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_news:news-events/news',
   );
-  // Exported menu link: main-menu_farnet-support-unit:83c03175-7f0f-46a8-bb94-68c149e0545b.
-  $menu_links['main-menu_farnet-support-unit:83c03175-7f0f-46a8-bb94-68c149e0545b'] = array(
+  
+  // Exported menu link: main-menu_farnet-support-unit:TOKENUUID_83c03175-7f0f-46a8-bb94-68c149e0545b.
+  $menu_links['main-menu_farnet-support-unit:TOKENUUID_83c03175-7f0f-46a8-bb94-68c149e0545b'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'TOKENUUID_',
+    'link_path' => 'TOKENUUID_83c03175-7f0f-46a8-bb94-68c149e0545b',
     'router_path' => '',
     'link_title' => 'FARNET Support Unit',
     'options' => array(
@@ -1362,7 +1363,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_farnet-support-unit:83c03175-7f0f-46a8-bb94-68c149e0545b',
+      'identifier' => 'main-menu_farnet-support-unit:TOKENUUID_83c03175-7f0f-46a8-bb94-68c149e0545b',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1735,7 +1736,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_themes:themes',
+    'parent_identifier' => 'main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9',
   );
   // Exported menu link: main-menu_home:<front>.
   $menu_links['main-menu_home:<front>'] = array(
@@ -1887,11 +1888,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_adding-value-to-fisheries:themes/adding-value-fisheries',
   );
-  // Exported menu link: main-menu_lessons-from-farnet-1-2007-2013:<front>.
-  $menu_links['main-menu_lessons-from-farnet-1-2007-2013:<front>'] = array(
+  // Exported menu link: main-menu_lessons-from-farnet-1-2007-2013:TOKENUUID_919d0192-5620-4ebc-a23e-6a1be22c0bfe.
+  $menu_links['main-menu_lessons-from-farnet-1-2007-2013:TOKENUUID_919d0192-5620-4ebc-a23e-6a1be22c0bfe'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'TOKENUUID_919d0192-5620-4ebc-a23e-6a1be22c0bfe',
+    'router_path' => 'node/%',
     'link_title' => 'Lessons from FARNET 1 (2007-2013)',
     'options' => array(
       'attributes' => array(
@@ -1912,7 +1913,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_lessons-from-farnet-1-2007-2013:<front>',
+      'identifier' => 'main-menu_lessons-from-farnet-1-2007-2013:TOKENUUID_919d0192-5620-4ebc-a23e-6a1be22c0bfe',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -1997,15 +1998,15 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_library:TOKENUUID_b324ae60-961c-4363-bfde-1ff24f566b30',
   );
-  // Exported menu link: main-menu_managing-authorities:news-events/events/ma-nn.
-  $menu_links['main-menu_managing-authorities:news-events/events/ma-nn'] = array(
+  // Exported menu link: main-menu_managing-authorities:news-events/events/managing-authorities.
+  $menu_links['main-menu_managing-authorities:news-events/events/managing-authorities'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'news-events/events/ma-nn',
-    'router_path' => 'news-events/events/ma-nn',
+    'link_path' => 'news-events/events/managing-authorities',
+    'router_path' => 'news-events/events/managing-authorities',
     'link_title' => 'Managing authorities',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_managing-authorities:news-events/events/ma-nn',
+      'identifier' => 'main-menu_managing-authorities:news-events/events/managing-authorities',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -2035,11 +2036,11 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_events:news-events/events',
   );
-  // Exported menu link: main-menu_maps:on-the-ground/map.
-  $menu_links['main-menu_maps:on-the-ground/map'] = array(
+  // Exported menu link: main-menu_maps:on-the-ground/maps.
+  $menu_links['main-menu_maps:on-the-ground/maps'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'on-the-ground/map',
-    'router_path' => 'on-the-ground/map',
+    'link_path' => 'on-the-ground/maps',
+    'router_path' => 'on-the-ground/maps',
     'link_title' => 'Maps',
     'options' => array(
       'attributes' => array(
@@ -2060,7 +2061,7 @@ function farnet_core_menu_default_menu_links() {
         'style' => '',
       ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_maps:on-the-ground/map',
+      'identifier' => 'main-menu_maps:on-the-ground/maps',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -2980,7 +2981,7 @@ function farnet_core_menu_default_menu_links() {
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
-    'parent_identifier' => 'main-menu_themes:themes',
+    'parent_identifier' => 'main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9',
   );
   // Exported menu link: main-menu_subscribe:<front>.
   $menu_links['main-menu_subscribe:<front>'] = array(
@@ -3016,15 +3017,15 @@ function farnet_core_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_themes:themes.
-  $menu_links['main-menu_themes:themes'] = array(
+  // Exported menu link: main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9.
+  $menu_links['main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'themes',
-    'router_path' => 'themes',
+    'link_path' => 'TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9',
+    'router_path' => 'node/%',
     'link_title' => 'Themes',
     'options' => array(
       'alter' => TRUE,
-      'identifier' => 'main-menu_themes:themes',
+      'identifier' => 'main-menu_themes:TOKENUUID_12ccea54-e77b-4e69-8c44-22bfdb4362b9',
       'attributes' => array(
         'data-display-title' => 1,
         'data-hide-children' => 0,
@@ -3057,7 +3058,7 @@ function farnet_core_menu_default_menu_links() {
   $menu_links['main-menu_tools-for-flags:TOKENUUID_cb73e428-1827-4a3e-bcfd-57c6ffd229ca'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'TOKENUUID_cb73e428-1827-4a3e-bcfd-57c6ffd229ca',
-    'router_path' => '',
+    'router_path' => 'node/%',
     'link_title' => 'Tools for FLAGs',
     'options' => array(
       'alter' => TRUE,
@@ -3376,7 +3377,7 @@ function farnet_core_menu_default_menu_links() {
         'data-hide-children' => 0,
         'id' => '',
         'class' => 'fr-megamenu-item fr-megamenu-item--list',
-        'data-remove-class' => 1,
+        'data-remove-class' => 0,
         'style' => '',
       ),
     ),
