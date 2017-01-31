@@ -6,56 +6,63 @@
  */
 ?>
 
+<h2><?php print render($content['group_short_story_content']['title_field']); ?></h2>
+<?php if (!empty($content['group_gp_short_story_info']['field_term_country'])) : ?>
+  <?php print render($content['group_gp_short_story_info']['field_term_country']); ?>
+<?php endif; ?>
+
+
 <div class="content clearfix">
+
+  <?php dpm($content); ?>
+
+
   <?php if (!empty($content['group_short_story_content'])) : ?>
-    <?php print render($content['group_short_story_content']['#prefix']); ?>
+    <div id="group-short-story-content" class="group-short-story-content field-group-tab">
+      <!--h3 class="fr-heading"><span>Content</span></h3 -->
       <?php if (!empty($content['group_short_story_content']['field_id_text'])) : ?>
         <?php print render($content['group_short_story_content']['field_id_text']); ?>
       <?php endif; ?>
-      <?php if (!empty($content['group_short_story_content']['field_ne_body'])) : ?>
-        <?php print render($content['group_short_story_content']['field_ne_body']); ?>
+      <?php if (!empty($content['group_short_story_content']['field_farnet_abstract'])) : ?>
+        <?php print render($content['group_short_story_content']['field_farnet_abstract']); ?>
       <?php endif; ?>
       <?php if (!empty($content['group_short_story_content']['field_website'])) : ?>
         <?php print render($content['group_short_story_content']['field_website']); ?>
       <?php endif; ?>
-      <?php print render($content['group_short_story_content']['#suffix']); ?>
-    <?php endif; ?>
+    </div>
+  <?php endif; ?>
 
-    <?php if (!empty($content['group_short_story_quote'])) : ?>
-      <?php print render($content['group_short_story_quote']['#prefix']); ?>
-        <div class="farnet-quote">
-          <?php if (!empty($content['group_short_story_quote']['field_picture'])) : ?>
-            <div class="farnet-quote__illustration">
-              <div class="farnet-quote__picture">
-                <?php print render($content['group_short_story_quote']['field_picture']); ?>
-              </div>
+  <?php if (!empty($content['group_short_story_quote'])) : ?>
+    <div id="group-short-story-quote" class="group_short_story_quote  field-group-tab">
+      <div class="farnet-quote">
+        <?php if (!empty($content['group_short_story_quote']['field_picture'])) : ?>
+          <div class="farnet-quote__illustration">
+            <div class="farnet-quote__picture">
+              <?php print render($content['group_short_story_quote']['field_picture']); ?>
             </div>
-            <?php endif; ?>
-            <blockquote class="farnet-quote__main">
-              <?php if (!empty($content['group_short_story_quote']['field_quote_text'])) : ?>
-                <div class="farnet-quote__citation">
-                  <?php print render($content['group_short_story_quote']['field_quote_text']); ?>
-                </div>
-                <?php endif; ?>
-                <?php if (!empty($content['group_short_story_quote']['field_quote_author'])) : ?>
-                  <footer class="farnet-quote__author">
-                    <?php print render($content['group_short_story_quote']['field_quote_author']); ?>
-                  </footer>
-               <?php endif; ?>
-            </blockquote>
-        </div>
-      <?php print render($content['group_short_story_quote']['#suffix']); ?>
-    <?php endif; ?>
-
-    <?php if (!empty($content['group_short_story_timeframe'])) : ?>
-      <?php print render($content['group_short_story_timeframe']['#prefix']); ?>
-        <?php if (!empty($content['group_short_story_timeframe']['field_dates_start_end'])) : ?>
-          <?php print render($content['group_short_story_timeframe']['field_dates_start_end']); ?>
+          </div>
         <?php endif; ?>
-      <?php print render($content['group_short_story_timeframe']['#suffix']); ?>
-    <?php endif; ?>
+          <blockquote class="farnet-quote__main">
+            <?php if (!empty($content['group_short_story_quote']['field_quote_text'])) : ?>
+              <div class="farnet-quote__citation">
+                <?php print render($content['group_short_story_quote']['field_quote_text']); ?>
+              </div>
+              <?php endif; ?>
+              <?php if (!empty($content['group_short_story_quote']['field_quote_author'])) : ?>
+                <footer class="farnet-quote__author">
+                  <?php print render($content['group_short_story_quote']['field_quote_author']); ?>
+                </footer>
+             <?php endif; ?>
+          </blockquote>
+      </div>
+    </div>
+  <?php endif; ?>
 
-    <?php if (!empty($content['group_short_story_funding'])) : ?>
+  <?php if (!empty($content['group_short_story_content']['field_ne_body'])) : ?>
+    <?php print render($content['group_short_story_content']['field_ne_body']); ?>
+  <?php endif; ?>
+
+  <?php if (!empty($content['group_short_story_funding'])) : ?>
       <?php print render($content['group_short_story_funding']['#prefix']); ?>
         <div class="highlight--background u-p-1em">
           <table class="table table-responsive table-blue table--no-borders table-tbody--horizontal-borders">
@@ -70,6 +77,7 @@
               </tr>
             </thead>
             <tbody class="u-bg-white">
+              <?php if (!empty($content['group_short_story_funding']['field_eu_contribution'])) : ?>
               <tr>
                 <td><?php print $content['group_short_story_funding']['field_eu_contribution']['#title']; ?></td>
                 <td>
@@ -93,8 +101,10 @@
                   </ul>
                 </td>
               </tr>
+              <?php endif; ?>
+              <?php if (!empty($content['group_short_story_funding']['field_other_public_contribution'])) : ?>
               <tr>
-                <td><?php print $content['group_short_story_funding']['field_other_public_contribution']['#title']; ?>Other public contribution</td>
+                <td><?php print $content['group_short_story_funding']['field_other_public_contribution']['#title']; ?></td>
                 <td>
                   <?php print number_format($content['group_short_story_funding']['field_other_public_contribution']['0']['#markup'], 0, '.', ' '); ?> EUR
                   <ul class="u-lst-none highlight--background">
@@ -110,10 +120,13 @@
                   </ul>
                 </td>
               </tr>
+              <?php endif; ?>
+              <?php if (!empty($content['group_short_story_funding']['field_private_contribution'])) : ?>
               <tr>
                 <td><?php print $content['group_short_story_funding']['field_private_contribution']['#title']; ?></td>
                 <td><?php print number_format($content['group_short_story_funding']['field_private_contribution']['0']['#markup'], 0, '.', ' '); ?> EUR</td>
               </tr>
+              <?php endif; ?>
             </tbody>
             <?php if (!empty($content['group_short_story_funding']['field_funding_details'])) : ?>
               <tfoot>
@@ -129,30 +142,58 @@
       <?php print render($content['group_short_story_funding']['#suffix']); ?>
     <?php endif; ?>
 
-    <?php if (!empty($content['group_gp_short_story_info'])) : ?>
-      <?php print render($content['group_gp_short_story_info']['#prefix']); ?>
-        <table class="table table-responsive table-blue table--white-borders">
-          <tbody>
-            <tr>
-              <th scope="row"><?php print $content['group_gp_short_story_info']['field_term_country']['#title']; ?></th>
-              <td class="multi-country"><?php print render($content['group_gp_short_story_info']['field_term_country']); ?></td>
-            </tr>
-            <tr>
-              <th scope="row"><?php print $content['group_gp_short_story_info']['field_organisations']['#title']; ?></th>
-              <td><?php print render($content['group_gp_short_story_info']['field_organisations']); ?></td>
-            </tr>
-            <tr>
-              <th scope="row"><?php print $content['group_gp_short_story_info']['field_collection_region']['#title']; ?></th>
-              <td><?php print render($content['group_gp_short_story_info']['field_collection_region']); ?></td>
-            </tr>
-          </tbody>
-        </table>
-      <?php print render($content['group_gp_short_story_info']['#suffix']); ?>
-    <?php endif; ?>
+  <?php if (!empty($content['group_gp_short_story_info'])) : ?>
+    <?php print render($content['group_gp_short_story_info']['#prefix']); ?>
+      <table class="table table-responsive table-blue table--white-borders">
+        <tbody>
+        <?php if (!empty($content['group_gp_short_story_info']['field_dates_start_end'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_gp_short_story_info']['field_dates_start_end']['#title']; ?></th>
+            <td class="multi-country"><?php print render($content['group_gp_short_story_info']['field_dates_start_end']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['group_short_story_taxonomy']['field_sea_basins'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_short_story_taxonomy']['field_sea_basins']['#title']; ?></th>
+            <td class="multi-country"><?php print render($content['group_short_story_taxonomy']['field_sea_basins']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['group_short_story_taxonomy']['field_type_of_area'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_short_story_taxonomy']['field_type_of_area']['#title']; ?></th>
+            <td class="multi-country"><?php print render($content['group_short_story_taxonomy']['field_type_of_area']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['group_short_story_taxonomy']['field_term_theme'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_short_story_taxonomy']['field_term_theme']['#title']; ?></th>
+            <td class="multi-country"><?php print render($content['group_short_story_taxonomy']['field_term_theme']); ?></td>
+          </tr>
+        <?php endif; ?>
 
-    <div class="link-wrapper right"></div>
+        <?php
+        /*
+        <?php if (!empty($content['group_gp_short_story_info']['field_organisations'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_gp_short_story_info']['field_organisations']['#title']; ?></th>
+            <td><?php print render($content['group_gp_short_story_info']['field_organisations']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['group_gp_short_story_info']['field_collection_region'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_gp_short_story_info']['field_collection_region']['#title']; ?></th>
+            <td><?php print render($content['group_gp_short_story_info']['field_collection_region']); ?></td>
+          </tr>
+        <?php endif; ?>
+        */
+        ?>
+        </tbody>
+      </table>
+    </div>
+  <?php endif; ?>
 
-    <?php print render($content['group_short_story_taxonomy']); ?>
-    <?php print render($content['group_short_story_media']); ?>
+  <div class="link-wrapper right"></div>
+
+  <?php print render($content['group_short_story_media']); ?>
 
 </div>

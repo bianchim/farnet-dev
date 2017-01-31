@@ -44,8 +44,24 @@
   margin-left: 15px;
 }
 
-.multi-country ul {
+.multi-country div {
+  margin: 0;
+  padding: 0;
+}
+
+.multi-country div ul {
   list-style-type: none;
+  /*display: inline;*/
+  margin: 0;
+  padding: 0;
+  /*padding: 1em;*/
+  display:inline-block;
+}
+
+.multi-country div ul li{
+  display: inline;
+  margin: 0;
+  padding-left:5px;
 }
 
 #layout-body .affix-bottom {
