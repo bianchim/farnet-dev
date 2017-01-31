@@ -84,32 +84,6 @@ function farnet_preprocess_block(&$vars) {
       $vars['elements']['#block']->subject = NULL;
       $vars['content'] = drupal_substr($vars['content'], strpos($vars['content'], '<ul'));
       break;
-
-    // News landing page.
-    case 'views-5a0c0d1995c4bd498fa2422a5992b6e7':
-    case 'views-8d556d2632413042cb393089786bb956':
-      // On the ground landing page.
-    case 'views-7dabd414d359435e91fad754dab94e7f':
-    case 'views-79352059f92f38e8b7c026bd2e334732':
-    case 'block-1':
-    case 'block-2':
-      // Library landing page.
-    case 'views-43942680651afca7750d9faac6513a16':
-    case 'views-e1afc8ac226e4752516e50409df8f248':
-    case 'views-e3e941f8456604ac95162b631eb95d94':
-      // Tools landing page.
-    case 'block-3':
-    case 'block-4':
-    case 'block-5':
-    case 'block-6':
-      // Themes landing page.
-    case 'block-7':
-    case 'block-8':
-    case 'block-9':
-    case 'block-10':
-    case 'block-11':
-      $vars['classes_array'][] = 'col-lg-6 col-md-6 col-sm-6 col-xs-12';
-      break;
   }
 }
 
@@ -450,4 +424,25 @@ function farnet_social_media_links_platform(&$variables) {
     $output .= l($title, $variables['link'], $options);
   }
   return $output;
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function farnet_preprocess_page(&$variables) {
+  // Format regions.
+  $regions = $variables['regions'];
+  $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
+
+  $cols = $variables['cols'];
+  $cols['landing_content'] = array(
+    'lg' => 12 - $cols['content_right']['lg'],
+    'md' => 12 - $cols['content_right']['md'],
+    'sm' => 12,
+    'xs' => 12,
+  );
+
+  // Add variables to template file.
+  $variables['regions'] = $regions;
+  $variables['cols'] = $cols;
 }

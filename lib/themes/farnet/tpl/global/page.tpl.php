@@ -225,6 +225,11 @@ global $base_url;
             <?php print $regions['content']; ?>
             </div>
 
+            <div class="col-lg-<?php print $cols['landing_content']['lg']; ?> col-md-<?php print $cols['landing_content']['md']; ?> col-sm-<?php print $cols['landing_content']['sm']; ?> col-xs-<?php print $cols['landing_content']['xs']; ?>">
+              <?php print $regions['landing_content']; ?>
+            </div>
+
+
             <div class="col-lg-<?php print $cols['content_right']['lg']; ?> col-md-<?php print $cols['content_right']['md']; ?> col-sm-<?php print $cols['content_right']['sm']; ?> col-xs-<?php print $cols['content_right']['xs']; ?>">
             <?php print $regions['content_right']; ?>
             </div>
