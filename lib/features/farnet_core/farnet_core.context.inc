@@ -29,7 +29,7 @@ function farnet_core_context_default_contexts() {
         'views-58e5c6f1d271df53704192d4182faec3' => array(
           'module' => 'views',
           'delta' => '58e5c6f1d271df53704192d4182faec3',
-          'region' => 'content_top',
+          'region' => 'content',
           'weight' => '-10',
         ),
         'views-a08df1144b562a45ee98fd5815edcc6b' => array(
