@@ -355,30 +355,36 @@ function _farnet_core_display_contact_details($node) {
   // Contact details cases.
   switch ($node->type->value()) {
     case 'cooperation_call':
-      $organisations = $node->field_organisations->value();
+      $organisations = array( 'organisation' => $node->field_organisations->value()[0] );
       $contact_type = ['Call contact'];
+      $contact_label = array('organisation' => 'Organisation');
       break;
 
     case 'cooperation_idea':
       $organisations = _farnet_core_get_organisations($node);
       $contact_type = ['Manager', 'Cooperation contact'];
+      $contact_label = array('flag' => 'FLAG', 'organisation' => 'Organisation');
       break;
 
     case 'factsheet_flag':
-      $organisations = $node->field_organisations->value();
+      $organisations = array( 'organisation' => $node->field_organisations->value()[0] );
       $contact_type = ['President', 'Manager'];
+      $contact_label = array('organisation' => 'Organisation');
       break;
 
     case 'factsheet_country':
-      $organisations = $node->field_organisations->value();
+      $organisations = array( 'organisation' => $node->field_organisations->value()[0] );
       $contact_type = ['Main contact'];
+      $contact_label = array('organisation' => 'Managing Authority');
       break;
 
     case 'gp_project':
+      $contact_label = array('flag' => 'FLAG', 'organisation' => 'Beneficiary');
     case 'gp_method':
     case 'gp_short_story':
       $organisations = _farnet_core_get_organisations($node);
       $contact_type = ['Manager', 'Project promoter'];
+      $contact_label = array('flag' => 'FLAG', 'organisation' => 'Organisation');
       break;
 
     // Default should never trigger, safety exit here.
@@ -386,8 +392,7 @@ function _farnet_core_display_contact_details($node) {
       return '';
   }
 
-  foreach ($organisations as $organisation) {
-
+  foreach ($organisations as $org_id => $organisation) {
     // Load the organisations.
     $node = entity_metadata_wrapper('node', $organisation);
     $fc_contacts = $node->field_organisation_contacts->value();
@@ -397,10 +402,10 @@ function _farnet_core_display_contact_details($node) {
       $fc_contact = entity_metadata_wrapper('field_collection_item', $fc_contact);
 
       $position = $fc_contact->field_organisation_position->value();
-
       if (empty(array_intersect($contact_type, $position))) {
         continue;
       }
+      $position_label =  t($contact_label[$org_id]);
 
       // Before processing the first contact, add the wrappers.
       if ($no_value) {
@@ -425,7 +430,7 @@ function _farnet_core_display_contact_details($node) {
         'field_user_country' => FALSE,
       ];
 
-      $output .= '<div class="field-group-tab"><h3><span>' . reset($position) . '</span></h3>';
+      $output .= '<div class="field-group-tab"><h3><span>' . $position_label . '</span></h3>';
 
       $info_contact = $contact->getPropertyInfo();
 
@@ -484,11 +489,15 @@ function _farnet_core_get_organisations($node) {
     $flag = reset($flag);
     $flag = entity_metadata_wrapper('node', $flag);
     // Return flag and current node organisations.
-    return array_merge($flag->field_organisations->value(), $node->field_organisations->value());
-  }
+    //return array_merge($flag->field_organisations->value(), $node->field_organisations->value());
+    return array(
+      'flag' => $flag->field_organisations->value()[0],
+      'organisation' => $node->field_organisations->value()[0],
+    );
 
+  }
   // If no flag, return only the node organisations.
-  return $node->field_organisations->value();
+  return array('organisation' => $node->field_organisations->value()[0]);
 }
 
 /**
