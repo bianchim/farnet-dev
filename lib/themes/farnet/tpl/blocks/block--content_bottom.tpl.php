@@ -44,20 +44,37 @@
  * @ingroup themeable
  */
 ?>
-<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> col-md-4 col-sm-6">
+<?php /* dpm($block_html_id); */ ?>
+<?php /* dpm($block_id); */ ?>
 
-  <?php print render($title_prefix); ?>
-  <?php if ($title && $block->subject): ?>
-    <div class="title">
-      <?php print $block->subject ?>
+<?php if (($block_html_id == 'block-block-15') || ($block_html_id == 'block-block-16') || ($block_html_id == 'block-block-17')): ?>
+  <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> col-md-4 col-sm-6">
+    <?php print render($title_prefix); ?>
+    <?php if ($title && $block->subject): ?>
+      <div class="title">
+        <?php print $block->subject ?>
+      </div>
+    <?php endif;?>
+    <?php print render($title_suffix); ?>
+    <div class="content"<?php print $content_attributes; ?>>
+      <?php
+      print $content;
+      ?>
     </div>
-  <?php endif;?>
-  <?php print render($title_suffix); ?>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-    print $content;
-    ?>
   </div>
-
-</div>
+<?php else: ?>
+  <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> <?php print ($panel ? 'panel panel-default clearfix' : ''); ?>">
+    <?php print render($title_prefix); ?>
+    <?php if ($title && $block->subject): ?>
+      <div class="<?php print ($panel ? 'panel-heading' : ''); ?>">
+        <?php print $block->subject ?>
+      </div>
+    <?php endif;?>
+    <?php print render($title_suffix); ?>
+    <div class="<?php print ($panel && $body_class ? 'panel-body' : ''); ?> content"<?php print $content_attributes; ?>>
+      <?php
+      print $content;
+      ?>
+    </div>
+  </div>
+<?php endif; ?>
