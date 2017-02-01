@@ -1,0 +1,586 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet organisation import module.
+ */
+
+include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_organisation_import_menu() {
+  $items['admin/content/import_organisations'] = array(
+    'title' => 'Import Organisations',
+    'description' => 'Import farnet organisations',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('farnet_organisation_import_confirm'),
+    'access arguments' => array('administer content'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['batch_import_to_db'] = array(
+    'page callback' => '_farnet_organisation_import_save_to_db',
+    'access arguments' => array('administer content'),
+  );
+
+  $items['batch_import_from_db'] = array(
+    'page callback' => '_farnet_organisation_import_save_from_db',
+    'access arguments' => array('administer content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Form for import confirmation.
+ */
+function farnet_organisation_import_confirm($form, &$form_state) {
+
+  $form['confirm_note'] = [
+    '#markup' => '<span>' . t('Note : files must be placed inside the <b>csv</b> folder as <b>organisations.csv</b> and <b>contacts.csv</b> in the <b>farnet organisation import</b> module folder') . '</span>',
+    '#suffix' => '<br />',
+  ];
+
+  $form['import_to_db'] = [
+    '#type' => 'fieldset',
+    '#title' => t('import to database'),
+    '#weight' => 0,
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  ];
+
+  $form['import_to_db']['confirm_text'] = [
+    '#markup' => '<h4>' . t('Import organisation and contact info to database from csv file ?') . '</h4>',
+  ];
+
+  $form['import_to_db']['confirm'] = [
+    '#type' => 'submit',
+    '#value' => t('Import'),
+    '#submit' => ['_farnet_organisation_import_import_to_db'],
+  ];
+
+  $form['import_from_db'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Extract and save from database'),
+    '#weight' => 1,
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  ];
+
+  $form['import_from_db']['confirm_text'] = [
+    '#markup' => '<h4>' . t('Save database content to Drupal content ?') . '</h4>',
+  ];
+
+  $form['import_from_db']['confirm'] = [
+    '#type' => 'submit',
+    '#value' => t('Save'),
+    '#submit' => ['_farnet_organisation_import_import_from_db'],
+  ];
+
+  return $form;
+}
+
+/**
+ * Save information from files to the database.
+ */
+function _farnet_organisation_import_import_to_db($form, &$form_state) {
+  drupal_goto('batch_import_to_db');
+}
+
+/**
+ * Save the information from database as Drupal content.
+ */
+function _farnet_organisation_import_import_from_db($form, &$form_state) {
+  drupal_goto('batch_import_from_db');
+}
+
+/**
+ * Create batch for import from CSV file to database.
+ */
+function _farnet_organisation_import_save_to_db() {
+  $operations = [];
+
+  // Get csv files path.
+  $csv_contact = drupal_get_path('module', 'farnet_organisation_import') . '/csv/contacts.csv';
+  $csv_orga = drupal_get_path('module', 'farnet_organisation_import') . '/csv/organisations.csv';
+  $csv_link = drupal_get_path('module', 'farnet_organisation_import') . '/csv/contact_link.csv';
+
+  // Try to open files.
+  $handle_contact = FALSE;
+  $handle_orga = FALSE;
+
+  try {
+    if (!file_exists($csv_contact) || !file_exists($csv_orga) || !file_exists($csv_link)) {
+      throw new Exception(t('File not found.'));
+    }
+
+    $handle_contact = fopen($csv_contact, "r");
+    $handle_orga = fopen($csv_orga, "r");
+    $handle_link = fopen($csv_link, "r");
+
+    if (!$handle_orga || !$handle_contact || !$handle_link) {
+      throw new Exception(t('File open failed.'));
+    }
+  }
+  catch (Exception $e) {
+    drupal_set_message($e->getMessage(), 'error');
+    drupal_goto('<front>');
+  }
+
+  // Count number of line for contacts.
+  $contact_number = 0;
+  while (!feof($handle_contact)) {
+    fgets($handle_contact);
+    $contact_number++;
+  }
+  fclose($handle_contact);
+
+  // Count number of line for organisations.
+  $orga_number = 0;
+  while (!feof($handle_orga)) {
+    fgets($handle_orga);
+    $orga_number++;
+  }
+  fclose($handle_orga);
+
+  // Set batch operations for contact and organisation import.
+  $operation_count = ceil(($contact_number - 1) / 50);
+  for ($i = 0; $i < $operation_count; $i++) {
+    $params = array($i * 50 + 1, $csv_contact);
+    $operations[] = array('_farnet_organisation_import_contacts_to_db', $params);
+  }
+
+  $operation_count = ceil(($orga_number - 1) / 50);
+  for ($i = 0; $i < $operation_count; $i++) {
+    $params = array($i * 50 + 1, $csv_orga);
+    $operations[] = array('_farnet_organisation_import_organisations_to_db', $params);
+  }
+
+  $operations[] = array('_farnet_organisation_import_contact_link_to_db', [$csv_link]);
+
+  // Set batch.
+  $batch = array(
+    'title' => t('Importing contacts and organisations'),
+    'operations' => $operations,
+    'finished' => 'farnet_organisation_import_finished',
+    'init_message' => t('Importing...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('Import has encountered an error.'),
+  );
+
+  batch_set($batch);
+  $batch =& batch_get();
+
+  if (drupal_is_cli()) {
+    $batch['progressive'] = FALSE;
+    drush_backend_batch_process();
+  }
+  else {
+    batch_process('admin/content/import_organisations');
+  }
+}
+
+/**
+ * Batch process function for contact import from CSV file.
+ */
+function _farnet_organisation_import_contacts_to_db($start, $file) {
+  $row_num = 0;
+  $done = 0;
+
+  $handle = fopen($file, "r");
+
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 50) {
+    // Skip process entries.
+    if ($row_num < $start) {
+      $row_num++;
+      continue;
+    }
+
+    // Trim all cells at once.
+    $data = array_map('trim', $data);
+
+    $cid = $data[0];
+    unset($data[0]);
+
+    db_merge('import_contact_persons')
+      ->key(['cid' => $cid])
+      ->fields([
+        'cid' => $cid,
+        'info' => drupal_json_encode($data),
+        'imported' => '0',
+      ])
+      ->execute();
+
+    $row_num++;
+    $done++;
+  }
+
+  fclose($handle);
+}
+
+/**
+ * Batch process function for contact link to organisation import from CSV file.
+ */
+function _farnet_organisation_import_contact_link_to_db($file) {
+  $handle = fopen($file, "r");
+  $first = TRUE;
+
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE) {
+    if ($first) {
+      $first = FALSE;
+      continue;
+    }
+
+    // Trim all cells at once.
+    $data = array_map('trim', $data);
+
+    $oid = $data[0];
+    $cid = $data[1];
+    $position = $data[2];
+    unset($data[0], $data[1], $data[2]);
+
+    db_merge('import_contact_link')
+      ->key(['oid' => $oid, 'cid' => $cid])
+      ->fields([
+        'oid' => $oid,
+        'cid' => $cid,
+        'position' => $position,
+        'info' => drupal_json_encode($data),
+      ])
+      ->execute();
+  }
+
+  fclose($handle);
+}
+
+/**
+ * Batch process function for organisation import from CSV file.
+ */
+function _farnet_organisation_import_organisations_to_db($start, $file) {
+  $row_num = 0;
+  $done = 0;
+
+  $handle = fopen($file, "r");
+
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 50) {
+    // Skip process entries.
+    if ($row_num < $start) {
+      $row_num++;
+      continue;
+    }
+
+    // Trim all cells at once.
+    $data = array_map('trim', $data);
+
+    $oid = $data[0];
+    unset($data[0]);
+
+    db_merge('import_organisations')
+      ->key(['oid' => $oid])
+      ->fields([
+        'oid' => $oid,
+        'info' => drupal_json_encode($data),
+        'imported' => '0',
+      ])
+      ->execute();
+
+    $row_num++;
+    $done++;
+  }
+
+  fclose($handle);
+}
+
+/**
+ * Create batch for import from database to drupal content.
+ */
+function _farnet_organisation_import_save_from_db() {
+  $operations = [];
+
+  // Get number of non imported persons.
+  $contact_number = db_select('import_contact_persons', 'icp')
+    ->fields('icp')
+    ->condition('imported', '0', '=')
+    ->countQuery()
+    ->execute()
+    ->fetchField();
+
+  // Get number of non imported organisations.
+  $orga_number = db_select('import_organisations', 'io')
+    ->fields('io')
+    ->condition('imported', '0', '=')
+    ->countQuery()
+    ->execute()
+    ->fetchField();
+
+  // Set batch operations for contact and organisation import.
+  $operation_count = ceil($contact_number / 50);
+  for ($i = 0; $i < $operation_count; $i++) {
+    $operations[] = ['_farnet_organisation_import_contacts_from_db', []];
+  }
+
+  $operation_count = ceil($orga_number / 50);
+  for ($i = 0; $i < $operation_count; $i++) {
+    $operations[] = ['_farnet_organisation_import_organisations_from_db', []];
+  }
+
+  // Set batch.
+  $batch = array(
+    'title' => t('Importing contacts and organisations from database'),
+    'operations' => $operations,
+    'finished' => 'farnet_organisation_import_finished',
+    'init_message' => t('Importing...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('Import has encountered an error.'),
+  );
+
+  batch_set($batch);
+  $batch =& batch_get();
+
+  if (drupal_is_cli()) {
+    $batch['progressive'] = FALSE;
+    drush_backend_batch_process();
+  }
+  else {
+    batch_process('admin/content/node/overview');
+  }
+}
+
+/**
+ * Batch process function, save contacts as drupal content.
+ */
+function _farnet_organisation_import_contacts_from_db() {
+  // Get the next 50 contacts to import.
+  $rows = db_select('import_contact_persons', 'icp')
+    ->fields('icp')
+    ->condition('imported', '0', '=')
+    ->range(0, 49)
+    ->execute()
+    ->fetchAllAssoc('cid');
+
+  // Get countries from farnet Taxonomy.
+  $countries_raw = farnet_taxonomy_countries();
+  $countries = array();
+  foreach ($countries_raw as $subcountries) {
+    $countries += $subcountries;
+  }
+
+  foreach ($rows as $cid => $contact_import) {
+
+    $info = drupal_json_decode($contact_import->info);
+
+    $wrapper = FALSE;
+    if ($contact_import->nid != 0) {
+      $node = node_load($contact_import->nid);
+      if ($node !== FALSE) {
+        $wrapper = entity_metadata_wrapper('node', $node);
+      }
+    }
+
+    // If we could not load a previous node, create it.
+    if ($wrapper === FALSE) {
+      $entity = entity_create('node', ['type' => 'contact_person']);
+      $wrapper = entity_metadata_wrapper('node', $entity);
+      $wrapper->language->set('en');
+    }
+
+    // Set contact person infos.
+    $gender = drupal_strtolower($info[1]);
+    if ($gender === 'm') {
+      $gender = 'male';
+    }
+    elseif ($gender === 'f') {
+      $gender = 'female';
+    }
+    elseif (!empty($gender) && $gender !== 'male' && $gender !== 'female') {
+      $gender = 'other';
+    }
+
+    $wrapper->field_gender->set($gender);
+    $wrapper->field_firstname->set($info[2]);
+
+    // Last name acts as title.
+    $wrapper->title_field->set($info[3]);
+    $wrapper->title->set($info[3]);
+
+    $wrapper->field_email->set($info[5]);
+    $wrapper->field_telephone->set($info[6]);
+    $wrapper->field_phone_mobile->set($info[7]);
+    $wrapper->field_skype_id->set($info[8]);
+
+    // Get country from the taxonomy and set it.
+    if ($info[4] !== '') {
+      $term = taxonomy_get_term_by_name($countries[$info[4]], 'countries');
+      if (isset(reset($term)->tid)) {
+        $wrapper->field_user_country->set(reset($term)->tid);
+      }
+    }
+
+    $wrapper->save();
+
+    // Set the node as imported.
+    db_update('import_contact_persons')
+      ->fields(['nid' => $wrapper->getIdentifier(), 'imported' => 1])
+      ->condition('cid', $cid, '=')
+      ->execute();
+  }
+}
+
+/**
+ * Batch process function, save organisations as drupal content.
+ */
+function _farnet_organisation_import_organisations_from_db() {
+  // Get the next 50 contacts to import.
+  $rows = db_select('import_organisations', 'io')
+    ->fields('io')
+    ->condition('imported', '0', '=')
+    ->range(0, 49)
+    ->execute()
+    ->fetchAllAssoc('oid');
+
+  // Get countries from farnet Taxonomy.
+  $countries_raw = farnet_taxonomy_countries();
+  $countries = array();
+  foreach ($countries_raw as $subcountries) {
+    $countries += $subcountries;
+  }
+
+  foreach ($rows as $oid => $orga_import) {
+    $info = drupal_json_decode($orga_import->info);
+
+    $wrapper = FALSE;
+    if ($orga_import->nid != 0) {
+      $node = node_load($orga_import->nid);
+      if ($node !== FALSE) {
+        $wrapper = entity_metadata_wrapper('node', $node);
+      }
+    }
+
+    // If we could not load a previous node, create it.
+    if ($wrapper === FALSE) {
+      $entity = entity_create('node', ['type' => 'organisation']);
+      $wrapper = entity_metadata_wrapper('node', $entity);
+      $wrapper->language->set('en');
+    }
+
+    // Set fields.
+    $wrapper->title_field->set($info[1]);
+    $wrapper->title->set($info[1]);
+
+    // Get type from the taxonomy and set it.
+    if ($info[2] !== '') {
+      $term = taxonomy_get_term_by_name($info[2], 'farnet_type_organisation');
+      if (isset(reset($term)->tid)) {
+        $wrapper->field_term_type_organisation->set(reset($term)->tid);
+      }
+    }
+
+    $wrapper->field_ne_body->set(['value' => $info[3]]);
+    $wrapper->field_email->set($info[4]);
+
+    $link = explode(';', $info[5]);
+    $wrapper->field_website->set([
+      'title' => $link[0],
+      'url' => $link[1],
+    ]);
+
+    // Field is multiple.
+    $wrapper->field_telephone->set($info[6]);
+    $wrapper->field_fax->set($info[7]);
+
+    $wrapper->field_longitude->set(explode(';', $info[8]));
+    $wrapper->field_latitude->set(explode(';', $info[9]));
+
+    $wrapper->field_address_1->set($info[10]);
+    $wrapper->field_address_2->set($info[11]);
+    $wrapper->field_zip_code->set($info[12]);
+    $wrapper->field_city->set($info[13]);
+
+    // Get country from the taxonomy and set it.
+    if ($info[14] !== '') {
+      $term = taxonomy_get_term_by_name($countries[$info[14]], 'countries');
+      if (isset(reset($term)->tid)) {
+        $wrapper->field_term_country->set([reset($term)->tid]);
+      }
+    }
+
+    // Social media links.
+    $link = explode(';', $info[15]);
+    $wrapper->field_ff_twitter->set([
+      'title' => $link[0],
+      'url' => $link[1],
+    ]);
+
+    $link = explode(';', $info[16]);
+    $wrapper->field_ff_facebook->set([
+      'title' => $link[0],
+      'url' => $link[1],
+    ]);
+
+    $link = explode(';', $info[17]);
+    $wrapper->field_ff_linkedin->set([
+      'title' => $link[0],
+      'url' => $link[1],
+    ]);
+
+    $link = explode(';', $info[18]);
+    $wrapper->field_ff_google->set([
+      'title' => $link[0],
+      'url' => $link[1],
+    ]);
+
+    $wrapper->field_comment->set(['value' => $info[19]]);
+
+    $wrapper->status->set(NODE_PUBLISHED);
+    $wrapper->save();
+
+    // Remove previous contacts.
+    $fc_contact = $wrapper->field_organisation_contacts->value();
+    foreach ($fc_contact as $old_contact) {
+      $old_contact->delete();
+    }
+
+    // Ugly hack in order to set the node status to published.
+    $node = $wrapper->value();
+    $node->workbench_moderation_state_new = workbench_moderation_state_published();
+    $node->field_organisation_contacts = NULL;
+    node_save($node);
+
+    // Manage field collection contact.
+    $contact_links = db_select('import_contact_link', 'icl')
+      ->fields('icl')
+      ->condition('oid', $oid, '=')
+      ->execute()
+      ->fetchAll();
+
+    foreach ($contact_links as $contact_link) {
+      // First get the contact node.
+      $query = "SELECT nid FROM {import_contact_persons} WHERE cid=:contact";
+      $contact_nid = db_query($query, [':contact' => $contact_link->cid])->fetchField();
+
+      $info = drupal_json_decode($contact_link->info);
+
+      if ($contact_nid) {
+        $collection = entity_create('field_collection_item', ['field_name' => 'field_organisation_contacts']);
+        $collection->setHostEntity('node', $wrapper->value());
+
+        $fc_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
+        $fc_wrapper->field_contact_person->set($contact_nid);
+        $fc_wrapper->field_organisation_position->set([$contact_link->position]);
+        $fc_wrapper->field_email->set($info['3']);
+        $fc_wrapper->field_telephone->set($info['4']);
+        $fc_wrapper->field_phone_mobile->set($info['5']);
+        $fc_wrapper->field_skype_id->set($info['6']);
+        $fc_wrapper->save();
+      }
+    }
+
+    // Set the node as imported.
+    db_update('import_organisations')
+      ->fields(['nid' => $wrapper->getIdentifier(), 'imported' => '1'])
+      ->condition('oid', $oid, '=')
+      ->execute();
+  }
+}

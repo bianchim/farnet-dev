@@ -1,0 +1,284 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Maps feature.
+ */
+
+include_once 'farnet_maps.features.inc';
+
+/**
+ * @file
+ * Code for the Farnet location module.
+ */
+
+/**
+ * Used to manage countries names and codes.
+ */
+include_once drupal_get_path('module', 'farnet_taxonomy') . '/includes/farnet_taxonomy_countries.php';
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_maps_menu() {
+  $items['on-the-ground/maps'] = [
+    'title' => 'Farnet interactive map',
+    'description' => 'Provide an interactive map',
+    'page callback' => ['drupal_get_form'],
+    'page arguments' => ['farnet_maps_form', 1],
+    'access arguments' => ['access content'],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+  return $items;
+}
+
+/**
+ * Build the module form.
+ */
+function farnet_maps_form($form, &$form_state) {
+  global $base_url;
+
+  $form = [];
+
+  $vid_countries = 0;
+  if ($vocabulary = taxonomy_vocabulary_machine_name_load('countries')) {
+    $vid_countries = $vocabulary->vid;
+  }
+
+  // Country selected in the form.
+  $country = isset($form_state['values']['countries']) ? $form_state['values']['countries'] : 0;
+
+  $countries_select = [];
+  if (!$country) {
+    $countries_select = ['none' => 'Select a country'];
+  }
+
+  foreach (taxonomy_get_tree($vid_countries) as $term) {
+    if ($term->depth > 0) {
+      $countries_select[$term->tid] = ' - ' . $term->name;
+    }
+    else {
+      $countries_select[$term->tid] = $term->name;
+    }
+  }
+
+  $form['countries'] = array(
+    '#type' => 'select',
+    '#title' => t('Country'),
+    '#options' => $countries_select,
+    '#default_value' => $country,
+    '#attributes' => array('onchange' => 'this.form.submit();'),
+  );
+
+  // Default, map shows whole europe.
+  $zoom = 3;
+  $coord = [
+    'lat' => "42.0329",
+    'lng' => "27.4218",
+  ];
+
+  if ($country) {
+    $cterm = taxonomy_term_load($country);
+    if ((count(taxonomy_get_parents_all($country)) - 1) > 0) {
+
+      // Get the coordinates of the capital either from the term or geonames.
+      if (empty($cterm->field_latitude) || empty($cterm->field_longitude)) {
+        $country_code = $cterm->field_code[LANGUAGE_NONE][0]['value'];
+        $new_coord = _farnet_maps_get_country_coordinates($country_code);
+
+        // Save the  coordinates on the country.
+        if ($new_coord !== FALSE) {
+          $coord = $new_coord;
+          $zoom = 5;
+
+          $cterm->field_latitude[LANGUAGE_NONE][0]['value'] = [$coord['lat']];
+          $cterm->field_longitude[LANGUAGE_NONE][0]['value'] = [$coord['lng']];
+          taxonomy_term_save($cterm);
+        }
+      }
+      else {
+        $coord = [
+          'lat' => $cterm->field_latitude[LANGUAGE_NONE][0]['value'],
+          'lng' => $cterm->field_longitude[LANGUAGE_NONE][0]['value'],
+        ];
+        $zoom = 5;
+      }
+    }
+    else {
+      if ($cterm->name === 'Non-EU countries') {
+        $zoom = 2;
+      }
+      $countries_array = [];
+      foreach (taxonomy_get_tree($vid_countries, $country) as $term) {
+        $countries_array[] = $term->tid;
+      }
+      $country = implode(",", $countries_array);
+    }
+  }
+  else {
+    // Set to nothing for the map layers.
+    $country = '';
+  }
+
+  $center = '[
+    "' . $coord['lat'] . '",
+    "' . $coord['lng'] . '"
+  ]';
+
+  // Webtools JSON definition for a map.
+  $json_map = '{
+    "service": "map",
+    "sidebar": {
+      "options": {
+        "collapse": true
+      }
+     },
+    "map": {
+      "zoom": "' . $zoom . '",
+      "center": ' . $center . '
+    },
+    "layers": [
+      {
+        "checkbox": {
+          "label": "Elements",
+          "features": [
+            {
+              "label": "FLAG Factsheet",
+              "checked": true,
+              "markers": [
+                "http://myproject/url_to_get_geojson"
+              ]
+            },
+            {
+              "label": "GP Method",
+              "checked": true,
+              "markers": [
+                "http://myproject/url_to_get_geojson"
+              ],
+              "options": {
+                "color": "green"
+              }
+            },
+            {
+              "label": "GP Project",
+              "checked": true,
+              "markers": [
+                "http://myproject/url_to_get_geojson"
+              ],
+              "options": {
+                "color": "red"
+              }
+            },
+            {
+              "label": "GP Short Story",
+              "checked": true,
+              "markers": [
+                "http://myproject/url_to_get_geojson"
+              ],
+              "options": {
+                "color": "yellow"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }';
+
+  // Use the webtools smart loader.
+  drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
+
+  $json_map_object = drupal_json_decode($json_map);
+  $json_map_object['layers'][0]['checkbox']['features'][0]['markers'][0] = $base_url . "/on-the-ground/maps/factsheet_flag/" . $country;
+  $json_map_object['layers'][0]['checkbox']['features'][1]['markers'][0] = $base_url . "/on-the-ground/maps/gp_method/" . $country;
+  $json_map_object['layers'][0]['checkbox']['features'][2]['markers'][0] = $base_url . "/on-the-ground/maps/gp_project/" . $country;
+  $json_map_object['layers'][0]['checkbox']['features'][3]['markers'][0] = $base_url . "/on-the-ground/maps/gp_short_story/" . $country;
+  $json_map = drupal_json_encode($json_map_object);
+
+  $form['json_map'] = array(
+    '#type' => 'item',
+    '#markup' => "<script type=\"application/json\">" . strip_tags($json_map) . "</script>",
+  );
+
+  return $form;
+}
+
+/**
+ * Provide the form submit callback.
+ */
+function farnet_maps_form_submit($form, &$form_state) {
+  $form_state['rebuild'] = TRUE;
+}
+
+/**
+ * Get a country's capital coordinates.
+ *
+ * @param string $country_code
+ *   The two letter country code.
+ *
+ * @return array | bool
+ *   Array with coordiantes lat / lng of the capital.
+ */
+function _farnet_maps_get_country_coordinates($country_code) {
+  // Get API username.
+  $username = variable_get('farnet_location_geonames_username', FALSE);
+
+  if ($username === FALSE) {
+    return FALSE;
+  }
+
+  // Do the search.
+  $params = [
+    'username' => $username,
+    'type' => 'json',
+    'country' => $country_code,
+  ];
+
+  $base_url = variable_get('farnet_location_geonames_baseurl', 'http://api.geonames.org/');
+  $url = $base_url . 'countryInfo?' . drupal_http_build_query($params);
+
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+    return FALSE;
+  }
+
+  $capital = $geolocs['geonames'][0]['capital'];
+  return _farnet_maps_get_capital_coordinates($capital, $country_code);
+}
+
+/**
+ * Get a capital's coordinates.
+ *
+ * @param string $capital
+ *   Name of the capital to search.
+ * @param string $country_code
+ *   The two letter country code.
+ *
+ * @return array | bool
+ *   Array with coordiantes lat / lng.
+ */
+function _farnet_maps_get_capital_coordinates($capital, $country_code) {
+  // Get API username.
+  $username = variable_get('farnet_location_geonames_username', FALSE);
+
+  if ($username === FALSE) {
+    return FALSE;
+  }
+
+  // Do the search.
+  $params = [
+    'username' => $username,
+    'type' => 'json',
+    'name_equals' => $capital,
+    'countryCode' => $country_code,
+  ];
+
+  $base_url = variable_get('farnet_location_geonames_baseurl', 'http://api.geonames.org/');
+  $url = $base_url . 'search?' . drupal_http_build_query($params);
+
+  if (!$geolocs = _farnet_location_get_geonames_result($url)) {
+    return FALSE;
+  }
+
+  $coord = $geolocs['geonames'][0];
+  return ['lat' => $coord['lat'], 'lng' => $coord['lng']];
+}

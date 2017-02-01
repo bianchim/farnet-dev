@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet pages feature.
+ */
+
+include_once 'farnet_pages.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function farnet_pages_field_group_info_alter($groups) {
+  if (!empty($groups['group_page_content|node|page|form'])) {
+    $groups['group_page_content|node|page|form']->data['children'][1] = 'field_farnet_abstract';
+    $groups['group_page_content|node|page|form']->data['children'][2] = 'field_ne_body';
+    $groups['group_page_content|node|page|form']->data['children'][3] = 'field_picture';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_pages_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'page_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_field_display_alter().
+ */
+function farnet_pages_field_display_alter(&$display, $context) {
+
+  if (($context['field']['field_name'] === 'group_content_access')
+    && ($context['entity']->type == 'page')) {
+    if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
+      $display['label'] = 'hidden';
+      $display['type'] = "hidden";
+    }
+  }
+  if (($context['field']['field_name'] === 'og_group_ref')
+    && ($context['entity']->type == 'page')) {
+    if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
+      $display['label'] = 'hidden';
+      $display['type'] = "hidden";
+    }
+  }
+}
+
+/**
+ * Implements hook_node_export_after_import_alter().
+ */
+function farnet_pages_node_export_after_import_alter(&$nodes, $format, $save) {
+  foreach ($nodes as $node) {
+
+    switch ($node->title) {
+      case 'FARNET at a glance':
+        $node_alias = 'about/farnet-at-a-glance';
+        break;
+
+      case 'CLLD at a glance':
+        $node_alias = 'about/clld-at-a-glance';
+        break;
+
+      case 'Who\'s who':
+        $node_alias = 'about/who-is-who';
+        break;
+
+      case 'DG MARE':
+        $node_alias = 'about/who-is-who/dg-mare';
+        break;
+
+      case 'FARNET Support Unit':
+        $node_alias = 'about/who-is-who/farnet-support-unit';
+        break;
+
+      case 'FARNET Data':
+        $node_alias = 'about/data';
+        break;
+
+      case 'Glossary':
+        $node_alias = 'about/glossary';
+        break;
+
+      case 'Social media':
+        $node_alias = 'news-events/social-media';
+        break;
+
+      case 'European overview':
+        $node_alias = 'cooperation/european-overview';
+        break;
+
+      case 'Tools for FLAGs':
+        $node_alias = 'tools/flags';
+        break;
+
+      case 'Tools for Managing Authorities':
+        $node_alias = 'tools/managing-authorities';
+        break;
+
+      case 'Lessons from FARNET 1 (2007-2013)':
+        $node_alias = 'tools/2007-2013-lessons';
+        break;
+
+      case 'FARNET Flash':
+        $node_alias = 'library/newsletters';
+        break;
+    }
+
+    $node->path = array('alias' => $node_alias, 'pathauto' => FALSE);
+    node_save($node);
+  }
+}

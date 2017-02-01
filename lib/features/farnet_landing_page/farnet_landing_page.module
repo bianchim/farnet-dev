@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Landing Page feature.
+ */
+
+include_once 'farnet_landing_page.features.inc';
+
+/**
+ * Implements hook_node_export_after_import_alter().
+ */
+function farnet_landing_page_node_export_after_import_alter(&$nodes, $format, $save) {
+  foreach ($nodes as $node) {
+    if ($node->title === 'On The Ground') {
+      $node->path = array('alias' => 'on-the-ground', 'pathauto' => FALSE);
+      node_save($node);
+    }
+  }
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_landing_page_block_view_alter(&$data, $block) {
+  if ($block->bid == 'views-79352059f92f38e8b7c026bd2e334732') {
+    $block->title = t('FLAG Factsheets');
+  }
+  if ($block->bid == 'views-7dabd414d359435e91fad754dab94e7f') {
+    $block->title = t('Country Factsheets');
+  }
+}

@@ -1,0 +1,164 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Event feature.
+ */
+
+include_once 'farnet_event.features.inc';
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function farnet_event_field_group_info_alter(&$groups) {
+  if (!empty($groups['group_ne_event_content|node|nexteuropa_event|form'])) {
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_farnet_abstract';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_city';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_website';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_registration';
+    $groups['group_ne_event_content|node|nexteuropa_event|form']->data['children'][] = 'field_twitter_hashtag';
+  }
+
+  if (!empty($groups['group_event_taxonomy|node|nexteuropa_event|form'])) {
+    if (!empty($groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'])) {
+      $metadata_group = $groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'];
+      $field_tags_key = array_search('field_tags', $metadata_group);
+
+      if (FALSE !== $field_tags_key) {
+        unset($groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'][$field_tags_key]);
+      }
+      $field_event_type_key = array_search('field_event_type', $metadata_group);
+      if (FALSE !== $field_event_type_key) {
+        unset($groups['group_ne_event_metadata|node|nexteuropa_event|form']->data['children'][$field_event_type_key]);
+      }
+    }
+    if (!array_key_exists('field_tags', $groups['group_event_taxonomy|node|nexteuropa_event|form']->data['children'])) {
+      $groups['group_event_taxonomy|node|nexteuropa_event|form']->data['children'][] = 'field_tags';
+    }
+    if (!array_key_exists('field_event_type', $groups['group_event_taxonomy|node|nexteuropa_event|form']->data['children'])) {
+      $groups['group_event_taxonomy|node|nexteuropa_event|form']->data['children'][] = 'field_event_type';
+    }
+  }
+}
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_instances.
+ */
+function farnet_event_field_default_field_instances_alter(&$fields) {
+
+  if (isset($fields['node-nexteuropa_event-title_field'])) {
+    if (isset($fields['node-nexteuropa_event-title_field']['display'])) {
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['label'] = "hidden";
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['module'] = "title";
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['settings'] = array(
+        'title_class' => '',
+        'title_link' => 'content',
+        'title_style' => 'h2',
+      );
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['type'] = "title_linked";
+      $fields['node-nexteuropa_event-title_field']['display']['teaser']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_event-field_city'])) {
+    if (isset($fields['node-nexteuropa_event-field_city']['display'])) {
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['label'] = "inline";
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['module'] = "text";
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['settings'] = array();
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['type'] = "text_plain";
+      $fields['node-nexteuropa_event-field_city']['display']['newsletter']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_event-field_term_country'])) {
+    if (isset($fields['node-nexteuropa_event-field_term_country']['display'])) {
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['label'] = "inline";
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['module'] = "taxonomy";
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['settings'] = array();
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['type'] = "taxonomy_term_reference_plain";
+      $fields['node-nexteuropa_event-field_term_country']['display']['newsletter']['weight'] = 0;
+    }
+  }
+
+  if (isset($fields['node-nexteuropa_event-field_dates'])) {
+    if (isset($fields['node-nexteuropa_event-field_dates']['display'])) {
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['label'] = "inline";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['module'] = "date";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['format_type'] = "long";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['fromto'] = "both";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['multiple_from'] = "";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['multiple_number'] = "";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['multiple_to'] = "";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['settings']['show_remaining_days'] = FALSE;
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['type'] = "date_default";
+      $fields['node-nexteuropa_event-field_dates']['display']['newsletter']['weight'] = 0;
+    }
+    if (isset($fields['node-nexteuropa_event-field_dates']['widget'])) {
+      $fields['node-nexteuropa_event-field_dates']['widget']['settings']['display_all_day'] = 1;
+      $fields['node-nexteuropa_event-field_dates']['widget']['settings']['increment'] = 1;
+    }
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function farnet_event_views_default_views_alter(&$views) {
+  if (isset($views['calendar'])) {
+    $views['calendar']->display['page']->display_options['path'] = 'news-events/calendar';
+  }
+  if (isset($views['farnet_view_events'])) {
+    $term = taxonomy_get_term_by_name('Transnational seminars');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_view_events']->display['page_transnational_seminars']->display_options['filters']['field_event_type_tid']['value'][$tid_term] = $tid_term;
+    }
+
+    $term = taxonomy_get_term_by_name('Managing authorities');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_view_events']->display['page_managing_authorities']->display_options['filters']['field_event_type_tid']['value'][$tid_term] = $tid_term;
+    }
+
+    $term = taxonomy_get_term_by_name('National / regional / local events');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_view_events']->display['page_national_regional_local']->display_options['filters']['field_event_type_tid']['value'][$tid_term] = $tid_term;
+    }
+
+    $term = taxonomy_get_term_by_name('Conferences');
+    if ((isset($term)) && (!empty($term))) {
+      $filter_term = current($term);
+      $tid_term = $filter_term->tid;
+      $views['farnet_view_events']->display['page_conferences']->display_options['filters']['field_event_type_tid']['value'][$tid_term] = $tid_term;
+    }
+  }
+}
+
+/**
+ * Implements hook_COMPONENT_alter().
+ */
+function farnet_event_strongarm_alter(&$variables) {
+  if (isset($variables['pathauto_node_nexteuropa_event_pattern'])) {
+    $variables['pathauto_node_nexteuropa_event_pattern']->value = "news-events/events/[node:field-event-type:name]/[node:source:title]";
+  }
+  if (isset($variables['comment_nexteuropa_event'])) {
+    $variables['comment_nexteuropa_event']->value = '0';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_event_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'nexteuropa_event_node_form') {
+    $form['group_content_access'][LANGUAGE_NONE]['#required'] = FALSE;
+    $form['field_farnet_abstract']['#weight'] = 2;
+    $form['field_ne_body']['#weight'] = 3;
+  }
+}

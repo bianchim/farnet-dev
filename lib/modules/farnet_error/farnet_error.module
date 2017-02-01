@@ -1,0 +1,200 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Error module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function farnet_error_menu() {
+  $items['error/403'] = [
+    'title callback' => 'farnet_error_title',
+    'page callback' => 'farnet_error_page',
+    // Since it's a error page, anybody should be able to see it.
+    'access callback' => TRUE,
+    'type' => MENU_LOCAL_TASK,
+  ];
+
+  $items['admin/config/system/farnet_error'] = [
+    'title' => 'Farnet error',
+    'description' => 'Manage farnet error pages',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['farnet_error_admin'],
+    'access arguments' => ['administer site configuration'],
+    'type' => MENU_LOCAL_TASK,
+  ];
+
+  return $items;
+}
+
+/**
+ * Administration menu of farnet error.
+ */
+function farnet_error_admin() {
+  $form = [];
+
+  $langcode = !empty($_GET['variable_realm_key_language']) ? $_GET['variable_realm_key_language'] : $GLOBALS['language']->language;
+
+  $form['public'] = [
+    '#type' => 'fieldset',
+    '#title' => t('public'),
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  ];
+
+  $form['public']['farnet_error_public_title'] = [
+    '#type' => 'textfield',
+    '#title' => t('Page title'),
+    '#default_value' => i18n_variable_get('farnet_error_public_title', $langcode),
+  ];
+
+  $form['public']['farnet_error_public_body'] = [
+    '#type' => 'text_format',
+    '#title' => t('Page body'),
+    '#format' => 'full_html',
+    '#default_value' => i18n_variable_get('farnet_error_public_body', $langcode)['value'],
+  ];
+
+  $form['myfarnet'] = [
+    '#type' => 'fieldset',
+    '#title' => t('My farnet'),
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  ];
+
+  $form['myfarnet']['farnet_error_myfarnet_title'] = [
+    '#type' => 'textfield',
+    '#title' => t('Page title'),
+    '#default_value' => i18n_variable_get('farnet_error_myfarnet_title', $langcode),
+  ];
+
+  $form['myfarnet']['farnet_error_myfarnet_body'] = [
+    '#type' => 'text_format',
+    '#title' => t('Page body'),
+    '#format' => 'full_html',
+    '#default_value' => i18n_variable_get('farnet_error_myfarnet_body', $langcode)['value'],
+  ];
+
+  return system_settings_form($form);
+}
+
+/**
+ * Return title for Farnet error page.
+ */
+function farnet_error_title() {
+  global $language;
+  $type = (farnet_error_is_myfarnet_page()) ? "myfarnet" : "public";
+
+  $title = i18n_variable_get("farnet_error_${type}_title", $language->language);
+  // If title in current language is undefined, fallback to English version.
+  if ((is_null($title) || empty($title)) && $language->language != 'en') {
+    $title = i18n_variable_get("farnet_error_${type}_title", 'en');
+  }
+  // If title undefined, fallback to hard-coded value.
+  if (is_null($title) || empty($title)) {
+    $title = 'Access denied';
+  }
+
+  return $title;
+}
+
+/**
+ * Return body for Farnet error page.
+ */
+function farnet_error_page() {
+  global $language;
+  $type = (farnet_error_is_myfarnet_page()) ? "myfarnet" : "public";
+
+  $body = i18n_variable_get("farnet_error_${type}_body", $language->language);
+  // If body in current language is undefined, fallback to English version.
+  if ((is_null($body) || empty($body['value'])) && $language->language != 'en') {
+    $body = i18n_variable_get("farnet_error_${type}_body", 'en');
+  }
+
+  // If undefined, fallback to hard-coded value.
+  if ((is_null($body) || empty($body['value']))) {
+    $body = ["value" => "You don't have access to this content.", 'format' => "plain_text"];
+  }
+
+  return check_markup($body['value'], $body['format']);
+}
+
+/**
+ * Return true if the user is under a 'MyFarnet' page.
+ */
+function farnet_error_is_myfarnet_page() {
+  // $_GET['destination'] is used on error page ($_GET['q'] is rewrite
+  // with error page URL).
+  $current_path = (isset($_GET['destination'])) ? $_GET['destination'] : $_GET['q'];
+  $keyword = variable_get('nexteuropa_communities_url_keyword', 'community');
+
+  // Get the aliased path in order to check if the community keyword is here.
+  $path = drupal_lookup_path('alias', $current_path);
+
+  // Fall back to destination path if no alias was found.
+  if ($path === FALSE) {
+    $path = $current_path;
+  }
+
+  $path = explode('/', $path);
+  return ($path[0] === $keyword);
+}
+
+/**
+ * Implements hook_variable_info().
+ */
+function farnet_error_variable_info() {
+  $variables['farnet_error_public_title'] = [
+    'type' => 'string',
+    'title' => t('Error page title'),
+    'description' => t('Title of the public error page'),
+    'required' => TRUE,
+    'localize' => TRUE,
+    'group' => 'farnet_error',
+  ];
+
+  $variables['farnet_error_public_body'] = [
+    'type' => 'string',
+    'title' => t('Error page body'),
+    'description' => t('Body of the public error page'),
+    'required' => TRUE,
+    'localize' => TRUE,
+    'group' => 'farnet_error',
+  ];
+
+  $variables['farnet_error_myfarnet_title'] = [
+    'type' => 'string',
+    'title' => t('MyFarnet error page title'),
+    'description' => t('Title of the myFarnet error page'),
+    'required' => TRUE,
+    'localize' => TRUE,
+    'group' => 'farnet_error',
+  ];
+
+  $variables['farnet_error_myfarnet_body'] = [
+    'type' => 'string',
+    'title' => t('MyFarnet error page body'),
+    'description' => t('Body of the myFarnet error page'),
+    'required' => TRUE,
+    'localize' => TRUE,
+    'group' => 'farnet_error',
+  ];
+
+  return $variables;
+}
+
+/**
+ * Implements hook_variable_group_info().
+ */
+function farnet_error_variable_group_info() {
+  $groups['farnet_error'] = [
+    'title' => t('Farnet Error'),
+    'description' => t('Configure the farnet error messages.'),
+    'access' => 'administer content',
+    'path' => ['admin/config/system/farnet_error'],
+  ];
+
+  return $groups;
+}

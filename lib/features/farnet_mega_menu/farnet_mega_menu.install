@@ -1,0 +1,249 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+include_once 'farnet_mega_menu.functions.inc';
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_mega_menu_enable() {
+  drupal_set_message(t('The FARNET Mega Menu feature is now active on your site.'));
+
+  _farnet_mega_menu_array_for_block_creation('main-menu');
+
+  $om_maximenu = array(
+    1 => array(
+      'code' => 'om-u1-1203206587',
+      'title' => 'Main Menu',
+      'action' => 'hover',
+      'skin' => 'no_style',
+      'style' => '',
+      'output' => 'block',
+      'delay' => '1000',
+      'menu_visibility' => array(
+        'visibility' => 0,
+        'pages' => '',
+      ),
+      'block_options' => array(
+        'stacking' => 'row',
+        'direction' => 'block-down',
+        'region' => '',
+        'weight' => '0',
+      ),
+      'links' => array(
+        1 => array(
+          'link_title' => 'Home',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => '<front>',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '-50',
+          'id' => '',
+          'class' => 'navigation-main-link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => '',
+        ),
+        2 => array(
+          'link_title' => 'About',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => 'about',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '-49',
+          'id' => '',
+          'class' => 'navigation-main-link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => array(
+            'farnet_mega_menu___about' => array(
+              'title' => '<none>',
+              'title_path' => '',
+              'title_path_query' => '',
+              'title_path_fragment' => '',
+              'module' => 'farnet_mega_menu',
+              'delta' => 'about',
+              'weight' => '0',
+              'visibility' => '0',
+            ),
+          ),
+        ),
+        3 => array(
+          'link_title' => 'News & Events',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => 'news-events',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '-48',
+          'id' => '',
+          'class' => 'navigation-main-link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => array(
+            'farnet_mega_menu___news_events' => array(
+              'title' => '<none>',
+              'title_path' => '',
+              'title_path_query' => '',
+              'title_path_fragment' => '',
+              'module' => 'farnet_mega_menu',
+              'delta' => 'news_events',
+              'weight' => '0',
+              'visibility' => '0',
+            ),
+          ),
+        ),
+        4 => array(
+          'link_title' => 'On the ground',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => 'on-the-ground',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '-47',
+          'id' => '',
+          'class' => 'navigation-main-link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => array(
+            'farnet_mega_menu___on_the_ground' => array(
+              'title' => '<none>',
+              'title_path' => '',
+              'title_path_query' => '',
+              'title_path_fragment' => '',
+              'module' => 'farnet_mega_menu',
+              'delta' => 'on_the_ground',
+              'weight' => '0',
+              'visibility' => '0',
+            ),
+          ),
+        ),
+        5 => array(
+          'link_title' => 'Themes',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => 'themes',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '-45',
+          'id' => '',
+          'class' => 'navigation-main-link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => array(
+            'farnet_mega_menu___themes' => array(
+              'title' => '<none>',
+              'title_path' => '',
+              'title_path_query' => '',
+              'title_path_fragment' => '',
+              'module' => 'farnet_mega_menu',
+              'delta' => 'themes',
+              'weight' => '0',
+              'visibility' => '0',
+            ),
+          ),
+        ),
+        6 => array(
+          'link_title' => 'Tools',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => 'tools',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '-44',
+          'id' => '',
+          'class' => 'navigation-main-link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => array(
+            'farnet_mega_menu___tools' => array(
+              'title' => '<none>',
+              'title_path' => '',
+              'title_path_query' => '',
+              'title_path_fragment' => '',
+              'module' => 'farnet_mega_menu',
+              'delta' => 'tools',
+              'weight' => '0',
+              'visibility' => '0',
+            ),
+          ),
+        ),
+        7 => array(
+          'link_title' => 'Library',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => 'library',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '-46',
+          'id' => '',
+          'class' => 'navigation-main-link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => array(
+            'farnet_mega_menu___library' => array(
+              'title' => '<none>',
+              'title_path' => '',
+              'title_path_query' => '',
+              'title_path_fragment' => '',
+              'module' => 'farnet_mega_menu',
+              'delta' => 'library',
+              'weight' => '0',
+              'visibility' => '0',
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+
+  variable_set("om_maximenu", $om_maximenu);
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_mega_menu_disable() {
+  drupal_set_message(t('The FARNET Mega Menu feature is now disabled on your site.'));
+}

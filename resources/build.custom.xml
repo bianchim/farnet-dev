@@ -5,5 +5,18 @@
         description="You can use this target to perform custom build steps for your subsite. This target is part of both build-dev and build-dist."
     >
         <echo message="Running custom build" />
+        <if>
+            <available file="${farnet.make}" type="file" />
+            <then>
+                <echo msg="Make the subsite." />
+                <phingcall target="drush-make-no-core">
+                    <property name="drush.make.target.file" value="${farnet.make}" />
+                    <property name="drush.make.root" value="${platform.build.dir}" />
+                </phingcall>
+            </then>
+            <else>
+                <echo msg="No make file found. Skipping..." />
+            </else>
+        </if>
     </target>
 </project>

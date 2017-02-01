@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function farnet_core_install() {
+  // Add a item in the breadcrumb menu.
+  $item = [
+    'link_path' => 'https://ec.europa.eu/fisheries',
+    'link_title' => 'Fisheries',
+    'menu_name' => 'menu-breadcrumb-menu',
+    'weight' => '1',
+    'language' => 'en',
+    'plid' => 0,
+    'module' => 'menu',
+    'options' => [
+      'attributes' => [
+        'data-remove-class' => TRUE,
+      ],
+    ],
+  ];
+  menu_link_save($item);
+  menu_cache_clear_all();
+
+  // Site name weight is set to 0, we need to put a order in the breadcrumb.
+  db_update('menu_links')
+    ->fields(['weight' => '2'])
+    ->condition('link_title', '[site:name]', '=')
+    ->execute();
+
+  // Set the new Farnet theme.
+  theme_enable(['farnet']);
+  variable_set('theme_default', 'farnet');
+}
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_core_enable() {
+  drupal_set_message(t('The FARNET Core feature is now active on your site.'));
+
+  // Add taxonomy facet blocks in the search context.
+  multisite_drupal_toolbox_add_block_context('search', 'facetapi-5SQGKsqMcg3G4C4wN20v9jPpJat86xio', 'facetapi', '5SQGKsqMcg3G4C4wN20v9jPpJat86xio', 'sidebar_left', -12);
+  multisite_drupal_toolbox_add_block_context('search', 'facetapi-18WjNPGwX6Wd9GW1a0vknPHY31uUCXVn', 'facetapi', '18WjNPGwX6Wd9GW1a0vknPHY31uUCXVn', 'sidebar_left', -13);
+
+  // Add text/oembed mimetype for document file type.
+  $ft = file_type_load("document");
+  $ft->mimetypes[] = "text/oembed";
+  file_type_save($ft);
+
+  // Set the print links configuration to avoid duplicate with custom block.
+  variable_set('print_pdf_link_pos', array());
+  variable_set('print_mail_link_pos', array());
+  variable_set('print_html_link_pos', array('block' => 'block'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_core_disable() {
+  drupal_set_message(t('The FARNET Core feature is now disabled on your site.'));
+}

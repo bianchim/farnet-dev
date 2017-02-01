@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Factsheet Country feature.
+ */
+
+include_once 'farnet_factsheet_country.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_factsheet_country_form_factsheet_country_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_factsheet_country');
+  $form['#attached']['js'] = [
+    [
+      'data' => $path . '/js/farnet_factsheet_country.js',
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    ],
+  ];
+
+  $form['field_total_budget'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+  $form['field_average_budget_per_flag'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = TRUE;
+
+  $form['#validate'][] = 'farnet_factsheet_country_form_validate';
+}
+
+/**
+ * Validate the edit / add form for a factsheet country node.
+ */
+function farnet_factsheet_country_form_validate($form, &$form_state) {
+  $key_docs = $form_state['values']['field_key_documents'][LANGUAGE_NONE];
+
+  // Remove the non numeric keys of the array, since they're not values.
+  foreach ($key_docs as $key => $value) {
+    if (!is_int($key)) {
+      unset($key_docs[$key]);
+    }
+  }
+
+  foreach ($key_docs as $key_doc) {
+    $has_document = $key_doc['field_fc_document'][LANGUAGE_NONE][0]['fid'] !== 0;
+    $has_label = $key_doc['field_key_document_label'][LANGUAGE_NONE][0]['value'] !== "";
+
+    // Check that if one field has a value, the other has one too.
+    if ($has_document && !$has_label) {
+      form_set_error('field_key_documents', t('A key document must be linked with a label.'));
+    }
+
+    if (!$has_document && $has_label) {
+      form_set_error('field_key_documents', t('Each key document must have a label.'));
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_factsheet_country_form_alter(&$form, &$form_state, $form_id) {
+  $array_flag_countries = array(t('Bulgaria'), t('Croatia'), t('Cyprus'), t('Denmark'), t('Estonia'), t('Finland'), t('France'), t('Germany'), t('Greece'), t('Ireland'), t('Italy'), t('Latvia'), t('Lithuania'), t('Poland'), t('Portugal'), t('Romania'), t('Slovenia'), t('Spain'), t('Sweden'), t('United Kingdom'),
+  );
+  if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-country-page'
+    || $form['#id'] == 'views-exposed-form-farnet-view-factsheets-country-cf-on-the-ground') {
+    unset($form['#info']['filter-field_term_theme_tid']);
+    $form['field_term_theme_tid']['#access'] = 0;
+    foreach ($form['field_term_country_tid']['#options'] as $term_key => $term) {
+      if ($term_key !== 'All') {
+        if (!in_array($term, $array_flag_countries)) {
+          unset($form['field_term_country_tid']['#options'][$term_key]);
+        }
+      }
+    }
+  }
+  if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-country-page') {
+    unset($form['#info']['filter-field_term_country_tid']);
+    $form['field_term_country_tid']['#access'] = 0;
+    $form['submit']['#access'] = 0;
+  }
+}
