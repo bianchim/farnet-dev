@@ -30,7 +30,7 @@ Feature: Test the presence of the content menu
     Then I should see "Flag" in the ".region-sidebar-left" element
     And I should see "Description" in the ".region-sidebar-left" element
     And I should see "Project Cost / Funding" in the ".region-sidebar-left" element
-    And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
+    #TAnd I should see "Timeframe of implementation" in the ".region-sidebar-left" element
     And I should see "Beneficiary" in the ".region-sidebar-left" element
     And I should see "Media" in the ".region-sidebar-left" element
     But I should not see "Taxonomy" in the ".region-sidebar-left" element
@@ -62,7 +62,7 @@ Feature: Test the presence of the content menu
     And I should see "Location" in the ".region-sidebar-left" element
     And I should see "Description" in the ".region-sidebar-left" element
     And I should see "Resources" in the ".region-sidebar-left" element
-    And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
+    #And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
     And I should see "Media" in the ".region-sidebar-left" element
     But I should not see "Taxonomy" in the ".region-sidebar-left" element
     And I should not see "Publication" in the ".region-sidebar-left" element
@@ -93,7 +93,7 @@ Feature: Test the presence of the content menu
       | status                          | 1                   |
     #Then I should see "Content" in the ".region-sidebar-left" element
     Then I should see "Quote" in the ".region-sidebar-left" element
-    And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
+    #And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
     And I should see "Funding" in the ".region-sidebar-left" element
     And I should see "Project information" in the ".region-sidebar-left" element
     And I should see "Media" in the ".region-sidebar-left" element
