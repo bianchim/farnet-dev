@@ -79,3 +79,7 @@
   border: 1px solid #cbcbcb;
   padding: 5px;
 }
+
+.multi-values ul {
+  list-style-type: none;
+}
