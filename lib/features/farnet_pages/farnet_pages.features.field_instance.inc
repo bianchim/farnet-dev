@@ -356,7 +356,7 @@ function farnet_pages_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
+        'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -438,7 +438,7 @@ function farnet_pages_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
+        'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 3,
       ),
       'teaser' => array(
