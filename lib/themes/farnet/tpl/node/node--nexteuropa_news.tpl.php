@@ -6,8 +6,6 @@
  */
 ?>
 
-<?php dpm($content); ?>
-
 <div class="content clearfix">
 
   <div class="media">
