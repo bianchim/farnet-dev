@@ -2823,7 +2823,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       ),
       'entity_translation_sync' => FALSE,
       'js_to_load' => array(
-        'nexteuropa_webtools_smartloader_prurl' => 0,
+        'nexteuropa_webtools_smartloader_prurl' => 'nexteuropa_webtools_smartloader_prurl',
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
