@@ -9,19 +9,26 @@
  */
 function farnet_preprocess_page(&$variables) {
   if ($variables['is_front'] == TRUE) {
-    $cols['content_right'] = array(
+    $variables['cols']['content_right'] = array(
       'lg' => (!empty($regions['content_right']) ? 4 : 4),
       'md' => (!empty($regions['content_right']) ? 4 : 4),
       'sm' => (!empty($regions['content_right']) ? 12 : 0),
       'xs' => (!empty($regions['content_right']) ? 12 : 0),
     );
-    $cols['content'] = array(
-      'lg' => 12 - $cols['content_right']['lg'],
-      'md' => 12 - $cols['content_right']['md'],
+    $variables['cols']['content'] = array(
+      'lg' => 12 - $variables['cols']['content_right']['lg'],
+      'md' => 12 - $variables['cols']['content_right']['md'],
       'sm' => 12,
       'xs' => 12,
     );
-    $variables['cols'] = $cols;
+  }
+
+  // Switch title to page type.
+  if (isset($variables['node'])) {
+    $node_type = node_type_get_name($variables['node']);
+    if (!in_array($node_type, array('Basic page', 'Article'))) {
+      $variables['title'] = node_type_get_name($variables['node']);
+    }
   }
 }
 
@@ -215,9 +222,12 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_type_of_area' => array('field-label-above'),
     'field_sea_basins' => array('field-label-above'),
   );
+
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
     $variables['label_class'] = ' u-fw-normal';
   }
+
+  // Add additional div for percent progress bar.
   if (in_array($variables['element']['#field_name'], $element_percent_formated)) {
     $variables['field_item_class'] .= ' farnet-progress progress';
     foreach ($variables['items'] as $key => $item) {
@@ -568,8 +578,44 @@ function farnet_social_media_links_platform(&$variables) {
  * Implements hook_field_group_build_pre_render_alter().
  */
 function farnet_field_group_build_pre_render_alter(&$element) {
-  $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><div class="highlight--background">';
-  $element['group_factsheet_flag_content']['#suffix'] = '</div></div>';
-  $element['group_factsheet_flag_funding']['#prefix'] = '<div id="group-factsheet-flag-funding" class="group-factsheet-flag-funding field-group-tab flag-funding"><h3 class="fr-heading"><span>' . $element['#groups']['group_factsheet_flag_funding']->label . '</span></h3><div class="highlight--background">';
-  $element['group_factsheet_flag_funding']['#suffix'] = '</div></div>';
+  if (isset($element['group_factsheet_flag_content'])) {
+    $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><h2>' . $element['title_field']['#items'][0]['value'] . '</h2><div class="highlight--background">';
+    $element['group_factsheet_flag_content']['#suffix'] = '</div></div>';
+  }
+  if (isset($element['group_factsheet_flag_funding'])) {
+    $element['group_factsheet_flag_funding']['#prefix'] = '<div id="group-factsheet-flag-funding" class="group-factsheet-flag-funding field-group-tab flag-funding"><h3 class="fr-heading"><span>' . $element['#groups']['group_factsheet_flag_funding']->label . '</span></h3><div class="highlight--background">';
+    $element['group_factsheet_flag_funding']['#suffix'] = '</div></div>';
+  }
+}
+
+/**
+ * Implements theme_preprocess_views_view.
+ */
+function farnet_preprocess_views_view(&$vars) {
+  if ($vars['name'] == "farnet_content_slider") {
+    // Replace id on ul.
+    $vars['rows'] = str_replace('flexslider_views_slideshow_farnet_content_slider-farnet_block_slider', 'flexslider_views_slideshow_view_content_slider_2-block', $vars['rows']);
+    $classes_to_replace = array(
+      'view-farnet-content-slider' => 'view-view-content-slider-2',
+      'view-id-farnet_content_slider' => 'view-id-view_content_slider_2',
+      'view-display-id-farnet_block_slider' => 'view-display-id-block',
+    );
+    foreach ($vars['classes_array'] as $key => $class) {
+      if (in_array($class, array_keys($classes_to_replace))) {
+        $vars['classes_array'][$key] = $classes_to_replace[$class];
+      }
+    }
+  }
+}
+
+/**
+ * Implements theme_preprocess_views_view_fields.
+ */
+function farnet_preprocess_views_view_fields(&$vars) {
+  if ($vars['view']->name == 'farnet_content_slider') {
+    $vars['fields']['field_slide']->wrapper_prefix = '<span class="views-field views-field-field-slide">';
+    $vars['fields']['field_slide']->wrapper_suffix = '</span>';
+    $vars['fields']['nothing']->wrapper_prefix = '<span class="views-field views-field-nothing">';
+    $vars['fields']['nothing']->wrapper_suffix = '</span>';
+  }
 }
