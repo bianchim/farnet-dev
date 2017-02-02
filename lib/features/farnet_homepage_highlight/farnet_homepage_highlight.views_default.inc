@@ -71,7 +71,7 @@ function farnet_homepage_highlight_views_default_views() {
   $handler->display->display_options['fields']['field_slide']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_slide']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_slide']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'flexslider_thumbnail',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
