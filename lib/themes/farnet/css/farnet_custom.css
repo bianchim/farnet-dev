@@ -115,3 +115,18 @@
   border: 1px solid #cbcbcb;
   padding: 5px;
 }
+
+.region-content-bottom .block-block .content {
+  border: 1px solid #cbcbcb;
+  padding: 5px;
+}
+
+.content .media .media-left .field-type-image {
+  width: 300px;
+}
+
+.field-type-image img {
+  width: 100%;
+  height: auto;
+}
+
