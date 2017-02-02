@@ -20,7 +20,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
@@ -62,7 +62,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -124,7 +124,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
@@ -166,7 +166,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -227,7 +227,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
@@ -271,7 +271,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
@@ -358,7 +358,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -491,7 +491,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => 1,
@@ -597,10 +597,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
           'scale' => 2,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 15,
@@ -645,10 +645,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
           'scale' => 2,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 16,
@@ -693,10 +693,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
           'scale' => 2,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 17,
@@ -741,10 +741,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
           'scale' => 2,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 18,
@@ -788,10 +788,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 14,
@@ -902,10 +902,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
           'scale' => 2,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 21,
@@ -949,10 +949,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 20,
@@ -1268,10 +1268,10 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 13,
@@ -1597,7 +1597,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => FALSE,
@@ -1869,7 +1869,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
@@ -1910,7 +1910,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
@@ -2031,7 +2031,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
@@ -2138,7 +2138,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
