@@ -41,7 +41,7 @@ Feature: Article content type
     And I press the "Save" button
     Then I should see the success message "Article Behat Article Test #1 has been created."
     And I should see the heading "Behat Article Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
+    #And I should see "Lorem ipsum dolor sit amet abstract."
 
   @api
   Scenario: Edit article
