@@ -391,7 +391,7 @@ function farnet_cooperation_ms_fiche_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'scale' => 0,
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
