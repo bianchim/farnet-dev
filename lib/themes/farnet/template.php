@@ -5,34 +5,6 @@
  */
 
 /**
- * Implements template_preprocess_page().
- */
-function farnet_preprocess_page(&$variables) {
-  if ($variables['is_front'] == TRUE) {
-    $variables['cols']['content_right'] = array(
-      'lg' => (!empty($regions['content_right']) ? 4 : 4),
-      'md' => (!empty($regions['content_right']) ? 4 : 4),
-      'sm' => (!empty($regions['content_right']) ? 12 : 0),
-      'xs' => (!empty($regions['content_right']) ? 12 : 0),
-    );
-    $variables['cols']['content'] = array(
-      'lg' => 12 - $variables['cols']['content_right']['lg'],
-      'md' => 12 - $variables['cols']['content_right']['md'],
-      'sm' => 12,
-      'xs' => 12,
-    );
-  }
-
-  // Switch title to page type.
-  if (isset($variables['node'])) {
-    $node_type = node_type_get_name($variables['node']);
-    if (!in_array($node_type, array('Basic page', 'Article'))) {
-      $variables['title'] = node_type_get_name($variables['node']);
-    }
-  }
-}
-
-/**
  * OM Maximenu content rendering engine override.
  */
 function farnet_om_menu_content_render($content = array()) {
@@ -638,6 +610,29 @@ function farnet_preprocess_views_view_fields(&$vars) {
  * Implements template_preprocess_page().
  */
 function farnet_preprocess_page(&$variables) {
+  if ($variables['is_front'] == TRUE) {
+    $variables['cols']['content_right'] = array(
+      'lg' => (!empty($regions['content_right']) ? 4 : 4),
+      'md' => (!empty($regions['content_right']) ? 4 : 4),
+      'sm' => (!empty($regions['content_right']) ? 12 : 0),
+      'xs' => (!empty($regions['content_right']) ? 12 : 0),
+    );
+    $variables['cols']['content'] = array(
+      'lg' => 12 - $variables['cols']['content_right']['lg'],
+      'md' => 12 - $variables['cols']['content_right']['md'],
+      'sm' => 12,
+      'xs' => 12,
+    );
+  }
+
+  // Switch title to page type.
+  if (isset($variables['node'])) {
+    $node_type = node_type_get_name($variables['node']);
+    if (!in_array($node_type, array('Basic page', 'Article'))) {
+      $variables['title'] = node_type_get_name($variables['node']);
+    }
+  }
+
   // Format regions.
   $regions = $variables['regions'];
   $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
