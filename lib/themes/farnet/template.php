@@ -5,6 +5,34 @@
  */
 
 /**
+ * Implements template_preprocess_page().
+ */
+function farnet_preprocess_page(&$variables) {
+  if ($variables['is_front'] == TRUE) {
+    $variables['cols']['content_right'] = array(
+      'lg' => (!empty($regions['content_right']) ? 4 : 4),
+      'md' => (!empty($regions['content_right']) ? 4 : 4),
+      'sm' => (!empty($regions['content_right']) ? 12 : 0),
+      'xs' => (!empty($regions['content_right']) ? 12 : 0),
+    );
+    $variables['cols']['content'] = array(
+      'lg' => 12 - $variables['cols']['content_right']['lg'],
+      'md' => 12 - $variables['cols']['content_right']['md'],
+      'sm' => 12,
+      'xs' => 12,
+    );
+  }
+
+  // Switch title to page type.
+  if (isset($variables['node'])) {
+    $node_type = node_type_get_name($variables['node']);
+    if (!in_array($node_type, array('Basic page', 'Article'))) {
+      $variables['title'] = node_type_get_name($variables['node']);
+    }
+  }
+}
+
+/**
  * OM Maximenu content rendering engine override.
  */
 function farnet_om_menu_content_render($content = array()) {
@@ -512,20 +540,6 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       }
     }
   }
-  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-practices') {
-    // Check related view results.
-    $results = views_get_view_result('farnet_gp_by_flag_display', "block_gp_by_flag", $element['field_view_good_practices']['#object']->nid);
-    if (count($results) == 0) {
-      hide($element);
-    }
-  }
-  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-ideas') {
-    // Check related view results.
-    $results = views_get_view_result('cooperation_idea_by_flag', "block_idea_by_flag", $element['field_view_cooperation_ideas']['#object']->nid);
-    if (count($results) == 0) {
-      hide($element);
-    }
-  }
 }
 
 /**
@@ -564,7 +578,7 @@ function farnet_social_media_links_platform(&$variables) {
  * Implements hook_field_group_build_pre_render_alter().
  */
 function farnet_field_group_build_pre_render_alter(&$element) {
-  if (isset($element['group_factsheet_flag_content'])) {
+  if (isset($element['group_factsheet_flag_content']) and isset($element['title_field'])) {
     $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><h2>' . $element['title_field']['#items'][0]['value'] . '</h2><div class="highlight--background">';
     $element['group_factsheet_flag_content']['#suffix'] = '</div></div>';
   }
@@ -604,48 +618,4 @@ function farnet_preprocess_views_view_fields(&$vars) {
     $vars['fields']['nothing']->wrapper_prefix = '<span class="views-field views-field-nothing">';
     $vars['fields']['nothing']->wrapper_suffix = '</span>';
   }
-}
-
-/**
- * Implements template_preprocess_page().
- */
-function farnet_preprocess_page(&$variables) {
-  if ($variables['is_front'] == TRUE) {
-    $variables['cols']['content_right'] = array(
-      'lg' => (!empty($regions['content_right']) ? 4 : 4),
-      'md' => (!empty($regions['content_right']) ? 4 : 4),
-      'sm' => (!empty($regions['content_right']) ? 12 : 0),
-      'xs' => (!empty($regions['content_right']) ? 12 : 0),
-    );
-    $variables['cols']['content'] = array(
-      'lg' => 12 - $variables['cols']['content_right']['lg'],
-      'md' => 12 - $variables['cols']['content_right']['md'],
-      'sm' => 12,
-      'xs' => 12,
-    );
-  }
-
-  // Switch title to page type.
-  if (isset($variables['node'])) {
-    $node_type = node_type_get_name($variables['node']);
-    if (!in_array($node_type, array('Basic page', 'Article'))) {
-      $variables['title'] = node_type_get_name($variables['node']);
-    }
-  }
-
-  // Format regions.
-  $regions = $variables['regions'];
-  $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
-
-  $cols = $variables['cols'];
-  $cols['landing_content'] = array(
-    'lg' => 12 - $cols['content_right']['lg'],
-    'md' => 12 - $cols['content_right']['md'],
-    'sm' => 12,
-    'xs' => 12,
-  );
-
-  // Add variables to template file.
-  $variables['regions'] = $regions;
-  $variables['cols'] = $cols;
 }
