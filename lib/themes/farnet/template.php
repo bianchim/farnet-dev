@@ -27,7 +27,7 @@ function farnet_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
     $node_type = node_type_get_name($variables['node']);
     if (!in_array($node_type, array('Basic page', 'Article'))) {
-      $variables['title'] = node_type_get_name($variables['node']);
+      $variables['node_type'] = $node_type;
     }
   }
 }
