@@ -16,7 +16,7 @@ Feature: Check Views Farnet Taxonomy Term
       | field_term_theme            | Diversification                       |
       | field_publication_date      | 1465294233                            |
     Then I should see the heading "Behat Article Test #1"
-    And I should see "Lorem ipsum dolor sit amet abstract."
+    #And I should see "Lorem ipsum dolor sit amet abstract."
     And I should see "Lorem ipsum dolor sit amet body."
     And I visit "themes/diversification"
     And I should see the heading "Diversification"
