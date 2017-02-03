@@ -166,20 +166,6 @@ global $base_url;
   <div id="layout-body">
     <div class="container">
       <div class="row">
-        <?php print render($title_prefix); ?>
-
-        <?php if ($title): ?>
-          <?php $title_image = (isset($node->field_thumbnail[LANGUAGE_NONE][0]['uri']) && $node->type == 'community' ? image_style_url('communities_thumbnail', $node->field_thumbnail[LANGUAGE_NONE][0]['uri']) : '');?>
-          <h1 class="col-lg-<?php print $cols['title']['lg']; ?> col-md-<?php print $cols['title']['md']; ?> col-sm-<?php print $cols['title']['sm']; ?> col-xs-<?php print $cols['title']['xs']; ?>" id="page-title">
-            <?php if ($title_image): ?>
-              <img src="<?php print $title_image; ?>" alt="<?php print $title; ?>" />
-            <?php endif; ?>
-            <?php print $title; ?>
-          </h1>
-        <?php endif; ?>
-
-        <?php print render($title_suffix); ?>
-
         <div class="col-lg-<?php print $cols['tools']['lg']; ?> col-md-<?php print $cols['tools']['md']; ?> col-sm-<?php print $cols['tools']['sm']; ?> col-xs-<?php print $cols['tools']['xs']; ?>">
           <?php print $regions['tools']; ?>
         </div>
@@ -201,6 +187,15 @@ global $base_url;
         <div id="content-wrapper" class="col-lg-<?php print $cols['content_main']['lg']; ?> col-md-<?php print $cols['content_main']['md']; ?> col-sm-<?php print $cols['content_main']['sm']; ?> col-md-<?php print $cols['content_main']['xs']; ?>">
 
           <a id="content"></a>
+
+          <?php if (isset($node_type)): ?>
+            <p class="title"><?php print $node_type; ?></p>
+          <?php endif; ?>
+          <?php if ($title): ?>
+            <h1 class="title<?php if (isset($node_type)): ?>-small<?php endif; ?>" id="content-title">
+              <?php print $title; ?>
+            </h1>
+          <?php endif; ?>
 
           <?php print $regions['content_top']; ?>
 
@@ -224,11 +219,11 @@ global $base_url;
             <div class="col-lg-<?php print $cols['content']['lg']; ?> col-md-<?php print $cols['content']['md']; ?> col-sm-<?php print $cols['content']['sm']; ?> col-xs-<?php print $cols['content']['xs']; ?>">
             <?php print $regions['content']; ?>
             </div>
-
-            <div class="col-lg-<?php print $cols['landing_content']['lg']; ?> col-md-<?php print $cols['landing_content']['md']; ?> col-sm-<?php print $cols['landing_content']['sm']; ?> col-xs-<?php print $cols['landing_content']['xs']; ?>">
-              <?php print $regions['landing_content']; ?>
-            </div>
-
+            <?php if (isset($regions['landing_content'])): ?>
+              <div class="col-lg-<?php print $cols['landing_content']['lg']; ?> col-md-<?php print $cols['landing_content']['md']; ?> col-sm-<?php print $cols['landing_content']['sm']; ?> col-xs-<?php print $cols['landing_content']['xs']; ?>">
+                <?php print $regions['landing_content']; ?>
+              </div>
+            <?php endif; ?>
 
             <div class="col-lg-<?php print $cols['content_right']['lg']; ?> col-md-<?php print $cols['content_right']['md']; ?> col-sm-<?php print $cols['content_right']['sm']; ?> col-xs-<?php print $cols['content_right']['xs']; ?>">
             <?php print $regions['content_right']; ?>
