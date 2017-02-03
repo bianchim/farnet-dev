@@ -217,7 +217,6 @@ function farnet_preprocess_field(&$variables, $hook) {
   );
   $element_add_field_classes = array(
     'field_ff_sources_co_funding' => array('field-label-inline', 'clearfix'),
-    'field_ff_multi_funding' => array('field-type-text-long', 'field-name-field-ff-multi-funding-txt'),
     'field_ff_funds' => array('field-label-inline', 'clearfix'),
     'field_type_of_area' => array('field-label-above'),
     'field_sea_basins' => array('field-label-above'),
@@ -391,7 +390,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     case 'field_ff_emff':
       $variables['container_tag'] = 'li';
       $variables['prefix'] = '<ul class="fr-u-ul">';
-      if (!$variables['element']['#object']->field_ff_multi_funding and
+      if (!$variables['element']['#object']->field_ff_multi_funding_txt and
         !$variables['element']['#object']->field_ff_funds and
         !$variables['element']['#object']->field_ff_sources_co_funding and
         !$variables['element']['#object']->field_ff_ms_co_financing) {
@@ -401,7 +400,7 @@ function farnet_preprocess_field(&$variables, $hook) {
 
     case 'field_ff_ms_co_financing':
       $variables['container_tag'] = 'li';
-      if (!$variables['element']['#object']->field_ff_multi_funding and
+      if (!$variables['element']['#object']->field_ff_multi_funding_txt and
         !$variables['element']['#object']->field_ff_funds and
         !$variables['element']['#object']->field_ff_sources_co_funding) {
         $variables['suffix'] = '</ul>';
@@ -413,7 +412,7 @@ function farnet_preprocess_field(&$variables, $hook) {
 
     case 'field_ff_sources_co_funding':
       $variables['container_tag'] = 'li';
-      if (!$variables['element']['#object']->field_ff_multi_funding and
+      if (!$variables['element']['#object']->field_ff_multi_funding_txt and
         !$variables['element']['#object']->field_ff_funds) {
         $variables['suffix'] = '</ul>';
       }
@@ -423,7 +422,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       }
       break;
 
-    case 'field_ff_multi_funding':
+    case 'field_ff_multi_funding_txt':
       $variables['container_tag'] = 'li';
       if (!$variables['element']['#object']->field_ff_funds) {
         $variables['suffix'] = '</ul>';
@@ -441,7 +440,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       if (!$variables['element']['#object']->field_ff_emff and
         !$variables['element']['#object']->field_ff_ms_co_financing and
         !$variables['element']['#object']->field_ff_sources_co_funding and
-        !$variables['element']['#object']->field_ff_multi_funding) {
+        !$variables['element']['#object']->field_ff_multi_funding_txt) {
         $variables['prefix'] = '<ul class="fr-u-ul">';
       }
       break;
