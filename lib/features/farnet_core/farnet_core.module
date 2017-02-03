@@ -408,7 +408,7 @@ function _farnet_core_display_contact_details($node) {
       if (empty(array_intersect($contact_type, $position))) {
         continue;
       }
-      $position_label = t($contact_label[$org_id]);
+      $position_label = $contact_label[$org_id];
 
       // Before processing the first contact, add the wrappers.
       if ($no_value) {
