@@ -32,6 +32,13 @@ function farnet_pages_form_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function farnet_pages_field_display_alter(&$display, $context) {
 
+  if (($context['field']['field_name'] === 'field_tags')
+    && ($context['entity']->type == 'page')) {
+    if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
+      $display['label'] = 'hidden';
+    }
+  }
+
   if (($context['field']['field_name'] === 'group_content_access')
     && ($context['entity']->type == 'page')) {
     if ($context['entity_type'] == 'node' && $context['view_mode'] == 'full') {
