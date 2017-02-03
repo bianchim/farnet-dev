@@ -68,6 +68,7 @@ function farnet_homepage_highlight_views_default_views() {
   $handler->display->display_options['fields']['field_slide']['table'] = 'field_data_field_slide';
   $handler->display->display_options['fields']['field_slide']['field'] = 'field_slide';
   $handler->display->display_options['fields']['field_slide']['label'] = '';
+  $handler->display->display_options['fields']['field_slide']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_slide']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_slide']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_slide']['settings'] = array(
@@ -88,6 +89,7 @@ function farnet_homepage_highlight_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_farnet_abstract']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['field_farnet_abstract']['settings'] = array(
