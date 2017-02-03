@@ -295,7 +295,6 @@ function farnet_core_field_extra_fields() {
 function farnet_core_node_view($node, $view_mode, $langcode) {
   if ($view_mode === "full") {
     $content_types = _farnet_core_get_contact_details_bundles();
-
     if (in_array($node->type, $content_types)) {
       $node->content['contact_details'] = [
         '#markup' => _farnet_core_display_contact_details($node),
@@ -379,7 +378,10 @@ function _farnet_core_display_contact_details($node) {
       break;
 
     case 'gp_project':
+      $organisations = _farnet_core_get_organisations($node);
+      $contact_type = ['Manager', 'Project promoter'];
       $contact_label = array('flag' => 'FLAG', 'organisation' => 'Beneficiary');
+      break;
     case 'gp_method':
     case 'gp_short_story':
       $organisations = _farnet_core_get_organisations($node);
@@ -468,7 +470,6 @@ function _farnet_core_display_contact_details($node) {
   if (!$no_value) {
     $output .= '</div></fieldset>';
   }
-
   return $output;
 }
 
@@ -489,12 +490,14 @@ function _farnet_core_get_organisations($node) {
     $flag = reset($flag);
     $flag = entity_metadata_wrapper('node', $flag);
     // Return flag and current node organisations.
-    //return array_merge($flag->field_organisations->value(), $node->field_organisations->value());
-    return array(
-      'flag' => $flag->field_organisations->value()[0],
-      'organisation' => $node->field_organisations->value()[0],
-    );
-
+    $organisations = array();
+    if (isset($flag->field_organisations->value()[0])) {
+      $organisations['flag'] =  $flag->field_organisations->value()[0];
+    }
+    if (isset($node->field_organisations->value()[0])) {
+      $organisations['organisation'] = ($node->field_organisations->value()[0]);
+    }
+    return $organisations;
   }
   // If no flag, return only the node organisations.
   return array('organisation' => $node->field_organisations->value()[0]);

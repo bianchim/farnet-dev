@@ -117,4 +117,5 @@
   <?php print render($content['group_gp_method_flag']); ?>
   <?php print render($content['group_gp_method_media']); ?>
 
+  <?php print render($content['contact_details']); ?>
 </div>
