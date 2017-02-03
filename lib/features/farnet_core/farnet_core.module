@@ -352,9 +352,12 @@ function _farnet_core_display_contact_details($node) {
   $node = entity_metadata_wrapper('node', $node);
 
   // Contact details cases.
+  $organisations = array();
   switch ($node->type->value()) {
     case 'cooperation_call':
-      $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      if (isset($node->field_organisations->value()[0])) {
+        $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      }
       $contact_type = ['Call contact'];
       $contact_label = array('organisation' => 'Organisation');
       break;
@@ -366,13 +369,17 @@ function _farnet_core_display_contact_details($node) {
       break;
 
     case 'factsheet_flag':
-      $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      if (isset($node->field_organisations->value()[0])) {
+        $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      }
       $contact_type = ['President', 'Manager'];
       $contact_label = array('organisation' => 'Organisation');
       break;
 
     case 'factsheet_country':
-      $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      if (isset($node->field_organisations->value()[0])) {
+        $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      }
       $contact_type = ['Main contact'];
       $contact_label = array('organisation' => 'Managing Authority');
       break;
@@ -487,11 +494,11 @@ function _farnet_core_get_organisations($node) {
   // Only keep the first flag.
   $flag = $node->field_flag->value();
 
+  $organisations = array();
   if (!empty($flag)) {
     $flag = reset($flag);
     $flag = entity_metadata_wrapper('node', $flag);
     // Return flag and current node organisations.
-    $organisations = array();
     if (isset($flag->field_organisations->value()[0])) {
       $organisations['flag'] = $flag->field_organisations->value()[0];
     }
@@ -501,7 +508,10 @@ function _farnet_core_get_organisations($node) {
     return $organisations;
   }
   // If no flag, return only the node organisations.
-  return array('organisation' => $node->field_organisations->value()[0]);
+  if (isset($node->field_organisations->value()[0])) {
+    $organisations = array('organisation' => $node->field_organisations->value()[0]);
+  }
+  return $organisations;
 }
 
 /**
