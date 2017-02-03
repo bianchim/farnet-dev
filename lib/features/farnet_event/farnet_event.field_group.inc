@@ -280,14 +280,14 @@ function farnet_event_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'open',
       'instance_settings' => array(
         'description' => '',
         'show_label' => 1,
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-ne-event-agenda field-group-div',
+        'classes' => 'group-ne-event-agenda field-group-tab',
         'id' => '',
       ),
     ),
