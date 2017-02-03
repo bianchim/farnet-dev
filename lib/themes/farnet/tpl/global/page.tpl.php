@@ -188,11 +188,11 @@ global $base_url;
 
           <a id="content"></a>
 
-          <?php if ($node_type): ?>
+          <?php if (isset($node_type)): ?>
             <p class="title"><?php print $node_type; ?></p>
           <?php endif; ?>
           <?php if ($title): ?>
-            <h1 class="title<?php if ($node_type): ?>-small<?php endif; ?>" id="content-title">
+            <h1 class="title<?php if (isset($node_type)): ?>-small<?php endif; ?>" id="content-title">
               <?php print $title; ?>
             </h1>
           <?php endif; ?>
