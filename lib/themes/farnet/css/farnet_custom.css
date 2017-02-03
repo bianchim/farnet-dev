@@ -81,7 +81,7 @@
 .multi-values div ul li {
   display: inline;
   margin: 0;
-  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #layout-body .affix-bottom {
