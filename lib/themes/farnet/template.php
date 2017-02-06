@@ -578,7 +578,7 @@ function farnet_social_media_links_platform(&$variables) {
  */
 function farnet_field_group_build_pre_render_alter(&$element) {
   if (isset($element['group_factsheet_flag_content']) and isset($element['title_field'])) {
-    $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><h2>' . $element['title_field']['#items'][0]['value'] . '</h2><div class="highlight--background">';
+    $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><div class="highlight--background">';
     $element['group_factsheet_flag_content']['#suffix'] = '</div></div>';
   }
   if (isset($element['group_factsheet_flag_funding'])) {
