@@ -81,7 +81,7 @@
 .multi-values div ul li {
   display: inline;
   margin: 0;
-  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #layout-body .affix-bottom {
@@ -139,9 +139,12 @@ h1.title-small {
   width: 100%;
   height: auto;
 }
+<<<<<<< HEAD
 
 @media screen and (min-width: 768px) {
   .farnet-home-slider .flex-control-nav {
     z-index: 100;
   }
 }
+=======
+>>>>>>> 20eaaf30e03cdaf95c53b942185088c04c0708cb
