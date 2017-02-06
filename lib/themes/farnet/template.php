@@ -769,7 +769,7 @@ function farnet_item_list($variables) {
   // Check to see whether the block title exists before adding a header.
   // Empty headers are not semantic and present accessibility challenges.
   $output = NULL;
-  if (!$variables['pager']) {
+  if (!isset($variables['pager'])) {
     $output = '<div class="item-list">';
   }
   if (isset($title) && $title !== '') {
@@ -816,7 +816,7 @@ function farnet_item_list($variables) {
       if ($i == $num_items) {
         $attributes['class'][] = 'last';
       }
-      if (!$variables['pager']) {
+      if (!isset($variables['pager'])) {
         $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
       }
       else {
@@ -825,7 +825,7 @@ function farnet_item_list($variables) {
     }
     $output .= "</$type>";
   }
-  if (!$variables['pager']) {
+  if (!isset($variables['pager'])) {
     $output .= '</div>';
   }
   return $output;
