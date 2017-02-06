@@ -196,33 +196,33 @@ function farnet_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-11' => array(
-          'module' => 'block',
-          'delta' => '11',
+        'menu_block-1' => array(
+          'module' => 'menu_block',
+          'delta' => '1',
           'region' => 'landing_content',
           'weight' => '-10',
         ),
-        'block-9' => array(
-          'module' => 'block',
-          'delta' => '9',
+        'menu_block-2' => array(
+          'module' => 'menu_block',
+          'delta' => '2',
           'region' => 'landing_content',
           'weight' => '-9',
         ),
-        'block-10' => array(
-          'module' => 'block',
-          'delta' => '10',
+        'menu_block-3' => array(
+          'module' => 'menu_block',
+          'delta' => '3',
           'region' => 'landing_content',
           'weight' => '-8',
         ),
-        'block-12' => array(
-          'module' => 'block',
-          'delta' => '12',
+        'menu_block-4' => array(
+          'module' => 'menu_block',
+          'delta' => '4',
           'region' => 'landing_content',
           'weight' => '-7',
         ),
-        'block-13' => array(
-          'module' => 'block',
-          'delta' => '13',
+        'menu_block-5' => array(
+          'module' => 'menu_block',
+          'delta' => '5',
           'region' => 'landing_content',
           'weight' => '-6',
         ),
