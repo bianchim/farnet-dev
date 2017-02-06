@@ -128,3 +128,7 @@
 .field-name-field-id-text {
   display: none;
 }
+
+#first-time {
+  display: none;
+}
