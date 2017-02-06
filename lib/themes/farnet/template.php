@@ -28,7 +28,7 @@ function farnet_preprocess_page(&$variables) {
   // Switch title to page type.
   if (isset($variables['node'])) {
     $node_type = node_type_get_name($variables['node']);
-    if (!in_array($node_type, array('Basic page', 'Article'))) {
+    if (!in_array($node_type, array('Basic page', 'Article', 'Landing Page'))) {
       $variables['node_type'] = $node_type;
     }
     if (in_array($node_type, array('Landing Page'))) {
