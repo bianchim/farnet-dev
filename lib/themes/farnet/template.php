@@ -30,6 +30,22 @@ function farnet_preprocess_page(&$variables) {
       $variables['node_type'] = $node_type;
     }
   }
+
+  // Format regions.
+  $regions = $variables['regions'];
+  $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
+
+  $cols = $variables['cols'];
+  $cols['landing_content'] = array(
+    'lg' => 12 - $cols['content_right']['lg'],
+    'md' => 12 - $cols['content_right']['md'],
+    'sm' => 12,
+    'xs' => 12,
+  );
+
+  // Add variables to template file.
+  $variables['regions'] = $regions;
+  $variables['cols'] = $cols;
 }
 
 /**

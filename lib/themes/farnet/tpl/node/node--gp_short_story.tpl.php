@@ -179,4 +179,6 @@
 
   <?php print render($content['group_short_story_media']); ?>
 
+  <?php print render($content['contact_details']); ?>
+
 </div>
