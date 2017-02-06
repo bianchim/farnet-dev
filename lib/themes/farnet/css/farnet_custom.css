@@ -124,3 +124,7 @@
   width: 100%;
   height: auto;
 }
+
+.field-name-field-id-text {
+  display: none;
+}

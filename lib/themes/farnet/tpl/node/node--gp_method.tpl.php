@@ -6,8 +6,7 @@
  */
 ?>
 
-<h2><?php print render($content['group_gp_method_content']['title_field']); ?></h2>
-
+<?php dpm($content); ?>
 <div class="content clearfix">
 
   <?php if (!empty($content['group_gp_method_content'])) : ?>
@@ -23,12 +22,11 @@
           <?php if (!empty($content['group_gp_method_content']['field_id_text'])) : ?>
             <?php print render($content['group_gp_method_content']['field_id_text']); ?>
           <?php endif; ?>
-          <?php if (!empty($content['group_gp_method_content']['field_farnet_abstract'])) : ?>
-            <?php /*print render($content['group_gp_method_content']['field_farnet_abstract']);*/ ?>
-          <?php endif; ?>
         </div>
         <div class="col-sm-6 col-md-4">
-          <?php print render($content['group_gp_method_content']['field_picture']); ?>
+          <?php if (!empty($content['group_gp_method_content']['field_picture'])) : ?>
+            <?php print render($content['group_gp_method_content']['field_picture']); ?>
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -79,35 +77,35 @@
   <?php endif; ?>
 
   <div id="group-gp-method-content" class="group-gp-method-content field-group-tab">
-    <h3 class="fr-heading"><span>Project Information</span></h3>
-      <table class="table table-responsive table-blue table--white-borders">
-        <tbody>
-        <?php if (!empty($content['group_gp_method_timeframe']['field_dates_start_end'])) : ?>
-          <tr>
-            <th scope="row"><?php print $content['group_gp_method_timeframe']['field_dates_start_end']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_gp_method_timeframe']['field_dates_start_end']); ?></td>
-          </tr>
-        <?php endif; ?>
-        <?php if (!empty($content['group_gp_method_taxonomy']['field_sea_basins'])) : ?>
-          <tr>
-            <th scope="row"><?php print $content['group_gp_method_taxonomy']['field_sea_basins']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_gp_method_taxonomy']['field_sea_basins']); ?></td>
-          </tr>
-        <?php endif; ?>
-        <?php if (!empty($content['group_gp_method_taxonomy']['field_type_of_area'])) : ?>
-          <tr>
-            <th scope="row"><?php print $content['group_gp_method_taxonomy']['field_type_of_area']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_gp_method_taxonomy']['field_type_of_area']); ?></td>
-          </tr>
-        <?php endif; ?>
-        <?php if (!empty($content['group_gp_method_taxonomy']['field_term_theme'])) : ?>
-          <tr>
-            <th scope="row"><?php print $content['group_gp_method_taxonomy']['field_term_theme']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_gp_method_taxonomy']['field_term_theme']); ?></td>
-          </tr>
-        <?php endif; ?>
-        </tbody>
-      </table>
+    <h3 class="fr-heading"><span>Information</span></h3>
+    <table class="table table-responsive table-blue table--white-borders">
+      <tbody>
+      <?php if (!empty($content['group_gp_method_timeframe']['field_dates_start_end'])) : ?>
+        <tr>
+          <th scope="row"><?php print $content['group_gp_method_timeframe']['field_dates_start_end']['#title']; ?></th>
+          <td class="multi-values"><?php print render($content['group_gp_method_timeframe']['field_dates_start_end']); ?></td>
+        </tr>
+      <?php endif; ?>
+      <?php if (!empty($content['group_gp_method_taxonomy']['field_sea_basins'])) : ?>
+        <tr>
+          <th scope="row"><?php print $content['group_gp_method_taxonomy']['field_sea_basins']['#title']; ?></th>
+          <td class="multi-values"><?php print render($content['group_gp_method_taxonomy']['field_sea_basins']); ?></td>
+        </tr>
+      <?php endif; ?>
+      <?php if (!empty($content['group_gp_method_taxonomy']['field_type_of_area'])) : ?>
+        <tr>
+          <th scope="row"><?php print $content['group_gp_method_taxonomy']['field_type_of_area']['#title']; ?></th>
+          <td class="multi-values"><?php print render($content['group_gp_method_taxonomy']['field_type_of_area']); ?></td>
+        </tr>
+      <?php endif; ?>
+      <?php if (!empty($content['group_gp_method_taxonomy']['field_term_theme'])) : ?>
+        <tr>
+          <th scope="row"><?php print $content['group_gp_method_taxonomy']['field_term_theme']['#title']; ?></th>
+          <td class="multi-values"><?php print render($content['group_gp_method_taxonomy']['field_term_theme']); ?></td>
+        </tr>
+      <?php endif; ?>
+      </tbody>
+    </table>
     <?php print render($content['group_gp_method_resources']['#suffix']); ?>
   </div>
 
