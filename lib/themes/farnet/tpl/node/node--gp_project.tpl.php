@@ -6,7 +6,6 @@
  */
 ?>
 
-<?php dpm($content); ?>
 <div class="content clearfix">
 
   <?php if (!empty($content['group_gp_project_content'])) : ?>
