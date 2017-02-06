@@ -130,3 +130,11 @@ h1.title-small {
   color: #000;
   text-align: left;
 }
+
+.content .media .media-left .field-type-image {
+  width: 300px;
+}
+
+.field-type-image img {
+  width: 100%;
+  height: auto;
