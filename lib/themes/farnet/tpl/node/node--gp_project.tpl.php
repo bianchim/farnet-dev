@@ -61,15 +61,19 @@
         <table class="table table-responsive table-blue table--no-borders table-tbody--horizontal-borders">
           <thead>
             <tr>
+              <?php if (!empty($content['group_gp_project_cost']['field_gpp_total_project_cost'])) : ?>
               <th>
-                <?php print $content['group_gp_project_cost']['field_gpp_total_project_cost']['#title']; ?></th>
+                <?php print $content['group_gp_project_cost']['field_gpp_total_project_cost']['#title']; ?>
+              </th>
               <th>
                 <?php print number_format($content['group_gp_project_cost']['field_gpp_total_project_cost']['0']['#markup'], 0, '.', ' '); ?> EUR
               </th>
+              <?php endif; ?>
             </tr>
           </thead>
           <tbody class="u-bg-white">
             <tr>
+              <?php if (!empty($content['group_gp_project_cost']['field_gpp_a_flag_grant'])) : ?>
               <td><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title']); ?></td>
               <td>
                 <?php print number_format($content['group_gp_project_cost']['field_gpp_a_flag_grant']['0']['#markup'], 0, '.', ' '); ?> EUR
@@ -91,8 +95,10 @@
                   <?php endif; ?>
                 </ul>
               </td>
+              <?php endif; ?>
             </tr>
             <tr>
+              <?php if (!empty($content['group_gp_project_cost']['field_gpp_b_beneficiary'])) : ?>
               <td><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title']); ?></td>
               <td>
                 <?php print number_format($content['group_gp_project_cost']['field_gpp_b_beneficiary']['0']['#markup'], 0, '.', ' '); ?> EUR
@@ -105,6 +111,7 @@
                   <?php endif; ?>
                 </ul>
               </td>
+              <?php endif; ?>
             </tr>
           </tbody>
         </table>
