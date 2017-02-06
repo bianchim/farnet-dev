@@ -23,17 +23,19 @@ function farnet_preprocess_page(&$variables) {
     );
   }
 
+  $regions = $variables['regions'];
+
   // Switch title to page type.
   if (isset($variables['node'])) {
     $node_type = node_type_get_name($variables['node']);
     if (!in_array($node_type, array('Basic page', 'Article'))) {
       $variables['node_type'] = $node_type;
     }
+    if (in_array($node_type, array('Landing Page'))) {
+      // Format regions.
+      $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
+    }
   }
-
-  // Format regions.
-  $regions = $variables['regions'];
-  $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
 
   $cols = $variables['cols'];
   $cols['landing_content'] = array(
