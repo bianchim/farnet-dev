@@ -815,7 +815,7 @@ function farnet_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_gp_all');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Good practice';
+  $handler->display->display_options['title'] = 'Good Practice';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
@@ -897,7 +897,7 @@ function farnet_views_views_default_views() {
   /* Display: GP Projects */
   $handler = $view->new_display('page', 'GP Projects', 'page_gp_projects');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Projects';
+  $handler->display->display_options['title'] = 'Good Practice Projects';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -966,7 +966,7 @@ function farnet_views_views_default_views() {
   /* Display: GP Methods */
   $handler = $view->new_display('page', 'GP Methods', 'page_gp_methods');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Methods';
+  $handler->display->display_options['title'] = 'Good Practice Methods';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1035,7 +1035,7 @@ function farnet_views_views_default_views() {
   /* Display: GP Short Stories */
   $handler = $view->new_display('page', 'GP Short Stories', 'page_gp_short_stories');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Short stories';
+  $handler->display->display_options['title'] = 'Good Practice Short Stories';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1105,7 +1105,6 @@ function farnet_views_views_default_views() {
   $view = new view();
   $view->name = 'farnet_view_news';
   $view->description = 'Views for the news Farnet and other';
-  $view->tag = 'default';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Farnet News';
@@ -1361,7 +1360,6 @@ function farnet_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
-  /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
   $handler->display->display_options['path'] = 'news-events/news';
 
   /* Display: Farnet */
