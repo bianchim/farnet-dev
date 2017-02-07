@@ -3280,7 +3280,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'short',
+          'format_type' => 'teaser',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
