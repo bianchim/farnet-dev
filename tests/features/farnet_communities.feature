@@ -42,40 +42,40 @@ Feature: Communities feature
 
     Given I am not logged in
     When I am viewing a "community_public" content:
-      | title                 | A public community                   |
+      | title                 | A public community |
     # And print last response
     Then I should get an access denied error
     And I am viewing a "nexteuropa_news" content:
-      | title                 | A News in a public community   |
-      | og_group_ref          | A public community                   |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | workbench_moderation_state     | published                   |
-      | workbench_moderation_state_new | published                   |
+      | title                          | A News in a public community         |
+      | og_group_ref                   | A public community                   |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
     Then I should get an access denied error
 
     When I am viewing a "community_private" content:
-      | title                 | A private community                  |
+      | title                 | A private community |
     Then I should get an access denied error
     And I am viewing a "nexteuropa_news" content:
-      | title                 | A News in a private community        |
-      | og_group_ref          | A private community                  |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | workbench_moderation_state     | published                   |
-      | workbench_moderation_state_new | published                   |
+      | title                          | A News in a private community        |
+      | og_group_ref                   | A private community                  |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
     Then I should get an access denied error
 
     When I am viewing a "community_hidden" content:
-      | title                 | A hidden community                   |
+      | title                 | A hidden community |
     Then I should get an access denied error
     And I am viewing a "nexteuropa_news" content:
-      | title                 | A News hidden community   |
-      | og_group_ref          | A hidden community                   |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | workbench_moderation_state     | published                   |
-      | workbench_moderation_state_new | published                   |
+      | title                          | A News hidden community              |
+      | og_group_ref                   | A hidden community                   |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
     Then I should get an access denied error
 
   @api 
@@ -94,13 +94,13 @@ Feature: Communities feature
     Then I should see the heading "A public community"
     And I should see "Subscribe to group"
     And I am viewing a "nexteuropa_news" content:
-      | title                 | A News in a public community   |
-      | og_group_ref          | A public community                  |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
-      | workbench_moderation_state     | published                   |
-      | workbench_moderation_state_new | published                   |
+      | title                          | A News in a public community         |
+      | og_group_ref                   | A public community                   |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | status                         | 1                                    |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
     Then I should see the heading "A News in a public community"
 
     When I am viewing a "community_private" content:
@@ -110,28 +110,28 @@ Feature: Communities feature
     Then I should see the heading "A private community"
     And I should see "Request group membership"
     And I am viewing a "nexteuropa_news" content:
-      | title                 | A News in a private community   |
-      | og_group_ref          | A private community                  |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
-      | workbench_moderation_state     | published                   |
-      | workbench_moderation_state_new | published                   |
+      | title                          | A News in a private community        |
+      | og_group_ref                   | A private community                  |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | status                         | 1                                    |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
     Then I should get an access denied error
 
     When I am viewing a "community_hidden" content:
-      | title                 | A hidden community                   |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | status                | 1                                    |
+      | title                 | A hidden community               |
+      | field_ne_body         | Lorem ipsum dolor sit amet body. |
+      | status                | 1                                |
     Then I should get an access denied error
     And I am viewing a "nexteuropa_news" content:
-      | title                 | A News in a hidden community   |
-      | og_group_ref          | A hidden community                  |
-      | field_ne_body         | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract | Lorem ipsum dolor sit amet abstract. |
-      | status                | 1                                    |
-      | workbench_moderation_state     | published                   |
-      | workbench_moderation_state_new | published                   |
+      | title                          | A News in a hidden community         |
+      | og_group_ref                   | A hidden community                   |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | status                         | 1                                    |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
     Then I should get an access denied error
 
   @api
@@ -169,31 +169,31 @@ Feature: Communities feature
     And I should not see "New draft"
 
     Examples:
-      | community-title     |  community-type   |  community-path             | content-hname    | content-type      |
-      | A public community  | community_public  | community/public-community  | News             | nexteuropa_news   |
-      | A public community  | community_public  | community/public-community  | Discussion       | farnet_discussion |
-      | A public community  | community_public  | community/public-community  | Event            | nexteuropa_event  |
-      | A public community  | community_public  | community/public-community  | Cooperation Call | cooperation_call  |
-      | A public community  | community_public  | community/public-community  | Cooperation Idea | cooperation_idea  |
-      | A public community  | community_public  | community/public-community  | GP Method        | gp_method         |
-      | A public community  | community_public  | community/public-community  | GP Project       | gp_project        |
-      | A public community  | community_public  | community/public-community  | GP Short Story   | gp_short_story    |
-      | A private community | community_private | community/private-community | News             | nexteuropa_news   |
-      | A private community | community_private | community/private-community | Discussion       | farnet_discussion |
-      | A private community | community_private | community/private-community | Event            | nexteuropa_event  |
-      | A private community | community_private | community/private-community | Cooperation Call | cooperation_call  |
-      | A private community | community_private | community/private-community | Cooperation Idea | cooperation_idea  |
-      | A private community | community_private | community/private-community | GP Method        | gp_method         |
-      | A private community | community_private | community/private-community | GP Project       | gp_project        |
-      | A private community | community_private | community/private-community | GP Short Story   | gp_short_story    |
-      | A hidden community  | community_hidden  | community/hidden-community  | News             | nexteuropa_news   |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion       | farnet_discussion |
-      | A hidden community  | community_hidden  | community/hidden-community  | Event            | nexteuropa_event  |
-      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Call | cooperation_call  |
-      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Idea | cooperation_idea  |
-      | A hidden community  | community_hidden  | community/hidden-community  | GP Method        | gp_method         |
-      | A hidden community  | community_hidden  | community/hidden-community  | GP Project       | gp_project        |
-      | A hidden community  | community_hidden  | community/hidden-community  | GP Short Story   | gp_short_story    |
+      | community-title     |  community-type   |  community-path             | content-hname             | content-type      |
+      | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news   |
+      | A public community  | community_public  | community/public-community  | Discussion                | farnet_discussion |
+      | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event  |
+      | A public community  | community_public  | community/public-community  | Cooperation Call          | cooperation_call  |
+      | A public community  | community_public  | community/public-community  | Cooperation Idea          | cooperation_idea  |
+      | A public community  | community_public  | community/public-community  | Good Practice Method      | gp_method         |
+      | A public community  | community_public  | community/public-community  | Good Practice Project     | gp_project        |
+      | A public community  | community_public  | community/public-community  | Good Practice Short Story | gp_short_story    |
+      | A private community | community_private | community/private-community | News                      | nexteuropa_news   |
+      | A private community | community_private | community/private-community | Discussion                | farnet_discussion |
+      | A private community | community_private | community/private-community | Event                     | nexteuropa_event  |
+      | A private community | community_private | community/private-community | Cooperation Call          | cooperation_call  |
+      | A private community | community_private | community/private-community | Cooperation Idea          | cooperation_idea  |
+      | A private community | community_private | community/private-community | Good Practice Method      | gp_method         |
+      | A private community | community_private | community/private-community | Good Practice Project     | gp_project        |
+      | A private community | community_private | community/private-community | Good Practice Short Story | gp_short_story    |
+      | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news   |
+      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | farnet_discussion |
+      | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Call          | cooperation_call  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Idea          | cooperation_idea  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Good Practice Method      | gp_method         |
+      | A hidden community  | community_hidden  | community/hidden-community  | Good Practice Project     | gp_project        |
+      | A hidden community  | community_hidden  | community/hidden-community  | Good Practice Short Story | gp_short_story    |
 
   @api
   Scenario Outline: As a member, I can add/edit/delete only my own contents of any of the communities where I am a administrator
@@ -206,14 +206,14 @@ Feature: Communities feature
     When I click "<content-hname>" in the "sidebar_left" region
     Then I should see the heading "Create <content-hname>"
     Given I am viewing a "<content-type>" content:
-      | title                       | My Content test                      |
-      | og_group_ref                | <community-title>                    |
-      | field_ne_body               | Lorem ipsum dolor sit amet body.     |
-      | field_farnet_abstract       | Lorem ipsum dolor sit amet abstract. |
-      | status                      | 1                                    |
-      | workbench_moderation_state  | published                            |
-      | workbench_moderation_state_new  | published                        |
-      | author                | Donald                                     |
+      | title                          | My Content test                      |
+      | og_group_ref                   | <community-title>                    |
+      | field_ne_body                  | Lorem ipsum dolor sit amet body.     |
+      | field_farnet_abstract          | Lorem ipsum dolor sit amet abstract. |
+      | status                         | 1                                    |
+      | workbench_moderation_state     | published                            |
+      | workbench_moderation_state_new | published                            |
+      | author                         | Donald                               |
     Then I should see the heading "My Content test"
     And I should see "New draft"
     When I click "New draft"
@@ -232,28 +232,28 @@ Feature: Communities feature
     Then I see the button "Delete"
 
     Examples:
-      | community-title     |  community-type   |  community-path             | content-hname    | content-type      |
-      | A public community  | community_public  | community/public-community  | News             | nexteuropa_news   |
-      | A public community  | community_public  | community/public-community  | Discussion       | farnet_discussion |
-      | A public community  | community_public  | community/public-community  | Event            | nexteuropa_event  |
-      | A public community  | community_public  | community/public-community  | Cooperation Call | cooperation_call  |
-      | A public community  | community_public  | community/public-community  | Cooperation Idea | cooperation_idea  |
-      | A public community  | community_public  | community/public-community  | GP Method        | gp_method         |
-      | A public community  | community_public  | community/public-community  | GP Project       | gp_project        |
-      | A public community  | community_public  | community/public-community  | GP Short Story   | gp_short_story    |
-      | A private community | community_private | community/private-community | News             | nexteuropa_news   |
-      | A private community | community_private | community/private-community | Discussion       | farnet_discussion |
-      | A private community | community_private | community/private-community | Event            | nexteuropa_event  |
-      | A private community | community_private | community/private-community | Cooperation Call | cooperation_call  |
-      | A private community | community_private | community/private-community | Cooperation Idea | cooperation_idea  |
-      | A private community | community_private | community/private-community | GP Method        | gp_method         |
-      | A private community | community_private | community/private-community | GP Project       | gp_project        |
-      | A private community | community_private | community/private-community | GP Short Story   | gp_short_story    |
-      | A hidden community  | community_hidden  | community/hidden-community  | News             | nexteuropa_news   |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion       | farnet_discussion |
-      | A hidden community  | community_hidden  | community/hidden-community  | Event            | nexteuropa_event  |
-      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Call | cooperation_call  |
-      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Idea | cooperation_idea  |
-      | A hidden community  | community_hidden  | community/hidden-community  | GP Method        | gp_method         |
-      | A hidden community  | community_hidden  | community/hidden-community  | GP Project       | gp_project        |
-      | A hidden community  | community_hidden  | community/hidden-community  | GP Short Story   | gp_short_story    |
+      | community-title     |  community-type   |  community-path             | content-hname             | content-type      |
+      | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news   |
+      | A public community  | community_public  | community/public-community  | Discussion                | farnet_discussion |
+      | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event  |
+      | A public community  | community_public  | community/public-community  | Cooperation Call          | cooperation_call  |
+      | A public community  | community_public  | community/public-community  | Cooperation Idea          | cooperation_idea  |
+      | A public community  | community_public  | community/public-community  | Good Practice Method      | gp_method         |
+      | A public community  | community_public  | community/public-community  | Good Practice Project     | gp_project        |
+      | A public community  | community_public  | community/public-community  | Good Practice Short Story | gp_short_story    |
+      | A private community | community_private | community/private-community | News                      | nexteuropa_news   |
+      | A private community | community_private | community/private-community | Discussion                | farnet_discussion |
+      | A private community | community_private | community/private-community | Event                     | nexteuropa_event  |
+      | A private community | community_private | community/private-community | Cooperation Call          | cooperation_call  |
+      | A private community | community_private | community/private-community | Cooperation Idea          | cooperation_idea  |
+      | A private community | community_private | community/private-community | Good Practice Method      | gp_method         |
+      | A private community | community_private | community/private-community | Good Practice Project     | gp_project        |
+      | A private community | community_private | community/private-community | Good Practice Short Story | gp_short_story    |
+      | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news   |
+      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | farnet_discussion |
+      | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Call          | cooperation_call  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Cooperation Idea          | cooperation_idea  |
+      | A hidden community  | community_hidden  | community/hidden-community  | Good Practice Method      | gp_method         |
+      | A hidden community  | community_hidden  | community/hidden-community  | Good Practice Project     | gp_project        |
+      | A hidden community  | community_hidden  | community/hidden-community  | Good Practice Short Story | gp_short_story    |
