@@ -6,9 +6,6 @@
  */
 ?>
 
-<h2><?php print render($content['group_short_story_content']['title_field']); ?></h2>
-
-
 <div class="content clearfix">
 
   <?php if (!empty($content['group_short_story_content'])) : ?>
@@ -27,7 +24,7 @@
   <?php endif; ?>
 
   <?php if (!empty($content['group_short_story_quote'])) : ?>
-    <div id="group-short-story-quote" class="group_short_story_quote  field-group-tab">
+    <div id="group-short-story-quote" class="group_short_story_quote field-group-tab">
       <div class="farnet-quote">
         <?php if (!empty($content['group_short_story_quote']['field_picture'])) : ?>
           <div class="farnet-quote__illustration">
@@ -143,31 +140,31 @@
         <?php if (!empty($content['group_gp_short_story_info']['field_dates_start_end'])) : ?>
           <tr>
             <th scope="row"><?php print $content['group_gp_short_story_info']['field_dates_start_end']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_gp_short_story_info']['field_dates_start_end']); ?></td>
+            <td class="multi-values"><?php print render($content['group_gp_short_story_info']['field_dates_start_end']); ?></td>
           </tr>
         <?php endif; ?>
         <?php if (!empty($content['group_short_story_taxonomy']['field_sea_basins'])) : ?>
           <tr>
             <th scope="row"><?php print $content['group_short_story_taxonomy']['field_sea_basins']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_short_story_taxonomy']['field_sea_basins']); ?></td>
+            <td class="multi-values"><?php print render($content['group_short_story_taxonomy']['field_sea_basins']); ?></td>
           </tr>
         <?php endif; ?>
         <?php if (!empty($content['group_short_story_taxonomy']['field_type_of_area'])) : ?>
           <tr>
             <th scope="row"><?php print $content['group_short_story_taxonomy']['field_type_of_area']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_short_story_taxonomy']['field_type_of_area']); ?></td>
+            <td class="multi-values"><?php print render($content['group_short_story_taxonomy']['field_type_of_area']); ?></td>
           </tr>
         <?php endif; ?>
         <?php if (!empty($content['group_short_story_taxonomy']['field_term_theme'])) : ?>
           <tr>
             <th scope="row"><?php print $content['group_short_story_taxonomy']['field_term_theme']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_short_story_taxonomy']['field_term_theme']); ?></td>
+            <td class="multi-values"><?php print render($content['group_short_story_taxonomy']['field_term_theme']); ?></td>
           </tr>
         <?php endif; ?>
         <?php if (!empty($content['group_short_story_content']['field_website'])) : ?>
           <tr>
             <th scope="row"><?php print $content['group_short_story_content']['field_website']['#title']; ?></th>
-            <td class="multi-country"><?php print render($content['group_short_story_content']['field_website']); ?></td>
+            <td class="multi-values"><?php print render($content['group_short_story_content']['field_website']); ?></td>
           </tr>
         <?php endif; ?>
         </tbody>
