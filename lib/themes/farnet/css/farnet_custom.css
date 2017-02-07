@@ -149,3 +149,7 @@ h1.title-small {
 #first-time {
   display: none;
 }
+
+.fr-select div.form-item {
+  margin-top: 0;
+}
