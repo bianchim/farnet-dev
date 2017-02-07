@@ -7,7 +7,7 @@ Feature: GP Method content type
   Scenario: Access to gp method create form
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/gp-method"
-    Then I should see the text "Create GP Method"
+    Then I should see the text "Create Good Practice Method"
 
   @api
   Scenario: Access denied to create form without right
@@ -101,4 +101,4 @@ Feature: GP Method content type
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test gp method?"
     And I press the "Delete" button
-    Then I should see the success message "GP Method test gp method has been deleted."
+    Then I should see the success message "Good Practice Method test gp method has been deleted."
