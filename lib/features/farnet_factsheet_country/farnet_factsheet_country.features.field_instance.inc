@@ -125,13 +125,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'prefix_suffix' => 0,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 14,
@@ -397,13 +397,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'prefix_suffix' => 0,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 11,
@@ -577,13 +577,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'prefix_suffix' => 0,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 9,
@@ -1151,13 +1151,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'prefix_suffix' => 0,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 13,
@@ -1337,13 +1337,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
+          'prefix_suffix' => 0,
           'scale' => 0,
-          'thousand_separator' => ' ',
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 10,
@@ -1567,8 +1567,8 @@ function farnet_factsheet_country_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 5,
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1647,13 +1647,13 @@ function farnet_factsheet_country_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
+          'prefix_suffix' => 0,
+          'scale' => 0,
+          'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
         'weight' => 12,
