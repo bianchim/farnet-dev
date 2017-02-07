@@ -152,4 +152,6 @@
   <?php print render($content['group_gp_project_flag']); ?>
   <?php print render($content['group_gp_project_media']); ?>
 
+  <?php print render($content['contact_details']); ?>
+
 </div>

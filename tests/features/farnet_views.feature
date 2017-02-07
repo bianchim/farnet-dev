@@ -67,7 +67,7 @@ Feature: Check Views
       | title                     | status  | field_publication_date  |
       | Behat GP Projects Test #1 | 1       | 1465294233              |
     When I visit "on-the-ground/good-practice"
-    And I should see the heading "Good practice"
+    And I should see the heading "Good Practice"
     And I should see the text "Behat GP Projects Test #1"
 
   @api
@@ -77,7 +77,7 @@ Feature: Check Views
       | title                     | status  | field_publication_date  |
       | Behat GP Projects Test #1 | 1       | 1465294233              |
     When I visit "on-the-ground/good-practice/projects"
-    And I should see the heading "Projects"
+    And I should see the heading "Good Practice Projects"
     And I should see the text "Behat GP Projects Test #1"
 
   @api
