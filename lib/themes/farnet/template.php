@@ -178,7 +178,6 @@ function farnet_dropdown($variables) {
  * Implements hook_form_alter().
  */
 function farnet_form_alter(&$form, &$form_state, $form_id) {
-  
   switch ($form_id) {
     case 'farnet_core_printpdf_multilingual_form':
       $form['#attributes'] = array('class' => 'c-file-download');
