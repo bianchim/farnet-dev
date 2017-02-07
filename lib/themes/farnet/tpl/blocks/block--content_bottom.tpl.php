@@ -47,7 +47,7 @@
 <?php /* dpm($block_html_id); */ ?>
 <?php /* dpm($block_id); */ ?>
 
-<?php if (($block_html_id == 'block-block-15') || ($block_html_id == 'block-block-16') || ($block_html_id == 'block-block-17')): ?>
+<?php if (($block_html_id == 'block-block-13') || ($block_html_id == 'block-block-14') || ($block_html_id == 'block-block-15')): ?>
   <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> col-md-4 col-sm-6">
     <?php print render($title_prefix); ?>
     <?php if ($title && $block->subject): ?>

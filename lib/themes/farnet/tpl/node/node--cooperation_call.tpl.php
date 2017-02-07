@@ -69,5 +69,5 @@
     <?php print render($content['field_publication_date']); ?>
   <?php endif; ?>
 
-
+  <?php print render($content['contact_details']); ?>
 </div>

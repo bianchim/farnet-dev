@@ -260,6 +260,51 @@ function farnet_core_context_load_alter(&$context) {
 }
 
 /**
+ * Implements hook_field_extra_fields().
+ *
+ * Declare our contact details field.
+ */
+function farnet_core_field_extra_fields() {
+  $field = [
+    'contact_details' => [
+      'label' => t('Contact details'),
+      'description' => t('A field showing contact(s) from a node.'),
+      'weight' => 1000,
+    ],
+  ];
+
+  // List content types.
+  $content_types = _farnet_core_get_contact_details_bundles();
+
+  $extra = [];
+  // Add the pseudo field to display.
+  foreach ($content_types as $content_type) {
+    $extra['node'][$content_type]['display'] = $field;
+    $extra['node'][$content_type]['display']['contact_details']['default']['type'] = "visible";
+    $extra['node'][$content_type]['display']['contact_details']['default']['weight'] = 1000;
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_node_view().
+ *
+ * For each configured content type, render the field.
+ */
+function farnet_core_node_view($node, $view_mode, $langcode) {
+  if ($view_mode === "full") {
+    $content_types = _farnet_core_get_contact_details_bundles();
+    if (in_array($node->type, $content_types)) {
+      $node->content['contact_details'] = [
+        '#markup' => _farnet_core_display_contact_details($node),
+        '#weight' => 1000,
+      ];
+    }
+  }
+}
+
+/**
  * Implements hook_COMPONENT_alter().
  *
  * COMPONENT = field_default_field_instances.
@@ -270,6 +315,203 @@ function farnet_core_field_default_field_instances_alter(&$fields) {
       $fields[$field]['display']['default']['type'] = 'hidden';
     }
   }
+}
+
+/**
+ * Content types in which contacts are displayed.
+ */
+function _farnet_core_get_contact_details_bundles() {
+  return [
+    'cooperation_call',
+    'cooperation_idea',
+    'factsheet_flag',
+    'factsheet_country',
+    'gp_method',
+    'gp_project',
+    'gp_short_story',
+  ];
+}
+
+/**
+ * Render a contact field depending on the node.
+ *
+ * @param object $node
+ *   The current viewed node.
+ *
+ * @return string
+ *   Field output as HTML.
+ */
+function _farnet_core_display_contact_details($node) {
+
+  $output = '';
+
+  // Start with no value to render.
+  $no_value = TRUE;
+
+  // Wrap the node for easier handling.
+  $node = entity_metadata_wrapper('node', $node);
+
+  // Contact details cases.
+  $organisations = array();
+  switch ($node->type->value()) {
+    case 'cooperation_call':
+      if (isset($node->field_organisations->value()[0])) {
+        $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      }
+      $contact_type = ['Call contact'];
+      $contact_label = array('organisation' => 'Organisation');
+      break;
+
+    case 'cooperation_idea':
+      $organisations = _farnet_core_get_organisations($node);
+      $contact_type = ['Manager', 'Cooperation contact'];
+      $contact_label = array('flag' => 'FLAG', 'organisation' => 'Organisation');
+      break;
+
+    case 'factsheet_flag':
+      if (isset($node->field_organisations->value()[0])) {
+        $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      }
+      $contact_type = ['President', 'Manager'];
+      $contact_label = array('organisation' => 'Organisation');
+      break;
+
+    case 'factsheet_country':
+      if (isset($node->field_organisations->value()[0])) {
+        $organisations = array('organisation' => $node->field_organisations->value()[0]);
+      }
+      $contact_type = ['Main contact'];
+      $contact_label = array('organisation' => 'Managing Authority');
+      break;
+
+    case 'gp_project':
+      $organisations = _farnet_core_get_organisations($node);
+      $contact_type = ['Manager', 'Project promoter'];
+      $contact_label = array('flag' => 'FLAG', 'organisation' => 'Beneficiary');
+      break;
+
+    case 'gp_method':
+    case 'gp_short_story':
+      $organisations = _farnet_core_get_organisations($node);
+      $contact_type = ['Manager', 'Project promoter'];
+      $contact_label = array('flag' => 'FLAG', 'organisation' => 'Organisation');
+      break;
+
+    // Default should never trigger, safety exit here.
+    default:
+      return '';
+  }
+
+  foreach ($organisations as $org_id => $organisation) {
+    // Load the organisations.
+    $node = entity_metadata_wrapper('node', $organisation);
+    $fc_contacts = $node->field_organisation_contacts->value();
+
+    // For each contact field collection, check the contact position.
+    foreach ($fc_contacts as $fc_contact) {
+      $fc_contact = entity_metadata_wrapper('field_collection_item', $fc_contact);
+
+      $position = $fc_contact->field_organisation_position->value();
+      if (empty(array_intersect($contact_type, $position))) {
+        continue;
+      }
+      $position_label = $contact_label[$org_id];
+
+      // Before processing the first contact, add the wrappers.
+      if ($no_value) {
+        $output = '<fieldset><legend>' . t('Contacts detail') . '</legend>';
+        $output .= '<div class="field">';
+        $no_value = FALSE;
+      }
+
+      // Load the contact info.
+      $contact = $fc_contact->field_contact_person->value();
+      $contact = entity_metadata_wrapper('node', node_load($contact->nid));
+
+      // Contact fields.
+      $fields = [
+        'title_field' => FALSE,
+        'field_firstname' => FALSE,
+        'field_email' => TRUE,
+        'field_telephone' => TRUE,
+        'field_gender' => FALSE,
+        'field_phone_mobile' => TRUE,
+        'field_skype_id' => TRUE,
+        'field_user_country' => FALSE,
+      ];
+
+      $output .= '<div class="field-group-tab"><h3><span>' . $position_label . '</span></h3>';
+
+      $info_contact = $contact->getPropertyInfo();
+
+      // Process each field. If override is set at true, we try to use the
+      // organisation value first.
+      foreach ($fields as $field => $override) {
+
+        if ($override) {
+          $value = $fc_contact->{$field}->value();
+        }
+
+        $value = isset($value) && !empty($value) ? $value : $contact->{$field}->value();
+
+        // If the value is an object, then it's a taxonomy term, use it's name.
+        if (is_object($value)) {
+          $value = $value->name;
+        }
+
+        // Create the field markup.
+        if (!empty($value)) {
+          $list_item = '<div class="field-label">' . $info_contact[$field]['label'] . ': ' . '</div>';
+          $list_item .= '<div class="field-items">' . $value . '</div>';
+
+          $output .= $list_item;
+        }
+
+        // Unset for the next field checks.
+        unset($value);
+      }
+
+      $output .= '</div>';
+    }
+  }
+
+  if (!$no_value) {
+    $output .= '</div></fieldset>';
+  }
+  return $output;
+}
+
+/**
+ * Return the organisations from the FLAG and the node itself.
+ *
+ * @param object $node
+ *   The current node.
+ *
+ * @return array
+ *   An array of organisation nodes.
+ */
+function _farnet_core_get_organisations($node) {
+  // Only keep the first flag.
+  $flag = $node->field_flag->value();
+
+  $organisations = array();
+  if (!empty($flag)) {
+    $flag = reset($flag);
+    $flag = entity_metadata_wrapper('node', $flag);
+    // Return flag and current node organisations.
+    if (isset($flag->field_organisations->value()[0])) {
+      $organisations['flag'] = $flag->field_organisations->value()[0];
+    }
+    if (isset($node->field_organisations->value()[0])) {
+      $organisations['organisation'] = ($node->field_organisations->value()[0]);
+    }
+    return $organisations;
+  }
+  // If no flag, return only the node organisations.
+  if (isset($node->field_organisations->value()[0])) {
+    $organisations = array('organisation' => $node->field_organisations->value()[0]);
+  }
+  return $organisations;
 }
 
 /**
