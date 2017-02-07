@@ -1435,7 +1435,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'teaser',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
