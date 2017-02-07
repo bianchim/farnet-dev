@@ -59,6 +59,7 @@ function farnet_factsheet_country_form_validate($form, &$form_state) {
  * Implements hook_form_alter().
  */
 function farnet_factsheet_country_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_term_country_tid']['#options']['All'] = 'Select a Country';
   $array_flag_countries = array(t('Bulgaria'), t('Croatia'), t('Cyprus'), t('Denmark'), t('Estonia'), t('Finland'), t('France'), t('Germany'), t('Greece'), t('Ireland'), t('Italy'), t('Latvia'), t('Lithuania'), t('Poland'), t('Portugal'), t('Romania'), t('Slovenia'), t('Spain'), t('Sweden'), t('United Kingdom'),
   );
   if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-country-page'

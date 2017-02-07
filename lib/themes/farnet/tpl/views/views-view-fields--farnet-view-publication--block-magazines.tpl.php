@@ -20,12 +20,6 @@
       <?php if (!empty($fields['field_publication_date'])) : ?>
         <span><?php print $fields['field_publication_date']->content; ?></span>
       <?php endif; ?>
-      <?php if (!empty($fields['field_term_country'])) : ?>
-      <?php print ' / ' . $fields['field_term_country']->content; ?>
-      <?php endif; ?>
-      <?php if (!empty($fields['field_term_theme'])) : ?>
-      <?php print ' / ' . $fields['field_term_theme']->content; ?>
-      <?php endif; ?>
     </div>
     <div class="farnet-listing__abstract">
       <?php if (!empty($fields['field_farnet_abstract'])) : ?>

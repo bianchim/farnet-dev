@@ -9,18 +9,17 @@
 <div class="content clearfix">
 
   <?php if (!empty($content['group_gp_project_content'])) : ?>
-    <?php /*print render($content['group_gp_project_content']['#prefix']);*/ ?>
     <div id="group-gp-project-content" class="group-gp-project-content field-group-tab">
       <div class="highlight--background row">
         <div class="col-sm-6 col-md-8">
           <?php if (!empty($content['group_gp_project_content']['field_title_official'])) : ?>
             <?php print render($content['group_gp_project_content']['field_title_official']); ?>
           <?php endif; ?>
-          <?php if (!empty($content['group_gp_project_content']['field_id_text'])) : ?>
-            <?php print render($content['group_gp_project_content']['field_id_text']); ?>
-          <?php endif; ?>
           <?php if (!empty($content['group_gp_project_location']['field_term_country'])) : ?>
             <?php print render($content['group_gp_project_location']['field_term_country']); ?>
+          <?php endif; ?>
+          <?php if (!empty($content['group_gp_project_content']['field_id_text'])) : ?>
+            <?php print render($content['group_gp_project_content']['field_id_text']); ?>
           <?php endif; ?>
         </div>
         <div class="col-sm-6 col-md-4">
@@ -29,7 +28,6 @@
           <?php endif; ?>
         </div>
       </div>
-    <?php /*print render($content['group_gp_project_content']['#suffix']);*/ ?>
     </div>
   <?php endif; ?>
 
@@ -62,15 +60,19 @@
         <table class="table table-responsive table-blue table--no-borders table-tbody--horizontal-borders">
           <thead>
             <tr>
+              <?php if (!empty($content['group_gp_project_cost']['field_gpp_total_project_cost'])) : ?>
               <th>
-                <?php print $content['group_gp_project_cost']['field_gpp_total_project_cost']['#title']; ?></th>
+                <?php print $content['group_gp_project_cost']['field_gpp_total_project_cost']['#title']; ?>
+              </th>
               <th>
                 <?php print number_format($content['group_gp_project_cost']['field_gpp_total_project_cost']['0']['#markup'], 0, '.', ' '); ?> EUR
               </th>
+              <?php endif; ?>
             </tr>
           </thead>
           <tbody class="u-bg-white">
             <tr>
+              <?php if (!empty($content['group_gp_project_cost']['field_gpp_a_flag_grant'])) : ?>
               <td><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title']); ?></td>
               <td>
                 <?php print number_format($content['group_gp_project_cost']['field_gpp_a_flag_grant']['0']['#markup'], 0, '.', ' '); ?> EUR
@@ -92,8 +94,10 @@
                   <?php endif; ?>
                 </ul>
               </td>
+              <?php endif; ?>
             </tr>
             <tr>
+              <?php if (!empty($content['group_gp_project_cost']['field_gpp_b_beneficiary'])) : ?>
               <td><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title']); ?></td>
               <td>
                 <?php print number_format($content['group_gp_project_cost']['field_gpp_b_beneficiary']['0']['#markup'], 0, '.', ' '); ?> EUR
@@ -106,6 +110,7 @@
                   <?php endif; ?>
                 </ul>
               </td>
+              <?php endif; ?>
             </tr>
           </tbody>
         </table>
@@ -114,31 +119,31 @@
   <?php endif; ?>
 
   <div id="group-gp-method-content" class="group-gp-method-content field-group-tab">
-    <h3 class="fr-heading"><span>Project Information</span></h3>
+    <h3 class="fr-heading"><span>Information</span></h3>
     <table class="table table-responsive table-blue table--white-borders">
       <tbody>
       <?php if (!empty($content['group_gp_project_dates']['field_dates_start_end'])) : ?>
         <tr>
           <th scope="row"><?php print $content['group_gp_project_dates']['field_dates_start_end']['#title']; ?></th>
-          <td class="multi-country"><?php print render($content['group_gp_project_dates']['field_dates_start_end']); ?></td>
+          <td class="multi-values"><?php print render($content['group_gp_project_dates']['field_dates_start_end']); ?></td>
         </tr>
       <?php endif; ?>
       <?php if (!empty($content['group_gp_project_taxonomy']['field_sea_basins'])) : ?>
         <tr>
           <th scope="row"><?php print $content['group_gp_project_taxonomy']['field_sea_basins']['#title']; ?></th>
-          <td class="multi-country"><?php print render($content['group_gp_project_taxonomy']['field_sea_basins']); ?></td>
+          <td class="multi-values"><?php print render($content['group_gp_project_taxonomy']['field_sea_basins']); ?></td>
         </tr>
       <?php endif; ?>
       <?php if (!empty($content['group_gp_project_taxonomy']['field_type_of_area'])) : ?>
         <tr>
           <th scope="row"><?php print $content['group_gp_project_taxonomy']['field_type_of_area']['#title']; ?></th>
-          <td class="multi-country"><?php print render($content['group_gp_project_taxonomy']['field_type_of_area']); ?></td>
+          <td class="multi-values"><?php print render($content['group_gp_project_taxonomy']['field_type_of_area']); ?></td>
         </tr>
       <?php endif; ?>
       <?php if (!empty($content['group_gp_project_taxonomy']['field_term_theme'])) : ?>
         <tr>
           <th scope="row"><?php print $content['group_gp_project_taxonomy']['field_term_theme']['#title']; ?></th>
-          <td class="multi-country"><?php print render($content['group_gp_project_taxonomy']['field_term_theme']); ?></td>
+          <td class="multi-values"><?php print render($content['group_gp_project_taxonomy']['field_term_theme']); ?></td>
         </tr>
       <?php endif; ?>
       </tbody>
