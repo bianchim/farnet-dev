@@ -128,6 +128,18 @@ function farnet_preprocess_block(&$vars) {
       $vars['elements']['#block']->subject = NULL;
       $vars['content'] = drupal_substr($vars['content'], strpos($vars['content'], '<ul'));
       break;
+
+    case 'views-79352059f92f38e8b7c026bd2e334732';
+      $view = views_get_view('farnet_view_factsheets_flag');
+      $ff_header = $view->display['ff_on_the_ground']->display_options['header']['area']['content'];
+      $vars['ff_header'] = $ff_header;
+      break;
+
+    case 'views-7dabd414d359435e91fad754dab94e7f';
+      $view = views_get_view('farnet_view_factsheets_country');
+      $cf_header = $view->display['cf_on_the_ground']->display_options['header']['area']['content'];
+      $vars['cf_header'] = $cf_header;
+      break;
   }
 }
 
