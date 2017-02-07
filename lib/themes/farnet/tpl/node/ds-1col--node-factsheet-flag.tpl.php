@@ -91,9 +91,34 @@
     // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
-      hide($content['group_factsheet_flag_content']['title_field']);
+      hide($content['group_factsheet_flag_content']);
     ?>
-
+    <?php if (!empty($content['group_factsheet_flag_content'])) : ?>
+      <div id="group-gp-method-content" class="group-gp-method-content field-group-tab">
+        <div class="highlight--background row">
+          <div class="col-sm-6 col-md-8">
+            <?php if (!empty($content['group_factsheet_flag_content']['field_title_official'])) : ?>
+              <?php print render($content['group_factsheet_flag_content']['field_title_official']); ?>
+            <?php endif; ?>
+            <?php if (!empty($content['group_factsheet_flag_content']['field_term_country'])) : ?>
+              <?php print render($content['group_factsheet_flag_content']['field_term_country']); ?>
+            <?php endif; ?>
+            <?php if (!empty($content['group_factsheet_flag_content']['field_collection_region'])) : ?>
+              <?php print render($content['group_factsheet_flag_content']['field_collection_region']); ?>
+            <?php endif; ?>
+            <?php if (!empty($content['group_factsheet_flag_content']['field_ff_code'])) : ?>
+              <?php print render($content['group_factsheet_flag_content']['field_ff_code']); ?>
+            <?php endif; ?>
+            <?php if (!empty($content['group_factsheet_flag_content']['field_ff_code'])) : ?>
+              <?php print render($content['group_factsheet_flag_content']['field_ff_code']); ?>
+            <?php endif; ?>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <?php print render($content['group_factsheet_flag_content']['field_picture']); ?>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
     <?php print render($content); ?>
     <?php if ($suffix_display): ?>
     <div class="row node-info">
