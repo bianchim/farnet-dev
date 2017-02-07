@@ -186,13 +186,16 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly',
     'field_ff_number_staff',
   );
-  $element_with_additional_field_item_class_2 = array(
-    'field_ff_number_decision' => array('u-color-green', 'u-fw-bold'),
-    'field_ff_number_assembly' => array('u-color-green', 'u-fw-bold'),
-    'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
-    'field_type_of_area' => array('fr-u-ul'),
-    'field_sea_basins' => array('fr-u-ul'),
-  );
+  $element_with_additional_field_item_class_2 = array();
+  if($variables['element']['#bundle'] !== 'cooperation_call') {
+    $element_with_additional_field_item_class_2 = array(
+      'field_ff_number_decision' => array('u-color-green', 'u-fw-bold'),
+      'field_ff_number_assembly' => array('u-color-green', 'u-fw-bold'),
+      'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
+      'field_type_of_area' => array('fr-u-ul'),
+      'field_sea_basins' => array('fr-u-ul'),
+    );
+  }
   $element_percent_formated = array(
     'field_ff_public_actors',
     'field_ff_fisheries_actors',
