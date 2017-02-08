@@ -162,6 +162,7 @@ h1.title-small {
   margin-right: 2em;
 }
 
-.view .views-exposed-widget .form-submit, .block .views-exposed-widget .form-submit {
+.view .views-exposed-widget .form-submit,
+.block .views-exposed-widget .form-submit {
   margin-top: 1.6em;
 }
