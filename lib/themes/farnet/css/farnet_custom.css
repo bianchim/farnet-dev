@@ -156,3 +156,13 @@ h1.title-small {
 .fr-select div.form-item {
   margin-top: 0;
 }
+
+.fr-select {
+  float: left;
+  margin-right: 2em;
+}
+
+.view .views-exposed-widget .form-submit,
+.block .views-exposed-widget .form-submit {
+  margin-top: 1.6em;
+}
