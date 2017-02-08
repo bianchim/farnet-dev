@@ -192,9 +192,11 @@ global $base_url;
             <p class="title"><?php print $node_type; ?></p>
           <?php endif; ?>
           <?php if ($title): ?>
+            <?php print render($title_prefix); ?>
             <h1 class="title<?php if (isset($node_type)): ?>-small<?php endif; ?>" id="content-title">
               <?php print $title; ?>
             </h1>
+            <?php print render($title_suffix); ?>
           <?php endif; ?>
 
           <?php print $regions['content_top']; ?>
