@@ -10,10 +10,11 @@
 
   <?php if (!empty($content['group_short_story_content'])) : ?>
     <div id="group-short-story-content" class="group-short-story-content field-group-tab">
-      <!--h3 class="fr-heading"><span>Content</span></h3 -->
-      <?php if (!empty($content['group_gp_short_story_info']['field_term_country'])) : ?>
-        <?php print render($content['group_gp_short_story_info']['field_term_country']); ?>
-      <?php endif; ?>
+      <div class="u-fw-bold">
+        <?php if (!empty($content['group_gp_short_story_info']['field_term_country'])) : ?>
+          <?php print render($content['group_gp_short_story_info']['field_term_country']); ?>
+        <?php endif; ?>
+      </div>
       <?php if (!empty($content['group_short_story_content']['field_id_text'])) : ?>
         <?php print render($content['group_short_story_content']['field_id_text']); ?>
       <?php endif; ?>
@@ -22,6 +23,8 @@
       <?php endif; ?>
     </div>
   <?php endif; ?>
+
+  <div class="u-mt-1em"></div>
 
   <?php if (!empty($content['group_short_story_quote'])) : ?>
     <div id="group-short-story-quote" class="group_short_story_quote field-group-tab">
