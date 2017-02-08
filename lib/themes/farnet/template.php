@@ -23,8 +23,6 @@ function farnet_preprocess_page(&$variables) {
     );
   }
 
-  $regions = $variables['regions'];
-
   // Switch title to page type.
   if (isset($variables['node'])) {
     $node_type = node_type_get_name($variables['node']);
@@ -33,21 +31,16 @@ function farnet_preprocess_page(&$variables) {
     }
     if (in_array($node_type, array('Landing Page'))) {
       // Format regions.
-      $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
+      $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
     }
   }
 
-  $cols = $variables['cols'];
-  $cols['landing_content'] = array(
-    'lg' => 12 - $cols['content_right']['lg'],
-    'md' => 12 - $cols['content_right']['md'],
+  $variables['cols']['landing_content'] = array(
+    'lg' => 12 - $variables['cols']['content_right']['lg'],
+    'md' => 12 - $variables['cols']['content_right']['md'],
     'sm' => 12,
     'xs' => 12,
   );
-
-  // Add variables to template file.
-  $variables['regions'] = $regions;
-  $variables['cols'] = $cols;
 }
 
 /**
