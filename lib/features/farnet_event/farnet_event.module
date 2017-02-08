@@ -108,21 +108,18 @@ function farnet_event_field_default_field_instances_alter(&$fields) {
   }
 
   if (isset($fields['node-nexteuropa_event-field_event_type'])) {
-    echo 'node-nexteuropa_event-field_event_type';
     if (isset($fields['node-nexteuropa_event-field_event_type']['display'])) {
       $fields['node-nexteuropa_event-field_event_type']['display']['default']['label'] = "hidden";
     }
   }
 
   if (isset($fields['node-nexteuropa_event-field_tags'])) {
-    echo 'node-nexteuropa_event-field_tags';
     if (isset($fields['node-nexteuropa_event-field_tags']['display'])) {
       $fields['node-nexteuropa_event-field_tags']['display']['default']['label'] = "hidden";
     }
   }
 
   if (isset($fields['node-nexteuropa_event-field_ne_body'])) {
-    echo 'node-nexteuropa_event-field_ne_body';
     if (isset($fields['node-nexteuropa_event-field_ne_body']['display'])) {
       $fields['node-nexteuropa_event-field_ne_body']['display']['default']['label'] = "hidden";
     }

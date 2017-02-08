@@ -26,7 +26,7 @@ function farnet_gp_project_ctools_plugin_api($module = NULL, $api = NULL) {
 function farnet_gp_project_node_info() {
   $items = array(
     'gp_project' => array(
-      'name' => t('GP Project'),
+      'name' => t('Good Practice Project'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

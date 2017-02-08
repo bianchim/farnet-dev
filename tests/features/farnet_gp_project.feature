@@ -7,7 +7,7 @@ Feature: GP Project content type
   Scenario: Access to gp project create form
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/gp-project"
-    Then I should see the text "Create GP Project"
+    Then I should see the text "Create Good Practice Project"
 
   @api
   Scenario: Access denied to create form wihtout right
@@ -54,4 +54,4 @@ Feature: GP Project content type
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test gp project?"
     And I press the "Delete" button
-    Then I should see the success message "GP Project test gp project has been deleted."
+    Then I should see the success message "Good Practice Project test gp project has been deleted."

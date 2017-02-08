@@ -146,7 +146,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['path'] = 'on-the-ground/maps/organisation';
 
   /* Display: Feed GP Method */
-  $handler = $view->new_display('feed', 'Feed GP Method', 'feed_gp_method');
+  $handler = $view->new_display('feed', 'Feed Good Practice Method', 'feed_gp_method');
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -373,7 +373,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['path'] = 'on-the-ground/maps/factsheet_flag';
 
   /* Display: Feed GP Project */
-  $handler = $view->new_display('feed', 'Feed GP Project', 'feed_project');
+  $handler = $view->new_display('feed', 'Feed Good Practice Project', 'feed_project');
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -486,7 +486,7 @@ function farnet_maps_views_default_views() {
   $handler->display->display_options['path'] = 'on-the-ground/maps/gp_project';
 
   /* Display: Feed GP Short Story */
-  $handler = $view->new_display('feed', 'Feed GP Short Story', 'feed_short_story');
+  $handler = $view->new_display('feed', 'Feed Good Practice Short Story', 'feed_short_story');
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
