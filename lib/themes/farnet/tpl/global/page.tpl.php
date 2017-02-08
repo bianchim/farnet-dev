@@ -229,7 +229,7 @@ global $base_url;
               <?php if (drupal_is_front_page()): ?>
                 <div class="row">
                   <div class="col-md-12">
-                    <img src="<?= path_to_theme(); ?>/framework/images/home-logo.jpg" class="f-home__logo" alt="FARNET logo" />
+                    <img src="<?php echo path_to_theme(); ?>/framework/images/home-logo.jpg" class="f-home__logo" alt="FARNET logo" />
                   </div>
                 </div>
               <?php endif; ?>
