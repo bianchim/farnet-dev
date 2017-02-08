@@ -166,3 +166,18 @@ h1.title-small {
 .block .views-exposed-widget .form-submit {
   margin-top: 1.6em;
 }
+
+/*
+ * Temporary hide maps.
+ */
+#group-factsheet-flag-map,
+.group-factsheet-flag-map,
+.group-factsheet-map {
+  display: none;
+}
+li a[href*="#group-factsheet-flag-map"] {
+  display: none;
+}
+li a[href*="#group-factsheet-map"] {
+  display: none;
+}
