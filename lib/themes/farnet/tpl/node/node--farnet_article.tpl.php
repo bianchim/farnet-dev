@@ -48,8 +48,8 @@
   <div class="link-wrapper right"></div>
 
   <?php if (!empty($content['field_page'])) : ?>
-  <div id="group-farnet-article-page" class="group-farnet-article-page field-group-tab">
-    <h3 class="fr-heading"><span><?php print $content['field_page']['#title']; ?></span></h3>
+    <div id="group-farnet-article-page" class="group-farnet-article-page field-group-tab">
+      <h3 class="fr-heading"><span><?php print $content['field_page']['#title']; ?></span></h3>
       <?php print render($content['field_page']); ?>
     </div>
   <?php endif; ?>
