@@ -43,28 +43,17 @@
  */
 ?>
 
-Start Factsheet Country
-
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
-    <?php if (isset($element['#object']->nid)): ?>
-      <h2 class="fr-heading"><span><?php print $label ?>:</span></h2>
-    <?php else: ?>
-      <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
-    <?php endif; ?>
-  <?php endif; ?>
-  <div class="field-items"<?php print $content_attributes; ?>>
-    <?php dpm($items); ?>
-    <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?><?php if ($field_item_class): ?><?php print $field_item_class; ?><?php endif; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
+<div class="key-documents">
+  <ul class="key-documents-list">
+    <?php foreach ($items as $delta => $item_collection): ?>
+      <?php foreach ($item_collection['entity']['field_collection_item'] as $delta => $item): ?>
+        <li>
+          <span class="file">
+            <img class="file-icon" alt="PDF icon" src="/<?php echo drupal_get_path('module', 'file'); ?>/icons/application-pdf.png" />
+            <a href="<?php echo $item['field_fc_document'][0]['#markup']; ?>"><?php echo $item['field_key_document_label'][0]['#markup']; ?></a>
+          </span>
+        </li>
+      <?php endforeach; ?>
     <?php endforeach; ?>
-  </div>
+  </ul>
 </div>
-
-
-<?php foreach ($items as $delta => $item): ?>
-  <?php dpm($item); ?>
-  <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?><?php if ($field_item_class): ?><?php print $field_item_class; ?><?php endif; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
-<?php endforeach; ?>
-
-End

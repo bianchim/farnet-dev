@@ -82,8 +82,6 @@
   <?php print render($content['group_factsheet_cooperation']); ?>
   <?php print render($content['group_factsheet_delivery_clld']); ?>
 
-  <div class="link-wrapper right"></div>
-
   <?php print render($content['group_factsheet_key_documents']); ?>
 
   <?php if (!empty($content['field_organisations'])) : ?>

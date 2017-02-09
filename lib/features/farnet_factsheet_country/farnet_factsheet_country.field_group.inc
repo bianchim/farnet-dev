@@ -215,10 +215,11 @@ function farnet_factsheet_country_field_group_info() {
     'label' => 'Description',
     'weight' => '0',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'field_picture',
-      2 => 'field_term_country',
-      3 => 'title_field',
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
+      2 => 'field_picture',
+      3 => 'field_term_country',
+      4 => 'title_field',
     ),
     'format_type' => 'div',
     'format_settings' => array(

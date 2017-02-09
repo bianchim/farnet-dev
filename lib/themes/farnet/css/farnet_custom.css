@@ -191,3 +191,13 @@ li a[href*="#group-factsheet-flag-map"] {
 li a[href*="#group-factsheet-map"] {
   display: none;
 }
+
+.key-documents ul {
+  padding: 0;
+  margin: 0;
+}
+
+.key-documents-list li {
+  list-style-type: none;
+  margin-bottom: 0;
+}
