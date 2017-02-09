@@ -5,7 +5,7 @@
  * Override of node.tpl.php for GP Short Story.
  */
 ?>
-
+<?php dpm($content); ?>
 <div class="content clearfix">
 
   <?php if (!empty($content['group_factsheet_content'])) : ?>
@@ -77,6 +77,7 @@
     <?php print render($content['group_factsheet_clld_budget']['#suffix']); ?>
   <?php endif; ?>
 
+  <?php print render($content['group_factsheet_areas']); ?>
   <?php print render($content['group_factsheet_national_network']); ?>
   <?php print render($content['group_factsheet_cooperation']); ?>
   <?php print render($content['group_factsheet_delivery_clld']); ?>
@@ -85,14 +86,18 @@
 
   <?php print render($content['group_factsheet_key_documents']); ?>
 
+  <?php if (!empty($content['field_organisations'])) : ?>
+    <div id="group-factsheet-country-organisations" class="group-factsheet-country-organisations field-group-tab">
+      <h3 class="fr-heading"><span><?php print $content['field_organisations']['#title']; ?></span></h3>
+      <?php print render($content['field_organisations']); ?>
+    </div>
+  <?php endif; ?>
+
   <?php print render($content['group_national_authorities']['contact_details']); ?>
 
-  <?php if (!empty($content['field_organisations'])) : ?>
-    <?php print render($content['field_organisations']); ?>
-  <?php endif; ?>
-  <?php print render($content['group_factsheet_areas']); ?>
-
   <?php print render($content['group_factsheet_map']); ?>
+
+  <div class="u-mt-1em"></div>
 
   <?php if (!empty($content['group_ne_factsheet_publication']['field_publication_date'])) : ?>
     <?php print render($content['group_ne_factsheet_publication']['field_publication_date']); ?>
