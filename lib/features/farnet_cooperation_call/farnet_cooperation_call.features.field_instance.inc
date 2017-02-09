@@ -90,7 +90,7 @@ function farnet_cooperation_call_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'farnet_deadline',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -238,7 +238,7 @@ function farnet_cooperation_call_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_flag',
-    'label' => 'Flag',
+    'label' => 'FLAG',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -406,12 +406,18 @@ function farnet_cooperation_call_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'colorbox',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'post',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => '',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'medium',
+          'colorbox_node_style_first' => '',
         ),
-        'type' => 'image',
+        'type' => 'colorbox',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -879,7 +885,7 @@ function farnet_cooperation_call_field_default_field_instances() {
   t('Call');
   t('Country');
   t('Deadline');
-  t('Flag');
+  t('FLAG');
   t('Groups audience');
   t('Organisation');
   t('Picture');

@@ -206,6 +206,7 @@ features[user_permission][] = administer contact forms
 features[user_role][] = administrator
 features[variable][] = contact_form_maxlength
 features[variable][] = date_format_farnet_date
+features[variable][] = date_format_farnet_deadline
 features[variable][] = date_format_teaser
 features[variable][] = easy_breadcrumb-capitalizator_ignored_words
 features[variable][] = easy_breadcrumb-disable_drupal_breadcrumb
