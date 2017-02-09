@@ -196,13 +196,13 @@ function farnet_core_default_fe_block_settings() {
         'weight' => 0,
       ),
       'ec_resp' => array(
-        'region' => 'content_bottom',
+        'region' => '',
         'status' => 1,
         'theme' => 'ec_resp',
         'weight' => 0,
       ),
       'farnet' => array(
-        'region' => 'content_bottom',
+        'region' => '',
         'status' => 1,
         'theme' => 'farnet',
         'weight' => 0,
