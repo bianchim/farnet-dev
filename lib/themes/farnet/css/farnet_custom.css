@@ -158,6 +158,10 @@ h1.title-small {
   display: none;
 }
 
+.farnet-listing__item {
+  border-bottom: none;
+}
+
 .fr-select div.form-item {
   margin-top: 0;
 }
