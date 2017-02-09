@@ -116,6 +116,21 @@
   padding: 5px;
 }
 
+p.title {
+  background: #8fc726;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
+h1.title-small {
+  background: none;
+  color: #000;
+  text-align: left;
+}
+
 .content .media .media-left .field-type-image {
   width: 300px;
 }
@@ -125,6 +140,11 @@
   height: auto;
 }
 
+@media screen and (min-width: 768px) {
+  .farnet-home-slider .flex-control-nav {
+    z-index: 100;
+  }
+}
 .field-name-field-id-text {
   display: none;
 }
@@ -135,4 +155,18 @@
 
 .farnet-listing__item {
   border-bottom: none;
+}
+
+.fr-select div.form-item {
+  margin-top: 0;
+}
+
+.fr-select {
+  float: left;
+  margin-right: 2em;
+}
+
+.view .views-exposed-widget .form-submit,
+.block .views-exposed-widget .form-submit {
+  margin-top: 1.6em;
 }

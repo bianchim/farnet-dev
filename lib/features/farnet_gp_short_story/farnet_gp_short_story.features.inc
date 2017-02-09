@@ -33,7 +33,7 @@ function farnet_gp_short_story_views_api($module = NULL, $api = NULL) {
 function farnet_gp_short_story_node_info() {
   $items = array(
     'gp_short_story' => array(
-      'name' => t('GP Short Story'),
+      'name' => t('Good Practice Short Story'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

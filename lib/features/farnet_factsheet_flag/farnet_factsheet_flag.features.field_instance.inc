@@ -1664,9 +1664,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 49,
       ),
       'teaser' => array(
@@ -3280,7 +3279,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'short',
+          'format_type' => 'teaser',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -4018,11 +4017,11 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Members of the partnership');
   t('Multi-funding');
   t('Name');
-  t('Official name');
   t('Number of contracted staff in FLAG');
   t('Number of individuals on main decision-making body/board');
   t('Number of individuals/organisations in partnership/general assembly');
   t('Objective');
+  t('Official name');
   t('Organisation');
   t('Picture');
   t('Population');

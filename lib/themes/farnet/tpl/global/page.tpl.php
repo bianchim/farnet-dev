@@ -192,9 +192,11 @@ global $base_url;
             <p class="title"><?php print $node_type; ?></p>
           <?php endif; ?>
           <?php if ($title): ?>
+            <?php print render($title_prefix); ?>
             <h1 class="title<?php if (isset($node_type)): ?>-small<?php endif; ?>" id="content-title">
               <?php print $title; ?>
             </h1>
+            <?php print render($title_suffix); ?>
           <?php endif; ?>
 
           <?php print $regions['content_top']; ?>
@@ -226,7 +228,14 @@ global $base_url;
             <?php endif; ?>
 
             <div class="col-lg-<?php print $cols['content_right']['lg']; ?> col-md-<?php print $cols['content_right']['md']; ?> col-sm-<?php print $cols['content_right']['sm']; ?> col-xs-<?php print $cols['content_right']['xs']; ?>">
-            <?php print $regions['content_right']; ?>
+              <?php if (drupal_is_front_page()): ?>
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="<?php echo path_to_theme(); ?>/framework/images/home-logo.jpg" class="f-home__logo" alt="FARNET logo" />
+                  </div>
+                </div>
+              <?php endif; ?>
+              <?php print $regions['content_right']; ?>
             </div>
           </div>
 

@@ -426,52 +426,54 @@ function _farnet_core_display_contact_details($node) {
 
       // Load the contact info.
       $contact = $fc_contact->field_contact_person->value();
-      $contact = entity_metadata_wrapper('node', node_load($contact->nid));
+      if (isset($contact)) {
+        $contact = entity_metadata_wrapper('node', node_load($contact->nid));
 
-      // Contact fields.
-      $fields = [
-        'title_field' => FALSE,
-        'field_firstname' => FALSE,
-        'field_email' => TRUE,
-        'field_telephone' => TRUE,
-        'field_gender' => FALSE,
-        'field_phone_mobile' => TRUE,
-        'field_skype_id' => TRUE,
-        'field_user_country' => FALSE,
-      ];
+        // Contact fields.
+        $fields = [
+          'title_field' => FALSE,
+          'field_firstname' => FALSE,
+          'field_email' => TRUE,
+          'field_telephone' => TRUE,
+          'field_gender' => FALSE,
+          'field_phone_mobile' => TRUE,
+          'field_skype_id' => TRUE,
+          'field_user_country' => FALSE,
+        ];
 
-      $output .= '<div class="field-group-tab"><h3><span>' . $position_label . '</span></h3>';
+        $output .= '<div class="field-group-tab"><h3><span>' . $position_label . '</span></h3>';
 
-      $info_contact = $contact->getPropertyInfo();
+        $info_contact = $contact->getPropertyInfo();
 
-      // Process each field. If override is set at true, we try to use the
-      // organisation value first.
-      foreach ($fields as $field => $override) {
+        // Process each field. If override is set at true, we try to use the
+        // organisation value first.
+        foreach ($fields as $field => $override) {
 
-        if ($override) {
-          $value = $fc_contact->{$field}->value();
+          if ($override) {
+            $value = $fc_contact->{$field}->value();
+          }
+
+          $value = isset($value) && !empty($value) ? $value : $contact->{$field}->value();
+
+          // If the value is an object, it's a taxonomy term, use it's name.
+          if (is_object($value)) {
+            $value = $value->name;
+          }
+
+          // Create the field markup.
+          if (!empty($value)) {
+            $list_item = '<div class="field-label">' . $info_contact[$field]['label'] . ': ' . '</div>';
+            $list_item .= '<div class="field-items">' . $value . '</div>';
+
+            $output .= $list_item;
+          }
+
+          // Unset for the next field checks.
+          unset($value);
         }
 
-        $value = isset($value) && !empty($value) ? $value : $contact->{$field}->value();
-
-        // If the value is an object, then it's a taxonomy term, use it's name.
-        if (is_object($value)) {
-          $value = $value->name;
-        }
-
-        // Create the field markup.
-        if (!empty($value)) {
-          $list_item = '<div class="field-label">' . $info_contact[$field]['label'] . ': ' . '</div>';
-          $list_item .= '<div class="field-items">' . $value . '</div>';
-
-          $output .= $list_item;
-        }
-
-        // Unset for the next field checks.
-        unset($value);
+        $output .= '</div>';
       }
-
-      $output .= '</div>';
     }
   }
 

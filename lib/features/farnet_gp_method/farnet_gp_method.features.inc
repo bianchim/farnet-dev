@@ -26,7 +26,7 @@ function farnet_gp_method_ctools_plugin_api($module = NULL, $api = NULL) {
 function farnet_gp_method_node_info() {
   $items = array(
     'gp_method' => array(
-      'name' => t('GP Method'),
+      'name' => t('Good Practice Method'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

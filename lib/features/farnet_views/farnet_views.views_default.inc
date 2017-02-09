@@ -895,7 +895,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: GP Projects */
-  $handler = $view->new_display('page', 'GP Projects', 'page_gp_projects');
+  $handler = $view->new_display('page', 'Good Practice Projects', 'page_gp_projects');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Good Practice Projects';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -964,7 +964,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: GP Methods */
-  $handler = $view->new_display('page', 'GP Methods', 'page_gp_methods');
+  $handler = $view->new_display('page', 'Good Practice Methods', 'page_gp_methods');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Good Practice Methods';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -1033,7 +1033,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: GP Short Stories */
-  $handler = $view->new_display('page', 'GP Short Stories', 'page_gp_short_stories');
+  $handler = $view->new_display('page', 'Good Practice Short Stories', 'page_gp_short_stories');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Good Practice Short Stories';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;

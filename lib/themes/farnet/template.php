@@ -23,8 +23,6 @@ function farnet_preprocess_page(&$variables) {
     );
   }
 
-  $regions = $variables['regions'];
-
   // Switch title to page type.
   if (isset($variables['node'])) {
     $node_type = node_type_get_name($variables['node']);
@@ -33,21 +31,16 @@ function farnet_preprocess_page(&$variables) {
     }
     if (in_array($node_type, array('Landing Page'))) {
       // Format regions.
-      $regions['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
+      $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
     }
   }
 
-  $cols = $variables['cols'];
-  $cols['landing_content'] = array(
-    'lg' => 12 - $cols['content_right']['lg'],
-    'md' => 12 - $cols['content_right']['md'],
+  $variables['cols']['landing_content'] = array(
+    'lg' => 12 - $variables['cols']['content_right']['lg'],
+    'md' => 12 - $variables['cols']['content_right']['md'],
     'sm' => 12,
     'xs' => 12,
   );
-
-  // Add variables to template file.
-  $variables['regions'] = $regions;
-  $variables['cols'] = $cols;
 }
 
 /**
@@ -130,6 +123,18 @@ function farnet_preprocess_block(&$vars) {
       $vars['elements']['#block']->subject = NULL;
       $vars['content'] = drupal_substr($vars['content'], strpos($vars['content'], '<ul'));
       break;
+
+    case 'views-79352059f92f38e8b7c026bd2e334732';
+      $view = views_get_view('farnet_view_factsheets_flag');
+      $ff_header = $view->display['ff_on_the_ground']->display_options['header']['area']['content'];
+      $vars['ff_header'] = $ff_header;
+      break;
+
+    case 'views-7dabd414d359435e91fad754dab94e7f';
+      $view = views_get_view('farnet_view_factsheets_country');
+      $cf_header = $view->display['cf_on_the_ground']->display_options['header']['area']['content'];
+      $vars['cf_header'] = $cf_header;
+      break;
   }
 }
 
@@ -178,12 +183,14 @@ function farnet_dropdown($variables) {
  * Implements hook_form_alter().
  */
 function farnet_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'farnet_core_printpdf_multilingual_form') {
-    $form['#attributes'] = array('class' => 'c-file-download');
-    $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
-    $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
-    $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
-    $form['fields_pdf_print']['submit-pdfprint-lang']['#suffix'] = '</div>';
+  switch ($form_id) {
+    case 'farnet_core_printpdf_multilingual_form':
+      $form['#attributes'] = array('class' => 'c-file-download');
+      $form['content_type_pdf_download']['#markup'] = '<span class="c-file-download__icon icon icon--file-pdf"></span><span class="c-file-download__title">' . t('Flag Factsheet in PDF') . '</span>';
+      $form['fields_pdf_print']['select-pdfprint-lang']['#attributes']['class'] = array('c-file-download__options');
+      $form['fields_pdf_print']['submit-pdfprint-lang']['#prefix'] = '<div class="c-file-download__controls">';
+      $form['fields_pdf_print']['submit-pdfprint-lang']['#suffix'] = '</div>';
+      break;
   }
 }
 
@@ -204,13 +211,16 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_assembly',
     'field_ff_number_staff',
   );
-  $element_with_additional_field_item_class_2 = array(
-    'field_ff_number_decision' => array('u-color-green', 'u-fw-bold'),
-    'field_ff_number_assembly' => array('u-color-green', 'u-fw-bold'),
-    'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
-    'field_type_of_area' => array('fr-u-ul'),
-    'field_sea_basins' => array('fr-u-ul'),
-  );
+  $element_with_additional_field_item_class_2 = array();
+  if ($variables['element']['#bundle'] !== 'cooperation_call') {
+    $element_with_additional_field_item_class_2 = array(
+      'field_ff_number_decision' => array('u-color-green', 'u-fw-bold'),
+      'field_ff_number_assembly' => array('u-color-green', 'u-fw-bold'),
+      'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
+      'field_type_of_area' => array('fr-u-ul'),
+      'field_sea_basins' => array('fr-u-ul'),
+    );
+  }
   $element_percent_formated = array(
     'field_ff_public_actors',
     'field_ff_fisheries_actors',
@@ -235,7 +245,6 @@ function farnet_preprocess_field(&$variables, $hook) {
   );
   $element_add_field_classes = array(
     'field_ff_sources_co_funding' => array('field-label-inline', 'clearfix'),
-    'field_ff_multi_funding' => array('field-type-text-long', 'field-name-field-ff-multi-funding-txt'),
     'field_ff_funds' => array('field-label-inline', 'clearfix'),
     'field_type_of_area' => array('field-label-above'),
     'field_sea_basins' => array('field-label-above'),
@@ -409,7 +418,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     case 'field_ff_emff':
       $variables['container_tag'] = 'li';
       $variables['prefix'] = '<ul class="fr-u-ul">';
-      if (!$variables['element']['#object']->field_ff_multi_funding and
+      if (!$variables['element']['#object']->field_ff_multi_funding_txt and
         !$variables['element']['#object']->field_ff_funds and
         !$variables['element']['#object']->field_ff_sources_co_funding and
         !$variables['element']['#object']->field_ff_ms_co_financing) {
@@ -419,7 +428,7 @@ function farnet_preprocess_field(&$variables, $hook) {
 
     case 'field_ff_ms_co_financing':
       $variables['container_tag'] = 'li';
-      if (!$variables['element']['#object']->field_ff_multi_funding and
+      if (!$variables['element']['#object']->field_ff_multi_funding_txt and
         !$variables['element']['#object']->field_ff_funds and
         !$variables['element']['#object']->field_ff_sources_co_funding) {
         $variables['suffix'] = '</ul>';
@@ -431,7 +440,7 @@ function farnet_preprocess_field(&$variables, $hook) {
 
     case 'field_ff_sources_co_funding':
       $variables['container_tag'] = 'li';
-      if (!$variables['element']['#object']->field_ff_multi_funding and
+      if (!$variables['element']['#object']->field_ff_multi_funding_txt and
         !$variables['element']['#object']->field_ff_funds) {
         $variables['suffix'] = '</ul>';
       }
@@ -441,7 +450,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       }
       break;
 
-    case 'field_ff_multi_funding':
+    case 'field_ff_multi_funding_txt':
       $variables['container_tag'] = 'li';
       if (!$variables['element']['#object']->field_ff_funds) {
         $variables['suffix'] = '</ul>';
@@ -459,7 +468,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       if (!$variables['element']['#object']->field_ff_emff and
         !$variables['element']['#object']->field_ff_ms_co_financing and
         !$variables['element']['#object']->field_ff_sources_co_funding and
-        !$variables['element']['#object']->field_ff_multi_funding) {
+        !$variables['element']['#object']->field_ff_multi_funding_txt) {
         $variables['prefix'] = '<ul class="fr-u-ul">';
       }
       break;
@@ -558,6 +567,22 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       }
     }
   }
+
+  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-practices') {
+    // Check related view results.
+    $results = views_get_view_result('farnet_gp_by_flag_display', "block_gp_by_flag", $element['field_view_good_practices']['#object']->nid);
+    if (count($results) == 0) {
+      hide($element);
+    }
+  }
+  if (isset($element['#id']) && $element['#id'] == 'group-factsheet-flag-ideas') {
+    // Check related view results.
+    $results = views_get_view_result('cooperation_idea_by_flag', "block_idea_by_flag", $element['field_view_cooperation_ideas']['#object']->nid);
+    if (count($results) == 0) {
+      hide($element);
+    }
+  }
+
 }
 
 /**
@@ -597,7 +622,7 @@ function farnet_social_media_links_platform(&$variables) {
  */
 function farnet_field_group_build_pre_render_alter(&$element) {
   if (isset($element['group_factsheet_flag_content']) and isset($element['title_field'])) {
-    $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><h2>' . $element['title_field']['#items'][0]['value'] . '</h2><div class="highlight--background">';
+    $element['group_factsheet_flag_content']['#prefix'] = '<div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab"><div class="highlight--background">';
     $element['group_factsheet_flag_content']['#suffix'] = '</div></div>';
   }
   if (isset($element['group_factsheet_flag_funding'])) {
@@ -636,4 +661,216 @@ function farnet_preprocess_views_view_fields(&$vars) {
     $vars['fields']['nothing']->wrapper_prefix = '<span class="views-field views-field-nothing">';
     $vars['fields']['nothing']->wrapper_suffix = '</span>';
   }
+}
+
+/**
+ * Implements theme_pager.
+ */
+function farnet_pager(&$variables) {
+  $tags = $variables['tags'];
+  $element = $variables['element'];
+  $parameters = $variables['parameters'];
+  $quantity = $variables['quantity'];
+  global $pager_page_array, $pager_total;
+  // Calculate various markers within this pager piece:
+  // Middle is used to "center" pages around the current page.
+  $pager_middle = ceil($quantity / 2);
+  // Current is the page we are currently paged to.
+  $pager_current = $pager_page_array[$element] + 1;
+  // First is the first page listed by this pager piece (re quantity).
+  $pager_first = $pager_current - $pager_middle + 1;
+  // Last is the last page listed by this pager piece (re quantity).
+  $pager_last = $pager_current + $quantity - $pager_middle;
+  // Max is the maximum page number.
+  $pager_max = $pager_total[$element];
+  // End of marker calculations.
+  // Prepare for generation loop.
+  $i = $pager_first;
+  if ($pager_last > $pager_max) {
+    // Adjust "center" if at end of query.
+    $i = $i + ($pager_max - $pager_last);
+    $pager_last = $pager_max;
+  }
+  if ($i <= 0) {
+    // Adjust "center" if at start of query.
+    $pager_last = $pager_last + (1 - $i);
+    $i = 1;
+  }
+  // End of generation loop preparation.
+  $li_first = theme('pager_first', array(
+    'text' => (isset($tags[0]) ? $tags[0] : t('« first')),
+    'element' => $element,
+    'parameters' => $parameters,
+  ));
+  $li_previous = theme('pager_previous', array(
+    'text' => (isset($tags[1]) ? $tags[1] : t('‹ previous')),
+    'element' => $element,
+    'interval' => 1,
+    'parameters' => $parameters,
+  ));
+  $li_next = theme('pager_next', array(
+    'text' => (isset($tags[3]) ? $tags[3] : t('next ›')),
+    'element' => $element,
+    'interval' => 1,
+    'parameters' => $parameters,
+  ));
+  $li_last = theme('pager_last', array(
+    'text' => (isset($tags[4]) ? $tags[4] : t('last »')),
+    'element' => $element,
+    'parameters' => $parameters,
+  ));
+  if ($pager_total[$element] > 1) {
+    if ($li_first) {
+      $items[] = array(
+        'class' => array('pager-first'),
+        'data' => $li_first,
+      );
+    }
+    if ($li_previous) {
+      $items[] = array(
+        'class' => array('pager-previous'),
+        'data' => $li_previous,
+      );
+    }
+
+    // When there is more than one page, create the pager list.
+    if ($i != $pager_max) {
+      if ($i > 1) {
+        $items[] = array(
+          'class' => array('pager-ellipsis'),
+          'data' => '…',
+        );
+      }
+      // Now generate the actual pager piece.
+      for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+        if ($i < $pager_current) {
+          $items[] = array(
+            'class' => array('pager__item'),
+            'data' => theme('pager_previous', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => ($pager_current - $i),
+              'parameters' => $parameters,
+            )),
+          );
+        }
+        if ($i == $pager_current) {
+          $items[] = array(
+            'class' => array('pager__item'),
+            'data' => $i,
+          );
+        }
+        if ($i > $pager_current) {
+          $items[] = array(
+            'class' => array('pager__item'),
+            'data' => theme('pager_next', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => ($i - $pager_current),
+              'parameters' => $parameters,
+            )),
+          );
+        }
+      }
+      if ($i < $pager_max) {
+        $items[] = array(
+          'class' => array('pager__item'),
+          'data' => '…',
+        );
+      }
+    }
+    // End generation.
+    if ($li_next) {
+      $items[] = array(
+        'class' => array('pager__item'),
+        'data' => $li_next,
+      );
+    }
+    if ($li_last) {
+      $items[] = array(
+        'class' => array('pager__item'),
+        'data' => $li_last,
+      );
+    }
+    return t('<nav class="pager" aria-label="Page navigation">') . theme('item_list', array(
+      'items' => $items,
+      'attributes' => array('class' => array('pager__list')),
+      'pager' => TRUE,
+    )) . '</nav>';
+  }
+}
+
+/**
+ * Implements theme_item_list.
+ */
+function farnet_item_list($variables) {
+  $items = $variables['items'];
+  $title = $variables['title'];
+  $type = $variables['type'];
+  $attributes = $variables['attributes'];
+
+  // Only output the list container and title, if there are any list items.
+  // Check to see whether the block title exists before adding a header.
+  // Empty headers are not semantic and present accessibility challenges.
+  $output = NULL;
+  if (!isset($variables['pager'])) {
+    $output = '<div class="item-list">';
+  }
+  if (isset($title) && $title !== '') {
+    $output .= '<h3>' . $title . '</h3>';
+  }
+
+  if (!empty($items)) {
+    $output .= "<$type" . drupal_attributes($attributes) . '>';
+    $num_items = count($items);
+    $i = 0;
+    foreach ($items as $item) {
+      $attributes = array();
+      $children = array();
+      $data = '';
+      $i++;
+      if (is_array($item)) {
+        foreach ($item as $key => $value) {
+          if ($key == 'data') {
+            $data = $value;
+          }
+          elseif ($key == 'children') {
+            $children = $value;
+          }
+          else {
+            $attributes[$key] = $value;
+          }
+        }
+      }
+      else {
+        $data = $item;
+      }
+      if (count($children) > 0) {
+        // Render nested list.
+        $data .= theme_item_list(array(
+          'items' => $children,
+          'title' => NULL,
+          'type' => $type,
+          'attributes' => $attributes,
+        ));
+      }
+      if ($i == 1) {
+        $attributes['class'][] = 'first';
+      }
+      if ($i == $num_items) {
+        $attributes['class'][] = 'last';
+      }
+      if (!isset($variables['pager'])) {
+        $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
+      }
+      else {
+        $output .= '<li' . drupal_attributes($attributes) . '>' . str_replace('<a title', '<a class="pager_link" title', $data) . "</li>\n";
+      }
+    }
+    $output .= "</$type>";
+  }
+  if (!isset($variables['pager'])) {
+    $output .= '</div>';
+  }
+  return $output;
 }

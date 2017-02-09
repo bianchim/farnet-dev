@@ -7,7 +7,7 @@ Feature: GP Short Story content type
   Scenario: Access to gp short story create form
     Given I am logged in as a user with the "administrator" role
     And I visit "node/add/gp-short-story"
-    Then I should see the text "Create GP short story"
+    Then I should see the text "Create Good Practice short story"
 
   @api
   Scenario: Access denied to create form without right
@@ -55,4 +55,4 @@ Feature: GP Short Story content type
     And I press the "Delete" button
     Then I should see the heading "Are you sure you want to delete test gp short story?"
     And I press the "Delete" button
-    Then I should see the success message "GP Short Story test gp short story has been deleted."
+    Then I should see the success message "Good Practice Short Story test gp short story has been deleted."

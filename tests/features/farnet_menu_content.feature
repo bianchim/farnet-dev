@@ -174,7 +174,7 @@ Feature: Test the presence of the content menu
     #Then I should see "Content" in the ".region-sidebar-left" element
     Then I should see "CLLD Programme" in the ".region-sidebar-left" element
     And I should see "CLLD Budget" in the ".region-sidebar-left" element
-    And I should see "Areas" in the ".region-sidebar-left" element
+    And I should see "FLAGs" in the ".region-sidebar-left" element
     And I should see "National Network" in the ".region-sidebar-left" element
     And I should see "Cooperation" in the ".region-sidebar-left" element
     And I should see "Delivery of CLLD" in the ".region-sidebar-left" element

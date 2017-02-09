@@ -169,7 +169,7 @@ function farnet_faq_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'teaser',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',

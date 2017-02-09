@@ -21,14 +21,14 @@ function farnet_factsheet_country_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Areas',
+    'label' => 'FLAGs',
     'weight' => '4',
     'children' => array(
       0 => 'field_flag_areas',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Areas',
+      'label' => 'FLAGs',
       'instance_settings' => array(
         'id' => 'group_factsheet_areas',
         'classes' => 'group_factsheet_areas field-group-tab',
@@ -212,17 +212,17 @@ function farnet_factsheet_country_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Content',
+    'label' => 'Description',
     'weight' => '0',
     'children' => array(
       0 => 'field_ne_body',
-      1 => 'field_organisations',
-      2 => 'field_picture',
+      1 => 'field_picture',
+      2 => 'field_term_country',
       3 => 'title_field',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Content',
+      'label' => 'Description',
       'instance_settings' => array(
         'id' => 'group_factsheet_content',
         'classes' => 'group_factsheet_content field-group-tab',
@@ -439,16 +439,17 @@ function farnet_factsheet_country_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Map',
       'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-factsheet-map field-group-div field-group-tab',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-factsheet-map field-group-div',
-        'id' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_factsheet_map|node|factsheet_country|default'] = $field_group;
@@ -497,19 +498,10 @@ function farnet_factsheet_country_field_group_info() {
       1 => 'group_content_access',
       2 => 'og_group_ref',
     ),
-    'format_type' => 'div',
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'label' => 'Metadata',
-      'instance_settings' => array(
-        'id' => 'group_factsheet_metadata',
-        'classes' => 'group_factsheet_metadata  field-group-tab no-menu-content',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_factsheet_metadata|node|factsheet_country|default'] = $field_group;
@@ -704,9 +696,7 @@ function farnet_factsheet_country_field_group_info() {
   $field_group->data = array(
     'label' => 'Taxonomy',
     'weight' => '9',
-    'children' => array(
-      0 => 'field_term_country',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Taxonomy',
@@ -759,6 +749,8 @@ function farnet_factsheet_country_field_group_info() {
   t('Content');
   t('Cooperation');
   t('Delivery of CLLD');
+  t('Description');
+  t('FLAGs');
   t('Key Documents');
   t('Map');
   t('Metadata');
