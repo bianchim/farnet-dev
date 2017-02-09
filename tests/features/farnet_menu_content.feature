@@ -27,12 +27,11 @@ Feature: Test the presence of the content menu
       | field_dates_start_end        | 1, 2            |
       | status                       | 1               |
     #Then I should see "Content" in the ".region-sidebar-left" element
-    Then I should see "Flag" in the ".region-sidebar-left" element
+    Then I should see "FLAG" in the ".region-sidebar-left" element
     And I should see "Description" in the ".region-sidebar-left" element
-    And I should see "Project Cost / Funding" in the ".region-sidebar-left" element
-    #And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
-    And I should see "Beneficiary" in the ".region-sidebar-left" element
-    And I should see "Media" in the ".region-sidebar-left" element
+    And I should see "Funding" in the ".region-sidebar-left" element
+    And I should see "Project Information" in the ".region-sidebar-left" element
+    And I should see "Visuals" in the ".region-sidebar-left" element
     But I should not see "Taxonomy" in the ".region-sidebar-left" element
     And I should not see "Publication" in the ".region-sidebar-left" element
     And I should not see "Metadata" in the ".region-sidebar-left" element
