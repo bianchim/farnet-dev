@@ -361,7 +361,7 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'teaser',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -542,7 +542,7 @@ function farnet_gp_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
@@ -1960,7 +1960,7 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
+        'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 10,
       ),
       'teaser' => array(
