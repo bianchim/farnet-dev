@@ -304,7 +304,7 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Content',
+    'label' => 'Description',
     'weight' => '0',
     'children' => array(
       0 => 'field_farnet_abstract',
@@ -315,7 +315,7 @@ function farnet_gp_short_story_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Content',
+      'label' => 'Description',
       'instance_settings' => array(
         'id' => 'group_short_story_content',
         'classes' => 'group-short-story-content field-group-tab',
@@ -372,23 +372,24 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Flag',
+    'label' => 'FLAG',
     'weight' => '1',
     'children' => array(
       0 => 'field_flag',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'FLAG',
       'instance_settings' => array(
+        'id' => 'group-short-story-flag',
+        'classes' => 'group-short-story-flag field-group-tab',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-short-story-flag field-group-div',
-        'id' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_short_story_flag|node|gp_short_story|default'] = $field_group;
@@ -486,14 +487,14 @@ function farnet_gp_short_story_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media',
+    'label' => 'Visuals',
     'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Media',
+      'label' => 'Visuals',
       'instance_settings' => array(
         'id' => 'group_short_story_media',
         'classes' => 'group_short_story_media field-group-tab',
@@ -805,7 +806,9 @@ function farnet_gp_short_story_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Description');
   t('Eu Contribution');
+  t('FLAG');
   t('Flag');
   t('Funding');
   t('Media');
@@ -817,6 +820,7 @@ function farnet_gp_short_story_field_group_info() {
   t('Quote');
   t('Taxonomy');
   t('Timeframe of implementation');
+  t('Visuals');
 
   return $field_groups;
 }

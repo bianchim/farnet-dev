@@ -145,7 +145,12 @@ h1.title-small {
     z-index: 100;
   }
 }
-.field-name-field-id-text {
+
+.field-name-field-id-text .field-label {
+  display: none;
+}
+
+.field-name-field-id-text .field-items {
   display: none;
 }
 

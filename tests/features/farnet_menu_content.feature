@@ -91,12 +91,12 @@ Feature: Test the presence of the content menu
       | field_gallery                   | MediaGallery        |
       | field_publication_date          | 1                   |
       | status                          | 1                   |
-    #Then I should see "Content" in the ".region-sidebar-left" element
-    Then I should see "Quote" in the ".region-sidebar-left" element
+    Then I should see "Description" in the ".region-sidebar-left" element
+    And I should see "Quote" in the ".region-sidebar-left" element
     #And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
     And I should see "Funding" in the ".region-sidebar-left" element
     And I should see "Project information" in the ".region-sidebar-left" element
-    And I should see "Media" in the ".region-sidebar-left" element
+    And I should see "Visuals" in the ".region-sidebar-left" element
     But I should not see "Taxonomy" in the ".region-sidebar-left" element
     And I should not see "Publication" in the ".region-sidebar-left" element
     And I should not see "Metadata" in the ".region-sidebar-left" element
