@@ -71,17 +71,19 @@
 
 .multi-values div ul {
   list-style-type: none;
-  /*display: inline;*/
   margin: 0;
   padding: 0;
-  /*padding: 1em;*/
   display: inline-block;
 }
 
 .multi-values div ul li {
   display: inline;
   margin: 0;
-  padding-right: 5px;
+  float: left;
+}
+
+.multi-values div ul li ~ li::before {
+  content: ", ";
 }
 
 #layout-body .affix-bottom {
