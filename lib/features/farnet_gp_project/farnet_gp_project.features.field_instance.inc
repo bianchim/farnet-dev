@@ -380,7 +380,7 @@ function farnet_gp_project_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_dates_start_end',
-    'label' => 'Dates (Start/End)',
+    'label' => 'Timeframe of implementation',
     'required' => 0,
     'settings' => array(
       'default_value' => 'now',
@@ -2302,7 +2302,6 @@ function farnet_gp_project_field_default_field_instances() {
   t('Beneficiary');
   t('Context and needs');
   t('Country');
-  t('Dates (Start/End)');
   t('Figure');
   t('Flag');
   t('Gallery');
@@ -2323,6 +2322,7 @@ function farnet_gp_project_field_default_field_instances() {
   t('Results');
   t('Sea Basins');
   t('Theme');
+  t('Timeframe of implementation');
   t('Title');
   t('Total project cost');
   t('Transferability');
