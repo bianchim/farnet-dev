@@ -8,12 +8,12 @@
 
 <div class="content clearfix">
 
-  <div class="media">
-    <div class="media-left">
-      <?php if (!empty($content['field_picture'])) : ?>
+  <div class="media media--farnet">
+    <?php if (!empty($content['field_picture'])) : ?>
+      <div class="media-left">
         <?php print render($content['field_picture']); ?>
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
     <div class="media-body">
       <?php if (!empty($content['field_ne_body'])) : ?>
         <?php print render($content['field_ne_body']); ?>
@@ -24,6 +24,8 @@
   <?php if (!empty($content['field_number_flags'])) : ?>
     <?php print render($content['field_number_flags']); ?>
   <?php endif; ?>
+
+  <div class="u-mt-1em"></div>
 
   <?php if (!empty($content['field_level_at_which_cooperation'])) : ?>
     <?php print render($content['field_level_at_which_cooperation']); ?>
@@ -81,6 +83,8 @@
       <?php print render($content['field_organisations']); ?>
     </div>
   <?php endif; ?>
+
+  <div class="u-mt-1em"></div>
 
   <?php if (!empty($content['field_publication_date'])) : ?>
     <?php print render($content['field_publication_date']); ?>
