@@ -15,8 +15,8 @@
           <?php if (!empty($content['group_gp_project_content']['field_title_official'])) : ?>
             <?php print render($content['group_gp_project_content']['field_title_official']); ?>
           <?php endif; ?>
-          <?php if (!empty($content['group_gp_project_location']['field_term_country'])) : ?>
-            <?php print render($content['group_gp_project_location']['field_term_country']); ?>
+          <?php if (!empty($content['group_gp_project_content']['field_term_country'])) : ?>
+            <?php print render($content['group_gp_project_content']['field_term_country']); ?>
           <?php endif; ?>
           <?php if (!empty($content['group_gp_project_content']['field_id_text'])) : ?>
             <?php print render($content['group_gp_project_content']['field_id_text']); ?>
@@ -118,38 +118,40 @@
     <?php print render($content['group_gp_project_cost']['#suffix']); ?>
   <?php endif; ?>
 
-  <div id="group-gp-method-content" class="group-gp-method-content field-group-tab">
-    <h3 class="fr-heading"><span>Information</span></h3>
-    <table class="table table-responsive table-blue table--white-borders">
-      <tbody>
-      <?php if (!empty($content['group_gp_project_dates']['field_dates_start_end'])) : ?>
-        <tr>
-          <th scope="row"><?php print $content['group_gp_project_dates']['field_dates_start_end']['#title']; ?></th>
-          <td class="multi-values"><?php print render($content['group_gp_project_dates']['field_dates_start_end']); ?></td>
-        </tr>
-      <?php endif; ?>
-      <?php if (!empty($content['group_gp_project_taxonomy']['field_sea_basins'])) : ?>
-        <tr>
-          <th scope="row"><?php print $content['group_gp_project_taxonomy']['field_sea_basins']['#title']; ?></th>
-          <td class="multi-values"><?php print render($content['group_gp_project_taxonomy']['field_sea_basins']); ?></td>
-        </tr>
-      <?php endif; ?>
-      <?php if (!empty($content['group_gp_project_taxonomy']['field_type_of_area'])) : ?>
-        <tr>
-          <th scope="row"><?php print $content['group_gp_project_taxonomy']['field_type_of_area']['#title']; ?></th>
-          <td class="multi-values"><?php print render($content['group_gp_project_taxonomy']['field_type_of_area']); ?></td>
-        </tr>
-      <?php endif; ?>
-      <?php if (!empty($content['group_gp_project_taxonomy']['field_term_theme'])) : ?>
-        <tr>
-          <th scope="row"><?php print $content['group_gp_project_taxonomy']['field_term_theme']['#title']; ?></th>
-          <td class="multi-values"><?php print render($content['group_gp_project_taxonomy']['field_term_theme']); ?></td>
-        </tr>
-      <?php endif; ?>
-      </tbody>
-    </table>
-    <?php print render($content['group_gp_method_resources']['#suffix']); ?>
-  </div>
+  <div class="link-wrapper right"></div>
+
+  <?php if (!empty($content['group_project_information'])) : ?>
+    <?php print render($content['group_project_information']['#prefix']); ?>
+      <table class="table table-responsive table-blue table--white-borders">
+        <tbody>
+        <?php if (!empty($content['group_project_information']['field_dates_start_end'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_project_information']['field_dates_start_end']['#title']; ?></th>
+            <td class="multi-values"><?php print render($content['group_project_information']['field_dates_start_end']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['group_project_information']['field_sea_basins'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_project_information']['field_sea_basins']['#title']; ?></th>
+            <td class="multi-values"><?php print render($content['group_project_information']['field_sea_basins']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['group_project_information']['field_type_of_area'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_project_information']['field_type_of_area']['#title']; ?></th>
+            <td class="multi-values"><?php print render($content['group_project_information']['field_type_of_area']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['group_project_information']['field_term_theme'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['group_project_information']['field_term_theme']['#title']; ?></th>
+            <td class="multi-values"><?php print render($content['group_project_information']['field_term_theme']); ?></td>
+          </tr>
+        <?php endif; ?>
+        </tbody>
+      </table>
+    <?php print render($content['group_project_information']['#suffix']); ?>
+  <?php endif; ?>
 
   <div class="link-wrapper right"></div>
 

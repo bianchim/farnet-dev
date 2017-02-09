@@ -83,9 +83,11 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_id_text',
-      1 => 'field_picture',
-      2 => 'field_title_official',
+      0 => 'field_collection_region',
+      1 => 'field_id_text',
+      2 => 'field_picture',
+      3 => 'field_term_country',
+      4 => 'field_title_official',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -145,7 +147,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Project cost / Funding',
+    'label' => 'Funding',
     'weight' => '3',
     'children' => array(
       0 => 'field_a5_public_contribution',
@@ -161,7 +163,7 @@ function farnet_gp_project_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Project cost / Funding',
+      'label' => 'Funding',
       'instance_settings' => array(
         'id' => 'group_gp_project_cost',
         'classes' => 'group_gp_project_cost field-group-tab',
@@ -224,22 +226,11 @@ function farnet_gp_project_field_group_info() {
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
     'weight' => '4',
-    'children' => array(
-      0 => 'field_dates_start_end',
-    ),
-    'format_type' => 'div',
+    'children' => array(),
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'label' => 'Timeframe of implementation',
-      'instance_settings' => array(
-        'id' => 'group_gp_project_dates',
-        'classes' => 'group_gp_project_dates field-group-tab',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_gp_project_dates|node|gp_project|default'] = $field_group;
@@ -282,7 +273,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_gpp_activities',
       1 => 'field_gpp_context_and_needs',
@@ -350,14 +341,14 @@ function farnet_gp_project_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Flag',
-    'weight' => '1',
+    'label' => 'FLAG',
+    'weight' => '5',
     'children' => array(
       0 => 'field_flag',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Flag',
+      'label' => 'FLAG',
       'instance_settings' => array(
         'id' => 'group_gp_project_flag',
         'classes' => 'group_gp_project_flag field-group-tab',
@@ -411,22 +402,11 @@ function farnet_gp_project_field_group_info() {
   $field_group->data = array(
     'label' => 'Location',
     'weight' => '8',
-    'children' => array(
-      0 => 'field_collection_region',
-      1 => 'field_term_country',
-    ),
-    'format_type' => 'div',
+    'children' => array(),
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'formatter' => 'collapsible',
-      'instance_settings' => array(
-        'description' => '',
-        'show_label' => 1,
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-        'classes' => 'group-gp-project-location field-group-div',
-        'id' => '',
-      ),
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_gp_project_location|node|gp_project|default'] = $field_group;
@@ -469,14 +449,14 @@ function farnet_gp_project_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media',
+    'label' => 'Visuals',
     'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Media',
+      'label' => 'Visuals',
       'instance_settings' => array(
         'id' => 'group_gp_project_media',
         'classes' => 'group_gp_project_media field-group-tab',
@@ -620,12 +600,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->data = array(
     'label' => 'Taxonomy',
     'weight' => '7',
-    'children' => array(
-      0 => 'field_sea_basins',
-      1 => 'field_tags',
-      2 => 'field_term_theme',
-      3 => 'field_type_of_area',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Taxonomy',
@@ -673,19 +648,59 @@ function farnet_gp_project_field_group_info() {
   );
   $field_groups['group_gp_project_taxonomy|node|gp_project|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_project_information|node|gp_project|default';
+  $field_group->group_name = 'group_project_information';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_project';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Project information',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_dates_start_end',
+      1 => 'field_sea_basins',
+      2 => 'field_tags',
+      3 => 'field_term_theme',
+      4 => 'field_type_of_area',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Project information',
+      'instance_settings' => array(
+        'id' => 'group_gp_project_information',
+        'classes' => 'group_gp_project_information field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_project_information|node|gp_project|default'] = $field_group;
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Beneficiary');
   t('Content');
   t('Description');
+  t('FLAG');
   t('Flag');
+  t('Funding');
   t('Location');
   t('Media');
   t('Metatag');
   t('Project cost / Funding');
+  t('Project information');
   t('Publication');
   t('Taxonomy');
   t('Timeframe of implementation');
+  t('Visuals');
 
   return $field_groups;
 }

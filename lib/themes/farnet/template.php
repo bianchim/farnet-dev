@@ -212,7 +212,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_number_staff',
   );
   $element_with_additional_field_item_class_2 = array();
-  if ($variables['element']['#bundle'] === 'factshhet_flag') {
+  if ($variables['element']['#bundle'] === 'factsheet_flag') {
     $element_with_additional_field_item_class_2 = array(
       'field_ff_number_decision' => array('u-color-green', 'u-fw-bold'),
       'field_ff_number_assembly' => array('u-color-green', 'u-fw-bold'),
