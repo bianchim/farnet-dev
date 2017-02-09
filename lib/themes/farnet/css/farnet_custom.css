@@ -132,3 +132,7 @@
 #first-time {
   display: none;
 }
+
+.farnet-listing__item {
+  border-bottom: none;
+}
