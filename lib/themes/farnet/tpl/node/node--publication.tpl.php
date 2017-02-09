@@ -21,6 +21,13 @@
     </div>
   </div>
 
+  <?php if (count($content['field_publication_files']['#items']) > 0) : ?>
+    <div id="group-publication-download" class="group-download field-group-tab">
+      <h3 class="fr-heading"><span>Download</span></h3>
+      <?php print render($content['field_publication_files']); ?>
+    </div>
+  <?php endif; ?>
+
   <div id="group-publication-information" class="group-publication-information field-group-tab">
     <h3 class="fr-heading"><span>Information</span></h3>
     <table class="table table-responsive table-blue table--white-borders">
@@ -58,15 +65,6 @@
       </tbody>
     </table>
   </div>
-
-  <div class="link-wrapper right"></div>
-
-  <?php if (count($content['field_publication_files']['#items']) > 0) : ?>
-    <div id="group-publication-download" class="group-download field-group-tab">
-      <h3 class="fr-heading"><span>Download</span></h3>
-      <?php print render($content['field_publication_files']); ?>
-    </div>
-  <?php endif; ?>
 
   <div class="u-mt-1em"></div>
 
