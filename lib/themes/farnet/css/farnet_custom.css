@@ -132,7 +132,7 @@ h1.title-small {
 }
 
 .content .media .media-left .field-type-image {
-  width: 300px;
+  width: 220px;
 }
 
 .field-type-image img {
@@ -145,12 +145,21 @@ h1.title-small {
     z-index: 100;
   }
 }
-.field-name-field-id-text {
+
+.field-name-field-id-text .field-label {
+  display: none;
+}
+
+.field-name-field-id-text .field-items {
   display: none;
 }
 
 #first-time {
   display: none;
+}
+
+.farnet-listing__item {
+  border-bottom: none;
 }
 
 .fr-select div.form-item {
@@ -165,4 +174,20 @@ h1.title-small {
 .view .views-exposed-widget .form-submit,
 .block .views-exposed-widget .form-submit {
   margin-top: 1.6em;
+  margin-bottom: 2.3em;
+}
+
+/*
+ * Temporary hide maps.
+ */
+#group-factsheet-flag-map,
+.group-factsheet-flag-map,
+.group-factsheet-map {
+  display: none;
+}
+li a[href*="#group-factsheet-flag-map"] {
+  display: none;
+}
+li a[href*="#group-factsheet-map"] {
+  display: none;
 }
