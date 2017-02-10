@@ -191,3 +191,7 @@ li a[href*="#group-factsheet-flag-map"] {
 li a[href*="#group-factsheet-map"] {
   display: none;
 }
+
+#block-views-ical-block {
+  display: none;
+}

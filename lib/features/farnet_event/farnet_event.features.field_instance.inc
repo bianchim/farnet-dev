@@ -22,7 +22,7 @@ function farnet_event_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'farnet_date_hour',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -1159,12 +1159,18 @@ function farnet_event_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'colorbox',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'post',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => '',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'medium',
+          'colorbox_node_style_first' => '',
         ),
-        'type' => 'image',
+        'type' => 'colorbox',
         'weight' => 1,
       ),
       'newsletter' => array(

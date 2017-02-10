@@ -8,12 +8,12 @@
 
 <div class="content clearfix">
 
-  <div class="media">
-    <div class="media-left">
-      <?php if (!empty($content['group_ne_event_content']['field_picture'])) : ?>
+  <div class="media media--farnet">
+    <?php if (!empty($content['group_ne_event_content']['field_picture'])) : ?>
+      <div class="media-left">
         <?php print render($content['group_ne_event_content']['field_picture']); ?>
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
     <div class="media-body">
       <?php if (!empty($content['group_ne_event_content']['field_ne_body'])) : ?>
         <?php print render($content['group_ne_event_content']['field_ne_body']); ?>
@@ -85,7 +85,7 @@
   <?php endif; ?>
 
   <?php if (!empty($content['group_ne_event_agenda'])) : ?>
-      <?php print render($content['group_ne_event_agenda']); ?>
+      <?php /* render($content['group_ne_event_agenda']);*/ ?>
   <?php endif; ?>
 
   <?php if (!empty($content['group_event_contact'])) : ?>
@@ -97,6 +97,8 @@
   <?php if (!empty($content['group_ne_event_content']['field_gallery'])) : ?>
     <?php print render($content['group_ne_event_content']['field_gallery']); ?>
   <?php endif; ?>
+
+  <div class="u-mt-1em"></div>
 
   <?php if (!empty($content['group_ne_event_content']['field_publication_date'])) : ?>
     <?php print render($content['group_ne_event_content']['field_publication_date']); ?>
