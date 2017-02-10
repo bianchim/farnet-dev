@@ -90,7 +90,7 @@ function farnet_cooperation_call_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'farnet_deadline',
+          'format_type' => 'farnet_date_hour',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
