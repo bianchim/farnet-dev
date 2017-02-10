@@ -373,13 +373,13 @@ function farnet_landing_page_default_fe_block_settings() {
     'visibility' => 1,
   );
 
-  $export['block-themes_block_diversification'] = array(
+  $export['menu_block-1'] = array(
     'cache' => -1,
     'custom' => 0,
+    'delta' => 1,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'machine_name' => 'themes_block_diversification',
-    'module' => 'block',
+    'module' => 'menu_block',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -409,17 +409,17 @@ function farnet_landing_page_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Diversification',
+    'title' => '',
     'visibility' => 0,
   );
 
-  $export['block-themes_block_environment'] = array(
+  $export['menu_block-2'] = array(
     'cache' => -1,
     'custom' => 0,
+    'delta' => 2,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'machine_name' => 'themes_block_environment',
-    'module' => 'block',
+    'module' => 'menu_block',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -449,17 +449,17 @@ function farnet_landing_page_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Environment',
+    'title' => '',
     'visibility' => 0,
   );
 
-  $export['block-themes_block_governance'] = array(
+  $export['menu_block-3'] = array(
     'cache' => -1,
     'custom' => 0,
+    'delta' => 3,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'machine_name' => 'themes_block_governance',
-    'module' => 'block',
+    'module' => 'menu_block',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -489,17 +489,17 @@ function farnet_landing_page_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Governance and management',
+    'title' => '',
     'visibility' => 0,
   );
 
-  $export['block-themes_block_society_culture'] = array(
+  $export['menu_block-4'] = array(
     'cache' => -1,
     'custom' => 0,
+    'delta' => 4,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'machine_name' => 'themes_block_society_culture',
-    'module' => 'block',
+    'module' => 'menu_block',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -529,7 +529,47 @@ function farnet_landing_page_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Society and culture',
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-5'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 5,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ec_resp' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'farnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'farnet',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
     'visibility' => 0,
   );
 
