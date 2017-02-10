@@ -168,7 +168,7 @@ Feature: Test the presence of the content menu
       | status                     | 1                 |
     And attach a "field_key_documents" field collection to a "node" named "test flag country" with:
       | field_key_document_label | document pdf |
-      | field_document           | behatTestPdf |
+      | field_fc_document        | behatTestPdf |
     And I reload the page
     #Then I should see "Content" in the ".region-sidebar-left" element
     Then I should see "CLLD Programme" in the ".region-sidebar-left" element
