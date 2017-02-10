@@ -8,12 +8,12 @@
 
 <div class="content clearfix">
 
-  <div class="media">
-    <div class="media-left">
-      <?php if (!empty($content['field_picture'])) : ?>
+  <div class="media media--farnet">
+    <?php if (!empty($content['field_picture'])) : ?>
+      <div class="media-left">
         <?php print render($content['field_picture']); ?>
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
     <div class="media-body">
       <?php if (!empty($content['field_ne_body'])) : ?>
         <?php print render($content['field_ne_body']); ?>
@@ -75,6 +75,11 @@
     </div>
   <?php endif; ?>
 
+  <div class="u-mt-1em"></div>
+
+  <?php print render($content['contact_details']); ?>
+
+  <div class="u-mt-1em"></div>
   <?php if (!empty($content['field_status'])) : ?>
     <?php print render($content['field_status']); ?>
   <?php endif; ?>
@@ -82,5 +87,4 @@
     <?php print render($content['field_publication_date']); ?>
   <?php endif; ?>
 
-  <?php print render($content['contact_details']); ?>
 </div>
