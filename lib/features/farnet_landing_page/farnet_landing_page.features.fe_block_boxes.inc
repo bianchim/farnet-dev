@@ -15,7 +15,7 @@ function farnet_landing_page_default_fe_block_boxes() {
   $fe_block_boxes->info = 'About block at a glance';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'about_block_ataglance';
-  $fe_block_boxes->body = '<h2>FARNET</h2><p style="text-align: right;"><a href="farnet-glance">Read more</a></p><h2>CLLD</h2><p style="text-align: right;"><a href="clld-glance">Read more</a></p><h2>Glossary</h2><p style="text-align: right;"><a href="glossary">Read more</a></p>';
+  $fe_block_boxes->body = '<h4>FARNET</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus magna nulla, quis pulvinar elit ultricies quis. Proin mollis efficitur vestibulum. Vestibulum faucibus lacinia dolor, sed faucibus magna dapibus non. Etiam nibh justo, ultrices nec erat ultrices, ultricies commodo mi. Praesent varius erat ligula, eget finibus nisi varius id. Pellentesque et nisl at magna faucibus molestie non eget est.<a class="btn btn-default farnet-listing__read-more" href="farnet-glance">Read more</a></p><h4>&nbsp;</h4><h4>CLLD</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus magna nulla, quis pulvinar elit ultricies quis. Proin mollis efficitur vestibulum. Vestibulum faucibus lacinia dolor, sed faucibus magna dapibus non. Etiam nibh justo, ultrices nec erat ultrices, ultricies commodo mi. Praesent varius erat ligula, eget finibus nisi varius id. Pellentesque et nisl at magna faucibus molestie non eget est.<a class="btn btn-default farnet-listing__read-more" href="clld-glance">Read more</a></p><h4>&nbsp;</h4><h4>Glossary</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus magna nulla, quis pulvinar elit ultricies quis. Proin mollis efficitur vestibulum. Vestibulum faucibus lacinia dolor, sed faucibus magna dapibus non. Etiam nibh justo, ultrices nec erat ultrices, ultricies commodo mi. Praesent varius erat ligula, eget finibus nisi varius id. Pellentesque et nisl at magna faucibus molestie non eget est.<a class="btn btn-default farnet-listing__read-more" href="glossary">Read more</a></p>';
 
   $export['about_block_ataglance'] = $fe_block_boxes;
 
@@ -23,7 +23,7 @@ function farnet_landing_page_default_fe_block_boxes() {
   $fe_block_boxes->info = 'About block who\'s who';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'about_block_whos_who';
-  $fe_block_boxes->body = '<h2>DG MARE</h2><p style="text-align: right;"><a href="dg-mare">Read more</a></p>';
+  $fe_block_boxes->body = '<h4>DG MARE</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus magna nulla, quis pulvinar elit ultricies quis. Proin mollis efficitur vestibulum. Vestibulum faucibus lacinia dolor, sed faucibus magna dapibus non. Etiam nibh justo, ultrices nec erat ultrices, ultricies commodo mi. Praesent varius erat ligula, eget finibus nisi varius id. Pellentesque et nisl at magna faucibus molestie non eget est.<a class="btn btn-default farnet-listing__read-more" href="dg-mare">Read more</a></p>';
 
   $export['about_block_whos_who'] = $fe_block_boxes;
 
