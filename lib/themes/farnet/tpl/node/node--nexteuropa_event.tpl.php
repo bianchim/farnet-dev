@@ -112,7 +112,7 @@
       <div class="field field-name-field-email field-type-text field-label-inline clearfix">
         <div class="field-items">
           <div class="field-item even">
-            <?php 
+            <?php
               $mail = $content['group_event_contact']['field_email']['#items'][0]['email'];
               print l($mail, "mailto:$mail");
              ?>
