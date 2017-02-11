@@ -44,15 +44,15 @@
   <?php endif; ?>
 
   <div class="link-wrapper right"></div>
-
-  <?php if (!empty($content['field_page'])) : ?>
+ 
+  // Temporary hide field_page element.
+  <?php if (FALSE) : ?>
     <div id="group-nexteuropa-news-page" class="group-nexteuropa-news-page field-group-tab">
       <h3 class="fr-heading"><span><?php print $content['field_page']['#title']; ?></span></h3>
       <?php print render($content['field_page']); ?>
     </div>
+    <div class="u-mt-1em"></div>
   <?php endif; ?>
-
-  <div class="u-mt-1em"></div>
 
   <?php if (!empty($content['field_publication_date'])) : ?>
     <?php print render($content['field_publication_date']); ?>
