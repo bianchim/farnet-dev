@@ -207,3 +207,7 @@ li a[href*="#group-factsheet-map"] {
   list-style-type: none;
   margin-bottom: 0;
 }
+
+.fr-u-ul li {
+  float: none !important;
+}
