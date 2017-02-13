@@ -62,7 +62,7 @@ Feature: Test the presence of the content menu
     And I should see "Description" in the ".region-sidebar-left" element
     And I should see "Resources" in the ".region-sidebar-left" element
     #And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
-    And I should see "Media" in the ".region-sidebar-left" element
+    And I should see "Visuals" in the ".region-sidebar-left" element
     But I should not see "Taxonomy" in the ".region-sidebar-left" element
     And I should not see "Publication" in the ".region-sidebar-left" element
     And I should not see "Metadata" in the ".region-sidebar-left" element

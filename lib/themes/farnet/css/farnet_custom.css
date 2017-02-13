@@ -90,14 +90,8 @@
   position: absolute;
 }
 
-#block-quick-links div {
-  margin: 0;
-}
-
-#block-quick-links div ul {
-  list-style-type: none;
-  margin-bottom: 0;
-  padding: 1em;
+#block-quick-links {
+  margin-bottom: 14px;
 }
 
 .js #services,
@@ -116,6 +110,17 @@
 .region-content-bottom .block-block .content {
   border: 1px solid #cbcbcb;
   padding: 5px;
+}
+
+.f-panel__content {
+  padding: 1em 0 1em 1em;
+}
+
+.f-twitter-feed {
+  margin: 0;
+  padding: 0 1em 0 0;
+  height: 296px;
+  overflow-x: auto;
 }
 
 p.title {
@@ -210,4 +215,8 @@ li a[href*="#group-factsheet-map"] {
 
 .field-name-field-term-country .links {
   list-style-type: none;
+}
+
+.fr-u-ul li {
+  float: none !important;
 }

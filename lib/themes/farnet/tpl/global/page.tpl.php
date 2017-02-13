@@ -191,7 +191,7 @@ global $base_url;
           <?php if (isset($node_type)): ?>
             <p class="title"><?php print $node_type; ?></p>
           <?php endif; ?>
-          <?php if ($title): ?>
+          <?php if ($title && !drupal_is_front_page()): ?>
             <?php print render($title_prefix); ?>
             <h1 class="title<?php if (isset($node_type)): ?>-small<?php endif; ?>" id="content-title">
               <?php print $title; ?>

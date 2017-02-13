@@ -107,7 +107,7 @@ function farnet_pages_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media',
+    'label' => 'Visuals',
     'weight' => '2',
     'children' => array(
       0 => 'field_gallery',
