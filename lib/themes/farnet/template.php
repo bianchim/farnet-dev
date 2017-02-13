@@ -119,6 +119,10 @@ function farnet_preprocess_block(&$vars) {
       $vars['elements']['#block']->subject = t('Follow FARNET on:');
       break;
 
+    case 'block-12':
+      $vars['classes_array'][] = 'f-home__quick-links';
+      break;
+
     case 'cce_basic_config-footer_ipg':
       $vars['elements']['#block']->subject = NULL;
       $vars['content'] = drupal_substr($vars['content'], strpos($vars['content'], '<ul'));
