@@ -22,14 +22,15 @@ function farnet_social_media_share_enable() {
         'value' => '{
           "service": "sbkm",
           "to": [
-            "e-mail",
-            "facebook",
             "twitter",
-            "googleplus",
+            "facebook",
             "linkedin"
           ],
           "via": "EU_FARNET",
           "selection": false
+          "css": {
+            "button": "btn btn-default f-home__button-cta f-home__button-share"
+          }
         }',
       ],
     ],
