@@ -45,7 +45,8 @@
 
   <div class="link-wrapper right"></div>
  
-  <?php // Temporary hide field_page element. ?>
+  <?php
+// Temporary hide field_page element. ?>
   <?php if (FALSE) : ?>
     <div id="group-nexteuropa-news-page" class="group-nexteuropa-news-page field-group-tab">
       <h3 class="fr-heading"><span><?php print $content['field_page']['#title']; ?></span></h3>
