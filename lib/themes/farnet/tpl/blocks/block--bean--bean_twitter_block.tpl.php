@@ -45,7 +45,7 @@
 ?>
 <section class="f-panel">
   <header class="f-panel__header">
-    <h1 class="f-panel__header-title">FARNET Live</h1>
+    <h1 class="f-panel__header-title"><?php print t('FARNET Live'); ?></h1>
   </header>
   <div class="f-panel__content">
     <section class="f-twitter-feed">
