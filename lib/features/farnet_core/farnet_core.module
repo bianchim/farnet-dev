@@ -293,14 +293,21 @@ function farnet_core_field_extra_fields() {
  * For each configured content type, render the field.
  */
 function farnet_core_node_view($node, $view_mode, $langcode) {
-  if ($view_mode === "full") {
-    $content_types = _farnet_core_get_contact_details_bundles();
-    if (in_array($node->type, $content_types)) {
-      $node->content['contact_details'] = [
-        '#markup' => _farnet_core_display_contact_details($node),
-        '#weight' => 1000,
-      ];
-    }
+  switch ($view_mode) {
+    case "full":
+      $content_types = _farnet_core_get_contact_details_bundles();
+      if (in_array($node->type, $content_types)) {
+        $node->content['contact_details'] = [
+          '#markup' => _farnet_core_display_contact_details($node),
+          '#weight' => 1000,
+        ];
+      }
+      break;
+
+    // Hide media gallery title in node display.
+    case "media_gallery_page":
+      $node->title = NULL;
+      break;
   }
 }
 
