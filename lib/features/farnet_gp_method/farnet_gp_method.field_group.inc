@@ -279,14 +279,14 @@ function farnet_gp_method_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media',
+    'label' => 'Visuals',
     'weight' => '7',
     'children' => array(
       0 => 'field_gallery',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Media',
+      'label' => 'Visuals',
       'instance_settings' => array(
         'id' => 'group_gp_method_media',
         'classes' => 'group_gp_method_media field-group-tab',
@@ -311,7 +311,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media',
+    'label' => 'Visuals',
     'weight' => '6',
     'children' => array(
       0 => 'field_gallery',
@@ -681,6 +681,7 @@ function farnet_gp_method_field_group_info() {
   t('Content');
   t('Description');
   t('FLAG');
+  t('Flag');
   t('Location');
   t('Media');
   t('Metadata');
@@ -689,6 +690,7 @@ function farnet_gp_method_field_group_info() {
   t('Resources');
   t('Taxonomy');
   t('Timeframe of implementation');
+  t('Visuals');
 
   return $field_groups;
 }
