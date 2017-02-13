@@ -345,9 +345,6 @@ function _farnet_core_display_contact_details($node) {
 
   $output = '';
 
-  // Start with no value to render.
-  $no_value = TRUE;
-
   // Wrap the node for easier handling.
   $node = entity_metadata_wrapper('node', $node);
 
@@ -402,6 +399,9 @@ function _farnet_core_display_contact_details($node) {
       return '';
   }
 
+  // Keep track of number of contacts.
+  $contact_num = 0;
+
   foreach ($organisations as $org_id => $organisation) {
     // Load the organisations.
     $node = entity_metadata_wrapper('node', $organisation);
@@ -416,13 +416,6 @@ function _farnet_core_display_contact_details($node) {
         continue;
       }
       $position_label = $contact_label[$org_id];
-
-      // Before processing the first contact, add the wrappers.
-      if ($no_value) {
-        $output = '<fieldset><legend>' . t('Contacts detail') . '</legend>';
-        $output .= '<div class="field">';
-        $no_value = FALSE;
-      }
 
       // Load the contact info.
       $contact = $fc_contact->field_contact_person->value();
@@ -472,14 +465,18 @@ function _farnet_core_display_contact_details($node) {
           unset($value);
         }
 
+        // Close div field-group-tab.
         $output .= '</div>';
+        $contact_num++;
       }
     }
   }
 
-  if (!$no_value) {
-    $output .= '</div></fieldset>';
+  if ($contact_num) {
+    $multiple = $contact_num > 1 ? 'flag-contacts--multiple' : '';
+    $output = '<fieldset class="flag-contacts ' . $multiple . '"><div class="field">' . $output . '</div></fieldset>';
   }
+
   return $output;
 }
 
