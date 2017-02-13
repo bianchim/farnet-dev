@@ -219,6 +219,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
       'field_type_of_area' => array('fr-u-ul'),
       'field_sea_basins' => array('fr-u-ul'),
+      'field_term_theme' => array('fr-u-ul', 'clearfix'),
     );
   }
   $element_percent_formated = array(
