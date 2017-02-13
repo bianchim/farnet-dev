@@ -207,3 +207,7 @@ li a[href*="#group-factsheet-map"] {
   list-style-type: none;
   margin-bottom: 0;
 }
+
+.field-name-field-term-country .links {
+  list-style-type: none;
+}
