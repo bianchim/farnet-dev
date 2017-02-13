@@ -194,6 +194,10 @@ li a[href*="#group-factsheet-map"] {
   display: none;
 }
 
+#block-views-ical-block {
+  display: none;
+}
+
 .key-documents ul {
   padding: 0;
   margin: 0;

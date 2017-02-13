@@ -8,12 +8,12 @@
 
 <div class="content clearfix">
 
-  <div class="media">
-    <div class="media-left">
-      <?php if (!empty($content['group_ne_event_content']['field_picture'])) : ?>
+  <div class="media media--farnet">
+    <?php if (!empty($content['group_ne_event_content']['field_picture'])) : ?>
+      <div class="media-left">
         <?php print render($content['group_ne_event_content']['field_picture']); ?>
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
     <div class="media-body">
       <?php if (!empty($content['group_ne_event_content']['field_ne_body'])) : ?>
         <?php print render($content['group_ne_event_content']['field_ne_body']); ?>
@@ -85,11 +85,48 @@
   <?php endif; ?>
 
   <?php if (!empty($content['group_ne_event_agenda'])) : ?>
-      <?php print render($content['group_ne_event_agenda']); ?>
+      <?php /* render($content['group_ne_event_agenda']);*/ ?>
   <?php endif; ?>
 
   <?php if (!empty($content['group_event_contact'])) : ?>
-    <?php print render($content['group_event_contact']); ?>
+    <div id="group-event-contact" class="group_event_contact field-group-tab">
+      <h3>
+        <span>Contact</span>
+      </h3>
+      <div class="field field-name-field-contact-title field-type-list-text field-label-inline clearfix">
+        <div class="field-items">
+            <div class="field-item even">
+              <?php print $content['group_event_contact']['field_contact_title']['#items'][0]['value']; ?>
+              <?php print $content['group_event_contact']['field_first_name']['#items'][0]['value']; ?>
+              <?php print $content['group_event_contact']['field_last_name']['#items'][0]['value']; ?>
+            </div>
+        </div>
+      </div>
+      <div class="field field-name-field-contact-position field-type-text field-label-inline clearfix">
+        <div class="field-items">
+          <div class="field-item even">
+            <?php print $content['group_event_contact']['field_contact_position']['#items'][0]['value']; ?>
+          </div>
+        </div>
+      </div>
+      <div class="field field-name-field-email field-type-text field-label-inline clearfix">
+        <div class="field-items">
+          <div class="field-item even">
+            <?php
+              $mail = $content['group_event_contact']['field_email']['#items'][0]['email'];
+              print l($mail, "mailto:$mail");
+             ?>
+          </div>
+        </div>
+      </div>
+      <div class="field field-name-field-telephone field-type-text field-label-inline clearfix">
+        <div class="field-items">
+          <div class="field-item even">
+            <?php print $content['group_event_contact']['field_telephone']['#items'][0]['value']; ?>
+          </div>
+        </div>
+      </div>
+    </div>
   <?php endif; ?>
 
   <div class="link-wrapper right"></div>
@@ -97,6 +134,8 @@
   <?php if (!empty($content['group_ne_event_content']['field_gallery'])) : ?>
     <?php print render($content['group_ne_event_content']['field_gallery']); ?>
   <?php endif; ?>
+
+  <div class="u-mt-1em"></div>
 
   <?php if (!empty($content['group_ne_event_content']['field_publication_date'])) : ?>
     <?php print render($content['group_ne_event_content']['field_publication_date']); ?>
