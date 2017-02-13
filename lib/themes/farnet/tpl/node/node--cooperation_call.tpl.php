@@ -21,10 +21,12 @@
     </div>
   </div>
 
-  <?php print render($content['field_call']); ?>
-  <?php print render($content['field_deadline']); ?>
-
-  <?php if ((!empty($content['field_term_country'])) || (!empty($content['field_term_theme'])) || (!empty($content['field_sea_basins']))): ?>
+  <?php if ((!empty($content['field_term_country']))
+    || (!empty($content['field_term_theme']))
+    || (!empty($content['field_sea_basins']))
+    || (!empty($content['field_call']))
+    || (!empty($content['field_deadline']))
+  ): ?>
     <div id="group-cooperation-call-information" class="group-cooperation-call-information field-group-tab">
       <h3 class="fr-heading"><span>Information</span></h3>
       <table class="table table-responsive table-blue table--white-borders">
@@ -33,6 +35,18 @@
           <tr>
             <th scope="row"><?php print $content['field_term_country']['#title']; ?></th>
             <td class="multi-values"><?php print render($content['field_term_country']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['field_call'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['field_call']['#title']; ?></th>
+            <td class="multi-values"><?php print render($content['field_call']); ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if (!empty($content['field_deadline'])) : ?>
+          <tr>
+            <th scope="row"><?php print $content['field_deadline']['#title']; ?></th>
+            <td class="multi-values"><?php print render($content['field_deadline']); ?></td>
           </tr>
         <?php endif; ?>
         <?php if (!empty($content['field_term_theme'])) : ?>
