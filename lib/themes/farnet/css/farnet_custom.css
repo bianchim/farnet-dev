@@ -92,7 +92,7 @@
 
 #block-quick-links {
   margin-bottom: 14px;
-  padding: 1.6em;
+  padding: 22px;
 }
 
 .js #services,
@@ -115,7 +115,7 @@
 .f-twitter-feed {
   margin: 0;
   padding: 0 1em 0 0;
-  height: 296px;
+  height: 275px;
   overflow-x: auto;
 }
 
@@ -251,4 +251,8 @@ li a[href*="#group-factsheet-map"] {
 
 .btn_subscribe {
   padding-top: 8px;
+}
+
+.front #block-system-main {
+  display: none;
 }
