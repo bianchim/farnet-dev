@@ -891,6 +891,30 @@ function farnet_item_list($variables) {
 }
 
 /**
+ * Returns HTML for a date element formatted as a single date.
+ */
+function farnet_date_display_single($variables) {
+  $date = $variables['date'];
+  $timezone = $variables['timezone'];
+  $attributes = $variables['attributes'];
+  $show_remaining_days = isset($variables['show_remaining_days']) ? $variables['show_remaining_days'] : '';
+
+  // On node page display a From word for "Timeframe of implementation".
+  $from = is_null(menu_get_object('node')) ? '' : t('From');
+  $from .= ' ';
+
+  // Wrap the result with the attributes.
+  $output = '<span class="date-display-single"' . drupal_attributes($attributes) . '>' . $from . $date . $timezone . '</span>';
+
+  if (!empty($variables['add_microdata'])) {
+    $output .= '<meta' . drupal_attributes($variables['microdata']['value']['#attributes']) . '/>';
+  }
+
+  // Add remaining message and return.
+  return $output . $show_remaining_days;
+}
+
+/**
  * Returns HTML for a date element formatted as a range.
  */
 function farnet_date_display_range($variables) {

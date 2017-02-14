@@ -575,11 +575,10 @@ function farnet_gp_method_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '8',
     'children' => array(
-      0 => 'field_dates_start_end',
-      1 => 'field_sea_basins',
-      2 => 'field_tags',
-      3 => 'field_term_theme',
-      4 => 'field_type_of_area',
+      0 => 'field_sea_basins',
+      1 => 'field_tags',
+      2 => 'field_term_theme',
+      3 => 'field_type_of_area',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -640,11 +639,21 @@ function farnet_gp_method_field_group_info() {
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
     'weight' => '6',
-    'children' => array(),
-    'format_type' => 'hidden',
+    'children' => array(
+      0 => 'field_dates_start_end',
+    ),
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
-      'instance_settings' => array(),
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+        'id' => '',
+      ),
     ),
   );
   $field_groups['group_gp_method_timeframe|node|gp_method|default'] = $field_group;
