@@ -82,8 +82,13 @@
   float: left;
 }
 
-.multi-values div ul li ~ li::before {
-  content: ", ";
+.multi-values div ul li a {
+  float: left;
+}
+
+.multi-values div ul li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
 }
 
 #layout-body .affix-bottom {
@@ -251,4 +256,30 @@ li a[href*="#group-factsheet-map"] {
 
 .btn_subscribe {
   padding-top: 8px;
+}
+
+table.table-responsive.table-blue.table--white-borders th {
+  white-space: nowrap;
+}
+
+.field-name-field-term-country .links {
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  padding: 0 0 0 5px;
+}
+
+.field-name-field-collection-region ul {
+  display: inline;
+  list-style-type: none;
+}
+
+.field-name-field-collection-region li {
+  display: inline-block;
+  float: left;
+}
+
+.field-name-field-collection-region li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
 }
