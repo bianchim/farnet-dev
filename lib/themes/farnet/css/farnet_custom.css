@@ -113,11 +113,6 @@
   z-index: 999;
 }
 
-.region-content-bottom .block-block .content {
-  border: 1px solid #cbcbcb;
-  padding: 5px;
-}
-
 p.title {
   background: #8fc726;
   color: #fff;

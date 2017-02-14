@@ -44,6 +44,16 @@ function farnet_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements theme_preprocess_region().
+ */
+function farnet_preprocess_region(&$variables, $hook) {
+  if ($variables['region'] == 'content_bottom') {
+    $variables['classes_array'][] = 'row';
+    $variables['classes_array'][] = 'f-home__last-items';
+  }
+}
+
+/**
  * OM Maximenu content rendering engine override.
  */
 function farnet_om_menu_content_render($content = array()) {
