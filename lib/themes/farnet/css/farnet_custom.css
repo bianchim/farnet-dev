@@ -108,11 +108,6 @@
   z-index: 999;
 }
 
-.region-content-bottom .block-block .content {
-  border: 1px solid #cbcbcb;
-  padding: 5px;
-}
-
 .f-panel__content {
   padding: 1em 0 1em 1em;
 }
