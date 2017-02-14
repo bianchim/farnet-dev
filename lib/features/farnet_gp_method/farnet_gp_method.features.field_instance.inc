@@ -811,8 +811,8 @@ function farnet_gp_method_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
