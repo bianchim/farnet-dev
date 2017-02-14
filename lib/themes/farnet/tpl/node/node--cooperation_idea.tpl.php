@@ -55,6 +55,12 @@
           <td class="multi-values"><?php print render($content['field_type_of_area']); ?></td>
         </tr>
       <?php endif; ?>
+      <?php if (!empty($content['field_status'])) : ?>
+        <tr>
+          <th scope="row"><?php print $content['field_status']['#title']; ?></th>
+          <td class="multi-values"><?php print render($content['field_status']); ?></td>
+        </tr>
+      <?php endif; ?>
       </tbody>
     </table>
   </div>
@@ -80,9 +86,7 @@
   <?php print render($content['contact_details']); ?>
 
   <div class="u-mt-1em"></div>
-  <?php if (!empty($content['field_status'])) : ?>
-    <?php print render($content['field_status']); ?>
-  <?php endif; ?>
+
   <?php if (!empty($content['field_publication_date'])) : ?>
     <?php print render($content['field_publication_date']); ?>
   <?php endif; ?>

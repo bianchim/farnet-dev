@@ -113,7 +113,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'FLAG Contacts',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_contact',
-        'classes' => '',
+        'classes' => 'group-factsheet-flag-contact field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -247,7 +247,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Expertise & cooperation',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_cooperation',
-        'classes' => '',
+        'classes' => 'group-factsheet-flag-cooperation field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -379,7 +379,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Cooperation ideas',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_ideas',
-        'classes' => 'group-factsheet-flag-ideas field-group-div',
+        'classes' => 'group-factsheet-flag-ideas field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -411,7 +411,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Links with LEADER or other CLLD groups',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_links',
-        'classes' => '',
+        'classes' => 'group-factsheet-flag-links field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -501,7 +501,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Map',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_map',
-        'classes' => 'group-factsheet-flag-map field-group-fieldset',
+        'classes' => 'group-factsheet-flag-map field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -597,7 +597,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Partnership',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_partnership',
-        'classes' => '',
+        'classes' => 'group-factsheet-flag-partnership field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -664,7 +664,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Good Practice',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_practices',
-        'classes' => 'group-factsheet-flag-practices field-group-div',
+        'classes' => 'group-factsheet-flag-practices field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -697,7 +697,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Calls for proposals',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_project_cal',
-        'classes' => '',
+        'classes' => 'group-factsheet-flag-project-cal field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -758,7 +758,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Project examples',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_project_ex',
-        'classes' => '',
+        'classes' => 'group-factsheet-flag-project-ex field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -850,7 +850,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Social media',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_social',
-        'classes' => '',
+        'classes' => 'group-factsheet-flag-social field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -976,7 +976,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Visuals',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_visuals',
-        'classes' => 'group-factsheet-flag-visuals field-group-div',
+        'classes' => 'group-factsheet-flag-visuals group-visuals field-group-tab',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',

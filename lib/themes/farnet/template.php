@@ -44,6 +44,16 @@ function farnet_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements theme_preprocess_region().
+ */
+function farnet_preprocess_region(&$variables, $hook) {
+  if ($variables['region'] == 'content_bottom') {
+    $variables['classes_array'][] = 'row';
+    $variables['classes_array'][] = 'f-home__last-items';
+  }
+}
+
+/**
  * OM Maximenu content rendering engine override.
  */
 function farnet_om_menu_content_render($content = array()) {
@@ -223,6 +233,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
       'field_type_of_area' => array('fr-u-ul'),
       'field_sea_basins' => array('fr-u-ul'),
+      'field_term_theme' => array('fr-u-ul', 'clearfix'),
     );
   }
   $element_percent_formated = array(
@@ -877,6 +888,30 @@ function farnet_item_list($variables) {
     $output .= '</div>';
   }
   return $output;
+}
+
+/**
+ * Returns HTML for a date element formatted as a single date.
+ */
+function farnet_date_display_single($variables) {
+  $date = $variables['date'];
+  $timezone = $variables['timezone'];
+  $attributes = $variables['attributes'];
+  $show_remaining_days = isset($variables['show_remaining_days']) ? $variables['show_remaining_days'] : '';
+
+  // On node page display a From word for "Timeframe of implementation".
+  $from = is_null(menu_get_object('node')) ? '' : t('From');
+  $from .= ' ';
+
+  // Wrap the result with the attributes.
+  $output = '<span class="date-display-single"' . drupal_attributes($attributes) . '>' . $from . $date . $timezone . '</span>';
+
+  if (!empty($variables['add_microdata'])) {
+    $output .= '<meta' . drupal_attributes($variables['microdata']['value']['#attributes']) . '/>';
+  }
+
+  // Add remaining message and return.
+  return $output . $show_remaining_days;
 }
 
 /**
