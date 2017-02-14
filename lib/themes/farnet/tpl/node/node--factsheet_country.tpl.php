@@ -79,8 +79,10 @@
   <?php print render($content['group_factsheet_cooperation']); ?>
   <?php print render($content['group_factsheet_delivery_clld']); ?>
 
-  <?php if (count($content['group_factsheet_key_documents']['field_key_documents']['#items']) > 0) : ?>
-    <?php print render($content['group_factsheet_key_documents']); ?>
+  <?php if (!empty($content['group_factsheet_key_documents'])) : ?>
+    <?php if (count($content['group_factsheet_key_documents']['field_key_documents']['#items']) > 0) : ?>
+      <?php print render($content['group_factsheet_key_documents']); ?>
+    <?php endif; ?>
   <?php endif; ?>
 
   <?php if (!empty($content['field_organisations'])) : ?>
