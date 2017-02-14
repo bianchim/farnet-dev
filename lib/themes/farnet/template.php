@@ -44,6 +44,16 @@ function farnet_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements theme_preprocess_region().
+ */
+function farnet_preprocess_region(&$variables, $hook) {
+  if ($variables['region'] == 'content_bottom') {
+    $variables['classes_array'][] = 'row';
+    $variables['classes_array'][] = 'f-home__last-items';
+  }
+}
+
+/**
  * OM Maximenu content rendering engine override.
  */
 function farnet_om_menu_content_render($content = array()) {
@@ -223,6 +233,7 @@ function farnet_preprocess_field(&$variables, $hook) {
       'field_ff_number_staff' => array('u-color-green', 'u-fw-bold'),
       'field_type_of_area' => array('fr-u-ul'),
       'field_sea_basins' => array('fr-u-ul'),
+      'field_term_theme' => array('fr-u-ul', 'clearfix'),
     );
   }
   $element_percent_formated = array(

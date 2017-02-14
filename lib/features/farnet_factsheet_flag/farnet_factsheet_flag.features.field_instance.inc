@@ -603,8 +603,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -1004,8 +1004,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -1276,8 +1276,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -1616,8 +1616,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -1871,8 +1871,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -2060,8 +2060,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -2476,7 +2476,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
+          'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ' ',
         ),
@@ -2523,8 +2523,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -2571,8 +2571,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => 1,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -2676,8 +2676,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -4045,7 +4045,8 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Twitter');
   t('Type of area');
   t('View Cooperation Ideas');
-  t('View Good Practice');
+  t('View Good Practice
+    ');
   t('Website');
   t('Women employment in fisheries');
 

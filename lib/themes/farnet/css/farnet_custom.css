@@ -92,6 +92,7 @@
 
 #block-quick-links {
   margin-bottom: 14px;
+  padding: 1.6em;
 }
 
 .js #services,
@@ -105,11 +106,6 @@
 
 .navbar-header .affix-top {
   z-index: 999;
-}
-
-.region-content-bottom .block-block .content {
-  border: 1px solid #cbcbcb;
-  padding: 5px;
 }
 
 .f-panel__content {
@@ -217,6 +213,46 @@ li a[href*="#group-factsheet-map"] {
   list-style-type: none;
 }
 
+.field-name-field-ff-multi-funding-txt ul {
+  list-style-type: none;
+}
+
+.group-visuals h2 {
+  display: none;
+}
+
+.field-name-field-ff-total-employment div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-fishing div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-aquaculture div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-processing div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-women-employment div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-number-staff div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-total-public-budget div .field-item:after {
+  content: " €";
+}
+.field-name-field-ff-emff div .field-item:after {
+  content: " €";
+}
+.field-name-field-ff-ms-co-financing div .field-item:after {
+  content: " €";
+}
+
 .fr-u-ul li {
   float: none !important;
+}
+
+.btn_subscribe {
+  padding-top: 8px;
 }
