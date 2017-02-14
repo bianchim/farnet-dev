@@ -112,7 +112,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_flag',
-    'label' => 'Flag',
+    'label' => 'FLAG',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -572,7 +572,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
@@ -587,7 +587,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_status',
-    'label' => 'Status',
+    'label' => 'Cooperation status',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -877,7 +877,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Country');
-  t('Flag');
+  t('FLAG');
   t('Groups audience');
   t('Organisation');
   t('Picture');
@@ -886,7 +886,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
   t('Publication channels');
   t('Publication date');
   t('Sea Basins');
-  t('Status');
+  t('Cooperation status');
   t('Theme');
   t('Title');
   t('Type of area');

@@ -97,7 +97,7 @@
 
 #block-quick-links {
   margin-bottom: 14px;
-  padding: 1.6em;
+  padding: 22px;
 }
 
 .js #services,
@@ -120,7 +120,7 @@
 .f-twitter-feed {
   margin: 0;
   padding: 0 1em 0 0;
-  height: 296px;
+  height: 275px;
   overflow-x: auto;
 }
 
@@ -214,6 +214,10 @@ li a[href*="#group-factsheet-map"] {
   margin-bottom: 0;
 }
 
+.field-name-field-term-country .links {
+  list-style-type: none;
+}
+
 .field-name-field-ff-multi-funding-txt ul {
   list-style-type: none;
 }
@@ -282,4 +286,8 @@ table.table-responsive.table-blue.table--white-borders th {
 .field-name-field-collection-region li:not(:last-child):after {
   content: ",";
   padding-right: 5px;
+}
+
+.front #block-system-main {
+  display: none;
 }

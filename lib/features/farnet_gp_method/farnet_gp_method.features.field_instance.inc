@@ -159,7 +159,7 @@ function farnet_gp_method_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_dates_start_end',
-    'label' => 'Dates (Start/End)',
+    'label' => 'Timeframe of implementation',
     'required' => 0,
     'settings' => array(
       'default_value' => 'now',
@@ -1938,7 +1938,6 @@ function farnet_gp_method_field_default_field_instances() {
   t('Activities');
   t('Context, needs, opportunity');
   t('Country');
-  t('Dates (Start/End)');
   t('Financial resources');
   t('Flag');
   t('Gallery');
@@ -1962,6 +1961,7 @@ function farnet_gp_method_field_default_field_instances() {
   t('Skills');
   t('Staff resources (FTE)');
   t('Theme');
+  t('Timeframe of implementation');
   t('Title');
   t('Transferability');
   t('Type of area');
