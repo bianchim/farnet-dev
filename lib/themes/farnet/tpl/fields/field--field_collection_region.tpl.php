@@ -54,7 +54,7 @@
   <?php endforeach; ?>
 <?php endforeach; ?>
 
-<?php if (count ($regions) > 0): ?>
+<?php if (count($regions) > 0): ?>
   <div class="field field-name-field-collection-region field-type-field-collection field-label-inline clearfix">
     <div class="field-label"><?php echo $label; ?>:&nbsp;</div>
     <div class="field-items">
