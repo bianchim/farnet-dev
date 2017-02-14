@@ -21,11 +21,13 @@
     </div>
   </div>
 
-  <?php if (count($content['field_publication_files']['#items']) > 0) : ?>
-    <div id="group-publication-download" class="group-download field-group-tab">
-      <h3 class="fr-heading"><span>Download</span></h3>
-      <?php print render($content['field_publication_files']); ?>
-    </div>
+  <?php if (!empty($content['field_publication_files'])) : ?>
+    <?php if (count($content['field_publication_files']['#items']) > 0) : ?>
+      <div id="group-publication-download" class="group-download field-group-tab">
+        <h3 class="fr-heading"><span>Download</span></h3>
+        <?php print render($content['field_publication_files']); ?>
+      </div>
+    <?php endif; ?>
   <?php endif; ?>
 
   <div id="group-publication-information" class="group-publication-information field-group-tab">
