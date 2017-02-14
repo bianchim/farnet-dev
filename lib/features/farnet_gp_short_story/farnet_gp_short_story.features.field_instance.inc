@@ -131,7 +131,7 @@ function farnet_gp_short_story_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_dates_start_end',
-    'label' => 'Timeframe date',
+    'label' => 'Timeframe of implementation',
     'required' => 0,
     'settings' => array(
       'default_value' => 'now',
@@ -2074,7 +2074,7 @@ function farnet_gp_short_story_field_default_field_instances() {
   t('Regional');
   t('Sea Basins');
   t('Theme');
-  t('Timeframe date');
+  t('Timeframe of implementation');
   t('Title');
   t('Type of area');
   t('Website');
