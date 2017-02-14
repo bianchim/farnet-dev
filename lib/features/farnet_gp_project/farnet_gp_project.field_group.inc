@@ -481,7 +481,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media',
+    'label' => 'Visuals',
     'weight' => '7',
     'children' => array(
       0 => 'field_gallery',

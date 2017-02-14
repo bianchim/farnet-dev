@@ -533,7 +533,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 7,
       ),
       'teaser' => array(
@@ -738,7 +738,7 @@ function farnet_cooperation_idea_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 8,
       ),
       'teaser' => array(
