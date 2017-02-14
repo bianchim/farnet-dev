@@ -49,7 +49,7 @@
       <?php foreach ($item_collection['entity']['field_collection_item'] as $delta => $item): ?>
         <li>
           <span class="file">
-            <img class="file-icon" alt="PDF icon" src="/<?php echo drupal_get_path('module', 'file'); ?>/icons/application-pdf.png" />
+            <img class="file-icon" alt="PDF icon" src="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'file'); ?>/icons/application-pdf.png" />
             <a href="<?php echo $item['field_fc_document'][0]['#markup']; ?>"><?php echo $item['field_key_document_label'][0]['#markup']; ?></a>
           </span>
         </li>

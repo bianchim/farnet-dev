@@ -209,6 +209,10 @@ li a[href*="#group-factsheet-map"] {
   margin-bottom: 0;
 }
 
+.field-name-field-term-country .links {
+  list-style-type: none;
+}
+
 .field-name-field-ff-multi-funding-txt ul {
   list-style-type: none;
 }
