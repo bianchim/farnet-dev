@@ -217,3 +217,7 @@ li a[href*="#group-factsheet-map"] {
 .fr-u-ul li {
   float: none !important;
 }
+
+.btn_subscribe {
+  padding-top: 8px;
+}
