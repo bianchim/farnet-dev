@@ -260,3 +260,7 @@ li a[href*="#group-factsheet-map"] {
 .front #block-system-main {
   display: none;
 }
+
+#responsive-sidebar {
+  z-index: 3;
+}
