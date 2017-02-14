@@ -12,9 +12,6 @@
     <div id="group-factsheet-country-content" class="group-factsheet-country-content field-group-tab">
       <div class="highlight--background row">
         <div class="col-sm-6 col-md-8">
-          <?php /*if (!empty($content['group_factsheet_content']['field_term_country'])) : ?>
-            <?php print render($content['group_factsheet_content']['field_term_country']); ?>
-          <?php endif;*/ ?>
           <?php if (!empty($content['group_factsheet_content']['field_ne_body'])) : ?>
             <?php print render($content['group_factsheet_content']['field_ne_body']); ?>
           <?php endif; ?>
