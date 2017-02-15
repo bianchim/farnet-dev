@@ -48,7 +48,7 @@
     <?php print $content; ?>
   </div>
   <div class="col-md-6">
-    <a href="<?php print url('https://form.jotformeu.com/70393490653359') ?>" class="btn btn-default f-home__button-cta btn_subscribe">
+    <a target='_blank' rel='noopener' href="<?php print url('https://form.jotformeu.com/70393490653359') ?>" class="btn btn-default f-home__button-cta btn_subscribe">
       <span class="glyphicon glyphicon-pencil f-home__button-cta-icon" aria-hidden="true"></span> <?php print t('Subscribe'); ?>
     </a>
   </div>

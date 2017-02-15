@@ -148,12 +148,6 @@ h1.title-small {
   height: auto;
 }
 
-@media screen and (min-width: 768px) {
-  .farnet-home-slider .flex-control-nav {
-    z-index: 100;
-  }
-}
-
 .field-name-field-id-text .field-label {
   display: none;
 }
@@ -290,4 +284,8 @@ table.table-responsive.table-blue.table--white-borders th {
 
 .front #block-system-main {
   display: none;
+}
+
+.farnet_live:hover {
+  text-decoration: none;
 }

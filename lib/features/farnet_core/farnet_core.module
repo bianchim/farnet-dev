@@ -349,15 +349,13 @@ function _farnet_core_get_contact_details_bundles() {
  *   Field output as HTML.
  */
 function _farnet_core_display_contact_details($node) {
-
-  $output = '';
-
   // Wrap the node for easier handling.
   $node = entity_metadata_wrapper('node', $node);
+  $type = $node->type->value();
 
   // Contact details cases.
   $organisations = array();
-  switch ($node->type->value()) {
+  switch ($type) {
     case 'cooperation_call':
       if (isset($node->field_organisations->value()[0])) {
         $organisations = array('organisation' => $node->field_organisations->value()[0]);
@@ -378,6 +376,7 @@ function _farnet_core_display_contact_details($node) {
       }
       $contact_type = ['President', 'Manager'];
       $contact_label = array('organisation' => 'Organisation');
+      $flag = $node;
       break;
 
     case 'factsheet_country':
@@ -406,6 +405,22 @@ function _farnet_core_display_contact_details($node) {
       return '';
   }
 
+  if ($type === 'factsheet_flag') {
+    $output = _farnet_core_render_contact_details_flag($organisations, $contact_type, $contact_label, $flag);
+  }
+  else {
+    $output = _farnet_core_render_contact_details_default($organisations, $contact_type, $contact_label);
+  }
+
+  return $output;
+}
+
+/**
+ * Render contact details.
+ */
+function _farnet_core_render_contact_details_default($organisations, $contact_type, $contact_label) {
+  $output = '';
+
   // Keep track of number of contacts.
   $contact_num = 0;
 
@@ -432,23 +447,28 @@ function _farnet_core_display_contact_details($node) {
         // Contact fields.
         $fields = [
           'title_field' => FALSE,
-          'field_firstname' => FALSE,
           'field_email' => TRUE,
           'field_telephone' => TRUE,
-          'field_gender' => FALSE,
           'field_phone_mobile' => TRUE,
-          'field_skype_id' => TRUE,
           'field_user_country' => FALSE,
         ];
 
         $output .= '<div class="field-group-tab"><h3><span>' . $position_label . '</span></h3>';
 
-        $info_contact = $contact->getPropertyInfo();
+        // Include organisation or flag name.
+        $title = isset($organisation->parent_title) ? $organisation->parent_title : $organisation->title;
+        $output .= '<div class="field-items">' . $title . '</div>';
+
+        if (!empty($organisation->field_website)) {
+          $website = $node->field_website->value();
+          $output .= '<div class="field-items">' . l($website['title'], $website['url'], ['attributes' => ['target' => '_blank']]) . '</div>';
+        }
+
+        $gender = $contact->field_gender->value();
 
         // Process each field. If override is set at true, we try to use the
         // organisation value first.
         foreach ($fields as $field => $override) {
-
           if ($override) {
             $value = $fc_contact->{$field}->value();
           }
@@ -460,21 +480,30 @@ function _farnet_core_display_contact_details($node) {
             $value = $value->name;
           }
 
-          // Create the field markup.
-          if (!empty($value)) {
-            $list_item = '<div class="field-label">' . $info_contact[$field]['label'] . ': ' . '</div>';
-            $list_item .= '<div class="field-items">' . $value . '</div>';
-
-            $output .= $list_item;
+          // Skip empty values.
+          if (empty($value)) {
+            unset($value);
+            continue;
           }
+
+          // Special render for the name.
+          if ($field === 'title_field') {
+            $contact_title = $gender === 'male' ? t('Mr.') : t('Ms.');
+            $render = $contact_title . ' ' . $contact->field_firstname->value() . ' ' . $value;
+          }
+          else {
+            $render = $value;
+          }
+
+          $output .= '<div class="field-items">' . $render . '</div>';
 
           // Unset for the next field checks.
           unset($value);
+          $contact_num++;
         }
 
         // Close div field-group-tab.
         $output .= '</div>';
-        $contact_num++;
       }
     }
   }
@@ -485,6 +514,141 @@ function _farnet_core_display_contact_details($node) {
   }
 
   return $output;
+}
+
+/**
+ * Render contact details.
+ */
+function _farnet_core_render_contact_details_flag($organisations, $contact_type, $contact_label, $flag) {
+  // Return early if necessary.
+  if (empty($organisations)) {
+    return '';
+  }
+
+  // Get contacts from organisation.
+  $organisation = reset($organisations);
+  $node = entity_metadata_wrapper('node', $organisation);
+  $fc_contacts = $node->field_organisation_contacts->value();
+
+  // Prepare output.
+  $output = '<div class="field-group-tab"><h3><span>' . t('FLAG Contacts') . '</span></h3>';
+  $output .= '<div class="field-items">' . $flag->title_field->value() . '</div>';
+  if (!empty($organisation->field_website)) {
+    $website = $node->field_website->value();
+    $output .= '<div class="field-items">' . l($website['title'], $website['url'], ['attributes' => ['target' => '_blank']]) . '</div>';
+  }
+
+  // For each contact field collection, check the contact position.
+  foreach ($fc_contacts as $fc_contact) {
+    $fc_contact = entity_metadata_wrapper('field_collection_item', $fc_contact);
+
+    $position = $fc_contact->field_organisation_position->value();
+    if (empty(array_intersect($contact_type, $position))) {
+      continue;
+    }
+
+    // Load the contact info.
+    $contact = $fc_contact->field_contact_person->value();
+    if (isset($contact)) {
+      $contact = entity_metadata_wrapper('node', node_load($contact->nid));
+
+      // Contact fields.
+      $fields = [
+        'title_field' => FALSE,
+        'field_email' => TRUE,
+        'field_telephone' => TRUE,
+        'field_phone_mobile' => TRUE,
+      ];
+
+      $gender = $contact->field_gender->value();
+
+      // Process each field. If override is set at true, we try to use the
+      // organisation value first.
+      foreach ($fields as $field => $override) {
+        if ($override) {
+          $value = $fc_contact->{$field}->value();
+        }
+
+        $value = isset($value) && !empty($value) ? $value : $contact->{$field}->value();
+
+        // If the value is an object, it's a taxonomy term, use it's name.
+        if (is_object($value)) {
+          $value = $value->name;
+        }
+
+        // Skip empty values.
+        if (empty($value)) {
+          unset($value);
+          continue;
+        }
+
+        // Special render for the name.
+        if ($field === 'title_field') {
+          $contact_title = $gender === 'male' ? t('Mr.') : t('Ms.');
+          $render = $contact_title . ' ' . $contact->field_firstname->value() . ' ' . $value;
+
+          $output .= '<div class="field-label">FLAG ' . reset($position) . ' : </div>';
+          $output .= '<div class="field-items">' . $render . '</div>';
+          unset($value);
+        }
+        else {
+          $output .= '<div class="field-items">' . $value . '</div>';
+          unset($value);
+        }
+
+        // Unset for the next field checks.
+        unset($value);
+      }
+
+      // Close div field-group-tab.
+      $output .= '</div>';
+    }
+  }
+
+  // Display flag info.
+  $organisation_fields = [
+    'title_field',
+    'field_address_1',
+    'field_address_2',
+    'field_zip_code',
+    'field_term_country',
+  ];
+
+  foreach ($organisation_fields as $field) {
+    $value = $node->{$field}->value();
+
+    // If the value is an object, it's a taxonomy term, use it's name.
+    if (is_array($value) && !empty($value)) {
+      $value = $value[0]->name;
+    }
+
+    // Skip empty values.
+    if (empty($value)) {
+      unset($value);
+      continue;
+    }
+
+    switch ($field) {
+      case 'title_field':
+        // Put the organisation name in bold and keep a new line.
+        $output .= '<div class="field-label">' . $value . '</div><div class="field-items">&nbsp</div>';
+        break;
+
+      case 'field_zip_code':
+        $city = $node->field_city->value();
+        $output .= '<div class="field-items">' . $value . ' ' . $city . '</div>';
+        break;
+
+      default:
+        $output .= '<div class="field-items">' . $value . '</div>';
+        break;
+    }
+
+    // Unset for the next field checks.
+    unset($value);
+  }
+
+  return '<fieldset class="flag-contacts"><div class="field">' . $output . '</div></fieldset>';
 }
 
 /**
@@ -507,6 +671,7 @@ function _farnet_core_get_organisations($node) {
     // Return flag and current node organisations.
     if (isset($flag->field_organisations->value()[0])) {
       $organisations['flag'] = $flag->field_organisations->value()[0];
+      $organisations['flag']->parent_title = $flag->title->value();
     }
     if (isset($node->field_organisations->value()[0])) {
       $organisations['organisation'] = ($node->field_organisations->value()[0]);
