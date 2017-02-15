@@ -93,6 +93,7 @@
       hide($content['comments']);
       hide($content['links']);
       hide($content['group_factsheet_flag_content']);
+      hide($content['group_factsheet_flag_contact']);
     ?>
     <?php if (!empty($content['group_factsheet_flag_content'])) : ?>
       <div id="group-gp-method-content" class="group-gp-method-content field-group-tab">
@@ -110,6 +111,9 @@
             <?php if (!empty($content['group_factsheet_flag_content']['field_ff_code'])) : ?>
               <?php print render($content['group_factsheet_flag_content']['field_ff_code']); ?>
             <?php endif; ?>
+            <?php if (!empty($content['group_factsheet_flag_content']['field_ff_programming_period'])) : ?>
+              <?php print render($content['group_factsheet_flag_content']['field_ff_programming_period']); ?>
+            <?php endif; ?>
           </div>
           <div class="col-sm-6 col-md-4">
             <?php print render($content['group_factsheet_flag_content']['field_picture']); ?>
@@ -118,6 +122,13 @@
       </div>
     <?php endif; ?>
     <?php print render($content); ?>
+
+    <div class="u-mt-1em"></div>
+
+    <?php if (!empty($content['group_factsheet_flag_contact'])) : ?>
+      <?php print render($content['group_factsheet_flag_contact']['contact_details']); ?>
+    <?php endif; ?>
+
     <?php if ($suffix_display): ?>
     <div class="row node-info">
       <div class="node-info-submitted col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-6 col-md-offset-6 col-sm-offset-6">
