@@ -255,6 +255,10 @@ li a[href*="#group-factsheet-map"] {
   display: none;
 }
 
+#responsive-sidebar {
+  z-index: 3;
+}
+
 .farnet_live:hover {
   text-decoration: none;
 }
