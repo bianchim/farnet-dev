@@ -260,3 +260,7 @@ li a[href*="#group-factsheet-map"] {
 .front #block-system-main {
   display: none;
 }
+
+.farnet_live:hover {
+  text-decoration: none;
+}
