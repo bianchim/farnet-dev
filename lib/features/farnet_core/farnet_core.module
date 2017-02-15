@@ -520,6 +520,11 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
  * Render contact details.
  */
 function _farnet_core_render_contact_details_flag($organisations, $contact_type, $contact_label, $flag) {
+  // Return early if necessary.
+  if (empty($organisations)) {
+    return '';
+  }
+
   // Get contacts from organisation.
   $organisation = reset($organisations);
   $node = entity_metadata_wrapper('node', $organisation);
@@ -613,7 +618,7 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
     $value = $node->{$field}->value();
 
     // If the value is an object, it's a taxonomy term, use it's name.
-    if (is_array($value)) {
+    if (is_array($value) && !empty($value)) {
       $value = $value[0]->name;
     }
 
