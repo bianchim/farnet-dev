@@ -105,6 +105,14 @@ function _farnet_menu_content_menu_page_content() {
     $label = locale($field_group->label, NULL, $language->language);
     $output .= '<li><a href="#' . $group_name . '">' . $label . '</a></li>';
   }
+
+  // Create entry for contact details.
+  if (isset($GLOBALS['CT_has_contact']) &&  $GLOBALS['CT_has_contact'] == TRUE) {
+    // Avoid issue with PHPCS and hardcoded links.
+    $id = 'group_contact_details';
+    $output .= '<li><a href="#' . $id . '">' . t('Contact details') . '</a></li>';
+  }
+
   $output .= '</ul></nav></div>';
 
   return $output;
