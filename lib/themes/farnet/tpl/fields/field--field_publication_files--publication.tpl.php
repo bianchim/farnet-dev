@@ -52,11 +52,13 @@
             <?php $country_code = $country_class->language; ?>
           <?php endif; ?>
         <?php endforeach; ?>
-        <li>
-          <span class="file">
-            <a href="<?php echo $item['field_publication_file'][0]['#markup'] ?>" class="lang-button"><?php echo $country_code; ?></a>
-          </span>
-        </li>
+          <?php if (!empty($item['field_publication_file'])) : ?>
+          <li>
+            <span class="file">
+              <a href="<?php echo $item['field_publication_file'][0]['#markup'] ?>" class="lang-button"><?php echo $country_code; ?></a>
+            </span>
+          </li>
+          <?php endif; ?>
       <?php endforeach; ?>
     <?php endforeach; ?>
   </ul>
