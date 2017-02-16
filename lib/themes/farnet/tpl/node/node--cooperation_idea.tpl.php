@@ -67,19 +67,19 @@
 
   <div class="link-wrapper right"></div>
 
-  <?php if (!empty($content['field_organisations'])) : ?>
+  <?php /*if (!empty($content['field_organisations'])) : ?>
   <div id="group-cooperation-idea-organisations" class="group-cooperation-idea-organisations field-group-tab">
     <h3 class="fr-heading"><span><?php print $content['field_organisations']['#title']; ?></span></h3>
       <?php print render($content['field_organisations']); ?>
     </div>
-  <?php endif; ?>
+  <?php endif;*/ ?>
 
-  <?php if (!empty($content['field_flag'])) : ?>
+  <?php /*if (!empty($content['field_flag'])) : ?>
     <div id="group-cooperation-idea-flag" class="group-cooperation-idea-flag field-group-tab">
       <h3 class="fr-heading"><span><?php print $content['field_flag']['#title']; ?></span></h3>
       <?php print render($content['field_flag']); ?>
     </div>
-  <?php endif; ?>
+  <?php endif;*/ ?>
 
   <div class="u-mt-1em"></div>
 
