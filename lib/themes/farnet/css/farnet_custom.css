@@ -263,6 +263,11 @@ table.table-responsive.table-blue.table--white-borders th {
   padding: 0 0 0 5px;
 }
 
+.highlight--background .field-collection-container {
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+
 .field-name-field-collection-region ul {
   display: inline;
   list-style-type: none;

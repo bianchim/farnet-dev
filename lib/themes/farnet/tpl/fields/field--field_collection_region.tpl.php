@@ -47,10 +47,14 @@
 <?php $areas = []; ?>
 <?php foreach ($items as $delta => $item_collection): ?>
   <?php foreach ($item_collection['entity']['field_collection_item'] as $delta => $item): ?>
-    <?php $regions[] = $item['field_region'][0]['#markup']; ?>
-    <?php foreach ($item['field_area']['#items'] as $delta => $item_area): ?>
-      <?php $areas[] = $item_area['value']; ?>
-    <?php endforeach; ?>
+    <?php if (!empty($item['field_region'])) : ?>
+      <?php $regions[] = $item['field_region'][0]['#markup']; ?>
+    <?php endif; ?>
+    <?php if (!empty($item['field_area'])) : ?>
+      <?php foreach ($item['field_area']['#items'] as $delta => $item_area): ?>
+        <?php $areas[] = $item_area['value']; ?>
+      <?php endforeach; ?>
+    <?php endif; ?>
   <?php endforeach; ?>
 <?php endforeach; ?>
 
