@@ -453,7 +453,7 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
           'field_user_country' => FALSE,
         ];
 
-        $output .= '<div class="field-group-tab"><h3><span>' . $position_label . '</span></h3>';
+        $output .= '<div class="field-group-tab" id="group_contact_details"><h3><span>' . $position_label . '</span></h3>';
 
         // Include organisation or flag name.
         $title = isset($organisation->parent_title) ? $organisation->parent_title : $organisation->title;
@@ -509,6 +509,7 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
   }
 
   if ($contact_num) {
+    $GLOBALS['CT_has_contact'] = TRUE;
     $multiple = $contact_num > 1 ? 'flag-contacts--multiple' : '';
     $output = '<fieldset class="flag-contacts ' . $multiple . '"><div class="field">' . $output . '</div></fieldset>';
   }
@@ -531,7 +532,7 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
   $fc_contacts = $node->field_organisation_contacts->value();
 
   // Prepare output.
-  $output = '<div class="field-group-tab"><h3><span>' . t('FLAG Contacts') . '</span></h3>';
+  $output = '<div class="field-group-tab" id="group_contact_details"><h3><span>' . t('FLAG Contacts') . '</span></h3>';
   $output .= '<div class="field-items">' . $flag->title_field->value() . '</div>';
   if (!empty($organisation->field_website)) {
     $website = $node->field_website->value();
@@ -546,6 +547,8 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
     if (empty(array_intersect($contact_type, $position))) {
       continue;
     }
+
+    $GLOBALS['CT_has_contact'] = TRUE;
 
     // Load the contact info.
     $contact = $fc_contact->field_contact_person->value();
