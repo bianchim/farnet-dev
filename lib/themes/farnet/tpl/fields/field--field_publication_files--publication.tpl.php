@@ -43,7 +43,7 @@
  */
 ?>
 <div class="publication-files">
-  <ul class="publication-files-list">
+  <ul class="publication-files-list list-inline">
     <?php foreach ($items as $delta => $item_collection): ?>
       <?php foreach ($item_collection['entity']['field_collection_item'] as $delta => $item): ?>
         <?php $languages = language_list('name'); ?>
@@ -54,7 +54,7 @@
         <?php endforeach; ?>
         <li>
           <span class="file">
-            <a href="<?php echo $item['field_publication_file'][0]['#markup'] ?>"><?php echo $country_code; ?></a>
+            <a href="<?php echo $item['field_publication_file'][0]['#markup'] ?>" class="lang-button"><?php echo $country_code; ?></a>
           </span>
         </li>
       <?php endforeach; ?>
