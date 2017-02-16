@@ -11,9 +11,7 @@
   <div class="media media--farnet">
     <?php if (!empty($content['field_picture'])) : ?>
       <div class="media-left">
-        <?php if (!empty($content['field_picture'])) : ?>
-          <?php print render($content['field_picture']); ?>
-        <?php endif; ?>
+        <?php print render($content['field_picture']); ?>
       </div>
     <?php endif; ?>
     <div class="media-body">

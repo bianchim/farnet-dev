@@ -58,7 +58,7 @@ Feature: Test the presence of the content menu
       | status                | 1              |
     #Then I should see "Content" in the ".region-sidebar-left" element
     Then I should see "Organisations" in the ".region-sidebar-left" element
-    And I should see "Location" in the ".region-sidebar-left" element
+    #And I should see "Location" in the ".region-sidebar-left" element
     And I should see "Description" in the ".region-sidebar-left" element
     And I should see "Resources" in the ".region-sidebar-left" element
     #And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
