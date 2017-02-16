@@ -82,8 +82,13 @@
   float: left;
 }
 
-.multi-values div ul li ~ li::before {
-  content: ", ";
+.multi-values div ul li a {
+  float: left;
+}
+
+.multi-values div ul li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
 }
 
 #layout-body .affix-bottom {
@@ -115,7 +120,7 @@
 .f-twitter-feed {
   margin: 0;
   padding: 0 1em 0 0;
-  height: 275px;
+  height: 345px;
   overflow-x: auto;
 }
 
@@ -141,12 +146,6 @@ h1.title-small {
 .field-type-image img {
   width: 100%;
   height: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .farnet-home-slider .flex-control-nav {
-    z-index: 100;
-  }
 }
 
 .field-name-field-id-text .field-label {
@@ -209,10 +208,6 @@ li a[href*="#group-factsheet-map"] {
   margin-bottom: 0;
 }
 
-.field-name-field-term-country .links {
-  list-style-type: none;
-}
-
 .field-name-field-ff-multi-funding-txt ul {
   list-style-type: none;
 }
@@ -257,6 +252,45 @@ li a[href*="#group-factsheet-map"] {
   padding-top: 8px;
 }
 
+table.table-responsive.table-blue.table--white-borders th {
+  white-space: nowrap;
+}
+
+.highlight--background .field-name-field-term-country .links {
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  padding: 0 0 0 5px;
+}
+
+.highlight--background .field-collection-container {
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+
+.field-name-field-collection-region ul {
+  display: inline;
+  list-style-type: none;
+}
+
+.field-name-field-collection-region li {
+  display: inline-block;
+  float: left;
+}
+
+.field-name-field-collection-region li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
 .front #block-system-main {
   display: none;
+}
+
+#responsive-sidebar {
+  z-index: 3;
+}
+
+.farnet_live:hover {
+  text-decoration: none;
 }

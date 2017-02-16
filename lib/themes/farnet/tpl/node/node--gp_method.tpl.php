@@ -15,8 +15,11 @@
           <?php if (!empty($content['group_gp_method_content']['field_title_official'])) : ?>
             <?php print render($content['group_gp_method_content']['field_title_official']); ?>
           <?php endif; ?>
-          <?php if (!empty($content['group_gp_method_location']['field_term_country'])) : ?>
-            <?php print render($content['group_gp_method_location']['field_term_country']); ?>
+          <?php if (!empty($content['group_gp_method_content']['field_term_country'])) : ?>
+            <?php print render($content['group_gp_method_content']['field_term_country']); ?>
+          <?php endif; ?>
+          <?php if (!empty($content['group_gp_method_content']['field_collection_region'])) : ?>
+            <?php print render($content['group_gp_method_content']['field_collection_region']); ?>
           <?php endif; ?>
           <?php if (!empty($content['group_gp_method_content']['field_id_text'])) : ?>
             <?php print render($content['group_gp_method_content']['field_id_text']); ?>
@@ -114,5 +117,7 @@
   <?php print render($content['group_gp_method_flag']); ?>
   <?php print render($content['group_gp_method_media']); ?>
 
-  <?php print render($content['contact_details']); ?>
+  <?php if (!empty($content['group_gp_method_contact'])) : ?>
+    <?php print render($content['group_gp_method_contact']['contact_details']); ?>
+  <?php endif; ?>
 </div>

@@ -21,17 +21,19 @@ function farnet_gp_method_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Content',
+    'label' => 'Good Practice',
     'weight' => '0',
     'children' => array(
-      0 => 'field_id_text',
-      1 => 'field_picture',
-      2 => 'field_title_official',
-      3 => 'title_field',
+      0 => 'field_collection_region',
+      1 => 'field_id_text',
+      2 => 'field_picture',
+      3 => 'field_term_country',
+      4 => 'field_title_official',
+      5 => 'title_field',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Content',
+      'label' => 'Good Practice',
       'instance_settings' => array(
         'id' => 'group_gp_method_content',
         'classes' => 'group_gp_method_content field-group-tab',
@@ -88,7 +90,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '4',
+    'weight' => '1',
     'children' => array(
       0 => 'field_context',
       1 => 'field_gpm_activities',
@@ -157,7 +159,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'FLAG',
-    'weight' => '2',
+    'weight' => '4',
     'children' => array(
       0 => 'field_flag',
     ),
@@ -218,23 +220,11 @@ function farnet_gp_method_field_group_info() {
   $field_group->data = array(
     'label' => 'Location',
     'weight' => '3',
-    'children' => array(
-      0 => 'field_collection_region',
-      1 => 'field_term_country',
-    ),
-    'format_type' => 'div',
+    'children' => array(),
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'label' => 'Location',
-      'instance_settings' => array(
-        'id' => 'group_gp_method_location',
-        'classes' => 'group_gp_method_location field-group-tab',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_gp_method_location|node|gp_method|default'] = $field_group;
@@ -388,7 +378,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisations',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_organisations',
     ),
@@ -447,7 +437,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Publication',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_publication_date',
     ),
@@ -508,7 +498,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Resources',
-    'weight' => '5',
+    'weight' => '2',
     'children' => array(
       0 => 'field_gpm_financial_resources',
       1 => 'field_gpm_other_resources',
@@ -573,7 +563,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_sea_basins',
       1 => 'field_tags',
@@ -691,8 +681,8 @@ function farnet_gp_method_field_group_info() {
   t('Description');
   t('FLAG');
   t('Flag');
+  t('Good Practice');
   t('Location');
-  t('Media');
   t('Metadata');
   t('Organisations');
   t('Publication');

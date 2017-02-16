@@ -140,12 +140,12 @@ function farnet_gp_method_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 21,
@@ -811,8 +811,8 @@ function farnet_gp_method_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => ',',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
@@ -1222,7 +1222,7 @@ function farnet_gp_method_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => 1,
