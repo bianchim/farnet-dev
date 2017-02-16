@@ -161,4 +161,10 @@
 
   <?php print render($content['contact_details']); ?>
 
+  <div class="u-mt-1em"></div>
+
+  <?php if (!empty($content['group_gp_project_publication']['field_publication_date'])) : ?>
+    <?php print render($content['group_gp_project_publication']['field_publication_date']); ?>
+  <?php endif; ?>
+
 </div>
