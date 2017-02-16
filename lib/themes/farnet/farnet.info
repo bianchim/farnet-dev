@@ -12,7 +12,6 @@ stylesheets[all][] = "css/menu.css"
 stylesheets[all][] = "css/farnet_custom.css"
 
 scripts[] = "framework/scripts/farnet.js"
-scripts[] = "js/menu.js"
 
 regions[header_top] = "Header Top"
 regions[header_right] = "Header Right"
