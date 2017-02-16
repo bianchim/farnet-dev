@@ -65,7 +65,7 @@
                 <?php print $content['group_gp_project_cost']['field_gpp_total_project_cost']['#title']; ?>
               </th>
               <th>
-                <?php print number_format($content['group_gp_project_cost']['field_gpp_total_project_cost']['0']['#markup'], 0, '.', ' '); ?> EUR
+                <?php print number_format($content['group_gp_project_cost']['field_gpp_total_project_cost']['0']['#markup'], 0, '.', ' '); ?> €
               </th>
               <?php endif; ?>
             </tr>
@@ -75,19 +75,19 @@
               <?php if (!empty($content['group_gp_project_cost']['field_gpp_a_flag_grant'])) : ?>
               <td><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a_flag_grant']['#title']); ?></td>
               <td>
-                <?php print number_format($content['group_gp_project_cost']['field_gpp_a_flag_grant']['0']['#markup'], 0, '.', ' '); ?> EUR
+                <?php print number_format($content['group_gp_project_cost']['field_gpp_a_flag_grant']['0']['#markup'], 0, '.', ' '); ?> €
                 <ul class="u-lst-none highlight--background">
                   <?php if (!empty($content['group_gp_project_cost']['field_gpp_a1_eu_contribution'])) : ?>
-                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['0']['#markup']); ?> EUR</li>
+                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a1_eu_contribution']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_gp_project_cost']['field_gpp_a2_public_contribution'])) : ?>
-                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a2_public_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a2_public_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a2_public_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a2_public_contribution']['0']['#markup']); ?> EUR</li>
+                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a2_public_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a2_public_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a2_public_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a2_public_contribution']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_gp_project_cost']['field_gpp_a3_public_contribution'])) : ?>
-                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a3_public_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a3_public_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a3_public_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a3_public_contribution']['0']['#markup']); ?> EUR</li>
+                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a3_public_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a3_public_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a3_public_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a3_public_contribution']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_gp_project_cost']['field_gpp_a4_public_contribution'])) : ?>
-                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a4_public_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a4_public_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a4_public_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a4_public_contribution']['0']['#markup']); ?> EUR</li>
+                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_a4_public_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_a4_public_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_a4_public_contribution']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_a4_public_contribution']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_gp_project_cost']['field_a5_public_contribution'])) : ?>
                     <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_a5_public_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_a5_public_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_a5_public_contribution']['#title']); ?>: <?php print render($content['group_gp_project_cost']['field_a5_public_contribution']); ?></li>
@@ -100,13 +100,13 @@
               <?php if (!empty($content['group_gp_project_cost']['field_gpp_b_beneficiary'])) : ?>
               <td><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_b_beneficiary']['#title']); ?></td>
               <td>
-                <?php print number_format($content['group_gp_project_cost']['field_gpp_b_beneficiary']['0']['#markup'], 0, '.', ' '); ?> EUR
+                <?php print number_format($content['group_gp_project_cost']['field_gpp_b_beneficiary']['0']['#markup'], 0, '.', ' '); ?> €
                 <ul class="u-lst-none highlight--background">
+                  <?php if (!empty($content['group_gp_project_cost']['field_gpp_b2_lead_partner'])) : ?>
+                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_b2_lead_partner']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_b2_lead_partner']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_b2_lead_partner']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_b2_lead_partner']['0']['#markup']); ?> €</li>
+                  <?php endif; ?>
                   <?php if (!empty($content['group_gp_project_cost']['field_b1_other_contribution'])) : ?>
                     <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_b1_other_contribution']['#title'], 0, strpos($content['group_gp_project_cost']['field_b1_other_contribution']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_b1_other_contribution']['#title']); ?>: <?php print render($content['group_gp_project_cost']['field_b1_other_contribution']); ?></li>
-                  <?php endif; ?>
-                  <?php if (!empty($content['group_gp_project_cost']['field_gpp_b2_lead_partner'])) : ?>
-                    <li><?php print str_replace(drupal_substr($content['group_gp_project_cost']['field_gpp_b2_lead_partner']['#title'], 0, strpos($content['group_gp_project_cost']['field_gpp_b2_lead_partner']['#title'], '-')) . '-', '', $content['group_gp_project_cost']['field_gpp_b2_lead_partner']['#title']); ?>: <?php print floatval($content['group_gp_project_cost']['field_gpp_b2_lead_partner']['0']['#markup']); ?> EUR</li>
                   <?php endif; ?>
                 </ul>
               </td>
@@ -160,5 +160,11 @@
   <?php print render($content['group_gp_project_media']); ?>
 
   <?php print render($content['contact_details']); ?>
+
+  <div class="u-mt-1em"></div>
+
+  <?php if (!empty($content['group_gp_project_publication']['field_publication_date'])) : ?>
+    <?php print render($content['group_gp_project_publication']['field_publication_date']); ?>
+  <?php endif; ?>
 
 </div>
