@@ -88,6 +88,7 @@
 
 .multi-values div ul li:not(:last-child):after {
   content: ",";
+  float: right;
   padding-right: 5px;
 }
 
