@@ -263,7 +263,6 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_funds' => array('field-label-inline', 'clearfix'),
     'field_type_of_area' => array('field-label-above'),
     'field_sea_basins' => array('field-label-above'),
-    'field_picture' => array('media-object', 'farnet-listing__picture'),
   );
 
   if (in_array($variables['element']['#field_name'], $element_with_additional_label_class)) {
@@ -907,9 +906,11 @@ function farnet_field__field_dates_start_end(&$variables) {
  * Implements theme_image_style.
  */
 function farnet_preprocess_image_style(&$vars) {
-  if ($vars['style_name'] == 'farnet_teaser') {
-    $vars['width'] = NULL;
-    $vars['height'] = NULL;
-    $vars['attributes']['class'][] = 'media-object farnet-listing__picture';
+  if (isset($vars['style_name'])) {
+    if ($vars['style_name'] == 'farnet_teaser') {
+      $vars['width'] = NULL;
+      $vars['height'] = NULL;
+      $vars['attributes']['class'][] = 'media-object farnet-listing__picture';
+    }
   }
 }
