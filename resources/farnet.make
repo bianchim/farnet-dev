@@ -11,5 +11,5 @@ libraries[framework][destination] =  "themes/farnet"
 libraries[framework][download][type] = "file"
 libraries[framework][download][request_type] = "get"
 libraries[framework][download][file_type] = "zip"
-libraries[framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v4.6.2/framework.zip"
+libraries[framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v4.7.4/framework.zip"
 
