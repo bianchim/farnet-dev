@@ -167,7 +167,7 @@ function farnet_gp_method_field_group_info() {
     'format_settings' => array(
       'label' => 'FLAG',
       'instance_settings' => array(
-        'id' => '',
+        'id' => 'group_gp_method_flag',
         'classes' => 'group-gp-method-flag field-group-tab',
         'description' => '',
         'show_label' => '1',
