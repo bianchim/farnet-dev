@@ -47,7 +47,7 @@
 <section class="f-panel">
 <?php print render($title_prefix); ?>
   <header class="f-panel__header">
-    <h1 class="f-panel__header-title"><?php print $block->subject ?></h1>
+    <a href="<?php print url('/news-events/news'); ?>" class="farnet_block_homepage"><h1 class="f-panel__header-title"><?php print $block->subject ?></h1></a>
   </header>
   <?php
     print $content;

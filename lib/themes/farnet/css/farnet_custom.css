@@ -120,7 +120,7 @@
 .f-twitter-feed {
   margin: 0;
   padding: 0 1em 0 0;
-  height: 345px;
+  height: 344px;
   overflow-x: auto;
 }
 
@@ -244,6 +244,10 @@ li a[href*="#group-factsheet-map"] {
   content: " €";
 }
 
+.field-name-field-contribution-figure div .field-item:after {
+  content: " €";
+}
+
 .fr-u-ul li {
   float: none !important;
 }
@@ -283,6 +287,36 @@ table.table-responsive.table-blue.table--white-borders th {
   padding-right: 5px;
 }
 
+.highlight--background .field-name-field-a5-public-contribution div {
+  float: left;
+}
+
+.field-name-field-a5-public-contribution .field-name-field-contribution-label  div .field-item:after {
+  content: ": ";
+  padding-right: 5px;
+}
+
+.highlight--background .field-name-field-a5-public-contribution .field-collection-view {
+  padding: 0px;
+  border-bottom: none;
+  margin: 0 0 0 1em;
+}
+
+.highlight--background .field-name-field-b1-other-contribution div {
+  float: left;
+}
+
+.field-name-field-b1-other-contribution .field-name-field-contribution-label  div .field-item:after {
+  content: ": ";
+  padding-right: 5px;
+}
+
+.highlight--background .field-name-field-b1-other-contribution .field-collection-view {
+  padding: 0px;
+  border-bottom: none;
+  margin: 0 0 0 1em;
+}
+
 .front #block-system-main {
   display: none;
 }
@@ -291,6 +325,14 @@ table.table-responsive.table-blue.table--white-borders th {
   z-index: 3;
 }
 
-.farnet_live:hover {
+.farnet_block_homepage:hover {
   text-decoration: none;
+}
+
+.group-download .field-collection-container {
+  border: none;
+}
+
+.group-factsheet-key-documents .field-collection-container {
+  border: none;
 }

@@ -140,9 +140,7 @@ global $base_url;
             <?php if ($has_responsive_sidebar): ?>
               <div class="sidebar-button-wrapper">
                 <button class="sidebar-button">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </div>
             <?php endif; ?>

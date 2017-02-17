@@ -52,12 +52,6 @@
           <td class="multi-values"><?php print render($content['field_term_theme']); ?></td>
         </tr>
       <?php endif; ?>
-      <?php if (!empty($content['field_tags'])) : ?>
-        <tr>
-          <th scope="row"><?php print $content['field_tags']['#title']; ?></th>
-          <td class="multi-values"><?php print render($content['field_tags']); ?></td>
-        </tr>
-      <?php endif; ?>
       <?php if (!empty($content['field_publication_more_info'])) : ?>
         <tr>
           <th scope="row"><?php print $content['field_publication_more_info']['#title']; ?></th>
