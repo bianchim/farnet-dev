@@ -328,3 +328,7 @@ table.table-responsive.table-blue.table--white-borders th {
 .farnet_block_homepage:hover {
   text-decoration: none;
 }
+
+.group-download .field-collection-container {
+  border: none;
+}
