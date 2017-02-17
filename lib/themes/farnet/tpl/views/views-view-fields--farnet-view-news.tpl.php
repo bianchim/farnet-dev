@@ -13,7 +13,7 @@
       <?php print $fields['field_image']->content; ?>
     <?php else : ?>
       <div class="field-content">
-        <img typeof="foaf:Image" src="/<?php echo path_to_theme(); ?>/framework/images/placeholder.png"/>
+        <img typeof="foaf:Image" src="<?php echo path_to_theme(); ?>/framework/images/placeholder.png"/>
       </div>
     <?php endif; ?>
   </div>
