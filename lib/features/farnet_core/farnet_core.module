@@ -456,7 +456,13 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
         $output .= '<div class="field-group-tab" id="group_contact_details"><h3><span>' . $position_label . '</span></h3>';
 
         // Include organisation or flag name.
-        $title = isset($organisation->parent_title) ? $organisation->parent_title : $organisation->title;
+        if (isset($organisation->flag)) {
+          // Link to FLAG.
+          $title = l($organisation->flag->title->value(), 'node/' . $organisation->flag->getIdentifier());
+        }
+        else {
+          $title = $organisation->title;
+        }
         $output .= '<div class="field-items">' . $title . '</div>';
 
         if (!empty($organisation->field_website)) {
@@ -533,7 +539,8 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
 
   // Prepare output.
   $output = '<div class="field-group-tab" id="group_contact_details"><h3><span>' . t('FLAG Contacts') . '</span></h3>';
-  $output .= '<div class="field-items">' . $flag->title_field->value() . '</div>';
+  $flag_link = l($flag->title_field->value(), 'node/' . $flag->getIdentifier());
+  $output .= '<div class="field-items">' . $flag_link . '</div>';
   if (!empty($organisation->field_website)) {
     $website = $node->field_website->value();
     $output .= '<div class="field-items">' . l($website['title'], $website['url'], ['attributes' => ['target' => '_blank']]) . '</div>';
@@ -674,7 +681,7 @@ function _farnet_core_get_organisations($node) {
     // Return flag and current node organisations.
     if (isset($flag->field_organisations->value()[0])) {
       $organisations['flag'] = $flag->field_organisations->value()[0];
-      $organisations['flag']->parent_title = $flag->title->value();
+      $organisations['flag']->flag = $flag;
     }
     if (isset($node->field_organisations->value()[0])) {
       $organisations['organisation'] = ($node->field_organisations->value()[0]);
