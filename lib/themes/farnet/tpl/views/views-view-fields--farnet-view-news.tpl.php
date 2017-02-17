@@ -9,9 +9,12 @@
   <div class="media-left">
     <?php if (!empty($fields['field_picture'])) : ?>
       <?php print $fields['field_picture']->content; ?>
-    <?php endif; ?>
-    <?php if (!empty($fields['field_image'])) : ?>
+    <?php elseif (!empty($fields['field_image'])) : ?>
       <?php print $fields['field_image']->content; ?>
+    <?php else : ?>
+      <div class="field-content">
+        <img typeof="foaf:Image" src="/<?php echo path_to_theme(); ?>/framework/images/placeholder.png"/>
+      </div>
     <?php endif; ?>
   </div>
   <div class="media-body">
