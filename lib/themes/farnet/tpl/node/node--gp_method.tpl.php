@@ -117,7 +117,5 @@
   <?php print render($content['group_gp_method_flag']); ?>
   <?php print render($content['group_gp_method_media']); ?>
 
-  <?php if (!empty($content['group_gp_method_contact'])) : ?>
-    <?php print render($content['group_gp_method_contact']['contact_details']); ?>
-  <?php endif; ?>
+  <?php print render($content['contact_details']); ?>
 </div>

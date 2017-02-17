@@ -89,7 +89,7 @@
     </div>
   <?php endif; ?>
 
-  <?php print render($content['group_national_authorities']['contact_details']); ?>
+  <?php print render($content['contact_details']); ?>
 
   <?php print render($content['group_factsheet_map']); ?>
 
