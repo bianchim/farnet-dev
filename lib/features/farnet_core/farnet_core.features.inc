@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_core.features.inc
@@ -36,7 +35,17 @@ function farnet_core_image_default_styles() {
   // Exported image style: farnet_teaser.
   $styles['farnet_teaser'] = array(
     'label' => 'farnet teaser',
-    'effects' => array(),
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 220,
+          'height' => 220,
+          'upscale' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
   );
 
   return $styles;

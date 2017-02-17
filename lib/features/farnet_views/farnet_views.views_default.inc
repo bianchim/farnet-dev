@@ -51,7 +51,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -149,7 +149,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -223,7 +223,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -312,7 +312,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -491,7 +491,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -699,7 +699,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -834,7 +834,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -1143,7 +1143,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Picture */
@@ -1156,7 +1156,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -1467,7 +1467,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Picture */
@@ -1480,7 +1480,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -1618,7 +1618,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Picture */
@@ -1631,7 +1631,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -1920,7 +1920,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Picture */
@@ -1931,7 +1931,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -2052,7 +2052,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Image */
@@ -2065,7 +2065,7 @@ function farnet_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
   /* Field: Content: Title */
