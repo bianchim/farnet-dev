@@ -46,6 +46,7 @@ features[field_group][] = group_gp_method_description|node|gp_method|default
 features[field_group][] = group_gp_method_description|node|gp_method|form
 features[field_group][] = group_gp_method_flag|node|gp_method|default
 features[field_group][] = group_gp_method_flag|node|gp_method|form
+features[field_group][] = group_gp_method_information|node|gp_method|default
 features[field_group][] = group_gp_method_location|node|gp_method|default
 features[field_group][] = group_gp_method_location|node|gp_method|form
 features[field_group][] = group_gp_method_media|node|gp_method|default

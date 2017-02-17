@@ -159,7 +159,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'FLAG',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_flag',
     ),
@@ -207,6 +207,42 @@ function farnet_gp_method_field_group_info() {
     ),
   );
   $field_groups['group_gp_method_flag|node|gp_method|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_gp_method_information|node|gp_method|default';
+  $field_group->group_name = 'group_gp_method_information';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_method';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Information',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_dates_start_end',
+      1 => 'field_sea_basins',
+      2 => 'field_tags',
+      3 => 'field_term_theme',
+      4 => 'field_type_of_area',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Information',
+      'instance_settings' => array(
+        'id' => 'group-gp-method-information',
+        'classes' => 'group-gp-method-information field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_gp_method_information|node|gp_method|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -378,7 +414,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organisations',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_organisations',
     ),
@@ -564,12 +600,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->data = array(
     'label' => 'Taxonomy',
     'weight' => '9',
-    'children' => array(
-      0 => 'field_sea_basins',
-      1 => 'field_tags',
-      2 => 'field_term_theme',
-      3 => 'field_type_of_area',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Taxonomy',
@@ -629,9 +660,7 @@ function farnet_gp_method_field_group_info() {
   $field_group->data = array(
     'label' => 'Timeframe of implementation',
     'weight' => '6',
-    'children' => array(
-      0 => 'field_dates_start_end',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'formatter' => 'collapsible',
@@ -682,6 +711,7 @@ function farnet_gp_method_field_group_info() {
   t('FLAG');
   t('Flag');
   t('Good Practice');
+  t('Information');
   t('Location');
   t('Metadata');
   t('Organisations');
