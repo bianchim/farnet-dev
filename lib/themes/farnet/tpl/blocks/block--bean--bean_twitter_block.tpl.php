@@ -45,7 +45,7 @@
 ?>
 <section class="f-panel">
   <header class="f-panel__header">
-    <a target='_blank' rel='noopener' href="<?php print url('http://www.twitter.com/EU_FARNET'); ?>" class="farnet_live"><h1 class="f-panel__header-title"><?php print t('FARNET Live'); ?></h1></a>
+    <a target='_blank' rel='noopener' href="<?php print url('http://www.twitter.com/EU_FARNET'); ?>" class="farnet_block_homepage"><h1 class="f-panel__header-title"><?php print t('FARNET Live'); ?></h1></a>
   </header>
   <div class="f-panel__content">
     <section class="f-twitter-feed">
