@@ -332,3 +332,7 @@ table.table-responsive.table-blue.table--white-borders th {
 .group-download .field-collection-container {
   border: none;
 }
+
+.group-factsheet-key-documents .field-collection-container {
+  border: none;
+}
