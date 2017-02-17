@@ -5,7 +5,7 @@
  * Override of node.tpl.php for GP Short Story.
  */
 ?>
-<?php dpm($content); ?>
+
 <div class="content clearfix">
 
   <?php if (!empty($content['group_short_story_content'])) : ?>
