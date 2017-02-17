@@ -55,7 +55,7 @@
           <?php if (!empty($item['field_publication_file'])) : ?>
           <li>
             <span class="file">
-              <a href="<?php echo $item['field_publication_file'][0]['#markup'] ?>" class="lang-button"><?php echo $country_code; ?></a>
+              <a href="<?php echo $item['field_publication_file'][0]['#markup'] ?>" class="lang-button" target="_blank" rel="noopener"><?php echo $country_code; ?></a>
             </span>
           </li>
           <?php endif; ?>

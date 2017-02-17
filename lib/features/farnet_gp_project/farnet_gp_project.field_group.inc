@@ -80,7 +80,7 @@ function farnet_gp_project_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Content',
+    'label' => 'Good Practice',
     'weight' => '0',
     'children' => array(
       0 => 'field_collection_region',
@@ -91,7 +91,7 @@ function farnet_gp_project_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Content',
+      'label' => 'Good Practice',
       'instance_settings' => array(
         'id' => 'group_gp_project_content',
         'classes' => 'group_gp_project_content field-group-tab',
@@ -692,8 +692,8 @@ function farnet_gp_project_field_group_info() {
   t('FLAG');
   t('Flag');
   t('Funding');
+  t('Good Practice');
   t('Location');
-  t('Media');
   t('Metatag');
   t('Project cost / Funding');
   t('Project information');
