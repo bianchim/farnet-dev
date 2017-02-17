@@ -26,3 +26,28 @@ function farnet_core_ctools_plugin_api($module = NULL, $api = NULL) {
 function farnet_core_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function farnet_core_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: farnet_teaser.
+  $styles['farnet_teaser'] = array(
+    'label' => 'farnet teaser',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 220,
+          'height' => 220,
+          'upscale' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}

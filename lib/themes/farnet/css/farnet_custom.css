@@ -326,10 +326,14 @@ table.table-responsive.table-blue.table--white-borders th {
   z-index: 3;
 }
 
-.farnet_live:hover {
+.farnet_block_homepage:hover {
   text-decoration: none;
 }
 
 .group-download .field-collection-container {
+  border: none;
+}
+
+.group-factsheet-key-documents .field-collection-container {
   border: none;
 }
