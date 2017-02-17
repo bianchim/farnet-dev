@@ -904,10 +904,10 @@ function farnet_field__field_dates_start_end(&$variables) {
 }
 
 /**
- * Implements theme_image_style
+ * Implements theme_image_style.
  */
 function farnet_preprocess_image_style(&$vars) {
-  if($vars['style_name'] == 'farnet_teaser') {
+  if ($vars['style_name'] == 'farnet_teaser') {
     $vars['width'] = NULL;
     $vars['height'] = NULL;
     $vars['attributes']['class'][] = 'media-object farnet-listing__picture';
