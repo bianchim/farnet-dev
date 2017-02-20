@@ -123,11 +123,13 @@
     <?php endif; ?>
     <?php print render($content); ?>
 
-    <div class="u-mt-1em"></div>
-
-    <?php if (!empty($content['group_factsheet_flag_contact'])) : ?>
-      <?php print render($content['group_factsheet_flag_contact']['contact_details']); ?>
+    <?php if (!empty($content['contact_details'])) : ?>
+      <?php if (!empty($content['group_factsheet_flag_contact']['field_collection_language']['#object']->field_collection_language)) : ?>
+        <?php print render($content['group_factsheet_flag_contact']['field_collection_language']); ?>
+      <?php endif; ?>
     <?php endif; ?>
+
+    <div class="u-mt-1em"></div>
 
     <?php if ($suffix_display): ?>
     <div class="row node-info">
