@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_gp_project.features.field_base.inc
@@ -22,12 +21,16 @@ function farnet_gp_project_field_default_field_bases() {
       'revision_id' => array(
         0 => 'revision_id',
       ),
+      'value' => array(
+        0 => 'value',
+      ),
     ),
     'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'hide_blank_items' => 1,
+      'hide_initial_item' => FALSE,
       'path' => '',
     ),
     'translatable' => 0,
@@ -45,12 +48,16 @@ function farnet_gp_project_field_default_field_bases() {
       'revision_id' => array(
         0 => 'revision_id',
       ),
+      'value' => array(
+        0 => 'value',
+      ),
     ),
     'locked' => 1,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'hide_blank_items' => 1,
+      'hide_initial_item' => FALSE,
       'path' => '',
     ),
     'translatable' => 0,
@@ -70,9 +77,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_contribution_label'.
@@ -110,9 +119,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_a2_public_contribution'.
@@ -128,9 +139,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_a3_public_contribution'.
@@ -146,9 +159,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_a4_public_contribution'.
@@ -164,9 +179,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_a_flag_grant'.
@@ -182,9 +199,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_activities'.
@@ -221,9 +240,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_b_beneficiary'.
@@ -239,9 +260,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_context_and_needs'.
@@ -341,9 +364,11 @@ function farnet_gp_project_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpp_transferability'.

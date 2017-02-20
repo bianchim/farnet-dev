@@ -287,8 +287,12 @@ table.table-responsive.table-blue.table--white-borders th {
   padding-right: 5px;
 }
 
-.highlight--background .field-name-field-a5-public-contribution div {
+.highlight--background .field-name-field-a5-public-contribution .field-collection-view .content div {
   float: left;
+}
+
+.highlight--background .field-name-field-a5-public-contribution .field-collection-container .field-items .field-item {
+  margin: 0;
 }
 
 .field-name-field-a5-public-contribution .field-name-field-contribution-label  div .field-item:after {
@@ -299,10 +303,10 @@ table.table-responsive.table-blue.table--white-borders th {
 .highlight--background .field-name-field-a5-public-contribution .field-collection-view {
   padding: 0px;
   border-bottom: none;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 0;
 }
 
-.highlight--background .field-name-field-b1-other-contribution div {
+.highlight--background .field-name-field-b1-other-contribution .field-collection-view .content div {
   float: left;
 }
 
@@ -311,10 +315,14 @@ table.table-responsive.table-blue.table--white-borders th {
   padding-right: 5px;
 }
 
+.highlight--background .field-name-field-b1-other-contribution .field-collection-container .field-items .field-item {
+  margin: 0;
+}
+
 .highlight--background .field-name-field-b1-other-contribution .field-collection-view {
   padding: 0px;
   border-bottom: none;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 0;
 }
 
 .front #block-system-main {
