@@ -273,17 +273,17 @@ table.table-responsive.table-blue.table--white-borders th {
   margin-bottom: 0px;
 }
 
-.field-name-field-collection-region ul {
+.highlight--background .field-name-field-collection-region ul {
   display: inline;
   list-style-type: none;
 }
 
-.field-name-field-collection-region li {
+.highlight--background .field-name-field-collection-region li {
   display: inline-block;
   float: left;
 }
 
-.field-name-field-collection-region li:not(:last-child):after {
+.highlight--background .field-name-field-collection-region li:not(:last-child):after {
   content: ",";
   padding-right: 5px;
 }

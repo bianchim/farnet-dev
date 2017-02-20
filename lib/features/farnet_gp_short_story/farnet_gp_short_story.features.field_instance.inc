@@ -120,7 +120,7 @@ function farnet_gp_short_story_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 15,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1636,7 +1636,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 14,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1677,7 +1677,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 13,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1800,7 +1800,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1842,7 +1842,7 @@ function farnet_gp_short_story_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 15,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',

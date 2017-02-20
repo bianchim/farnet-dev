@@ -72,6 +72,7 @@ features[field_group][] = group_short_story_funding|node|gp_short_story|form
 features[field_group][] = group_short_story_media|node|gp_short_story|default
 features[field_group][] = group_short_story_media|node|gp_short_story|form
 features[field_group][] = group_short_story_metadata|node|gp_short_story|form
+features[field_group][] = group_short_story_organisations|node|gp_short_story|default
 features[field_group][] = group_short_story_publication|node|gp_short_story|default
 features[field_group][] = group_short_story_publication|node|gp_short_story|form
 features[field_group][] = group_short_story_quote|node|gp_short_story|default

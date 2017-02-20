@@ -90,7 +90,7 @@ Feature: Test the presence of the content menu
       | field_gallery                   | MediaGallery        |
       | field_publication_date          | 1                   |
       | status                          | 1                   |
-    Then I should see "Description" in the ".region-sidebar-left" element
+    Then I should see "Good Practice" in the ".region-sidebar-left" element
     And I should see "Quote" in the ".region-sidebar-left" element
     #And I should see "Timeframe of implementation" in the ".region-sidebar-left" element
     And I should see "Funding" in the ".region-sidebar-left" element
