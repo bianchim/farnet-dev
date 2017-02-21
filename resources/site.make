@@ -55,7 +55,7 @@ projects[easy_breadcrumb][patch][] = "https://www.drupal.org/files/issues/easy_b
 ;projects[themes_farnet_framework][download][type] = "file"
 ;projects[themes_farnet_framework][download][request_type] = "get"
 ;projects[themes_farnet_framework][download][file_type] = "zip"
-;projects[themes_farnet_framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v4.0.0/framework.zip"
+;projects[themes_farnet_framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v4.7.6/framework.zip"
 
 ; projects[themes_farnet_framework][type] = "theme"
 libraries[themes_farnet_framework][destination] =  "../lib/themes/farnet"
@@ -63,10 +63,10 @@ libraries[themes_farnet_framework][directory_name] = framework
 libraries[themes_farnet_framework][download][type] = "file"
 libraries[themes_farnet_framework][download][request_type] = "get"
 libraries[themes_farnet_framework][download][file_type] = "zip"
-libraries[themes_farnet_framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v4.0.0/framework.zip"
+libraries[themes_farnet_framework][download][url] = "https://github.com/ec-europa/farnet-styleguide/releases/download/v4.7.6/framework.zip"
 
 ; Farnet theme framework
 ; libraries[framework][download][type] = "git"
 ; libraries[framework][destination] = "themes/farnet"
 ; libraries[framework][download][url] = https://github.com/ec-europa/farnet-styleguide.git
-; libraries[framework][download][tag] = "4.0.0"
+; libraries[framework][download][tag] = "4.7.6"
