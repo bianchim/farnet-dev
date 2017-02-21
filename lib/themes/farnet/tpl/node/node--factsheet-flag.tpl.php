@@ -96,7 +96,7 @@
       hide($content['group_factsheet_flag_contact']);
     ?>
     <?php if (!empty($content['group_factsheet_flag_content'])) : ?>
-      <div id="group-gp-method-content" class="group-gp-method-content field-group-tab">
+      <div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab">
         <div class="highlight--background row">
           <div class="col-sm-6 col-md-8">
             <?php if (!empty($content['group_factsheet_flag_content']['field_title_official'])) : ?>
@@ -130,19 +130,6 @@
     <?php endif; ?>
 
     <div class="u-mt-1em"></div>
-
-    <?php if ($suffix_display): ?>
-    <div class="row node-info">
-      <div class="node-info-submitted col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-6 col-md-offset-6 col-sm-offset-6">
-        <div class="well well-sm node-submitted clearfix">
-          <small>
-          <?php print $user_picture; ?>
-          <?php print $submitted; ?>
-          </small>
-        </div>
-      </div>
-    </div>
-    <?php endif;?>
 
     <div class="link-wrapper right">
       <?php print render($content['links']); ?>

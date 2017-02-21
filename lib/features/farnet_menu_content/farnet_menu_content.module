@@ -102,15 +102,17 @@ function _farnet_menu_content_menu_page_content() {
     }
 
     $group_name = str_replace('_', '-', $field_group->group_name);
-    $label = locale($field_group->label, NULL, $language->language);
-    $output .= '<li><a href="#' . $group_name . '">' . $label . '</a></li>';
+    if ($field_group->group_name != 'group_factsheet_flag_contact') {
+      $label = locale($field_group->label, NULL, $language->language);
+      $output .= '<li><a href="#' . $group_name . '">' . $label . '</a></li>';
+    }
   }
 
   // Create entry for contact details.
   if (isset($GLOBALS['CT_has_contact']) &&  $GLOBALS['CT_has_contact'] == TRUE) {
     // Avoid issue with PHPCS and hardcoded links.
-    $id = 'group_contact_details';
-    $output .= '<li><a href="#' . $id . '">' . t('Contact details') . '</a></li>';
+    $id = 'group-factsheet-flag-contact';
+    $output .= '<li><a href="#' . $id . '">' . t('FLAG Contacts') . '</a></li>';
   }
 
   $output .= '</ul></nav></div>';
