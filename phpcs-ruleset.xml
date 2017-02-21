@@ -55,7 +55,6 @@
     <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
         <exclude-pattern>*.features.wysiwyg.inc</exclude-pattern>
     </rule>
-<<<<<<< HEAD
 	
     <!-- Farnet Exclude Files -->
     <exclude-pattern>*.features.menu_links.inc</exclude-pattern>

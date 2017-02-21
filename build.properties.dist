@@ -35,7 +35,7 @@ project.database.url = webgate.ec.europa.eu/fpfis/files-for/${project.id}/
 # Project database filename.  If you want developers to use the same database this
 # should be added to the projects build.properties file. The file has to be
 # compressed in .gz format. Thus ending in .sql.gz.
-project.database.filename = daily_multisite_farnet_production_2017-02-21_05h30m_Tuesday.sql.gz
+project.database.filename = farnet-test.2017-02-21-140327.sql.gz
 
 
 # Development configuration
