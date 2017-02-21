@@ -9,7 +9,7 @@
 <div class="content clearfix">
 
   <?php if (!empty($content['group_factsheet_content'])) : ?>
-    <div id="group-factsheet-country-content" class="group-factsheet-country-content field-group-tab">
+    <div id="group-factsheet-content" class="group-factsheet-content field-group-tab">
       <div class="highlight--background row">
         <div class="col-sm-6 col-md-8">
           <?php if (!empty($content['group_factsheet_content']['field_ne_body'])) : ?>
@@ -81,14 +81,7 @@
       <?php print render($content['group_factsheet_key_documents']); ?>
     <?php endif; ?>
   <?php endif; ?>
-
-  <?php if (!empty($content['field_organisations'])) : ?>
-    <div id="group-factsheet-country-organisations" class="group-factsheet-country-organisations field-group-tab">
-      <h3 class="fr-heading"><span><?php print $content['field_organisations']['#title']; ?></span></h3>
-      <?php print render($content['field_organisations']); ?>
-    </div>
-  <?php endif; ?>
-
+  
   <?php print render($content['contact_details']); ?>
 
   <?php print render($content['group_factsheet_map']); ?>

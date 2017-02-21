@@ -126,11 +126,11 @@ global $base_url;
 
   <div class="region-featured-wrapper <?php print ($has_responsive_sidebar ? 'sidebar-visible-sm' : ''); ?>">
     <?php if ($menu_visible || $has_responsive_sidebar): ?>
-      <div class="mobile-user-bar navbar navbar-default visible-sm visible-xs" data-spy="affix" data-offset-top="82">
+      <div class="mobile-user-bar navbar navbar-default visible-sm visible-xs" data-offset-top="82">
         <div class="container">
 
           <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header" data-spy="affix" data-offset-top="165">
+          <div class="navbar-header" data-offset-top="165">
             <?php if ($menu_visible): ?>
               <button id="menu-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <div class="arrow-down"></div>

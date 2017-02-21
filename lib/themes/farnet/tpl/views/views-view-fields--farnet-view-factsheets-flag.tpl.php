@@ -4,6 +4,7 @@
  * @file
  * Override of views-view-fields.tpl.php.
  */
+global $base_url;
 ?>
 
 <li class="media farnet-listing__item">
@@ -12,7 +13,7 @@
       <?php print $fields['field_picture']->content; ?>
     <?php else : ?>
       <div class="field-content">
-        <img typeof="foaf:Image" src="/<?php echo path_to_theme(); ?>/framework/images/placeholder.png"/>
+        <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
       </div>
     <?php endif; ?>
   </div>

@@ -88,6 +88,7 @@
 
 .multi-values div ul li:not(:last-child):after {
   content: ",";
+  float: right;
   padding-right: 5px;
 }
 
@@ -343,4 +344,20 @@ table.table-responsive.table-blue.table--white-borders th {
 
 .group-factsheet-key-documents .field-collection-container {
   border: none;
+}
+
+.field-languages {
+  list-style: none;
+  display: inline-flex;
+  margin-left: -35px;
+}
+
+.language_level:after {
+  content: ",";
+  margin-right: 5px;
+  margin-left: -5px;
+}
+
+.language_level:last-child:after {
+  content: "";
 }

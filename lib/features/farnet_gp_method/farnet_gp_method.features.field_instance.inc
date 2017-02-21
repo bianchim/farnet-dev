@@ -148,7 +148,7 @@ function farnet_gp_method_field_default_field_instances() {
           'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 21,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1225,7 +1225,7 @@ function farnet_gp_method_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => 1,
+          'link' => 0,
         ),
         'type' => 'entityreference_label',
         'weight' => 8,

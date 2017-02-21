@@ -546,11 +546,52 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
 
   // Prepare output.
   $output = '<div class="field-group-tab" id="group_contact_details"><h3><span>' . t('FLAG Contacts') . '</span></h3>';
-  $flag_link = l($flag->title_field->value(), 'node/' . $flag->getIdentifier());
-  $output .= '<div class="field-items">' . $flag_link . '</div>';
   if (!empty($organisation->field_website)) {
     $website = $node->field_website->value();
     $output .= '<div class="field-items">' . l($website['title'], $website['url'], ['attributes' => ['target' => '_blank']]) . '</div>';
+  }
+
+  // Display flag info.
+  $organisation_fields = [
+    'title_field',
+    'field_address_1',
+    'field_address_2',
+    'field_zip_code',
+    'field_term_country',
+  ];
+
+  foreach ($organisation_fields as $field) {
+    $value = $node->{$field}->value();
+
+    // If the value is an object, it's a taxonomy term, use it's name.
+    if (is_array($value) && !empty($value)) {
+      $value = $value[0]->name;
+    }
+
+    // Skip empty values.
+    if (empty($value)) {
+      unset($value);
+      continue;
+    }
+
+    switch ($field) {
+      case 'title_field':
+        // Put the organisation name in bold and keep a new line.
+        $output .= '<div class="field-label">' . $value . '</div><div class="field-items">&nbsp</div>';
+        break;
+
+      case 'field_zip_code':
+        $city = $node->field_city->value();
+        $output .= '<div class="field-items">' . $value . ' ' . $city . '</div>';
+        break;
+
+      default:
+        $output .= '<div class="field-items">' . $value . '</div>';
+        break;
+    }
+
+    // Unset for the next field checks.
+    unset($value);
   }
 
   // For each contact field collection, check the contact position.
@@ -625,49 +666,6 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
       // Close div field-group-tab.
       $output .= '</div>';
     }
-  }
-
-  // Display flag info.
-  $organisation_fields = [
-    'title_field',
-    'field_address_1',
-    'field_address_2',
-    'field_zip_code',
-    'field_term_country',
-  ];
-
-  foreach ($organisation_fields as $field) {
-    $value = $node->{$field}->value();
-
-    // If the value is an object, it's a taxonomy term, use it's name.
-    if (is_array($value) && !empty($value)) {
-      $value = $value[0]->name;
-    }
-
-    // Skip empty values.
-    if (empty($value)) {
-      unset($value);
-      continue;
-    }
-
-    switch ($field) {
-      case 'title_field':
-        // Put the organisation name in bold and keep a new line.
-        $output .= '<div class="field-label">' . $value . '</div><div class="field-items">&nbsp</div>';
-        break;
-
-      case 'field_zip_code':
-        $city = $node->field_city->value();
-        $output .= '<div class="field-items">' . $value . ' ' . $city . '</div>';
-        break;
-
-      default:
-        $output .= '<div class="field-items">' . $value . '</div>';
-        break;
-    }
-
-    // Unset for the next field checks.
-    unset($value);
   }
 
   return '<fieldset class="flag-contacts"><div class="field">' . $output . '</div></fieldset>';
