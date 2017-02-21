@@ -14,7 +14,7 @@ subsite.install.modules = myproject_core
 #-----------------------------
 
 # Project ID used to generate other properties.
-project.id = <project>
+project.id = farnet
 
 # Project database url scheme.
 project.database.url.scheme = https
@@ -35,7 +35,7 @@ project.database.url = webgate.ec.europa.eu/fpfis/files-for/${project.id}/
 # Project database filename.  If you want developers to use the same database this
 # should be added to the projects build.properties file. The file has to be
 # compressed in .gz format. Thus ending in .sql.gz.
-project.database.filename =
+project.database.filename = daily_multisite_farnet_production_2017-02-21_05h30m_Tuesday.sql.gz
 
 
 # Development configuration
