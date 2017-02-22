@@ -6,16 +6,23 @@
  */
 ?>
 
-<?php function _format_field_decimal($field_markup) {
+
+<?php
+
+/**
+ * Format for decimal output.
+ */
+function _format_field_decimal($field_markup) {
   $field_markup_temp = explode('.', floatval($field_markup));
   if(count($field_markup_temp) > 1) {
     $field_markup = number_format($field_markup_temp[0], 0, '.', ' ');
-    $field_markup .= (($field_markup_temp[1] > 0) ? ','.$field_markup_temp[1] : '');
+    $field_markup .= (($field_markup_temp[1] > 0) ? ',' . $field_markup_temp[1] : '');
   } else {
     $field_markup = number_format($field_markup_temp[0], 0, '.', ' ');
   }
   return($field_markup);
 }
+
 ?>
 
 <div class="content clearfix">
