@@ -8,9 +8,9 @@
 /**
  * Change fields type from Float to Decimal.
  */
-function farnet_gp_project_update_7001() {
+function farnet_gp_short_story_update_7001() {
 
-  $fields = ['field_gpp_total_project_cost', 'field_gpp_a_flag_grant', 'field_gpp_a1_eu_contribution', 'field_gpp_a2_public_contribution', 'field_gpp_a3_public_contribution', 'field_gpp_a4_public_contribution', 'field_gpp_b_beneficiary', 'field_gpp_b2_lead_partner', 'field_contribution_figure',
+  $fields = ['field_budget', 'field_eu_contribution', 'field_emff', 'field_esf', 'field_erdf', 'field_eardf', 'field_other_eu_funding', 'field_other_public_contribution', 'field_funding_national', 'field_funding_regional', 'field_funding_local', 'field_private_contribution',
   ];
 
   foreach ($fields as $field) {
