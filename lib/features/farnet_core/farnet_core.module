@@ -453,7 +453,7 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
           'field_user_country' => FALSE,
         ];
 
-        $output .= '<div class="field-group-tab" id="group_contact_details"><h3><span>' . $position_label . '</span></h3>';
+        $output .= '<div class="field-group-tab" id="group-factsheet-flag-contact"><h3><span>' . $position_label . '</span></h3>';
 
         // Include organisation or flag name.
         if (isset($organisation->flag)) {
