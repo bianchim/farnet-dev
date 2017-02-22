@@ -6,6 +6,18 @@
  */
 ?>
 
+<?php function _format_field_decimal($field_markup) {
+  $field_markup_temp = explode('.', floatval($field_markup));
+  if(count($field_markup_temp) > 1) {
+    $field_markup = number_format($field_markup_temp[0], 0, '.', ' ');
+    $field_markup .= (($field_markup_temp[1] > 0) ? ','.$field_markup_temp[1] : '');
+  } else {
+    $field_markup = number_format($field_markup_temp[0], 0, '.', ' ');
+  }
+  return($field_markup);
+}
+?>
+
 <div class="content clearfix">
 
   <?php if (!empty($content['group_short_story_content'])) : ?>
@@ -71,7 +83,6 @@
                 <?php print $content['group_short_story_funding']['field_budget']['#title']; ?>
               </th>
               <th>
-                <?php print $content['group_short_story_funding']['field_budget']['0']['#markup']; ?>
                 <?php print number_format($content['group_short_story_funding']['field_budget']['0']['#markup'], 0, '.', ' '); ?> €
               </th>
               <?php endif; ?>
@@ -85,19 +96,19 @@
                 <?php print number_format($content['group_short_story_funding']['field_eu_contribution']['0']['#markup'], 0, '.', ' '); ?> €
                 <ul class="u-lst-none highlight--background">
                   <?php if (!empty($content['group_short_story_funding']['field_emff'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_emff']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_emff']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_emff']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_emff']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_short_story_funding']['field_esf'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_esf']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_esf']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_esf']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_esf']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_short_story_funding']['field_erdf'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_erdf']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_erdf']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_erdf']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_erdf']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_short_story_funding']['field_eardf'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_eardf']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_eardf']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_eardf']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_eardf']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_short_story_funding']['field_other_eu_funding'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_other_eu_funding']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_other_eu_funding']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_other_eu_funding']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_other_eu_funding']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                 </ul>
               </td>
@@ -110,13 +121,13 @@
                 <?php print number_format($content['group_short_story_funding']['field_other_public_contribution']['0']['#markup'], 0, '.', ' '); ?> €
                 <ul class="u-lst-none highlight--background">
                   <?php if (!empty($content['group_short_story_funding']['field_funding_national'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_funding_national']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_funding_national']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_funding_national']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_funding_national']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_short_story_funding']['field_funding_regional'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_funding_regional']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_funding_regional']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_funding_regional']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_funding_regional']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                   <?php if (!empty($content['group_short_story_funding']['field_funding_local'])) : ?>
-                    <li><?php print $content['group_short_story_funding']['field_funding_local']['#title']; ?>: <?php print floatval($content['group_short_story_funding']['field_funding_local']['0']['#markup']); ?> €</li>
+                    <li><?php print $content['group_short_story_funding']['field_funding_local']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_funding_local']['0']['#markup']); ?> €</li>
                   <?php endif; ?>
                 </ul>
               </td>
