@@ -71,7 +71,6 @@
                 <?php print $content['group_short_story_funding']['field_budget']['#title']; ?>
               </th>
               <th>
-                <?php print $content['group_short_story_funding']['field_budget']['0']['#markup']; ?>
                 <?php print number_format($content['group_short_story_funding']['field_budget']['0']['#markup'], 0, '.', ' '); ?> €
               </th>
               <?php endif; ?>
