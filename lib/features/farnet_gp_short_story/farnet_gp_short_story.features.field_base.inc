@@ -24,9 +24,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_eardf'.
@@ -42,9 +44,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_emff'.
@@ -60,9 +64,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_erdf'.
@@ -78,9 +84,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_esf'.
@@ -96,9 +104,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_eu_contribution'.
@@ -114,9 +124,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_funding_details'.
@@ -153,9 +165,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_funding_national'.
@@ -171,9 +185,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_funding_regional'.
@@ -189,9 +205,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_other_eu_funding'.
@@ -207,9 +225,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_other_public_contribution'.
@@ -225,9 +245,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_private_contribution'.
@@ -243,9 +265,11 @@ function farnet_gp_short_story_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_quote_author'.
