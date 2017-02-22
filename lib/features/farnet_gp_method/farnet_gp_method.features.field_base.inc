@@ -171,9 +171,11 @@ function farnet_gp_method_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 10,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_gpm_transferability'.
