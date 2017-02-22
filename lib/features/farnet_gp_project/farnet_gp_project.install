@@ -39,7 +39,7 @@ function farnet_gp_project_update_7001() {
     $data['settings'] = array(
       'precision' => 20,
       'scale' => 2,
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
     );
 
     // Store the new field config, update the field type at the same time.

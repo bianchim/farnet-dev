@@ -22,7 +22,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -42,7 +42,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -62,7 +62,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -82,7 +82,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -102,7 +102,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -122,7 +122,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -163,7 +163,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -183,7 +183,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -203,7 +203,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -223,7 +223,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -243,7 +243,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
@@ -263,7 +263,7 @@ function farnet_gp_short_story_field_default_field_bases() {
     'locked' => 1,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
+      'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
       'precision' => 20,
       'scale' => 2,
