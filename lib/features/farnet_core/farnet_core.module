@@ -442,7 +442,15 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
   foreach ($organisations as $org_id => $organisation) {
     // Load the organisations.
     $node = entity_metadata_wrapper('node', $organisation);
-    $fc_contacts = $node->field_organisation_contacts->value();
+
+    if (empty($organisation->field_organisation_contacts)) {
+      continue;
+    }
+
+    $fc_contacts = [];
+    foreach ($organisation->field_organisation_contacts[LANGUAGE_NONE] as $contact) {
+      $fc_contacts[] = entity_revision_load('field_collection_item', $contact['revision_id']);
+    }
 
     // For each contact field collection, check the contact position.
     foreach ($fc_contacts as $fc_contact) {
@@ -557,7 +565,15 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
   // Get contacts from organisation.
   $organisation = reset($organisations);
   $node = entity_metadata_wrapper('node', $organisation);
-  $fc_contacts = $node->field_organisation_contacts->value();
+
+  if (empty($organisation->field_organisation_contacts)) {
+    return '';
+  }
+
+  $fc_contacts = [];
+  foreach ($organisation->field_organisation_contacts[LANGUAGE_NONE] as $contact) {
+    $fc_contacts[] = entity_revision_load('field_collection_item', $contact['revision_id']);
+  }
 
   // Prepare output.
   $output = '<div class="field-group-tab" id="group-factsheet-flag-contact"><h3><span>' . t('FLAG Contacts') . '</span></h3>';
