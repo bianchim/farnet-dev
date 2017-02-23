@@ -110,7 +110,7 @@ function _farnet_menu_content_menu_page_content() {
 
   $menu_name = t('Contact details');
   $item = menu_get_item();
-  if ($item['page_arguments'][0]->type === 'factsheet_flag') {
+  if (isset($item['page_arguments'][0]->type) && $item['page_arguments'][0]->type === 'factsheet_flag') {
     $menu_name = t('FLAG Contacts');
   }
 
