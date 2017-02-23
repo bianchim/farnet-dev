@@ -115,6 +115,17 @@ function farnet_om_menu_content_render($content = array()) {
  * Implements hook_block_view_alter().
  */
 function farnet_preprocess_block(&$vars) {
+  $bid = $vars['block']->delta;
+  $block = block_custom_block_get($bid);
+  $block_info = $block['info'];
+  if (isset($block_info)) {
+    switch ($block_info) {
+      case 'Block for quick links':
+        $vars['classes_array'][] = 'f-home__quick-links';
+        break;
+    }
+  }
+
   $block_id = $vars['block']->module . '-' . $vars['block']->delta;
   switch ($block_id) {
     case 'om_maximenu-om-maximenu-1':
@@ -127,10 +138,6 @@ function farnet_preprocess_block(&$vars) {
 
     case 'social_media_links-social-media-links':
       $vars['elements']['#block']->subject = t('Follow FARNET on:');
-      break;
-
-    case 'block-12':
-      $vars['classes_array'][] = 'f-home__quick-links';
       break;
 
     case 'cce_basic_config-footer_ipg':
