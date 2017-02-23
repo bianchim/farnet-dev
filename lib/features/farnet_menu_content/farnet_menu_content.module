@@ -108,11 +108,17 @@ function _farnet_menu_content_menu_page_content() {
     }
   }
 
+  $menu_name = t('Contact details');
+  $item = menu_get_item();
+  if ($item['page_arguments'][0]->type === 'factsheet_flag') {
+    $menu_name = t('FLAG Contacts');
+  }
+
   // Create entry for contact details.
   if (isset($GLOBALS['CT_has_contact']) &&  $GLOBALS['CT_has_contact'] == TRUE) {
     // Avoid issue with PHPCS and hardcoded links.
-    $id = 'group-factsheet-flag-contact';
-    $output .= '<li><a href="#' . $id . '">' . t('FLAG Contacts') . '</a></li>';
+    $id = 'group_contact_details';
+    $output .= '<li><a href="#' . $id . '">' . $menu_name . '</a></li>';
   }
 
   $output .= '</ul></nav></div>';
