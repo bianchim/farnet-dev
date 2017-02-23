@@ -237,8 +237,6 @@ global $base_url;
             </div>
           </div>
 
-          <?php print $feed_icons; ?>
-
           <?php print $regions['content_bottom']; ?>
         </div>
       </div>
