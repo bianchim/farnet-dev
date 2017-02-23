@@ -10,23 +10,7 @@
  */
 function farnet_factsheet_flag_update_7001() {
 
-  $fields = ['field_ff_population_density'
-  , 'field_ff_surface_area'
-  , 'field_ff_total_employment'
-  , 'field_ff_fishing'
-  , 'field_ff_aquaculture'
-  , 'field_ff_processing'
-  , 'field_ff_women_employment'
-  , 'field_ff_emff'
-  , 'field_ff_ms_co_financing'
-  , 'field_ff_total_public_budget'
-  , 'field_ff_budget_cooperation'
-  , 'field_ff_public_actors'
-  , 'field_ff_fisheries_actors'
-  , 'field_ff_environmental_actors'
-  , 'field_ff_other_non_fisheries'
-  , 'field_ff_number_staff'
-  , 'field_allocated_budget'
+  $fields = ['field_ff_population_density', 'field_ff_surface_area', 'field_ff_total_employment', 'field_ff_fishing', 'field_ff_aquaculture', 'field_ff_processing', 'field_ff_women_employment', 'field_ff_emff', 'field_ff_ms_co_financing', 'field_ff_total_public_budget', 'field_ff_budget_cooperation', 'field_ff_public_actors', 'field_ff_fisheries_actors', 'field_ff_environmental_actors', 'field_ff_other_non_fisheries', 'field_ff_number_staff', 'field_allocated_budget',
   ];
 
   foreach ($fields as $field) {

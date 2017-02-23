@@ -10,12 +10,7 @@
  */
 function farnet_factsheet_country_update_7001() {
 
-  $fields = ['field_emff_budget'
-  , 'field_proportion_emff'
-  , 'field_co_funding'
-  , 'field_total_budget'
-  , 'field_number_flags'
-  , 'field_average_budget_per_flag'
+  $fields = ['field_emff_budget', 'field_proportion_emff', 'field_co_funding', 'field_total_budget', 'field_number_flags', 'field_average_budget_per_flag',
   ];
 
   foreach ($fields as $field) {
