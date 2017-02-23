@@ -5,8 +5,9 @@
     <description>Drupal coding standard for NextEuropa subsites</description>
 
     <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal" />
-    <rule ref="./vendor/ec-europa/qa-automation/DrupalSecure" />
-    <rule ref="./vendor/ec-europa/qa-automation/QualityAssurance" />
+    <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice" />
+    <rule ref="./vendor/ec-europa/qa-automation/phpcs/Standards/DrupalSecure" />
+    <rule ref="./vendor/ec-europa/qa-automation/phpcs/Standards/QualityAssurance" />
 
     <!-- Minified files don't have to comply with coding standards. -->
     <exclude-pattern>*\.min\.css</exclude-pattern>
@@ -18,11 +19,6 @@
     <exclude-pattern>*\.xml</exclude-pattern>
     <exclude-pattern>*\.yml</exclude-pattern>
     <exclude-pattern>composer.lock</exclude-pattern>
-
-    <!-- Exclude non drupal folders. -->
-    <exclude-pattern>/vendor</exclude-pattern>
-    <exclude-pattern>/src</exclude-pattern>
-    <exclude-pattern>/resources</exclude-pattern>
 
     <!-- Exclude contrib folders. -->
     <exclude-pattern>contrib</exclude-pattern>
@@ -65,6 +61,8 @@
     <exclude-pattern>*.farnet_core.install</exclude-pattern>
     <exclude-pattern>*.farnet_faq.module</exclude-pattern>
     <exclude-pattern>*.features.fe_block_boxes.inc</exclude-pattern>
+    <exclude-pattern>*.farnet_organisation_import.install</exclude-pattern>
+    <exclude-pattern>*.template.php</exclude-pattern>
     <!-- Farnet theme excludes -->
     <exclude-pattern>farnet/framework/*</exclude-pattern>
 
@@ -76,8 +74,19 @@
         <exclude-pattern>*features.og_features_permission.inc</exclude-pattern>
     </rule>
 
-    <!-- Exclude the blocks of landing pages, menu blocks are not exportable so the HTML is exported as is. -->
-    <rule ref="QualityAssurance.Functions.HardcodedLink.HardcodedLink">
-        <exclude-pattern>farnet_core.features.fe_block_boxes.inc</exclude-pattern>
+    <!-- Features generated files do not backslash quoted text. -->
+    <rule ref="Drupal.Semantics.FunctionT.BackslashSingleQuote">
+        <exclude-pattern>*.features.*.inc</exclude-pattern>
     </rule>
+
+    <!-- Features generated menu links often have too long comment strings. -->
+    <rule ref="Drupal.Files.LineLength.TooLong">
+        <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
+    </rule>
+
+    <!-- Disable DrupalPractice rules that do not apply to non-contribs. -->
+    <rule ref="DrupalPractice">
+        <exclude name="DrupalPractice.Commenting.AuthorTag" />
+    </rule>
+
 </ruleset>
