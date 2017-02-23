@@ -90,7 +90,7 @@ function _format_field_decimal($field_markup) {
                 <?php print $content['group_short_story_funding']['field_budget']['#title']; ?>
               </th>
               <th>
-                <?php print number_format($content['group_short_story_funding']['field_budget']['0']['#markup'], 0, '.', ' '); ?> €
+                <?php print _format_field_decimal($content['group_short_story_funding']['field_budget']['0']['#markup']); ?> €
               </th>
               <?php endif; ?>
             </tr>
@@ -100,7 +100,7 @@ function _format_field_decimal($field_markup) {
             <tr>
               <td><?php print $content['group_short_story_funding']['field_eu_contribution']['#title']; ?></td>
               <td>
-                <?php print number_format($content['group_short_story_funding']['field_eu_contribution']['0']['#markup'], 0, '.', ' '); ?> €
+                <?php print _format_field_decimal($content['group_short_story_funding']['field_eu_contribution']['0']['#markup']); ?> €
                 <ul class="u-lst-none highlight--background">
                   <?php if (!empty($content['group_short_story_funding']['field_emff'])) : ?>
                     <li><?php print $content['group_short_story_funding']['field_emff']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_emff']['0']['#markup']); ?> €</li>
@@ -125,7 +125,7 @@ function _format_field_decimal($field_markup) {
             <tr>
               <td><?php print $content['group_short_story_funding']['field_other_public_contribution']['#title']; ?></td>
               <td>
-                <?php print number_format($content['group_short_story_funding']['field_other_public_contribution']['0']['#markup'], 0, '.', ' '); ?> €
+                <?php print _format_field_decimal($content['group_short_story_funding']['field_other_public_contribution']['0']['#markup']); ?> €
                 <ul class="u-lst-none highlight--background">
                   <?php if (!empty($content['group_short_story_funding']['field_funding_national'])) : ?>
                     <li><?php print $content['group_short_story_funding']['field_funding_national']['#title']; ?>: <?php print _format_field_decimal($content['group_short_story_funding']['field_funding_national']['0']['#markup']); ?> €</li>
@@ -143,7 +143,7 @@ function _format_field_decimal($field_markup) {
             <?php if (!empty($content['group_short_story_funding']['field_private_contribution'])) : ?>
             <tr>
               <td><?php print $content['group_short_story_funding']['field_private_contribution']['#title']; ?></td>
-              <td><?php print number_format($content['group_short_story_funding']['field_private_contribution']['0']['#markup'], 0, '.', ' '); ?> €</td>
+              <td><?php print _format_field_decimal($content['group_short_story_funding']['field_private_contribution']['0']['#markup']); ?> €</td>
             </tr>
             <?php endif; ?>
           </tbody>

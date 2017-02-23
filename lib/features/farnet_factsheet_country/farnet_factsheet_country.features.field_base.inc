@@ -24,9 +24,11 @@ function farnet_factsheet_country_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_axis_4'.
@@ -105,9 +107,11 @@ function farnet_factsheet_country_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_cooperation'.
@@ -169,9 +173,11 @@ function farnet_factsheet_country_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_fc_document'.
@@ -361,9 +367,11 @@ function farnet_factsheet_country_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_proportion_emff'.
@@ -379,9 +387,11 @@ function farnet_factsheet_country_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_total_budget'.
@@ -397,9 +407,11 @@ function farnet_factsheet_country_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   return $field_bases;
