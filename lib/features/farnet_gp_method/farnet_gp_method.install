@@ -8,7 +8,7 @@
 /**
  * Change fields type from Float to Decimal.
  */
-function farnet_factsheet_flag_update_7001() {
+function farnet_gp_method_update_7001() {
 
   $fields = ['field_gpm_staff_resources'];
 
