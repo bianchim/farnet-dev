@@ -752,3 +752,11 @@ function farnet_core_post_features_revert($component) {
     variable_set('node_submitted_simplenews', 0);
   }
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function farnet_core_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Hide promote checkbox to avoid homepage title issue.
+  unset($form['options']['promote']);
+}
