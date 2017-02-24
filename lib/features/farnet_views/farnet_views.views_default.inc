@@ -1394,6 +1394,7 @@ function farnet_views_views_default_views() {
     'gp_short_story' => 'gp_short_story',
     'nexteuropa_mediagallery' => 'nexteuropa_mediagallery',
     'nexteuropa_news' => 'nexteuropa_news',
+    'publication' => 'publication',
   );
   /* Filter criterion: Content: Publication channels (field_term_publication_channels) */
   $handler->display->display_options['filters']['field_term_publication_channels_tid']['id'] = 'field_term_publication_channels_tid';

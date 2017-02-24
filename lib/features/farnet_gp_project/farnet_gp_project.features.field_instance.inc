@@ -23,7 +23,7 @@ function farnet_gp_project_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'number',
         'settings' => array(
-          'decimal_separator' => ',',
+          'decimal_separator' => '.',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -790,7 +790,7 @@ function farnet_gp_project_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'prefix_suffix' => 1,
-          'scale' => 0,
+          'scale' => 2,
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
@@ -951,7 +951,7 @@ function farnet_gp_project_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'prefix_suffix' => 1,
-          'scale' => 0,
+          'scale' => 2,
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
@@ -1270,7 +1270,7 @@ function farnet_gp_project_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'prefix_suffix' => 1,
-          'scale' => 0,
+          'scale' => 2,
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',

@@ -24,9 +24,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_collection_language'.
@@ -124,9 +126,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_budget_cooperation'.
@@ -142,9 +146,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_calls_for_projects'.
@@ -283,9 +289,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_environmental_actors'.
@@ -301,9 +309,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_expertise_cooperation'.
@@ -370,9 +380,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_fishing'.
@@ -388,9 +400,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_funds'.
@@ -536,9 +550,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_multi_funding'.
@@ -635,9 +651,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_other_non_fisheries'.
@@ -653,9 +671,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_population'.
@@ -688,9 +708,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_processing'.
@@ -706,9 +728,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_programming_period'.
@@ -792,9 +816,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_sources_co_funding'.
@@ -852,9 +878,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_total_employment'.
@@ -870,9 +898,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_total_public_budget'.
@@ -888,9 +918,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_ff_twitter'.
@@ -936,9 +968,11 @@ function farnet_factsheet_flag_field_default_field_bases() {
     'settings' => array(
       'decimal_separator' => ',',
       'entity_translation_sync' => FALSE,
+      'precision' => 20,
+      'scale' => 2,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'field_language_level'.

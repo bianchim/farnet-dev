@@ -393,6 +393,42 @@ function farnet_gp_project_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_gp_project_information|node|gp_project|default';
+  $field_group->group_name = 'group_gp_project_information';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gp_project';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Project information',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_dates_start_end',
+      1 => 'field_sea_basins',
+      2 => 'field_tags',
+      3 => 'field_term_theme',
+      4 => 'field_type_of_area',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Project information',
+      'instance_settings' => array(
+        'id' => 'group_gp_project_information',
+        'classes' => 'group_gp_project_information field-group-tab',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_gp_project_information|node|gp_project|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_gp_project_location|node|gp_project|default';
   $field_group->group_name = 'group_gp_project_location';
   $field_group->entity_type = 'node';
@@ -647,42 +683,6 @@ function farnet_gp_project_field_group_info() {
     ),
   );
   $field_groups['group_gp_project_taxonomy|node|gp_project|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_project_information|node|gp_project|default';
-  $field_group->group_name = 'group_project_information';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'gp_project';
-  $field_group->mode = 'default';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Project information',
-    'weight' => '4',
-    'children' => array(
-      0 => 'field_dates_start_end',
-      1 => 'field_sea_basins',
-      2 => 'field_tags',
-      3 => 'field_term_theme',
-      4 => 'field_type_of_area',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Project information',
-      'instance_settings' => array(
-        'id' => 'group_gp_project_information',
-        'classes' => 'group_gp_project_information field-group-tab',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_project_information|node|gp_project|default'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

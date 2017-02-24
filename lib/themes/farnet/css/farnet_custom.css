@@ -96,7 +96,7 @@
   position: absolute;
 }
 
-#block-quick-links {
+.f-home__quick-links {
   margin-bottom: 14px;
   padding: 22px;
 }
@@ -288,11 +288,15 @@ table.table-responsive.table-blue.table--white-borders th {
   padding-right: 5px;
 }
 
-.highlight--background .field-name-field-a5-public-contribution div {
+.highlight--background .field-name-field-a5-public-contribution .field-collection-view .content div {
   float: left;
 }
 
-.field-name-field-a5-public-contribution .field-name-field-contribution-label  div .field-item:after {
+.highlight--background .field-collection-container .field-name-field-a5-public-contribution .field-items .field-item {
+  margin-bottom: 0px;
+}
+
+.field-name-field-a5-public-contribution .field-name-field-contribution-label div .field-item:after {
   content: ": ";
   padding-right: 5px;
 }
@@ -300,22 +304,26 @@ table.table-responsive.table-blue.table--white-borders th {
 .highlight--background .field-name-field-a5-public-contribution .field-collection-view {
   padding: 0px;
   border-bottom: none;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 0;
 }
 
-.highlight--background .field-name-field-b1-other-contribution div {
+.highlight--background .field-name-field-b1-other-contribution .field-collection-view .content div {
   float: left;
 }
 
-.field-name-field-b1-other-contribution .field-name-field-contribution-label  div .field-item:after {
+.field-name-field-b1-other-contribution .field-name-field-contribution-label div .field-item:after {
   content: ": ";
   padding-right: 5px;
+}
+
+.highlight--background .field-collection-container .field-name-field-b1-other-contribution .field-items .field-item {
+  margin: 0px;
 }
 
 .highlight--background .field-name-field-b1-other-contribution .field-collection-view {
   padding: 0px;
   border-bottom: none;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 0;
 }
 
 .front #block-system-main {
