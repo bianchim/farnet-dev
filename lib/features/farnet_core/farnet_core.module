@@ -476,7 +476,7 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
           'field_user_country' => FALSE,
         ];
 
-        $output .= '<div class="field-group-tab" id="group-factsheet-flag-contact"><h3><span>' . $position_label . '</span></h3>';
+        $output .= '<div class="field-group-tab" id="group_contact_details"><h3><span>' . $position_label . '</span></h3>';
 
         // Include organisation or flag name.
         if (isset($organisation->flag)) {
@@ -751,4 +751,12 @@ function farnet_core_post_features_revert($component) {
     variable_set('node_submitted_article', 0);
     variable_set('node_submitted_simplenews', 0);
   }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function farnet_core_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Hide promote checkbox to avoid homepage title issue.
+  unset($form['options']['promote']);
 }

@@ -361,3 +361,8 @@ table.table-responsive.table-blue.table--white-borders th {
 .language_level:last-child:after {
   content: "";
 }
+
+.organisation_node_render .field-label {
+  float: left;
+  font-weight: bold;
+}
