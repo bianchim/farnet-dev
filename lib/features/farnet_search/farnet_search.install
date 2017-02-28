@@ -1,6 +1,16 @@
 <?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet search.
+ */
+
 /**
  * Manage facet search blocks, remove bundles from solr indexing.
+ */
+
+/**
+ * Implements hook_update_N().
  */
 function farnet_search_update_7001() {
   // Remove bundles from solr indexing.
@@ -29,5 +39,3 @@ function farnet_search_update_7001() {
   multisite_drupal_toolbox_remove_block_context('search', 'facetapi-8o8kdtP8CKjahDIu1Wy5LGxnDHg3ZYnT');
   multisite_drupal_toolbox_remove_block_context('search', 'facetapi-odQxTWyhGW1WU7Sl00ISAnQ21BCdJG3A');
 }
-
-
