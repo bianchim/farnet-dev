@@ -338,6 +338,21 @@ table.table-responsive.table-blue.table--white-borders th {
   text-decoration: none;
 }
 
+.farnet_block_title {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.farnet_block_title:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.farnet_block_title:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .group-download .field-collection-container {
   border: none;
 }

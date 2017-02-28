@@ -14,7 +14,14 @@
   <?php print render($title_prefix); ?>
   <?php if ($title && $block->subject): ?>
     <div class="<?php print ($panel ? 'panel-heading' : ''); ?>">
-      <?php print $block->subject ?>
+      <?php
+        if ($block_title) {
+          print $block_title;
+        }
+        else {
+          print $block->subject;
+        }
+      ?>
     </div>
   <?php endif;?>
   <?php print render($title_suffix); ?>
