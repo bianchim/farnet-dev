@@ -48,7 +48,7 @@
     <?php print render($title_prefix); ?>
     <?php if ($title && $block->subject): ?>
     <div class="<?php print ($panel ? 'panel-heading' : ''); ?>">
-      <?php print $block->subject ?>
+      <?php print '<a href="' . url("on-the-ground/country-factsheets") . '" class="farnet_block_title">' . $block->subject . '</a>'; ?>
     </div>
     <?php endif;?>
     <?php print render($title_suffix); ?>
