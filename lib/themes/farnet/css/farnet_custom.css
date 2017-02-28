@@ -381,3 +381,9 @@ table.table-responsive.table-blue.table--white-borders th {
   float: left;
   font-weight: bold;
 }
+
+@media (min-width: 768px) {
+  .region-content-bottom .block .content {
+    height: 361px;
+  }
+}
