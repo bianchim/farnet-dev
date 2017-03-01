@@ -339,17 +339,19 @@ table.table-responsive.table-blue.table--white-borders th {
 }
 
 .farnet_block_title {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .farnet_block_title:hover {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 
 .farnet_block_title:visited {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -382,8 +384,8 @@ table.table-responsive.table-blue.table--white-borders th {
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
-  .region-content-bottom .block .content {
-    height: 361px;
-  }
+.panel-default > .panel-heading {
+  color: #000000;
+  background-color: #e9f3fd;
+  border-color: #ddd;
 }
