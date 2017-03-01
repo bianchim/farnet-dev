@@ -393,5 +393,6 @@ table.table-responsive.table-blue.table--white-borders th {
 @media (min-width: 768px) {
   .region-content-bottom .block .content {
     height: 361px;
+  }  
 }
   
