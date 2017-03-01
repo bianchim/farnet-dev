@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the farnet_search feature.
+ */
+
+include_once 'farnet_search.features.inc';
