@@ -389,3 +389,9 @@ table.table-responsive.table-blue.table--white-borders th {
   background-color: #e9f3fd;
   border-color: #ddd;
 }
+
+@media (min-width: 768px) {
+  .region-content-bottom .block .content {
+    height: 361px;
+}
+  
