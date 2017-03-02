@@ -39,3 +39,21 @@ function farnet_search_update_7002() {
   multisite_drupal_toolbox_remove_block_context('search', 'facetapi-8o8kdtP8CKjahDIu1Wy5LGxnDHg3ZYnT');
   multisite_drupal_toolbox_remove_block_context('search', 'facetapi-odQxTWyhGW1WU7Sl00ISAnQ21BCdJG3A');
 }
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_search_enable() {
+  drupal_set_message(t('The FARNET Search feature is now active on your site.'));
+
+  $search_module = variable_get('search_active_modules', array());
+  $search_module['user'] = 0;
+  variable_set('search_active_modules', $search_module);
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_search_disable() {
+  drupal_set_message(t('The FARNET Search feature is now disabled on your site.'));
+}
