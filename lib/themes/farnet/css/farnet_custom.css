@@ -413,6 +413,17 @@ table.table-responsive.table-blue.table--white-borders th {
 
 .flag-contacts .field-label-light {
   float: left;
-  /*font-weight: 700;*/
   margin-right: 5px;
+}
+
+.field-contact-hidden {
+  display: none;
+}
+
+#button-show-detail {
+  margin-bottom: 5px;
+}
+
+.flag-contacts-right {
+  display: none;
 }

@@ -89,10 +89,11 @@
     </div>
     <?php endif; ?>
     <?php
-    // We hide the comments and links now so that we can render them later.
+      // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
       hide($content['group_factsheet_flag_content']);
+      hide($content['group_factsheet_flag_social']);
       hide($content['group_factsheet_flag_contact']);
     ?>
     <?php if (!empty($content['group_factsheet_flag_content'])) : ?>
