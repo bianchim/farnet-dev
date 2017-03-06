@@ -26,6 +26,13 @@ function farnet_organisation_import_update_7001() {
 }
 
 /**
+ * Update info field length in database.
+ */
+function farnet_organisation_import_update_7002() {
+  db_query('ALTER TABLE {import_organisations} MODIFY info VARCHAR(2048)');
+}
+
+/**
  * Helper function of database schema for organisation import.
  */
 function _import_organisations_info() {
@@ -42,7 +49,7 @@ function _import_organisations_info() {
       'info' => [
         'description' => 'The JSON encoded info of the organisation.',
         'type' => 'varchar',
-        'length' => 500,
+        'length' => 2048,
         'not null' => TRUE,
         'default' => '',
       ],
