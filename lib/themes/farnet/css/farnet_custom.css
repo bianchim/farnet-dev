@@ -338,6 +338,23 @@ table.table-responsive.table-blue.table--white-borders th {
   text-decoration: none;
 }
 
+.farnet_block_title {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.farnet_block_title:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.farnet_block_title:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
 .group-download .field-collection-container {
   border: none;
 }
@@ -365,4 +382,16 @@ table.table-responsive.table-blue.table--white-borders th {
 .organisation_node_render .field-label {
   float: left;
   font-weight: bold;
+}
+
+.panel-default > .panel-heading {
+  color: #000000;
+  background-color: #e9f3fd;
+  border-color: #ddd;
+}
+
+@media (min-width: 768px) {
+  .region-content-bottom .block .content {
+    height: 361px;
+  }
 }

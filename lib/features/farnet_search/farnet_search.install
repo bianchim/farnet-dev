@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, schema and update hooks for farnet search.
+ */
+
+/**
+ * Manage facet search blocks, remove bundles from solr indexing.
+ */
+
+/**
+ * Implements hook_update_N().
+ */
+function farnet_search_update_7002() {
+  // Remove bundles from solr indexing.
+  $bundles = array(
+    'community',
+    'community_hidden',
+    'community_private',
+    'community_public',
+    'contact_person',
+    'farnet_discussion',
+    'homepage_highlight',
+    'nexteuropa_mediagallery',
+    'organisation',
+    'simplenews',
+  );
+  foreach ($bundles as $bundle) {
+    multisite_drupal_toolbox_config_solr_bundle($bundle, 'delete');
+  }
+
+  // Add sea basin and type of area facet search blocks.
+  multisite_drupal_toolbox_add_block_context('search', 'facetapi-zULNPz67fg0t1s4ZQqgMw1gIZXy6lK7k', 'facetapi', 'zULNPz67fg0t1s4ZQqgMw1gIZXy6lK7k', 'sidebar_left', -10);
+  multisite_drupal_toolbox_add_block_context('search', 'facetapi-EP02DrSBxR6X4lBokTlXJND4I1FVIjvD', 'facetapi', 'EP02DrSBxR6X4lBokTlXJND4I1FVIjvD', 'sidebar_left', -11);
+
+  // Remove author, keywords facet search blocks.
+  multisite_drupal_toolbox_remove_block_context('search', 'facetapi-wWWinJ0eOefOtAMbjo2yl86Mnf1rO12j');
+  multisite_drupal_toolbox_remove_block_context('search', 'facetapi-8o8kdtP8CKjahDIu1Wy5LGxnDHg3ZYnT');
+  multisite_drupal_toolbox_remove_block_context('search', 'facetapi-odQxTWyhGW1WU7Sl00ISAnQ21BCdJG3A');
+}
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_search_enable() {
+  drupal_set_message(t('The FARNET Search feature is now active on your site.'));
+
+  $search_module = variable_get('search_active_modules', array());
+  $search_module['user'] = 0;
+  variable_set('search_active_modules', $search_module);
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_search_disable() {
+  drupal_set_message(t('The FARNET Search feature is now disabled on your site.'));
+}

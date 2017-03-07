@@ -123,6 +123,58 @@ function farnet_preprocess_block(&$vars) {
       case 'Block for quick links':
         $vars['classes_array'][] = 'f-home__quick-links';
         break;
+
+      case 'About block at a glance':
+        $vars['block_title'] = '<a href="' . url('about/at-a-glance') . '" class="farnet_block_title">At a glance</a>';
+        break;
+
+      case 'About block who\'s who':
+        $vars['block_title'] = '<a href="' . url('about/who-is-who') . '" class="farnet_block_title">Who\'s who</a>';
+        break;
+
+      case 'Cooperation block on On the Ground page':
+        $vars['block_title'] = '<a href="' . url('on-the-ground/cooperation') . '" class="farnet_block_title">Cooperation</a>';
+        break;
+
+      case 'Good Practice block on On the Ground page':
+        $vars['block_title'] = '<a href="' . url('on-the-ground/good-practice') . '" class="farnet_block_title">Good Practice</a>';
+        break;
+
+      case 'themes landing page diversification':
+        $vars['block_title'] = '<a href="' . url('themes/diversification') . '" class="farnet_block_title">Diversification</a>';
+        break;
+
+      case 'themes landing page adding value':
+        $vars['block_title'] = '<a href="' . url('themes/adding-value-fisheries') . '" class="farnet_block_title">Adding value to fisheries</a>';
+        break;
+
+      case 'themes landing page environment':
+        $vars['block_title'] = '<a href="' . url('themes/environment') . '" class="farnet_block_title">Environment</a>';
+        break;
+
+      case 'themes landing page governance management':
+        $vars['block_title'] = '<a href="' . url('themes/governance') . '" class="farnet_block_title">Governance and management</a>';
+        break;
+
+      case 'themes landing page society culture':
+        $vars['block_title'] = '<a href="' . url('themes/society-and-culture') . '" class="farnet_block_title">Society and culture</a>';
+        break;
+
+      case 'Q&A on CLLD':
+        $vars['block_title'] = '<a href="' . url('tools/faq') . '" class="farnet_block_title">Q&A on CLLD</a>';
+        break;
+
+      case 'FAQs':
+        $vars['block_title'] = '<a href="' . url('tools/faq') . '" class="farnet_block_title">FAQs</a>';
+        break;
+
+      case 'Tools for FLAGs':
+        $vars['block_title'] = '<a href="' . url('tools/flags') . '" class="farnet_block_title">Tools for FLAGs</a>';
+        break;
+
+      case 'Tools for managing authorities':
+        $vars['block_title'] = '<a href="' . url('tools/managing-authorities') . '" class="farnet_block_title">Tools for managing authorities</a>';
+        break;
     }
   }
 
@@ -145,16 +197,36 @@ function farnet_preprocess_block(&$vars) {
       $vars['content'] = drupal_substr($vars['content'], strpos($vars['content'], '<ul'));
       break;
 
-    case 'views-79352059f92f38e8b7c026bd2e334732';
+    case 'views-79352059f92f38e8b7c026bd2e334732':
       $view = views_get_view('farnet_view_factsheets_flag');
       $ff_header = $view->display['ff_on_the_ground']->display_options['header']['area']['content'];
       $vars['ff_header'] = $ff_header;
       break;
 
-    case 'views-7dabd414d359435e91fad754dab94e7f';
+    case 'views-7dabd414d359435e91fad754dab94e7f':
       $view = views_get_view('farnet_view_factsheets_country');
       $cf_header = $view->display['cf_on_the_ground']->display_options['header']['area']['content'];
       $vars['cf_header'] = $cf_header;
+      break;
+
+    case 'views-5a0c0d1995c4bd498fa2422a5992b6e7':
+      $vars['block_title'] = '<a href="' . url('news-events/news') . '" class="farnet_block_title">News</a>';
+      break;
+
+    case 'views-8d556d2632413042cb393089786bb956':
+      $vars['block_title'] = '<a href="' . url('news-events/events') . '" class="farnet_block_title">Events</a>';
+      break;
+
+    case 'views-43942680651afca7750d9faac6513a16':
+      $vars['block_title'] = '<a href="' . url('library/magazines') . '" class="farnet_block_title">Magazines</a>';
+      break;
+
+    case 'views-e1afc8ac226e4752516e50409df8f248':
+      $vars['block_title'] = '<a href="' . url('library/guides') . '" class="farnet_block_title">Guides</a>';
+      break;
+
+    case 'views-e3e941f8456604ac95162b631eb95d94':
+      $vars['block_title'] = '<a href="' . url('library/presentations') . '" class="farnet_block_title">Presentations</a>';
       break;
   }
 }
