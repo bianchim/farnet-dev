@@ -552,7 +552,6 @@ function farnet_gp_short_story_field_group_info() {
     'label' => 'Metadata',
     'weight' => '9',
     'children' => array(
-      0 => 'og_group_ref',
       1 => 'metatags',
       2 => 'path',
       3 => 'xmlsitemap',
