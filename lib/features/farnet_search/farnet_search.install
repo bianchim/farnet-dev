@@ -41,6 +41,17 @@ function farnet_search_update_7002() {
 }
 
 /**
+ * Implements hook_update_N().
+ */
+function farnet_search_update_7003() {
+  // Remove author, keywords facet search blocks.
+  //multisite_drupal_toolbox_remove_block_context('search', 'apachesolr_search-sort');
+
+  // Add sea basin and type of area facet search blocks.
+  multisite_drupal_toolbox_add_block_context('search', 'apachesolr_search-sort', 'apachesolr_search', 'sort', 'content', -10);
+}
+
+/**
  * Implements hook_enable().
  */
 function farnet_search_enable() {
