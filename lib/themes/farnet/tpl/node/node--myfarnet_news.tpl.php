@@ -6,22 +6,30 @@
  */
 ?>
 
-<div class="content clearfix">
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <div class="media media--farnet">
-    <?php if (!empty($content['field_image'])) : ?>
-      <div class="media-left ">
-        <?php print render($content['field_image']); ?>
+  <div class="content clearfix"<?php print $content_attributes; ?>>
+    <?php if ($prefix_display):?>
+      <div class="node-private label label-default clearfix">
+        <span class="glyphicon glyphicon-lock"></span>
+        <?php print t('This content is private'); ?>
       </div>
     <?php endif; ?>
-    <div class="media-body">
-      <?php if (!empty($content['field_ne_body'])) : ?>
-        <?php print render($content['field_ne_body']); ?>
-      <?php endif; ?>
-    </div>
-  </div>
 
-  <?php if ((!empty($content['field_term_country'])) || (!empty($content['field_term_theme']))) : ?>
+    <div class="media media--farnet">
+      <?php if (!empty($content['field_picture'])) : ?>
+        <div class="media-left ">
+          <?php print render($content['field_picture']); ?>
+        </div>
+      <?php endif; ?>
+      <div class="media-body">
+        <?php if (!empty($content['field_ne_body'])) : ?>
+          <?php print render($content['field_ne_body']); ?>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <?php if ((!empty($content['field_term_country'])) || (!empty($content['field_term_theme']))) : ?>
     <div id="group-nexteuropa-news-information" class="group-nexteuropa-news-information field-group-tab">
       <h3 class="fr-heading"><span>Information</span></h3>
       <table class="table table-responsive table-blue table--white-borders">
@@ -41,23 +49,20 @@
         </tbody>
       </table>
     </div>
-  <?php endif; ?>
+    <?php endif; ?>
 
-  <div class="link-wrapper right"></div>
+    <div class="link-wrapper right"></div>
 
-  <?php
-  // Temporary hide field_page element. ?>
-  <?php if (FALSE) : ?>
-    <div id="group-nexteuropa-news-page" class="group-nexteuropa-news-page field-group-tab">
-      <h3 class="fr-heading"><span><?php print $content['field_page']['#title']; ?></span></h3>
-      <?php print render($content['field_page']); ?>
-    </div>
-  <?php endif; ?>
+    <?php if (!empty($content['field_related_documents'])) : ?>
+      <div id="group-myfarnet-news-page" class="group-myfarnet-news-page field-group-tab">
+        <h3 class="fr-heading"><span><?php print $content['field_related_documents']['#title']; ?></span></h3>
+        <?php print render($content['field_related_documents']); ?>
+      </div>
+    <?php endif; ?>
 
-  <div class="u-mt-1em"></div>
+    <?php print render($content['links']); ?>
 
-  <?php if (!empty($content['field_publication_date'])) : ?>
-    <?php print render($content['field_publication_date']); ?>
-  <?php endif; ?>
+    <?php print render($content['comments']); ?>
 
+  </div>
 </div>
