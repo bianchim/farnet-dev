@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Install tasks for Farnet Error.
+ */
+
+/**
+ * Activate the new multilingual variables for farnet error.
+ *
+ * Implements hook_install().
+ */
+function farnet_error_install() {
+  // Set the new 403 error page.
+  variable_set('site_403', 'error/403');
+
+  // Set the new multilingual variables.
+  $realm_language = variable_get('variable_realm_list_language');
+
+  $new = [
+    'farnet_error_public_title',
+    'farnet_error_public_body',
+    'farnet_error_myfarnet_title',
+    'farnet_error_myfarnet_body',
+  ];
+
+  $res = array_merge($realm_language, $new);
+  variable_set('variable_realm_list_language', $res);
+}

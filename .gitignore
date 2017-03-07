@@ -19,7 +19,11 @@ build/
 platform/
 tmp/
 vendor/
+framework/
 
 # Ignore QA symlinks
 src/Phing/QualityAssuranceSubsiteTask.php
 src/Phing/QualityAssuranceTask.php
+
+# Ignore subfolders & files for css framework
+# framework/*

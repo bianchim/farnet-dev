@@ -280,3 +280,9 @@ starterkit.remote = starterkit
 
 # Whether or not to stop executing the build if a directory cannot be copied.
 copy.path.haltonerror = true
+
+# FARNET specific Settings
+# ------------------------
+# Feature to enable and revert after installation. Separate multiple features with spaces.
+subsite.install.features = 
+

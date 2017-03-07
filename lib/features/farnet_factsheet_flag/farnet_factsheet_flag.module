@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Code for the Farnet Factsheet Flag feature.
+ */
+
+include_once 'farnet_factsheet_flag.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function farnet_factsheet_flag_form_factsheet_flag_node_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('module', 'farnet_factsheet_flag');
+  $form['#attached']['js'] = [
+    [
+      'data' => $path . '/js/farnet_factsheet_flag.js',
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    ],
+  ];
+
+  $form['field_view_cooperation_ideas']['#type'] = 'hidden';
+  $form['field_view_good_practices']['#type'] = 'hidden';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function farnet_factsheet_flag_form_alter(&$form, &$form_state, $form_id) {
+  if (drupal_get_path_alias($_GET['q']) === 'on-the-ground') {
+    $form['field_term_country_tid']['#options']['All'] = 'Select a Country';
+  }
+  $array_flag_countries = array(t('Bulgaria'), t('Croatia'), t('Cyprus'), t('Denmark'), t('Estonia'), t('Finland'), t('France'), t('Germany'), t('Greece'), t('Ireland'), t('Italy'), t('Latvia'), t('Lithuania'), t('Poland'), t('Portugal'), t('Romania'), t('Slovenia'), t('Spain'), t('Sweden'), t('United Kingdom'),
+  );
+  if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-flag-page-factsheet-flag'
+    || $form['#id'] == 'views-exposed-form-farnet-view-factsheets-flag-ff-on-the-ground') {
+    foreach ($form['field_term_country_tid']['#options'] as $term_key => $term) {
+      if ($term_key !== 'All') {
+        if (!in_array($term, $array_flag_countries)) {
+          unset($form['field_term_country_tid']['#options'][$term_key]);
+        }
+      }
+    }
+  }
+  if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-flag-ff-on-the-ground') {
+    unset($form['#info']['filter-field_term_theme_tid']);
+    $form['field_term_theme_tid']['#access'] = 0;
+  }
+}

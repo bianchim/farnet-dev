@@ -1,0 +1,12 @@
+name = Farnet Notifications
+description = Provide a group of specific notifications for the Farnet Site
+core = 7.x
+php = 5.6
+multisite_version = 2.2
+package = Farnet
+dependencies[] = entity
+dependencies[] = rules
+features[features_api][] = api:2
+features[rules_config][] = rules_notification_first_login
+features[rules_config][] = rules_rules_notification_first_profile_completed
+features[rules_config][] = rules_send_email_when_user_add_a_new_organisation

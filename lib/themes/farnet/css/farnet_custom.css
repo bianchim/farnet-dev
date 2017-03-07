@@ -1,0 +1,368 @@
+.farnet-listing__heading div {
+  display: inline;
+}
+
+.farnet-listing__subheading span {
+  display: inline;
+}
+
+.farnet-listing__subheading div {
+  display: inline;
+}
+
+.farnet-quote__citation div {
+  display: inline;
+}
+
+.farnet-quote__author div {
+  display: inline;
+}
+
+.field-group-tab h3 {
+  color: #5fadff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.field-group-tab h3 {
+  overflow: hidden;
+}
+
+.field-group-tab h3 span {
+  display: block;
+  position: relative;
+}
+
+.field-group-tab h3 span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #cbcbcb;
+  bottom: 2px;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.multi-country div {
+  margin: 0;
+  padding: 0;
+}
+
+.multi-country div ul {
+  list-style-type: none;
+  /*display: inline;*/
+  margin: 0;
+  padding: 0;
+  /*padding: 1em;*/
+  display: inline-block;
+}
+
+.multi-country div ul li {
+  display: inline;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.multi-values div {
+  margin: 0;
+  padding: 0;
+}
+
+.multi-values div ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.multi-values div ul li {
+  display: inline;
+  margin: 0;
+  float: left;
+}
+
+.multi-values div ul li a {
+  float: left;
+}
+
+.multi-values div ul li:not(:last-child):after {
+  content: ",";
+  float: right;
+  padding-right: 5px;
+}
+
+#layout-body .affix-bottom {
+  position: absolute;
+}
+
+.f-home__quick-links {
+  margin-bottom: 14px;
+  padding: 22px;
+}
+
+.js #services,
+.js #block-menu-menu-service-tools .menu {
+  left: 200px;
+}
+
+#block-farnet-menu-content-farnet-menu-content-menu-page {
+  max-width: 260px;
+}
+
+.navbar-header .affix-top {
+  z-index: 999;
+}
+
+.f-panel__content {
+  padding: 1em 0 1em 1em;
+}
+
+.f-twitter-feed {
+  margin: 0;
+  padding: 0 1em 0 0;
+  height: 344px;
+  overflow-x: auto;
+}
+
+p.title {
+  background: #8fc726;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
+h1.title-small {
+  background: none;
+  color: #000;
+  text-align: left;
+}
+
+.content .media .media-left .field-type-image {
+  width: 220px;
+}
+
+.field-type-image img {
+  width: 100%;
+  height: auto;
+}
+
+.field-name-field-id-text .field-label {
+  display: none;
+}
+
+.field-name-field-id-text .field-items {
+  display: none;
+}
+
+#first-time {
+  display: none;
+}
+
+.farnet-listing__item {
+  border-bottom: none;
+}
+
+.fr-select div.form-item {
+  margin-top: 0;
+}
+
+.fr-select {
+  float: left;
+  margin-right: 2em;
+}
+
+.view .views-exposed-widget .form-submit,
+.block .views-exposed-widget .form-submit {
+  margin-top: 1.6em;
+  margin-bottom: 2.3em;
+}
+
+/*
+ * Temporary hide maps.
+ */
+#group-factsheet-flag-map,
+.group-factsheet-flag-map,
+.group-factsheet-map {
+  display: none;
+}
+li a[href*="#group-factsheet-flag-map"] {
+  display: none;
+}
+li a[href*="#group-factsheet-map"] {
+  display: none;
+}
+
+#block-views-ical-block {
+  display: none;
+}
+
+.key-documents ul {
+  padding: 0;
+  margin: 0;
+}
+
+.key-documents-list li {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.field-name-field-ff-multi-funding-txt ul {
+  list-style-type: none;
+}
+
+.group-visuals h2 {
+  display: none;
+}
+
+.field-name-field-ff-total-employment div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-fishing div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-aquaculture div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-processing div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-women-employment div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-number-staff div .field-item:after {
+  content: " FTE";
+}
+.field-name-field-ff-total-public-budget div .field-item:after {
+  content: " €";
+}
+.field-name-field-ff-emff div .field-item:after {
+  content: " €";
+}
+.field-name-field-ff-ms-co-financing div .field-item:after {
+  content: " €";
+}
+
+.field-name-field-contribution-figure div .field-item:after {
+  content: " €";
+}
+
+.fr-u-ul li {
+  float: none !important;
+}
+
+.btn_subscribe {
+  padding-top: 8px;
+}
+
+table.table-responsive.table-blue.table--white-borders th {
+  white-space: nowrap;
+}
+
+.highlight--background .field-name-field-term-country .links {
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  padding: 0 0 0 5px;
+}
+
+.highlight--background .field-collection-container {
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+
+.highlight--background .field-name-field-collection-region ul {
+  display: inline;
+  list-style-type: none;
+}
+
+.highlight--background .field-name-field-collection-region li {
+  display: inline-block;
+  float: left;
+}
+
+.highlight--background .field-name-field-collection-region li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.highlight--background .field-name-field-a5-public-contribution .field-collection-view .content div {
+  float: left;
+}
+
+.highlight--background .field-collection-container .field-name-field-a5-public-contribution .field-items .field-item {
+  margin-bottom: 0px;
+}
+
+.field-name-field-a5-public-contribution .field-name-field-contribution-label div .field-item:after {
+  content: ": ";
+  padding-right: 5px;
+}
+
+.highlight--background .field-name-field-a5-public-contribution .field-collection-view {
+  padding: 0px;
+  border-bottom: none;
+  margin: 0 0 0 0;
+}
+
+.highlight--background .field-name-field-b1-other-contribution .field-collection-view .content div {
+  float: left;
+}
+
+.field-name-field-b1-other-contribution .field-name-field-contribution-label div .field-item:after {
+  content: ": ";
+  padding-right: 5px;
+}
+
+.highlight--background .field-collection-container .field-name-field-b1-other-contribution .field-items .field-item {
+  margin: 0px;
+}
+
+.highlight--background .field-name-field-b1-other-contribution .field-collection-view {
+  padding: 0px;
+  border-bottom: none;
+  margin: 0 0 0 0;
+}
+
+.front #block-system-main {
+  display: none;
+}
+
+#responsive-sidebar {
+  z-index: 3;
+}
+
+.farnet_block_homepage:hover {
+  text-decoration: none;
+}
+
+.group-download .field-collection-container {
+  border: none;
+}
+
+.group-factsheet-key-documents .field-collection-container {
+  border: none;
+}
+
+.field-languages {
+  list-style: none;
+  display: inline-flex;
+  margin-left: -35px;
+}
+
+.language_level:after {
+  content: ",";
+  margin-right: 5px;
+  margin-left: -5px;
+}
+
+.language_level:last-child:after {
+  content: "";
+}
+
+.organisation_node_render .field-label {
+  float: left;
+  font-weight: bold;
+}

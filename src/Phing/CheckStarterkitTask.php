@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains NextEuropa\Phing\CheckStarterkitTask.
- */
-
 namespace NextEuropa\Phing;
 
 use GitWrapper\GitException;

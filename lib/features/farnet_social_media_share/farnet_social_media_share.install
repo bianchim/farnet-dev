@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Installs the Farnet Social Block.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_social_media_share_enable() {
+  drupal_flush_all_caches();
+  features_revert_module("nexteuropa_webtools");
+
+  $bean = bean_create(array('type' => 'webtools'));
+  $bean->label = 'Farnet Social Links to Share';
+  $bean->title = '';
+  $bean->delta = 'bean-social-links';
+  $bean->field_json_object = [
+    LANGUAGE_NONE => [
+      0 => [
+        'value' => '{
+          "service": "sbkm",
+          "to": [
+            "twitter",
+            "facebook",
+            "linkedin"
+          ],
+          "via": "EU_FARNET",
+          "selection": false
+          "css": {
+            "button": "btn btn-default f-home__button-cta f-home__button-share"
+          }
+        }',
+      ],
+    ],
+  ];
+  $bean->save();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_social_media_share_disable() {
+  if ($block = bean_delta_load('bean-social-links')) {
+    bean_delete($block);
+  }
+}

@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Installs the Farnet Twitter Feature.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function farnet_twitter_enable() {
+  drupal_flush_all_caches();
+  features_revert_module("nexteuropa_webtools");
+
+  $bean = bean_create(array('type' => 'webtools'));
+  $bean->label = 'Twitter Block';
+  $bean->title = '';
+  $bean->delta = 'bean-twitter-block';
+  $bean->field_json_object = [
+    LANGUAGE_NONE => [
+      0 => [
+        'value' => '{
+          "service": "smk",
+          "type": "user",
+          "display_user": true,
+          "display_user_pic": false,
+          "auto_expand_photo": false,
+          "auto_expand_video": false,
+          "screen_name": "EU_FARNET",
+          "count": "3",
+          "include_rts": false,
+          "rts_display_original": false,
+          "exclude_replies": true,
+          "tweet_more_btn": true
+        }',
+      ],
+    ],
+  ];
+  $bean->save();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function farnet_twitter_disable() {
+  if ($block = bean_delta_load('bean-twitter-block')) {
+    bean_delete($block);
+  }
+}

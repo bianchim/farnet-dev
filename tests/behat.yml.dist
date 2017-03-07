@@ -3,9 +3,9 @@ default:
     default:
       contexts:
         - FeatureContext
+        - OverrideContext
         - Drupal\DrupalExtension\Context\DrushContext
         - Drupal\DrupalExtension\Context\MessageContext
-        - Drupal\nexteuropa\Context\DrupalContext
         - Drupal\nexteuropa\Context\MinkContext
       filters:
         tags: "~@wip"
@@ -15,6 +15,7 @@ default:
       selenium2: ~
       javascript_session: 'selenium2'
       base-url: '${behat.base_url}'
+      files_path: '${behat.dir}/files'
     Drupal\DrupalExtension:
       api_driver: 'drupal'
       blackbox: ~
@@ -27,5 +28,15 @@ default:
       subcontexts:
         paths:
           - '${behat.subcontexts.path}'
+      region_map:
+        admin_menu: "#admin-menu-menu"
+        content_top: ".region-content-top"
+        header_top: ".region-header-top"
+        header: "#layout-header"
+        primary_tabs: ".tabs-primary"
+        content: "#layout-body"
+        footer: "#layout-footer"
+        sidebar_left: "#sidebar-left"
+        sidebar_right: "#sidebar-right"
   formatters:
     ${behat.formatter.name}: ~
