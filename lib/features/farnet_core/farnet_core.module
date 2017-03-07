@@ -773,12 +773,12 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
   }
 
   $contact_detail_output = '';
-  foreach ($flag_organisations as $key => $value) {
+  foreach ($flag_organisations as $value) {
     if (!is_array($value)) {
       $contact_detail_output .= $value;
     }
     else {
-      foreach ($value as $key => $item) {
+      foreach ($value as $item) {
         $contact_detail_output .= $item;
       }
     }
