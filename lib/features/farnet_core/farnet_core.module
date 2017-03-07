@@ -306,8 +306,6 @@ function farnet_core_node_view($node, $view_mode, $langcode) {
             'js' => [
               'data' => $path . '/js/farnet_core_contact_details.js',
               'type' => 'file',
-              'scope' => 'footer',
-              'weight' => 100,
             ],
           ],
         ];
