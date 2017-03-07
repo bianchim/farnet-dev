@@ -112,7 +112,6 @@ function farnet_cooperation_call_field_group_info() {
     'label' => 'Metadata',
     'weight' => '5',
     'children' => array(
-      0 => 'og_group_ref',
       1 => 'language',
     ),
     'format_type' => 'tab',

@@ -496,8 +496,6 @@ function farnet_factsheet_country_field_group_info() {
     'weight' => '11',
     'children' => array(
       0 => 'field_tags',
-      1 => 'group_content_access',
-      2 => 'og_group_ref',
     ),
     'format_type' => 'hidden',
     'format_settings' => array(
@@ -521,8 +519,6 @@ function farnet_factsheet_country_field_group_info() {
     'weight' => '11',
     'children' => array(
       0 => 'field_tags',
-      1 => 'group_content_access',
-      2 => 'og_group_ref',
       3 => 'scheduler_settings',
       4 => 'language',
     ),

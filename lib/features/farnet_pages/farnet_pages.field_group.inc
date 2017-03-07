@@ -137,8 +137,6 @@ function farnet_pages_field_group_info() {
     'label' => 'Metadata',
     'weight' => '5',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'group_content_access',
       2 => 'field_tags',
       3 => 'scheduler_settings',
       4 => 'language',
