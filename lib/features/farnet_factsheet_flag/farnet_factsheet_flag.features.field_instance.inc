@@ -3662,11 +3662,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'ne_faq' => 0,
         'nexteuropa_galleries' => 0,
         'nexteuropa_token_ckeditor_filter_view' => 0,
-        'og_all_user_group_content' => 0,
-        'og_members' => 0,
-        'og_members_admin' => 0,
-        'og_nodes' => 0,
-        'og_user_groups' => 0,
         'rules_scheduler' => 0,
         'simplenews_statistics_clicks' => 0,
         'simplenews_statistics_opens' => 0,
@@ -3676,7 +3671,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'tmgmt_local_manage_translate_task' => 0,
         'tmgmt_local_task_items' => 0,
         'tmgmt_local_task_overview' => 0,
-        'tmgmt_og_job_overview' => 0,
         'tmgmt_ui_job_item_messages' => 0,
         'tmgmt_ui_job_items' => 0,
         'tmgmt_ui_job_messages' => 0,
@@ -3763,11 +3757,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'nexteuropa_galleries' => 0,
         'nexteuropa_token_ckeditor_filter_view' => 0,
         'nexteuropa_webtools_filter_view' => 0,
-        'og_all_user_group_content' => 0,
-        'og_members' => 0,
-        'og_members_admin' => 0,
-        'og_nodes' => 0,
-        'og_user_groups' => 0,
         'rules_scheduler' => 0,
         'simplenews_statistics_clicks' => 0,
         'simplenews_statistics_opens' => 0,
@@ -3777,7 +3766,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
         'tmgmt_local_manage_translate_task' => 0,
         'tmgmt_local_task_items' => 0,
         'tmgmt_local_task_overview' => 0,
-        'tmgmt_og_job_overview' => 0,
         'tmgmt_ui_job_item_messages' => 0,
         'tmgmt_ui_job_items' => 0,
         'tmgmt_ui_job_messages' => 0,
@@ -3797,104 +3785,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'settings' => array(),
       'type' => 'viewfield_select',
       'weight' => 122,
-    ),
-  );
-
-  // Exported field_instance: 'node-factsheet_flag-group_content_access'.
-  $field_instances['node-factsheet_flag-group_content_access'] = array(
-    'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 33,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 35,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'group_content_access',
-    'label' => 'Group content visibility',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-factsheet_flag-og_group_ref'.
-  $field_instances['node-factsheet_flag-og_group_ref'] = array(
-    'bundle' => 'factsheet_flag',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 32,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 7,
     ),
   );
 
@@ -4005,8 +3895,6 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('Funds');
   t('Gallery');
   t('Google+');
-  t('Group content visibility');
-  t('Groups audience');
   t('Interactive Map');
   t('Language');
   t('Latitude');
