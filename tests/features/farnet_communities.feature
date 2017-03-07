@@ -173,7 +173,7 @@ Feature: Communities feature
       | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news   |
       | A public community  | community_public  | community/public-community  | Discussion                | farnet_discussion |
       | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event  |
-      | A public community  | community_public  | community/public-community  | Cooperation Call          | cooperation_call  |
+      #| A public community  | community_public  | community/public-community  | Cooperation Call          | cooperation_call  |
       | A public community  | community_public  | community/public-community  | Cooperation Idea          | cooperation_idea  |
       | A public community  | community_public  | community/public-community  | Good Practice Method      | gp_method         |
       | A public community  | community_public  | community/public-community  | Good Practice Project     | gp_project        |
