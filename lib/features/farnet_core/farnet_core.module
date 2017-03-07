@@ -298,17 +298,20 @@ function farnet_core_node_view($node, $view_mode, $langcode) {
     case "full":
       $content_types = _farnet_core_get_contact_details_bundles();
       if (in_array($node->type, $content_types)) {
-        $path = drupal_get_path('module', 'farnet_core');
         $node->content['contact_details'] = [
           '#markup' => _farnet_core_display_contact_details($node),
           '#weight' => 1000,
-          '#attached' => [
-            'js' => [
-              'data' => $path . '/js/farnet_core_contact_details.js',
-              'type' => 'file',
-            ],
-          ],
         ];
+
+        if ($node->type === 'factsheet_flag') {
+          $path_js_file = drupal_get_path('module', 'farnet_core') . '/js/farnet_core_contact_details.js';
+          if (file_exists($path_js_file)) {
+            $node->content['contact_details']['#attached']['js'][] = [
+              'data' => $path_js_file,
+              'type' => 'file',
+            ];
+          }
+        }
       }
       break;
 
