@@ -23,7 +23,7 @@ function myfarnet_event_ctools_plugin_api($module = NULL, $api = NULL) {
 function myfarnet_event_node_info() {
   $items = array(
     'myfarnet_event' => array(
-      'name' => t('MyFarnet Event'),
+      'name' => t('Event'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
