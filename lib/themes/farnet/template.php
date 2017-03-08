@@ -1002,10 +1002,13 @@ function farnet_preprocess_node(&$variables) {
   $types = ['community_public', 'community_private', 'community_hidden'];
   if(in_array($variables['type'], $types)) {
     $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $variables['nid']])->fetchCol();
-    $update_date = db_query("SELECT MAX(changed) FROM {node} WHERE nid IN (:nids)", [':nids' => $nids])->fetchField();
 
-    if (!is_null($update_date) && $update_date) {
-      $variables['last_updated'] = format_date($update_date, 'date_only');
+    if (!empty($nids)) {
+      $update_date = db_query("SELECT MAX(changed) FROM {node} WHERE nid IN (:nids)", [':nids' => $nids])->fetchField();
+
+      if (!is_null($update_date) && $update_date) {
+        $variables['last_updated'] = format_date($update_date, 'date_only');
+      }
     }
   }
 
