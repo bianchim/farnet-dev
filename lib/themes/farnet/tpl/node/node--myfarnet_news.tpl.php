@@ -54,7 +54,7 @@
     <div class="link-wrapper right"></div>
 
     <?php if (!empty($content['field_related_documents'])) : ?>
-      <div id="group-myfarnet-news-page" class="group-myfarnet-news-page field-group-tab">
+      <div id="group-myfarnet-news-documents" class="group-myfarnet-news-documents field-group-tab">
         <h3 class="fr-heading"><span><?php print $content['field_related_documents']['#title']; ?></span></h3>
         <?php print render($content['field_related_documents']); ?>
       </div>
