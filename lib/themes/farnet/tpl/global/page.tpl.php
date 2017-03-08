@@ -189,9 +189,12 @@ global $base_url;
           <?php if (isset($node_type)): ?>
             <p class="title"><?php print $node_type; ?></p>
           <?php endif; ?>
+          <?php if (isset($node_community_name)): ?>
+            <p class="title"><?php print $node_community_name; ?></p>
+          <?php endif; ?>
           <?php if ($title && !drupal_is_front_page()): ?>
             <?php print render($title_prefix); ?>
-            <h1 class="title<?php if (isset($node_type)): ?>-small<?php endif; ?>" id="content-title">
+            <h1 class="title<?php if ((isset($node_type))||(isset($node_community_name))): ?>-small<?php endif; ?>" id="content-title">
               <?php print $title; ?>
             </h1>
             <?php print render($title_suffix); ?>

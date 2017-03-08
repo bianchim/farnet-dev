@@ -23,7 +23,7 @@ function myfarnet_cooperation_idea_ctools_plugin_api($module = NULL, $api = NULL
 function myfarnet_cooperation_idea_node_info() {
   $items = array(
     'myfarnet_cooperation_idea' => array(
-      'name' => t('MyFarnet Cooperation Idea'),
+      'name' => t('Cooperation Idea'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
