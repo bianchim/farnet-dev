@@ -230,3 +230,30 @@ function farnet_communities_views_pre_render(&$view) {
     $view->display_handler->set_option('link_url', 'community/' . $title . '/members-list');
   }
 }
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_communities_block_view_alter(&$data, $block) {
+  switch ($block->bid) {
+    // Exclude content types from the og content creation button.
+    case 'multisite_og_button-og-contextual-links':
+      // Get allowed content types.
+      $allowed = array_flip(og_content_type_admin_access_group());
+      // For each CT in the create button, check the access.
+      $items = &$data['content']['og_node_create_links']['#items'];
+      foreach ($items as $key => &$item) {
+        // Use a regexp to get the content type from the node/add url.
+        $matches = [];
+        preg_match_all("/\/node\/add\/([a-zA-Z0-9-]*)_/", $item['data'], $matches);
+        $content_type = reset($matches[1]);
+        // Change the hyphen back to underscores.
+        $content_type = str_replace('-', '_', $content_type);
+        // Exclude if necessary.
+        if (!in_array($content_type, $allowed)) {
+          unset($items[$key]);
+        }
+      }
+      break;
+  }
+}

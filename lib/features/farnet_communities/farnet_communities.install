@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install processes for FARNET communities.
+ */
+
+/**
+ * Set all content types as not required in communities.
+ *
+ * Implements hook_update_N().
+ */
+function farnet_communities_update_7001() {
+  $content_types = db_query("SELECT types_active FROM {og_content_type_admin} WHERE gid='-1'")->fetchField();
+  $content_types = unserialize($content_types);
+  foreach ($content_types as &$data) {
+    $data = 0;
+  }
+  $content_types = serialize($content_types);
+  db_update('og_content_type_admin')
+    ->fields(['types_active' => $content_types])
+    ->condition('gid', '-1')
+    ->execute();
+}
