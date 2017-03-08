@@ -10,6 +10,8 @@
  */
 
 /**
+ * Setup the FARNET search.
+ *
  * Implements hook_update_N().
  */
 function farnet_search_update_7002() {

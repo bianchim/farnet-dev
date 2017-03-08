@@ -43,6 +43,5 @@ features[user_permission][] = edit any nexteuropa_faq content
 features[user_permission][] = edit own nexteuropa_faq content
 features[user_permission][] = edit terms in faq_categories
 features[variable][] = xmlsitemap_settings_node_nexteuropa_faq
-features_exclude[dependencies][og] = og
 features_exclude[field_group][group_ne_page_taxonomy|node|nexteuropa_faq|form] = group_ne_page_taxonomy|node|nexteuropa_faq|form
 features_exclude[field_base][field_id] = field_id

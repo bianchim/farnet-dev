@@ -400,3 +400,35 @@ table.table-responsive.table-blue.table--white-borders th {
     height: 361px;
   }
 }
+
+.flag-contacts-detail.panel-group h4 a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts-detail.panel-group h4 a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts-detail.panel-group h4 a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts .field-label-light {
+  float: left;
+  margin-right: 5px;
+}
+
+.field-contact-hidden {
+  display: none;
+}
+
+#button-show-detail {
+  margin-bottom: 5px;
+}
+
+.flag-contacts-right {
+  display: none;
+}
