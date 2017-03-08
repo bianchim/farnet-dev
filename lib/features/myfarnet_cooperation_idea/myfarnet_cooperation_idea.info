@@ -99,4 +99,3 @@ features[variable][] = node_submitted_myfarnet_cooperation_idea
 features[variable][] = xmlsitemap_settings_node_myfarnet_cooperation_idea
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
-project path = sites/all/modules/features
