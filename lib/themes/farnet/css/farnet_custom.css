@@ -149,6 +149,11 @@ h1.title-small {
   height: auto;
 }
 
+#edit-field-picture img {
+  width: auto;
+  height: auto;
+}
+
 .field-name-field-id-text .field-label {
   display: none;
 }
