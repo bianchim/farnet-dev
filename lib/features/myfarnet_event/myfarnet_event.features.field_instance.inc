@@ -94,7 +94,7 @@ function myfarnet_event_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'farnet_date_hour',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
