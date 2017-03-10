@@ -25,16 +25,17 @@ function farnet_preprocess_page(&$variables) {
 
   // Switch title to page type.
   if (isset($variables['node'])) {
-    $node_type = node_type_get_name($variables['node']);
-    if (!in_array($node_type, array('Basic page', 'Article', 'Landing Page', 'MyFarnet News', 'MyFarnet Event', 'MyFarnet Discussion', 'MyFarnet Cooperation Idea'))) {
+    /* $node_type = node_type_get_name($variables['node']); */
+    $node_type = $variables['node']->type;
+    if (!in_array($node_type, array('page', 'farnet_article', 'landing_page', 'myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $variables['node_type'] = $node_type;
     }
-    if (in_array($node_type, array('MyFarnet News', 'MyFarnet Event', 'MyFarnet Discussion', 'MyFarnet Cooperation Idea'))) {
+    if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();
       $node_community = node_load($data['gid']);
       $variables['node_community_name'] = $node_community->title;
     }
-    if (in_array($node_type, array('Landing Page'))) {
+    if (in_array($node_type, array('landing_page'))) {
       // Format regions.
       $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
     }
