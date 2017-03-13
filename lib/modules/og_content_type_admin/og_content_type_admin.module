@@ -1010,7 +1010,7 @@ function og_content_type_admin_node_access($node, $op, $account) {
                 ->fetchAssoc();
     // If we're keeping track of this group, get it's active types,
     // otherwise, get the defaults.
-    if (!count($result)) {
+    if ($result === FALSE || !count($result)) {
       $result = db_select('og_content_type_admin', 'octa')
         ->fields('octa', array('types_active', 'types_allowed'))
         ->condition('gid', 0, '=')
