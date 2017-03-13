@@ -312,7 +312,6 @@ function myfarnet_discussion_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
