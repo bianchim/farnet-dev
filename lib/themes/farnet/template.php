@@ -33,7 +33,9 @@ function farnet_preprocess_page(&$variables) {
     if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();
       $node_community = node_load($data['gid']);
-      $variables['node_community_name'] = $node_community->title;
+      if (isset($node_community->title)) {
+        $variables['node_community_name'] = $node_community->title;
+      }
     }
     if (in_array($node_type, array('landing_page'))) {
       // Format regions.
