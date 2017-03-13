@@ -1021,7 +1021,7 @@ function farnet_preprocess_node(&$variables) {
     if (isset($variables['content']['group_group'][0])) {
       $field_value = &$variables['content']['group_group'][0];
       // Only alter join link.
-      if (strpos($field_value['#href'], 'unsubscribe') === FALSE) {
+      if (isset($field_value['#href']) && strpos($field_value['#href'], 'unsubscribe') === FALSE) {
         if ($variables['type'] === 'community_public') {
           $title = t('Join');
         }

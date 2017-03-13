@@ -78,7 +78,7 @@ Feature: Communities feature
       | workbench_moderation_state_new | published                            |
     Then I should get an access denied error
 
-  @api 
+  @api @test
   Scenario: As an authenticated user
     I can see public and private communities
     I can join a public community
@@ -92,7 +92,7 @@ Feature: Communities feature
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should see the heading "A public community"
-    And I should see "Subscribe to group"
+    And I should see "Join"
     And I am viewing a "nexteuropa_news" content:
       | title                          | A News in a public community         |
       | og_group_ref                   | A public community                   |
@@ -108,7 +108,7 @@ Feature: Communities feature
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should see the heading "A private community"
-    And I should see "Request group membership"
+  And I should see "Ask to join"
     And I am viewing a "nexteuropa_news" content:
       | title                          | A News in a private community        |
       | og_group_ref                   | A private community                  |
