@@ -1016,6 +1016,21 @@ function farnet_preprocess_node(&$variables) {
         $variables['last_updated'] = format_date($update_date, 'date_only');
       }
     }
-  }
 
+    // Get join button in CT.
+    if (isset($variables['content']['group_group'][0])) {
+      $field_value = &$variables['content']['group_group'][0];
+      // Only alter join link.
+      if (isset($field_value['#href']) && strpos($field_value['#href'], 'unsubscribe') === FALSE) {
+        if ($variables['type'] === 'community_public') {
+          $title = t('Join');
+        }
+        else {
+          $title = t('Ask to join');
+        }
+
+        $field_value['#title'] = $title;
+      }
+    }
+  }
 }
