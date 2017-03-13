@@ -36,6 +36,9 @@ function farnet_core_install() {
   // Set the new Farnet theme.
   theme_enable(['farnet']);
   variable_set('theme_default', 'farnet');
+
+  // Insert new date format.
+  _farnet_core_insert_dates();
 }
 
 /**
@@ -64,4 +67,24 @@ function farnet_core_enable() {
  */
 function farnet_core_disable() {
   drupal_set_message(t('The FARNET Core feature is now disabled on your site.'));
+}
+
+/**
+ * Insert a new date format, fe_date triggers errors.
+ *
+ * Implement hook_update_N().
+ */
+function farnet_core_update_7001() {
+  _farnet_core_insert_dates();
+}
+
+/**
+ * Insert new date format.
+ */
+function _farnet_core_insert_dates() {
+  $record = ['format' => 'Y/m/d', 'type' => 'custom', 'locked' => 1];
+  drupal_write_record('date_formats', $record);
+
+  $record = ['type' => 'date_only', 'title' => 'Date only', 'locked' => 1];
+  drupal_write_record('date_format_type', $record);
 }

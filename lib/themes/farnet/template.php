@@ -25,16 +25,17 @@ function farnet_preprocess_page(&$variables) {
 
   // Switch title to page type.
   if (isset($variables['node'])) {
-    $node_type = node_type_get_name($variables['node']);
-    if (!in_array($node_type, array('Basic page', 'Article', 'Landing Page', 'MyFarnet News', 'MyFarnet Event', 'MyFarnet Discussion', 'MyFarnet Cooperation Idea'))) {
+    /* $node_type = node_type_get_name($variables['node']); */
+    $node_type = $variables['node']->type;
+    if (!in_array($node_type, array('page', 'farnet_article', 'landing_page', 'myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $variables['node_type'] = $node_type;
     }
-    if (in_array($node_type, array('MyFarnet News', 'MyFarnet Event', 'MyFarnet Discussion', 'MyFarnet Cooperation Idea'))) {
+    if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();
       $node_community = node_load($data['gid']);
       $variables['node_community_name'] = $node_community->title;
     }
-    if (in_array($node_type, array('Landing Page'))) {
+    if (in_array($node_type, array('landing_page'))) {
       // Format regions.
       $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
     }
@@ -997,4 +998,24 @@ function farnet_preprocess_image_style(&$vars) {
       $vars['attributes']['class'][] = 'media-object farnet-listing__picture';
     }
   }
+}
+
+/**r
+ * Implements template_preprocess_node().
+ */
+function farnet_preprocess_node(&$variables) {
+  // Add a last updated date to communities.
+  $types = ['community_public', 'community_private', 'community_hidden'];
+  if(in_array($variables['type'], $types)) {
+    $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $variables['nid']])->fetchCol();
+
+    if (!empty($nids)) {
+      $update_date = db_query("SELECT MAX(changed) FROM {node} WHERE nid IN (:nids)", [':nids' => $nids])->fetchField();
+
+      if (!is_null($update_date) && $update_date) {
+        $variables['last_updated'] = format_date($update_date, 'date_only');
+      }
+    }
+  }
+
 }

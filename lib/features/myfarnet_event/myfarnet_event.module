@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the MyFarnet Event feature.
+ */
+
+include_once 'myfarnet_event.features.inc';
