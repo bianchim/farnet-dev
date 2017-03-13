@@ -28,25 +28,6 @@ function farnet_core_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_fe_date_custom_date_formats().
- */
-function farnet_core_fe_date_custom_date_formats() {
-  $custom_date_formats = array();
-  $custom_date_formats['Y/m/d'] = 'Y/m/d';
-  return $custom_date_formats;
-}
-
-/**
- * Implements hook_date_format_types().
- */
-function farnet_core_date_format_types() {
-  $format_types = array();
-  // Exported date format type: date_only.
-  $format_types['date_only'] = 'Date only';
-  return $format_types;
-}
-
-/**
  * Implements hook_image_default_styles().
  */
 function farnet_core_image_default_styles() {
