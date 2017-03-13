@@ -239,7 +239,7 @@ function farnet_communities_block_view_alter(&$data, $block) {
     // Exclude content types from the og content creation button.
     case 'multisite_og_button-og-contextual-links':
       // Get allowed content types.
-      $allowed = array_flip(og_content_type_admin_access_group());
+      $allowed = og_content_type_admin_access_group();
       // For each CT in the create button, check the access.
       $items = &$data['content']['og_node_create_links']['#items'];
       if (!empty($items)) {
@@ -251,7 +251,7 @@ function farnet_communities_block_view_alter(&$data, $block) {
           // Change the hyphen back to underscores.
           $content_type = str_replace('-', '_', $content_type);
           // Exclude if necessary.
-          if (!in_array($content_type, $allowed)) {
+          if (!array_key_exists($content_type, $allowed)) {
             unset($items[$key]);
           }
         }
