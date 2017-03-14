@@ -246,3 +246,20 @@ function farnet_communities_views_pre_render(&$view) {
     }
   }
 }
+
+/**
+ * Calculate the last updated date of a node for a group.
+ */
+function _farnet_communities_get_last_updated_date($gid) {
+  $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
+
+  if (!empty($nids)) {
+    $update_date = db_query("SELECT MAX(changed) FROM {node} WHERE nid IN (:nids)", [':nids' => $nids])->fetchField();
+
+    if (!is_null($update_date) && $update_date) {
+      return format_date($update_date, 'date_only');
+    }
+  }
+
+  return FALSE;
+}
