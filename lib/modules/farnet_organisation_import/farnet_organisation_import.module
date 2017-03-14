@@ -146,15 +146,15 @@ function _farnet_organisation_import_save_to_db() {
   fclose($handle_orga);
 
   // Set batch operations for contact and organisation import.
-  $operation_count = ceil(($contact_number - 1) / 50);
+  $operation_count = ceil(($contact_number - 1) / 25);
   for ($i = 0; $i < $operation_count; $i++) {
-    $params = array($i * 50 + 1, $csv_contact);
+    $params = array($i * 25 + 1, $csv_contact);
     $operations[] = array('_farnet_organisation_import_contacts_to_db', $params);
   }
 
-  $operation_count = ceil(($orga_number - 1) / 50);
+  $operation_count = ceil(($orga_number - 1) / 25);
   for ($i = 0; $i < $operation_count; $i++) {
-    $params = array($i * 50 + 1, $csv_orga);
+    $params = array($i * 25 + 1, $csv_orga);
     $operations[] = array('_farnet_organisation_import_organisations_to_db', $params);
   }
 
@@ -191,7 +191,7 @@ function _farnet_organisation_import_contacts_to_db($start, $file) {
 
   $handle = fopen($file, "r");
 
-  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 50) {
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 25) {
     // Skip process entries.
     if ($row_num < $start) {
       $row_num++;
@@ -264,7 +264,7 @@ function _farnet_organisation_import_organisations_to_db($start, $file) {
 
   $handle = fopen($file, "r");
 
-  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 50) {
+  while (($data = fgetcsv($handle, 0, ",")) !== FALSE && $done < 25) {
     // Skip process entries.
     if ($row_num < $start) {
       $row_num++;
@@ -316,12 +316,12 @@ function _farnet_organisation_import_save_from_db() {
     ->fetchField();
 
   // Set batch operations for contact and organisation import.
-  $operation_count = ceil($contact_number / 50);
+  $operation_count = ceil($contact_number / 25);
   for ($i = 0; $i < $operation_count; $i++) {
     $operations[] = ['_farnet_organisation_import_contacts_from_db', []];
   }
 
-  $operation_count = ceil($orga_number / 50);
+  $operation_count = ceil($orga_number / 25);
   for ($i = 0; $i < $operation_count; $i++) {
     $operations[] = ['_farnet_organisation_import_organisations_from_db', []];
   }
@@ -352,11 +352,11 @@ function _farnet_organisation_import_save_from_db() {
  * Batch process function, save contacts as drupal content.
  */
 function _farnet_organisation_import_contacts_from_db() {
-  // Get the next 50 contacts to import.
+  // Get the next 25 contacts to import.
   $rows = db_select('import_contact_persons', 'icp')
     ->fields('icp')
     ->condition('imported', '0', '=')
-    ->range(0, 49)
+    ->range(0, 24)
     ->execute()
     ->fetchAllAssoc('cid');
 
@@ -432,11 +432,11 @@ function _farnet_organisation_import_contacts_from_db() {
  * Batch process function, save organisations as drupal content.
  */
 function _farnet_organisation_import_organisations_from_db() {
-  // Get the next 50 contacts to import.
+  // Get the next 25 contacts to import.
   $rows = db_select('import_organisations', 'io')
     ->fields('io')
     ->condition('imported', '0', '=')
-    ->range(0, 49)
+    ->range(0, 24)
     ->execute()
     ->fetchAllAssoc('oid');
 
