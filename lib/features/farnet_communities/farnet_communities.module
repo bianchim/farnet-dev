@@ -263,3 +263,20 @@ function _farnet_communities_get_last_updated_date($gid) {
 
   return FALSE;
 }
+
+/**
+ * Calculate the number of discussion in a community.
+ */
+function _farnet_communities_discussion_count($gid) {
+  $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
+
+  if (!empty($nids)) {
+    $count = db_query("SELECT COUNT(nid) FROM {node} WHERE nid IN (:nids) AND type=:type", [':nids' => $nids, ':type' => 'myfarnet_discussion'])->fetchField();
+
+    if (!is_null($count) && $count) {
+      return $count;
+    }
+  }
+
+  return 0;
+}
