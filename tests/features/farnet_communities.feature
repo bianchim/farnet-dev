@@ -78,7 +78,7 @@ Feature: Communities feature
       | workbench_moderation_state_new | published                            |
     Then I should get an access denied error
 
-  @api 
+  @api @test
   Scenario: As an authenticated user
     I can see public and private communities
     I can join a public community
@@ -92,7 +92,7 @@ Feature: Communities feature
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should see the heading "A public community"
-    And I should see "Subscribe to group"
+    And I should see "Join"
     And I am viewing a "nexteuropa_news" content:
       | title                          | A News in a public community         |
       | og_group_ref                   | A public community                   |
@@ -108,7 +108,7 @@ Feature: Communities feature
       | field_ne_body         | Lorem ipsum dolor sit amet body.     |
       | status                | 1                                    |
     Then I should see the heading "A private community"
-    And I should see "Request group membership"
+  And I should see "Ask to join"
     And I am viewing a "nexteuropa_news" content:
       | title                          | A News in a private community        |
       | og_group_ref                   | A private community                  |
@@ -169,16 +169,16 @@ Feature: Communities feature
     And I should not see "New draft"
 
     Examples:
-      | community-title     |  community-type   |  community-path             | content-hname             | content-type      |
-      | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news   |
-      | A public community  | community_public  | community/public-community  | Discussion                | farnet_discussion |
-      | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event  |
-      | A private community | community_private | community/private-community | News                      | nexteuropa_news   |
-      | A private community | community_private | community/private-community | Discussion                | farnet_discussion |
-      | A private community | community_private | community/private-community | Event                     | nexteuropa_event  |
-      | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news   |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | farnet_discussion |
-      | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event  |
+      | community-title     |  community-type   |  community-path             | content-hname             | content-type        |
+      | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news     |
+      | A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
+      | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event    |
+      | A private community | community_private | community/private-community | News                      | nexteuropa_news     |
+      #| A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
+      | A private community | community_private | community/private-community | Event                     | nexteuropa_event    |
+      | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news     |
+      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
+      | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event    |
 
   @api
   Scenario Outline: As a member, I can add/edit/delete only my own contents of any of the communities where I am a administrator
@@ -217,13 +217,13 @@ Feature: Communities feature
     Then I see the button "Delete"
 
     Examples:
-      | community-title     |  community-type   |  community-path             | content-hname             | content-type      |
-      | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news   |
-      | A public community  | community_public  | community/public-community  | Discussion                | farnet_discussion |
-      | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event  |
-      | A private community | community_private | community/private-community | News                      | nexteuropa_news   |
-      | A private community | community_private | community/private-community | Discussion                | farnet_discussion |
-      | A private community | community_private | community/private-community | Event                     | nexteuropa_event  |
-      | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news   |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | farnet_discussion |
-      | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event  |
+      | community-title     |  community-type   |  community-path             | content-hname             | content-type        |
+      | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news     |
+      | A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
+      | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event    |
+      | A private community | community_private | community/private-community | News                      | nexteuropa_news     |
+      | A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
+      | A private community | community_private | community/private-community | Event                     | nexteuropa_event    |
+      | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news     |
+      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
+      | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event    |

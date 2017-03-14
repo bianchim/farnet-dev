@@ -51,6 +51,12 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['group_group']['settings'] = array(
     'field_name' => 'og_user_node',
   );
+  /* Field: Farnet communities: Last updated date */
+  $handler->display->display_options['fields']['last_updated_date']['id'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['last_updated_date']['field'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['label'] = '';
+  $handler->display->display_options['fields']['last_updated_date']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';

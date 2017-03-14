@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the MyFarnet Cooperation Idea feature.
+ */
+
+include_once 'myfarnet_cooperation_idea.features.inc';

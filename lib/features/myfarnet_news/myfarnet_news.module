@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the MyFarnet News feature.
+ */
+
+include_once 'myfarnet_news.features.inc';

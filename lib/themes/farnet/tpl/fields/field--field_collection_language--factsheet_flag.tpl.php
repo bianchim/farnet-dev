@@ -43,7 +43,7 @@
  */
 ?>
 <div class="flag-contacts">
-  <div class="field-label"><?php print t('Languages :'); ?></div>
+  <div class="field-label"><?php print t('Languages:'); ?></div>
   <ul class="field-languages">
     <?php foreach ($items as $delta => $item_collection): ?>
       <?php foreach ($item_collection['entity']['field_collection_item'] as $delta => $item): ?>
