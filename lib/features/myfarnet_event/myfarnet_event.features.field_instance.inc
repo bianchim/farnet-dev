@@ -251,7 +251,7 @@ function myfarnet_event_field_default_field_instances() {
           'myfarnet_html' => 'myfarnet_html',
           'plain_text' => 0,
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
