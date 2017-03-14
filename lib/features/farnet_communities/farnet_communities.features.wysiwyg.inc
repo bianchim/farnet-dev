@@ -50,9 +50,6 @@ function farnet_communities_wysiwyg_default_profiles() {
           'lite_ToggleShow' => 1,
           'lite_ToggleTracking' => 1,
         ),
-        'drupal' => array(
-          'media' => 1,
-        ),
       ),
       'toolbar_loc' => 'top',
       'toolbar_align' => 'left',

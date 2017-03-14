@@ -6,12 +6,3 @@
  */
 
 include_once 'myfarnet_cooperation_idea.features.inc';
-
-/**
- * Implements hook_media_browser_plugins_alter().
- */
-function myfarnet_cooperation_idea_media_browser_plugins_alter(&$plugins) {
-  /*unset($plugins['media_default--media_browser_1']);*/
-  /*unset($plugins['media_internet']);*/
-  /*unset($plugins['media_default--media_browser_my_files']);*/
-}
