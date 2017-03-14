@@ -16,6 +16,15 @@
       </div>
     <?php endif; ?>
 
+    <?php
+      if (isset($comment_count)) {
+        print '<div>';
+        print t('Comments :');
+        print $comment_count;
+        print '<div>';
+      }
+    ?>
+
     <div class="media media--farnet">
       <?php if (!empty($content['field_picture'])) : ?>
         <div class="media-left">

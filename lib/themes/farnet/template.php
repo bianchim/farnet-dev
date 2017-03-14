@@ -1006,9 +1006,11 @@ function farnet_preprocess_image_style(&$vars) {
  * Implements template_preprocess_node().
  */
 function farnet_preprocess_node(&$variables) {
+
+
   // Add a last updated date to communities.
   $types = ['community_public', 'community_private', 'community_hidden'];
-  if(in_array($variables['type'], $types)) {
+  if (in_array($variables['type'], $types)) {
     $last = _farnet_communities_get_last_updated_date($variables['nid']);
     if ($last) {
       $variables['last_updated'] = $last;
@@ -1030,4 +1032,20 @@ function farnet_preprocess_node(&$variables) {
       }
     }
   }
+
+  // Display information on community contents.
+  $comm_content = [
+    'myfarnet_discussion',
+    'myfarnet_cooperation_idea',
+    'myfarnet_event',
+    'myfarnet_news'
+  ];
+  if (in_array($variables['type'], $comm_content)) {
+    $params = [':nid' => $variables['nid'], ':status' => COMMENT_PUBLISHED];
+    $comm_count = db_query('SELECT COUNT(*) FROM {comment} WHERE nid=:nid AND status=:status', $params)->fetchField();
+    if (isset($comm_count) && $comm_count) {
+      $variables['comment_count'] = $comm_count;
+    }
+  }
+
 }
