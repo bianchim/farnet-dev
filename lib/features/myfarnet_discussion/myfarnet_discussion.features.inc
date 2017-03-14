@@ -2,13 +2,13 @@
 
 /**
  * @file
- * farnet_discussion.features.inc
+ * myfarnet_discussion.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farnet_discussion_ctools_plugin_api($module = NULL, $api = NULL) {
+function myfarnet_discussion_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -20,9 +20,9 @@ function farnet_discussion_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function farnet_discussion_node_info() {
+function myfarnet_discussion_node_info() {
   $items = array(
-    'farnet_discussion' => array(
+    'myfarnet_discussion' => array(
       'name' => t('Discussion'),
       'base' => 'node_content',
       'description' => t('Discussion content type for Farnet Community'),
