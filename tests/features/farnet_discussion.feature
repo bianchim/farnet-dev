@@ -6,7 +6,7 @@ Feature: Discussion content type
   @api
   Scenario Outline: Access to Discussion form
     Given I am logged in as a user with the <role> role
-    When I visit "node/add/farnet-discussion"
+    When I visit "node/add/myfarnet-discussion"
     Then I should see the heading "Create Discussion"
   Examples:
       | role          |
@@ -15,13 +15,13 @@ Feature: Discussion content type
   @api
   Scenario: Access denied to Discussion form
     Given I am an anonymous user
-    When I go to "node/add/farnet-discussion"
+    When I go to "node/add/myfarnet-discussion"
     Then I should get an access denied error
 
   @api
   Scenario: Discussion check mandatory fields
     Given I am logged in as a user with the "administrator" role
-    When I visit "node/add/farnet-discussion"
+    When I visit "node/add/myfarnet-discussion"
     And I press the "Save" button
     Then I should see the error message "Title field is required."
     And I should see the error message "Body field is required."
@@ -29,7 +29,7 @@ Feature: Discussion content type
   @api
    Scenario: Create Discussion
     Given I am logged in as a user with the "administrator" role
-    When I visit "node/add/farnet-discussion"
+    When I visit "node/add/myfarnet-discussion"
     Then I should see the heading "Create Discussion"
     When I fill in "title_field[und][0][value]" with "Behat Discussion Test #1"
     And I fill in "field_ne_body[und][0][value]" with "Lorem ipsum dolor sit amet body."
@@ -41,7 +41,7 @@ Feature: Discussion content type
   @api
   Scenario: Edit Discussion
     Given I am logged in as a user with the "administrator" role
-    When I am viewing an "farnet_discussion" content:
+    When I am viewing an "myfarnet_discussion" content:
       | title                       | Behat Discussion Test #2          |
       | field_ne_body               | Lorem ipsum dolor sit amet body.  |
       | moderation state            | published                         |
@@ -57,7 +57,7 @@ Feature: Discussion content type
   @api
   Scenario: Delete Discussion
     Given I am logged in as a user with the "administrator" role
-    When I am viewing an "farnet_discussion" content:
+    When I am viewing an "myfarnet_discussion" content:
       | title                       | Behat Discussion Test #3         |
       | field_ne_body               | Lorem ipsum dolor sit amet body. |
       | moderation state            | published                        |

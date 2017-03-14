@@ -33,7 +33,9 @@ function farnet_preprocess_page(&$variables) {
     if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();
       $node_community = node_load($data['gid']);
-      $variables['node_community_name'] = $node_community->title;
+      if (isset($node_community->title)) {
+        $variables['node_community_name'] = $node_community->title;
+      }
     }
     if (in_array($node_type, array('landing_page'))) {
       // Format regions.
@@ -1007,14 +1009,9 @@ function farnet_preprocess_node(&$variables) {
   // Add a last updated date to communities.
   $types = ['community_public', 'community_private', 'community_hidden'];
   if(in_array($variables['type'], $types)) {
-    $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $variables['nid']])->fetchCol();
-
-    if (!empty($nids)) {
-      $update_date = db_query("SELECT MAX(changed) FROM {node} WHERE nid IN (:nids)", [':nids' => $nids])->fetchField();
-
-      if (!is_null($update_date) && $update_date) {
-        $variables['last_updated'] = format_date($update_date, 'date_only');
-      }
+    $last = _farnet_communities_get_last_updated_date($variables['nid']);
+    if ($last) {
+      $variables['last_updated'] = $last;
     }
 
     // Get join button in CT.
