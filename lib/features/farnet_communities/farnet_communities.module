@@ -263,3 +263,85 @@ function _farnet_communities_get_last_updated_date($gid) {
 
   return FALSE;
 }
+
+/**
+ * Implements hook_rules_action_info().
+ */
+function farnet_communities_rules_action_info() {
+  $items = array();
+  $items['farnet_communities_get_admins'] = array(
+    'label' => t('Get group administrators from group audience'),
+    'group' => t('FARNET Communities'),
+    'parameter' => array(
+      'group_content' => array(
+        'type' => 'entity',
+        'label' => t('Group content'),
+        'description' => t('The group content determining the group audience.'),
+      ),
+    ),
+    'provides' => array(
+      'group_managers' => array('type' => 'list<user>', 'label' => t('List of group managers')),
+    ),
+    'base' => '_farnet_communities_get_admins',
+    'access callback' => 'og_rules_integration_access',
+  );
+
+  return $items;
+}
+
+/**
+ * Action: Get group admins from a group.
+ */
+function _farnet_communities_get_admins(EntityDrupalWrapper $group) {
+  $entity_type = $group->type();
+  $entity_id = $group->getIdentifier();
+
+  // Not a group.
+  if (!og_is_group($entity_type, $group)) {
+    return;
+  }
+
+  // Get the group roles.
+  $roles = og_roles($entity_type, $group->getBundle(), $entity_id);
+  $admin_rid = array_search(OG_ADMINISTRATOR_ROLE, $roles);
+
+  // Bail out if we can't figure out the admin role id.
+  if (!$admin_rid) {
+    return;
+  }
+
+  $admins = array();
+
+  // Get the group admins for the group.
+  $members = db_select('og_users_roles', 'our')
+    ->fields('our', array('uid'))
+    ->condition('our.gid', $entity_id)
+    ->condition('our.group_type', $entity_type)
+    ->condition('our.rid', $admin_rid)
+    ->execute()
+    ->fetchCol();
+
+  $admins = array_merge($admins, $members);
+
+  // Remove duplicate items.
+  $admins = array_keys(array_flip($admins));
+
+  return array('group_managers' => $admins);
+}
+
+/**
+ * Calculate the number of discussion in a community.
+ */
+function _farnet_communities_discussion_count($gid) {
+  $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
+
+  if (!empty($nids)) {
+    $count = db_query("SELECT COUNT(nid) FROM {node} WHERE nid IN (:nids) AND type=:type", [':nids' => $nids, ':type' => 'myfarnet_discussion'])->fetchField();
+
+    if (!is_null($count) && $count) {
+      return $count;
+    }
+  }
+
+  return 0;
+}

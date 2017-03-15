@@ -57,6 +57,12 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['last_updated_date']['field'] = 'last_updated_date';
   $handler->display->display_options['fields']['last_updated_date']['label'] = '';
   $handler->display->display_options['fields']['last_updated_date']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Discussion count */
+  $handler->display->display_options['fields']['discussion_count']['id'] = 'discussion_count';
+  $handler->display->display_options['fields']['discussion_count']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['discussion_count']['field'] = 'discussion_count';
+  $handler->display->display_options['fields']['discussion_count']['label'] = '';
+  $handler->display->display_options['fields']['discussion_count']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';

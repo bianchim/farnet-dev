@@ -14,7 +14,10 @@ function farnet_communities_views_handlers() {
       'path' => drupal_get_path('module', 'farnet_communities') . '/views',
     ],
     'handlers' => [
-      'farnet_communities_handler_field_last_updated_date' => [
+      'FarnetCommunitiesHandlerFieldLastUpdatedDate' => [
+        'parent' => 'views_handler_field',
+      ],
+      'FarnetCommunitiesHandlerFieldDiscussionCount' => [
         'parent' => 'views_handler_field',
       ],
     ],
@@ -36,6 +39,13 @@ function farnet_communities_views_data() {
         'help' => t('Shows community last updated date.'),
         'field' => [
           'handler' => 'FarnetCommunitiesHandlerFieldLastUpdatedDate',
+        ],
+      ],
+      'discussion_count' => [
+        'title' => t('Discussion count'),
+        'help' => t('Displays the number of discussion in a community.'),
+        'field' => [
+          'handler' => 'FarnetCommunitiesHandlerFieldDiscussionCount',
         ],
       ],
     ],
