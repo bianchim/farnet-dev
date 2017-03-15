@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_communities.features.wysiwyg.inc
@@ -24,23 +25,21 @@ function farnet_communities_wysiwyg_default_profiles() {
         'default' => array(
           'Bold' => 1,
           'Italic' => 1,
-          'Underline' => 1,
-          'JustifyLeft' => 1,
-          'JustifyCenter' => 1,
-          'JustifyRight' => 1,
-          'JustifyBlock' => 1,
           'BulletedList' => 1,
           'NumberedList' => 1,
-          'Outdent' => 1,
-          'Indent' => 1,
           'Undo' => 1,
+          'Redo' => 1,
           'Link' => 1,
           'Unlink' => 1,
           'Anchor' => 1,
+          'Blockquote' => 1,
+          'PasteText' => 1,
           'PasteFromWord' => 1,
-          'Font' => 1,
-          'FontSize' => 1,
-          'Styles' => 1,
+          'Format' => 1,
+          'Table' => 1,
+          'Find' => 1,
+          'Replace' => 1,
+          'Maximize' => 1,
         ),
         'lite' => array(
           'lite_AcceptAll' => 1,
@@ -49,6 +48,9 @@ function farnet_communities_wysiwyg_default_profiles() {
           'lite_RejectOne' => 1,
           'lite_ToggleShow' => 1,
           'lite_ToggleTracking' => 1,
+        ),
+        'drupal' => array(
+          'media' => 1,
         ),
       ),
       'toolbar_loc' => 'top',
