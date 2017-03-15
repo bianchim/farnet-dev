@@ -115,13 +115,14 @@ function myfarnet_cooperation_idea_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'full_html_track' => 'full_html_track',
-          'plain_text' => 'plain_text',
+          'basic_html' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'full_html_track' => 0,
+          'myfarnet_html' => 'myfarnet_html',
+          'plain_text' => 0,
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -136,6 +137,9 @@ function myfarnet_cooperation_idea_field_default_field_instances() {
             ),
             'full_html_track' => array(
               'weight' => -10,
+            ),
+            'myfarnet_html' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => -8,
@@ -522,7 +526,7 @@ function myfarnet_cooperation_idea_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -563,7 +567,7 @@ function myfarnet_cooperation_idea_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
