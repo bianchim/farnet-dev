@@ -1,5 +1,5 @@
 name = MyFarnet Cooperation Idea
-description = Feature for content type Cooperation Idea in MyFarnet
+description = Cooperation Idea for Farnet Communities
 core = 7.x
 php = 5.6
 multisite_version = 2.2

@@ -33,7 +33,9 @@ function farnet_preprocess_page(&$variables) {
     if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();
       $node_community = node_load($data['gid']);
-      $variables['node_community_name'] = $node_community->title;
+      if (isset($node_community->title)) {
+        $variables['node_community_name'] = $node_community->title;
+      }
     }
     if (in_array($node_type, array('landing_page'))) {
       // Format regions.
@@ -1004,12 +1006,19 @@ function farnet_preprocess_image_style(&$vars) {
  * Implements template_preprocess_node().
  */
 function farnet_preprocess_node(&$variables) {
+
+
   // Add a last updated date to communities.
   $types = ['community_public', 'community_private', 'community_hidden'];
-  if(in_array($variables['type'], $types)) {
+  if (in_array($variables['type'], $types)) {
     $last = _farnet_communities_get_last_updated_date($variables['nid']);
     if ($last) {
       $variables['last_updated'] = $last;
+    }
+
+    $disc_count = _farnet_communities_discussion_count($variables['nid']);
+    if ($disc_count) {
+      $variables['discussion_count'] = $disc_count;
     }
 
     // Get join button in CT.
@@ -1028,4 +1037,20 @@ function farnet_preprocess_node(&$variables) {
       }
     }
   }
+
+  // Display information on community contents.
+  $comm_content = [
+    'myfarnet_discussion',
+    'myfarnet_cooperation_idea',
+    'myfarnet_event',
+    'myfarnet_news'
+  ];
+  if (in_array($variables['type'], $comm_content)) {
+    $params = [':nid' => $variables['nid'], ':status' => COMMENT_PUBLISHED];
+    $comm_count = db_query('SELECT COUNT(*) FROM {comment} WHERE nid=:nid AND status=:status', $params)->fetchField();
+    if (isset($comm_count) && $comm_count) {
+      $variables['comment_count'] = $comm_count;
+    }
+  }
+
 }

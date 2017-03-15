@@ -92,8 +92,17 @@
 
   <?php
     if (isset($last_updated)) {
+      print '<div>';
       print t('Last updated :');
       print $last_updated;
+      print '</div>';
+    }
+
+    if (isset($discussion_count)) {
+      print '<div>';
+      print t('Discussions :');
+      print $discussion_count;
+      print '</div>';
     }
   ?>
 
