@@ -30,7 +30,7 @@ global $base_url;
     <div class="btn btn-primary farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
     <?php
       $path = strip_tags($fields['path']->content);
-      $url_preview = substr($path, 0, strpos($path, "_"));
+      $url_preview = drupal_substr($path, 0, strpos($path, "_"));
     ?>
     <a href="<?php echo $base_url . $url_preview; ?>/preview" class="btn btn-default farnet-listing__read-more">Preview</a>
   </div>
