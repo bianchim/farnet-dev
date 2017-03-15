@@ -9,19 +9,36 @@
  * Set all content types as not required in communities function.
  */
 function _farnet_communities_update_content_types() {
-  $records = [];
-  $records['Site Wide'] = db_query("SELECT types_active FROM {og_content_type_admin} WHERE `name`='Site Wide'")->fetchField();
-  $records['Default'] = db_query("SELECT types_active FROM {og_content_type_admin} WHERE `name`='Default'")->fetchField();
+    // Do a harcoded update to avoid errors.
+    $types_one = serialize([
+      'myfarnet_discussion' => 1,
+      'nexteuropa_event' => 1,
+      'nexteuropa_mediagallery' => 1,
+      'nexteuropa_news' => 1,
+      'page' => 1,
+    ]);
 
-  foreach ($records as $target => $content_types) {
-    $content_types = unserialize($content_types);
-    foreach ($content_types as &$data) {
-      $data = $target === 'Site Wide' ? 0 : 1;
-    }
-    $content_types = serialize($content_types);
+    $types_zero  = serialize([
+      'myfarnet_discussion' => 0,
+      'nexteuropa_event' => 0,
+      'nexteuropa_mediagallery' => 0,
+      'nexteuropa_news' => 0,
+      'page' => 0,
+    ]);
+
     db_update('og_content_type_admin')
-      ->fields(['types_active' => $content_types])
-      ->condition('name', $target)
+      ->fields([
+        'types_allowed' => $types_one,
+        'types_active' => $types_zero,
+      ])
+      ->condition('name', 'Site Wide', '=')
       ->execute();
-  }
+
+    db_update('og_content_type_admin')
+      ->fields([
+        'types_allowed' => $types_one,
+        'types_active' => $types_one,
+      ])
+      ->condition('name', 'Default', '=')
+      ->execute();
 }

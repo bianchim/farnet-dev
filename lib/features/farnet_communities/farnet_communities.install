@@ -11,10 +11,6 @@ include_once 'farnet_communities.install.inc';
  * Implements hook_install().
  */
 function farnet_communities_install() {
-  // Ensure that discussions exist.
-  drupal_flush_all_caches();
-  features_revert_module("myfarnet_discussion");
-
   _farnet_communities_update_content_types();
 }
 
