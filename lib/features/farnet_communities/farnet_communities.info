@@ -726,3 +726,4 @@ features_exclude[field_base][group_group] = group_group
 features_exclude[field_base][field_ne_body] = field_ne_body
 features_exclude[field_base][title_field] = title_field
 files[] = views/FarnetCommunitiesHandlerFieldLastUpdatedDate.inc
+files[] = views/FarnetCommunitiesHandlerFieldDiscussionCount.inc
