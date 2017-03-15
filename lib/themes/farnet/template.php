@@ -30,6 +30,9 @@ function farnet_preprocess_page(&$variables) {
     if (!in_array($node_type, array('page', 'farnet_article', 'landing_page', 'myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $variables['node_type'] = $node_type;
     }
+    if (in_array($node_type, array('community_public', 'community_private', 'community_hidden'))) {
+      $variables['node_type'] = 'MyFarnet';
+    }
     if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();
       $node_community = node_load($data['gid']);
