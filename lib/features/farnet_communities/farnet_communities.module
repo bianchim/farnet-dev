@@ -32,7 +32,20 @@ function farnet_communities_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
+  $items['myfarnet'] = array(
+    'title' => 'myFARNET',
+    'page callback' => '_farnet_communities_myfarnet',
+    'access callback' => 'user_is_logged_in',
+  );
+
   return $items;
+}
+
+/**
+ * @return string
+ */
+function _farnet_communities_myfarnet() {
+  return '';
 }
 
 /**

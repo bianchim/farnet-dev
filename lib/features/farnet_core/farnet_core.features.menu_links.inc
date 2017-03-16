@@ -2226,6 +2226,43 @@ function farnet_core_menu_default_menu_links() {
     'menu_links_customized' => 1,
     'parent_identifier' => 'main-menu_society-and-culture:themes/society-and-culture',
   );
+  // Exported menu link: main-menu_myfarnet:myfarnet.
+  $menu_links['main-menu_myfarnet:myfarnet'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'myfarnet',
+    'router_path' => 'myfarnet',
+    'link_title' => 'myFARNET',
+    'options' => array(
+      'attributes' => array(
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'class' => array(
+          0 => 'navigation-main-link',
+        ),
+        'data-remove-class' => 0,
+      ),
+      'item_attributes' => array(
+        'data-image' => '',
+        'data-display-title' => 1,
+        'data-hide-children' => 0,
+        'id' => '',
+        'class' => 'navigation-main-item',
+        'data-remove-class' => 0,
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_myfarnet:myfarnet',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => 10,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_national--regional--local-events-capacity-building-events:news-events/events/other.
   $menu_links['main-menu_national--regional--local-events-capacity-building-events:news-events/events/other'] = array(
     'menu_name' => 'main-menu',
