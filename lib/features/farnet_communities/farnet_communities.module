@@ -42,7 +42,7 @@ function farnet_communities_menu() {
 }
 
 /**
- * @return string
+ * Return an empty page for myfarnet dashboard.
  */
 function _farnet_communities_myfarnet() {
   return '';

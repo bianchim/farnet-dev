@@ -273,7 +273,7 @@ function farnet_mega_menu_disable() {
 function farnet_mega_menu_update_7001() {
   $info = variable_get("om_maximenu", []);
 
-  $new_block =  array(
+  $new_block = array(
     'link_title' => 'myFARNET',
     'link_title_option' => 'title',
     'path_icon' => '',
