@@ -171,13 +171,13 @@ Feature: Communities feature
     Examples:
       | community-title     |  community-type   |  community-path             | content-hname             | content-type        |
       | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news     |
-      | A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
+      #| A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
       | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event    |
       | A private community | community_private | community/private-community | News                      | nexteuropa_news     |
       #| A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
       | A private community | community_private | community/private-community | Event                     | nexteuropa_event    |
       | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news     |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
+      #| A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
       | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event    |
 
   @api
@@ -219,11 +219,11 @@ Feature: Communities feature
     Examples:
       | community-title     |  community-type   |  community-path             | content-hname             | content-type        |
       | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news     |
-      | A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
+      #| A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
       | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event    |
       | A private community | community_private | community/private-community | News                      | nexteuropa_news     |
-      | A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
+      #| A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
       | A private community | community_private | community/private-community | Event                     | nexteuropa_event    |
       | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news     |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
+      #| A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
       | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event    |
