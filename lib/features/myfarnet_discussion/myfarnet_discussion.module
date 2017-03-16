@@ -17,7 +17,7 @@ function myfarnet_discussion_menu() {
     'title' => 'Discussion',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('my_farnet_discussion', 'page_1', 1),
-    'access callback' => TRUE,
+    'access arguments' => array('access private area'),
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'menu-community-menu',
     'weight' => 1,
