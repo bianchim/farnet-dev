@@ -20,6 +20,7 @@ dependencies[] = myfarnet_news
 dependencies[] = nexteuropa_communities
 dependencies[] = nexteuropa_multilingual
 dependencies[] = og
+dependencies[] = og_content_type_admin
 dependencies[] = og_linkchecker
 dependencies[] = og_ui
 dependencies[] = options
