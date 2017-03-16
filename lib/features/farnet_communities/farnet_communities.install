@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install processes for FARNET communities.
+ */
+
+include_once 'farnet_communities.install.inc';
+
+/**
+ * Implements hook_install().
+ */
+function farnet_communities_install() {
+  _farnet_communities_update_content_types();
+}
+
+/**
+ * Set all content types as not required in communities update.
+ *
+ * Implements hook_update_N().
+ */
+function farnet_communities_update_7001() {
+  _farnet_communities_update_content_types();
+}
