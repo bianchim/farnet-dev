@@ -198,6 +198,17 @@ function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id)
     $form['group_access'][LANGUAGE_NONE]['#type'] = 'hidden';
     $form['group_access'][LANGUAGE_NONE]['#value'] = '1';
   }
+
+  $og_exclude = [
+    'nexteuropa_news_node_form',
+    'page',
+    'nexteuropa_event_node_form',
+  ];
+
+  if (in_array($form_id, $og_exclude)) {
+    $form['og_group_ref']['#access'] = FALSE;
+    $form['group_content_access']['#access'] = FALSE;
+  }
 }
 
 /**
