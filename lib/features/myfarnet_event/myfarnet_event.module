@@ -6,3 +6,24 @@
  */
 
 include_once 'myfarnet_event.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function myfarnet_discussion_menu() {
+  $items = array();
+
+  $items['community/%community/event'] = array(
+    'title' => 'Event',
+    'page callback' => 'farnet_communities_display_views',
+    'page arguments' => array('my_farnet_event', 'page_1', 1),
+    'access arguments' => array('access private area'),
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'menu-community-menu',
+    'weight' => 1,
+    'file' => 'farnet_communities.callback.inc',
+    'file path' => drupal_get_path('module', 'farnet_communities'),
+  );
+
+  return $items;
+}
