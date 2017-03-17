@@ -206,6 +206,17 @@ function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id)
     $form['group_access'][LANGUAGE_NONE]['#type'] = 'hidden';
     $form['group_access'][LANGUAGE_NONE]['#value'] = '1';
   }
+
+  $og_exclude = [
+    'nexteuropa_news_node_form',
+    'page',
+    'nexteuropa_event_node_form',
+  ];
+
+  if (in_array($form_id, $og_exclude)) {
+    $form['og_group_ref']['#access'] = FALSE;
+    $form['group_content_access']['#access'] = FALSE;
+  }
 }
 
 /**
@@ -273,6 +284,35 @@ function _farnet_communities_get_last_updated_date($gid) {
   }
 
   return FALSE;
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_communities_block_view_alter(&$data, $block) {
+  switch ($block->bid) {
+    // Exclude content types from the og content creation button.
+    case 'multisite_og_button-og-contextual-links':
+      // Get allowed content types.
+      $allowed = og_content_type_admin_access_group();
+      // For each CT in the create button, check the access.
+      $items = &$data['content']['og_node_create_links']['#items'];
+      if (!empty($items)) {
+        foreach ($items as $key => &$item) {
+          // Use a regexp to get the content type from the node/add url.
+          $matches = [];
+          preg_match_all("/\/node\/add\/([a-zA-Z0-9-]*)_/", $item['data'], $matches);
+          $content_type = reset($matches[1]);
+          // Change the hyphen back to underscores.
+          $content_type = str_replace('-', '_', $content_type);
+          // Exclude if necessary.
+          if (!array_key_exists($content_type, $allowed)) {
+            unset($items[$key]);
+          }
+        }
+      }
+      break;
+  }
 }
 
 /**
