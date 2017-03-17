@@ -32,7 +32,7 @@ function farnet_communities_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
-  $items['community/%/preview'] = array(
+  $items['community/%community/preview'] = array(
     'title' => 'Preview community',
     'page callback' => '_farnet_communities_community_preview',
     'page arguments' => [1],
@@ -400,13 +400,11 @@ function _farnet_communities_discussion_count($gid) {
 /**
  * Render node light for preview without context communities.
  */
-function _farnet_communities_community_preview($alias_community_name) {
-  $alias = "community/" . $alias_community_name;
-  $path = drupal_lookup_path("source", $alias);
-  $node = menu_get_object("node", 1, $path);
+function _farnet_communities_community_preview($community) {
 
-  unset($node->group_access);
-  unset($node->group_group);
+  unset($community->group_access);
+  unset($community->group_group);
 
-  return node_page_view($node);
+  return node_page_view($community);
+
 }
