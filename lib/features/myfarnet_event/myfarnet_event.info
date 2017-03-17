@@ -108,5 +108,6 @@ features[variable][] = node_options_myfarnet_event
 features[variable][] = node_preview_myfarnet_event
 features[variable][] = node_submitted_myfarnet_event
 features[variable][] = xmlsitemap_settings_node_myfarnet_event
+features[views_view][] = my_farnet_event
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_base][group_content_access] = group_content_access
