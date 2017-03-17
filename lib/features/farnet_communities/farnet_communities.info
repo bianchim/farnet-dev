@@ -6,6 +6,7 @@ multisite_version = 2.2
 package = Farnet
 dependencies[] = cce_basic_config
 dependencies[] = comment_og
+dependencies[] = context
 dependencies[] = ctools
 dependencies[] = farnet_cooperation_call
 dependencies[] = farnet_cooperation_idea
