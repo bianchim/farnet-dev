@@ -10,7 +10,7 @@ include_once 'myfarnet_event.features.inc';
 /**
  * Implements hook_menu().
  */
-function myfarnet_discussion_menu() {
+function myfarnet_event_menu() {
   $items = array();
 
   $items['community/%community/event'] = array(
