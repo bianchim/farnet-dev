@@ -3,6 +3,7 @@
  * @file
  * myfarnet_cooperation_idea.views_default.inc
  */
+
 /**
  * Implements hook_views_default_views().
  */
