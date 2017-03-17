@@ -32,6 +32,14 @@ function farnet_communities_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
+  $items['community/%community/preview'] = array(
+    'title' => 'Preview community',
+    'page callback' => '_farnet_communities_community_preview',
+    'page arguments' => [1],
+    'access callback' => 'user_access',
+    'access arguments' => ['access content'],
+  );
+
   return $items;
 }
 
@@ -215,17 +223,20 @@ function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id)
  * Implements hook_context_load_alter().
  */
 function farnet_communities_context_load_alter(&$context) {
-
   if ($context->name === 'communities' && isset($context->reactions['block'])) {
+    $path = current_path();
+    $patterns = '' . PHP_EOL . 'community/*/preview';
+    if (drupal_match_path($path, $patterns)) {
+      if (isset($context->reactions['block']['blocks']['menu-menu-community-menu'])) {
+        unset($context->reactions['block']['blocks']['menu-menu-community-menu']);
+      }
+      if (isset($context->reactions['block']['blocks']['multisite_og_button-og-contextual-links'])) {
+        unset($context->reactions['block']['blocks']['multisite_og_button-og-contextual-links']);
+      }
+    }
     if (isset($context->reactions['block']['blocks']['views-community_members-block_1'])) {
       unset($context->reactions['block']['blocks']['views-community_members-block_1']);
     }
-    $context->reactions['block']['blocks']['views-members_list-block_members_list'] = array(
-      'module' => 'views',
-      'delta' => 'members_list-block_members_list',
-      'region' => 'sidebar_left',
-      'weight' => '-8',
-    );
   }
 }
 
@@ -384,4 +395,16 @@ function _farnet_communities_discussion_count($gid) {
   }
 
   return 0;
+}
+
+/**
+ * Render node light for preview without context communities.
+ */
+function _farnet_communities_community_preview($community) {
+
+  unset($community->group_access);
+  unset($community->group_group);
+
+  return node_page_view($community);
+
 }
