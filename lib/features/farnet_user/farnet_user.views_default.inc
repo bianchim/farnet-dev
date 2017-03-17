@@ -158,7 +158,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = 'User';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: User: First name */
+  /* Field: Field: First name */
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
   $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
@@ -166,7 +166,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_lastname']['id'] = 'field_lastname';
   $handler->display->display_options['fields']['field_lastname']['table'] = 'field_data_field_lastname';
   $handler->display->display_options['fields']['field_lastname']['field'] = 'field_lastname';
-  /* Field: Field: Organisation */
+  /* Field: User: Organisation */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
@@ -205,7 +205,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: User: First name (field_firstname) */
+  /* Filter criterion: Field: First name (field_firstname) */
   $handler->display->display_options['filters']['field_firstname_value']['id'] = 'field_firstname_value';
   $handler->display->display_options['filters']['field_firstname_value']['table'] = 'field_data_field_firstname';
   $handler->display->display_options['filters']['field_firstname_value']['field'] = 'field_firstname_value';
@@ -243,7 +243,7 @@ function farnet_user_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: User: Country (field_user_country) */
+  /* Filter criterion: Field: Country (field_user_country) */
   $handler->display->display_options['filters']['field_user_country_tid']['id'] = 'field_user_country_tid';
   $handler->display->display_options['filters']['field_user_country_tid']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['filters']['field_user_country_tid']['field'] = 'field_user_country_tid';
@@ -406,13 +406,16 @@ function farnet_user_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/manage-users';
-  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['path'] = 'admin/farnet-management/manage-users';
+  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Manage Users';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Data export */
-  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_users');
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
@@ -428,11 +431,11 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = 'User';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: User: Gender */
+  /* Field: Field: Gender */
   $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
   $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
   $handler->display->display_options['fields']['field_gender']['field'] = 'field_gender';
-  /* Field: User: First name */
+  /* Field: Field: First name */
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
   $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
@@ -449,11 +452,11 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_preferred_email']['id'] = 'field_preferred_email';
   $handler->display->display_options['fields']['field_preferred_email']['table'] = 'field_data_field_preferred_email';
   $handler->display->display_options['fields']['field_preferred_email']['field'] = 'field_preferred_email';
-  /* Field: User: Country */
+  /* Field: Field: Country */
   $handler->display->display_options['fields']['field_user_country']['id'] = 'field_user_country';
   $handler->display->display_options['fields']['field_user_country']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['fields']['field_user_country']['field'] = 'field_user_country';
-  /* Field: Field: Organisation */
+  /* Field: User: Organisation */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
@@ -464,11 +467,10 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_organisation_other']['id'] = 'field_organisation_other';
   $handler->display->display_options['fields']['field_organisation_other']['table'] = 'field_data_field_organisation_other';
   $handler->display->display_options['fields']['field_organisation_other']['field'] = 'field_organisation_other';
-  /* Field: Field: Job title */
+  /* Field: User: Title / Function */
   $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['label'] = 'Title / Function';
   /* Field: Field: Address 1 */
   $handler->display->display_options['fields']['field_address_1']['id'] = 'field_address_1';
   $handler->display->display_options['fields']['field_address_1']['table'] = 'field_data_field_address_1';
@@ -486,7 +488,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_telephone']['table'] = 'field_data_field_telephone';
   $handler->display->display_options['fields']['field_telephone']['field'] = 'field_telephone';
   $handler->display->display_options['fields']['field_telephone']['label'] = 'Phone';
-  /* Field: User: Phone (mobile) */
+  /* Field: Field: Mobile */
   $handler->display->display_options['fields']['field_phone_mobile']['id'] = 'field_phone_mobile';
   $handler->display->display_options['fields']['field_phone_mobile']['table'] = 'field_data_field_phone_mobile';
   $handler->display->display_options['fields']['field_phone_mobile']['field'] = 'field_phone_mobile';
@@ -587,7 +589,7 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_city_select']['id'] = 'field_city_select';
   $handler->display->display_options['fields']['field_city_select']['table'] = 'field_data_field_city_select';
   $handler->display->display_options['fields']['field_city_select']['field'] = 'field_city_select';
-  $handler->display->display_options['path'] = 'admin/manage-users/export';
+  $handler->display->display_options['path'] = 'admin/farnet-management/manage-users/export';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
