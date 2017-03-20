@@ -168,7 +168,6 @@ features[menu_links][] = main-menu_marine-activities:themes/diversification/mari
 features[menu_links][] = main-menu_marine-litter:themes/environment/marine-litter
 features[menu_links][] = main-menu_methods:on-the-ground/good-practices/methods
 features[menu_links][] = main-menu_migrants-and-refugees:themes/society-and-culture/migrants-and-refugees
-features[menu_links][] = main-menu_myfarnet:myfarnet
 features[menu_links][] = main-menu_national--regional--local-events-capacity-building-events:news-events/events/other
 features[menu_links][] = main-menu_news--events:TOKENUUID_f56bdaf2-af08-4145-8dc1-733561745e5
 features[menu_links][] = main-menu_news:news-events/news

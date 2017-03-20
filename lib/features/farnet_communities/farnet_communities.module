@@ -36,6 +36,8 @@ function farnet_communities_menu() {
     'title' => 'myFARNET',
     'page callback' => '_farnet_communities_myfarnet',
     'access callback' => 'user_is_logged_in',
+    'menu_name' => 'main-menu',
+    'weight' => 10,
   );
 
   $items['community/%community/preview'] = array(
