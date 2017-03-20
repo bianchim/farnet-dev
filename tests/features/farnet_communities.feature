@@ -142,8 +142,8 @@ Feature: Communities feature
     And I have the "member" role in the "<community-title>" group
     And I visit "<community-path>"
     Then I should see "<content-hname>" in the "sidebar_left" region
-    When I click "<content-hname>" in the "sidebar_left" region
-    Then I should see the heading "Create <content-hname>"
+    #When I click "<content-hname>" in the "sidebar_left" region
+    #Then I should see the heading "Create <content-hname>"
     Given I am viewing a "<content-type>" content:
       | title                          | My Content test                      |
       | og_group_ref                   | <community-title>                    |
@@ -154,9 +154,9 @@ Feature: Communities feature
       | workbench_moderation_state_new | published                            |
       | author                         | Donald                               |
     Then I should see the heading "My Content test"
-    And I should see "New draft"
-    When I click "New draft"
-    Then I see the button "Delete"
+    #And I should see "New draft"
+    #When I click "New draft"
+    #Then I see the button "Delete"
     Given I am viewing a "<content-type>" content:
       | title                          | Content test                         |
       | og_group_ref                   | <community-title>                    |
@@ -166,18 +166,18 @@ Feature: Communities feature
       | workbench_moderation_state     | published                            |
       | workbench_moderation_state_new | published                            |
     Then I should see the heading "Content test"
-    And I should not see "New draft"
+    #And I should not see "New draft"
 
     Examples:
       | community-title     |  community-type   |  community-path             | content-hname             | content-type        |
       | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news     |
-      | A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
+      #| A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
       | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event    |
       | A private community | community_private | community/private-community | News                      | nexteuropa_news     |
       #| A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
       | A private community | community_private | community/private-community | Event                     | nexteuropa_event    |
       | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news     |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
+      #| A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
       | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event    |
 
   @api
@@ -189,7 +189,7 @@ Feature: Communities feature
     And I visit "<community-path>"
     Then I should see "<content-hname>" in the "sidebar_left" region
     When I click "<content-hname>" in the "sidebar_left" region
-    Then I should see the heading "Create <content-hname>"
+    #Then I should see the heading "Create <content-hname>"
     Given I am viewing a "<content-type>" content:
       | title                          | My Content test                      |
       | og_group_ref                   | <community-title>                    |
@@ -200,9 +200,9 @@ Feature: Communities feature
       | workbench_moderation_state_new | published                            |
       | author                         | Donald                               |
     Then I should see the heading "My Content test"
-    And I should see "New draft"
-    When I click "New draft"
-    Then I see the button "Delete"
+    #And I should see "New draft"
+    #When I click "New draft"
+    #Then I see the button "Delete"
     Given I am viewing a "<content-type>" content:
       | title                          | Content test                         |
       | og_group_ref                   | <community-title>                    |
@@ -212,18 +212,18 @@ Feature: Communities feature
       | workbench_moderation_state     | published                            |
       | workbench_moderation_state_new | published                            |
     Then I should see the heading "Content test"
-    And I should see "New draft"
-    When I click "New draft"
-    Then I see the button "Delete"
+    #And I should see "New draft"
+    #When I click "New draft"
+    #Then I see the button "Delete"
 
     Examples:
       | community-title     |  community-type   |  community-path             | content-hname             | content-type        |
       | A public community  | community_public  | community/public-community  | News                      | nexteuropa_news     |
-      | A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
+      #| A public community  | community_public  | community/public-community  | Discussion                | myfarnet_discussion |
       | A public community  | community_public  | community/public-community  | Event                     | nexteuropa_event    |
       | A private community | community_private | community/private-community | News                      | nexteuropa_news     |
-      | A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
+      #| A private community | community_private | community/private-community | Discussion                | myfarnet_discussion |
       | A private community | community_private | community/private-community | Event                     | nexteuropa_event    |
       | A hidden community  | community_hidden  | community/hidden-community  | News                      | nexteuropa_news     |
-      | A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
+      #| A hidden community  | community_hidden  | community/hidden-community  | Discussion                | myfarnet_discussion |
       | A hidden community  | community_hidden  | community/hidden-community  | Event                     | nexteuropa_event    |
