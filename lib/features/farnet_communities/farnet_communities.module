@@ -32,6 +32,14 @@ function farnet_communities_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
+  $items['myfarnet'] = array(
+    'title' => 'myFARNET',
+    'page callback' => '_farnet_communities_myfarnet',
+    'access callback' => 'user_is_logged_in',
+    'menu_name' => 'main-menu',
+    'weight' => 10,
+  );
+
   $items['community/%community/preview'] = array(
     'title' => 'Preview community',
     'page callback' => '_farnet_communities_community_preview',
@@ -41,6 +49,13 @@ function farnet_communities_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Return an empty page for myfarnet dashboard.
+ */
+function _farnet_communities_myfarnet() {
+  return '';
 }
 
 /**
