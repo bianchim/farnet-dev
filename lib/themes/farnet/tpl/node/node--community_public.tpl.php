@@ -129,6 +129,8 @@
     </div>
   </div>
 
+  <?php print render($content['group_group']); ?>
+
   <?php print render($content); ?>
 
   <?php print render($content['links']); ?>
