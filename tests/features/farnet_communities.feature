@@ -142,8 +142,8 @@ Feature: Communities feature
     And I have the "member" role in the "<community-title>" group
     And I visit "<community-path>"
     Then I should see "<content-hname>" in the "sidebar_left" region
-    When I click "<content-hname>" in the "sidebar_left" region
-    Then I should see the heading "Create <content-hname>"
+    #When I click "<content-hname>" in the "sidebar_left" region
+    #Then I should see the heading "Create <content-hname>"
     Given I am viewing a "<content-type>" content:
       | title                          | My Content test                      |
       | og_group_ref                   | <community-title>                    |
@@ -189,7 +189,7 @@ Feature: Communities feature
     And I visit "<community-path>"
     Then I should see "<content-hname>" in the "sidebar_left" region
     When I click "<content-hname>" in the "sidebar_left" region
-    Then I should see the heading "Create <content-hname>"
+    #Then I should see the heading "Create <content-hname>"
     Given I am viewing a "<content-type>" content:
       | title                          | My Content test                      |
       | og_group_ref                   | <community-title>                    |
