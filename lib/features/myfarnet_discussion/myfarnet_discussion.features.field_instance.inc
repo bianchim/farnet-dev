@@ -1,19 +1,20 @@
 <?php
+
 /**
  * @file
- * farnet_discussion.features.field_instance.inc
+ * myfarnet_discussion.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function farnet_discussion_field_default_field_instances() {
+function myfarnet_discussion_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'comment-comment_node_farnet_discussion-comment_body'.
-  $field_instances['comment-comment_node_farnet_discussion-comment_body'] = array(
-    'bundle' => 'comment_node_farnet_discussion',
+  // 'comment-comment_node_myfarnet_discussion-comment_body'.
+  $field_instances['comment-comment_node_myfarnet_discussion-comment_body'] = array(
+    'bundle' => 'comment_node_myfarnet_discussion',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -46,14 +47,14 @@ function farnet_discussion_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'comment-comment_node_farnet_discussion-field_private_documents'.
-  $field_instances['comment-comment_node_farnet_discussion-field_private_documents'] = array(
-    'bundle' => 'comment_node_farnet_discussion',
+  // 'comment-comment_node_myfarnet_discussion-field_private_documents'.
+  $field_instances['comment-comment_node_myfarnet_discussion-field_private_documents'] = array(
+    'bundle' => 'comment_node_myfarnet_discussion',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
@@ -105,14 +106,14 @@ function farnet_discussion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-farnet_discussion-field_fc_document'.
-  $field_instances['node-farnet_discussion-field_fc_document'] = array(
-    'bundle' => 'farnet_discussion',
+  // Exported field_instance: 'node-myfarnet_discussion-field_fc_document'.
+  $field_instances['node-myfarnet_discussion-field_fc_document'] = array(
+    'bundle' => 'myfarnet_discussion',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
@@ -169,15 +170,15 @@ function farnet_discussion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-farnet_discussion-field_ne_body'.
-  $field_instances['node-farnet_discussion-field_ne_body'] = array(
-    'bundle' => 'farnet_discussion',
+  // Exported field_instance: 'node-myfarnet_discussion-field_ne_body'.
+  $field_instances['node-myfarnet_discussion-field_ne_body'] = array(
+    'bundle' => 'myfarnet_discussion',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -197,13 +198,14 @@ function farnet_discussion_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'full_html_track' => 'full_html_track',
-          'plain_text' => 'plain_text',
+          'basic_html' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'full_html_track' => 0,
+          'myfarnet_html' => 'myfarnet_html',
+          'plain_text' => 0,
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -218,6 +220,9 @@ function farnet_discussion_field_default_field_instances() {
             ),
             'full_html_track' => array(
               'weight' => -10,
+            ),
+            'myfarnet_html' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => -8,
@@ -248,9 +253,9 @@ function farnet_discussion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-farnet_discussion-group_content_access'.
-  $field_instances['node-farnet_discussion-group_content_access'] = array(
-    'bundle' => 'farnet_discussion',
+  // Exported field_instance: 'node-myfarnet_discussion-group_content_access'.
+  $field_instances['node-myfarnet_discussion-group_content_access'] = array(
+    'bundle' => 'myfarnet_discussion',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -301,9 +306,9 @@ function farnet_discussion_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-farnet_discussion-og_group_ref'.
-  $field_instances['node-farnet_discussion-og_group_ref'] = array(
-    'bundle' => 'farnet_discussion',
+  // Exported field_instance: 'node-myfarnet_discussion-og_group_ref'.
+  $field_instances['node-myfarnet_discussion-og_group_ref'] = array(
+    'bundle' => 'myfarnet_discussion',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
@@ -311,9 +316,8 @@ function farnet_discussion_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -375,15 +379,15 @@ function farnet_discussion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-farnet_discussion-title_field'.
-  $field_instances['node-farnet_discussion-title_field'] = array(
-    'bundle' => 'farnet_discussion',
+  // Exported field_instance: 'node-myfarnet_discussion-title_field'.
+  $field_instances['node-myfarnet_discussion-title_field'] = array(
+    'bundle' => 'myfarnet_discussion',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
@@ -420,10 +424,10 @@ function farnet_discussion_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attached documents');
   t('Body');
   t('Comment');
   t('Document');
-  t('Documents');
   t('Group content visibility');
   t('Groups audience');
   t('Title');

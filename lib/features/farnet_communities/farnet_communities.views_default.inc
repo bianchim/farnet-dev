@@ -24,6 +24,7 @@ function farnet_communities_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Farnet communities';
+  $handler->display->display_options['css_class'] = 'listing-views';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access private area';
@@ -32,7 +33,16 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -51,11 +61,32 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['group_group']['settings'] = array(
     'field_name' => 'og_user_node',
   );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Field: Farnet communities: Last updated date */
+  $handler->display->display_options['fields']['last_updated_date']['id'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['last_updated_date']['field'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['label'] = '';
+  $handler->display->display_options['fields']['last_updated_date']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Discussion count */
+  $handler->display->display_options['fields']['discussion_count']['id'] = 'discussion_count';
+  $handler->display->display_options['fields']['discussion_count']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['discussion_count']['field'] = 'discussion_count';
+  $handler->display->display_options['fields']['discussion_count']['label'] = '';
+  $handler->display->display_options['fields']['discussion_count']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
+  $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
+  $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
+  $handler->display->display_options['fields']['field_ne_body']['label'] = '';
+  $handler->display->display_options['fields']['field_ne_body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ne_body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_ne_body']['settings'] = array(
+    'trim_length' => '200',
+  );
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -115,7 +146,7 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
-  /* Relationship: User: Country (field_user_country) */
+  /* Relationship: Field: Country (field_user_country) */
   $handler->display->display_options['relationships']['field_user_country_tid']['id'] = 'field_user_country_tid';
   $handler->display->display_options['relationships']['field_user_country_tid']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['relationships']['field_user_country_tid']['field'] = 'field_user_country_tid';

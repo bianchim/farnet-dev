@@ -66,59 +66,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:approve comment_node_cooperation_call'
-  $permissions['node:community_hidden:approve comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_cooperation_idea'
-  $permissions['node:community_hidden:approve comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:approve comment_node_editorial_team'
   $permissions['node:community_hidden:approve comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_factsheet_country'
-  $permissions['node:community_hidden:approve comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_factsheet_flag'
-  $permissions['node:community_hidden:approve comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_farnet_article'
-  $permissions['node:community_hidden:approve comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_farnet_discussion'
-  $permissions['node:community_hidden:approve comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_gp_method'
-  $permissions['node:community_hidden:approve comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_gp_project'
-  $permissions['node:community_hidden:approve comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:approve comment_node_gp_short_story'
-  $permissions['node:community_hidden:approve comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -147,71 +96,9 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:create cooperation_call content'
-  $permissions['node:community_hidden:create cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:create cooperation_idea content'
-  $permissions['node:community_hidden:create cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:create factsheet_country content'
-  $permissions['node:community_hidden:create factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:create factsheet_flag content'
-  $permissions['node:community_hidden:create factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:create farnet_article content'
-  $permissions['node:community_hidden:create farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:create farnet_discussion content'
-  $permissions['node:community_hidden:create farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:create gp_method content'
-  $permissions['node:community_hidden:create gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:create gp_project content'
-  $permissions['node:community_hidden:create gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:create gp_short_story content'
-  $permissions['node:community_hidden:create gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:create nexteuropa_event content'
   $permissions['node:community_hidden:create nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:create nexteuropa_faq content'
@@ -226,64 +113,11 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:create nexteuropa_news content'
   $permissions['node:community_hidden:create nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:create page content'
   $permissions['node:community_hidden:create page content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any cooperation_call content'
-  $permissions['node:community_hidden:delete any cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any cooperation_idea content'
-  $permissions['node:community_hidden:delete any cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any factsheet_country content'
-  $permissions['node:community_hidden:delete any factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any factsheet_flag content'
-  $permissions['node:community_hidden:delete any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any farnet_article content'
-  $permissions['node:community_hidden:delete any farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any farnet_discussion content'
-  $permissions['node:community_hidden:delete any farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any gp_method content'
-  $permissions['node:community_hidden:delete any gp_method content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any gp_project content'
-  $permissions['node:community_hidden:delete any gp_project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete any gp_short_story content'
-  $permissions['node:community_hidden:delete any gp_short_story content'] = array(
     'roles' => array(),
   );
 
@@ -334,59 +168,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:delete comment_node_cooperation_call'
-  $permissions['node:community_hidden:delete comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_cooperation_idea'
-  $permissions['node:community_hidden:delete comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:delete comment_node_editorial_team'
   $permissions['node:community_hidden:delete comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_factsheet_country'
-  $permissions['node:community_hidden:delete comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_factsheet_flag'
-  $permissions['node:community_hidden:delete comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_farnet_article'
-  $permissions['node:community_hidden:delete comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_farnet_discussion'
-  $permissions['node:community_hidden:delete comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_gp_method'
-  $permissions['node:community_hidden:delete comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_gp_project'
-  $permissions['node:community_hidden:delete comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete comment_node_gp_short_story'
-  $permissions['node:community_hidden:delete comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -438,62 +221,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:delete own comment_node_cooperation_call'
-  $permissions['node:community_hidden:delete own comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_cooperation_idea'
-  $permissions['node:community_hidden:delete own comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:delete own comment_node_editorial_team'
   $permissions['node:community_hidden:delete own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_factsheet_country'
-  $permissions['node:community_hidden:delete own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_factsheet_flag'
-  $permissions['node:community_hidden:delete own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_farnet_article'
-  $permissions['node:community_hidden:delete own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_farnet_discussion'
-  $permissions['node:community_hidden:delete own comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_gp_method'
-  $permissions['node:community_hidden:delete own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_gp_project'
-  $permissions['node:community_hidden:delete own comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own comment_node_gp_short_story'
-  $permissions['node:community_hidden:delete own comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -522,71 +251,9 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:delete own cooperation_call content'
-  $permissions['node:community_hidden:delete own cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own cooperation_idea content'
-  $permissions['node:community_hidden:delete own cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own factsheet_country content'
-  $permissions['node:community_hidden:delete own factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own factsheet_flag content'
-  $permissions['node:community_hidden:delete own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own farnet_article content'
-  $permissions['node:community_hidden:delete own farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own farnet_discussion content'
-  $permissions['node:community_hidden:delete own farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own gp_method content'
-  $permissions['node:community_hidden:delete own gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own gp_project content'
-  $permissions['node:community_hidden:delete own gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:delete own gp_short_story content'
-  $permissions['node:community_hidden:delete own gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:delete own nexteuropa_event content'
   $permissions['node:community_hidden:delete own nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:delete own nexteuropa_faq content'
@@ -601,9 +268,7 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:delete own nexteuropa_news content'
   $permissions['node:community_hidden:delete own nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:delete own page content'
@@ -633,59 +298,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:edit comment_node_cooperation_call'
-  $permissions['node:community_hidden:edit comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_cooperation_idea'
-  $permissions['node:community_hidden:edit comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:edit comment_node_editorial_team'
   $permissions['node:community_hidden:edit comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_factsheet_country'
-  $permissions['node:community_hidden:edit comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_factsheet_flag'
-  $permissions['node:community_hidden:edit comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_farnet_article'
-  $permissions['node:community_hidden:edit comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_farnet_discussion'
-  $permissions['node:community_hidden:edit comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_gp_method'
-  $permissions['node:community_hidden:edit comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_gp_project'
-  $permissions['node:community_hidden:edit comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit comment_node_gp_short_story'
-  $permissions['node:community_hidden:edit comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -737,62 +351,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:edit own comment_node_cooperation_call'
-  $permissions['node:community_hidden:edit own comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_cooperation_idea'
-  $permissions['node:community_hidden:edit own comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:edit own comment_node_editorial_team'
   $permissions['node:community_hidden:edit own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_factsheet_country'
-  $permissions['node:community_hidden:edit own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_factsheet_flag'
-  $permissions['node:community_hidden:edit own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_farnet_article'
-  $permissions['node:community_hidden:edit own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_farnet_discussion'
-  $permissions['node:community_hidden:edit own comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_gp_method'
-  $permissions['node:community_hidden:edit own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_gp_project'
-  $permissions['node:community_hidden:edit own comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:edit own comment_node_gp_short_story'
-  $permissions['node:community_hidden:edit own comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -917,62 +477,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_hidden:post comment_node_cooperation_call'
-  $permissions['node:community_hidden:post comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_cooperation_idea'
-  $permissions['node:community_hidden:post comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:post comment_node_editorial_team'
   $permissions['node:community_hidden:post comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_factsheet_country'
-  $permissions['node:community_hidden:post comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_factsheet_flag'
-  $permissions['node:community_hidden:post comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_farnet_article'
-  $permissions['node:community_hidden:post comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_farnet_discussion'
-  $permissions['node:community_hidden:post comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_gp_method'
-  $permissions['node:community_hidden:post comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_gp_project'
-  $permissions['node:community_hidden:post comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:post comment_node_gp_short_story'
-  $permissions['node:community_hidden:post comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -1020,57 +526,6 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_hidden:update any cooperation_call content'
-  $permissions['node:community_hidden:update any cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any cooperation_idea content'
-  $permissions['node:community_hidden:update any cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any factsheet_country content'
-  $permissions['node:community_hidden:update any factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any factsheet_flag content'
-  $permissions['node:community_hidden:update any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any farnet_article content'
-  $permissions['node:community_hidden:update any farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any farnet_discussion content'
-  $permissions['node:community_hidden:update any farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any gp_method content'
-  $permissions['node:community_hidden:update any gp_method content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any gp_project content'
-  $permissions['node:community_hidden:update any gp_project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update any gp_short_story content'
-  $permissions['node:community_hidden:update any gp_short_story content'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:community_hidden:update any nexteuropa_event content'
   $permissions['node:community_hidden:update any nexteuropa_event content'] = array(
     'roles' => array(),
@@ -1103,71 +558,9 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_hidden:update own cooperation_call content'
-  $permissions['node:community_hidden:update own cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own cooperation_idea content'
-  $permissions['node:community_hidden:update own cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own factsheet_country content'
-  $permissions['node:community_hidden:update own factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own factsheet_flag content'
-  $permissions['node:community_hidden:update own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own farnet_article content'
-  $permissions['node:community_hidden:update own farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own farnet_discussion content'
-  $permissions['node:community_hidden:update own farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own gp_method content'
-  $permissions['node:community_hidden:update own gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own gp_project content'
-  $permissions['node:community_hidden:update own gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_hidden:update own gp_short_story content'
-  $permissions['node:community_hidden:update own gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_hidden:update own nexteuropa_event content'
   $permissions['node:community_hidden:update own nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:update own nexteuropa_faq content'
@@ -1182,9 +575,7 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:update own nexteuropa_news content'
   $permissions['node:community_hidden:update own nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_hidden:update own page content'
@@ -1247,59 +638,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:approve comment_node_cooperation_call'
-  $permissions['node:community_private:approve comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_cooperation_idea'
-  $permissions['node:community_private:approve comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:approve comment_node_editorial_team'
   $permissions['node:community_private:approve comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_factsheet_country'
-  $permissions['node:community_private:approve comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_factsheet_flag'
-  $permissions['node:community_private:approve comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_farnet_article'
-  $permissions['node:community_private:approve comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_farnet_discussion'
-  $permissions['node:community_private:approve comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_gp_method'
-  $permissions['node:community_private:approve comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_gp_project'
-  $permissions['node:community_private:approve comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:approve comment_node_gp_short_story'
-  $permissions['node:community_private:approve comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -1328,71 +668,9 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:create cooperation_call content'
-  $permissions['node:community_private:create cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:create cooperation_idea content'
-  $permissions['node:community_private:create cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:create factsheet_country content'
-  $permissions['node:community_private:create factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:create factsheet_flag content'
-  $permissions['node:community_private:create factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:create farnet_article content'
-  $permissions['node:community_private:create farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:create farnet_discussion content'
-  $permissions['node:community_private:create farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:create gp_method content'
-  $permissions['node:community_private:create gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:create gp_project content'
-  $permissions['node:community_private:create gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:create gp_short_story content'
-  $permissions['node:community_private:create gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:create nexteuropa_event content'
   $permissions['node:community_private:create nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:create nexteuropa_faq content'
@@ -1407,64 +685,11 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:create nexteuropa_news content'
   $permissions['node:community_private:create nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:create page content'
   $permissions['node:community_private:create page content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete any cooperation_call content'
-  $permissions['node:community_private:delete any cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete any cooperation_idea content'
-  $permissions['node:community_private:delete any cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete any factsheet_country content'
-  $permissions['node:community_private:delete any factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete any factsheet_flag content'
-  $permissions['node:community_private:delete any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete any farnet_article content'
-  $permissions['node:community_private:delete any farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete any farnet_discussion content'
-  $permissions['node:community_private:delete any farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete any gp_method content'
-  $permissions['node:community_private:delete any gp_method content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete any gp_project content'
-  $permissions['node:community_private:delete any gp_project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete any gp_short_story content'
-  $permissions['node:community_private:delete any gp_short_story content'] = array(
     'roles' => array(),
   );
 
@@ -1515,59 +740,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:delete comment_node_cooperation_call'
-  $permissions['node:community_private:delete comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_cooperation_idea'
-  $permissions['node:community_private:delete comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:delete comment_node_editorial_team'
   $permissions['node:community_private:delete comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_factsheet_country'
-  $permissions['node:community_private:delete comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_factsheet_flag'
-  $permissions['node:community_private:delete comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_farnet_article'
-  $permissions['node:community_private:delete comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_farnet_discussion'
-  $permissions['node:community_private:delete comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_gp_method'
-  $permissions['node:community_private:delete comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_gp_project'
-  $permissions['node:community_private:delete comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete comment_node_gp_short_story'
-  $permissions['node:community_private:delete comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -1619,62 +793,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:delete own comment_node_cooperation_call'
-  $permissions['node:community_private:delete own comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_cooperation_idea'
-  $permissions['node:community_private:delete own comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:delete own comment_node_editorial_team'
   $permissions['node:community_private:delete own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_factsheet_country'
-  $permissions['node:community_private:delete own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_factsheet_flag'
-  $permissions['node:community_private:delete own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_farnet_article'
-  $permissions['node:community_private:delete own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_farnet_discussion'
-  $permissions['node:community_private:delete own comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_gp_method'
-  $permissions['node:community_private:delete own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_gp_project'
-  $permissions['node:community_private:delete own comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own comment_node_gp_short_story'
-  $permissions['node:community_private:delete own comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -1703,71 +823,9 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:delete own cooperation_call content'
-  $permissions['node:community_private:delete own cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete own cooperation_idea content'
-  $permissions['node:community_private:delete own cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete own factsheet_country content'
-  $permissions['node:community_private:delete own factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own factsheet_flag content'
-  $permissions['node:community_private:delete own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own farnet_article content'
-  $permissions['node:community_private:delete own farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:delete own farnet_discussion content'
-  $permissions['node:community_private:delete own farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete own gp_method content'
-  $permissions['node:community_private:delete own gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete own gp_project content'
-  $permissions['node:community_private:delete own gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:delete own gp_short_story content'
-  $permissions['node:community_private:delete own gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:delete own nexteuropa_event content'
   $permissions['node:community_private:delete own nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:delete own nexteuropa_faq content'
@@ -1782,9 +840,7 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:delete own nexteuropa_news content'
   $permissions['node:community_private:delete own nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:delete own page content'
@@ -1814,59 +870,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:edit comment_node_cooperation_call'
-  $permissions['node:community_private:edit comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_cooperation_idea'
-  $permissions['node:community_private:edit comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:edit comment_node_editorial_team'
   $permissions['node:community_private:edit comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_factsheet_country'
-  $permissions['node:community_private:edit comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_factsheet_flag'
-  $permissions['node:community_private:edit comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_farnet_article'
-  $permissions['node:community_private:edit comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_farnet_discussion'
-  $permissions['node:community_private:edit comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_gp_method'
-  $permissions['node:community_private:edit comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_gp_project'
-  $permissions['node:community_private:edit comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit comment_node_gp_short_story'
-  $permissions['node:community_private:edit comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -1918,62 +923,8 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_private:edit own comment_node_cooperation_call'
-  $permissions['node:community_private:edit own comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_cooperation_idea'
-  $permissions['node:community_private:edit own comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:edit own comment_node_editorial_team'
   $permissions['node:community_private:edit own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_factsheet_country'
-  $permissions['node:community_private:edit own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_factsheet_flag'
-  $permissions['node:community_private:edit own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_farnet_article'
-  $permissions['node:community_private:edit own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_farnet_discussion'
-  $permissions['node:community_private:edit own comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_gp_method'
-  $permissions['node:community_private:edit own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_gp_project'
-  $permissions['node:community_private:edit own comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:edit own comment_node_gp_short_story'
-  $permissions['node:community_private:edit own comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -2100,62 +1051,8 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_private:post comment_node_cooperation_call'
-  $permissions['node:community_private:post comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_cooperation_idea'
-  $permissions['node:community_private:post comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:post comment_node_editorial_team'
   $permissions['node:community_private:post comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_factsheet_country'
-  $permissions['node:community_private:post comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_factsheet_flag'
-  $permissions['node:community_private:post comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_farnet_article'
-  $permissions['node:community_private:post comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_farnet_discussion'
-  $permissions['node:community_private:post comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_gp_method'
-  $permissions['node:community_private:post comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_gp_project'
-  $permissions['node:community_private:post comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:post comment_node_gp_short_story'
-  $permissions['node:community_private:post comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -2203,57 +1100,6 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_private:update any cooperation_call content'
-  $permissions['node:community_private:update any cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update any cooperation_idea content'
-  $permissions['node:community_private:update any cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update any factsheet_country content'
-  $permissions['node:community_private:update any factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update any factsheet_flag content'
-  $permissions['node:community_private:update any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update any farnet_article content'
-  $permissions['node:community_private:update any farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update any farnet_discussion content'
-  $permissions['node:community_private:update any farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update any gp_method content'
-  $permissions['node:community_private:update any gp_method content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update any gp_project content'
-  $permissions['node:community_private:update any gp_project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update any gp_short_story content'
-  $permissions['node:community_private:update any gp_short_story content'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:community_private:update any nexteuropa_event content'
   $permissions['node:community_private:update any nexteuropa_event content'] = array(
     'roles' => array(),
@@ -2286,71 +1132,9 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_private:update own cooperation_call content'
-  $permissions['node:community_private:update own cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update own cooperation_idea content'
-  $permissions['node:community_private:update own cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update own factsheet_country content'
-  $permissions['node:community_private:update own factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update own factsheet_flag content'
-  $permissions['node:community_private:update own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update own farnet_article content'
-  $permissions['node:community_private:update own farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_private:update own farnet_discussion content'
-  $permissions['node:community_private:update own farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update own gp_method content'
-  $permissions['node:community_private:update own gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update own gp_project content'
-  $permissions['node:community_private:update own gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_private:update own gp_short_story content'
-  $permissions['node:community_private:update own gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_private:update own nexteuropa_event content'
   $permissions['node:community_private:update own nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:update own nexteuropa_faq content'
@@ -2365,9 +1149,7 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:update own nexteuropa_news content'
   $permissions['node:community_private:update own nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:update own page content'
@@ -2430,59 +1212,8 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:approve comment_node_cooperation_call'
-  $permissions['node:community_public:approve comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_cooperation_idea'
-  $permissions['node:community_public:approve comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:approve comment_node_editorial_team'
   $permissions['node:community_public:approve comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_factsheet_country'
-  $permissions['node:community_public:approve comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_factsheet_flag'
-  $permissions['node:community_public:approve comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_farnet_article'
-  $permissions['node:community_public:approve comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_farnet_discussion'
-  $permissions['node:community_public:approve comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_gp_method'
-  $permissions['node:community_public:approve comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_gp_project'
-  $permissions['node:community_public:approve comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:approve comment_node_gp_short_story'
-  $permissions['node:community_public:approve comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -2511,70 +1242,9 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:create cooperation_call content'
-  $permissions['node:community_public:create cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:create cooperation_idea content'
-  $permissions['node:community_public:create cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:create factsheet_country content'
-  $permissions['node:community_public:create factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:create factsheet_flag content'
-  $permissions['node:community_public:create factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:create farnet_article content'
-  $permissions['node:community_public:create farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:create farnet_discussion content'
-  $permissions['node:community_public:create farnet_discussion content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:create gp_method content'
-  $permissions['node:community_public:create gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:create gp_project content'
-  $permissions['node:community_public:create gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:create gp_short_story content'
-  $permissions['node:community_public:create gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:create nexteuropa_event content'
   $permissions['node:community_public:create nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:create nexteuropa_faq content'
@@ -2589,64 +1259,11 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:create nexteuropa_news content'
   $permissions['node:community_public:create nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:create page content'
   $permissions['node:community_public:create page content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete any cooperation_call content'
-  $permissions['node:community_public:delete any cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete any cooperation_idea content'
-  $permissions['node:community_public:delete any cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete any factsheet_country content'
-  $permissions['node:community_public:delete any factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete any factsheet_flag content'
-  $permissions['node:community_public:delete any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete any farnet_article content'
-  $permissions['node:community_public:delete any farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete any farnet_discussion content'
-  $permissions['node:community_public:delete any farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete any gp_method content'
-  $permissions['node:community_public:delete any gp_method content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete any gp_project content'
-  $permissions['node:community_public:delete any gp_project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete any gp_short_story content'
-  $permissions['node:community_public:delete any gp_short_story content'] = array(
     'roles' => array(),
   );
 
@@ -2697,59 +1314,8 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:delete comment_node_cooperation_call'
-  $permissions['node:community_public:delete comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_cooperation_idea'
-  $permissions['node:community_public:delete comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:delete comment_node_editorial_team'
   $permissions['node:community_public:delete comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_factsheet_country'
-  $permissions['node:community_public:delete comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_factsheet_flag'
-  $permissions['node:community_public:delete comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_farnet_article'
-  $permissions['node:community_public:delete comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_farnet_discussion'
-  $permissions['node:community_public:delete comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_gp_method'
-  $permissions['node:community_public:delete comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_gp_project'
-  $permissions['node:community_public:delete comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete comment_node_gp_short_story'
-  $permissions['node:community_public:delete comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -2801,62 +1367,8 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:delete own comment_node_cooperation_call'
-  $permissions['node:community_public:delete own comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_cooperation_idea'
-  $permissions['node:community_public:delete own comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:delete own comment_node_editorial_team'
   $permissions['node:community_public:delete own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_factsheet_country'
-  $permissions['node:community_public:delete own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_factsheet_flag'
-  $permissions['node:community_public:delete own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_farnet_article'
-  $permissions['node:community_public:delete own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_farnet_discussion'
-  $permissions['node:community_public:delete own comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_gp_method'
-  $permissions['node:community_public:delete own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_gp_project'
-  $permissions['node:community_public:delete own comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own comment_node_gp_short_story'
-  $permissions['node:community_public:delete own comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -2885,71 +1397,9 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:community_public:delete own cooperation_call content'
-  $permissions['node:community_public:delete own cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete own cooperation_idea content'
-  $permissions['node:community_public:delete own cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete own factsheet_country content'
-  $permissions['node:community_public:delete own factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own factsheet_flag content'
-  $permissions['node:community_public:delete own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own farnet_article content'
-  $permissions['node:community_public:delete own farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:delete own farnet_discussion content'
-  $permissions['node:community_public:delete own farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete own gp_method content'
-  $permissions['node:community_public:delete own gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete own gp_project content'
-  $permissions['node:community_public:delete own gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:delete own gp_short_story content'
-  $permissions['node:community_public:delete own gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:delete own nexteuropa_event content'
   $permissions['node:community_public:delete own nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:delete own nexteuropa_faq content'
@@ -2964,9 +1414,7 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:delete own nexteuropa_news content'
   $permissions['node:community_public:delete own nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:delete own page content'
@@ -2996,59 +1444,8 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:edit comment_node_cooperation_call'
-  $permissions['node:community_public:edit comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_cooperation_idea'
-  $permissions['node:community_public:edit comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:edit comment_node_editorial_team'
   $permissions['node:community_public:edit comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_factsheet_country'
-  $permissions['node:community_public:edit comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_factsheet_flag'
-  $permissions['node:community_public:edit comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_farnet_article'
-  $permissions['node:community_public:edit comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_farnet_discussion'
-  $permissions['node:community_public:edit comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_gp_method'
-  $permissions['node:community_public:edit comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_gp_project'
-  $permissions['node:community_public:edit comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit comment_node_gp_short_story'
-  $permissions['node:community_public:edit comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -3100,62 +1497,8 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:edit own comment_node_cooperation_call'
-  $permissions['node:community_public:edit own comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_cooperation_idea'
-  $permissions['node:community_public:edit own comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:edit own comment_node_editorial_team'
   $permissions['node:community_public:edit own comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_factsheet_country'
-  $permissions['node:community_public:edit own comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_factsheet_flag'
-  $permissions['node:community_public:edit own comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_farnet_article'
-  $permissions['node:community_public:edit own comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_farnet_discussion'
-  $permissions['node:community_public:edit own comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_gp_method'
-  $permissions['node:community_public:edit own comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_gp_project'
-  $permissions['node:community_public:edit own comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:edit own comment_node_gp_short_story'
-  $permissions['node:community_public:edit own comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -3280,62 +1623,8 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:post comment_node_cooperation_call'
-  $permissions['node:community_public:post comment_node_cooperation_call'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_cooperation_idea'
-  $permissions['node:community_public:post comment_node_cooperation_idea'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:post comment_node_editorial_team'
   $permissions['node:community_public:post comment_node_editorial_team'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_factsheet_country'
-  $permissions['node:community_public:post comment_node_factsheet_country'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_factsheet_flag'
-  $permissions['node:community_public:post comment_node_factsheet_flag'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_farnet_article'
-  $permissions['node:community_public:post comment_node_farnet_article'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_farnet_discussion'
-  $permissions['node:community_public:post comment_node_farnet_discussion'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_gp_method'
-  $permissions['node:community_public:post comment_node_gp_method'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_gp_project'
-  $permissions['node:community_public:post comment_node_gp_project'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:post comment_node_gp_short_story'
-  $permissions['node:community_public:post comment_node_gp_short_story'] = array(
     'roles' => array(),
   );
 
@@ -3383,57 +1672,6 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:update any cooperation_call content'
-  $permissions['node:community_public:update any cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update any cooperation_idea content'
-  $permissions['node:community_public:update any cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update any factsheet_country content'
-  $permissions['node:community_public:update any factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update any factsheet_flag content'
-  $permissions['node:community_public:update any factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update any farnet_article content'
-  $permissions['node:community_public:update any farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update any farnet_discussion content'
-  $permissions['node:community_public:update any farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update any gp_method content'
-  $permissions['node:community_public:update any gp_method content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update any gp_project content'
-  $permissions['node:community_public:update any gp_project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update any gp_short_story content'
-  $permissions['node:community_public:update any gp_short_story content'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:community_public:update any nexteuropa_event content'
   $permissions['node:community_public:update any nexteuropa_event content'] = array(
     'roles' => array(),
@@ -3466,71 +1704,9 @@ function farnet_communities_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:community_public:update own cooperation_call content'
-  $permissions['node:community_public:update own cooperation_call content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update own cooperation_idea content'
-  $permissions['node:community_public:update own cooperation_idea content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update own factsheet_country content'
-  $permissions['node:community_public:update own factsheet_country content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update own factsheet_flag content'
-  $permissions['node:community_public:update own factsheet_flag content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update own farnet_article content'
-  $permissions['node:community_public:update own farnet_article content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:community_public:update own farnet_discussion content'
-  $permissions['node:community_public:update own farnet_discussion content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update own gp_method content'
-  $permissions['node:community_public:update own gp_method content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update own gp_project content'
-  $permissions['node:community_public:update own gp_project content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:community_public:update own gp_short_story content'
-  $permissions['node:community_public:update own gp_short_story content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:community_public:update own nexteuropa_event content'
   $permissions['node:community_public:update own nexteuropa_event content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:update own nexteuropa_faq content'
@@ -3545,9 +1721,7 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_public:update own nexteuropa_news content'
   $permissions['node:community_public:update own nexteuropa_news content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_public:update own page content'
@@ -3557,11 +1731,6 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:editorial_team:edit own comment_node_nexteuropa_event'
   $permissions['node:editorial_team:edit own comment_node_nexteuropa_event'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:editorial_team:update any farnet_discussion content'
-  $permissions['node:editorial_team:update any farnet_discussion content'] = array(
     'roles' => array(),
   );
 

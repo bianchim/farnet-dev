@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Override of node.tpl.php for GP Short Story.
+ * Override of node.tpl.php for MyFarnet Event.
  */
 ?>
 

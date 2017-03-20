@@ -553,8 +553,6 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Metadata',
     'weight' => '16',
     'children' => array(
-      0 => 'group_content_access',
-      1 => 'og_group_ref',
       2 => 'language',
     ),
     'format_type' => 'tab',

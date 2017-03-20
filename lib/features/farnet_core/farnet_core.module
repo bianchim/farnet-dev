@@ -139,20 +139,6 @@ function farnet_core_printpdf_multilingual_form($form, &$form_state) {
 }
 
 /**
- * Hide the comments for nodes on the public site.
- *
- * Implements hook_node_presave().
- */
-function farnet_core_node_presave($node) {
-  if (isset($node->og_group_ref) && !empty($node->og_group_ref)) {
-    $node->comment = COMMENT_NODE_OPEN;
-  }
-  else {
-    $node->comment = COMMENT_NODE_HIDDEN;
-  }
-}
-
-/**
  * Implements hook_menu_alter().
  */
 function farnet_core_menu_alter(&$items) {
@@ -316,6 +302,16 @@ function farnet_core_node_view($node, $view_mode, $langcode) {
           '#markup' => _farnet_core_display_contact_details($node),
           '#weight' => 1000,
         ];
+
+        if ($node->type === 'factsheet_flag') {
+          $path_js_file = drupal_get_path('module', 'farnet_core') . '/js/farnet_core_contact_details.js';
+          if (file_exists($path_js_file)) {
+            $node->content['contact_details']['#attached']['js'][] = [
+              'data' => $path_js_file,
+              'type' => 'file',
+            ];
+          }
+        }
       }
       break;
 
@@ -577,10 +573,57 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
 
   // Prepare output.
   $output = '<div class="field-group-tab" id="group_contact_details"><h3><span>' . t('FLAG Contacts') . '</span></h3>';
+
+  $output .= '<div class="flag-contacts-right">';
+
   if (!empty($organisation->field_website)) {
     $website = $node->field_website->value();
-    $output .= '<div class="field-items">' . l($website['title'], $website['url'], ['attributes' => ['target' => '_blank']]) . '</div>';
+    $text = $website['title'];
+    if (drupal_strlen($website['title']) == 0) {
+      $text = $website['url'];
+    }
+    $output .= '<div class="field-items">' . l($text, $website['url'], ['attributes' => ['target' => '_blank']]) . '</div>';
   }
+
+  if ((!empty($flag->field_ff_twitter))
+    || (!empty($flag->field_ff_facebook))
+    || (!empty($flag->field_ff_linkedin))
+    || (!empty($flag->field_ff_google))
+  ) {
+
+    $output .= '<div class="flag-contacts-social">';
+    if (!empty($flag->field_ff_twitter)) {
+      $twitter = $flag->field_ff_twitter->value();
+      $img_twitter = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_twitter.jpg" class="f-ico__social" alt="Twitter logo" />';
+      $output .= l($img_twitter, $twitter['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
+    }
+
+    if (!empty($flag->field_ff_facebook)) {
+      $facebook = $flag->field_ff_facebook->value();
+      $img_facebook = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_facebook.jpg" class="f-ico__social" alt="Facebook logo" />';
+      $output .= l($img_facebook, $facebook['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
+    }
+
+    if (!empty($flag->field_ff_linkedin)) {
+      $linkedin = $flag->field_ff_linkedin->value();
+      $img_linkedin = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_linkedin.jpg" class="f-ico__social" alt="Facebook logo" />';
+      $output .= l($img_linkedin, $linkedin['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
+
+    }
+
+    if (!empty($flag->field_ff_google)) {
+      $google = $flag->field_ff_google->value();
+      $img_google = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_facebook.jpg" class="f-ico__social" alt="Google logo" />';
+      $output .= l($img_google, $google['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
+    }
+    $output .= '</div>';
+  }
+
+  $output .= '<div class="field-items">' . l(t('More on myFARNET'), '', ['attributes' => ['target' => '_blank']]) . '</div>';
+
+  $output .= '</div>';
+
+  $output .= '<div class="flag-contacts-left">';
 
   // Display flag info.
   $organisation_fields = [
@@ -590,6 +633,8 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
     'field_zip_code',
     'field_term_country',
   ];
+
+  $flag_organisations = [];
 
   foreach ($organisation_fields as $field) {
     $value = $node->{$field}->value();
@@ -608,17 +653,22 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
     switch ($field) {
       case 'title_field':
         // Put the organisation name in bold and keep a new line.
-        $output .= '<div class="field-label">' . $value . '</div><div class="field-items">&nbsp</div>';
+        $flag_organisations['title_field'] = '<div class="field-label">' . $value . '</div><div class="field-items">&nbsp</div>';
         break;
 
       case 'field_zip_code':
         $city = $node->field_city->value();
-        $output .= '<div class="field-items">' . $value . ' ' . $city . '</div>';
+        $flag_organisations['address'] = '<div class="field-contact-hidden">';
+        $flag_organisations['address'] .= '<div class="field-items">' . $value . ' ' . $city . '</div>';
+        $flag_organisations['address'] .= '</div>';
         break;
 
       default:
-        $output .= '<div class="field-items">' . $value . '</div>';
+        $flag_organisations[$field] = '<div class="field-contact-hidden">';
+        $flag_organisations[$field] .= '<div class="field-items">' . $value . '</div>';
+        $flag_organisations[$field] .= '</div>';
         break;
+
     }
 
     // Unset for the next field checks.
@@ -639,6 +689,7 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
     // Load the contact info.
     $contact = $fc_contact->field_contact_person->value();
     if (isset($contact)) {
+      $organisation_contacts = [];
       $contact = entity_metadata_wrapper('node', node_load($contact->nid));
 
       // Contact fields.
@@ -647,6 +698,7 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
         'field_email' => TRUE,
         'field_telephone' => TRUE,
         'field_phone_mobile' => TRUE,
+        'field_skype_id' => TRUE,
       ];
 
       $gender = $contact->field_gender->value();
@@ -676,17 +728,41 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
           case 'title_field':
             $contact_title = $gender === 'male' ? t('Mr.') : t('Ms.');
             $render = $contact_title . ' ' . $contact->field_firstname->value() . ' ' . $value;
-
-            $output .= '<div class="field-label">FLAG ' . reset($position) . ' : </div>';
-            $output .= '<div class="field-items">' . $render . '</div>';
+            $organisation_contacts['title_field'] = '<div class="field-label">FLAG ' . reset($position) . ': </div>';
+            $organisation_contacts['title_field'] .= '<div class="field-items">' . $render . '</div>';
             break;
 
-          case 'field_email';
-            $output .= '<div class="field-items">' . l($value, 'mailto:' . $value, ['absolute' => TRUE]) . '</div>';
+          case 'field_email':
+            $organisation_contacts['field_email'] = '<div class="field-contact-hidden">';
+            $organisation_contacts['field_email'] .= '<div class="field-items">' . l($value, 'mailto:' . $value, ['absolute' => TRUE]) . '</div>';
+            $organisation_contacts['field_email'] .= '</div>';
+            break;
+
+          case 'field_telephone':
+            $organisation_contacts['field_telephone'] = '<div class="field-contact-hidden">';
+            $organisation_contacts['field_telephone'] .= '<div class="field-label-light">' . t('Phone') . ': </div>';
+            $organisation_contacts['field_telephone'] .= '<div class="field-items">' . $value . '</div>';
+            $organisation_contacts['field_telephone'] .= '</div>';
+            break;
+
+          case 'field_phone_mobile':
+            $organisation_contacts['field_phone_mobile'] = '<div class="field-contact-hidden">';
+            $organisation_contacts['field_phone_mobile'] .= '<div class="field-label-light">' . t('Mobile') . ': </div>';
+            $organisation_contacts['field_phone_mobile'] .= '<div class="field-items">' . $value . '</div>';
+            $organisation_contacts['field_phone_mobile'] .= '</div>';
+            break;
+
+          case 'field_skype_id':
+            $organisation_contacts['field_skype_id'] = '<div class="field-contact-hidden">';
+            $organisation_contacts['field_skype_id'] .= '<div class="field-label-light">' . t('SkypeID') . ': </div>';
+            $organisation_contacts['field_skype_id'] .= '<div class="field-items">' . $value . '</div>';
+            $organisation_contacts['field_skype_id'] .= '</div>';
             break;
 
           default:
-            $output .= '<div class="field-items">' . $value . '</div>';
+            $organisation_contacts[$field] = '<div class="field-contact-hidden">';
+            $organisation_contacts[$field] = '<div class="field-items">' . $value . '</div>';
+            $organisation_contacts[$field] .= '</div>';
             break;
         }
 
@@ -694,12 +770,34 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
         unset($value);
       }
 
-      // Close div field-group-tab.
-      $output .= '</div>';
+      $flag_organisations[] = $organisation_contacts;
+
     }
   }
 
+  $contact_detail_output = '';
+  foreach ($flag_organisations as $value) {
+    if (!is_array($value)) {
+      $contact_detail_output .= $value;
+    }
+    else {
+      foreach ($value as $item) {
+        $contact_detail_output .= $item;
+      }
+    }
+  }
+
+  $output .= $contact_detail_output;
+  $output .= '<button id="button-show-detail">Show Contacts Detail &raquo;</button>';
+
+  // Close div flag-contacts-left.
+  $output .= '</div>';
+
+  // Close div field-group-tab.
+  $output .= '</div>';
+
   return '<fieldset class="flag-contacts"><div class="field">' . $output . '</div></fieldset>';
+
 }
 
 /**

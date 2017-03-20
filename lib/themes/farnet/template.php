@@ -25,11 +25,22 @@ function farnet_preprocess_page(&$variables) {
 
   // Switch title to page type.
   if (isset($variables['node'])) {
-    $node_type = node_type_get_name($variables['node']);
-    if (!in_array($node_type, array('Basic page', 'Article', 'Landing Page'))) {
+    /* $node_type = node_type_get_name($variables['node']); */
+    $node_type = $variables['node']->type;
+    if (!in_array($node_type, array('page', 'farnet_article', 'landing_page', 'myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $variables['node_type'] = $node_type;
     }
-    if (in_array($node_type, array('Landing Page'))) {
+    if (in_array($node_type, array('community_public', 'community_private', 'community_hidden'))) {
+      $variables['node_type'] = 'MyFarnet';
+    }
+    if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
+      $data = og_context();
+      $node_community = node_load($data['gid']);
+      if (isset($node_community->title)) {
+        $variables['node_community_name'] = $node_community->title;
+      }
+    }
+    if (in_array($node_type, array('landing_page'))) {
       // Format regions.
       $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
     }
@@ -992,4 +1003,57 @@ function farnet_preprocess_image_style(&$vars) {
       $vars['attributes']['class'][] = 'media-object farnet-listing__picture';
     }
   }
+}
+
+/**r
+ * Implements template_preprocess_node().
+ */
+function farnet_preprocess_node(&$variables) {
+
+
+  // Add a last updated date to communities.
+  $types = ['community_public', 'community_private', 'community_hidden'];
+  if (in_array($variables['type'], $types)) {
+    $last = _farnet_communities_get_last_updated_date($variables['nid']);
+    if ($last) {
+      $variables['last_updated'] = $last;
+    }
+
+    $disc_count = _farnet_communities_discussion_count($variables['nid']);
+    if ($disc_count) {
+      $variables['discussion_count'] = $disc_count;
+    }
+
+    // Get join button in CT.
+    if (isset($variables['content']['group_group'][0])) {
+      $field_value = &$variables['content']['group_group'][0];
+      // Only alter join link.
+      if (isset($field_value['#href']) && strpos($field_value['#href'], 'unsubscribe') === FALSE) {
+        if ($variables['type'] === 'community_public') {
+          $title = t('Join');
+        }
+        else {
+          $title = t('Ask to join');
+        }
+
+        $field_value['#title'] = $title;
+      }
+    }
+  }
+
+  // Display information on community contents.
+  $comm_content = [
+    'myfarnet_discussion',
+    'myfarnet_cooperation_idea',
+    'myfarnet_event',
+    'myfarnet_news'
+  ];
+  if (in_array($variables['type'], $comm_content)) {
+    $params = [':nid' => $variables['nid'], ':status' => COMMENT_PUBLISHED];
+    $comm_count = db_query('SELECT COUNT(*) FROM {comment} WHERE nid=:nid AND status=:status', $params)->fetchField();
+    if (isset($comm_count) && $comm_count) {
+      $variables['comment_count'] = $comm_count;
+    }
+  }
+
 }

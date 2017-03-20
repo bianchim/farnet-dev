@@ -149,6 +149,11 @@ h1.title-small {
   height: auto;
 }
 
+#edit-field-picture img {
+  width: auto;
+  height: auto;
+}
+
 .field-name-field-id-text .field-label {
   display: none;
 }
@@ -394,4 +399,45 @@ table.table-responsive.table-blue.table--white-borders th {
   .region-content-bottom .block .content {
     height: 361px;
   }
+}
+
+.flag-contacts-detail.panel-group h4 a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts-detail.panel-group h4 a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts-detail.panel-group h4 a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts .field-label-light {
+  float: left;
+  margin-right: 5px;
+}
+
+.field-contact-hidden {
+  display: none;
+}
+
+#button-show-detail {
+  margin-bottom: 5px;
+}
+
+.flag-contacts-right {
+  display: none;
+}
+
+.node .comment_forbidden {
+  display: none;
+}
+
+.myfarnet-main-menu-link {
+  color: #074a8b!important;
+  font-weight: 700;
 }
