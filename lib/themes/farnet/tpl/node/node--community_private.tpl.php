@@ -118,6 +118,7 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['title_field']);
+    hide($content['field_farnet_abstract']);
     ?>
   </div>
 
