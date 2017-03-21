@@ -9,7 +9,6 @@
  */
 function myfarnet_discussion_views_default_views() {
   $export = array();
-
   $view = new view();
   $view->name = 'my_farnet_discussion';
   $view->description = 'Show all content (nodes) of a group.';
@@ -19,7 +18,6 @@ function myfarnet_discussion_views_default_views() {
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->display->display_options['title'] = 'Discussions';
@@ -91,11 +89,9 @@ function myfarnet_discussion_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'myfarnet_discussion' => 'myfarnet_discussion',
   );
-
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['path'] = 'discussion';
   $export['my_farnet_discussion'] = $view;
-
   return $export;
 }
