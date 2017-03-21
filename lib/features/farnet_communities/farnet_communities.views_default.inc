@@ -73,16 +73,12 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['discussion_count']['field'] = 'discussion_count';
   $handler->display->display_options['fields']['discussion_count']['label'] = '';
   $handler->display->display_options['fields']['discussion_count']['element_label_colon'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['label'] = '';
-  $handler->display->display_options['fields']['field_ne_body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ne_body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['field_ne_body']['settings'] = array(
-    'trim_length' => '200',
-  );
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
