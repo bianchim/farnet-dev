@@ -169,8 +169,7 @@ function myfarnet_event_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_myfarnet_event';
   $strongarm->value = array(
-    0 => 'moderation',
-    1 => 'revision',
+    0 => 'revision',
   );
   $export['node_options_myfarnet_event'] = $strongarm;
 
