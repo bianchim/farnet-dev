@@ -437,6 +437,7 @@ features[variable][] = pathauto_node_community_hidden_pattern
 features[variable][] = pathauto_node_community_private_pattern
 features[variable][] = pathauto_node_community_public_pattern
 features[views_view][] = farnet_communities
+features[views_view][] = farnet_discussion
 features[views_view][] = farnet_og_memberships
 features[views_view][] = members_list
 features[wysiwyg][] = myfarnet_html

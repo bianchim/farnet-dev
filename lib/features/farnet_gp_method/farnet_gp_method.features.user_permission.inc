@@ -15,6 +15,7 @@ function farnet_gp_method_user_default_permissions() {
   $permissions['create gp_method content'] = array(
     'name' => 'create gp_method content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -24,6 +25,7 @@ function farnet_gp_method_user_default_permissions() {
   $permissions['delete any gp_method content'] = array(
     'name' => 'delete any gp_method content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -33,6 +35,7 @@ function farnet_gp_method_user_default_permissions() {
   $permissions['delete own gp_method content'] = array(
     'name' => 'delete own gp_method content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -42,6 +45,7 @@ function farnet_gp_method_user_default_permissions() {
   $permissions['edit any gp_method content'] = array(
     'name' => 'edit any gp_method content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -51,9 +55,73 @@ function farnet_gp_method_user_default_permissions() {
   $permissions['edit own gp_method content'] = array(
     'name' => 'edit own gp_method content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'moderate gp_method state from draft to needs_review'.
+  $permissions['moderate gp_method state from draft to needs_review'] = array(
+    'name' => 'moderate gp_method state from draft to needs_review',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from needs_review to draft'.
+  $permissions['moderate gp_method state from needs_review to draft'] = array(
+    'name' => 'moderate gp_method state from needs_review to draft',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from needs_review to published'.
+  $permissions['moderate gp_method state from needs_review to published'] = array(
+    'name' => 'moderate gp_method state from needs_review to published',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from needs_review to validated'.
+  $permissions['moderate gp_method state from needs_review to validated'] = array(
+    'name' => 'moderate gp_method state from needs_review to validated',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from published to archived'.
+  $permissions['moderate gp_method state from published to archived'] = array(
+    'name' => 'moderate gp_method state from published to archived',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from published to draft'.
+  $permissions['moderate gp_method state from published to draft'] = array(
+    'name' => 'moderate gp_method state from published to draft',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from published to expired'.
+  $permissions['moderate gp_method state from published to expired'] = array(
+    'name' => 'moderate gp_method state from published to expired',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from published to needs_review'.
+  $permissions['moderate gp_method state from published to needs_review'] = array(
+    'name' => 'moderate gp_method state from published to needs_review',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate gp_method state from validated to published'.
+  $permissions['moderate gp_method state from validated to published'] = array(
+    'name' => 'moderate gp_method state from validated to published',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
   );
 
   return $permissions;

@@ -26,6 +26,12 @@ function farnet_communities_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-farnet_discussion-block' => array(
+          'module' => 'views',
+          'delta' => 'farnet_discussion-block',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'views-farnet_og_memberships-block' => array(
           'module' => 'views',
           'delta' => 'farnet_og_memberships-block',
