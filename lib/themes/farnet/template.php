@@ -31,7 +31,7 @@ function farnet_preprocess_page(&$variables) {
       $variables['node_type'] = $node_type;
     }
     if (in_array($node_type, array('community_public', 'community_private', 'community_hidden'))) {
-      $variables['node_type'] = 'MyFarnet';
+      $variables['node_type'] = NULL;
     }
     if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();

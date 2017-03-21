@@ -23,8 +23,8 @@ global $base_url;
       <?php endif; ?>
     </div>
     <div class="farnet-listing__abstract">
-      <?php if (!empty($fields['field_ne_body'])) : ?>
-        <?php print $fields['field_ne_body']->content; ?>
+      <?php if (!empty($fields['field_farnet_abstract'])) : ?>
+        <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
     <div class="btn btn-primary farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>

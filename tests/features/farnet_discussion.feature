@@ -48,7 +48,7 @@ Feature: Discussion content type
       | workbench_moderation_state  | published                         |
       | status                      | 1                                 |
     Then I should see the heading "Behat Discussion Test #2"
-    And I click "New draft"
+    And I click "Edit"
     And I fill in "title_field[en][0][value]" with "Behat Discussion Test #2.1"
     And I press the "Save" button
     #And I should see the text "Behat Discussion Test #2.1"
@@ -64,7 +64,7 @@ Feature: Discussion content type
       | workbench_moderation_state  | published                        |
       | status                      | 1                                |
     Then I should see the heading "Behat Discussion Test #3"
-    When I click "New draft"
+    When I click "Edit"
     And I press "Delete"
     #Then I should see the text "Are you sure you want to delete Behat Discussion Test #3?"
     #When I press "Delete"
