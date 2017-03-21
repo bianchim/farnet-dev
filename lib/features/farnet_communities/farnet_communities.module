@@ -416,10 +416,6 @@ function _farnet_communities_discussion_count($gid) {
  * Render node light for preview without context communities.
  */
 function _farnet_communities_community_preview($community) {
-
   unset($community->group_access);
-  unset($community->group_group);
-
   return node_page_view($community);
-
 }
