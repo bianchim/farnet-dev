@@ -539,7 +539,7 @@ function farnet_communities_field_default_field_instances() {
     'description' => 'Determine if this is an OG group.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'og_ui',
         'settings' => array(
           'field_name' => FALSE,
