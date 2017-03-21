@@ -1046,9 +1046,7 @@ function farnet_communities_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_private:post comment_node_community_public'
   $permissions['node:community_private:post comment_node_community_public'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:community_private:post comment_node_editorial_team'
