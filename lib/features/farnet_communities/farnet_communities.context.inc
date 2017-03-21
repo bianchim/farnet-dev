@@ -23,7 +23,24 @@ function farnet_communities_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-farnet_og_memberships-block' => array(
+          'module' => 'views',
+          'delta' => 'farnet_og_memberships-block',
+          'region' => 'content',
+          'weight' => '0',
+        ),
+        'views-farnet_og_memberships-block_1' => array(
+          'module' => 'views',
+          'delta' => 'farnet_og_memberships-block_1',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables
