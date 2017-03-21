@@ -34,7 +34,7 @@
  * @ingroup themeable
  */
 ?>
-<?php dpm($user_profile); ?>
+
 <div class="profile clearfix"<?php print $attributes; ?>>
 
   <?php
