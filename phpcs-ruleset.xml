@@ -82,6 +82,7 @@
     <!-- Features generated menu links often have too long comment strings. -->
     <rule ref="Drupal.Files.LineLength.TooLong">
         <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
+        <exclude-pattern>*.features.user_permission.inc</exclude-pattern>
     </rule>
 
     <!-- Disable DrupalPractice rules that do not apply to non-contribs. -->
