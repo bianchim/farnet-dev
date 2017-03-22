@@ -104,7 +104,7 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Communities';
   $handler->display->display_options['menu']['weight'] = '1';
-  $handler->display->display_options['menu']['name'] = 'menu-community-menu';
+  $handler->display->display_options['menu']['name'] = 'menu-myfarnet-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['farnet_communities'] = $view;
