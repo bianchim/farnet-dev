@@ -9,6 +9,7 @@
  */
 function myfarnet_discussion_views_default_views() {
   $export = array();
+
   $view = new view();
   $view->name = 'my_farnet_discussion';
   $view->description = 'Show all content (nodes) of a group.';
@@ -18,6 +19,7 @@ function myfarnet_discussion_views_default_views() {
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->display->display_options['title'] = 'Discussions';
@@ -46,6 +48,13 @@ function myfarnet_discussion_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
+  /* Field: Content: Comment count */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['separator'] = '';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
   $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
@@ -89,9 +98,11 @@ function myfarnet_discussion_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'myfarnet_discussion' => 'myfarnet_discussion',
   );
+
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['path'] = 'discussion';
   $export['my_farnet_discussion'] = $view;
+
   return $export;
 }
