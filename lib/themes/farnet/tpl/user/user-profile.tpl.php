@@ -41,6 +41,7 @@
   hide($user_profile['mimemail']);
   hide($user_profile['tmgmt_translation_skills']);
   hide($user_profile['simplenews']);
+  hide($user_profile['og_user_node']);
   hide($user_profile['summary']);
   hide($user_profile['field_preferred_email']);
   hide($user_profile['field_keep_my_email_private']);
