@@ -419,3 +419,40 @@ function _farnet_communities_community_preview($community) {
   unset($community->group_access);
   return node_page_view($community);
 }
+
+/**
+ * Check that a menu item in a community is accessible.
+ *
+ * @param string $right
+ *   The basic access right to check.
+ * @param object $group
+ *   The current og group.
+ * @param string $content_type
+ *   The content type we're trying to access.
+ *
+ * @return bool
+ *   Return TRUE if the user has access.
+ */
+function _farnet_communities_ct_page_access($right, $group, $content_type) {
+  if (!user_access($right)) {
+    return FALSE;
+  }
+
+  // Check content types allowed in configuration.
+  $allowed = og_content_type_admin_access_group();
+  if (!isset($allowed[$content_type])) {
+    return FALSE;
+  }
+
+  // Check if some content exists.
+  $query = db_select('og_membership', 'ogm')
+    ->fields('ogm')
+    ->condition('ogm.entity_type', 'node', '=')
+    ->condition('ogm.gid', $group->nid, '=');
+
+  $query->leftJoin('node', 'n', 'n.nid = ogm.etid');
+  $result = $query->condition('n.type', $content_type, '=')
+    ->execute();
+
+  return $result->rowCount() > 0;
+}
