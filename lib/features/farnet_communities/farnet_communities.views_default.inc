@@ -221,6 +221,8 @@ function farnet_communities_views_default_views() {
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -278,7 +280,6 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'community_hidden' => 'community_hidden',
     'community_private' => 'community_private',
     'community_public' => 'community_public',
   );
