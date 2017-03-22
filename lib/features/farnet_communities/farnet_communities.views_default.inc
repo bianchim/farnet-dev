@@ -13,17 +13,17 @@ function farnet_communities_views_default_views() {
 
   $view = new view();
   $view->name = 'farnet_communities';
-  $view->description = 'List of Farnet communities';
+  $view->description = 'List of FARNET communities';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Farnet communities';
+  $view->human_name = 'FARNET communities';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Farnet communities';
+  $handler->display->display_options['title'] = 'FARNET communities';
   $handler->display->display_options['css_class'] = 'listing-views';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
