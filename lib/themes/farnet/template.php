@@ -25,9 +25,9 @@ function farnet_preprocess_page(&$variables) {
 
   // Switch title to page type.
   if (isset($variables['node'])) {
-    /* $node_type = node_type_get_name($variables['node']); */
     $node_type = $variables['node']->type;
     if (!in_array($node_type, array('page', 'farnet_article', 'landing_page', 'myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
+      $node_type = node_type_get_name($variables['node']);
       $variables['node_type'] = $node_type;
     }
     if (in_array($node_type, array('community_public', 'community_private', 'community_hidden'))) {
