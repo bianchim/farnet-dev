@@ -91,7 +91,7 @@ function myfarnet_news_views_default_views() {
   );
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['path'] = 'discussion';
-  $export['my_farnet_discussion'] = $view;
+  $handler->display->display_options['path'] = 'news';
+  $export['my_farnet_news'] = $view;
   return $export;
 }
