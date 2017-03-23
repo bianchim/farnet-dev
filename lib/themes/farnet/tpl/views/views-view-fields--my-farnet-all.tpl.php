@@ -14,12 +14,15 @@ global $base_url;
       case 'myfarnet_discussion': ?>
         <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
         <?php break;
+
       case 'myfarnet_cooperation_idea': ?>
         <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
         <?php break;
+
       case 'myfarnet_news': ?>
         <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
         <?php break;
+
       case 'myfarnet_event': ?>
         <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
         <?php break;
