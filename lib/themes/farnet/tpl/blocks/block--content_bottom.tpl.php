@@ -57,11 +57,21 @@
     <?php endif;?>
     <?php print render($title_suffix); ?>
     <div class="content"<?php print $content_attributes; ?>>
-      <?php
-      print $content;
-      ?>
+      <?php print $content; ?>
     </div>
   </div>
+<?php elseif($block_html_id == 'block-views-my-farnet-all-block-all'): ?>
+  <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> col-sm-12">
+    <?php print render($title_prefix); ?>
+    <?php if ($title && $block->subject): ?>
+      <div class="title">
+        <?php print $block->subject ?>
+      </div>
+    <?php endif;?>
+    <?php print render($title_suffix); ?>
+    <div class="content-views"<?php print $content_attributes; ?>>
+      <?php print $content; ?>
+    </div>
 <?php else: ?>
   <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> <?php print ($panel ? 'panel panel-default clearfix' : ''); ?>">
     <?php print render($title_prefix); ?>
@@ -72,9 +82,7 @@
     <?php endif;?>
     <?php print render($title_suffix); ?>
     <div class="<?php print ($panel && $body_class ? 'panel-body' : ''); ?> content"<?php print $content_attributes; ?>>
-      <?php
-      print $content;
-      ?>
+      <?php print $content; ?>
     </div>
   </div>
 <?php endif; ?>
