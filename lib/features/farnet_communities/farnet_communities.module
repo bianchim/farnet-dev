@@ -48,6 +48,18 @@ function farnet_communities_menu() {
     'access arguments' => ['access content'],
   );
 
+  $items['community/%community/members'] = array(
+    'title' => 'Members',
+    'page callback' => 'farnet_communities_display_views',
+    'page arguments' => array('farnet_communities_members', 'page', 1),
+    'access arguments' => array('access private area'),
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'menu-community-menu',
+    'weight' => 10,
+    'file' => 'farnet_communities.callback.inc',
+    'file path' => drupal_get_path('module', 'farnet_communities'),
+  );
+
   return $items;
 }
 
@@ -455,4 +467,73 @@ function _farnet_communities_ct_page_access($right, $group, $content_type) {
     ->execute();
 
   return $result->rowCount() > 0;
+}
+
+/**
+ * Implements hook_comment_insert().
+ */
+function farnet_communities_comment_insert($comment) {
+  global $user;
+  $node = node_load($comment->nid);
+  if (isset($node->og_group_ref)) {
+    $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+    farnet_communities_insert_user_contribution($user->uid, $comment->nid, $gid, 'comment');
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function farnet_communities_node_insert($node) {
+  global $user;
+  if (isset($node->og_group_ref) && $node->status === NODE_PUBLISHED) {
+    $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+    farnet_communities_insert_user_contribution($user->uid, $node->nid, $gid, 'node_insert');
+  }
+}
+
+/**
+ * Implements hook_og_membership_update().
+ */
+function farnet_communities_og_membership_update(OgMembership $og_membership) {
+  if ($og_membership->state == OG_STATE_ACTIVE) {
+    farnet_communities_insert_user_contribution($og_membership->etid, 0, $og_membership->gid, 'join');
+  }
+}
+
+/**
+ * Implements hook_og_membership_insert().
+ */
+function farnet_communities_og_membership_insert(OgMembership $og_membership) {
+  if ($og_membership->state === OG_STATE_ACTIVE) {
+    farnet_communities_insert_user_contribution($og_membership->etid, 0, $og_membership->gid, 'join');
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function farnet_communities_node_update($node) {
+  global $user;
+  // Check that the node is not new.
+  if ($node->revision === TRUE && isset($node->og_group_ref) && $node->status === NODE_PUBLISHED) {
+    $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+    farnet_communities_insert_user_contribution($user->uid, $node->nid, $gid, 'node_update');
+  }
+}
+
+/**
+ * Insert a last contribution.
+ */
+function farnet_communities_insert_user_contribution($uid, $nid, $gid, $action) {
+  db_merge('user_last_contribution')
+    ->key(['uid' => $uid, 'gid' => $gid])
+    ->fields([
+      'uid' => $uid,
+      'nid' => $nid,
+      'gid' => $gid,
+      'action' => $action,
+      'timestamp' => time(),
+    ])
+    ->execute();
 }
