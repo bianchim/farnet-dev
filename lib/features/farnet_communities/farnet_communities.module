@@ -526,14 +526,16 @@ function farnet_communities_node_update($node) {
  * Insert a last contribution.
  */
 function farnet_communities_insert_user_contribution($uid, $nid, $gid, $action) {
-  db_merge('user_last_contribution')
-    ->key(['uid' => $uid, 'gid' => $gid])
-    ->fields([
-      'uid' => $uid,
-      'nid' => $nid,
-      'gid' => $gid,
-      'action' => $action,
-      'timestamp' => time(),
-    ])
-    ->execute();
+  if (!is_null($gid)) {
+    db_merge('user_last_contribution')
+      ->key(['uid' => $uid, 'gid' => $gid])
+      ->fields([
+        'uid' => $uid,
+        'nid' => $nid,
+        'gid' => $gid,
+        'action' => $action,
+        'timestamp' => time(),
+      ])
+      ->execute();
+  }
 }
