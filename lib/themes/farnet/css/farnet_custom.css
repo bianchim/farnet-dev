@@ -436,3 +436,8 @@ table.table-responsive.table-blue.table--white-borders th {
 .node .comment_forbidden {
   display: none;
 }
+
+.myfarnet-main-menu-link {
+  color: #074a8b!important;
+  font-weight: 700;
+}

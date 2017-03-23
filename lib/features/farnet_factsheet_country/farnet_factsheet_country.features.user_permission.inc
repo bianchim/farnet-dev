@@ -15,6 +15,7 @@ function farnet_factsheet_country_user_default_permissions() {
   $permissions['create factsheet_country content'] = array(
     'name' => 'create factsheet_country content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -24,6 +25,7 @@ function farnet_factsheet_country_user_default_permissions() {
   $permissions['delete any factsheet_country content'] = array(
     'name' => 'delete any factsheet_country content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -33,6 +35,7 @@ function farnet_factsheet_country_user_default_permissions() {
   $permissions['delete own factsheet_country content'] = array(
     'name' => 'delete own factsheet_country content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -42,6 +45,7 @@ function farnet_factsheet_country_user_default_permissions() {
   $permissions['edit any factsheet_country content'] = array(
     'name' => 'edit any factsheet_country content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -51,9 +55,73 @@ function farnet_factsheet_country_user_default_permissions() {
   $permissions['edit own factsheet_country content'] = array(
     'name' => 'edit own factsheet_country content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from draft to needs_review'.
+  $permissions['moderate factsheet_country state from draft to needs_review'] = array(
+    'name' => 'moderate factsheet_country state from draft to needs_review',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from needs_review to draft'.
+  $permissions['moderate factsheet_country state from needs_review to draft'] = array(
+    'name' => 'moderate factsheet_country state from needs_review to draft',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from needs_review to published'.
+  $permissions['moderate factsheet_country state from needs_review to published'] = array(
+    'name' => 'moderate factsheet_country state from needs_review to published',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from needs_review to validated'.
+  $permissions['moderate factsheet_country state from needs_review to validated'] = array(
+    'name' => 'moderate factsheet_country state from needs_review to validated',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from published to archived'.
+  $permissions['moderate factsheet_country state from published to archived'] = array(
+    'name' => 'moderate factsheet_country state from published to archived',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from published to draft'.
+  $permissions['moderate factsheet_country state from published to draft'] = array(
+    'name' => 'moderate factsheet_country state from published to draft',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from published to expired'.
+  $permissions['moderate factsheet_country state from published to expired'] = array(
+    'name' => 'moderate factsheet_country state from published to expired',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from published to needs_review'.
+  $permissions['moderate factsheet_country state from published to needs_review'] = array(
+    'name' => 'moderate factsheet_country state from published to needs_review',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate factsheet_country state from validated to published'.
+  $permissions['moderate factsheet_country state from validated to published'] = array(
+    'name' => 'moderate factsheet_country state from validated to published',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
   );
 
   return $permissions;

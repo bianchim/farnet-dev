@@ -1315,9 +1315,9 @@ function _og_content_type_get_all_groups($group_type = 'node') {
  * Obtain all the allowed content-types in a group retrieved.
  */
 function og_content_type_admin_access_group($bundle_name = NULL) {
-  $return = $required_site_wide = $allowed_types_group = array();
-  $gid = (int) arg(1);
-  $gid = ($gid == 0 && isset($_GET['og_group_ref'])) ? $_GET['og_group_ref'] : $gid;
+  $required_site_wide = $allowed_types_group = array();
+  $context = og_context();
+  $gid = isset($context['gid']) ? $context['gid'] : 0;
 
   // Recover all information required by the site.
   $result_site_wide = db_select('og_content_type_admin', 'octa')

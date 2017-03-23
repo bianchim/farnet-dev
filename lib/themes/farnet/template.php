@@ -25,13 +25,13 @@ function farnet_preprocess_page(&$variables) {
 
   // Switch title to page type.
   if (isset($variables['node'])) {
-    /* $node_type = node_type_get_name($variables['node']); */
     $node_type = $variables['node']->type;
     if (!in_array($node_type, array('page', 'farnet_article', 'landing_page', 'myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
+      $node_type = node_type_get_name($variables['node']);
       $variables['node_type'] = $node_type;
     }
     if (in_array($node_type, array('community_public', 'community_private', 'community_hidden'))) {
-      $variables['node_type'] = 'MyFarnet';
+      $variables['node_type'] = NULL;
     }
     if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
       $data = og_context();
@@ -1005,7 +1005,7 @@ function farnet_preprocess_image_style(&$vars) {
   }
 }
 
-/**r
+/**
  * Implements template_preprocess_node().
  */
 function farnet_preprocess_node(&$variables) {
@@ -1056,4 +1056,34 @@ function farnet_preprocess_node(&$variables) {
     }
   }
 
+}
+
+/**
+ * Implements template_preprocess_user_profile().
+ */
+function farnet_preprocess_user_profile(&$variables) {
+  $account = $variables['elements']['#account'];
+  //Add the user ID into the user profile as a variable
+  $variables['user_id'] = $account->uid;
+  // Helpful $user_profile variable for templates.
+  foreach (element_children($variables['elements']) as $key) {
+    if($key == 'field_gender') {
+      switch($variables['elements'][$key]['#items'][0]['value']) {
+        case 'male':
+          $variables['elements'][$key]['#items'][0]['value'] = 'Mr';
+          $variables['elements'][$key][0]['#markup'] = 'Mr';
+          $variables['elements'][$key][0]['#items']['value'] = 'Mr';
+          break;
+        case 'female':
+          $variables['elements'][$key]['#items'][0]['value'] = 'Mrs';
+          $variables['elements'][$key][0]['#markup'] = 'Mrs';
+          $variables['elements'][$key][0]['#items']['value'] = 'Mrs';
+          break;
+      }
+    }
+    $variables['user_profile'][$key] = $variables['elements'][$key];
+  }
+
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }

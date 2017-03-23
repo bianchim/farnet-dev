@@ -23,8 +23,8 @@ global $base_url;
       <?php endif; ?>
     </div>
     <div class="farnet-listing__abstract">
-      <?php if (!empty($fields['field_ne_body'])) : ?>
-        <?php print $fields['field_ne_body']->content; ?>
+      <?php if (!empty($fields['field_farnet_abstract'])) : ?>
+        <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
     <div class="btn btn-primary farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
@@ -32,6 +32,6 @@ global $base_url;
       $path = strip_tags($fields['path']->content);
       $url_preview = drupal_substr($path, 0, strpos($path, "_"));
     ?>
-    <a href="<?php echo $base_url . $url_preview; ?>/preview" class="btn btn-default farnet-listing__read-more">Preview</a>
+    <a href="<?php echo $url_preview; ?>/preview" class="btn btn-default farnet-listing__read-more">Preview</a>
   </div>
 </li>

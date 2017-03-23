@@ -234,6 +234,25 @@ function farnet_mega_menu_enable() {
             ),
           ),
         ),
+        8 => array(
+          'link_title' => 'myFARNET',
+          'link_title_option' => 'title',
+          'path_icon' => '',
+          'icon_option' => 0,
+          'php_option' => 0,
+          'path' => 'myfarnet',
+          'path_query' => '',
+          'path_fragment' => '',
+          'weight' => '10',
+          'id' => '',
+          'class' => 'myfarnet_main_menu_link',
+          'rel' => '',
+          'target' => '_self',
+          'description' => '',
+          'description_option' => 'hover',
+          'roles' => [],
+          'content' => '',
+        ),
       ),
     ),
   );
@@ -246,4 +265,34 @@ function farnet_mega_menu_enable() {
  */
 function farnet_mega_menu_disable() {
   drupal_set_message(t('The FARNET Mega Menu feature is now disabled on your site.'));
+}
+
+/**
+ * Add new myfarnet link to the mega menu.
+ */
+function farnet_mega_menu_update_7001() {
+  $info = variable_get("om_maximenu", []);
+
+  $new_block = array(
+    'link_title' => 'myFARNET',
+    'link_title_option' => 'title',
+    'path_icon' => '',
+    'icon_option' => 0,
+    'php_option' => 0,
+    'path' => 'myfarnet',
+    'path_query' => '',
+    'path_fragment' => '',
+    'weight' => '10',
+    'id' => '',
+    'class' => 'myfarnet_main_menu_link',
+    'rel' => '',
+    'target' => '_self',
+    'description' => '',
+    'description_option' => 'hover',
+    'roles' => [],
+    'content' => '',
+  );
+
+  $info[1]['links'][8] = $new_block;
+  variable_set("om_maximenu", $info);
 }

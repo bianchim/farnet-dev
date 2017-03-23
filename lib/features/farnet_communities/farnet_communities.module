@@ -40,6 +40,14 @@ function farnet_communities_menu() {
     'access arguments' => [2],
   );
 
+  $items['myfarnet'] = array(
+    'title' => 'myFARNET',
+    'page callback' => '_farnet_communities_myfarnet',
+    'access callback' => 'user_is_logged_in',
+    'menu_name' => 'main-menu',
+    'weight' => 10,
+  );
+
   $items['community/%community/preview'] = array(
     'title' => 'Preview community',
     'page callback' => '_farnet_communities_community_preview',
@@ -49,6 +57,13 @@ function farnet_communities_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Return an empty page for myfarnet dashboard.
+ */
+function _farnet_communities_myfarnet() {
+  return '';
 }
 
 /**
@@ -516,10 +531,43 @@ function farnet_communities_mail($key, &$message, $params) {
  * Render node light for preview without context communities.
  */
 function _farnet_communities_community_preview($community) {
-
   unset($community->group_access);
-  unset($community->group_group);
-
   return node_page_view($community);
+}
 
+/**
+ * Check that a menu item in a community is accessible.
+ *
+ * @param string $right
+ *   The basic access right to check.
+ * @param object $group
+ *   The current og group.
+ * @param string $content_type
+ *   The content type we're trying to access.
+ *
+ * @return bool
+ *   Return TRUE if the user has access.
+ */
+function _farnet_communities_ct_page_access($right, $group, $content_type) {
+  if (!user_access($right)) {
+    return FALSE;
+  }
+
+  // Check content types allowed in configuration.
+  $allowed = og_content_type_admin_access_group();
+  if (!isset($allowed[$content_type])) {
+    return FALSE;
+  }
+
+  // Check if some content exists.
+  $query = db_select('og_membership', 'ogm')
+    ->fields('ogm')
+    ->condition('ogm.entity_type', 'node', '=')
+    ->condition('ogm.gid', $group->nid, '=');
+
+  $query->leftJoin('node', 'n', 'n.nid = ogm.etid');
+  $result = $query->condition('n.type', $content_type, '=')
+    ->execute();
+
+  return $result->rowCount() > 0;
 }

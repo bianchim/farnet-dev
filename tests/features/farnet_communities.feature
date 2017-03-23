@@ -21,6 +21,7 @@ Feature: Communities feature
     And I visit "node/add/community-public"
     Then I should see the text "Create Community public"
     And I fill in "title_field[und][0][value]" with "A public community"
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
     And I press the "Save" button
     # And print last response
     Then I should see the heading "A public community"
@@ -28,12 +29,14 @@ Feature: Communities feature
     And I visit "node/add/community-private"
     Then I should see the text "Create Community private"
     When I fill in "title_field[und][0][value]" with "A private community"
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
     And I press the "Save" button
     Then I should see the heading "A private community"
 
     And I visit "node/add/community-hidden"
     Then I should see the text "Create Community hidden"
     When I fill in "title_field[und][0][value]" with "A hidden community"
+    And I fill in "field_farnet_abstract[und][0][value]" with "Lorem ipsum dolor sit amet abstract."
     And I press the "Save" button
     Then I should see the heading "A hidden community"
 
