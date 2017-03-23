@@ -17,7 +17,6 @@ dependencies[] = field_group
 dependencies[] = filter
 dependencies[] = list
 dependencies[] = media_wysiwyg
-dependencies[] = menu
 dependencies[] = multisite_drupal_toolbox
 dependencies[] = myfarnet_cooperation_idea
 dependencies[] = myfarnet_discussion
