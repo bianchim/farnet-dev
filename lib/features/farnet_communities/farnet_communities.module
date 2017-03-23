@@ -402,7 +402,12 @@ function _farnet_communities_discussion_count($gid) {
   $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
 
   if (!empty($nids)) {
-    $count = db_query("SELECT COUNT(nid) FROM {node} WHERE nid IN (:nids) AND type=:type", [':nids' => $nids, ':type' => 'myfarnet_discussion'])->fetchField();
+    $params = [
+      ':nids' => $nids,
+      ':type' => 'myfarnet_discussion',
+      ':status' => NODE_PUBLISHED,
+    ];
+    $count = db_query("SELECT COUNT(nid) FROM {node} WHERE nid IN (:nids) AND type=:type AND status=:status", $params)->fetchField();
 
     if (!is_null($count) && $count) {
       return $count;
@@ -434,7 +439,7 @@ function _farnet_communities_community_preview($community) {
  *   Return TRUE if the user has access.
  */
 function _farnet_communities_ct_page_access($right, $group, $content_type) {
-  if (!user_access($right)) {
+  if (!user_access($right) || !isset($group->nid)) {
     return FALSE;
   }
 
