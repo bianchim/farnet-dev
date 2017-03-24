@@ -516,7 +516,7 @@ function farnet_communities_og_membership_insert(OgMembership $og_membership) {
 function farnet_communities_node_update($node) {
   global $user;
   // Check that the node is not new.
-  if ($node->revision === TRUE && isset($node->og_group_ref) && $node->status === NODE_PUBLISHED) {
+  if (isset($node->revision) && $node->revision === TRUE && isset($node->og_group_ref) && $node->status === NODE_PUBLISHED) {
     $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
     farnet_communities_insert_user_contribution($user->uid, $node->nid, $gid, 'node_update');
   }

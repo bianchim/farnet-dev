@@ -88,9 +88,6 @@ function _farnet_communities_table_schema() {
         'default' => 0,
       ],
     ],
-    'unique keys' => [
-      'uid' => ['uid'],
-    ],
-    'primary key' => ['uid'],
+    'primary key' => ['uid', 'gid'],
   ];
 }
