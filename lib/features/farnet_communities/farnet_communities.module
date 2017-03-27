@@ -571,7 +571,9 @@ function _farnet_communities_ct_page_access($right, $group, $content_type) {
     ->condition('ogm.gid', $group->nid, '=');
 
   $query->leftJoin('node', 'n', 'n.nid = ogm.etid');
-  $result = $query->condition('n.type', $content_type, '=')
+  $result = $query
+    ->condition('n.type', $content_type, '=')
+    ->condition('n.status', NODE_PUBLISHED, '=')
     ->execute();
 
   return $result->rowCount() > 0;
