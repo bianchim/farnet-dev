@@ -57,7 +57,7 @@ function farnet_communities_menu() {
   );
 
   $items['community/%community/members'] = array(
-    'title' => 'Members',
+    'title' => 'Community members',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('farnet_communities_members', 'page', 1),
     'access arguments' => array('access private area'),
