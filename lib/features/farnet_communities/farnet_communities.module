@@ -32,6 +32,14 @@ function farnet_communities_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
+  $items['group/node/%node/admin/people/%user/reject'] = array(
+    'title' => 'Reject user join request',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['_farnet_communities_user_reject', 2, 5],
+    'access callback' => '_farnet_communities_is_group_admin',
+    'access arguments' => [2],
+  );
+
   $items['myfarnet'] = array(
     'title' => 'myFARNET',
     'page callback' => '_farnet_communities_myfarnet',
@@ -177,6 +185,13 @@ function _farnet_communities_push_access($node) {
   }
 
   return TRUE;
+}
+
+/**
+ * Check if current user is admin of current group.
+ */
+function _farnet_communities_is_group_admin($node) {
+  return og_user_access('node', $node->nid, 'administer group');
 }
 
 /**
@@ -414,7 +429,12 @@ function _farnet_communities_discussion_count($gid) {
   $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
 
   if (!empty($nids)) {
-    $count = db_query("SELECT COUNT(nid) FROM {node} WHERE nid IN (:nids) AND type=:type", [':nids' => $nids, ':type' => 'myfarnet_discussion'])->fetchField();
+    $params = [
+      ':nids' => $nids,
+      ':type' => 'myfarnet_discussion',
+      ':status' => NODE_PUBLISHED,
+    ];
+    $count = db_query("SELECT COUNT(nid) FROM {node} WHERE nid IN (:nids) AND type=:type AND status=:status", $params)->fetchField();
 
     if (!is_null($count) && $count) {
       return $count;
@@ -422,6 +442,106 @@ function _farnet_communities_discussion_count($gid) {
   }
 
   return 0;
+}
+
+/**
+ * Implements hook_og_membership_update().
+ */
+function farnet_communities_og_membership_update(OgMembership $ogm) {
+  if ($ogm->entity_type === 'user' && $ogm->state == OG_STATE_BLOCKED && $ogm->state !== $ogm->original->state) {
+    // Override the destination.
+    $_GET['destination'] = "group/node/{$ogm->gid}/admin/people/{$ogm->etid}/reject";
+    drupal_goto();
+  }
+}
+
+/**
+ * Reject a user request for joining a group.
+ */
+function _farnet_communities_user_reject($form, &$form_state, $node, $user) {
+  $username = _farnet_communities_get_username($user);
+  drupal_set_title(t("Refuse join request of '@user'", ['@user' => $username]));
+
+  $form['user'] = [
+    '#type' => 'hidden',
+    '#value' => $user->uid,
+  ];
+
+  $form['node'] = [
+    '#type' => 'hidden',
+    '#value' => $node->nid,
+  ];
+
+  $form['justification'] = [
+    '#title' => t('Justification'),
+    '#type' => 'textarea',
+    '#required' => TRUE,
+  ];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Reject'),
+  ];
+
+  return $form;
+}
+
+/**
+ * Deny a user request.
+ */
+function _farnet_communities_user_reject_submit($form, $form_state) {
+  global $base_url;
+
+  $user = user_load($form_state['values']['user']);
+  $justification = check_plain($form_state['values']['justification']);
+  $node = node_load($form_state['values']['node']);
+
+  $username = _farnet_communities_get_username($user);
+
+  drupal_set_message(t('The user will be notified of your decision.'));
+
+  // Send mail to end user.
+  $params = [
+    '@url' => $base_url,
+    '@username' => $username,
+    '@justification' => $justification,
+    '@group' => $node->title,
+  ];
+  drupal_mail('farnet_communities', 'refuse', $user->mail, 'en', $params);
+
+  // Redirect to list of people.
+  drupal_goto("group/node/{$node->nid}/admin/people/");
+}
+
+/**
+ * Build a username from first and last name.
+ */
+function _farnet_communities_get_username($user) {
+  $u = entity_metadata_wrapper('user', $user);
+  $username = $u->field_firstname->value() . ' ' . $u->field_lastname->value();
+  return empty(trim($username)) ? $u->name->value() : $username;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function farnet_communities_mail($key, &$message, $params) {
+  if (isset($params['headers']) && is_array($params['headers'])) {
+    $message['headers'] += $params['headers'];
+  }
+
+  // Include mail body.
+  ob_start();
+  include drupal_get_path('module', 'farnet_communities') . '/mails/' . $key . '_mail.php';
+  $body = ob_get_clean();
+
+  $message['body'] = [format_string($body, $params)];
+
+  switch ($key) {
+    case 'refuse':
+      $message['subject'] = t('myFARNET membership request rejected');
+      break;
+  }
 }
 
 /**
@@ -446,7 +566,7 @@ function _farnet_communities_community_preview($community) {
  *   Return TRUE if the user has access.
  */
 function _farnet_communities_ct_page_access($right, $group, $content_type) {
-  if (!user_access($right)) {
+  if (!user_access($right) || !isset($group->nid)) {
     return FALSE;
   }
 
