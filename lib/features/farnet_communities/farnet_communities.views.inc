@@ -48,6 +48,16 @@ function farnet_communities_views_data() {
           'handler' => 'FarnetCommunitiesHandlerFieldDiscussionCount',
         ],
       ],
+      'last_commented' => [
+        'title' => t('Last contribution'),
+        'help' => t('Last contribution of the user ( comment / node ).'),
+        'sort' => [
+          'handler' => 'farnetCommunitiesLastContributionSortHandler',
+        ],
+        'field' => [
+          'handler' => 'farnetCommunitiesLastContributionFieldHandler',
+        ],
+      ],
     ],
   ];
 }

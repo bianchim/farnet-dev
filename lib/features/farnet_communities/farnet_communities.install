@@ -8,6 +8,13 @@
 include_once 'farnet_communities.install.inc';
 
 /**
+ * Implements hook_schema().
+ */
+function farnet_communities_schema() {
+  return ['user_last_contribution' => _farnet_communities_table_schema()];
+}
+
+/**
  * Implements hook_install().
  */
 function farnet_communities_install() {
@@ -21,4 +28,11 @@ function farnet_communities_install() {
  */
 function farnet_communities_update_7001() {
   _farnet_communities_update_content_types();
+}
+
+/**
+ * Add the last contribution table.
+ */
+function farnet_communities_update_7002() {
+  db_create_table('user_last_contribution', _farnet_communities_table_schema());
 }
