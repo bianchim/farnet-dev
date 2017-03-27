@@ -448,10 +448,17 @@ function _farnet_communities_discussion_count($gid) {
  * Implements hook_og_membership_update().
  */
 function farnet_communities_og_membership_update(OgMembership $ogm) {
-  if ($ogm->entity_type === 'user' && $ogm->state == OG_STATE_BLOCKED && $ogm->state !== $ogm->original->state) {
-    // Override the destination.
-    $_GET['destination'] = "group/node/{$ogm->gid}/admin/people/{$ogm->etid}/reject";
-    drupal_goto();
+  if ($ogm->entity_type === 'user') {
+    if ($ogm->state == OG_STATE_BLOCKED && $ogm->state !== $ogm->original->state) {
+      // Override the destination.
+      $_GET['destination'] = "group/node/{$ogm->gid}/admin/people/{$ogm->etid}/reject";
+      drupal_goto();
+    }
+
+    // Update last user contribution.
+    if ($ogm->state == OG_STATE_ACTIVE) {
+      farnet_communities_insert_user_contribution($ogm->etid, 0, $ogm->gid, 'join');
+    }
   }
 }
 
@@ -609,15 +616,6 @@ function farnet_communities_node_insert($node) {
   if (isset($node->og_group_ref) && $node->status === NODE_PUBLISHED) {
     $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
     farnet_communities_insert_user_contribution($user->uid, $node->nid, $gid, 'node_insert');
-  }
-}
-
-/**
- * Implements hook_og_membership_update().
- */
-function farnet_communities_og_membership_update(OgMembership $og_membership) {
-  if ($og_membership->state == OG_STATE_ACTIVE) {
-    farnet_communities_insert_user_contribution($og_membership->etid, 0, $og_membership->gid, 'join');
   }
 }
 
