@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * myfarnet_news.features.field_instance.inc
@@ -477,7 +478,7 @@ function myfarnet_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 11,
       ),
       'teaser' => array(
@@ -518,7 +519,7 @@ function myfarnet_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'og_list_default',
         'weight' => 10,
       ),
       'teaser' => array(
