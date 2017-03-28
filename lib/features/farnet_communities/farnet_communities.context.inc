@@ -18,14 +18,14 @@ function farnet_communities_context_default_contexts() {
   $context->description = 'Context triggered on farnet community homepage';
   $context->tag = 'farnet';
   $context->conditions = array(
-    'context_og_condition_group_type' => array(
+    'node' => array(
       'values' => array(
         'community_hidden' => 'community_hidden',
         'community_private' => 'community_private',
         'community_public' => 'community_public',
       ),
       'options' => array(
-        'node_form' => 0,
+        'node_form' => '1',
       ),
     ),
   );

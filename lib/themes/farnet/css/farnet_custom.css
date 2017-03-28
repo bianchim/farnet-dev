@@ -449,3 +449,11 @@ table.table-responsive.table-blue.table--white-borders th {
 .icon--user:before {
   color: #65aefd;
 }
+
+#edit-comment-body .wysiwyg-toggle-wrapper {
+  display: none;
+}
+
+#edit-comment-body .filter-wrapper {
+  display: none;
+}
