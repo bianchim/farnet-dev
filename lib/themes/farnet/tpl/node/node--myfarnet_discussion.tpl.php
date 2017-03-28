@@ -21,7 +21,7 @@
         print '<div>';
         print t('Comments :');
         print $comment_count;
-        print '<div>';
+        print '</div>';
       }
     ?>
 

@@ -441,3 +441,11 @@ table.table-responsive.table-blue.table--white-borders th {
   color: #074a8b!important;
   font-weight: 700;
 }
+
+#edit-comment-body .wysiwyg-toggle-wrapper {
+  display: none;
+}
+
+#edit-comment-body .filter-wrapper {
+  display: none;
+}
