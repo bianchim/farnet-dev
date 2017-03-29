@@ -150,7 +150,8 @@ function myfarnet_discussion_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_myfarnet_discussion';
   $strongarm->value = array(
-    0 => 'revision',
+    0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_myfarnet_discussion'] = $strongarm;
 
