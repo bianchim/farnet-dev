@@ -442,6 +442,14 @@ table.table-responsive.table-blue.table--white-borders th {
   font-weight: 700;
 }
 
+#om-menu-main-menu {
+  width: 100%;
+}
+
+.icon--user:before {
+  color: #65aefd;
+}
+
 #edit-comment-body .wysiwyg-toggle-wrapper {
   display: none;
 }
