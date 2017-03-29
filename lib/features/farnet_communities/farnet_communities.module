@@ -48,12 +48,15 @@ function farnet_communities_menu() {
     'weight' => 10,
   );
 
-  $items['community/%community/preview'] = array(
-    'title' => 'Preview community',
+  $items['community/%community/about'] = array(
+    'title' => 'About this community',
     'page callback' => '_farnet_communities_community_preview',
     'page arguments' => [1],
     'access callback' => 'user_access',
     'access arguments' => ['access content'],
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'menu-community-menu',
+    'weight' => 0,
   );
 
   $items['community/%community/members'] = array(
@@ -267,7 +270,7 @@ function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id)
 function farnet_communities_context_load_alter(&$context) {
   if ($context->name === 'communities' && isset($context->reactions['block'])) {
     $path = current_path();
-    $patterns = '' . PHP_EOL . 'community/*/preview';
+    $patterns = '' . PHP_EOL . 'community/*/about';
     if (drupal_match_path($path, $patterns)) {
       if (isset($context->reactions['block']['blocks']['menu-menu-community-menu'])) {
         unset($context->reactions['block']['blocks']['menu-menu-community-menu']);
