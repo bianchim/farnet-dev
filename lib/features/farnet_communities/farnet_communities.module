@@ -671,3 +671,12 @@ function farnet_communities_insert_user_contribution($uid, $nid, $gid, $action) 
       ->execute();
   }
 }
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter().
+ */
+function farnet_communities_wysiwyg_editor_settings_alter(&$settings, $context) {
+  if ($context['profile']->format === 'myfarnet_html') {
+    $settings['height'] = 170;
+  }
+}
