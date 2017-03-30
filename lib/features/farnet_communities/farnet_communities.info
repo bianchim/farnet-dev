@@ -396,6 +396,7 @@ features[og_features_permission][] = node:community_public:update own page conte
 features[og_features_permission][] = node:editorial_team:edit own comment_node_nexteuropa_event
 features[rules_config][] = og_join_private_community
 features[user_permission][] = use text format myfarnet_html
+features[variable][] = captcha_default_challenge
 features[variable][] = comment_anonymous_community_hidden
 features[variable][] = comment_anonymous_community_private
 features[variable][] = comment_anonymous_community_public
