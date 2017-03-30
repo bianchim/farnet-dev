@@ -457,3 +457,27 @@ table.table-responsive.table-blue.table--white-borders th {
 #edit-comment-body .filter-wrapper {
   display: none;
 }
+
+/* myFARNET menu style */
+#block-menu-menu-myfarnet-menu,
+#block-menu-menu-myfarnet-menu a {
+  border: none;
+}
+
+.panel .panel-body .list-group a.list-group-item.active {
+  background: none;
+}
+
+#block-menu-menu-community-menu a {
+  padding: 3px 3px 3px 15px;
+  border: none;
+}
+
+#block-menu-menu-community-menu {
+  border: none;
+}
+
+#block-menu-menu-community-menu .panel-heading {
+  padding: 7px;
+  color: #074a8b;
+}
