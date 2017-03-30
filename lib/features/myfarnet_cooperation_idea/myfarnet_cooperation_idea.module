@@ -25,7 +25,7 @@ function myfarnet_cooperation_idea_menu() {
     ),
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'menu-community-menu',
-    'weight' => 1,
+    'weight' => 5,
     'file' => 'farnet_communities.callback.inc',
     'file path' => drupal_get_path('module', 'farnet_communities'),
   );

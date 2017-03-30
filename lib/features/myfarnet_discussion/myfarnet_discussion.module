@@ -21,7 +21,7 @@ function myfarnet_discussion_menu() {
     'access arguments' => array('access private area', 1, 'myfarnet_discussion'),
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'menu-community-menu',
-    'weight' => 1,
+    'weight' => 2,
     'file' => 'farnet_communities.callback.inc',
     'file path' => drupal_get_path('module', 'farnet_communities'),
   );
