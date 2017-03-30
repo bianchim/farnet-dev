@@ -254,6 +254,14 @@ function farnet_menu_tree__main_menu($variables) {
 }
 
 /**
+ * Alter the myfarnet menu in order to add custom class.
+ */
+function farnet_menu_tree__menu_myfarnet_menu($variables) {
+  $tree = str_replace('leaf', 'leaf navigation-vertical__item', $variables['tree']);
+  return '<ul class="menu clearfix list-group list-group-flush list-unstyled navigation-vertical__list">' . $tree . '</ul>';
+}
+
+/**
  * Returns HTML for a dropdown, modified version from ec_resp.
  */
 function farnet_dropdown($variables) {
