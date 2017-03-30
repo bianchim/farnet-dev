@@ -63,7 +63,8 @@ function farnet_communities_menu() {
     'title' => 'Community members',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('farnet_communities_members', 'page', 1),
-    'access arguments' => array('access private area'),
+    'access callback' => '_farnet_communities_is_member',
+    'access arguments' => array(1),
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'menu-community-menu',
     'weight' => 10,
@@ -79,6 +80,14 @@ function farnet_communities_menu() {
  */
 function _farnet_communities_myfarnet() {
   return '';
+}
+
+/**
+ * Check user membership in a group.
+ */
+function _farnet_communities_is_member($group) {
+  global $user;
+  return og_is_member('node', $group->nid, 'user', $user);
 }
 
 /**
