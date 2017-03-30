@@ -13,8 +13,8 @@ include_once 'myfarnet_discussion.features.inc';
 function myfarnet_discussion_menu() {
   $items = array();
 
-  $items['community/%community/discussion'] = array(
-    'title' => 'Discussion',
+  $items['community/%community/discussions'] = array(
+    'title' => 'Discussions',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('my_farnet_discussion', 'page_1', 1),
     'access callback' => '_farnet_communities_ct_page_access',
