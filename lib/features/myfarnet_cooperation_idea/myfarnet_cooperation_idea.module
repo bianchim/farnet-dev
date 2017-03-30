@@ -13,8 +13,8 @@ include_once 'myfarnet_cooperation_idea.features.inc';
 function myfarnet_cooperation_idea_menu() {
   $items = array();
 
-  $items['community/%community/cooperation_idea'] = array(
-    'title' => 'Cooperation idea',
+  $items['community/%community/cooperation_ideas'] = array(
+    'title' => 'Cooperation ideas',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('my_farnet_cooperation_idea', 'page_1', 1),
     'access callback' => '_farnet_communities_ct_page_access',
