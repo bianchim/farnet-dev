@@ -7,7 +7,7 @@
 
 global $base_url;
 ?>
-<li class="media farnet-listing__item">
+<li class="media farnet-listing__item community-summary">
   <div class="media-left">
   </div>
   <div class="media-body">
@@ -16,10 +16,10 @@ global $base_url;
     <?php endif; ?>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['discussion_count'])) : ?>
-        <span><?php print $fields['discussion_count']->content; ?></span>
+        <span class="community-summary__counter"><?php print $fields['discussion_count']->content; ?></span>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated_date'])) : ?>
-        - <span class="farnet-listing__important"><?php print $fields['last_updated_date']->content; ?></span>
+        - <span><?php print $fields['last_updated_date']->content; ?></span>
       <?php endif; ?>
     </div>
     <div class="farnet-listing__abstract">
@@ -27,10 +27,10 @@ global $base_url;
         <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
-    <div class="btn btn-primary farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
+    <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
     <?php
-      $path = strip_tags($fields['path']->content);
-      $url_preview = drupal_substr($path, 0, strpos($path, "_"));
+    $path = strip_tags($fields['path']->content);
+    $url_preview = drupal_substr($path, 0, strpos($path, "_"));
     ?>
     <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
   </div>
