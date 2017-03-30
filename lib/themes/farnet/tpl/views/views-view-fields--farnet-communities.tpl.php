@@ -7,7 +7,7 @@
 
 global $base_url;
 ?>
-<li class="media farnet-listing__item">
+<li class="media farnet-listing__item community-summary">
   <div class="media-left">
   </div>
   <div class="media-body">
