@@ -31,7 +31,10 @@ global $base_url;
     <?php
     $path = strip_tags($fields['path']->content);
     $url_preview = drupal_substr($path, 0, strpos($path, "_"));
+    $gid = $fields['group_group']->raw;
     ?>
-    <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
+    <?php if (!og_is_member('node', $gid)) : ?>
+      <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
+    <?php endif; ?>
   </div>
 </li>
