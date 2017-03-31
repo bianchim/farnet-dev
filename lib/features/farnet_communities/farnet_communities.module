@@ -298,36 +298,46 @@ function farnet_communities_context_load_alter(&$context) {
  * Implements hook_views_pre_render().
  */
 function farnet_communities_views_pre_render(&$view) {
-  if ($view->current_display === 'block_members_list') {
-    $title = str_replace(' ', '-', drupal_strtolower($view->build_info['substitutions']['%1']));
-    // Set to use 'custom_url'.
-    $view->display_handler->set_option('link_display', 'custom_url');
-    // Change the link url.
-    $view->display_handler->set_option('link_url', 'community/' . $title . '/members-list');
-  }
-  elseif ($view->name === 'farnet_communities') {
-    foreach ($view->result as &$result) {
+  switch ($view->name) {
+    case 'members_list':
+      if ($view->current_display === 'block_members_list') {
+        $title = str_replace(' ', '-', drupal_strtolower($view->build_info['substitutions']['%1']));
+        // Set to use 'custom_url'.
+        $view->display_handler->set_option('link_display', 'custom_url');
+        // Change the link url.
+        $view->display_handler->set_option('link_url', 'community/' . $title . '/members-list');
+      }
+      break;
 
-      if (isset($result->field_group_group[0]['rendered']['#href'])) {
-        if (strpos($result->field_group_group[0]['rendered']['#href'], 'unsubscribe')) {
-          $title = t('Unsubscribe');
-        }
-        else {
-          if ($result->_field_data['nid']['entity']->type === 'community_public') {
-            $title = t('Join');
+    case 'farnet_communities':
+      foreach ($view->result as &$result) {
+
+        if (isset($result->field_group_group[0]['rendered']['#href'])) {
+          if (strpos($result->field_group_group[0]['rendered']['#href'], 'unsubscribe')) {
+            $title = t('Unsubscribe');
           }
           else {
-            $title = t('Ask to join');
+            if ($result->_field_data['nid']['entity']->type === 'community_public') {
+              $title = t('Join');
+            }
+            else {
+              $title = t('Ask to join');
+            }
           }
+
+          $result->field_group_group[0]['rendered']['#title'] = $title;
         }
 
-        $result->field_group_group[0]['rendered']['#title'] = $title;
+        if (isset($result->field_group_group[0]['rendered']['#value']) && $result->field_group_group[0]['rendered']['#value'] === t('You are the group manager')) {
+          $result->field_group_group[0]['rendered']['#value'] = t('Contribute');
+        }
       }
+      break;
 
-      if (isset($result->field_group_group[0]['rendered']['#value']) && $result->field_group_group[0]['rendered']['#value'] === t('You are the group manager')) {
-        $result->field_group_group[0]['rendered']['#value'] = t('Contribute');
-      }
-    }
+    case 'farnet_communities_members':
+      drupal_add_js(drupal_get_path('module', 'farnet_communities') . '/js/farnet_communities_members_list.js');
+      drupal_add_css(drupal_get_path('module', 'farnet_communities') . '/css/farnet_communities_members_list.css');
+      break;
   }
 }
 
