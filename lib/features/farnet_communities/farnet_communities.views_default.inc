@@ -179,6 +179,14 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['sorts']['field_lastname_value_1']['field'] = 'field_lastname_value';
   $handler->display->display_options['sorts']['field_lastname_value_1']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_lastname_value_1']['expose']['label'] = 'Name (Z to A)';
+  /* Sort criterion: OG membership: Created */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'og_membership';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Registration date';
   /* Contextual filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
@@ -224,7 +232,7 @@ function farnet_communities_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'community/%/members';
+  $handler->display->display_options['path'] = 'community/%/members-list';
   $export['farnet_communities_members'] = $view;
 
   $view = new view();
