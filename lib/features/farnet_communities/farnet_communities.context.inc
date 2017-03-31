@@ -25,7 +25,7 @@ function farnet_communities_context_default_contexts() {
         'community_public' => 'community_public',
       ),
       'options' => array(
-        'node_form' => '1',
+        'node_form' => '0',
       ),
     ),
   );
