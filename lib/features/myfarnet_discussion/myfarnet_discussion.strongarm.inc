@@ -264,7 +264,7 @@ function myfarnet_discussion_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_myfarnet_discussion_pattern';
-  $strongarm->value = '[site:nexteuropa_communities_keyword]/[node:og_group_ref]/[node:content-type]/[node:title]';
+  $strongarm->value = '[site:nexteuropa_communities_keyword]/[node:og_group_ref]/[node:content-type]s/[node:title]';
   $export['pathauto_node_myfarnet_discussion_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
