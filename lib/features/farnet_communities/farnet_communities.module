@@ -350,14 +350,11 @@ function _farnet_communities_get_last_updated_date($gid) {
   $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
 
   if (!empty($nids)) {
-    $query = db_query("SELECT MAX(n.changed) AS node FROM {node} AS n WHERE n.nid IN (:nids)", [':nids' => $nids]);
-    $update_date = $query->fetchField();
+    $query = db_query("SELECT MAX(n.changed) AS node, MAX(c.changed) AS comment FROM {node} AS n, {comment} c WHERE n.nid = c.nid AND n.nid IN (:nids)", [':nids' => $nids]);
+    $result = $query->fetchObject();
 
-    $query = db_query("SELECT MAX(c.changed) AS comment FROM {comment} AS c WHERE c.nid IN (:nids)", [':nids' => $nids]);
-    $comment_date = $query->fetchField();
-
-    $update_date = is_null($update_date) ? 0 : $update_date;
-    $comment_date = is_null($comment_date) ? 0 : $comment_date;
+    $update_date = is_null($result->node) ? 0 : $result->node;
+    $comment_date = is_null($result->comment) ? 0 : $result->comment;
 
     if ($update_date === 0 && $comment_date === 0) {
       $date = time();
