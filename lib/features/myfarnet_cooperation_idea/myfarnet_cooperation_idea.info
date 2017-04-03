@@ -35,6 +35,7 @@ features[features_api][] = api:2
 features[field_group][] = group_myfarnet_cp_idea_content|node|myfarnet_cooperation_idea|form
 features[field_group][] = group_myfarnet_cp_idea_metadata|node|myfarnet_cooperation_idea|form
 features[field_instance][] = comment-comment_node_myfarnet_cooperation_idea-comment_body
+features[field_instance][] = comment-comment_node_myfarnet_cooperation_idea-field_private_documents
 features[field_instance][] = node-myfarnet_cooperation_idea-field_farnet_abstract
 features[field_instance][] = node-myfarnet_cooperation_idea-field_ne_body
 features[field_instance][] = node-myfarnet_cooperation_idea-field_picture
