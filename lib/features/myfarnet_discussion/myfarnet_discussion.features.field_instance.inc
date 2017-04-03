@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * myfarnet_discussion.features.field_instance.inc
