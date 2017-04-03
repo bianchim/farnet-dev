@@ -154,24 +154,39 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['last_commented']['id'] = 'last_commented';
   $handler->display->display_options['fields']['last_commented']['table'] = 'farnet_communities';
   $handler->display->display_options['fields']['last_commented']['field'] = 'last_commented';
+  /* Sort criterion: Farnet communities: Last contribution */
+  $handler->display->display_options['sorts']['last_commented']['id'] = 'last_commented';
+  $handler->display->display_options['sorts']['last_commented']['table'] = 'farnet_communities';
+  $handler->display->display_options['sorts']['last_commented']['field'] = 'last_commented';
+  $handler->display->display_options['sorts']['last_commented']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['last_commented']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['last_commented']['expose']['label'] = 'Last contribution';
   /* Sort criterion: Field: Country (field_user_country) */
   $handler->display->display_options['sorts']['field_user_country_tid']['id'] = 'field_user_country_tid';
   $handler->display->display_options['sorts']['field_user_country_tid']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['sorts']['field_user_country_tid']['field'] = 'field_user_country_tid';
   $handler->display->display_options['sorts']['field_user_country_tid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_user_country_tid']['expose']['label'] = 'Country';
-  /* Sort criterion: Field: First name (field_firstname) */
-  $handler->display->display_options['sorts']['field_firstname_value']['id'] = 'field_firstname_value';
-  $handler->display->display_options['sorts']['field_firstname_value']['table'] = 'field_data_field_firstname';
-  $handler->display->display_options['sorts']['field_firstname_value']['field'] = 'field_firstname_value';
-  $handler->display->display_options['sorts']['field_firstname_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_firstname_value']['expose']['label'] = 'First name';
-  /* Sort criterion: Farnet communities: Last contribution */
-  $handler->display->display_options['sorts']['last_commented']['id'] = 'last_commented';
-  $handler->display->display_options['sorts']['last_commented']['table'] = 'farnet_communities';
-  $handler->display->display_options['sorts']['last_commented']['field'] = 'last_commented';
-  $handler->display->display_options['sorts']['last_commented']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['last_commented']['expose']['label'] = 'Last contribution';
+  $handler->display->display_options['sorts']['field_user_country_tid']['expose']['label'] = 'Country (field_user_country)';
+  /* Sort criterion: User: Last name (field_lastname) */
+  $handler->display->display_options['sorts']['field_lastname_value']['id'] = 'field_lastname_value';
+  $handler->display->display_options['sorts']['field_lastname_value']['table'] = 'field_data_field_lastname';
+  $handler->display->display_options['sorts']['field_lastname_value']['field'] = 'field_lastname_value';
+  $handler->display->display_options['sorts']['field_lastname_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_lastname_value']['expose']['label'] = 'Name (A to Z)';
+  /* Sort criterion: User: Last name (field_lastname) */
+  $handler->display->display_options['sorts']['field_lastname_value_1']['id'] = 'field_lastname_value_1';
+  $handler->display->display_options['sorts']['field_lastname_value_1']['table'] = 'field_data_field_lastname';
+  $handler->display->display_options['sorts']['field_lastname_value_1']['field'] = 'field_lastname_value';
+  $handler->display->display_options['sorts']['field_lastname_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_lastname_value_1']['expose']['label'] = 'Name (Z to A)';
+  /* Sort criterion: OG membership: Created */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'og_membership';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Registration date';
   /* Contextual filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
@@ -217,7 +232,7 @@ function farnet_communities_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'farnet-communities-members';
+  $handler->display->display_options['path'] = 'community/%/members-list';
   $export['farnet_communities_members'] = $view;
 
   $view = new view();
