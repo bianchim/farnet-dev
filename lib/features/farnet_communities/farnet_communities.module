@@ -546,7 +546,7 @@ function _farnet_communities_user_reject_submit($form, $form_state) {
   global $base_url;
 
   $user = user_load($form_state['values']['user']);
-  $justification = check_plain($form_state['values']['justification']);
+  $justification = $form_state['values']['justification'];
   $node = node_load($form_state['values']['node']);
 
   $username = _farnet_communities_get_username($user);
