@@ -15,8 +15,8 @@ global $base_url;
       <h4 class="media-heading farnet-listing__heading"><?php print $fields['title']->content; ?></h4>
     <?php endif; ?>
     <div class="farnet-listing__subheading">
-      <?php if (!empty($fields['discussion_count'])) : ?>
-        <span class="community-summary__counter"><?php print $fields['discussion_count']->content; ?></span>
+      <?php if (!empty($fields['content_count'])) : ?>
+        <span class="community-summary__counter"><?php print $fields['content_count']->content; ?></span>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated_date'])) : ?>
         - <span><?php print $fields['last_updated_date']->content; ?></span>

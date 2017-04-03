@@ -66,12 +66,12 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['last_updated_date']['field'] = 'last_updated_date';
   $handler->display->display_options['fields']['last_updated_date']['label'] = '';
   $handler->display->display_options['fields']['last_updated_date']['element_label_colon'] = FALSE;
-  /* Field: Farnet communities: Discussion count */
-  $handler->display->display_options['fields']['discussion_count']['id'] = 'discussion_count';
-  $handler->display->display_options['fields']['discussion_count']['table'] = 'farnet_communities';
-  $handler->display->display_options['fields']['discussion_count']['field'] = 'discussion_count';
-  $handler->display->display_options['fields']['discussion_count']['label'] = '';
-  $handler->display->display_options['fields']['discussion_count']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Content count */
+  $handler->display->display_options['fields']['content_count']['id'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['content_count']['field'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['label'] = '';
+  $handler->display->display_options['fields']['content_count']['element_label_colon'] = FALSE;
   /* Field: Content: Abstract */
   $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
@@ -385,12 +385,18 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Farnet communities: Discussion count */
-  $handler->display->display_options['fields']['discussion_count']['id'] = 'discussion_count';
-  $handler->display->display_options['fields']['discussion_count']['table'] = 'farnet_communities';
-  $handler->display->display_options['fields']['discussion_count']['field'] = 'discussion_count';
-  $handler->display->display_options['fields']['discussion_count']['label'] = '';
-  $handler->display->display_options['fields']['discussion_count']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Last updated date */
+  $handler->display->display_options['fields']['last_updated_date']['id'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['last_updated_date']['field'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['label'] = '';
+  $handler->display->display_options['fields']['last_updated_date']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Content count */
+  $handler->display->display_options['fields']['content_count']['id'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['content_count']['field'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['label'] = '';
+  $handler->display->display_options['fields']['content_count']['element_label_colon'] = FALSE;
   /* Contextual filter: OG membership: Entity id */
   $handler->display->display_options['arguments']['etid']['id'] = 'etid';
   $handler->display->display_options['arguments']['etid']['table'] = 'og_membership';
@@ -423,6 +429,13 @@ function farnet_communities_views_default_views() {
 
   /* Display: Dashboard Block */
   $handler = $view->new_display('block', 'Dashboard Block', 'block');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More communities';
 
   /* Display: Dashboard Block other */
   $handler = $view->new_display('block', 'Dashboard Block other', 'block_1');
@@ -446,6 +459,16 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['arguments']['etid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['etid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['etid']['not'] = TRUE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'my_communities_page');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['path'] = 'myfarnet/my-communities';
   $export['farnet_og_memberships'] = $view;
 
   $view = new view();
