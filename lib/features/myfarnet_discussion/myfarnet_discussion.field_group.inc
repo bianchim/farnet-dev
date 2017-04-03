@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * myfarnet_discussion.field_group.inc
@@ -27,6 +26,7 @@ function myfarnet_discussion_field_group_info() {
       0 => 'field_fc_document',
       1 => 'field_ne_body',
       2 => 'title_field',
+      3 => 'field_abstract',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

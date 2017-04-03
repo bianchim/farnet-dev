@@ -15,6 +15,7 @@ features[field_group][] = group_discussion_content|node|myfarnet_discussion|form
 features[field_group][] = group_discussion_metadata|node|myfarnet_discussion|form
 features[field_instance][] = comment-comment_node_myfarnet_discussion-comment_body
 features[field_instance][] = comment-comment_node_myfarnet_discussion-field_private_documents
+features[field_instance][] = node-myfarnet_discussion-field_abstract
 features[field_instance][] = node-myfarnet_discussion-field_fc_document
 features[field_instance][] = node-myfarnet_discussion-field_ne_body
 features[field_instance][] = node-myfarnet_discussion-group_content_access
