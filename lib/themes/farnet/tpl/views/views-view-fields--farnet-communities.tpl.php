@@ -15,8 +15,8 @@ global $base_url;
       <h4 class="media-heading farnet-listing__heading"><?php print $fields['title']->content; ?></h4>
     <?php endif; ?>
     <div class="farnet-listing__subheading">
-      <?php if (!empty($fields['discussion_count'])) : ?>
-        <span class="community-summary__counter"><?php print $fields['discussion_count']->content; ?></span>
+      <?php if (!empty($fields['content_count'])) : ?>
+        <span class="community-summary__counter"><?php print $fields['content_count']->content; ?></span>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated_date'])) : ?>
         - <span><?php print $fields['last_updated_date']->content; ?></span>
@@ -31,7 +31,10 @@ global $base_url;
     <?php
     $path = strip_tags($fields['path']->content);
     $url_preview = drupal_substr($path, 0, strpos($path, "_"));
+    $gid = $fields['group_group']->raw;
     ?>
-    <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
+    <?php if (!og_is_member('node', $gid)) : ?>
+      <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
+    <?php endif; ?>
   </div>
 </li>

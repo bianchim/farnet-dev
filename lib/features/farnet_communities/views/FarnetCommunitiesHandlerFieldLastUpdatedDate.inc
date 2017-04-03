@@ -19,7 +19,11 @@ class FarnetCommunitiesHandlerFieldLastUpdatedDate extends views_handler_field {
    * Render the field.
    */
   public function render($values) {
-    return _farnet_communities_get_last_updated_date($values->nid);
+    $nid = isset($values->nid) ? $values->nid : FALSE;
+    if ($nid === FALSE) {
+      $nid = isset($values->node_og_membership_nid) ? $values->node_og_membership_nid : FALSE;
+    }
+    return _farnet_communities_get_last_updated_date($nid);
   }
 
 }

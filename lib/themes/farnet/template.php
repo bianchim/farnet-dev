@@ -1042,9 +1042,9 @@ function farnet_preprocess_node(&$variables) {
       $variables['last_updated'] = $last;
     }
 
-    $disc_count = _farnet_communities_discussion_count($variables['nid']);
-    if ($disc_count) {
-      $variables['discussion_count'] = $disc_count;
+    $content_count = _farnet_communities_content_count($variables['nid']);
+    if ($content_count) {
+      $variables['content_count'] = $content_count;
     }
 
     // Get join button in CT.

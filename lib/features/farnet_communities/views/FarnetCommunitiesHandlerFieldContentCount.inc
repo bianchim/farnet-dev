@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Field handler to present a discussion count.
+ * Field handler to present a content count.
  */
 
 /**
- * Manage the discussion count for communities.
+ * Manage the content count for communities.
  */
-class FarnetCommunitiesHandlerFieldDiscussionCount extends views_handler_field {
+class FarnetCommunitiesHandlerFieldContentCount extends views_handler_field {
 
   /**
    * {@inheritdoc}
@@ -23,7 +23,7 @@ class FarnetCommunitiesHandlerFieldDiscussionCount extends views_handler_field {
     if ($nid === FALSE) {
       $nid = isset($values->node_og_membership_nid) ? $values->node_og_membership_nid : FALSE;
     }
-    return $nid ? _farnet_communities_discussion_count($nid) : FALSE;
+    return $nid ? _farnet_communities_content_count($nid) : FALSE;
   }
 
 }
