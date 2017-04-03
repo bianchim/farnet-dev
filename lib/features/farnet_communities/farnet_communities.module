@@ -336,7 +336,7 @@ function farnet_communities_views_pre_render(&$view) {
 
     case 'farnet_communities_members':
       // Force the action to stay on the same page.
-      drupal_add_js(['request_path' => '/' . request_path()], 'setting');
+      drupal_add_js(['request_path' => request_path()], 'setting');
       drupal_add_js(drupal_get_path('module', 'farnet_communities') . '/js/farnet_communities_members_list.js');
       drupal_add_css(drupal_get_path('module', 'farnet_communities') . '/css/farnet_communities_members_list.css');
       break;
