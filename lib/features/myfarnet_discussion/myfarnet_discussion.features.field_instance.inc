@@ -137,8 +137,8 @@ function myfarnet_discussion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-myfarnet_discussion-field_abstract'.
-  $field_instances['node-myfarnet_discussion-field_abstract'] = array(
+  // Exported field_instance: 'node-myfarnet_discussion-field_farnet_abstract'.
+  $field_instances['node-myfarnet_discussion-field_farnet_abstract'] = array(
     'bundle' => 'myfarnet_discussion',
     'default_value' => NULL,
     'deleted' => 0,
@@ -149,7 +149,7 @@ function myfarnet_discussion_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -159,9 +159,9 @@ function myfarnet_discussion_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_abstract',
+    'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -197,7 +197,6 @@ function myfarnet_discussion_field_default_field_instances() {
           ),
         ),
       ),
-      'display_summary' => 0,
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -209,13 +208,10 @@ function myfarnet_discussion_field_default_field_instances() {
         'maxlength_js' => '',
         'maxlength_js_enforce' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_label_summary' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_summary' => '',
         'maxlength_js_truncate_html' => 0,
-        'rows' => 20,
-        'summary_rows' => 5,
+        'rows' => 5,
       ),
-      'type' => 'text_textarea_with_summary',
+      'type' => 'text_textarea',
       'weight' => -5,
     ),
   );
@@ -308,7 +304,7 @@ function myfarnet_discussion_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_ne_body',
     'label' => 'Body',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -394,7 +390,7 @@ function myfarnet_discussion_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'group_content_access',
     'label' => 'Group content visibility',
-    'required' => TRUE,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -410,6 +406,7 @@ function myfarnet_discussion_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',

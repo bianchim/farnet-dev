@@ -720,13 +720,6 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -748,16 +741,27 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['label'] = '';
-  $handler->display->display_options['fields']['field_ne_body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ne_body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['field_ne_body']['settings'] = array(
-    'trim_length' => '600',
-  );
+  /* Field: Field: Gender */
+  $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
+  $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
+  $handler->display->display_options['fields']['field_gender']['field'] = 'field_gender';
+  $handler->display->display_options['fields']['field_gender']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_gender']['label'] = '';
+  $handler->display->display_options['fields']['field_gender']['element_label_colon'] = FALSE;
+  /* Field: Field: First name */
+  $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_firstname']['label'] = '';
+  $handler->display->display_options['fields']['field_firstname']['element_label_colon'] = FALSE;
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_lastname']['id'] = 'field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['table'] = 'field_data_field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['field'] = 'field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_lastname']['label'] = '';
+  $handler->display->display_options['fields']['field_lastname']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'all';
 
   /* Display: Block */
@@ -789,13 +793,6 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -817,16 +814,27 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['field_ne_body']['id'] = 'field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['table'] = 'field_data_field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['field'] = 'field_ne_body';
-  $handler->display->display_options['fields']['field_ne_body']['label'] = '';
-  $handler->display->display_options['fields']['field_ne_body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ne_body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['field_ne_body']['settings'] = array(
-    'trim_length' => '600',
-  );
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_lastname']['id'] = 'field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['table'] = 'field_data_field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['field'] = 'field_lastname';
+  $handler->display->display_options['fields']['field_lastname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_lastname']['label'] = '';
+  $handler->display->display_options['fields']['field_lastname']['element_label_colon'] = FALSE;
+  /* Field: Field: First name */
+  $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_firstname']['label'] = '';
+  $handler->display->display_options['fields']['field_firstname']['element_label_colon'] = FALSE;
+  /* Field: Field: Gender */
+  $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
+  $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
+  $handler->display->display_options['fields']['field_gender']['field'] = 'field_gender';
+  $handler->display->display_options['fields']['field_gender']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_gender']['label'] = '';
+  $handler->display->display_options['fields']['field_gender']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';

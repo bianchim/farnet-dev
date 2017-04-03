@@ -783,6 +783,24 @@ function farnet_preprocess_views_view(&$vars) {
  * Implements theme_preprocess_views_view_fields.
  */
 function farnet_preprocess_views_view_fields(&$vars) {
+
+  dpm($vars['view']->name);
+  $comm_views = [
+    'my_farnet_all',
+    'my_farnet_discussion',
+    'my_farnet_cooperation_idea',
+    'my_farnet_event',
+    'my_farnet_news'
+  ];
+
+  if (in_array($vars['view']->name, $comm_views)) {
+    if(strpos($vars['fields']['field_gender']->content, 'Male') !== false) {
+      $vars['fields']['field_gender']->content = 'Mr';
+    }
+    else {
+      $vars['fields']['field_gender']->content = 'Mrs';
+    }
+  }
   if ($vars['view']->name == 'farnet_content_slider') {
     $vars['fields']['field_slide']->wrapper_prefix = '<span class="views-field views-field-field-slide">';
     $vars['fields']['field_slide']->wrapper_suffix = '</span>';
