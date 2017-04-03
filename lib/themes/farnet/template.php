@@ -45,6 +45,13 @@ function farnet_preprocess_page(&$variables) {
       $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
     }
   }
+  else {
+    $data = og_context();
+    $node_community = node_load($data['gid']);
+    if (isset($node_community->title)) {
+      $variables['node_community_name'] = $node_community->title;
+    }
+  }
 
   $variables['cols']['landing_content'] = array(
     'lg' => 12 - $variables['cols']['content_right']['lg'],
