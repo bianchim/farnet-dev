@@ -92,10 +92,10 @@
       print '</div>';
     }
 
-    if (isset($discussion_count)) {
+    if (isset($content_count)) {
       print '<div>';
       print t('Discussions :');
-      print $discussion_count;
+      print $content_count;
       print '</div>';
     }
   ?>

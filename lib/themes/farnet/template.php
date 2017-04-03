@@ -45,6 +45,13 @@ function farnet_preprocess_page(&$variables) {
       $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
     }
   }
+  else {
+    $data = og_context();
+    $node_community = node_load($data['gid']);
+    if (isset($node_community->title)) {
+      $variables['node_community_name'] = $node_community->title;
+    }
+  }
 
   $variables['cols']['landing_content'] = array(
     'lg' => 12 - $variables['cols']['content_right']['lg'],
@@ -1035,9 +1042,9 @@ function farnet_preprocess_node(&$variables) {
       $variables['last_updated'] = $last;
     }
 
-    $disc_count = _farnet_communities_discussion_count($variables['nid']);
-    if ($disc_count) {
-      $variables['discussion_count'] = $disc_count;
+    $content_count = _farnet_communities_content_count($variables['nid']);
+    if ($content_count) {
+      $variables['content_count'] = $content_count;
     }
 
     // Get join button in CT.
