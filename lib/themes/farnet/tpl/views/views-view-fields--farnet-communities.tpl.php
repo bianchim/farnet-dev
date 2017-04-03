@@ -27,7 +27,11 @@ global $base_url;
         <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
-    <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
+    <?php if (!isset($row->field_group_group[0]['rendered']['#attributes']['class']) ||
+      (isset($row->field_group_group[0]['rendered']['#attributes']['class']) &&
+      $row->field_group_group[0]['rendered']['#attributes']['class'] !== 'group manager')) : ?>
+      <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
+    <?php endif; ?>
     <?php
     $path = strip_tags($fields['path']->content);
     $url_preview = drupal_substr($path, 0, strpos($path, "_"));
@@ -35,6 +39,8 @@ global $base_url;
     ?>
     <?php if (!og_is_member('node', $gid)) : ?>
       <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
+    <?php else : ?>
+      <a href="<?php echo $url_preview; ?>" class="btn btn-default farnet-listing__read-more">Contribute</a>
     <?php endif; ?>
   </div>
 </li>

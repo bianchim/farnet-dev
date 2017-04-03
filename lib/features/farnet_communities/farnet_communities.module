@@ -327,10 +327,6 @@ function farnet_communities_views_pre_render(&$view) {
 
           $result->field_group_group[0]['rendered']['#title'] = $title;
         }
-
-        if (isset($result->field_group_group[0]['rendered']['#value']) && $result->field_group_group[0]['rendered']['#value'] === t('You are the group manager')) {
-          $result->field_group_group[0]['rendered']['#value'] = t('Contribute');
-        }
       }
       break;
 
