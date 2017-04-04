@@ -37,9 +37,8 @@ $member = og_is_member('node', $gid);
         <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
-    <?php if (!isset($row->field_group_group[0]['rendered']['#attributes']['class']) ||
-      (isset($row->field_group_group[0]['rendered']['#attributes']['class']) &&
-      $row->field_group_group[0]['rendered']['#attributes']['class'] !== 'group manager')) : ?>
+    <?php if (isset($row->field_group_group[0]['rendered']['#title']) &&
+      $row->field_group_group[0]['rendered']['#title'] !== 'Unsubscribe') : ?>
       <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
     <?php endif; ?>
     <?php

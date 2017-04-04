@@ -736,3 +736,45 @@ function farnet_communities_wysiwyg_editor_settings_alter(&$settings, $context) 
     $settings['height'] = 170;
   }
 }
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function farnet_communities_field_formatter_info() {
+  return [
+    'farnet_communities_gender' => [
+      'label' => t('Gender formatter'),
+      'field types' => ['list_text'],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function farnet_communities_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = [];
+
+  switch ($display['type']) {
+    case 'farnet_communities_gender':
+      foreach ($items as $delta => $item) {
+        switch ($item['value']) {
+          case 'male':
+            $value = t('Mr');
+            break;
+
+          case 'female':
+            $value = t('Ms');
+            break;
+
+          default:
+            $value = '';
+            break;
+        }
+
+        $element[$delta] = ['#markup' => $value];
+      }
+      break;
+  }
+  return $element;
+}
