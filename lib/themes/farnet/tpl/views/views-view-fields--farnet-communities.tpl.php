@@ -27,7 +27,6 @@ global $base_url;
         <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
-
     <?php if (isset($row->field_group_group[0]['rendered']['#title']) &&
       $row->field_group_group[0]['rendered']['#title'] !== 'Unsubscribe') : ?>
       <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
