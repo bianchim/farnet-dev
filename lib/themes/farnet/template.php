@@ -784,7 +784,6 @@ function farnet_preprocess_views_view(&$vars) {
  */
 function farnet_preprocess_views_view_fields(&$vars) {
 
-  dpm($vars['view']->name);
   $comm_views = [
     'my_farnet_all',
     'my_farnet_discussion',
