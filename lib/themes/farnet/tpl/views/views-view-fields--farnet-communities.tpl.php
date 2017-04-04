@@ -6,12 +6,22 @@
  */
 
 global $base_url;
+
+$gid = $fields['group_group']->raw;
+$member = og_is_member('node', $gid);
+
 ?>
 <li class="media farnet-listing__item community-summary">
   <div class="media-left">
   </div>
   <div class="media-body">
     <?php if (!empty($fields['title'])) : ?>
+      <?php
+        if ($member) {
+          $fields['title']->content = str_replace('/about', '', $fields['title']->content);
+        }
+      ?>
+
       <h4 class="media-heading farnet-listing__heading"><?php print $fields['title']->content; ?></h4>
     <?php endif; ?>
     <div class="farnet-listing__subheading">
@@ -35,9 +45,8 @@ global $base_url;
     <?php
     $path = strip_tags($fields['path']->content);
     $url_preview = drupal_substr($path, 0, strpos($path, "_"));
-    $gid = $fields['group_group']->raw;
     ?>
-    <?php if (!og_is_member('node', $gid)) : ?>
+    <?php if (!$member) : ?>
       <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
     <?php else : ?>
       <a href="<?php echo $url_preview; ?>" class="btn btn-default farnet-listing__read-more">Contribute</a>
