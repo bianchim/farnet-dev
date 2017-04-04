@@ -475,7 +475,7 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
         $output .= '<div class="field-group-tab" id="group_contact_details"><h3><span>' . $position_label . '</span></h3>';
 
         // Include organisation or flag name.
-        if (isset($organisation->flag)) {
+        if (isset($organisation->flag) && $org_id == 'flag') {
           // Link to FLAG.
           $title = l($organisation->flag->title->value(), 'node/' . $organisation->flag->getIdentifier());
         }
@@ -543,7 +543,7 @@ function _farnet_core_render_contact_details_default($organisations, $contact_ty
   if ($contact_num) {
     $GLOBALS['CT_has_contact'] = TRUE;
     $multiple = $contact_num > 1 ? 'flag-contacts--multiple' : '';
-    $output = '<fieldset class="flag-contacts ' . $multiple . '"><div class="field">' . $output . '</div></fieldset>';
+    $output = '<div class="flag-contacts ' . $multiple . '"><div class="field">' . $output . '</div></div>';
   }
 
   return $output;
