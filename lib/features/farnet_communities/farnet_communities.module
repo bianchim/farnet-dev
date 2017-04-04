@@ -503,6 +503,7 @@ function farnet_communities_og_membership_update(OgMembership $ogm) {
     // Update last user contribution.
     if ($ogm->state == OG_STATE_ACTIVE) {
       farnet_communities_insert_user_contribution($ogm->etid, 0, $ogm->gid, 'join');
+      _farnet_communities_user_accept(user_load($ogm->etid), node_load($ogm->gid));
     }
   }
 }
@@ -560,6 +561,28 @@ function _farnet_communities_user_reject_submit($form, $form_state) {
     '@group' => $node->title,
   ];
   drupal_mail('farnet_communities', 'refuse', $user->mail, 'en', $params);
+
+  // Redirect to list of people.
+  drupal_goto("group/node/{$node->nid}/admin/people/");
+}
+
+/**
+ * Accept a user request.
+ */
+function _farnet_communities_user_accept($user, $node) {
+  global $base_url;
+
+  $username = _farnet_communities_get_username($user);
+
+  drupal_set_message(t('The user will be notified of your decision.'));
+
+  // Send mail to end user.
+  $params = [
+    '@url' => $base_url,
+    '@username' => $username,
+    '@group' => $node->title,
+  ];
+  drupal_mail('farnet_communities', 'accept', $user->mail, 'en', $params);
 
   // Redirect to list of people.
   drupal_goto("group/node/{$node->nid}/admin/people/");
