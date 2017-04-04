@@ -23,7 +23,6 @@ function farnet_error_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => ['farnet_error_admin'],
     'access arguments' => ['administer site configuration'],
-    'type' => MENU_LOCAL_TASK,
   ];
 
   return $items;
