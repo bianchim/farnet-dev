@@ -30,7 +30,7 @@ global $base_url;
 
     <?php if (isset($row->field_group_group[0]['rendered']['#title']) &&
       $row->field_group_group[0]['rendered']['#title'] !== 'Unsubscribe') : ?>
-        <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
+      <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
     <?php endif; ?>
     <?php
     $path = strip_tags($fields['path']->content);
