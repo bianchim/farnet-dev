@@ -450,11 +450,11 @@ table.table-responsive.table-blue.table--white-borders th {
   color: #65aefd;
 }
 
-#edit-comment-body .wysiwyg-toggle-wrapper {
+.wysiwyg-toggle-wrapper {
   display: none;
 }
 
-#edit-comment-body .filter-wrapper {
+.filter-wrapper {
   display: none;
 }
 

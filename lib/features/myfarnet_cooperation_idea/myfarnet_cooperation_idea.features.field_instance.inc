@@ -82,6 +82,66 @@ function myfarnet_cooperation_idea_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'comment-comment_node_myfarnet_cooperation_idea-field_private_documents'.
+  $field_instances['comment-comment_node_myfarnet_cooperation_idea-field_private_documents'] = array(
+    'bundle' => 'comment_node_myfarnet_cooperation_idea',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_private_documents',
+    'label' => 'Attached documents',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx xls xlsx zip 7z ppt pptx odt ods odp odg',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'plupload' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-myfarnet_cooperation_idea-field_farnet_abstract'.
   $field_instances['node-myfarnet_cooperation_idea-field_farnet_abstract'] = array(
     'bundle' => 'myfarnet_cooperation_idea',
@@ -749,6 +809,7 @@ function myfarnet_cooperation_idea_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Abstract');
+  t('Attached documents');
   t('Body');
   t('Comment');
   t('Country');

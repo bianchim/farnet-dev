@@ -327,16 +327,12 @@ function farnet_communities_views_pre_render(&$view) {
 
           $result->field_group_group[0]['rendered']['#title'] = $title;
         }
-
-        if (isset($result->field_group_group[0]['rendered']['#value']) && $result->field_group_group[0]['rendered']['#value'] === t('You are the group manager')) {
-          $result->field_group_group[0]['rendered']['#value'] = t('Contribute');
-        }
       }
       break;
 
     case 'farnet_communities_members':
       // Force the action to stay on the same page.
-      drupal_add_js(['request_path' => '/' . request_path()], 'setting');
+      drupal_add_js(['request_path' => request_path()], 'setting');
       drupal_add_js(drupal_get_path('module', 'farnet_communities') . '/js/farnet_communities_members_list.js');
       drupal_add_css(drupal_get_path('module', 'farnet_communities') . '/css/farnet_communities_members_list.css');
       break;
@@ -350,11 +346,14 @@ function _farnet_communities_get_last_updated_date($gid) {
   $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
 
   if (!empty($nids)) {
-    $query = db_query("SELECT MAX(n.changed) AS node, MAX(c.changed) AS comment FROM {node} AS n, {comment} c WHERE n.nid = c.nid AND n.nid IN (:nids)", [':nids' => $nids]);
-    $result = $query->fetchObject();
+    $query = db_query("SELECT MAX(n.changed) AS node FROM {node} AS n WHERE n.nid IN (:nids)", [':nids' => $nids]);
+    $update_date = $query->fetchField();
 
-    $update_date = is_null($result->node) ? 0 : $result->node;
-    $comment_date = is_null($result->comment) ? 0 : $result->comment;
+    $query = db_query("SELECT MAX(c.changed) AS comment FROM {comment} AS c WHERE c.nid IN (:nids)", [':nids' => $nids]);
+    $comment_date = $query->fetchField();
+
+    $update_date = is_null($update_date) ? 0 : $update_date;
+    $comment_date = is_null($comment_date) ? 0 : $comment_date;
 
     if ($update_date === 0 && $comment_date === 0) {
       $date = time();
@@ -504,6 +503,7 @@ function farnet_communities_og_membership_update(OgMembership $ogm) {
     // Update last user contribution.
     if ($ogm->state == OG_STATE_ACTIVE) {
       farnet_communities_insert_user_contribution($ogm->etid, 0, $ogm->gid, 'join');
+      _farnet_communities_user_accept(user_load($ogm->etid), node_load($ogm->gid));
     }
   }
 }
@@ -546,7 +546,7 @@ function _farnet_communities_user_reject_submit($form, $form_state) {
   global $base_url;
 
   $user = user_load($form_state['values']['user']);
-  $justification = check_plain($form_state['values']['justification']);
+  $justification = $form_state['values']['justification'];
   $node = node_load($form_state['values']['node']);
 
   $username = _farnet_communities_get_username($user);
@@ -561,6 +561,28 @@ function _farnet_communities_user_reject_submit($form, $form_state) {
     '@group' => $node->title,
   ];
   drupal_mail('farnet_communities', 'refuse', $user->mail, 'en', $params);
+
+  // Redirect to list of people.
+  drupal_goto("group/node/{$node->nid}/admin/people/");
+}
+
+/**
+ * Accept a user request.
+ */
+function _farnet_communities_user_accept($user, $node) {
+  global $base_url;
+
+  $username = _farnet_communities_get_username($user);
+
+  drupal_set_message(t('The user will be notified of your decision.'));
+
+  // Send mail to end user.
+  $params = [
+    '@url' => $base_url,
+    '@username' => $username,
+    '@group' => $node->title,
+  ];
+  drupal_mail('farnet_communities', 'accept', $user->mail, 'en', $params);
 
   // Redirect to list of people.
   drupal_goto("group/node/{$node->nid}/admin/people/");

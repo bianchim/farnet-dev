@@ -11,9 +11,10 @@
 function myfarnet_event_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_myfarnet_news-comment_body'.
-  $field_instances['comment-comment_node_myfarnet_news-comment_body'] = array(
-    'bundle' => 'comment_node_myfarnet_news',
+  // Exported field_instance:
+  // 'comment-comment_node_myfarnet_event-comment_body'.
+  $field_instances['comment-comment_node_myfarnet_event-comment_body'] = array(
+    'bundle' => 'comment_node_myfarnet_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -77,6 +78,66 @@ function myfarnet_event_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'comment-comment_node_myfarnet_event-field_private_documents'.
+  $field_instances['comment-comment_node_myfarnet_event-field_private_documents'] = array(
+    'bundle' => 'comment_node_myfarnet_event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_private_documents',
+    'label' => 'Attached documents',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx xls xlsx zip 7z ppt pptx odt ods odp odg',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'plupload' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 2,
     ),
   );
 
@@ -512,7 +573,7 @@ function myfarnet_event_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -552,7 +613,7 @@ function myfarnet_event_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -756,6 +817,7 @@ function myfarnet_event_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Abstract');
+  t('Attached documents');
   t('Body');
   t('Comment');
   t('Country');
