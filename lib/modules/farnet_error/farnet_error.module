@@ -139,7 +139,7 @@ function farnet_error_is_myfarnet_page() {
   }
 
   $path = explode('/', $path);
-  return ($path[0] === $keyword);
+  return ($path[0] === $keyword || $path[0] === 'myfarnet');
 }
 
 /**
