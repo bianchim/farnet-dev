@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * myfarnet_event.features.field_instance.inc
@@ -101,10 +100,10 @@ function myfarnet_event_field_default_field_instances() {
     'label' => 'Attached documents',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'txt pdf doc docx xls xlsx zip 7z ppt pptx odt ods odp odg',
+      'file_extensions' => 'txt pdf zip doc docx xls xlsx ppt pptx odt ods odp',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -537,10 +536,10 @@ function myfarnet_event_field_default_field_instances() {
     'label' => 'Related documents',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'txt doc pdf xls',
+      'file_extensions' => 'txt pdf zip doc docx xls xlsx ppt pptx odt ods odp',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
