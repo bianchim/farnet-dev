@@ -91,3 +91,39 @@ function _farnet_communities_table_schema() {
     'primary key' => ['uid', 'gid'],
   ];
 }
+
+/**
+ * Create myFARNET community.
+ */
+function _farnet_communities_update_create_myfarnet_support_node() {
+  $node = new stdClass();
+  $node->title = "myFARNET support";
+  $node->type = "community_public";
+  node_object_prepare($node);
+
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 0;
+  $node->status = NODE_PUBLISHED;
+  $node->promote = FALSE;
+  $node->comment = FALSE;
+
+  $node = node_submit($node);
+  node_save($node);
+
+  return $node->nid;
+}
+
+/**
+ * Create myFARNET menu item.
+ */
+function _farnet_communities_update_create_myfarnet_support_menu_item($nid) {
+  $item = array(
+    'link_title' => 'myFARNET support',
+    'link_path' => 'node/' . $nid,
+    'menu_name' => 'menu-myfarnet-menu',
+    'weight' => 10,
+    'expanded' => 0,
+  );
+
+  menu_link_save($item);
+}
