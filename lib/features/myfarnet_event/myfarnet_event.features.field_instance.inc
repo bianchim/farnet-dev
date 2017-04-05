@@ -295,7 +295,7 @@ function myfarnet_event_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -303,6 +303,7 @@ function myfarnet_event_field_default_field_instances() {
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
           'full_html_track' => 'full_html_track',
+          'myfarnet_html' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -320,6 +321,9 @@ function myfarnet_event_field_default_field_instances() {
             ),
             'full_html_track' => array(
               'weight' => -10,
+            ),
+            'myfarnet_html' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => -8,
