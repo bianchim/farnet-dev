@@ -803,7 +803,7 @@ function farnet_communities_init() {
       'community_hidden',
     ];
 
-    if (in_array($node->type, $types)) {
+    if (isset($node->type) && in_array($node->type, $types)) {
       if (!og_is_member('node', $node->nid, 'user', $user->uid)) {
         $alias = drupal_lookup_path('alias', $path);
 
