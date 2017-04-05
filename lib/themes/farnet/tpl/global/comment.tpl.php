@@ -4,7 +4,7 @@
  * Comments template.
  */
 ?>
-<div class="<?php print $classes; ?> media"<?php print $attributes; ?>>
+<li class="<?php print $classes; ?> media"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
   <h4 class="comment_title">
     <?php if ($new): ?>
@@ -31,4 +31,4 @@
       print render($content['links']);
     ?>
   </div>
-</div>
+</li>
