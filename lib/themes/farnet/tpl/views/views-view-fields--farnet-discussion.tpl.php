@@ -11,7 +11,7 @@
     <?php
     switch ($fields['type']->raw):
       case 'myfarnet_discussion': ?>
-        <span class="icon icon--newspaper u-color-orange"></span>
+        <span class="icon icon--bubble u-color-orange"></span>
         <?php break;
 
       case 'myfarnet_cooperation_idea': ?>

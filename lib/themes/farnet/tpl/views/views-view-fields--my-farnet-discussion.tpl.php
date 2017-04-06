@@ -8,7 +8,7 @@
 
 <li class="media farnet-listing__item dashboard-discussion highlight--background u-p-1em">
   <div class="media-left">
-    <span class="icon icon--newspaper u-color-orange"></span>
+    <span class="icon icon--bubble u-color-orange"></span>
   </div>
   <div class="media-body">
     <?php if (!empty($fields['title_field'])) : ?>
