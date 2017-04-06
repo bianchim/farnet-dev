@@ -37,8 +37,21 @@ $member = og_is_member('node', $gid);
         <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
-    <?php if (isset($row->field_group_group[0]['rendered']['#title']) &&
-      $row->field_group_group[0]['rendered']['#title'] !== 'Unsubscribe') : ?>
+    <?php
+
+    // Check that the group link is not the unsubscribe link.
+    $not_unsub = TRUE;
+    if (isset($row->field_group_group[0]['rendered']['#options']['attributes']['class'])
+      && is_array($row->field_group_group[0]['rendered']['#options']['attributes']['class'])) {
+      $not_unsub = !in_array('group unsubscribe', $row->field_group_group[0]['rendered']['#options']['attributes']['class']);
+    }
+
+    // Check that the group link is not the group manager link.
+    $not_manager = !isset($row->field_group_group[0]['rendered']['#attributes']['class']) ||
+      (isset($row->field_group_group[0]['rendered']['#attributes']['class'])
+      && $row->field_group_group[0]['rendered']['#attributes']['class'] !== 'group manager');
+
+    if ($not_manager && $not_unsub) : ?>
       <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
     <?php endif; ?>
     <?php
