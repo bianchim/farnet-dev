@@ -481,3 +481,8 @@ table.table-responsive.table-blue.table--white-borders th {
   padding: 7px;
   color: #074a8b;
 }
+
+/* Chosen fix */
+.chosen-container-multi {
+  height: inherit !important;
+}
