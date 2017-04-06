@@ -4,51 +4,27 @@
  * @file
  * Override of views-view-fields.tpl.php.
  */
-
-global $base_url;
-
-$gid = $fields['group_group']->raw;
-$member = og_is_member('node', $gid);
-
 ?>
-<li class="media farnet-listing__item community-summary">
+
+<li class="media dashboard-community">
   <div class="media-left">
+    <?php if (!empty($fields['field_picture'])) : ?>
+      <?php print $fields['field_picture']->content; ?>
+    <?php endif; ?>
   </div>
   <div class="media-body">
-    <?php if (!empty($fields['title'])) : ?>
-      <?php
-        if ($member) {
-          $fields['title']->content = str_replace('/about', '', $fields['title']->content);
-        }
-      ?>
-
-      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title']->content; ?></h4>
-    <?php endif; ?>
+    <div class="media-heading">
+      <?php if (!empty($fields['title'])) : ?>
+        <?php print $fields['title']->content; ?>
+      <?php endif; ?>
+    </div>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['content_count'])) : ?>
-        <span class="community-summary__counter"><?php print $fields['content_count']->content; ?></span>
+        <span class="icon icon--bubble u-color-light-blue"><span><?php print $fields['content_count']->content; ?></span></span>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated_date'])) : ?>
-        - <span><?php print $fields['last_updated_date']->content; ?></span>
+        | <span><span><?php print $fields['last_updated_date']->content; ?></span></span>
       <?php endif; ?>
     </div>
-    <div class="farnet-listing__abstract">
-      <?php if (!empty($fields['field_farnet_abstract'])) : ?>
-        <?php print $fields['field_farnet_abstract']->content; ?>
-      <?php endif; ?>
-    </div>
-    <?php if (isset($row->field_group_group[0]['rendered']['#title']) &&
-      $row->field_group_group[0]['rendered']['#title'] !== 'Unsubscribe') : ?>
-      <div class="btn btn-info farnet-listing__read-more"><?php print $fields['group_group']->content; ?></div>
-    <?php endif; ?>
-    <?php
-    $path = strip_tags($fields['path']->content);
-    $url_preview = drupal_substr($path, 0, strpos($path, "_"));
-    ?>
-    <?php if (!$member) : ?>
-      <a href="<?php echo $url_preview; ?>/about" class="btn btn-default farnet-listing__read-more">Preview</a>
-    <?php else : ?>
-      <a href="<?php echo $url_preview; ?>" class="btn btn-default farnet-listing__read-more">Contribute</a>
-    <?php endif; ?>
   </div>
 </li>

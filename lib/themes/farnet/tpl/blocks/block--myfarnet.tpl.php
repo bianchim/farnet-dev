@@ -12,8 +12,10 @@
         <?php print $block->subject ?>
       </h1>
     <?php endif;?>
-  <?php print render($title_suffix); ?>
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php print $content; ?>
+  <div class="<?php print ($panel ? 'panel panel-default' : ''); ?> clearfix">
+    <?php print render($title_suffix); ?>
+    <div class="<?php print ($panel ? 'panel-body' : ''); ?> content"<?php print $content_attributes; ?>>
+      <?php print $content; ?>
+    </div>
   </div>
 </div>

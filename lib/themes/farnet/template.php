@@ -274,6 +274,7 @@ function farnet_preprocess_block(&$vars) {
   if (isset($context['context']['myfarnet'])) {
     switch ($block_id) {
       case 'views-farnet_discussion-block':
+        $vars['panel'] = FALSE;
         $vars['classes_array'][] = 'col-lg-8';
         $vars['classes_array'][] = 'col-md-8';
         $vars['classes_array'][] = 'col-sm-8';
