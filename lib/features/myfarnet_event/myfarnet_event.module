@@ -33,11 +33,6 @@ function myfarnet_event_menu() {
  * Implements hook_form_FORM_ID_alter().
  */
 function myfarnet_event_form_myfarnet_event_node_form_alter(&$form, &$form_state, $form_id) {
-  dpm('myfarnet_event_form_myfarnet_event_node_form_alter');
-  dpm($form);
-  dpm($form_state);
-  dpm($form_id);
-
   $path = drupal_get_path('module', 'myfarnet_event');
   $form['#attached']['js'] = [
     [
@@ -47,12 +42,4 @@ function myfarnet_event_form_myfarnet_event_node_form_alter(&$form, &$form_state
       'weight' => 100,
     ],
   ];
-  /*
-  $form['field_view_cooperation_ideas']['#type'] = 'hidden';
-  $form['field_view_good_practices']['#type'] = 'hidden';
-  */
-}
-
-function myfarnet_event_form_alter(&$form, &$form_state, $form_id) {
-  //dpm($form_id);
 }
