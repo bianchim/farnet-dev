@@ -87,7 +87,12 @@ function _farnet_communities_myfarnet() {
  */
 function _farnet_communities_is_member($group) {
   global $user;
-  return og_is_member('node', $group->nid, 'user', $user);
+
+  if (!empty($group)) {
+    return og_is_member('node', $group->nid, 'user', $user);
+  }
+
+  return FALSE;
 }
 
 /**

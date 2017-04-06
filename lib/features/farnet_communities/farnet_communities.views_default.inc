@@ -81,10 +81,10 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Weight (field_weight) */
+  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
