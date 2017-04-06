@@ -40,8 +40,8 @@
       <?php if (!empty($fields['nothing'])) : ?>
         <?php print $fields['nothing']->content; ?>
       <?php endif; ?>
-      <?php if (!empty($fields['created'])) : ?>
-        | <span><span><?php print $fields['created']->content; ?></span><span>
+      <?php if (!empty($fields['last_updated'])) : ?>
+        | <span><span><?php print $fields['last_updated']->content; ?></span></span>
       <?php endif; ?>
       <?php if (!empty($fields['comment_count'])) : ?>
         | <span class="icon icon--bubble u-color-light-blue"><span><?php print $fields['comment_count']->content; ?></span></span>

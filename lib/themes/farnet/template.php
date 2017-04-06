@@ -269,6 +269,28 @@ function farnet_preprocess_block(&$vars) {
       $vars['block_title'] = '<a href="' . url('library/presentations') . '" class="farnet_block_title">Presentations</a>';
       break;
   }
+
+  $context = context_get();
+  if (isset($context['context']['myfarnet'])) {
+    switch ($block_id) {
+      case 'views-farnet_discussion-block':
+        $vars['classes_array'][] = 'col-lg-8';
+        $vars['classes_array'][] = 'col-md-8';
+        $vars['classes_array'][] = 'col-sm-8';
+        $vars['classes_array'][] = 'col-xs-12';
+        $vars['theme_hook_suggestions'][] = "block__myfarnet";
+        break;
+
+      case 'views-farnet_og_memberships-block':
+        $vars['classes_array'][] = 'col-lg-4';
+        $vars['classes_array'][] = 'col-md-4';
+        $vars['classes_array'][] = 'col-sm-4';
+        $vars['classes_array'][] = 'col-xs-12';
+        $vars['theme_hook_suggestions'][] = "block__myfarnet";
+        break;
+
+    }
+  }
 }
 
 /**
@@ -804,22 +826,6 @@ function farnet_preprocess_views_view(&$vars) {
  */
 function farnet_preprocess_views_view_fields(&$vars) {
 
-  $comm_views = [
-    'my_farnet_all',
-    'my_farnet_discussion',
-    'my_farnet_cooperation_idea',
-    'my_farnet_event',
-    'my_farnet_news',
-  ];
-
-  if (in_array($vars['view']->name, $comm_views)) {
-    if (strpos($vars['fields']['field_gender']->content, 'Male') !== FALSE) {
-      $vars['fields']['field_gender']->content = 'Mr';
-    }
-    else {
-      $vars['fields']['field_gender']->content = 'Mrs';
-    }
-  }
   if ($vars['view']->name == 'farnet_content_slider') {
     $vars['fields']['field_slide']->wrapper_prefix = '<span class="views-field views-field-field-slide">';
     $vars['fields']['field_slide']->wrapper_suffix = '</span>';

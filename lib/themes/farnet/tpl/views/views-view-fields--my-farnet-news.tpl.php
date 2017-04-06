@@ -7,55 +7,29 @@
 global $base_url;
 ?>
 
-<li class="media farnet-listing__item">
+<li class="media farnet-listing__item dashboard-discussion highlight--background u-p-1em">
   <div class="media-left">
-    <?php
-    switch ($fields['type']->raw):
-      case 'myfarnet_discussion': ?>
-        <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
-        <?php break;
-
-      case 'myfarnet_cooperation_idea': ?>
-        <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
-        <?php break;
-
-      case 'myfarnet_news': ?>
-        <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
-        <?php break;
-
-      case 'myfarnet_event': ?>
-        <img typeof="foaf:Image" src="<?php echo $base_url . '/' . path_to_theme(); ?>/framework/images/placeholder.png"/>
-        <?php break;
-    endswitch; ?>
+    <span class="icon icon--newspaper u-color-orange"></span>
   </div>
   <div class="media-body">
     <?php if (!empty($fields['title_field'])) : ?>
-      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title_field']->content; ?></h4>
+      <!-- h4 class="media-heading farnet-listing__heading"><?php print $fields['title_field']->content; ?></h4 -->
     <?php endif; ?>
-    <div class="farnet-listing__abstract">
+    <div class="media-heading farnet-listing__heading">
       <?php if (!empty($fields['field_farnet_abstract'])) : ?>
         <?php print $fields['field_farnet_abstract']->content; ?>
       <?php endif; ?>
     </div>
     <div class="farnet-listing__subheading">
-      <span class="farnet-listing__important">
-      <?php if (!empty($fields['field_gender'])) : ?>
-        <?php print $fields['field_gender']->content; ?>
+      <?php if (!empty($fields['nothing'])) : ?>
+        <?php print $fields['nothing']->content; ?>
       <?php endif; ?>
-      <?php if (!empty($fields['field_firstname'])) : ?>
-        <?php print $fields['field_firstname']->content; ?>
-      <?php endif; ?>
-      <?php if (!empty($fields['field_lastname'])) : ?>
-        <?php print $fields['field_lastname']->content; ?>
-      <?php endif; ?>
-      </span>
       <?php if (!empty($fields['created'])) : ?>
-        | <span><?php print $fields['created']->content; ?></span>
+        | <span><span><?php print $fields['created']->content; ?></span></span>
       <?php endif; ?>
       <?php if (!empty($fields['comment_count'])) : ?>
-        | <span><?php print $fields['comment_count']->content; ?></span>
+        | <span class="icon icon--bubble u-color-light-blue"><span><?php print $fields['comment_count']->content; ?></span></span>
       <?php endif; ?>
     </div>
-    <!-- a href="#" class="btn btn-default farnet-listing__read-more">Read more</a -->
   </div>
 </li>

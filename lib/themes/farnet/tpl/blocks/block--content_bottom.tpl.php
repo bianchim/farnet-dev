@@ -64,9 +64,9 @@
   <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> col-sm-12">
     <?php print render($title_prefix); ?>
     <?php if ($title && $block->subject): ?>
-      <div class="title">
+      <h1 class="title-small">
         <?php print $block->subject ?>
-      </div>
+      </h1>
     <?php endif;?>
     <?php print render($title_suffix); ?>
     <div class="content-views"<?php print $content_attributes; ?>>
