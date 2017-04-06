@@ -25,6 +25,7 @@ Feature: Discussion content type
     And I press the "Save" button
     Then I should see the error message "Title field is required."
     And I should see the error message "Abstract field is required."
+    And I should see the error message "Body field is required."
 
   @api
    Scenario: Create Discussion
