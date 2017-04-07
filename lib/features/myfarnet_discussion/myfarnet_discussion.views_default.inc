@@ -65,7 +65,7 @@ function myfarnet_discussion_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_farnet_abstract']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[PATH]';
+  $handler->display->display_options['fields']['field_farnet_abstract']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
   /* Field: User: Last name */
   $handler->display->display_options['fields']['field_lastname']['id'] = 'field_lastname';
