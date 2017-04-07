@@ -32,3 +32,14 @@ function myfarnet_cooperation_idea_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function myfarnet_cooperation_idea_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'myfarnet_cooperation_idea_node_form') {
+    $form['revision_information']['#access'] = FALSE;
+    $form['group_content_access']['#access'] = FALSE;
+    $form['og_group_ref']['#access'] = FALSE;
+  }
+}

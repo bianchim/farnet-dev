@@ -33,6 +33,10 @@ function myfarnet_event_menu() {
  * Implements hook_form_FORM_ID_alter().
  */
 function myfarnet_event_form_myfarnet_event_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['revision_information']['#access'] = FALSE;
+  $form['group_content_access']['#access'] = FALSE;
+  $form['og_group_ref']['#access'] = FALSE;
+
   $path = drupal_get_path('module', 'myfarnet_event');
   $form['#attached']['js'] = [
     [
