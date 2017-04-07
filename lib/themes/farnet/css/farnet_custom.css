@@ -486,3 +486,7 @@ table.table-responsive.table-blue.table--white-borders th {
 .chosen-container-multi {
   height: inherit !important;
 }
+
+.media-abstract {
+  font-weight: bold;
+}
