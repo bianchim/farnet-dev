@@ -88,14 +88,14 @@
     if (isset($last_updated)) {
       print '<div>';
       print t('Last updated :');
-      print $last_updated;
+      print ' ' . $last_updated;
       print '</div>';
     }
 
     if (isset($content_count)) {
       print '<div>';
       print t('Discussions :');
-      print $content_count;
+      print ' ' . $content_count;
       print '</div>';
     }
   ?>
@@ -124,7 +124,11 @@
     </div>
   </div>
 
-  <?php print render($content['group_group']); ?>
+  <?php
+    $content['group_group'][0]['#attributes']['class'] = 'group manager btn btn-info';
+    $content['group_group']['#label_display'] = 'hidden';
+    print render($content['group_group']);
+  ?>
 
   <?php print render($content); ?>
 

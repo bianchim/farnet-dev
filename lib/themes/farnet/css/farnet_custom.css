@@ -487,6 +487,15 @@ table.table-responsive.table-blue.table--white-borders th {
   height: inherit !important;
 }
 
+span.group.manager.btn.btn-info {
+  cursor: default;
+}
+
+span.group.manager.btn.btn-info:hover {
+  border: 1px solid #fff;
+  background: #5fadff;
+}
+
 .media-abstract {
   font-weight: bold;
 }
