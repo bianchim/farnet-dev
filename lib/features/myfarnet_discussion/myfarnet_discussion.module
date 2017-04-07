@@ -34,8 +34,12 @@ function myfarnet_discussion_menu() {
  */
 function myfarnet_discussion_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id === 'myfarnet_discussion_node_form') {
-    $form['revision_information']['#access'] = FALSE;
-    $form['group_content_access']['#access'] = FALSE;
-    $form['og_group_ref']['#access'] = FALSE;
+    global $user;
+    $user_roles = array_values($user->roles);
+    if (!in_array('FSU Administrator', $user_roles) && !in_array('administrator', $user_roles)) {
+      $form['revision_information']['#access'] = FALSE;
+      $form['group_content_access']['#access'] = FALSE;
+      $form['og_group_ref']['#access'] = FALSE;
+    }
   }
 }
