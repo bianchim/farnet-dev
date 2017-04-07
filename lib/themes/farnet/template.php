@@ -23,6 +23,16 @@ function farnet_preprocess_page(&$variables) {
     );
   }
 
+  $contexts = context_active_contexts();
+  if (array_key_exists('myfarnet_global', $contexts)) {
+    $variables['myfarnet_css'] = TRUE;
+  }
+
+  $data = og_context();
+  if (isset($data['gid'])) {
+    $variables['myfarnet_css'] = TRUE;
+  }
+
   // Switch title to page type.
   if (isset($variables['node'])) {
     $node_type = $variables['node']->type;
@@ -56,7 +66,7 @@ function farnet_preprocess_page(&$variables) {
       'myfarnet_news',
     ];
     if (in_array($node_type, $community_content)) {
-      $data = og_context();
+      /* $data = og_context(); */
       $node_community = node_load($data['gid']);
       if (isset($node_community->title)) {
         $variables['node_community_name'] = $node_community->title;
@@ -68,7 +78,7 @@ function farnet_preprocess_page(&$variables) {
     }
   }
   else {
-    $data = og_context();
+    /* $data = og_context(); */
     $node_community = node_load($data['gid']);
     if (isset($node_community->title)) {
       $variables['node_community_name'] = $node_community->title;

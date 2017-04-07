@@ -134,7 +134,31 @@ p.title {
   text-align: center;
 }
 
+p.title-myfarnet {
+  background: #ffa500;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
+h1.title-myfarnet {
+  background: #ffa500;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
 h1.title-small {
+  background: none;
+  color: #000;
+  text-align: left;
+}
+
+h1.title-small-myfarnet {
   background: none;
   color: #000;
   text-align: left;
