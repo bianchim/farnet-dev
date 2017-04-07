@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * myfarnet_discussion.field_group.inc
@@ -23,11 +24,13 @@ function myfarnet_discussion_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_abstract',
-      1 => 'field_fc_document',
-      2 => 'field_ne_body',
-      3 => 'title_field',
-      4 => 'field_farnet_abstract',
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
+      2 => 'title_field',
+      3 => 'field_term_country',
+      4 => 'field_term_theme',
+      5 => 'field_picture',
+      6 => 'field_related_documents',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
