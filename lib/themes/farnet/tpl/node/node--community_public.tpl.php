@@ -126,6 +126,7 @@
 
   <?php
     $content['group_group'][0]['#attributes']['class'] = 'group manager btn btn-info';
+    $content['group_group']['#label_display'] = 'hidden';
     print render($content['group_group']);
   ?>
 
