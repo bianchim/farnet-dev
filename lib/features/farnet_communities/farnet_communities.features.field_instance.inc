@@ -165,6 +165,51 @@ function farnet_communities_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-community_hidden-field_weight'.
+  $field_instances['node-community_hidden-field_weight'] = array(
+    'bundle' => 'community_hidden',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_weight',
+    'label' => 'Weight',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'node-community_hidden-group_access'.
   $field_instances['node-community_hidden-group_access'] = array(
     'bundle' => 'community_hidden',
@@ -472,6 +517,51 @@ function farnet_communities_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 43,
+    ),
+  );
+
+  // Exported field_instance: 'node-community_private-field_weight'.
+  $field_instances['node-community_private-field_weight'] = array(
+    'bundle' => 'community_private',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_weight',
+    'label' => 'Weight',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 45,
     ),
   );
 
@@ -785,6 +875,51 @@ function farnet_communities_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-community_public-field_weight'.
+  $field_instances['node-community_public-field_weight'] = array(
+    'bundle' => 'community_public',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_weight',
+    'label' => 'Weight',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 45,
+    ),
+  );
+
   // Exported field_instance: 'node-community_public-group_access'.
   $field_instances['node-community_public-group_access'] = array(
     'bundle' => 'community_public',
@@ -948,6 +1083,7 @@ function farnet_communities_field_default_field_instances() {
   t('Group');
   t('Group visibility');
   t('Title');
+  t('Weight');
 
   return $field_instances;
 }

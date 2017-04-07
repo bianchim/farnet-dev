@@ -495,3 +495,7 @@ span.group.manager.btn.btn-info:hover {
   border: 1px solid #fff;
   background: #5fadff;
 }
+
+.media-abstract {
+  font-weight: bold;
+}
