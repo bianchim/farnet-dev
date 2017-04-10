@@ -85,19 +85,14 @@
   <?php print $user_picture; ?>
 
   <?php
+    print '<div>';
     if (isset($last_updated)) {
-      print '<div>';
-      print t('Last updated :');
-      print ' ' . $last_updated;
-      print '</div>';
+      print $last_updated . ' | ';
     }
-
     if (isset($content_count)) {
-      print '<div>';
-      print t('Discussions :');
-      print ' ' . $content_count;
-      print '</div>';
+      print '<span class ="community-summary__counter">' . $content_count . '</span>';
     }
+    print '</div>';
   ?>
 
   <?php if ($display_submitted): ?>
