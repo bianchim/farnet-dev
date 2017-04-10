@@ -10,6 +10,15 @@
 function farnet_communities_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'edit mimemail user settings'.
+  $permissions['edit mimemail user settings'] = array(
+    'name' => 'edit mimemail user settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mimemail',
+  );
+
   // Exported permission: 'use text format myfarnet_html'.
   $permissions['use text format myfarnet_html'] = array(
     'name' => 'use text format myfarnet_html',
