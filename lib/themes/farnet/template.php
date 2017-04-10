@@ -10,10 +10,10 @@
 function farnet_preprocess_page(&$variables) {
   if ($variables['is_front'] == TRUE) {
     $variables['cols']['content_right'] = array(
-      'lg' => (!empty($regions['content_right']) ? 4 : 4),
-      'md' => (!empty($regions['content_right']) ? 4 : 4),
-      'sm' => (!empty($regions['content_right']) ? 12 : 0),
-      'xs' => (!empty($regions['content_right']) ? 12 : 0),
+      'lg' => 4,
+      'md' => 4,
+      'sm' => 0,
+      'xs' => 0,
     );
     $variables['cols']['content'] = array(
       'lg' => 12 - $variables['cols']['content_right']['lg'],
@@ -23,18 +23,50 @@ function farnet_preprocess_page(&$variables) {
     );
   }
 
+  $contexts = context_active_contexts();
+  if (array_key_exists('myfarnet_global', $contexts)) {
+    $variables['myfarnet_css'] = TRUE;
+  }
+
+  $data = og_context();
+  if (isset($data['gid'])) {
+    $variables['myfarnet_css'] = TRUE;
+  }
+
   // Switch title to page type.
   if (isset($variables['node'])) {
-    /* $node_type = node_type_get_name($variables['node']); */
     $node_type = $variables['node']->type;
-    if (!in_array($node_type, array('page', 'farnet_article', 'landing_page', 'myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
+    $excluded_content_types = [
+      'page',
+      'farnet_article',
+      'landing_page',
+      'myfarnet_news',
+      'myfarnet_event',
+      'myfarnet_discussion',
+      'myfarnet_cooperation_idea',
+    ];
+    if (!in_array($node_type, $excluded_content_types)) {
+      $node_type = node_type_get_name($variables['node']);
       $variables['node_type'] = $node_type;
     }
-    if (in_array($node_type, array('community_public', 'community_private', 'community_hidden'))) {
+
+    $community_type = [
+      'Community public',
+      'Community private',
+      'Community hidden',
+    ];
+    if (in_array($node_type, $community_type)) {
       $variables['node_type'] = NULL;
     }
-    if (in_array($node_type, array('myfarnet_news', 'myfarnet_event', 'myfarnet_discussion', 'myfarnet_cooperation_idea'))) {
-      $data = og_context();
+
+    $community_content = [
+      'myfarnet_discussion',
+      'myfarnet_cooperation_idea',
+      'myfarnet_event',
+      'myfarnet_news',
+    ];
+    if (in_array($node_type, $community_content)) {
+      /* $data = og_context(); */
       $node_community = node_load($data['gid']);
       if (isset($node_community->title)) {
         $variables['node_community_name'] = $node_community->title;
@@ -43,6 +75,13 @@ function farnet_preprocess_page(&$variables) {
     if (in_array($node_type, array('landing_page'))) {
       // Format regions.
       $variables['regions']['landing_content'] = (isset($variables['page']['landing_content']) ? render($variables['page']['landing_content']) : '');
+    }
+  }
+  else {
+    /* $data = og_context(); */
+    $node_community = node_load($data['gid']);
+    if (isset($node_community->title)) {
+      $variables['node_community_name'] = $node_community->title;
     }
   }
 
@@ -79,7 +118,7 @@ function farnet_om_menu_content_render($content = array()) {
   uasort($content, 'om_sort_by_weight');
   $total = count($content);
   $out = '';
-  foreach ($content as $key => $prop) {
+  foreach ($content as $prop) {
     $count++;
 
     $module     = $prop['module'];
@@ -240,6 +279,29 @@ function farnet_preprocess_block(&$vars) {
       $vars['block_title'] = '<a href="' . url('library/presentations') . '" class="farnet_block_title">Presentations</a>';
       break;
   }
+
+  $context = context_get();
+  if (isset($context['context']['myfarnet'])) {
+    switch ($block_id) {
+      case 'views-farnet_discussion-block':
+        $vars['panel'] = FALSE;
+        $vars['classes_array'][] = 'col-lg-8';
+        $vars['classes_array'][] = 'col-md-8';
+        $vars['classes_array'][] = 'col-sm-8';
+        $vars['classes_array'][] = 'col-xs-12';
+        $vars['theme_hook_suggestions'][] = "block__myfarnet";
+        break;
+
+      case 'views-farnet_og_memberships-block':
+        $vars['classes_array'][] = 'col-lg-4';
+        $vars['classes_array'][] = 'col-md-4';
+        $vars['classes_array'][] = 'col-sm-4';
+        $vars['classes_array'][] = 'col-xs-12';
+        $vars['theme_hook_suggestions'][] = "block__myfarnet";
+        break;
+
+    }
+  }
 }
 
 /**
@@ -254,17 +316,31 @@ function farnet_menu_tree__main_menu($variables) {
 }
 
 /**
+ * Alter the myfarnet menu in order to add custom class.
+ */
+function farnet_menu_tree__menu_myfarnet_menu($variables) {
+  $tree = str_replace('leaf', 'leaf navigation-vertical__item', $variables['tree']);
+  return '<ul class="menu clearfix list-group list-group-flush list-unstyled navigation-vertical__list">' . $tree . '</ul>';
+}
+
+/**
+ * Alter the community menu in order to add custom class.
+ */
+function farnet_menu_tree__menu_community_menu($variables) {
+  $tree = str_replace('leaf', 'leaf community-navigation__item', $variables['tree']);
+  return '<ul class="menu clearfix list-group list-group-flush list-unstyled community-navigation__list">' . $tree . '</ul>';
+}
+
+/**
  * Returns HTML for a dropdown, modified version from ec_resp.
  */
 function farnet_dropdown($variables) {
   $items = $variables['items'];
-  $attributes = array();
   $output = "";
 
   if (!empty($items)) {
     $output .= "<ul class='dropdown-menu'>";
-    $num_items = count($items);
-    foreach ($items as $i => $item) {
+    foreach ($items as $item) {
       $data = '';
       if (is_array($item)) {
         foreach ($item as $key => $value) {
@@ -696,7 +772,7 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
 function farnet_social_media_links_platforms(&$variables) {
   $output = '';
   $platforms = $variables['platforms'];
-  foreach ($platforms as $name => $platform) {
+  foreach ($platforms as $platform) {
     // Render the platform item.
     $output .= drupal_render($platform);
   }
@@ -760,6 +836,7 @@ function farnet_preprocess_views_view(&$vars) {
  * Implements theme_preprocess_views_view_fields.
  */
 function farnet_preprocess_views_view_fields(&$vars) {
+
   if ($vars['view']->name == 'farnet_content_slider') {
     $vars['fields']['field_slide']->wrapper_prefix = '<span class="views-field views-field-field-slide">';
     $vars['fields']['field_slide']->wrapper_suffix = '</span>';
@@ -952,7 +1029,7 @@ function farnet_item_list($variables) {
       }
       if (count($children) > 0) {
         // Render nested list.
-        $data .= theme_item_list(array(
+        $data .= theme('item_list', array(
           'items' => $children,
           'title' => NULL,
           'type' => $type,
@@ -1005,12 +1082,10 @@ function farnet_preprocess_image_style(&$vars) {
   }
 }
 
-/**r
+/**
  * Implements template_preprocess_node().
  */
 function farnet_preprocess_node(&$variables) {
-
-
   // Add a last updated date to communities.
   $types = ['community_public', 'community_private', 'community_hidden'];
   if (in_array($variables['type'], $types)) {
@@ -1019,9 +1094,9 @@ function farnet_preprocess_node(&$variables) {
       $variables['last_updated'] = $last;
     }
 
-    $disc_count = _farnet_communities_discussion_count($variables['nid']);
-    if ($disc_count) {
-      $variables['discussion_count'] = $disc_count;
+    $content_count = _farnet_communities_content_count($variables['nid']);
+    if ($content_count) {
+      $variables['content_count'] = $content_count;
     }
 
     // Get join button in CT.
@@ -1046,7 +1121,7 @@ function farnet_preprocess_node(&$variables) {
     'myfarnet_discussion',
     'myfarnet_cooperation_idea',
     'myfarnet_event',
-    'myfarnet_news'
+    'myfarnet_news',
   ];
   if (in_array($variables['type'], $comm_content)) {
     $params = [':nid' => $variables['nid'], ':status' => COMMENT_PUBLISHED];
@@ -1056,4 +1131,36 @@ function farnet_preprocess_node(&$variables) {
     }
   }
 
+}
+
+/**
+ * Implements template_preprocess_user_profile().
+ */
+function farnet_preprocess_user_profile(&$variables) {
+  $account = $variables['elements']['#account'];
+  // Add the user ID into the user profile as a variable.
+  $variables['user_id'] = $account->uid;
+  // Helpful $user_profile variable for templates.
+  foreach (element_children($variables['elements']) as $key) {
+    if ($key == 'field_gender') {
+      switch ($variables['elements'][$key]['#items'][0]['value']) {
+        case 'male':
+          $variables['elements'][$key]['#items'][0]['value'] = 'Mr';
+          $variables['elements'][$key][0]['#markup'] = 'Mr';
+          $variables['elements'][$key][0]['#items']['value'] = 'Mr';
+          break;
+
+        case 'female':
+          $variables['elements'][$key]['#items'][0]['value'] = 'Mrs';
+          $variables['elements'][$key][0]['#markup'] = 'Mrs';
+          $variables['elements'][$key][0]['#items']['value'] = 'Mrs';
+          break;
+
+      }
+    }
+    $variables['user_profile'][$key] = $variables['elements'][$key];
+  }
+
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }

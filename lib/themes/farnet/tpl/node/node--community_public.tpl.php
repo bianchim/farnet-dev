@@ -84,24 +84,18 @@
 
   <?php print $user_picture; ?>
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
   <?php
     if (isset($last_updated)) {
       print '<div>';
       print t('Last updated :');
-      print $last_updated;
+      print ' ' . $last_updated;
       print '</div>';
     }
 
-    if (isset($discussion_count)) {
+    if (isset($content_count)) {
       print '<div>';
       print t('Discussions :');
-      print $discussion_count;
+      print ' ' . $content_count;
       print '</div>';
     }
   ?>
@@ -130,7 +124,11 @@
     </div>
   </div>
 
-  <?php print render($content['group_group']); ?>
+  <?php
+    $content['group_group'][0]['#attributes']['class'] = 'group manager btn btn-info';
+    $content['group_group']['#label_display'] = 'hidden';
+    print render($content['group_group']);
+  ?>
 
   <?php print render($content); ?>
 

@@ -134,7 +134,31 @@ p.title {
   text-align: center;
 }
 
+p.title-myfarnet {
+  background: #ffa500;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
+h1.title-myfarnet {
+  background: #ffa500;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
 h1.title-small {
+  background: none;
+  color: #000;
+  text-align: left;
+}
+
+h1.title-small-myfarnet {
   background: none;
   color: #000;
   text-align: left;
@@ -440,4 +464,62 @@ table.table-responsive.table-blue.table--white-borders th {
 .myfarnet-main-menu-link {
   color: #074a8b!important;
   font-weight: 700;
+}
+
+#om-menu-main-menu {
+  width: 100%;
+}
+
+.icon--user:before {
+  color: #65aefd;
+}
+
+.wysiwyg-toggle-wrapper {
+  display: none;
+}
+
+.filter-wrapper {
+  display: none;
+}
+
+/* myFARNET menu style */
+#block-menu-menu-myfarnet-menu,
+#block-menu-menu-myfarnet-menu a {
+  border: none;
+}
+
+.panel .panel-body .list-group a.list-group-item.active {
+  background: none;
+}
+
+#block-menu-menu-community-menu a {
+  padding: 3px 3px 3px 15px;
+  border: none;
+}
+
+#block-menu-menu-community-menu {
+  border: none;
+}
+
+#block-menu-menu-community-menu .panel-heading {
+  padding: 7px;
+  color: #074a8b;
+}
+
+/* Chosen fix */
+.chosen-container-multi {
+  height: inherit !important;
+}
+
+span.group.manager.btn.btn-info {
+  cursor: default;
+}
+
+span.group.manager.btn.btn-info:hover {
+  border: 1px solid #fff;
+  background: #5fadff;
+}
+
+.media-abstract {
+  font-weight: bold;
 }

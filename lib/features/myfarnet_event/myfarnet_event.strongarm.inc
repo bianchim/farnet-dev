@@ -169,7 +169,8 @@ function myfarnet_event_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_myfarnet_event';
   $strongarm->value = array(
-    0 => 'revision',
+    0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_myfarnet_event'] = $strongarm;
 
@@ -186,6 +187,146 @@ function myfarnet_event_strongarm() {
   $strongarm->name = 'node_submitted_myfarnet_event';
   $strongarm->value = 1;
   $export['node_submitted_myfarnet_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_bg_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_bg_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_da_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_da_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_de_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_el_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_el_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_et_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_et_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_fi_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_fi_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_fr_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_hr_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_hr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_it_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_it_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_lt_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_lt_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_lv_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_lv_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_pattern';
+  $strongarm->value = '[site:nexteuropa_communities_keyword]/[node:og_group_ref]/[node:content-type]s/[node:title]';
+  $export['pathauto_node_myfarnet_event_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_pl_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_pl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_pt-pt_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_pt-pt_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_ro_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_ro_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_sl_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_sl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_sv_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_sv_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_myfarnet_event_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_myfarnet_event_und_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -48,3 +48,46 @@ function _farnet_communities_update_content_types() {
     ->condition('name', 'Default', '=')
     ->execute();
 }
+
+/**
+ * Helper function of database schema for organisation import.
+ */
+function _farnet_communities_table_schema() {
+  return [
+    'description' => 'The list of users last action.',
+    'fields' => [
+      'uid' => [
+        'description' => 'The user ID',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'nid' => [
+        'description' => 'The targeted content.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'gid' => [
+        'description' => "The targeted content's group.",
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'action' => [
+        'description' => 'The action that was performed.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'timestamp' => [
+        'description' => 'The Unix timestamp of the contribution.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['uid', 'gid'],
+  ];
+}

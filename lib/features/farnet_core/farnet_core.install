@@ -82,9 +82,11 @@ function farnet_core_update_7001() {
  * Insert new date format.
  */
 function _farnet_core_insert_dates() {
-  $record = ['format' => 'Y/m/d', 'type' => 'custom', 'locked' => 1];
+  $record = ['format' => 'd/m/Y', 'type' => 'custom', 'locked' => 1];
   drupal_write_record('date_formats', $record);
 
   $record = ['type' => 'date_only', 'title' => 'Date only', 'locked' => 1];
   drupal_write_record('date_format_type', $record);
+
+  variable_set('date_format_date_only', 'd/m/Y');
 }

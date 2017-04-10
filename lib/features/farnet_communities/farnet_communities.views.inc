@@ -17,7 +17,7 @@ function farnet_communities_views_handlers() {
       'FarnetCommunitiesHandlerFieldLastUpdatedDate' => [
         'parent' => 'views_handler_field',
       ],
-      'FarnetCommunitiesHandlerFieldDiscussionCount' => [
+      'FarnetCommunitiesHandlerFieldContentCount' => [
         'parent' => 'views_handler_field',
       ],
     ],
@@ -41,11 +41,21 @@ function farnet_communities_views_data() {
           'handler' => 'FarnetCommunitiesHandlerFieldLastUpdatedDate',
         ],
       ],
-      'discussion_count' => [
-        'title' => t('Discussion count'),
-        'help' => t('Displays the number of discussion in a community.'),
+      'content_count' => [
+        'title' => t('Content count'),
+        'help' => t('Displays the number of content in a community.'),
         'field' => [
-          'handler' => 'FarnetCommunitiesHandlerFieldDiscussionCount',
+          'handler' => 'FarnetCommunitiesHandlerFieldContentCount',
+        ],
+      ],
+      'last_commented' => [
+        'title' => t('Last contribution'),
+        'help' => t('Last contribution of the user ( comment / node ).'),
+        'sort' => [
+          'handler' => 'farnetCommunitiesLastContributionSortHandler',
+        ],
+        'field' => [
+          'handler' => 'farnetCommunitiesLastContributionFieldHandler',
         ],
       ],
     ],

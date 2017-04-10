@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * myfarnet_news.features.field_instance.inc
@@ -10,6 +9,135 @@
  */
 function myfarnet_news_field_default_field_instances() {
   $field_instances = array();
+
+  // Exported field_instance: 'comment-comment_node_myfarnet_news-comment_body'.
+  $field_instances['comment-comment_node_myfarnet_news-comment_body'] = array(
+    'bundle' => 'comment_node_myfarnet_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'comment_body',
+    'label' => 'Comment',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'myfarnet_html' => 'myfarnet_html',
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'myfarnet_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'comment-comment_node_myfarnet_news-field_private_documents'.
+  $field_instances['comment-comment_node_myfarnet_news-field_private_documents'] = array(
+    'bundle' => 'comment_node_myfarnet_news',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_private_documents',
+    'label' => 'Attached documents',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf zip doc docx xls xlsx ppt pptx odt ods odp',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'plupload' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 2,
+    ),
+  );
 
   // Exported field_instance: 'node-myfarnet_news-field_farnet_abstract'.
   $field_instances['node-myfarnet_news-field_farnet_abstract'] = array(
@@ -35,7 +163,7 @@ function myfarnet_news_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_farnet_abstract',
     'label' => 'Abstract',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -43,6 +171,7 @@ function myfarnet_news_field_default_field_instances() {
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
           'full_html_track' => 'full_html_track',
+          'myfarnet_html' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -60,6 +189,9 @@ function myfarnet_news_field_default_field_instances() {
             ),
             'full_html_track' => array(
               'weight' => -10,
+            ),
+            'myfarnet_html' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => -8,
@@ -110,7 +242,7 @@ function myfarnet_news_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_ne_body',
     'label' => 'Body',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -273,10 +405,10 @@ function myfarnet_news_field_default_field_instances() {
     'label' => 'Related documents',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'txt doc pdf xls',
+      'file_extensions' => 'txt pdf zip doc docx xls xlsx ppt pptx odt ods odp',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -557,7 +689,9 @@ function myfarnet_news_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Abstract');
+  t('Attached documents');
   t('Body');
+  t('Comment');
   t('Country');
   t('Group content visibility');
   t('Groups audience');

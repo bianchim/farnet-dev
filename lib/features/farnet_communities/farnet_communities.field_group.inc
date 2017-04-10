@@ -23,10 +23,11 @@ function farnet_communities_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'title_field',
-      2 => 'field_farnet_abstract',
-      3 => 'language',
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
+      2 => 'title_field',
+      3 => 'field_weight',
+      4 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -53,10 +54,11 @@ function farnet_communities_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'title_field',
-      2 => 'field_farnet_abstract',
-      3 => 'language',
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
+      2 => 'title_field',
+      3 => 'field_weight',
+      4 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -83,10 +85,11 @@ function farnet_communities_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_ne_body',
-      1 => 'title_field',
-      2 => 'field_farnet_abstract',
-      3 => 'language',
+      0 => 'field_farnet_abstract',
+      1 => 'field_ne_body',
+      2 => 'title_field',
+      3 => 'field_weight',
+      4 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

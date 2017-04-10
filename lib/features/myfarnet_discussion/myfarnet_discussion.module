@@ -13,17 +13,33 @@ include_once 'myfarnet_discussion.features.inc';
 function myfarnet_discussion_menu() {
   $items = array();
 
-  $items['community/%community/discussion'] = array(
-    'title' => 'Discussion',
+  $items['community/%community/discussions'] = array(
+    'title' => 'Discussions',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('my_farnet_discussion', 'page_1', 1),
-    'access arguments' => array('access private area'),
+    'access callback' => '_farnet_communities_ct_page_access',
+    'access arguments' => array('access private area', 1, 'myfarnet_discussion'),
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'menu-community-menu',
-    'weight' => 1,
+    'weight' => 2,
     'file' => 'farnet_communities.callback.inc',
     'file path' => drupal_get_path('module', 'farnet_communities'),
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function myfarnet_discussion_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'myfarnet_discussion_node_form') {
+    global $user;
+    $user_roles = array_values($user->roles);
+    if (!in_array('FSU Administrator', $user_roles) && !in_array('administrator', $user_roles)) {
+      $form['revision_information']['#access'] = FALSE;
+      $form['group_content_access']['#access'] = FALSE;
+      $form['og_group_ref']['#access'] = FALSE;
+    }
+  }
 }

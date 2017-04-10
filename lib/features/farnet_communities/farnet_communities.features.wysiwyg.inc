@@ -41,14 +41,6 @@ function farnet_communities_wysiwyg_default_profiles() {
           'Replace' => 1,
           'Maximize' => 1,
         ),
-        'lite' => array(
-          'lite_AcceptAll' => 1,
-          'lite_RejectAll' => 1,
-          'lite_AcceptOne' => 1,
-          'lite_RejectOne' => 1,
-          'lite_ToggleShow' => 1,
-          'lite_ToggleTracking' => 1,
-        ),
         'drupal' => array(
           'media' => 1,
         ),

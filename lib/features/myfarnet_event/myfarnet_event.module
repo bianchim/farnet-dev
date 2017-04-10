@@ -13,17 +13,41 @@ include_once 'myfarnet_event.features.inc';
 function myfarnet_event_menu() {
   $items = array();
 
-  $items['community/%community/event'] = array(
-    'title' => 'Event',
+  $items['community/%community/events'] = array(
+    'title' => 'Events',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('my_farnet_event', 'page_1', 1),
-    'access arguments' => array('access private area'),
+    'access callback' => '_farnet_communities_ct_page_access',
+    'access arguments' => array('access private area', 1, 'myfarnet_event'),
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'menu-community-menu',
-    'weight' => 1,
+    'weight' => 4,
     'file' => 'farnet_communities.callback.inc',
     'file path' => drupal_get_path('module', 'farnet_communities'),
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function myfarnet_event_form_myfarnet_event_node_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  $user_roles = array_values($user->roles);
+  if (!in_array('FSU Administrator', $user_roles) && !in_array('administrator', $user_roles)) {
+    $form['revision_information']['#access'] = FALSE;
+    $form['group_content_access']['#access'] = FALSE;
+    $form['og_group_ref']['#access'] = FALSE;
+  }
+
+  $path = drupal_get_path('module', 'myfarnet_event');
+  $form['#attached']['js'] = [
+    [
+      'data' => $path . '/js/myfarnet_event.js',
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    ],
+  ];
 }

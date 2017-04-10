@@ -23,7 +23,6 @@ function farnet_error_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => ['farnet_error_admin'],
     'access arguments' => ['administer site configuration'],
-    'type' => MENU_LOCAL_TASK,
   ];
 
   return $items;
@@ -139,7 +138,7 @@ function farnet_error_is_myfarnet_page() {
   }
 
   $path = explode('/', $path);
-  return ($path[0] === $keyword);
+  return ($path[0] === $keyword || $path[0] === 'myfarnet');
 }
 
 /**

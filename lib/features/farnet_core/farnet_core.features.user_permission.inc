@@ -30,5 +30,15 @@ function farnet_core_user_default_permissions() {
     'module' => 'contact',
   );
 
+  // Exported permission: 'skip CAPTCHA'.
+  $permissions['skip CAPTCHA'] = array(
+    'name' => 'skip CAPTCHA',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'captcha',
+  );
+
   return $permissions;
 }

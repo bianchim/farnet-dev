@@ -17,14 +17,27 @@
     <?php endif; ?>
 
     <?php
-      if (isset($comment_count)) {
-        print '<div>';
-        print t('Comments :');
-        print $comment_count;
-        print '<div>';
-      }
+    print '<div>';
+    if (isset($created)) {
+      print gmdate("d/m/Y", $created) . ' | ';
+    }
+    if (isset($name)) {
+      print t('by');
+      print ' ' . $name . ' | ';
+    }
+    if (isset($comment_count)) {
+      print '<span class ="community-summary__counter">' . $comment_count . '</span>';
+    }
+    print '</div>';
     ?>
 
+    <div class="media media--farnet-abstract">
+      <?php if (!empty($content['field_farnet_abstract'])) : ?>
+        <div class="media-abstract ">
+          <?php print render($content['field_farnet_abstract']); ?>
+        </div>
+      <?php endif; ?>
+    </div>
     <div class="media media--farnet">
       <?php if (!empty($content['field_picture'])) : ?>
         <div class="media-left ">

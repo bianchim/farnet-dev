@@ -62,7 +62,7 @@
     <exclude-pattern>*.farnet_faq.module</exclude-pattern>
     <exclude-pattern>*.features.fe_block_boxes.inc</exclude-pattern>
     <exclude-pattern>*.farnet_organisation_import.install</exclude-pattern>
-    <exclude-pattern>*.template.php</exclude-pattern>
+    <!-- exclude-pattern>*.template.php</exclude-pattern -->
     <!-- Farnet theme excludes -->
     <exclude-pattern>farnet/framework/*</exclude-pattern>
 

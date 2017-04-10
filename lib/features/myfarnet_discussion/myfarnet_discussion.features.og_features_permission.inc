@@ -96,7 +96,9 @@ function myfarnet_discussion_og_features_default_permissions() {
 
   // Exported og permission: 'node:community_hidden:approve comment_node_myfarnet_discussion'
   $permissions['node:community_hidden:approve comment_node_myfarnet_discussion'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:create myfarnet_discussion content'

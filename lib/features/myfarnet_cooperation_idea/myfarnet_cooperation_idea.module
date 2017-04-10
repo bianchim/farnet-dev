@@ -13,17 +13,37 @@ include_once 'myfarnet_cooperation_idea.features.inc';
 function myfarnet_cooperation_idea_menu() {
   $items = array();
 
-  $items['community/%community/cooperation_idea'] = array(
-    'title' => 'Cooperation idea',
+  $items['community/%community/cooperation-ideas'] = array(
+    'title' => 'Cooperation ideas',
     'page callback' => 'farnet_communities_display_views',
     'page arguments' => array('my_farnet_cooperation_idea', 'page_1', 1),
-    'access arguments' => array('access private area'),
+    'access callback' => '_farnet_communities_ct_page_access',
+    'access arguments' => array(
+      'access private area',
+      1,
+      'myfarnet_cooperation_idea',
+    ),
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'menu-community-menu',
-    'weight' => 1,
+    'weight' => 5,
     'file' => 'farnet_communities.callback.inc',
     'file path' => drupal_get_path('module', 'farnet_communities'),
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function myfarnet_cooperation_idea_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'myfarnet_cooperation_idea_node_form') {
+    global $user;
+    $user_roles = array_values($user->roles);
+    if (!in_array('FSU Administrator', $user_roles) && !in_array('administrator', $user_roles)) {
+      $form['revision_information']['#access'] = FALSE;
+      $form['group_content_access']['#access'] = FALSE;
+      $form['og_group_ref']['#access'] = FALSE;
+    }
+  }
 }
