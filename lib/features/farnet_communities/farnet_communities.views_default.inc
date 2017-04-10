@@ -966,7 +966,7 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['label'] = '';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['separator'] = '';
-  $handler->display->display_options['path'] = 'all';
+  $handler->display->display_options['path'] = 'community/%/all';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_all');
