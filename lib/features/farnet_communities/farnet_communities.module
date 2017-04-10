@@ -783,3 +783,37 @@ function farnet_communities_field_formatter_view($entity_type, $entity, $field, 
   }
   return $element;
 }
+
+/**
+ * Prevent users from seeing a community they're not a member of.
+ *
+ * Implements hook_init().
+ */
+function farnet_communities_init() {
+  global $user;
+
+  // Bypass for admins.
+  if (user_access('bypass node access')) {
+    return;
+  }
+
+  $path = current_path();
+  preg_match("/^node\/[0-9]+$/", $path, $match);
+
+  if (!empty($match)) {
+    $node = menu_get_object();
+    $types = [
+      'community_public',
+      'community_private',
+      'community_hidden',
+    ];
+
+    if (isset($node->type) && in_array($node->type, $types)) {
+      if (!og_is_member('node', $node->nid, 'user', $user->uid)) {
+        $alias = drupal_lookup_path('alias', $path);
+
+        drupal_goto($alias . '/about');
+      }
+    }
+  }
+}

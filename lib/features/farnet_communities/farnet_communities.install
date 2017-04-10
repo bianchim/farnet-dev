@@ -19,6 +19,10 @@ function farnet_communities_schema() {
  */
 function farnet_communities_install() {
   _farnet_communities_update_content_types();
+
+  // Add myFARNET support node and menu item.
+  $nid = _farnet_communities_update_create_myfarnet_support_node();
+  _farnet_communities_update_create_myfarnet_support_menu_item($nid);
 }
 
 /**
@@ -35,4 +39,12 @@ function farnet_communities_update_7001() {
  */
 function farnet_communities_update_7002() {
   db_create_table('user_last_contribution', _farnet_communities_table_schema());
+}
+
+/**
+ * Add myFARNET support node and menu item.
+ */
+function farnet_communities_update_7003() {
+  $nid = _farnet_communities_update_create_myfarnet_support_node();
+  _farnet_communities_update_create_myfarnet_support_menu_item($nid);
 }
