@@ -32,3 +32,15 @@ function myfarnet_cooperation_idea_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_bases.
+ */
+function myfarnet_cooperation_idea_field_default_field_bases_alter(&$fields) {
+  if (isset($fields['field_related_documents'])) {
+    $fields['field_related_documents']['settings']['display_default'] = 0;
+    $fields['field_related_documents']['settings']['display_field'] = 0;
+  }
+}
