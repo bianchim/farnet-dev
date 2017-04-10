@@ -69,7 +69,7 @@ class farnetCommunitiesLastContributionFieldHandler extends views_handler_field 
     if (isset($text)) {
       $node = node_load($values->last_action_nid);
       $link = l($node->title, 'node/' . $node->nid);
-      $return .= '<span>' . $text . ' ' . $link . '</span>';
+      $return .= '<span>' . $text . ': ' . $link . '</span>';
     }
 
     return $return;
