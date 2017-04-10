@@ -951,14 +951,14 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_gender] [field_firstname] [field_lastname]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'date_only';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Content: Updated/commented date */
+  $handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
+  $handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
+  $handler->display->display_options['fields']['last_updated']['label'] = '';
+  $handler->display->display_options['fields']['last_updated']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['last_updated']['date_format'] = 'date_only';
+  $handler->display->display_options['fields']['last_updated']['second_date_format'] = 'long';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -1039,14 +1039,14 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_gender] [field_firstname] [field_lastname]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'date_only';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Content: Updated/commented date */
+  $handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
+  $handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
+  $handler->display->display_options['fields']['last_updated']['label'] = '';
+  $handler->display->display_options['fields']['last_updated']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['last_updated']['date_format'] = 'date_only';
+  $handler->display->display_options['fields']['last_updated']['second_date_format'] = 'long';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
