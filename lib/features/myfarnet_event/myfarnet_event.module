@@ -51,3 +51,15 @@ function myfarnet_event_form_myfarnet_event_node_form_alter(&$form, &$form_state
     ],
   ];
 }
+
+/**
+ * Implements hook_COMPONENT_alter().
+ *
+ * COMPONENT = field_default_field_bases.
+ */
+function myfarnet_event_field_default_field_bases_alter(&$fields) {
+  if (isset($fields['field_related_documents'])) {
+    $fields['field_related_documents']['settings']['display_default'] = 0;
+    $fields['field_related_documents']['settings']['display_field'] = 0;
+  }
+}
