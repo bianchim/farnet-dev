@@ -44,7 +44,7 @@
  */
 ?>
 
-<div id="<?php print $block_html_id; ?>" class="block block-multisite-og-button">
+<div id="<?php print $block_html_id; ?>" class="block block-multisite-og-button community-create-button">
   <div class="btn-group">
     <a href="#" data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-expanded="false"><span class="icon icon--pencil u-color-orange"></span> Create content</a>
     <?php print $content ?>
