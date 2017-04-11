@@ -283,9 +283,11 @@ function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id)
  */
 function farnet_communities_context_load_alter(&$context) {
   if ($context->name === 'communities' && isset($context->reactions['block'])) {
+    $og_context = og_context('node');
+    $gid = $og_context['gid'];
     $path = current_path();
     $patterns = '' . PHP_EOL . 'community/*/about';
-    if (drupal_match_path($path, $patterns)) {
+    if (drupal_match_path($path, $patterns) && !og_is_member('node', $gid)) {
       if (isset($context->reactions['block']['blocks']['menu-menu-community-menu'])) {
         unset($context->reactions['block']['blocks']['menu-menu-community-menu']);
       }
