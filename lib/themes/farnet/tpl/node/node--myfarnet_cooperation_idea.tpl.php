@@ -26,7 +26,7 @@
       print ' ' . $name . ' | ';
     }
     if (isset($comment_count)) {
-      print '<span class ="community-summary__counter">' . $comment_count . '</span>';
+      print '<span class ="icon icon--bubble u-color-light-blue">' . $comment_count . '</span>';
     }
     print '</div>';
     ?>

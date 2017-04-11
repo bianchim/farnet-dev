@@ -20,7 +20,7 @@
     </div>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['content_count'])) : ?>
-        <span class="icon icon--bubble u-color-light-blue"><span><?php print $fields['content_count']->content; ?></span></span>
+        <span class="community-summary__counter"><span><?php print $fields['content_count']->content; ?></span></span>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated_date'])) : ?>
         | <span><span><?php print $fields['last_updated_date']->content; ?></span></span>
