@@ -523,3 +523,19 @@ span.group.manager.btn.btn-info:hover {
 .media-abstract {
   font-weight: bold;
 }
+
+#myfarnet-news-node-form .form-item-language {
+  display: none;
+}
+
+#myfarnet-event-node-form .form-item-language {
+  display: none;
+}
+
+#myfarnet-discussion-node-form .form-item-language {
+  display: none;
+}
+
+#myfarnet-cooperation-idea-node-form .form-item-language {
+  display: none;
+}
