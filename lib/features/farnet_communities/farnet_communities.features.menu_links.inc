@@ -44,12 +44,12 @@ function farnet_communities_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-myfarnet-menu_my-profile:menutoken/58d256eb4e148.
-  $menu_links['menu-myfarnet-menu_my-profile:menutoken/58d256eb4e148'] = array(
+  // Exported menu link: menu-myfarnet-menu_profile:menutoken/58d256eb4e148.
+  $menu_links['menu-myfarnet-menu_profile:menutoken/58d256eb4e148'] = array(
     'menu_name' => 'menu-myfarnet-menu',
     'link_path' => 'menutoken/58d256eb4e148',
     'router_path' => 'menutoken/%',
-    'link_title' => 'My profile',
+    'link_title' => 'Profile',
     'options' => array(
       'menu_token_link_path' => 'user/[current-user:uid]',
       'menu_token_data' => array(
@@ -78,7 +78,7 @@ function farnet_communities_menu_default_menu_links() {
         'data-remove-class' => 0,
         'style' => '',
       ),
-      'identifier' => 'menu-myfarnet-menu_my-profile:menutoken/58d256eb4e148',
+      'identifier' => 'menu-myfarnet-menu_profile:menutoken/58d256eb4e148',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -94,7 +94,7 @@ function farnet_communities_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Dashboard');
-  t('My profile');
+  t('Profile');
 
   return $menu_links;
 }
