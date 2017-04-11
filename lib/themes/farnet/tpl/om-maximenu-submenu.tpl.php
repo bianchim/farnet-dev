@@ -31,6 +31,16 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul id="om-menu-<?php print $maximenu_name; ?>" class="om-menu nav navbar-nav navigation-main-list navigation-main-navbar-nav">
+          <?php
+            $trail = menu_get_active_trail();
+            $myfarnet_active = FALSE;
+            if (count($trail) === 2 && isset($trail[1]['router_path'])) {
+              if ($trail[1]['router_path'] === 'myfarnet') {
+                $myfarnet_active = TRUE;
+              }
+            }
+          ?>
+
           <?php foreach ($links['links'] as $key => $content): ?>
             <?php $count++; ?>
             <?php
@@ -43,6 +53,7 @@
               'code' => $code,
               'count' => $count,
               'total' => $total,
+              'myfarnet_active' => $myfarnet_active,
             )); ?>
           <?php endforeach; ?>
         </ul>
