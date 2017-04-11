@@ -76,6 +76,14 @@ function farnet_communities_menu() {
 }
 
 /**
+ * Implements hook_menu_alter().
+ */
+function farnet_communities_menu_alter(&$items) {
+  $items['user/%user_category/edit/simplenews']['access callback'] = 'user_access';
+  $items['user/%user_category/edit/simplenews']['access arguments'] = ['administer users'];
+}
+
+/**
  * Return an empty page for myfarnet dashboard.
  */
 function _farnet_communities_myfarnet() {
