@@ -19,6 +19,16 @@ function farnet_communities_user_default_permissions() {
     'module' => 'mimemail',
   );
 
+  // Exported permission: 'og subscribe'.
+  $permissions['og subscribe'] = array(
+    'name' => 'og subscribe',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'subscriptions_og',
+  );
+
   // Exported permission: 'use text format myfarnet_html'.
   $permissions['use text format myfarnet_html'] = array(
     'name' => 'use text format myfarnet_html',
