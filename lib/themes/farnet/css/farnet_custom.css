@@ -488,6 +488,28 @@ table.table-responsive.table-blue.table--white-borders th {
   border: none;
 }
 
+.c-myfarnet-btn {
+  background: none;
+  border-right: none;
+  border-bottom-color: transparent !important;
+}
+
+.c-myfarnet-btn a {
+  border: none;
+}
+
+.myfarnet-active .c-myfarnet-btn {
+  background: white;
+  border-right: 1px solid white;
+  border-bottom-color: white !important;
+}
+
+.myfarnet-active .c-myfarnet-btn:hover {
+  background: white;
+  border-right: 1px solid white;
+  border-bottom-color: #68b1ff !important;
+}
+
 .panel .panel-body .list-group a.list-group-item.active {
   background: none;
 }
