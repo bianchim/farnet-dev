@@ -2,19 +2,6 @@
 
 /**
  * @file
- * Override of views-view-unformatted.tpl.php.
- */
-?>
-<ul class="media-list farnet-listing">
-  <?php foreach ($rows as $id => $row): ?>
-    <?php print $row; ?>
-  <?php endforeach; ?>
-</ul>
-
-<?php
-
-/**
- * @file
  * Default simple view template to display a list of rows.
  *
  * @ingroup views_templates
