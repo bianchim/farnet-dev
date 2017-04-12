@@ -253,3 +253,13 @@ function farnet_user_field_organisation_callback($country, $search = NULL) {
 
   drupal_json_output($matches);
 }
+
+/**
+ * Implements hook_user_login().
+ */
+function farnet_user_user_login(&$edit, $account) {
+  $gid = variable_get('myfarnet_support', FALSE);
+  if ($account->access == 0) {
+    og_group('node', $gid, array('entity' => $account));
+  }
+}
