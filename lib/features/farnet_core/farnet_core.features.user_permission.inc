@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_core.features.user_permission.inc
@@ -10,36 +9,6 @@
  */
 function farnet_core_user_default_permissions() {
   $permissions = array();
-
-  // Exported permission: 'access administration menu'.
-  $permissions['access administration menu'] = array(
-    'name' => 'access administration menu',
-    'roles' => array(
-      'FSU Administrator' => 'FSU Administrator',
-      'FSU Editor' => 'FSU Editor',
-      'FSU Publisher' => 'FSU Publisher',
-      'FSU Webmaster' => 'FSU Webmaster',
-      'Mail manager' => 'Mail manager',
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'admin_menu',
-  );
-
-  // Exported permission: 'access media browser'.
-  $permissions['access media browser'] = array(
-    'name' => 'access media browser',
-    'roles' => array(
-      'FSU Administrator' => 'FSU Administrator',
-      'FSU Editor' => 'FSU Editor',
-      'FSU Publisher' => 'FSU Publisher',
-      'FSU Webmaster' => 'FSU Webmaster',
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
-  );
 
   // Exported permission: 'access private area'.
   $permissions['access private area'] = array(
@@ -85,9 +54,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'administer nexteuropa_piwik',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
-      'PIWIK administrator' => 'PIWIK administrator',
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
+      'PIWIK administrator' => 'PIWIK administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'nexteuropa_piwik',
@@ -311,6 +280,82 @@ function farnet_core_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'moderate content from needs_review to validated'.
+  $permissions['moderate content from needs_review to validated'] = array(
+    'name' => 'moderate content from needs_review to validated',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from published to archived'.
+  $permissions['moderate content from published to archived'] = array(
+    'name' => 'moderate content from published to archived',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from published to draft'.
+  $permissions['moderate content from published to draft'] = array(
+    'name' => 'moderate content from published to draft',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from published to expired'.
+  $permissions['moderate content from published to expired'] = array(
+    'name' => 'moderate content from published to expired',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from published to needs_review'.
+  $permissions['moderate content from published to needs_review'] = array(
+    'name' => 'moderate content from published to needs_review',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from validated to published'.
+  $permissions['moderate content from validated to published'] = array(
+    'name' => 'moderate content from validated to published',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_moderation',
   );
 
   // Exported permission: 'skip CAPTCHA'.
