@@ -15,7 +15,12 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
     'name' => 'create ms_fiche content',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -25,6 +30,8 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
     'name' => 'delete any ms_fiche content',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -35,7 +42,12 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
     'name' => 'delete own ms_fiche content',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -45,7 +57,12 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
     'name' => 'edit any ms_fiche content',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -55,7 +72,12 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
     'name' => 'edit own ms_fiche content',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );

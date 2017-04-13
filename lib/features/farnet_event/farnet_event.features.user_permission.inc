@@ -21,6 +21,7 @@ function farnet_event_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -30,10 +31,8 @@ function farnet_event_user_default_permissions() {
     'name' => 'delete any nexteuropa_event content',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
-      'FSU Editor' => 'FSU Editor',
       'FSU Publisher' => 'FSU Publisher',
       'FSU Webmaster' => 'FSU Webmaster',
-      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -49,6 +48,7 @@ function farnet_event_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -63,6 +63,7 @@ function farnet_event_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -77,6 +78,7 @@ function farnet_event_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
