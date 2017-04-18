@@ -98,10 +98,11 @@ function _farnet_communities_table_schema() {
 function _farnet_communities_update_create_myfarnet_support_node() {
   $node = new stdClass();
   $node->title = "myFARNET support";
+  $node->field_farnet_abstract = "Welcome on myFARNET support";
   $node->type = "community_public";
   node_object_prepare($node);
 
-  $node->language = LANGUAGE_NONE;
+  $node->language = 'en';
   $node->uid = 0;
   $node->status = NODE_PUBLISHED;
   $node->promote = FALSE;
