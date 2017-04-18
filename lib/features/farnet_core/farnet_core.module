@@ -858,3 +858,12 @@ function farnet_core_form_node_form_alter(&$form, &$form_state, $form_id) {
   // Hide promote checkbox to avoid homepage title issue.
   unset($form['options']['promote']);
 }
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function farnet_core_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_node_form_alter' || $hook == 'form_workbench_moderation_moderate_form_alter' || $hook == 'form_workbench_moderation_node_unpublish_form_alter') {
+    unset($implementations['nexteuropa_multilingual']);
+  }
+}
