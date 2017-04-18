@@ -1079,6 +1079,11 @@ function farnet_preprocess_image_style(&$vars) {
       $vars['height'] = NULL;
       $vars['attributes']['class'][] = 'media-object farnet-listing__picture';
     }
+    if ($vars['style_name'] == 'myfarnet_user_picture') {
+      $vars['width'] = NULL;
+      $vars['height'] = NULL;
+      $vars['attributes']['class'][] = 'img-responsive img-circle';
+    }
   }
 }
 
