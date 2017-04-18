@@ -15,6 +15,7 @@ function myfarnet_cooperation_idea_user_default_permissions() {
   $permissions['create myfarnet_cooperation_idea content'] = array(
     'name' => 'create myfarnet_cooperation_idea content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -24,6 +25,7 @@ function myfarnet_cooperation_idea_user_default_permissions() {
   $permissions['delete any myfarnet_cooperation_idea content'] = array(
     'name' => 'delete any myfarnet_cooperation_idea content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -33,6 +35,7 @@ function myfarnet_cooperation_idea_user_default_permissions() {
   $permissions['delete own myfarnet_cooperation_idea content'] = array(
     'name' => 'delete own myfarnet_cooperation_idea content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -42,6 +45,7 @@ function myfarnet_cooperation_idea_user_default_permissions() {
   $permissions['edit any myfarnet_cooperation_idea content'] = array(
     'name' => 'edit any myfarnet_cooperation_idea content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -51,6 +55,7 @@ function myfarnet_cooperation_idea_user_default_permissions() {
   $permissions['edit own myfarnet_cooperation_idea content'] = array(
     'name' => 'edit own myfarnet_cooperation_idea content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
