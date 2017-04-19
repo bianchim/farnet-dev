@@ -21,6 +21,7 @@ function farnet_cooperation_idea_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -30,10 +31,8 @@ function farnet_cooperation_idea_user_default_permissions() {
     'name' => 'delete any cooperation_idea content',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
-      'FSU Editor' => 'FSU Editor',
       'FSU Publisher' => 'FSU Publisher',
       'FSU Webmaster' => 'FSU Webmaster',
-      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -49,6 +48,7 @@ function farnet_cooperation_idea_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -63,6 +63,7 @@ function farnet_cooperation_idea_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -77,6 +78,7 @@ function farnet_cooperation_idea_user_default_permissions() {
       'FSU Webmaster' => 'FSU Webmaster',
       'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -95,9 +97,23 @@ function farnet_cooperation_idea_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
+  // Exported permission: 'moderate cooperation_idea state from needs_review to published'.
+  $permissions['moderate cooperation_idea state from needs_review to published'] = array(
+    'name' => 'moderate cooperation_idea state from needs_review to published',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: 'moderate cooperation_idea state from needs_review to validated'.
   $permissions['moderate cooperation_idea state from needs_review to validated'] = array(
     'name' => 'moderate cooperation_idea state from needs_review to validated',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate cooperation_idea state from published to archived'.
+  $permissions['moderate cooperation_idea state from published to archived'] = array(
+    'name' => 'moderate cooperation_idea state from published to archived',
     'roles' => array(),
     'module' => 'workbench_moderation',
   );
@@ -112,20 +128,6 @@ function farnet_cooperation_idea_user_default_permissions() {
   // Exported permission: 'moderate cooperation_idea state from published to expired'.
   $permissions['moderate cooperation_idea state from published to expired'] = array(
     'name' => 'moderate cooperation_idea state from published to expired',
-    'roles' => array(),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate cooperation_idea state from needs_review to published'.
-  $permissions['moderate cooperation_idea state from needs_review to published'] = array(
-    'name' => 'moderate cooperation_idea state from needs_review to published',
-    'roles' => array(),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate cooperation_idea state from published to archived'.
-  $permissions['moderate cooperation_idea state from published to archived'] = array(
-    'name' => 'moderate cooperation_idea state from published to archived',
     'roles' => array(),
     'module' => 'workbench_moderation',
   );

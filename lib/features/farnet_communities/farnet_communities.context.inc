@@ -113,6 +113,9 @@ function farnet_communities_context_default_contexts() {
         ),
       ),
     ),
+    'theme_html' => array(
+      'class' => 'myfarnet-active',
+    ),
   );
   $context->condition_mode = 0;
 
