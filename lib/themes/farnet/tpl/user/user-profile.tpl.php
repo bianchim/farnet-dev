@@ -34,124 +34,154 @@
  * @ingroup themeable
  */
 ?>
-
 <div class="profile clearfix"<?php print $attributes; ?>>
-
-  <?php
-  hide($user_profile['mimemail']);
-  hide($user_profile['tmgmt_translation_skills']);
-  hide($user_profile['simplenews']);
-  hide($user_profile['og_user_node']);
-  hide($user_profile['summary']);
-  hide($user_profile['field_preferred_email']);
-  hide($user_profile['field_keep_my_email_private']);
-  hide($user_profile['field_keep_me_informed_on_farnet']);
-  hide($user_profile['field_farnet_magazine_paper']);
-  hide($user_profile['field_farnet_magazine_subscribe']);
-  ?>
-
   <div class="row">
-    <div class="col-sm-6 col-md-8">
-      <div class="user-profile-block-name">
-        <?php if (!empty($user_profile['user_picture'])) : ?>
-          <?php print render($user_profile['user_picture']); ?>
-        <?php endif; ?>
-
+    <div class="col-sm-12">
+      <h3>
         <?php if (!empty($user_profile['field_gender'])) : ?>
-          <?php print render($user_profile['field_gender']); ?>
-        <?php endif; ?>
-        <?php if (!empty($user_profile['field_lastname'])) : ?>
-          <?php print render($user_profile['field_lastname']); ?>
+          <?php print $user_profile['field_gender'][0]['#markup']; ?>
         <?php endif; ?>
         <?php if (!empty($user_profile['field_firstname'])) : ?>
-          <?php print render($user_profile['field_firstname']); ?>
+          <?php print $user_profile['field_firstname'][0]['#markup']; ?>
         <?php endif; ?>
-      </div>
-      <div class="user-profile-block-role">
-        <?php if (!empty($user_profile['field_job_title'])) : ?>
-          <?php print render($user_profile['field_job_title']); ?>
+        <?php if (!empty($user_profile['field_lastname'])) : ?>
+          <?php print $user_profile['field_lastname'][0]['#markup']; ?>
         <?php endif; ?>
-        <?php if (!empty($user_profile['field_organisation'])) : ?>
-          at <?php print render($user_profile['field_organisation']); ?>
-        <?php endif; ?>
-        <?php if (!empty($user_profile['field_organisation_other'])) : ?>
-          at <?php print render($user_profile['field_organisation_other']); ?>
-        <?php endif; ?>
-        <?php if (!empty($user_profile['field_user_country'])) : ?>
-          <?php print render($user_profile['field_user_country']); ?>
-        <?php endif; ?>
-      </div>
-      <div class="user-profile-block-phone">
-        <?php if (!empty($user_profile['field_telephone'])) : ?>
-          <?php print render($user_profile['field_telephone']); ?>
-        <?php endif; ?>
-        <?php if (!empty($user_profile['field_phone_mobile'])) : ?>
-          <?php print render($user_profile['field_phone_mobile']); ?>
-        <?php endif; ?>
-      </div>
-      <div class="user-profile-block-address">
-        <?php if (!empty($user_profile['field_address_1'])) : ?>
-          <?php print render($user_profile['field_address_1']); ?>
-        <?php endif; ?>
-        <?php if (!empty($user_profile['field_address_2'])) : ?>
-          <?php print render($user_profile['field_address_2']); ?>
-        <?php endif; ?>
-        <?php if (!empty($user_profile['field_zip_code'])) : ?>
-          <?php print render($user_profile['field_zip_code']); ?>
-        <?php endif; ?>
-        <?php if (!empty($user_profile['field_city_select'])) : ?>
-          <?php print render($user_profile['field_city_select']); ?>
-        <?php endif; ?>
+      </h3>
+    </div>
+    <div class="col-md-6">
+      <div class="user-profile-card highlight--background">
+        <p>
+          <?php if (!empty($user_profile['field_job_title'])) : ?>
+            <strong>
+              <?php print $user_profile['field_job_title'][0]['#markup']; ?>
+            </strong><br />
+          <?php endif; ?>
+          <strong>
+            <?php if (!empty($user_profile['field_organisation'])) : ?>
+              <?php print $user_profile['field_organisation'][0]['#markup']; ?>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_organisation_other'])) : ?>
+              <?php print $user_profile['field_organisation_other'][0]['#markup']; ?>
+            <?php endif; ?>
+          </strong><br />
+          <?php if (!empty($user_profile['field_user_country'])) : ?>
+            <?php print $user_profile['field_user_country'][0]['#title']; ?>
+          <?php endif; ?>
+        </p>
+        <p>
+          <?php if (!empty($user_profile['field_telephone'])) : ?>
+            <?php print t('Phone'); ?>
+            <?php print ' : ' . $user_profile['field_telephone'][0]['#markup']; ?><br>
+          <?php endif; ?>
+          <?php if (!empty($user_profile['field_phone_mobile'])) : ?>
+            <?php print t('Mobile'); ?>
+            <?php print ' : ' . $user_profile['field_phone_mobile'][0]['#markup']; ?>
+          <?php endif; ?>
+        </p>
+        <p>
+          <?php if (!empty($user_profile['field_address_1'])) : ?>
+            <?php print $user_profile['field_address_1'][0]['#markup']; ?><br>
+          <?php endif; ?>
+          <?php if (!empty($user_profile['field_address_2'])) : ?>
+            <?php print $user_profile['field_address_2'][0]['#markup']; ?><br>
+          <?php endif; ?>
+          <?php if (!empty($user_profile['field_zip_code'])) : ?>
+            <?php print $user_profile['field_zip_code'][0]['#markup']; ?>
+          <?php endif; ?>
+          <?php if (!empty($user_profile['field_city_select'])) : ?>
+            <?php print $user_profile['field_city_select'][0]['#markup']; ?>
+          <?php endif; ?>
+        </p>
       </div>
     </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="user-profile-block-contact">
-        <a href="/user/<?php echo $user_id; ?>/contact" type="message" class="btn btn-primary">
-          <span class="glyphicon glyphicon-envelope"></span> Contact me
-        </a>
-      </div>
-      <div class="user-profile-block-language">
-        <span>Languages</span>
-        <ul>
-          <?php if (!empty($user_profile['field_preferred_language_1'])) : ?>
-            <li><?php print render($user_profile['field_preferred_language_1']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_preferred_language_2'])) : ?>
-            <li><?php print render($user_profile['field_preferred_language_2']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_preferred_language_3'])) : ?>
-            <li><?php print render($user_profile['field_preferred_language_3']); ?></li>
-          <?php endif; ?>
-        </ul>
-      </div>
-      <div class="user-profile-block-social-media">
-        <span>Social Medias</span>
-        <ul>
-          <?php if (!empty($user_profile['field_user_twitter'])) : ?>
-            <li><?php print render($user_profile['field_user_twitter']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_user_facebook'])) : ?>
-            <li><?php print render($user_profile['field_user_facebook']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_user_pinterest'])) : ?>
-            <li><?php print render($user_profile['field_user_pinterest']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_user_linkedin'])) : ?>
-            <li><?php print render($user_profile['field_user_linkedin']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_user_slideshare'])) : ?>
-            <li><?php print render($user_profile['field_user_slideshare']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_user_youtube'])) : ?>
-            <li><?php print render($user_profile['field_user_youtube']); ?></li>
-          <?php endif; ?>
-          <?php if (!empty($user_profile['field_user_vimeo'])) : ?>
-            <li><?php print render($user_profile['field_user_vimeo']); ?></li>
-          <?php endif; ?>
-        </ul>
+    <div class="col-md-6">
+      <div class="contacts">
+        <div class="user-profile-block-contact">
+          <a href="/user/<?php echo $user_id; ?>/contact" type="message" class="btn btn-info btn-block">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Contact me</a>
+        </div>
+        <div class="contacts__pane user-profile-block-language">
+          <div><strong><?php print t('Language'); ?></strong></div>
+          <ul>
+            <?php if (!empty($user_profile['field_preferred_language_1'])) : ?>
+              <li typeof="skos:Concept" property="rdfs:label skos:prefLabel">
+                <?php print render($user_profile['field_preferred_language_1'][0]['#title']); ?>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_preferred_language_2'])) : ?>
+              <li typeof="skos:Concept" property="rdfs:label skos:prefLabel">
+                <?php print render($user_profile['field_preferred_language_2'][0]['#title']); ?>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_preferred_language_3'])) : ?>
+              <li typeof="skos:Concept" property="rdfs:label skos:prefLabel">
+                <?php print render($user_profile['field_preferred_language_3'][0]['#title']); ?>
+              </li>
+            <?php endif; ?>
+          </ul>
+        </div>
+        <?php if (isset($user_profile['field_user_twitter']) || isset($user_profile['field_user_facebook']) ||
+          isset($user_profile['field_user_pinterest']) || isset($user_profile['field_user_linkedin']) ||
+          isset($user_profile['field_user_slideshare']) || isset($user_profile['field_user_youtube']) ||
+          isset($user_profile['field_user_vimeo'])): ?>
+        <div class="contacts__pane user-profile-block-social-media">
+          <div><strong><?php print t('Social media'); ?></strong></div>
+          <ul>
+            <?php if (!empty($user_profile['field_user_twitter'])) : ?>
+              <li>
+                <a class="icon icon--twitter" href="<?php print render($user_profile['field_user_twitter'][0]['#markup']); ?>">
+                  <span class="sr-only"><?php print t('Twitter'); ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_user_facebook'])) : ?>
+              <li>
+                <a class="icon icon--facebook" href="<?php print render($user_profile['field_user_facebook'][0]['#markup']); ?>">
+                  <span class="sr-only"><?php print t('Twitter'); ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_user_pinterest'])) : ?>
+              <li>
+                <a class="icon icon--pinterest" href="<?php print render($user_profile['field_user_pinterest'][0]['#markup']); ?>">
+                  <span class="sr-only"><?php print t('Twitter'); ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_user_linkedin'])) : ?>
+              <li>
+                <a class="icon icon--linkedin" href="<?php print render($user_profile['field_user_linkedin'][0]['#markup']); ?>">
+                  <span class="sr-only"><?php print t('Twitter'); ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_user_slideshare'])) : ?>
+              <li>
+                <a class="icon icon--slideshare" href="<?php print render($user_profile['field_user_slideshare'][0]['#markup']); ?>">
+                  <span class="sr-only"><?php print t('Twitter'); ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_user_youtube'])) : ?>
+              <li>
+                <a class="icon icon--youtube" href="<?php print render($user_profile['field_user_youtube'][0]['#markup']); ?>">
+                  <span class="sr-only"><?php print t('Twitter'); ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_user_vimeo'])) : ?>
+              <li>
+                <a class="icon icon--vimeo" href="<?php print render($user_profile['field_user_vimeo'][0]['#markup']); ?>">
+                  <span class="sr-only"><?php print t('Twitter'); ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+          </ul>
+        </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
-
-  <?php print render($user_profile); ?>
 </div>
