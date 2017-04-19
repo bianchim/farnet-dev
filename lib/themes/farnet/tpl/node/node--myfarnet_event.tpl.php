@@ -51,6 +51,9 @@
       </div>
     </div>
 
+    <?php if ((!empty($content['field_dates'])) || (!empty($content['field_term_country'])) ||
+      (!empty($content['field_city'])) || (!empty($content['field_event_type'])) ||
+      (!empty($content['field_term_theme']))) : ?>
     <div id="group-myfarnet-event-information" class="group-myfarnet-event-information field-group-tab">
       <h3 class="fr-heading"><span>Information</span></h3>
       <table class="table table-responsive table-blue table--white-borders">
@@ -88,6 +91,7 @@
         </tbody>
       </table>
     </div>
+    <?php endif; ?>
 
     <div class="link-wrapper right"></div>
 

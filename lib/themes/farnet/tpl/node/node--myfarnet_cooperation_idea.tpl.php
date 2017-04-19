@@ -51,6 +51,9 @@
       </div>
     </div>
 
+    <?php if ((!empty($content['field_term_country'])) || (!empty($content['field_preferred_countries'])) ||
+      (!empty($content['field_term_theme'])) || (!empty($content['field_sea_basins'])) ||
+      (!empty($content['field_type_of_area']))) : ?>
     <div id="group-myfarnet-cooperation-idea-information"
          class="group-myfarnet-cooperation-idea-information field-group-tab">
       <h3 class="fr-heading"><span>Information</span></h3>
@@ -89,6 +92,7 @@
         </tbody>
       </table>
     </div>
+    <?php endif; ?>
 
     <div class="link-wrapper right"></div>
 
