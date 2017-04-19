@@ -47,5 +47,4 @@ function farnet_communities_update_7002() {
 function farnet_communities_update_7003() {
   $nid = _farnet_communities_update_create_myfarnet_support_node();
   _farnet_communities_update_create_myfarnet_support_menu_item($nid);
-  variable_set('myfarnet_support', $nid);
 }
