@@ -28,6 +28,21 @@ function farnet_communities_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function farnet_communities_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: myfarnet_user_picture.
+  $styles['myfarnet_user_picture'] = array(
+    'label' => 'MyFarnet User Picture',
+    'effects' => array(),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function farnet_communities_node_info() {
