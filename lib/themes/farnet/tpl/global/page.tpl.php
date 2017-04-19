@@ -192,6 +192,10 @@ global $base_url;
             <p class="title<?php print $myfarnet_class; ?>"><?php print $node_community_name; ?></p>
           <?php endif; ?>
           <?php if ($title && !drupal_is_front_page()): ?>
+            <?php if (strpos(current_path(), 'user') !== FALSE): ?>
+              <?php $title = t('User profile'); ?>
+            <?php endif; ?>
+
             <?php print render($title_prefix); ?>
             <h1 class="title<?php if ((isset($node_type))||(isset($node_community_name))): ?>-small<?php endif; ?><?php print $myfarnet_class; ?>" id="content-title">
               <?php print $title; ?>
