@@ -96,9 +96,9 @@ function _farnet_communities_table_schema() {
  * Create myFARNET community.
  */
 function _farnet_communities_update_create_myfarnet_support_node() {
+
   $node = new stdClass();
   $node->title = "myFARNET support";
-  $node->field_farnet_abstract = "Welcome on myFARNET support";
   $node->type = "community_public";
   node_object_prepare($node);
 
@@ -107,6 +107,11 @@ function _farnet_communities_update_create_myfarnet_support_node() {
   $node->status = NODE_PUBLISHED;
   $node->promote = FALSE;
   $node->comment = FALSE;
+  $node->group_group[LANGUAGE_NONE][0]['value'] = TRUE;
+
+  $node->title_field['en'][0]['value'] = "myFARNET support";
+  $node->field_farnet_abstract['en'][0]['value'] = "Welcome on myFARNET support...";
+  $node->field_ne_body['en'][0]['value'] = "Body on myFARNET support";
 
   $node = node_submit($node);
   node_save($node);
@@ -127,4 +132,44 @@ function _farnet_communities_update_create_myfarnet_support_menu_item($nid) {
   );
 
   menu_link_save($item);
+}
+
+/**
+ * Add all existing users on myFARNET community Support.
+ */
+function _farnet_communities_add_all_existing_users_on_myfarnet_support() {
+  // Select users.
+  $gid = variable_get('myfarnet_support', FALSE);
+
+  if ($gid === FALSE) {
+    throw new DrupalUpdateException('The myFARNET support community node is not defined in configuration.');
+  }
+
+  $uids = db_query('SELECT uid FROM {users} WHERE uid > 0')->fetchCol();
+
+  $params = [':gid' => $gid, ':entity_type' => 'user'];
+  $uids_used = db_query('SELECT etid FROM {og_membership} WHERE gid=:gid AND entity_type=:entity_type', $params)->fetchCol();
+
+  foreach ($uids as $uid) {
+    // Just in case, check that the user is not part of the group.
+    if (in_array($uid, $uids_used)) {
+      continue;
+    }
+
+    $entity = user_load($uid);
+
+    // Wrong uid.
+    if ($entity === FALSE) {
+      continue;
+    }
+
+    // Set default values.
+    $values = [
+      'entity_type' => 'user',
+      'entity' => $entity,
+      'state' => OG_STATE_ACTIVE,
+    ];
+
+    og_group('node', $gid, $values);
+  }
 }
