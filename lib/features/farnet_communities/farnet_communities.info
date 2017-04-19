@@ -35,6 +35,7 @@ dependencies[] = text
 dependencies[] = tmgmt_og
 dependencies[] = token_filter
 dependencies[] = views
+dependencies[] = views_infinite_scroll
 dependencies[] = workbench_og
 dependencies[] = wysiwyg
 features[context][] = farnet_comunities_homepage
