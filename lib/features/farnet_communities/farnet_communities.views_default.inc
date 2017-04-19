@@ -636,8 +636,8 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['label'] = 'All communities';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="more-link">
-  <a href="community/farnet_communities" class="btn btn-info">All communities</a>
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="btn-more-link">
+  <a href="community/farnet_communities" class="btn btn-info btn-block">All communities</a>
 </div>';
 
   /* Display: Dashboard Block other */
