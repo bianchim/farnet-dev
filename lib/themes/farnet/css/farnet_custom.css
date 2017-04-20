@@ -474,6 +474,7 @@ table.table-responsive.table-blue.table--white-borders th {
 .myfarnet-main-menu-link {
   color: #074a8b!important;
   font-weight: 700;
+  text-transform: none !important;
 }
 
 #om-menu-main-menu {
