@@ -10,6 +10,21 @@
 function farnet_core_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access administration menu'.
+  $permissions['access administration menu'] = array(
+    'name' => 'access administration menu',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'admin_menu',
+  );
+
   // Exported permission: 'access private area'.
   $permissions['access private area'] = array(
     'name' => 'access private area',
