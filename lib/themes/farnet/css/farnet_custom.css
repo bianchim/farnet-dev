@@ -510,6 +510,10 @@ table.table-responsive.table-blue.table--white-borders th {
   border-bottom-color: #68b1ff !important;
 }
 
+.myfarnet-active h1 {
+  background: #ffa500;
+}
+
 .panel .panel-body .list-group a.list-group-item.active {
   background: none;
 }
