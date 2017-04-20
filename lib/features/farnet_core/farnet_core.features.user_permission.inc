@@ -123,6 +123,7 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -132,7 +133,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'delete own document files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -142,7 +145,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'delete own video files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -192,7 +197,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'download own audio files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -202,7 +209,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'download own document files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -212,7 +221,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'download own image files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -222,7 +233,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'download own video files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -272,7 +285,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'edit own audio files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -282,7 +297,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'edit own document files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -292,7 +309,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'edit own video files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
