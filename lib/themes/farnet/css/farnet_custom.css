@@ -158,6 +158,10 @@ h1.title-myfarnet {
   text-align: center;
 }
 
+.myfarnet-active h1 {
+  background: #ffa500;
+}
+
 h1.title-small {
   background: none;
   color: #000;
@@ -514,10 +518,6 @@ table.table-responsive.table-blue.table--white-borders th {
   background: white;
   border-right: 1px solid white;
   border-bottom-color: #68b1ff !important;
-}
-
-.myfarnet-active h1 {
-  background: #ffa500;
 }
 
 .panel .panel-body .list-group a.list-group-item.active {
