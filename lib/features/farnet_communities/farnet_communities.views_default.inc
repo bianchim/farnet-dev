@@ -211,7 +211,7 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['sorts']['field_user_country_tid']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['sorts']['field_user_country_tid']['field'] = 'field_user_country_tid';
   $handler->display->display_options['sorts']['field_user_country_tid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_user_country_tid']['expose']['label'] = 'Country (field_user_country)';
+  $handler->display->display_options['sorts']['field_user_country_tid']['expose']['label'] = 'Country';
   /* Sort criterion: User: Last name (field_lastname) */
   $handler->display->display_options['sorts']['field_lastname_value']['id'] = 'field_lastname_value';
   $handler->display->display_options['sorts']['field_lastname_value']['table'] = 'field_data_field_lastname';
