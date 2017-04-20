@@ -259,5 +259,7 @@ function farnet_user_field_organisation_callback($country, $search = NULL) {
  */
 function farnet_user_user_insert(&$edit, $account, $category) {
   $gid = variable_get('myfarnet_support', FALSE);
-  og_group('node', $gid, array('entity' => $account));
+  if ($gid) {
+    og_group('node', $gid, array('entity' => $account));
+  }
 }
