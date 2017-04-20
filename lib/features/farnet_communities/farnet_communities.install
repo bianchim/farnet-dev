@@ -18,11 +18,17 @@ function farnet_communities_schema() {
  * Implements hook_install().
  */
 function farnet_communities_install() {
+  features_revert_module("farnet_communities");
+
   _farnet_communities_update_content_types();
 
   // Add myFARNET support node and menu item.
   $nid = _farnet_communities_update_create_myfarnet_support_node();
   _farnet_communities_update_create_myfarnet_support_menu_item($nid);
+  variable_set('myfarnet_support', $nid);
+
+  // Add users to the myFARNET support community.
+  _farnet_communities_add_all_existing_users_on_myfarnet_support();
 }
 
 /**
@@ -51,9 +57,16 @@ function farnet_communities_update_7003() {
 }
 
 /**
- * Activate comment context in order to have community menu on comment form.
+ * Add users to the myFARNET support community.
  */
 function farnet_communities_update_7004() {
+  _farnet_communities_add_all_existing_users_on_myfarnet_support();
+}
+
+/**
+ * Activate comment context in order to have community menu on comment form.
+ */
+function farnet_communities_update_7005() {
   $negotiations = variable_get('og_context_negotiation_group_context', array());
   if (!isset($negotiations['comment'])) {
     // Load context negotiation list.
