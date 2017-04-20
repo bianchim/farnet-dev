@@ -255,11 +255,9 @@ function farnet_user_field_organisation_callback($country, $search = NULL) {
 }
 
 /**
- * Implements hook_user_login().
+ * Implements hook_user_insert().
  */
-function farnet_user_user_login(&$edit, $account) {
+function farnet_user_user_insert(&$edit, $account, $category) {
   $gid = variable_get('myfarnet_support', FALSE);
-  if ($account->access == 0) {
-    og_group('node', $gid, array('entity' => $account));
-  }
+  og_group('node', $gid, array('entity' => $account));
 }
