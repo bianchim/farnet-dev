@@ -76,6 +76,12 @@
   display: inline-block;
 }
 
+.node .multi-values .field-type-taxonomy-term-reference ul.links li {
+  float: left;
+  padding: 0;
+  white-space: nowrap;
+}
+
 .multi-values div ul li {
   display: inline;
   margin: 0;
