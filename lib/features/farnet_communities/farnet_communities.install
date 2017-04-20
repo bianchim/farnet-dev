@@ -62,3 +62,30 @@ function farnet_communities_update_7003() {
 function farnet_communities_update_7004() {
   _farnet_communities_add_all_existing_users_on_myfarnet_support();
 }
+
+/**
+ * Activate comment context in order to have community menu on comment form.
+ */
+function farnet_communities_update_7005() {
+  $negotiations = variable_get('og_context_negotiation_group_context', array());
+  if (!isset($negotiations['comment'])) {
+    // Load context negotiation list.
+    $contexts = og_context_negotiation_info();
+
+    // Rebuild the list of negotiations to save.
+    $save_negotiations = ['comment' => $contexts['comment']];
+    foreach ($negotiations as $name => $var) {
+      $save_negotiations[$name] = $contexts[$name];
+    }
+
+    // Save them.
+    og_context_negotiation_set($save_negotiations);
+
+    // Manage weight, put comment in last.
+    $weight = variable_get('og_context_providers_weight_group_context', NULL);
+    if (!is_null($weight)) {
+      $weight['comment'] = $weight['node'] + 1;
+      variable_set('og_context_providers_weight_group_context', $weight);
+    }
+  }
+}
