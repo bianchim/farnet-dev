@@ -21,6 +21,7 @@ function _farnet_core_insert_dates() {
 /**
  * Update some existing permissions with some roles.
  *
+ * Media WYSIWYG: Use Media WYSIWYG in an editor
  * File Entity: Add and upload new files
  * File Entity: View own private files
  * File Entity: View own files
@@ -46,6 +47,7 @@ function _farnet_core_update_permissions() {
     'FSU Editor',
     'FSU Publisher',
     'FSU Webmaster',
+    'editor',
   ];
 
   // Set permissions.
