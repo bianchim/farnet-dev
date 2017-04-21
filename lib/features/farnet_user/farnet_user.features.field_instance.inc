@@ -215,7 +215,7 @@ function farnet_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Type the zip code first.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -266,7 +266,7 @@ function farnet_user_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_farnet_magazine_paper',
     'label' => 'FARNET Magazine (paper version)',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
@@ -372,7 +372,7 @@ function farnet_user_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_job_title',
     'label' => 'Title / Function',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -437,7 +437,7 @@ function farnet_user_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_keep_me_informed_on_farnet',
     'label' => 'Keep me informed on FARNET activities',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
@@ -473,7 +473,7 @@ function farnet_user_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_keep_my_email_private',
     'label' => 'Keep my email private',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
@@ -493,7 +493,7 @@ function farnet_user_field_default_field_instances() {
     'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Start typing the first letters of the name of your organisation and then choose the right one in the list proposed. If it does not appear, please clear your typing and add the name in “Organisation (other)” below.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -537,7 +537,7 @@ function farnet_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'If your organisation is not in the select field "Organisation", enter the name of your organisation.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1483,7 +1483,7 @@ function farnet_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Type first the zip code and go to the field “City” where you will be able to choose the appropriate one.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1496,7 +1496,7 @@ function farnet_user_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_zip_code',
     'label' => 'Zip code',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
