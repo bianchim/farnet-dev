@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * farnet_core.features.user_permission.inc
@@ -23,6 +24,22 @@ function farnet_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'admin_menu',
+  );
+
+  // Exported permission: 'access media browser'.
+  $permissions['access media browser'] = array(
+    'name' => 'access media browser',
+    'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+    ),
+    'module' => 'media',
   );
 
   // Exported permission: 'access private area'.
@@ -82,6 +99,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'delete any audio files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -92,6 +111,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'delete any document files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -102,6 +123,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'delete any image files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -112,6 +135,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'delete any video files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -122,6 +147,9 @@ function farnet_core_user_default_permissions() {
     'name' => 'delete own audio files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -134,6 +162,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -146,6 +176,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -167,6 +199,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'download any document files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -177,6 +211,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'download any image files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -187,6 +223,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'download any video files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -198,6 +236,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -210,6 +250,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -222,6 +264,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -234,6 +278,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -245,6 +291,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'edit any audio files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -255,6 +303,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'edit any document files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -265,6 +315,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'edit any image files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -275,6 +327,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'edit any video files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -286,6 +340,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -298,6 +354,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -310,6 +368,8 @@ function farnet_core_user_default_permissions() {
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
       'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
