@@ -508,7 +508,7 @@ function farnet_user_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_organisation',
     'label' => 'Organisation',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
