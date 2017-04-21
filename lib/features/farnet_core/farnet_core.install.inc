@@ -29,8 +29,9 @@ function _farnet_core_insert_dates() {
  * File Entity: Image: Delete own files
  */
 function _farnet_core_update_permissions() {
-  // Add more File Entity permissions.
+  // Add more File Entity & Media permissions.
   $perm = [
+    'use media wysiwyg',
     'create files',
     'view own private files',
     'view own files',
