@@ -189,6 +189,8 @@ function farnet_core_user_default_permissions() {
     'name' => 'download any audio files',
     'roles' => array(
       'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
