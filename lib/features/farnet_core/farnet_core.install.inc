@@ -29,10 +29,9 @@ function _farnet_core_insert_dates() {
  * File Entity: Image: Edit own files
  * File Entity: Image: Delete own files
  */
-function _farnet_core_update_permissions() {
+function _farnet_core_update_fsu_permissions() {
   // Add more File Entity & Media permissions.
   $perm = [
-    'use media wysiwyg',
     'create files',
     'view own private files',
     'view own files',
@@ -58,3 +57,33 @@ function _farnet_core_update_permissions() {
     }
   }
 }
+
+/**
+ * Update some media & wysiwyg existing permissions.
+ *
+ * Media WYSIWYG: Use Media WYSIWYG in an editor
+ */
+function _farnet_core_update_wysiwyg_permissions() {
+  $perm = [
+    'use media wysiwyg',
+  ];
+
+  // Role to grant.
+  $roles_to_grant = [
+    'FSU Administrator',
+    'FSU Editor',
+    'FSU Publisher',
+    'FSU Webmaster',
+    'editor',
+    'authenticated user'
+  ];
+
+  // Set permissions.
+  $roles = user_roles();
+  foreach ($roles as $rid => $role) {
+    if (in_array($role, $roles_to_grant)) {
+      user_role_grant_permissions($rid, $perm);
+    }
+  }
+}
+
