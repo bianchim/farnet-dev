@@ -579,6 +579,15 @@ span.group.manager.btn.btn-info:hover {
   margin-bottom: 15px;
 }
 
+.view-farnet-communities-members .views-field-user-profile > div > div {
+  padding: 0;
+  padding-right: 5px;
+}
+
+.view-farnet-communities-members .form-item-sort-by {
+  clear: left;
+}
+
 li.pager__item > a,
 li.pager__item > a:visited,
 li.pager__item > a:hover {
