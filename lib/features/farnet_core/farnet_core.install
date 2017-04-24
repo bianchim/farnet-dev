@@ -45,9 +45,9 @@ function farnet_core_install() {
   features_revert_module("farnet_core");
 
   // Add some permissions on specific FSU Roles.
-  _farnet_core_update_fsu_permissions();
+  _farnet_core_update_permissions();
 
-  // Update some media & wysiwyg existing permissions.
+  // Update wysiwyg existing permissions for authenticated user.
   _farnet_core_update_wysiwyg_permissions();
 }
 
@@ -94,7 +94,7 @@ function farnet_core_update_7001() {
  * Implement hook_update_N().
  */
 function farnet_core_update_7002() {
-  _farnet_core_update_fsu_permissions();
+  _farnet_core_update_permissions();
 }
 
 /**
