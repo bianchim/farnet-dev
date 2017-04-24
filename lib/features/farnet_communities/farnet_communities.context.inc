@@ -111,6 +111,7 @@ function farnet_communities_context_default_contexts() {
         'users*' => 'users*',
         'user' => 'user',
         'group/node/*/subscribe*' => 'group/node/*/subscribe*',
+        'user/*/contact' => 'user/*/contact',
       ),
     ),
   );
