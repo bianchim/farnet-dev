@@ -26,6 +26,10 @@ function farnet_notifications_default_rules_configuration() {
             "from" : "[site:mail]"
           }
         }
+        { "redirect" : { 
+            "url" : "myfarnet-first-login" 
+          } 
+        }
       ]
     }
   }');
