@@ -857,5 +857,11 @@ function farnet_communities_post_features_revert($component) {
       'nexteuropa_news' => 'nexteuropa_news',
       'page' => 'page',
     ]);
+
+    variable_set('subscriptions_unlisted_content_types', [
+      'community_hidden' => 'community_hidden',
+      'community_private' => 'community_private',
+      'community_public' => 'community_public',
+    ]);
   }
 }
