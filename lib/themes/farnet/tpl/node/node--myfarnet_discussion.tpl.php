@@ -52,6 +52,7 @@
       </div>
     </div>
 
+    <?php if ((!empty($content['field_term_country'])) || (!empty($content['field_term_theme']))) : ?>
     <div id="group-myfarnet-discussion-information" class="group-myfarnet-discussion-information field-group-tab">
       <h3 class="fr-heading"><span>Information</span></h3>
       <table class="table table-responsive table-blue table--white-borders">
@@ -71,6 +72,7 @@
         </tbody>
       </table>
     </div>
+    <?php endif; ?>
 
     <div class="link-wrapper right"></div>
 
