@@ -79,7 +79,7 @@
 .node .multi-values .field-type-taxonomy-term-reference ul.links li {
   float: left;
   padding: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .multi-values div ul li {
