@@ -827,3 +827,41 @@ function farnet_communities_init() {
     }
   }
 }
+
+/**
+ * Implements hook_post_features_revert().
+ */
+function farnet_communities_post_features_revert($component) {
+  if ($component === 'variable') {
+    variable_set('subscriptions_blocked_content_types', [
+      'farnet_article' => 'farnet_article',
+      'cooperation_call' => 'cooperation_call',
+      'cooperation_idea' => 'cooperation_idea',
+      'ms_fiche' => 'ms_fiche',
+      'factsheet_country' => 'factsheet_country',
+      'factsheet_flag' => 'factsheet_flag',
+      'gp_method' => 'gp_method',
+      'gp_project' => 'gp_project',
+      'gp_short_story' => 'gp_short_story',
+      'homepage_highlight' => 'homepage_highlight',
+      'landing_page' => 'landing_page',
+      'contact_person' => 'contact_person',
+      'organisation' => 'organisation',
+      'publication' => 'publication',
+      'simplenews' => 'simplenews',
+      'community' => 'community',
+      'editorial_team' => 'editorial_team',
+      'nexteuropa_event' => 'nexteuropa_event',
+      'nexteuropa_faq' => 'nexteuropa_faq',
+      'nexteuropa_mediagallery' => 'nexteuropa_mediagallery',
+      'nexteuropa_news' => 'nexteuropa_news',
+      'page' => 'page',
+    ]);
+
+    variable_set('subscriptions_unlisted_content_types', [
+      'community_hidden' => 'community_hidden',
+      'community_private' => 'community_private',
+      'community_public' => 'community_public',
+    ]);
+  }
+}
