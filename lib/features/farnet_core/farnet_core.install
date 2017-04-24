@@ -5,6 +5,8 @@
  * Install, uninstall, schema and update hooks for farnet module.
  */
 
+include_once 'farnet_core.install.inc';
+
 /**
  * Implements hook_install().
  */
@@ -36,6 +38,14 @@ function farnet_core_install() {
   // Set the new Farnet theme.
   theme_enable(['farnet']);
   variable_set('theme_default', 'farnet');
+
+  // Insert new date format.
+  _farnet_core_insert_dates();
+
+  features_revert_module("farnet_core");
+
+  // Add some permissions on specific FSU Roles.
+  _farnet_core_update_permissions();
 }
 
 /**
@@ -64,4 +74,22 @@ function farnet_core_enable() {
  */
 function farnet_core_disable() {
   drupal_set_message(t('The FARNET Core feature is now disabled on your site.'));
+}
+
+/**
+ * Insert a new date format, fe_date triggers errors.
+ *
+ * Implement hook_update_N().
+ */
+function farnet_core_update_7001() {
+  _farnet_core_insert_dates();
+}
+
+/**
+ * Add some permissions on specific FSU Roles.
+ *
+ * Implement hook_update_N().
+ */
+function farnet_core_update_7002() {
+  _farnet_core_update_permissions();
 }

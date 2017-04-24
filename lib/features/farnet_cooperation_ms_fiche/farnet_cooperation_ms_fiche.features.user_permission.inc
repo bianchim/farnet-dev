@@ -14,7 +14,13 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
   $permissions['create ms_fiche content'] = array(
     'name' => 'create ms_fiche content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -23,6 +29,9 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
   $permissions['delete any ms_fiche content'] = array(
     'name' => 'delete any ms_fiche content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -32,7 +41,13 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
   $permissions['delete own ms_fiche content'] = array(
     'name' => 'delete own ms_fiche content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -41,7 +56,13 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
   $permissions['edit any ms_fiche content'] = array(
     'name' => 'edit any ms_fiche content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -50,9 +71,78 @@ function farnet_cooperation_ms_fiche_user_default_permissions() {
   $permissions['edit own ms_fiche content'] = array(
     'name' => 'edit own ms_fiche content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from draft to needs_review'.
+  $permissions['moderate ms_fiche state from draft to needs_review'] = array(
+    'name' => 'moderate ms_fiche state from draft to needs_review',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from needs_review to draft'.
+  $permissions['moderate ms_fiche state from needs_review to draft'] = array(
+    'name' => 'moderate ms_fiche state from needs_review to draft',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from needs_review to published'.
+  $permissions['moderate ms_fiche state from needs_review to published'] = array(
+    'name' => 'moderate ms_fiche state from needs_review to published',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from needs_review to validated'.
+  $permissions['moderate ms_fiche state from needs_review to validated'] = array(
+    'name' => 'moderate ms_fiche state from needs_review to validated',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from published to archived'.
+  $permissions['moderate ms_fiche state from published to archived'] = array(
+    'name' => 'moderate ms_fiche state from published to archived',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from published to draft'.
+  $permissions['moderate ms_fiche state from published to draft'] = array(
+    'name' => 'moderate ms_fiche state from published to draft',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from published to expired'.
+  $permissions['moderate ms_fiche state from published to expired'] = array(
+    'name' => 'moderate ms_fiche state from published to expired',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from published to needs_review'.
+  $permissions['moderate ms_fiche state from published to needs_review'] = array(
+    'name' => 'moderate ms_fiche state from published to needs_review',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate ms_fiche state from validated to published'.
+  $permissions['moderate ms_fiche state from validated to published'] = array(
+    'name' => 'moderate ms_fiche state from validated to published',
+    'roles' => array(),
+    'module' => 'workbench_moderation',
   );
 
   return $permissions;

@@ -9,6 +9,12 @@
  * Implements hook_ctools_plugin_api().
  */
 function farnet_communities_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -19,6 +25,21 @@ function farnet_communities_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function farnet_communities_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function farnet_communities_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: myfarnet_user_picture.
+  $styles['myfarnet_user_picture'] = array(
+    'label' => 'MyFarnet User Picture',
+    'effects' => array(),
+  );
+
+  return $styles;
 }
 
 /**

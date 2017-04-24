@@ -23,7 +23,6 @@ function farnet_error_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => ['farnet_error_admin'],
     'access arguments' => ['administer site configuration'],
-    'type' => MENU_LOCAL_TASK,
   ];
 
   return $items;
@@ -77,6 +76,26 @@ function farnet_error_admin() {
     '#default_value' => i18n_variable_get('farnet_error_myfarnet_body', $langcode)['value'],
   ];
 
+  $form['myfarnet_anon'] = [
+    '#type' => 'fieldset',
+    '#title' => t('My farnet anonymous'),
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  ];
+
+  $form['myfarnet_anon']['farnet_error_myfarnet_anon_title'] = [
+    '#type' => 'textfield',
+    '#title' => t('Page title'),
+    '#default_value' => i18n_variable_get('farnet_error_myfarnet_anon_title', $langcode),
+  ];
+
+  $form['myfarnet_anon']['farnet_error_myfarnet_anon_body'] = [
+    '#type' => 'text_format',
+    '#title' => t('Page body'),
+    '#format' => 'full_html',
+    '#default_value' => i18n_variable_get('farnet_error_myfarnet_anon_body', $langcode)['value'],
+  ];
+
   return system_settings_form($form);
 }
 
@@ -86,11 +105,12 @@ function farnet_error_admin() {
 function farnet_error_title() {
   global $language;
   $type = (farnet_error_is_myfarnet_page()) ? "myfarnet" : "public";
+  $anon = ($type === 'myfarnet' && !user_is_logged_in()) ? '_anon' : '';
 
-  $title = i18n_variable_get("farnet_error_${type}_title", $language->language);
+  $title = i18n_variable_get("farnet_error_${type}${anon}_title", $language->language);
   // If title in current language is undefined, fallback to English version.
   if ((is_null($title) || empty($title)) && $language->language != 'en') {
-    $title = i18n_variable_get("farnet_error_${type}_title", 'en');
+    $title = i18n_variable_get("farnet_error_${type}${anon}_title", 'en');
   }
   // If title undefined, fallback to hard-coded value.
   if (is_null($title) || empty($title)) {
@@ -106,11 +126,12 @@ function farnet_error_title() {
 function farnet_error_page() {
   global $language;
   $type = (farnet_error_is_myfarnet_page()) ? "myfarnet" : "public";
+  $anon = ($type === 'myfarnet' && !user_is_logged_in()) ? '_anon' : '';
 
-  $body = i18n_variable_get("farnet_error_${type}_body", $language->language);
+  $body = i18n_variable_get("farnet_error_${type}${anon}_body", $language->language);
   // If body in current language is undefined, fallback to English version.
   if ((is_null($body) || empty($body['value'])) && $language->language != 'en') {
-    $body = i18n_variable_get("farnet_error_${type}_body", 'en');
+    $body = i18n_variable_get("farnet_error_${type}${anon}_body", 'en');
   }
 
   // If undefined, fallback to hard-coded value.
@@ -139,7 +160,7 @@ function farnet_error_is_myfarnet_page() {
   }
 
   $path = explode('/', $path);
-  return ($path[0] === $keyword);
+  return ($path[0] === $keyword || $path[0] === 'myfarnet');
 }
 
 /**
@@ -177,6 +198,24 @@ function farnet_error_variable_info() {
     'type' => 'string',
     'title' => t('MyFarnet error page body'),
     'description' => t('Body of the myFarnet error page'),
+    'required' => TRUE,
+    'localize' => TRUE,
+    'group' => 'farnet_error',
+  ];
+
+  $variables['farnet_error_myfarnet_anon_title'] = [
+    'type' => 'string',
+    'title' => t('MyFarnet anonymous error page title'),
+    'description' => t('Title of the myFarnet anonymous error page'),
+    'required' => TRUE,
+    'localize' => TRUE,
+    'group' => 'farnet_error',
+  ];
+
+  $variables['farnet_error_myfarnet_anon_body'] = [
+    'type' => 'string',
+    'title' => t('MyFarnet anonymous error page body'),
+    'description' => t('Body of the myFarnet anonymous error page'),
     'required' => TRUE,
     'localize' => TRUE,
     'group' => 'farnet_error',

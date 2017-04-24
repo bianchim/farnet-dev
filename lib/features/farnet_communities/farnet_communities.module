@@ -32,7 +32,75 @@ function farnet_communities_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
+  $items['group/node/%node/admin/people/%user/reject'] = array(
+    'title' => 'Reject user join request',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['_farnet_communities_user_reject', 2, 5],
+    'access callback' => '_farnet_communities_is_group_admin',
+    'access arguments' => [2],
+  );
+
+  $items['myfarnet'] = array(
+    'title' => 'myFARNET',
+    'page callback' => '_farnet_communities_myfarnet',
+    'access callback' => 'user_is_logged_in',
+    'menu_name' => 'main-menu',
+    'weight' => 10,
+  );
+
+  $items['community/%community/about'] = array(
+    'title' => 'About this community',
+    'page callback' => '_farnet_communities_community_preview',
+    'page arguments' => [1],
+    'access callback' => 'user_access',
+    'access arguments' => ['access content'],
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'menu-community-menu',
+    'weight' => 1,
+  );
+
+  $items['community/%community/members'] = array(
+    'title' => 'Community members',
+    'page callback' => 'farnet_communities_display_views',
+    'page arguments' => array('farnet_communities_members', 'page', 1),
+    'access callback' => '_farnet_communities_is_member',
+    'access arguments' => array(1),
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'menu-community-menu',
+    'weight' => 10,
+    'file' => 'farnet_communities.callback.inc',
+    'file path' => drupal_get_path('module', 'farnet_communities'),
+  );
+
   return $items;
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function farnet_communities_menu_alter(&$items) {
+  $items['user/%user_category/edit/simplenews']['access callback'] = 'user_access';
+  $items['user/%user_category/edit/simplenews']['access arguments'] = ['administer users'];
+}
+
+/**
+ * Return an empty page for myfarnet dashboard.
+ */
+function _farnet_communities_myfarnet() {
+  return '';
+}
+
+/**
+ * Check user membership in a group.
+ */
+function _farnet_communities_is_member($group) {
+  global $user;
+
+  if (!empty($group)) {
+    return og_is_member('node', $group->nid, 'user', $user);
+  }
+
+  return FALSE;
 }
 
 /**
@@ -145,6 +213,13 @@ function _farnet_communities_push_access($node) {
 }
 
 /**
+ * Check if current user is admin of current group.
+ */
+function _farnet_communities_is_group_admin($node) {
+  return og_user_access('node', $node->nid, 'administer group');
+}
+
+/**
  * Implements hook_node_access_records().
  */
 function farnet_communities_node_access_records($node) {
@@ -198,23 +273,39 @@ function farnet_communities_form_node_form_alter(&$form, &$form_state, $form_id)
     $form['group_access'][LANGUAGE_NONE]['#type'] = 'hidden';
     $form['group_access'][LANGUAGE_NONE]['#value'] = '1';
   }
+
+  $og_exclude = [
+    'nexteuropa_news_node_form',
+    'page',
+    'nexteuropa_event_node_form',
+  ];
+
+  if (in_array($form_id, $og_exclude)) {
+    $form['og_group_ref']['#access'] = FALSE;
+    $form['group_content_access']['#access'] = FALSE;
+  }
 }
 
 /**
  * Implements hook_context_load_alter().
  */
 function farnet_communities_context_load_alter(&$context) {
-
   if ($context->name === 'communities' && isset($context->reactions['block'])) {
+    $og_context = og_context('node');
+    $gid = $og_context['gid'];
+    $path = current_path();
+    $patterns = '' . PHP_EOL . 'community/*/about';
+    if (drupal_match_path($path, $patterns) && !og_is_member('node', $gid)) {
+      if (isset($context->reactions['block']['blocks']['menu-menu-community-menu'])) {
+        unset($context->reactions['block']['blocks']['menu-menu-community-menu']);
+      }
+      if (isset($context->reactions['block']['blocks']['multisite_og_button-og-contextual-links'])) {
+        unset($context->reactions['block']['blocks']['multisite_og_button-og-contextual-links']);
+      }
+    }
     if (isset($context->reactions['block']['blocks']['views-community_members-block_1'])) {
       unset($context->reactions['block']['blocks']['views-community_members-block_1']);
     }
-    $context->reactions['block']['blocks']['views-members_list-block_members_list'] = array(
-      'module' => 'views',
-      'delta' => 'members_list-block_members_list',
-      'region' => 'sidebar_left',
-      'weight' => '-8',
-    );
   }
 }
 
@@ -222,11 +313,555 @@ function farnet_communities_context_load_alter(&$context) {
  * Implements hook_views_pre_render().
  */
 function farnet_communities_views_pre_render(&$view) {
-  if ($view->current_display === 'block_members_list') {
-    $title = str_replace(' ', '-', drupal_strtolower($view->build_info['substitutions']['%1']));
-    // Set to use 'custom_url'.
-    $view->display_handler->set_option('link_display', 'custom_url');
-    // Change the link url.
-    $view->display_handler->set_option('link_url', 'community/' . $title . '/members-list');
+  switch ($view->name) {
+    case 'members_list':
+      if ($view->current_display === 'block_members_list') {
+        $title = str_replace(' ', '-', drupal_strtolower($view->build_info['substitutions']['%1']));
+        // Set to use 'custom_url'.
+        $view->display_handler->set_option('link_display', 'custom_url');
+        // Change the link url.
+        $view->display_handler->set_option('link_url', 'community/' . $title . '/members-list');
+      }
+      break;
+
+    case 'farnet_communities':
+      foreach ($view->result as &$result) {
+
+        if (isset($result->field_group_group[0]['rendered']['#href'])) {
+          if (strpos($result->field_group_group[0]['rendered']['#href'], 'unsubscribe')) {
+            $title = t('Unsubscribe');
+          }
+          else {
+            if ($result->_field_data['nid']['entity']->type === 'community_public') {
+              $title = t('Join');
+            }
+            else {
+              $title = t('Ask to join');
+            }
+          }
+
+          $result->field_group_group[0]['rendered']['#title'] = $title;
+        }
+      }
+      break;
+
+    case 'farnet_communities_members':
+      // Force the action to stay on the same page.
+      drupal_add_js(['request_path' => request_path()], 'setting');
+      drupal_add_js(drupal_get_path('module', 'farnet_communities') . '/js/farnet_communities_members_list.js');
+      drupal_add_css(drupal_get_path('module', 'farnet_communities') . '/css/farnet_communities_members_list.css');
+      break;
+  }
+}
+
+/**
+ * Calculate the last updated date of a node for a group.
+ */
+function _farnet_communities_get_last_updated_date($gid) {
+  $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
+
+  if (!empty($nids)) {
+    $query = db_query("SELECT MAX(n.changed) AS node FROM {node} AS n WHERE n.nid IN (:nids)", [':nids' => $nids]);
+    $update_date = $query->fetchField();
+
+    $query = db_query("SELECT MAX(c.changed) AS comment FROM {comment} AS c WHERE c.nid IN (:nids)", [':nids' => $nids]);
+    $comment_date = $query->fetchField();
+
+    $update_date = is_null($update_date) ? 0 : $update_date;
+    $comment_date = is_null($comment_date) ? 0 : $comment_date;
+
+    if ($update_date === 0 && $comment_date === 0) {
+      $date = time();
+    }
+    else {
+      $date = $update_date > $comment_date ? $update_date : $comment_date;
+    }
+
+    return format_date($date, 'date_only');
+  }
+
+  return FALSE;
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_communities_block_view_alter(&$data, $block) {
+  switch ($block->bid) {
+    // Exclude content types from the og content creation button.
+    case 'multisite_og_button-og-contextual-links':
+      // Get allowed content types.
+      $allowed = og_content_type_admin_access_group();
+      // For each CT in the create button, check the access.
+      $items = &$data['content']['og_node_create_links']['#items'];
+      if (!empty($items)) {
+        foreach ($items as $key => &$item) {
+          // Use a regexp to get the content type from the node/add url.
+          $matches = [];
+          preg_match_all("/\/node\/add\/([a-zA-Z0-9-]*)_/", $item['data'], $matches);
+          $content_type = reset($matches[1]);
+          // Change the hyphen back to underscores.
+          $content_type = str_replace('-', '_', $content_type);
+          // Exclude if necessary.
+          if (!array_key_exists($content_type, $allowed)) {
+            unset($items[$key]);
+          }
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_rules_action_info().
+ */
+function farnet_communities_rules_action_info() {
+  $items = array();
+  $items['farnet_communities_get_admins'] = array(
+    'label' => t('Get group administrators from group audience'),
+    'group' => t('FARNET Communities'),
+    'parameter' => array(
+      'group_content' => array(
+        'type' => 'entity',
+        'label' => t('Group content'),
+        'description' => t('The group content determining the group audience.'),
+      ),
+    ),
+    'provides' => array(
+      'group_managers' => array('type' => 'list<user>', 'label' => t('List of group managers')),
+    ),
+    'base' => '_farnet_communities_get_admins',
+    'access callback' => 'og_rules_integration_access',
+  );
+
+  return $items;
+}
+
+/**
+ * Action: Get group admins from a group.
+ */
+function _farnet_communities_get_admins(EntityDrupalWrapper $group) {
+  $entity_type = $group->type();
+  $entity_id = $group->getIdentifier();
+
+  // Not a group.
+  if (!og_is_group($entity_type, $group)) {
+    return;
+  }
+
+  // Get the group roles.
+  $roles = og_roles($entity_type, $group->getBundle(), $entity_id);
+  $admin_rid = array_search(OG_ADMINISTRATOR_ROLE, $roles);
+
+  // Bail out if we can't figure out the admin role id.
+  if (!$admin_rid) {
+    return;
+  }
+
+  $admins = array();
+
+  // Get the group admins for the group.
+  $members = db_select('og_users_roles', 'our')
+    ->fields('our', array('uid'))
+    ->condition('our.gid', $entity_id)
+    ->condition('our.group_type', $entity_type)
+    ->condition('our.rid', $admin_rid)
+    ->execute()
+    ->fetchCol();
+
+  $admins = array_merge($admins, $members);
+
+  // Remove duplicate items.
+  $admins = array_keys(array_flip($admins));
+
+  return array('group_managers' => $admins);
+}
+
+/**
+ * Calculate the number of content in a community.
+ */
+function _farnet_communities_content_count($gid) {
+  $nids = db_query("SELECT etid FROM {og_membership} WHERE entity_type='node' AND gid=:gid", [':gid' => $gid])->fetchCol();
+
+  if (!empty($nids)) {
+    $params = [
+      ':nids' => $nids,
+      ':type' => [
+        'myfarnet_cooperation_idea',
+        'myfarnet_discussion',
+        'myfarnet_event',
+        'myfarnet_news',
+      ],
+      ':status' => NODE_PUBLISHED,
+    ];
+    $count = db_query("SELECT COUNT(nid) FROM {node} WHERE nid IN (:nids) AND type IN (:type) AND status=:status", $params)->fetchField();
+
+    if (!is_null($count) && $count) {
+      return $count;
+    }
+  }
+
+  return 0;
+}
+
+/**
+ * Implements hook_og_membership_update().
+ */
+function farnet_communities_og_membership_update(OgMembership $ogm) {
+  if ($ogm->entity_type === 'user') {
+    if ($ogm->state == OG_STATE_BLOCKED && $ogm->state !== $ogm->original->state) {
+      // Override the destination.
+      $_GET['destination'] = "group/node/{$ogm->gid}/admin/people/{$ogm->etid}/reject";
+      drupal_goto();
+    }
+
+    // Update last user contribution.
+    if ($ogm->state == OG_STATE_ACTIVE) {
+      farnet_communities_insert_user_contribution($ogm->etid, 0, $ogm->gid, 'join');
+      _farnet_communities_user_accept(user_load($ogm->etid), node_load($ogm->gid));
+    }
+  }
+}
+
+/**
+ * Reject a user request for joining a group.
+ */
+function _farnet_communities_user_reject($form, &$form_state, $node, $user) {
+  $username = _farnet_communities_get_username($user);
+  drupal_set_title(t("Refuse join request of '@user'", ['@user' => $username]));
+
+  $form['user'] = [
+    '#type' => 'hidden',
+    '#value' => $user->uid,
+  ];
+
+  $form['node'] = [
+    '#type' => 'hidden',
+    '#value' => $node->nid,
+  ];
+
+  $form['justification'] = [
+    '#title' => t('Justification'),
+    '#type' => 'textarea',
+    '#required' => TRUE,
+  ];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Reject'),
+  ];
+
+  return $form;
+}
+
+/**
+ * Deny a user request.
+ */
+function _farnet_communities_user_reject_submit($form, $form_state) {
+  global $base_url;
+
+  $user = user_load($form_state['values']['user']);
+  $justification = $form_state['values']['justification'];
+  $node = node_load($form_state['values']['node']);
+
+  $username = _farnet_communities_get_username($user);
+
+  drupal_set_message(t('The user will be notified of your decision.'));
+
+  // Send mail to end user.
+  $params = [
+    '@url' => $base_url,
+    '@username' => $username,
+    '@justification' => $justification,
+    '@group' => $node->title,
+  ];
+  drupal_mail('farnet_communities', 'refuse', $user->mail, 'en', $params);
+
+  // Redirect to list of people.
+  drupal_goto("group/node/{$node->nid}/admin/people/");
+}
+
+/**
+ * Accept a user request.
+ */
+function _farnet_communities_user_accept($user, $node) {
+  global $base_url;
+
+  $username = _farnet_communities_get_username($user);
+
+  drupal_set_message(t('The user will be notified of your decision.'));
+
+  // Send mail to end user.
+  $params = [
+    '@url' => $base_url,
+    '@username' => $username,
+    '@group' => $node->title,
+  ];
+  drupal_mail('farnet_communities', 'accept', $user->mail, 'en', $params);
+
+  // Redirect to list of people.
+  drupal_goto("group/node/{$node->nid}/admin/people/");
+}
+
+/**
+ * Build a username from first and last name.
+ */
+function _farnet_communities_get_username($user) {
+  $u = entity_metadata_wrapper('user', $user);
+  $username = $u->field_firstname->value() . ' ' . $u->field_lastname->value();
+  return empty(trim($username)) ? $u->name->value() : $username;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function farnet_communities_mail($key, &$message, $params) {
+  if (isset($params['headers']) && is_array($params['headers'])) {
+    $message['headers'] += $params['headers'];
+  }
+
+  // Include mail body.
+  ob_start();
+  include drupal_get_path('module', 'farnet_communities') . '/mails/' . $key . '_mail.php';
+  $body = ob_get_clean();
+
+  $message['body'] = [format_string($body, $params)];
+
+  switch ($key) {
+    case 'refuse':
+      $message['subject'] = t('myFARNET membership request rejected');
+      break;
+  }
+}
+
+/**
+ * Render node light for preview without context communities.
+ */
+function _farnet_communities_community_preview($community) {
+  unset($community->group_access);
+  return node_page_view($community);
+}
+
+/**
+ * Check that a menu item in a community is accessible.
+ *
+ * @param string $right
+ *   The basic access right to check.
+ * @param object $group
+ *   The current og group.
+ * @param string $content_type
+ *   The content type we're trying to access.
+ *
+ * @return bool
+ *   Return TRUE if the user has access.
+ */
+function _farnet_communities_ct_page_access($right, $group, $content_type) {
+  if (!user_access($right) || !isset($group->nid)) {
+    return FALSE;
+  }
+
+  // Check content types allowed in configuration.
+  $allowed = og_content_type_admin_access_group();
+  if (!isset($allowed[$content_type])) {
+    return FALSE;
+  }
+
+  // Check if some content exists.
+  $query = db_select('og_membership', 'ogm')
+    ->fields('ogm')
+    ->condition('ogm.entity_type', 'node', '=')
+    ->condition('ogm.gid', $group->nid, '=');
+
+  $query->leftJoin('node', 'n', 'n.nid = ogm.etid');
+  $result = $query
+    ->condition('n.type', $content_type, '=')
+    ->condition('n.status', NODE_PUBLISHED, '=')
+    ->execute();
+
+  return $result->rowCount() > 0;
+}
+
+/**
+ * Implements hook_comment_insert().
+ */
+function farnet_communities_comment_insert($comment) {
+  global $user;
+  $node = node_load($comment->nid);
+  if (isset($node->og_group_ref)) {
+    $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+    farnet_communities_insert_user_contribution($user->uid, $comment->nid, $gid, 'comment');
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function farnet_communities_node_insert($node) {
+  global $user;
+  if (isset($node->og_group_ref) && $node->status === NODE_PUBLISHED) {
+    $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+    farnet_communities_insert_user_contribution($user->uid, $node->nid, $gid, 'node_insert');
+  }
+}
+
+/**
+ * Implements hook_og_membership_insert().
+ */
+function farnet_communities_og_membership_insert(OgMembership $og_membership) {
+  if ($og_membership->state === OG_STATE_ACTIVE) {
+    farnet_communities_insert_user_contribution($og_membership->etid, 0, $og_membership->gid, 'join');
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function farnet_communities_node_update($node) {
+  global $user;
+  // Check that the node is not new.
+  if (isset($node->revision) && $node->revision === TRUE && isset($node->og_group_ref) && $node->status === NODE_PUBLISHED) {
+    $gid = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+    farnet_communities_insert_user_contribution($user->uid, $node->nid, $gid, 'node_update');
+  }
+}
+
+/**
+ * Insert a last contribution.
+ */
+function farnet_communities_insert_user_contribution($uid, $nid, $gid, $action) {
+  if (!is_null($gid)) {
+    db_merge('user_last_contribution')
+      ->key(['uid' => $uid, 'gid' => $gid])
+      ->fields([
+        'uid' => $uid,
+        'nid' => $nid,
+        'gid' => $gid,
+        'action' => $action,
+        'timestamp' => time(),
+      ])
+      ->execute();
+  }
+}
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter().
+ */
+function farnet_communities_wysiwyg_editor_settings_alter(&$settings, $context) {
+  if ($context['profile']->format === 'myfarnet_html') {
+    $settings['height'] = 170;
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function farnet_communities_field_formatter_info() {
+  return [
+    'farnet_communities_gender' => [
+      'label' => t('Gender formatter'),
+      'field types' => ['list_text'],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function farnet_communities_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = [];
+
+  switch ($display['type']) {
+    case 'farnet_communities_gender':
+      foreach ($items as $delta => $item) {
+        switch ($item['value']) {
+          case 'male':
+            $value = t('Mr');
+            break;
+
+          case 'female':
+            $value = t('Ms');
+            break;
+
+          default:
+            $value = '';
+            break;
+        }
+
+        $element[$delta] = ['#markup' => $value];
+      }
+      break;
+  }
+  return $element;
+}
+
+/**
+ * Prevent users from seeing a community they're not a member of.
+ *
+ * Implements hook_init().
+ */
+function farnet_communities_init() {
+  global $user;
+
+  // Bypass for admins.
+  if (user_access('bypass node access')) {
+    return;
+  }
+
+  $path = current_path();
+  preg_match("/^node\/[0-9]+$/", $path, $match);
+
+  if (!empty($match)) {
+    $node = menu_get_object();
+    $types = [
+      'community_public',
+      'community_private',
+      'community_hidden',
+    ];
+
+    if (isset($node->type) && in_array($node->type, $types)) {
+      if (!og_is_member('node', $node->nid, 'user', $user->uid)) {
+        $alias = drupal_lookup_path('alias', $path);
+
+        drupal_goto($alias . '/about');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_post_features_revert().
+ */
+function farnet_communities_post_features_revert($component) {
+  if ($component === 'variable') {
+    variable_set('subscriptions_blocked_content_types', [
+      'farnet_article' => 'farnet_article',
+      'cooperation_call' => 'cooperation_call',
+      'cooperation_idea' => 'cooperation_idea',
+      'ms_fiche' => 'ms_fiche',
+      'factsheet_country' => 'factsheet_country',
+      'factsheet_flag' => 'factsheet_flag',
+      'gp_method' => 'gp_method',
+      'gp_project' => 'gp_project',
+      'gp_short_story' => 'gp_short_story',
+      'homepage_highlight' => 'homepage_highlight',
+      'landing_page' => 'landing_page',
+      'contact_person' => 'contact_person',
+      'organisation' => 'organisation',
+      'publication' => 'publication',
+      'simplenews' => 'simplenews',
+      'community' => 'community',
+      'editorial_team' => 'editorial_team',
+      'nexteuropa_event' => 'nexteuropa_event',
+      'nexteuropa_faq' => 'nexteuropa_faq',
+      'nexteuropa_mediagallery' => 'nexteuropa_mediagallery',
+      'nexteuropa_news' => 'nexteuropa_news',
+      'page' => 'page',
+    ]);
+
+    variable_set('subscriptions_unlisted_content_types', [
+      'community_hidden' => 'community_hidden',
+      'community_private' => 'community_private',
+      'community_public' => 'community_public',
+    ]);
   }
 }

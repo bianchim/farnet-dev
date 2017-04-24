@@ -50,7 +50,7 @@ function farnet_event_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'Mr' => 'Mr',
-        'Mrs' => 'Mrs',
+        'Ms' => 'Ms',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
