@@ -90,4 +90,6 @@
         <exclude name="DrupalPractice.Commenting.AuthorTag" />
     </rule>
 
+    <exclude-pattern>lib/modules/nexteuropa_subscriptions/*</exclude-pattern>
+
 </ruleset>
