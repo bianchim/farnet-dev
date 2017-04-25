@@ -323,7 +323,7 @@ function farnet_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => array(
       0 => array(
-        'value' => 'female',
+        'value' => 'other',
       ),
     ),
     'deleted' => 0,

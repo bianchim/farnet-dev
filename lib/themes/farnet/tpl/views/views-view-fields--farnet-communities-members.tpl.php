@@ -11,10 +11,10 @@ $link_user = $base_url . '/' . drupal_get_path_alias('user/' . $fields['uid']->r
 
 <div class="views-field views-field-user-profile user-profile">
   <div class="field-content">
-    <div class="col-xs-3 col-md-1">
+    <div class="col-xs-3 col-md-1 col-xs-1">
       <?php print $fields['picture']->content; ?>
     </div>
-    <div class="col-xs-9 col-md-11">
+    <div class="col-xs-9 col-md-11 col-xs-11">
       <div class="user-profile-top">
         <?php if (!empty($fields['nothing'])) : ?>
           <a class="pull-left u-fw-bold" href="<?php echo $link_user; ?>" title="View user profile." typeof="sioc:UserAccount" property="foaf:name"><?php print $fields['nothing']->content; ?></a>

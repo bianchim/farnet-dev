@@ -58,3 +58,28 @@ function _farnet_core_update_permissions() {
     }
   }
 }
+
+/**
+ * Update wysiwyg existing permissions for authenticated user.
+ *
+ * Media WYSIWYG: Use Media WYSIWYG in an editor
+ */
+function _farnet_core_update_wysiwyg_permissions() {
+  $perm = [
+    'use media wysiwyg',
+  ];
+
+  // Role to grant.
+  $roles_to_grant = [
+    'authenticated user'
+  ];
+
+  // Set permissions.
+  $roles = user_roles();
+  foreach ($roles as $rid => $role) {
+    if (in_array($role, $roles_to_grant)) {
+      user_role_grant_permissions($rid, $perm);
+    }
+  }
+}
+
