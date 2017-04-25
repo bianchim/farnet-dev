@@ -249,6 +249,32 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Country (field_user_country) */
+  $handler->display->display_options['filters']['field_user_country_tid']['id'] = 'field_user_country_tid';
+  $handler->display->display_options['filters']['field_user_country_tid']['table'] = 'field_data_field_user_country';
+  $handler->display->display_options['filters']['field_user_country_tid']['field'] = 'field_user_country_tid';
+  $handler->display->display_options['filters']['field_user_country_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_user_country_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['operator_id'] = 'field_user_country_tid_op';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['label'] = 'Filter by country';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['operator'] = 'field_user_country_tid_op';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['identifier'] = 'field_user_country_tid';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+    13 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'countries';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

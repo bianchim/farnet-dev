@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_communities.features.user_permission.inc
@@ -138,6 +137,16 @@ function farnet_communities_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'mimemail',
+  );
+
+  // Exported permission: 'og subscribe'.
+  $permissions['og subscribe'] = array(
+    'name' => 'og subscribe',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'subscriptions_og',
   );
 
   // Exported permission: 'edit own community_hidden content'.
