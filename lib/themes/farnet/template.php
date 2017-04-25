@@ -1156,9 +1156,9 @@ function farnet_preprocess_user_profile(&$variables) {
           break;
 
         case 'female':
-          $variables['elements'][$key]['#items'][0]['value'] = 'Mrs';
-          $variables['elements'][$key][0]['#markup'] = 'Mrs';
-          $variables['elements'][$key][0]['#items']['value'] = 'Mrs';
+          $variables['elements'][$key]['#items'][0]['value'] = 'Ms';
+          $variables['elements'][$key][0]['#markup'] = 'Ms';
+          $variables['elements'][$key][0]['#items']['value'] = 'Ms';
           break;
 
       }

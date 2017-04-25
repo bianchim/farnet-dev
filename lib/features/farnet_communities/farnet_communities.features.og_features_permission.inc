@@ -11,6 +11,11 @@
 function farnet_communities_og_features_default_permissions() {
   $permissions = array();
 
+  // Exported og permission: 'node:community:og subscribe'
+  $permissions['node:community:og subscribe'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:community_hidden:View all unpublished content'
   $permissions['node:community_hidden:View all unpublished content'] = array(
     'roles' => array(),
@@ -452,6 +457,14 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_hidden:moderate content from validated to published'
   $permissions['node:community_hidden:moderate content from validated to published'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_hidden:og subscribe'
+  $permissions['node:community_hidden:og subscribe'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_hidden:post comment_node_community'
@@ -1026,6 +1039,14 @@ function farnet_communities_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:community_private:og subscribe'
+  $permissions['node:community_private:og subscribe'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:community_private:post comment_node_community'
   $permissions['node:community_private:post comment_node_community'] = array(
     'roles' => array(),
@@ -1596,6 +1617,14 @@ function farnet_communities_og_features_default_permissions() {
   // Exported og permission: 'node:community_public:moderate content from validated to published'
   $permissions['node:community_public:moderate content from validated to published'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:community_public:og subscribe'
+  $permissions['node:community_public:og subscribe'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:community_public:post comment_node_community'

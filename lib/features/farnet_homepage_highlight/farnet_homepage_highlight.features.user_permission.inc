@@ -17,6 +17,7 @@ function farnet_homepage_highlight_user_default_permissions() {
       'FSU Administrator' => 'FSU Administrator',
       'FSU Publisher' => 'FSU Publisher',
       'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -28,6 +29,7 @@ function farnet_homepage_highlight_user_default_permissions() {
       'FSU Administrator' => 'FSU Administrator',
       'FSU Publisher' => 'FSU Publisher',
       'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -39,6 +41,7 @@ function farnet_homepage_highlight_user_default_permissions() {
       'FSU Administrator' => 'FSU Administrator',
       'FSU Publisher' => 'FSU Publisher',
       'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -50,6 +53,7 @@ function farnet_homepage_highlight_user_default_permissions() {
       'FSU Administrator' => 'FSU Administrator',
       'FSU Publisher' => 'FSU Publisher',
       'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -61,6 +65,7 @@ function farnet_homepage_highlight_user_default_permissions() {
       'FSU Administrator' => 'FSU Administrator',
       'FSU Publisher' => 'FSU Publisher',
       'FSU Webmaster' => 'FSU Webmaster',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );

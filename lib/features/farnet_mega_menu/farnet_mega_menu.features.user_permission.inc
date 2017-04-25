@@ -15,6 +15,7 @@ function farnet_mega_menu_user_default_permissions() {
   $permissions['administer fmm'] = array(
     'name' => 'administer fmm',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'farnet_mega_menu',
@@ -24,6 +25,7 @@ function farnet_mega_menu_user_default_permissions() {
   $permissions['administer om maximenu'] = array(
     'name' => 'administer om maximenu',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'om_maximenu',

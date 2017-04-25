@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_communities.views_default.inc
@@ -212,7 +211,7 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['sorts']['field_user_country_tid']['table'] = 'field_data_field_user_country';
   $handler->display->display_options['sorts']['field_user_country_tid']['field'] = 'field_user_country_tid';
   $handler->display->display_options['sorts']['field_user_country_tid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_user_country_tid']['expose']['label'] = 'Country (field_user_country)';
+  $handler->display->display_options['sorts']['field_user_country_tid']['expose']['label'] = 'Country';
   /* Sort criterion: User: Last name (field_lastname) */
   $handler->display->display_options['sorts']['field_lastname_value']['id'] = 'field_lastname_value';
   $handler->display->display_options['sorts']['field_lastname_value']['table'] = 'field_data_field_lastname';
@@ -250,6 +249,32 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Country (field_user_country) */
+  $handler->display->display_options['filters']['field_user_country_tid']['id'] = 'field_user_country_tid';
+  $handler->display->display_options['filters']['field_user_country_tid']['table'] = 'field_data_field_user_country';
+  $handler->display->display_options['filters']['field_user_country_tid']['field'] = 'field_user_country_tid';
+  $handler->display->display_options['filters']['field_user_country_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_user_country_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['operator_id'] = 'field_user_country_tid_op';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['label'] = 'Filter by country';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['operator'] = 'field_user_country_tid_op';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['identifier'] = 'field_user_country_tid';
+  $handler->display->display_options['filters']['field_user_country_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+    13 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_country_tid']['vocabulary'] = 'countries';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -351,10 +376,11 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'Load more';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
+  $handler->display->display_options['pager']['options']['manual_load'] = 1;
+  $handler->display->display_options['pager']['options']['text'] = 'Load more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
@@ -636,8 +662,8 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['label'] = 'All communities';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="more-link">
-  <a href="community/farnet_communities" class="btn btn-info">All communities</a>
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="btn-more-link">
+  <a href="community/farnet_communities" class="btn btn-info btn-block">All communities</a>
 </div>';
 
   /* Display: Dashboard Block other */

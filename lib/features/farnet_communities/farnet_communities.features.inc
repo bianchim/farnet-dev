@@ -36,7 +36,17 @@ function farnet_communities_image_default_styles() {
   // Exported image style: myfarnet_user_picture.
   $styles['myfarnet_user_picture'] = array(
     'label' => 'MyFarnet User Picture',
-    'effects' => array(),
+    'effects' => array(
+      2 => array(
+        'name' => 'image_crop',
+        'data' => array(
+          'width' => 250,
+          'height' => 250,
+          'anchor' => 'center-center',
+        ),
+        'weight' => 1,
+      ),
+    ),
   );
 
   return $styles;

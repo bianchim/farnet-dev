@@ -94,11 +94,24 @@ function farnet_communities_context_default_contexts() {
   $context->description = '';
   $context->tag = 'farnet';
   $context->conditions = array(
+    'context_og_condition_group_type' => array(
+      'values' => array(
+        'community_hidden' => 'community_hidden',
+        'community_private' => 'community_private',
+        'community_public' => 'community_public',
+      ),
+      'options' => array(
+        'node_form' => 1,
+      ),
+    ),
     'path' => array(
       'values' => array(
         'community*' => 'community*',
         'myfarnet*' => 'myfarnet*',
         'users*' => 'users*',
+        'user' => 'user',
+        'group/node/*/subscribe*' => 'group/node/*/subscribe*',
+        'user/*/contact' => 'user/*/contact',
       ),
     ),
   );
@@ -109,7 +122,7 @@ function farnet_communities_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-myfarnet-menu',
           'region' => 'sidebar_left',
-          'weight' => '-10',
+          'weight' => '-20',
         ),
       ),
     ),
