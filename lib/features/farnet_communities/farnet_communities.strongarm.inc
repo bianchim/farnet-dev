@@ -622,6 +622,9 @@ function farnet_communities_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'subscriptions_unlisted_content_types';
   $strongarm->value = array(
+    'community_hidden' => 'community_hidden',
+    'community_private' => 'community_private',
+    'community_public' => 'community_public',
     'myfarnet_cooperation_idea' => 'myfarnet_cooperation_idea',
     'myfarnet_discussion' => 'myfarnet_discussion',
     'myfarnet_event' => 'myfarnet_event',
