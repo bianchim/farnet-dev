@@ -113,8 +113,8 @@ function farnet_communities_update_7006() {
   ";
   node_object_prepare($node);
 
-  $node->language = LANGUAGE_NONE;
-  $node->uid = 0;
+  $node->language = 'en';
+  $node->uid = 1;
   $node->status = NODE_PUBLISHED;
   $node->promote = FALSE;
   $node->comment = FALSE;

@@ -16,8 +16,7 @@ function farnet_notifications_default_rules_configuration() {
       "OWNER" : "rules",
       "TAGS" : [ "Notifications" ],
       "REQUIRES" : [ "rules" ],
-      "ON" : { "user_login" : [] },
-      "IF" : [ { "data_is_empty" : { "data" : [ "account:last-access" ] } } ],
+      "ON" : { "user_insert" : [] },
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "6" : "6" } },
@@ -25,10 +24,10 @@ function farnet_notifications_default_rules_configuration() {
             "message" : "First login of the user [site:current-user].",
             "from" : "[site:mail]"
           }
-        }
+        },
         { "redirect" : { 
-            "url" : "myfarnet-first-login" 
-          } 
+          "url" : "myfarnet-first-login" 
+          }
         }
       ]
     }
