@@ -89,3 +89,36 @@ function farnet_communities_update_7005() {
     }
   }
 }
+
+/**
+ * Add myFARNET first login node.
+ */
+function farnet_communities_update_7006() {
+  $node = new stdClass();
+  $node->title = "myFARNET first login";
+  $node->type = "page";
+  $node->field_farnet_abstract['en'][0]['value'] = "myFARNET first login";
+  $node->field_ne_body['en'][0]['value'] = "
+  You are now in the myFARNET environment.
+
+  Could you please first complete your profile? This will help the FARNET Support Unit to provide you with the best possible service and information.
+
+  Areas in gray are already prefilled by EU Login and cannot be changed (or only via your ECAS/EU Login account).
+
+  Mandatory fields are marked *
+  Contextual guidance is provided for each field.
+
+  Do not forget to Save your profile before exiting: the Save button is at the bottom of the form.
+  Should you have any problem or question, do not hesitate to contact web@farnet.eu
+  ";
+  node_object_prepare($node);
+
+  $node->language = 'en';
+  $node->uid = 1;
+  $node->status = NODE_PUBLISHED;
+  $node->promote = FALSE;
+  $node->comment = FALSE;
+
+  $node = node_submit($node);
+  node_save($node);
+}

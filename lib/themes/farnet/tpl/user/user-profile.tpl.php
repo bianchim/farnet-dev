@@ -38,7 +38,7 @@
   <div class="row">
     <div class="col-sm-12">
       <h3>
-        <?php if (!empty($user_profile['field_gender'])) : ?>
+        <?php if (!empty($user_profile['field_gender']) && $user_profile['field_gender'][0]['#markup'] != 'Other') : ?>
           <?php print $user_profile['field_gender'][0]['#markup']; ?>
         <?php endif; ?>
         <?php if (!empty($user_profile['field_firstname'])) : ?>
