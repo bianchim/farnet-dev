@@ -5,6 +5,40 @@
  * Install, uninstall, schema and update hooks for farnet search.
  */
 
+ /**
+  * Implements hook_install().
+  */
+function farnet_search_install() {
+  // Remove bundles from solr indexing.
+  $bundles = array(
+    'community',
+    'community_hidden',
+    'community_private',
+    'community_public',
+    'contact_person',
+    'farnet_discussion',
+    'homepage_highlight',
+    'nexteuropa_mediagallery',
+    'organisation',
+    'simplenews',
+  );
+  foreach ($bundles as $bundle) {
+    multisite_drupal_toolbox_config_solr_bundle($bundle, 'delete');
+  }
+
+  // Add sea basin and type of area facet search blocks.
+  multisite_drupal_toolbox_add_block_context('search', 'facetapi-zULNPz67fg0t1s4ZQqgMw1gIZXy6lK7k', 'facetapi', 'zULNPz67fg0t1s4ZQqgMw1gIZXy6lK7k', 'sidebar_left', -10);
+  multisite_drupal_toolbox_add_block_context('search', 'facetapi-EP02DrSBxR6X4lBokTlXJND4I1FVIjvD', 'facetapi', 'EP02DrSBxR6X4lBokTlXJND4I1FVIjvD', 'sidebar_left', -11);
+
+  // Remove author, keywords facet search blocks.
+  multisite_drupal_toolbox_remove_block_context('search', 'facetapi-wWWinJ0eOefOtAMbjo2yl86Mnf1rO12j');
+  multisite_drupal_toolbox_remove_block_context('search', 'facetapi-8o8kdtP8CKjahDIu1Wy5LGxnDHg3ZYnT');
+  multisite_drupal_toolbox_remove_block_context('search', 'facetapi-odQxTWyhGW1WU7Sl00ISAnQ21BCdJG3A');
+
+  // Move block Search - Sort by filter on content.
+  multisite_drupal_toolbox_add_block_context('search', 'apachesolr_search-sort', 'apachesolr_search', 'sort', 'content', -10);
+}
+
 /**
  * Manage facet search blocks, remove bundles from solr indexing.
  */
@@ -43,12 +77,11 @@ function farnet_search_update_7002() {
 }
 
 /**
- * Add sea basin and type of area facet search blocks.
+ * Move block Search - Sort by filter on content.
  *
  * Implements hook_update_N().
  */
 function farnet_search_update_7003() {
-  // Add sea basin and type of area facet search blocks.
   multisite_drupal_toolbox_add_block_context('search', 'apachesolr_search-sort', 'apachesolr_search', 'sort', 'content', -10);
 }
 
