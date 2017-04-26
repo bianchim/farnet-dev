@@ -1174,8 +1174,8 @@ function farnet_preprocess_user_profile(&$variables) {
  * Implements hook_block_view_alter().
  */
 function farnet_block_view_alter(&$data, $block) {
-  
-  if ($block->region == 'sidebar_left2' || $block->region == 'sidebar_right2' || $block->module == 'apachesolr_search') {
+
+  if ($block->module == 'apachesolr_search') {
     // Add classes to list.
     $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="list-group list-group-flush list-unstyled">', $data['content']) : '');
 
