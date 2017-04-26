@@ -5,3 +5,14 @@
  */
 
 include_once 'farnet_search.features.inc';
+
+/**
+ * Implements hook_context_load_alter().
+ */
+function farnet_search_context_load_alter(&$context) {
+  if ($context->name == 'search') {
+    if (isset($context->reactions['block']['blocks']['apachesolr_search-sort'])) {
+      $context->reactions['block']['blocks']['apachesolr_search-sort']['region'] = 'content';
+    }
+  }
+}
