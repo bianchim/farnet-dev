@@ -5,6 +5,8 @@
  * Install tasks for Farnet Error.
  */
 
+require_once 'farnet_error.install.inc';
+
 /**
  * Activate the new multilingual variables for farnet error.
  *
@@ -26,4 +28,13 @@ function farnet_error_install() {
 
   $res = array_merge($realm_language, $new);
   variable_set('variable_realm_list_language', $res);
+
+  _farnet_error_set_anon_vars();
+}
+
+/**
+ * Add new variables to farnet error.
+ */
+function farnet_error_update_7001() {
+  _farnet_error_set_anon_vars();
 }

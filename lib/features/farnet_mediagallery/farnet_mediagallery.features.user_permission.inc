@@ -15,7 +15,13 @@ function farnet_mediagallery_user_default_permissions() {
   $permissions['create nexteuropa_mediagallery content'] = array(
     'name' => 'create nexteuropa_mediagallery content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -24,6 +30,9 @@ function farnet_mediagallery_user_default_permissions() {
   $permissions['delete any nexteuropa_mediagallery content'] = array(
     'name' => 'delete any nexteuropa_mediagallery content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -33,7 +42,13 @@ function farnet_mediagallery_user_default_permissions() {
   $permissions['delete own nexteuropa_mediagallery content'] = array(
     'name' => 'delete own nexteuropa_mediagallery content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -42,7 +57,13 @@ function farnet_mediagallery_user_default_permissions() {
   $permissions['edit any nexteuropa_mediagallery content'] = array(
     'name' => 'edit any nexteuropa_mediagallery content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -51,7 +72,13 @@ function farnet_mediagallery_user_default_permissions() {
   $permissions['edit own nexteuropa_mediagallery content'] = array(
     'name' => 'edit own nexteuropa_mediagallery content',
     'roles' => array(
+      'FSU Administrator' => 'FSU Administrator',
+      'FSU Editor' => 'FSU Editor',
+      'FSU Publisher' => 'FSU Publisher',
+      'FSU Webmaster' => 'FSU Webmaster',
+      'Mail manager' => 'Mail manager',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );

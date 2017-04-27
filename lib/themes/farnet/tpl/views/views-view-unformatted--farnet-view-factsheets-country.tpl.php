@@ -5,8 +5,8 @@
  * Override of views-view-unformatted.tpl.php.
  */
 ?>
-<?php foreach ($rows as $id => $row): ?>
-  <ul class="media-list farnet-listing">
+<ul class="media-list farnet-listing">
+  <?php foreach ($rows as $id => $row): ?>
     <?php print $row; ?>
-  </ul>
-<?php endforeach; ?>
+  <?php endforeach; ?>
+</ul>

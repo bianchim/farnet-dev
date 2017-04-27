@@ -76,6 +76,12 @@
   display: inline-block;
 }
 
+.node .multi-values .field-type-taxonomy-term-reference ul.links li {
+  float: left;
+  padding: 0;
+  white-space: normal;
+}
+
 .multi-values div ul li {
   display: inline;
   margin: 0;
@@ -134,7 +140,35 @@ p.title {
   text-align: center;
 }
 
+p.title-myfarnet {
+  background: #ffa500;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
+h1.title-myfarnet {
+  background: #ffa500;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.myfarnet-active h1 {
+  background: #ffa500;
+}
+
 h1.title-small {
+  background: none;
+  color: #000;
+  text-align: left;
+}
+
+h1.title-small-myfarnet {
   background: none;
   color: #000;
   text-align: left;
@@ -146,6 +180,11 @@ h1.title-small {
 
 .field-type-image img {
   width: 100%;
+  height: auto;
+}
+
+#edit-field-picture img {
+  width: auto;
   height: auto;
 }
 
@@ -394,4 +433,182 @@ table.table-responsive.table-blue.table--white-borders th {
   .region-content-bottom .block .content {
     height: 361px;
   }
+}
+
+.flag-contacts-detail.panel-group h4 a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts-detail.panel-group h4 a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts-detail.panel-group h4 a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flag-contacts .field-label-light {
+  float: left;
+  margin-right: 5px;
+}
+
+.field-contact-hidden {
+  display: none;
+}
+
+#button-show-detail {
+  margin-bottom: 5px;
+}
+
+.flag-contacts-right {
+  display: none;
+}
+
+.node .comment_forbidden {
+  display: none;
+}
+
+.myfarnet-main-menu-link {
+  color: #074a8b!important;
+  font-weight: 700;
+  text-transform: none !important;
+}
+
+#om-menu-main-menu {
+  width: 100%;
+}
+
+.icon--user:before {
+  color: #65aefd;
+}
+
+.wysiwyg-toggle-wrapper {
+  display: none;
+}
+
+.filter-wrapper {
+  display: none;
+}
+
+/* myFARNET menu style */
+#block-menu-menu-myfarnet-menu,
+#block-menu-menu-myfarnet-menu a {
+  border: none;
+}
+
+.c-myfarnet-btn {
+  background: none;
+  border-right: none;
+  border-bottom-color: transparent !important;
+}
+
+.c-myfarnet-btn a {
+  border: none;
+}
+
+.myfarnet-active .c-myfarnet-btn {
+  background: white;
+  border-right: 1px solid white;
+  border-bottom-color: white !important;
+}
+
+.myfarnet-active .c-myfarnet-btn:hover {
+  background: white;
+  border-right: 1px solid white;
+  border-bottom-color: #68b1ff !important;
+}
+
+.panel .panel-body .list-group a.list-group-item.active {
+  background: none;
+}
+
+#block-menu-menu-community-menu a {
+  padding: 3px 3px 3px 15px;
+  border: none;
+}
+
+#block-menu-menu-community-menu {
+  border: none;
+}
+
+#block-menu-menu-community-menu .panel-heading {
+  padding: 7px;
+  color: #074a8b;
+}
+
+/* Chosen fix */
+.chosen-container-multi {
+  height: inherit !important;
+}
+
+span.group.manager.btn.btn-info {
+  cursor: default;
+}
+
+span.group.manager.btn.btn-info:hover {
+  border: 1px solid #fff;
+  background: #5fadff;
+}
+
+.media-abstract {
+  font-weight: bold;
+}
+
+#myfarnet-news-node-form .form-item-language {
+  display: none;
+}
+
+#myfarnet-event-node-form .form-item-language {
+  display: none;
+}
+
+#myfarnet-discussion-node-form .form-item-language {
+  display: none;
+}
+
+#myfarnet-cooperation-idea-node-form .form-item-language {
+  display: none;
+}
+
+#block-system-main .view-farnet-communities-members .view-content .views-row {
+  border-top: 0px solid #ddd;
+  padding-top: 15px;
+  margin-bottom: 15px;
+}
+
+.view-farnet-communities-members .views-field-user-profile > div > div {
+  padding: 0;
+  padding-right: 5px;
+}
+
+.view-farnet-communities-members .form-item-sort-by {
+  clear: left;
+}
+
+li.pager__item > a,
+li.pager__item > a:visited,
+li.pager__item > a:hover {
+  display: inline-block;
+  text-align: right;
+  padding: 6px 12px;
+  background: #5fadff;
+  color: #fff !important;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+li.pager__item > a:hover {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.pager {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  text-align: left;
 }

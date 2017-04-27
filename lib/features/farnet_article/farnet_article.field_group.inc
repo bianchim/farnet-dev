@@ -113,8 +113,6 @@ function farnet_article_field_group_info() {
     'label' => 'Metadata',
     'weight' => '3',
     'children' => array(
-      0 => 'group_content_access',
-      1 => 'og_group_ref',
       2 => 'metatags',
       3 => 'language',
     ),

@@ -14,6 +14,13 @@ function farnet_communities_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_default_challenge';
+  $strongarm->value = 'hidden_captcha/Hidden CAPTCHA';
+  $export['captcha_default_challenge'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_community_hidden';
   $strongarm->value = '0';
   $export['comment_anonymous_community_hidden'] = $strongarm;
@@ -550,6 +557,80 @@ function farnet_communities_strongarm() {
   $strongarm->name = 'pathauto_node_community_public_pattern';
   $strongarm->value = '[site:nexteuropa_communities_keyword]/[node:title]';
   $export['pathauto_node_community_public_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'subscriptions_blocked_content_types';
+  $strongarm->value = array(
+    'farnet_article' => 'farnet_article',
+    'cooperation_call' => 'cooperation_call',
+    'cooperation_idea' => 'cooperation_idea',
+    'ms_fiche' => 'ms_fiche',
+    'factsheet_country' => 'factsheet_country',
+    'factsheet_flag' => 'factsheet_flag',
+    'gp_method' => 'gp_method',
+    'gp_project' => 'gp_project',
+    'gp_short_story' => 'gp_short_story',
+    'homepage_highlight' => 'homepage_highlight',
+    'landing_page' => 'landing_page',
+    'contact_person' => 'contact_person',
+    'organisation' => 'organisation',
+    'publication' => 'publication',
+    'simplenews' => 'simplenews',
+    'community' => 'community',
+    'editorial_team' => 'editorial_team',
+    'nexteuropa_event' => 'nexteuropa_event',
+    'nexteuropa_faq' => 'nexteuropa_faq',
+    'nexteuropa_mediagallery' => 'nexteuropa_mediagallery',
+    'nexteuropa_news' => 'nexteuropa_news',
+    'page' => 'page',
+  );
+  $export['subscriptions_blocked_content_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'subscriptions_omitted_vocabularies';
+  $strongarm->value = array(
+    'farnet_theme' => 'farnet_theme',
+    'farnet_type_publication' => 'farnet_type_publication',
+    'farnet_type_organisation' => 'farnet_type_organisation',
+    'farnet_publication_channels' => 'farnet_publication_channels',
+    'farnet_sea_basins' => 'farnet_sea_basins',
+    'farnet_languages_spoken' => 'farnet_languages_spoken',
+    'countries' => 'countries',
+    'classification' => 'classification',
+    'faq_categories' => 'faq_categories',
+    'farnet_type_of_area' => 'farnet_type_of_area',
+    'newsletter' => 'newsletter',
+    'nexteuropa_event_type' => 'nexteuropa_event_type',
+    'nexteuropa_news_categories' => 'nexteuropa_news_categories',
+    'tags' => 'tags',
+  );
+  $export['subscriptions_omitted_vocabularies'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'subscriptions_show_by_author_options';
+  $strongarm->value = 0;
+  $export['subscriptions_show_by_author_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'subscriptions_unlisted_content_types';
+  $strongarm->value = array(
+    'community_hidden' => 'community_hidden',
+    'community_private' => 'community_private',
+    'community_public' => 'community_public',
+    'myfarnet_cooperation_idea' => 'myfarnet_cooperation_idea',
+    'myfarnet_discussion' => 'myfarnet_discussion',
+    'myfarnet_event' => 'myfarnet_event',
+    'myfarnet_news' => 'myfarnet_news',
+  );
+  $export['subscriptions_unlisted_content_types'] = $strongarm;
 
   return $export;
 }

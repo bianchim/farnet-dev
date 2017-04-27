@@ -38,5 +38,8 @@ default:
         footer: "#layout-footer"
         sidebar_left: "#sidebar-left"
         sidebar_right: "#sidebar-right"
+      drush:
+        root: '${platform.build.dir}'
+        binary: '${drush.bin}'
   formatters:
     ${behat.formatter.name}: ~
