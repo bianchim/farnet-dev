@@ -52,11 +52,6 @@
  *   <?php endif; ?>
  * @endcode
  *
- * To check for all available data within $info_split, use the code below.
- * @code
- *   <?php print '<pre>'. check_plain(print_r($info_split, 1)) .'</pre>'; ?>
- * @endcode
- *
  * @see template_preprocess()
  * @see template_preprocess_search_result()
  * @see template_process()
@@ -77,7 +72,7 @@
         <?php endif; ?>
         <?php if (isset($result['type'])): ?>
             <span class="farnet-listing__important">
-                 <?php print$result['type']; ?>
+                 <?php print $result['type']; ?>
             </span> -
         <?php endif; ?>
         <?php if (isset($result['date'])): ?>
