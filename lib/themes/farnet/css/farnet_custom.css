@@ -612,3 +612,12 @@ li.pager__item > a:hover {
   list-style: none;
   text-align: left;
 }
+
+#roles {
+  width: 50%;
+}
+
+#roles input {
+  position: inherit;
+  margin-left: 0;
+}
