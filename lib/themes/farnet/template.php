@@ -1169,3 +1169,34 @@ function farnet_preprocess_user_profile(&$variables) {
   // Preprocess fields.
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_block_view_alter(&$data, $block) {
+
+  if ($block->module == 'apachesolr_search') {
+    // Add classes to list.
+    $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="list-group list-group-flush list-unstyled">', $data['content']) : '');
+
+    // Add classes to list items.
+    if (!is_array($data['content'])) {
+      preg_match_all('/<a(.*?)>/s', $data['content'], $matches);
+
+      if (isset($matches[0])) {
+        foreach ($matches[0] as $link) {
+          if (strpos($link, ' class="') !== FALSE) {
+            $new_link = str_replace(' class="', ' class="list-group-item ', $link);
+          }
+          elseif (strpos($link, " class='") !== FALSE) {
+            $new_link = str_replace(" class='", " class='list-group-item ", $link);
+          }
+          else {
+            $new_link = str_replace(' href=', ' class="list-group-item" href=', $link);
+          }
+          $data['content'] = str_replace($link, $new_link, $data['content']);
+        }
+      }
+    }
+  }
+}
