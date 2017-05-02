@@ -621,3 +621,7 @@ li.pager__item > a:hover {
   position: inherit;
   margin-left: 0;
 }
+
+.myfarnet-first-login #block-workbench-block {
+  display: none;
+}
