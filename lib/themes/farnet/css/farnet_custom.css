@@ -622,6 +622,18 @@ li.pager__item > a:hover {
   margin-left: 0;
 }
 
+#subscribe .form-checkbox {
+  margin-left: 0px;
+}
+
+html.js fieldset.collapsible .fieldset-legend {
+  padding-left: 0;
+}
+
+#subscriptions-ui-node-form {
+  margin-top: 35px;
+}
+
 .myfarnet-first-login #block-workbench-block {
   display: none;
 }
