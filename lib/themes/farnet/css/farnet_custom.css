@@ -633,3 +633,7 @@ html.js fieldset.collapsible .fieldset-legend {
 #subscriptions-ui-node-form {
   margin-top: 35px;
 }
+
+.myfarnet-first-login #block-workbench-block {
+  display: none;
+}

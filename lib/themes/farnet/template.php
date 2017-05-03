@@ -1200,3 +1200,12 @@ function farnet_block_view_alter(&$data, $block) {
     }
   }
 }
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_preprocess_html(&$vars) {
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(1) == variable_get("myfarnet-first-login", NULL)) {
+    $vars['classes_array'][] = "myfarnet-first-login";
+  }
+}
