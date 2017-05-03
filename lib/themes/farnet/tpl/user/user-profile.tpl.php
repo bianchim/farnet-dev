@@ -36,7 +36,6 @@
 
 global $user;
 ?>
-
 <div class="profile clearfix"<?php print $attributes; ?>>
   <div class="row">
     <div class="col-sm-12">
