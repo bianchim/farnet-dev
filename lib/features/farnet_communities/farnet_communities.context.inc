@@ -137,5 +137,46 @@ function farnet_communities_context_default_contexts() {
   t('farnet');
   $export['myfarnet_global'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'myfarnet_content';
+  $context->description = '';
+  $context->tag = 'farnet';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'community_hidden' => 'community_hidden',
+        'community_private' => 'community_private',
+        'community_public' => 'community_public',
+        'myfarnet_cooperation_idea' => 'myfarnet_cooperation_idea',
+        'myfarnet_discussion' => 'myfarnet_discussion',
+        'myfarnet_event' => 'myfarnet_event',
+        'myfarnet_news' => 'myfarnet_news',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'subscriptions_ui-0' => array(
+          'module' => 'subscriptions_ui',
+          'delta' => '0',
+          'region' => 'content_bottom',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('farnet');
+  $export['myfarnet_content'] = $context;
+
   return $export;
 }
