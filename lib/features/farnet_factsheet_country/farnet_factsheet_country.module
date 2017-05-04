@@ -77,10 +77,10 @@ function farnet_factsheet_country_form_alter(&$form, &$form_state, $form_id) {
     }
   }
   /*
-  if ($form['#id'] == 'views-exposed-form-farnet-view-factsheets-country-page') {
-    unset($form['#info']['filter-field_term_country_tid']);
-    $form['field_term_country_tid']['#access'] = 0;
-    $form['submit']['#access'] = 0;
+  if($form['#id'] == 'views-exposed-form-farnet-view-factsheets-country-page'){
+  unset($form['#info']['filter-field_term_country_tid']);
+  $form['field_term_country_tid']['#access'] = 0;
+  $form['submit']['#access'] = 0;
   }
-  */
+   */
 }
