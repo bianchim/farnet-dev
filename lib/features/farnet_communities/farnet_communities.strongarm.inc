@@ -632,5 +632,19 @@ function farnet_communities_strongarm() {
   );
   $export['subscriptions_unlisted_content_types'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'subscriptions_form_expanded';
+  $strongarm->value = 1;
+  $export['subscriptions_form_expanded'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'subscriptions_form_in_block';
+  $strongarm->value = 1;
+  $export['subscriptions_form_in_block'] = $strongarm;
+
   return $export;
 }

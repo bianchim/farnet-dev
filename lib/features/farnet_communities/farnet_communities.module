@@ -388,6 +388,10 @@ function _farnet_communities_get_last_updated_date($gid) {
  */
 function farnet_communities_block_view_alter(&$data, $block) {
   switch ($block->bid) {
+    case 'subscriptions_ui-0':
+      $data['subject'] = 'Keep me informed on updates';
+      break;
+
     // Exclude content types from the og content creation button.
     case 'multisite_og_button-og-contextual-links':
       // Get allowed content types.
@@ -863,5 +867,20 @@ function farnet_communities_post_features_revert($component) {
       'community_private' => 'community_private',
       'community_public' => 'community_public',
     ]);
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function farnet_communities_preprocess_html(&$variables) {
+  $path = current_path();
+  $path_alias = drupal_get_path_alias();
+  $patterns = 'community/' . PHP_EOL . 'community/*';
+
+  if (drupal_match_path($path, $patterns) || drupal_match_path($path_alias, $patterns)) {
+    drupal_add_library('system', 'drupal.ajax');
+    $path = drupal_get_path('module', 'farnet_communities');
+    drupal_add_js($path . '/js/farnet_communities_subscriptions.js');
   }
 }
