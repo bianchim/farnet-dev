@@ -7,8 +7,8 @@
     "cpliakas/git-wrapper": "dev-master as 1.7.1",
     "drupal/coder": "8.2.7",
     "drupal/phing-drush-task": "1.0",
-    "drush/drush": "8.1.5",
-    "ec-europa/qa-automation": "2.3",
+    "drush/drush": "8.0.5",
+    "ec-europa/qa-automation": "2.6",
     "ext-json": "*",
     "ext-phar": "*",
     "ext-xml": "*",
@@ -79,7 +79,10 @@
     }
   ],
   "scripts": {
-    "post-install-cmd": "resources/scripts/composer/post-install.sh"
+    "pre-install-cmd": "resources/composer/scripts/execute.sh pre-install-cmd",
+    "post-install-cmd": "resources/composer/scripts/execute.sh post-install-cmd",
+    "pre-update-cmd": "resources/composer/scripts/execute.sh pre-update-cmd",
+    "post-update-cmd": "resources/composer/scripts/execute.sh post-update-cmd"
   },
   "config": {
     "bin-dir": "bin/"
