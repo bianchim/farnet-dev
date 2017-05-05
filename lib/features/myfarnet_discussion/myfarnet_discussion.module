@@ -39,7 +39,7 @@ function myfarnet_discussion_form_myfarnet_discussion_node_form_alter(&$form, &$
     unset($form['#fieldgroups']);
     $form['revision_information']['#access'] = FALSE;
     $form['group_content_access']['#access'] = FALSE;
-    $form['og_group_ref']['#access'] = FALSE;
+    /* $form['og_group_ref']['#access'] = FALSE; */
   }
 }
 

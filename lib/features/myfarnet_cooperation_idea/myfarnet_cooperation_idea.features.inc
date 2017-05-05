@@ -32,7 +32,7 @@ function myfarnet_cooperation_idea_node_info() {
     'myfarnet_cooperation_idea' => array(
       'name' => t('Cooperation Idea'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Cooperation Idea content type for Farnet Community'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
