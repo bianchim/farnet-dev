@@ -103,12 +103,6 @@
     <?php endif; ?>
 
     <?php print render($content['links']); ?>
-    <?php
-      $content['subscriptions_ui']['subscriptions_ui_form']['wrapper']['#title'] = '<div class="btn btn-info">';
-      $content['subscriptions_ui']['subscriptions_ui_form']['wrapper']['#title'] .= t('Keep me informed on updates');
-      $content['subscriptions_ui']['subscriptions_ui_form']['wrapper']['#title'] .= '</div>';
-      print render($content['subscriptions_ui']);
-    ?>
     <?php print render($content['comments']); ?>
 
   </div>

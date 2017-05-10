@@ -166,7 +166,7 @@ function farnet_communities_context_default_contexts() {
           'module' => 'subscriptions_ui',
           'delta' => '0',
           'region' => 'content_bottom',
-          'weight' => '-10',
+          'weight' => '10',
         ),
       ),
     ),
