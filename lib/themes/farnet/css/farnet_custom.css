@@ -630,10 +630,29 @@ html.js fieldset.collapsible .fieldset-legend {
   padding-left: 0;
 }
 
-#subscriptions-ui-node-form {
+.myfarnet-first-login #block-workbench-block {
+  display: none;
+}
+
+#block-subscriptions-ui-0 {
   margin-top: 35px;
 }
 
-.myfarnet-first-login #block-workbench-block {
+#block-subscriptions-ui-0 .panel-heading {
+  color: #074a8b;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#block-subscriptions-ui-0 .panel-body {
   display: none;
+  height: auto;
+}
+
+#block-subscriptions-ui-0 legend {
+  display: none;
+}
+
+#block-subscriptions-ui-0 .open {
+  display: block;
 }
