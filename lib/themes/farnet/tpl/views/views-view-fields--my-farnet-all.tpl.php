@@ -38,7 +38,13 @@
     </div>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['nothing'])) : ?>
+        <?php if(!empty($fields['uid']->raw)) : ?>
+          <a href="/user/<?php print $fields['uid']->raw; ?>" title="<?php print t("View user profile."); ?>">
+        <?php endif; ?>
         <?php print $fields['nothing']->content; ?>
+        <?php if(!empty($fields['uid']->raw)) : ?>
+          <?php print '</a>'; ?>
+        <?php endif; ?>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated'])) : ?>
         | <span><span><?php print $fields['last_updated']->content; ?></span><span>
