@@ -32,7 +32,7 @@ function myfarnet_news_node_info() {
     'myfarnet_news' => array(
       'name' => t('News'),
       'base' => 'node_content',
-      'description' => t('News content type for Farnet Community'),
+      'description' => t('News content type for FARNET Community'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
