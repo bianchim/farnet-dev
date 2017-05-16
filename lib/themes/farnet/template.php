@@ -836,7 +836,16 @@ function farnet_preprocess_views_view(&$vars) {
  * Implements theme_preprocess_views_view_fields.
  */
 function farnet_preprocess_views_view_fields(&$vars) {
-
+  if ($vars['view']->name === 'farnet_communities') {
+    $node = $vars['row']->nid;
+    $path = 'node/' . $node;
+    $vars['path_alias'] = drupal_get_path_alias($path);
+  }
+  if ($vars['view']->name === 'farnet_og_memberships') {
+    $node = $vars['row']->node_og_membership_nid;
+    $path = 'node/' . $node;
+    $vars['path_alias'] = drupal_get_path_alias($path);
+  }
   if ($vars['view']->name == 'farnet_content_slider') {
     $vars['fields']['field_slide']->wrapper_prefix = '<span class="views-field views-field-field-slide">';
     $vars['fields']['field_slide']->wrapper_suffix = '</span>';

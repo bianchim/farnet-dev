@@ -9,6 +9,7 @@ global $base_url;
 
 $gid = $fields['group_group']->raw;
 $member = og_is_member('node', $gid);
+$community_path = $base_url . '/' . $path_alias . '/about';
 
 ?>
 <li class="media farnet-listing__item community-summary">
@@ -19,6 +20,7 @@ $member = og_is_member('node', $gid);
       <?php
         if ($member) {
           $fields['title']->content = str_replace('/about', '', $fields['title']->content);
+          $community_path = str_replace('/about', '/#whats-news', $community_path);
         }
       ?>
 
@@ -26,7 +28,9 @@ $member = og_is_member('node', $gid);
     <?php endif; ?>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['content_count'])) : ?>
-        <span class="community-summary__counter"><?php print $fields['content_count']->content; ?></span>
+        <a href="<?php print $community_path; ?>" id="bubble-counter">
+          <span class="community-summary__counter"><?php print $fields['content_count']->content; ?></span>
+        </a>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated_date'])) : ?>
         - <span><?php print $fields['last_updated_date']->content; ?></span>
