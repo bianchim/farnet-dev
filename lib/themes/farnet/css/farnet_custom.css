@@ -660,3 +660,8 @@ html.js fieldset.collapsible .fieldset-legend {
 #bubble-counter:hover {
   text-decoration: none;
 }
+
+.ff_field-label {
+  font-weight: bold;
+  float: left;
+}
