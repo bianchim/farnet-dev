@@ -4,6 +4,8 @@
  * @file
  * Override of views-view-fields.tpl.php.
  */
+global $base_url;
+$community_path = $base_url . '/' . $path_alias . '/#whats-news';
 ?>
 
 <li class="media dashboard-community">
@@ -20,7 +22,9 @@
     </div>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['content_count'])) : ?>
-        <span class="community-summary__counter"><span><?php print $fields['content_count']->content; ?></span></span>
+        <a href="<?php print $community_path; ?>" id="bubble-counter">
+          <span class="community-summary__counter"><span><?php print $fields['content_count']->content; ?></span></span>
+        </a>
       <?php endif; ?>
       <?php if (!empty($fields['last_updated_date'])) : ?>
         | <span><span><?php print $fields['last_updated_date']->content; ?></span></span>

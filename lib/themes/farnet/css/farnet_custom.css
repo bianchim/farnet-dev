@@ -684,3 +684,7 @@ html.js fieldset.collapsible .fieldset-legend {
 #block-subscriptions-ui-0 .open {
   display: block;
 }
+
+#bubble-counter:hover {
+  text-decoration: none;
+}
