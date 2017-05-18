@@ -139,7 +139,7 @@ function farnet_location_form_alter(&$form, &$form_state, $form_id) {
       $country_selected_tid = isset($form_state['values']['field_user_country'][LANGUAGE_NONE][0]['tid']) ? $form_state['values']['field_user_country'][LANGUAGE_NONE][0]['tid'] : 0;
       $field_city_select_default_value = isset($form_state['values']['field_city_select']) ? $form_state['values']['field_city_select'] : '';
 
-      if (($form_id == 'user_profile_form') && ($postal_code == 0)) {
+      if (($form_id == 'user_profile_form') && ($postal_code === 0)) {
         $postal_code = $form['field_zip_code'][LANGUAGE_NONE][0]['value']['#default_value'];
       }
 
@@ -654,7 +654,7 @@ function _farnet_location_geocoding($address) {
 /**
  * Get the GeoNames list of cities for a postcode from a country.
  *
- * @param int $postal_code
+ * @param string $postal_code
  *   The code postal of cities in a country.
  * @param string $country_code
  *   The code of the country to get.
@@ -718,7 +718,7 @@ function farnet_location_depend_dropdown_callback($form, $form_state) {
  */
 function _farnet_location_get_field_city_select_dropdown($country_selected, $postal_code) {
 
-  if ($postal_code > 0 && (drupal_strlen($country_selected) > 0)) {
+  if (drupal_strlen($postal_code) > 0 && (drupal_strlen($country_selected) > 0)) {
     // Reverse search of the country to get its country code.
     $country_code = _farnet_location_get_country_code($country_selected);
     $result = _farnet_location_get_cities_list_from_postal_code($postal_code, $country_code);
