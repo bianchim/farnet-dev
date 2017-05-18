@@ -27,7 +27,7 @@
 
   <div class="comment_links">
     <?php
-      unset($content['links']['comment']['#links']['comment-edit'], $content['links']['comment']['#links']['comment-delete']);
+      unset($content['links']['comment']['#links']['comment-delete']);
       print render($content['links']);
     ?>
   </div>
