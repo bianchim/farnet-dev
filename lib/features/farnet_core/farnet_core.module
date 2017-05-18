@@ -576,12 +576,13 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
 
   $output .= '<div class="flag-contacts-right">';
 
-  if (!empty($organisation->field_website)) {
-    $website = $node->field_website->value();
+  if (!empty($flag->field_ff_calls_for_projects_url)) {
+    $website = $flag->field_ff_calls_for_projects_url->value();
     $text = $website['title'];
     if (drupal_strlen($website['title']) == 0) {
       $text = $website['url'];
     }
+    $text = preg_replace('#^https?://#', '', $text);
     $output .= '<div class="field-items">' . l($text, $website['url'], ['attributes' => ['target' => '_blank']]) . '</div>';
   }
 
@@ -592,34 +593,80 @@ function _farnet_core_render_contact_details_flag($organisations, $contact_type,
   ) {
 
     $output .= '<div class="flag-contacts-social">';
+    $output .= '  <ul>';
     if (!empty($flag->field_ff_twitter)) {
       $twitter = $flag->field_ff_twitter->value();
-      $img_twitter = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_twitter.jpg" class="f-ico__social" alt="Twitter logo" />';
-      $output .= l($img_twitter, $twitter['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
+      if (!empty($twitter['url'])) {
+        $output .= '<li>';
+        $output .= l('<span class="sr-only">Twitter</span>', $twitter['url'], [
+          'attributes' =>
+              [
+                'target' => '_blank'
+                , 'class' => 'icon icon--twitter',
+              ]
+          , 'html' => TRUE,
+        ]
+        );
+        $output .= '</li>';
+      }
     }
 
     if (!empty($flag->field_ff_facebook)) {
       $facebook = $flag->field_ff_facebook->value();
-      $img_facebook = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_facebook.jpg" class="f-ico__social" alt="Facebook logo" />';
-      $output .= l($img_facebook, $facebook['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
+      if (!empty($facebook['url'])) {
+        $output .= '<li>';
+        $output .= l('<span class="sr-only">Facebook</span>', $facebook['url'], [
+          'attributes' =>
+            [
+              'target' => '_blank'
+              , 'class' => 'icon icon--facebook',
+            ]
+          , 'html' => TRUE,
+        ]
+        );
+        $output .= '</li>';
+      }
     }
 
     if (!empty($flag->field_ff_linkedin)) {
       $linkedin = $flag->field_ff_linkedin->value();
-      $img_linkedin = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_linkedin.jpg" class="f-ico__social" alt="Facebook logo" />';
-      $output .= l($img_linkedin, $linkedin['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
-
+      if (!empty($linkedin['url'])) {
+        $output .= '<li>';
+        $output .= l('<span class="sr-only">LinkedIn</span>', $linkedin['url'], [
+          'attributes' =>
+            [
+              'target' => '_blank'
+              , 'class' => 'icon icon--linkedin',
+            ]
+          , 'html' => TRUE,
+        ]
+        );
+        $output .= '</li>';
+      }
     }
 
     if (!empty($flag->field_ff_google)) {
       $google = $flag->field_ff_google->value();
-      $img_google = '<img src="' . $GLOBALS['base_url'] . '/' . path_to_theme() . '/framework/images/ico_facebook.jpg" class="f-ico__social" alt="Google logo" />';
-      $output .= l($img_google, $google['url'], ['attributes' => ['target' => '_blank'], 'html' => TRUE]);
+      if (!empty($google['url'])) {
+        $output .= '<li>';
+        $output .= l('<span class="sr-only">Google</span>', $google['url'], [
+          'attributes' =>
+            [
+              'target' => '_blank'
+              , 'class' => 'icon icon--google',
+            ]
+          , 'html' => TRUE,
+        ]
+        );
+        $output .= '</li>';
+      }
     }
+
+    $output .= '  </ul>';
     $output .= '</div>';
   }
 
-  $output .= '<div class="field-items">' . l(t('More on myFARNET'), '', ['attributes' => ['target' => '_blank']]) . '</div>';
+  $output .= '<div class="field-items">' . l(t('More on myFARNET'), 'myfarnet', ['attributes' => ['target' => '_blank', 'class' => 'icon icon--user btn btn-info-myfarnet btn-block']]) . '</div>';
 
   $output .= '</div>';
 

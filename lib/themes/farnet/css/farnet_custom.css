@@ -464,7 +464,35 @@ table.table-responsive.table-blue.table--white-borders th {
 }
 
 .flag-contacts-right {
-  display: none;
+  float: right;
+}
+
+.flag-contacts-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flag-contacts-social > ul > li {
+  display: inline-block;
+}
+
+.flag-contacts-social > ul > li >a.icon {
+  color: #5fadff;
+  font-size: 2em;
+}
+
+.flag-contacts-social > ul > li > a.icon:visited {
+  color: #5fadff;
+}
+
+.flag-contacts-social > ul > li > a.icon:hover {
+  color: #7fa3c7;
+}
+
+.btn-info-myfarnet {
+  border: 1px solid #5fadff;
+  background: #fff;
 }
 
 .node .comment_forbidden {
@@ -664,4 +692,19 @@ html.js fieldset.collapsible .fieldset-legend {
 .ff_field-label {
   font-weight: bold;
   float: left;
+}
+
+#table-factsheet-areas td,
+th {
+  border: 1px #000000 solid;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+#flag_country_region {
+  display: inline;
+}
+
+#flag_country_region:not(:last-child):after {
+  content: ', ';
 }
