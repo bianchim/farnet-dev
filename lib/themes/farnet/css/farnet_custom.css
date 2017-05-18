@@ -689,6 +689,11 @@ html.js fieldset.collapsible .fieldset-legend {
   text-decoration: none;
 }
 
+.ff_field-label {
+  font-weight: bold;
+  float: left;
+}
+
 #table-factsheet-areas td,
 th {
   border: 1px #000000 solid;
