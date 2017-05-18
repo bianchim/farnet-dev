@@ -424,6 +424,7 @@ features[user_permission][] = delete any community_public content
 features[user_permission][] = delete own community_hidden content
 features[user_permission][] = delete own community_private content
 features[user_permission][] = delete own community_public content
+features[user_permission][] = edit own comments
 features[user_permission][] = edit any community_hidden content
 features[user_permission][] = edit any community_private content
 features[user_permission][] = edit any community_public content
