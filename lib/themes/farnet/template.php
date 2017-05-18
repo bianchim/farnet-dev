@@ -1038,7 +1038,7 @@ function farnet_preprocess_node(&$variables) {
       $variables['comment_count'] = $comm_count;
     }
   }
-  if ($variables['type'] === 'factsheet_flag') {
+  if ($variables['type'] === 'factsheet_flag' && !empty($variables['field_publication_date'])) {
     $variables['ff_field_publication_date'] = date('m/d/Y', $variables['field_publication_date'][LANGUAGE_NONE][0]['value']);
   }
 
