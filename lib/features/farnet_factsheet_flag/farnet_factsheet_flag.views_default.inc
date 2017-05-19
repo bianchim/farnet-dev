@@ -325,6 +325,13 @@ function farnet_factsheet_flag_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page_factsheet_flag');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'FLAG Factsheets';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<em>FLAGs are partnerships between fisheries actors and other local private and public stakeholders. Together, they design and implement a local development strategy to address their area´s needs be they economic, social and/or environmental. Based on their strategy, the FLAGs select and provide funding to local projects that contribute to local development in their areas, involving thousands of local stakeholders.</em>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
 
   /* Display: Page */
@@ -338,7 +345,7 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis ultricies lorem non euismod. Donec gravida vitae massa id tincidunt. Curabitur enim risus, congue non mi non, pellentesque suscipit augue. Proin auctor turpis tortor, sit amet lobortis leo tincidunt et. Integer aliquet volutpat eros, eu interdum tellus scelerisque vitae. Mauris hendrerit erat vel diam venenatis, ut maximus enim blandit. Fusce erat urna, bibendum et mi id, dapibus tempus massa.';
+  $handler->display->display_options['header']['area']['content'] = 'The Member States have now started to implement the EMFF on the ground and to select their Fisheries Local Action Groups (FLAGs). The FARNET Support Unit presents the key elements of the local strategies and activities proposed by the FLAGs.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
