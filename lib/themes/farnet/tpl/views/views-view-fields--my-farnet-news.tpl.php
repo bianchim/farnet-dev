@@ -22,10 +22,18 @@ global $base_url;
     </div>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['nothing'])) : ?>
-        <?php print $fields['nothing']->content; ?>
+        <?php if (!empty($fields['comment_count'])) : ?>
+          <?php if ($fields['comment_count']->raw > 0) : ?>
+            <?php print $fields['nothing_1']->content; ?>
+          <?php else: ?>
+            <?php print $fields['nothing']->content; ?>
+          <?php endif; ?>
+        <?php else: ?>
+          <?php print $fields['nothing']->content; ?>
+        <?php endif; ?>
       <?php endif; ?>
-      <?php if (!empty($fields['created'])) : ?>
-        | <span><span><?php print $fields['created']->content; ?></span></span>
+      <?php if (!empty($fields['last_updated'])) : ?>
+        | <span><span><?php print $fields['last_updated']->content; ?></span></span>
       <?php endif; ?>
       <?php if (!empty($fields['comment_count'])) : ?>
         | <span class="icon icon--bubble u-color-light-blue"><span><?php print $fields['comment_count']->content; ?></span></span>
