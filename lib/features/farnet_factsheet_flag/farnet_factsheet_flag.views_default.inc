@@ -406,6 +406,11 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
 
+  /* Display: Page by country */
+  $handler = $view->new_display('page', 'Page by country', 'page_factsheet_flag_by_country');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'FLAG Factsheets by country';
+  $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets-list';
   $export['farnet_view_factsheets_flag'] = $view;
 
   return $export;
