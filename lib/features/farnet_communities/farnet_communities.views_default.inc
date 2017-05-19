@@ -1051,6 +1051,24 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: OG membership: OG membership from Content */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Comment: Last Comment */
+  $handler->display->display_options['relationships']['cid']['id'] = 'cid';
+  $handler->display->display_options['relationships']['cid']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['relationships']['cid']['field'] = 'cid';
+  /* Relationship: Comment: Author */
+  $handler->display->display_options['relationships']['uid_1']['id'] = 'uid_1';
+  $handler->display->display_options['relationships']['uid_1']['table'] = 'comment';
+  $handler->display->display_options['relationships']['uid_1']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid_1']['relationship'] = 'cid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
@@ -1130,6 +1148,23 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['label'] = '';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['separator'] = '';
+  /* Field: Field: First name */
+  $handler->display->display_options['fields']['field_firstname_1']['id'] = 'field_firstname_1';
+  $handler->display->display_options['fields']['field_firstname_1']['table'] = 'field_data_field_firstname';
+  $handler->display->display_options['fields']['field_firstname_1']['field'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname_1']['relationship'] = 'uid_1';
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_lastname_1']['id'] = 'field_lastname_1';
+  $handler->display->display_options['fields']['field_lastname_1']['table'] = 'field_data_field_lastname';
+  $handler->display->display_options['fields']['field_lastname_1']['field'] = 'field_lastname';
+  $handler->display->display_options['fields']['field_lastname_1']['relationship'] = 'uid_1';
+  $handler->display->display_options['fields']['field_lastname_1']['exclude'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Custom text 1';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_firstname_1] [field_lastname_1]';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Updated/commented date */
   $handler->display->display_options['sorts']['last_updated']['id'] = 'last_updated';
