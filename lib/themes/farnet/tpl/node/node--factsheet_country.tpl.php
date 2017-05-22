@@ -84,7 +84,7 @@ global $base_url;
           <th><?php print t('Employment in fisheries'); ?><span id="exp">*</span></th>
         </thead>
         <tbody>
-          <?php ;
+          <?php
           foreach ($content['group_factsheet_areas']['field_flag_areas']['#items'] as $item => $factsheet_area) {
             $node = node_load($factsheet_area['target_id']);
 
