@@ -99,7 +99,7 @@ global $base_url;
             $url = drupal_get_path_alias('node/' . $factsheet_area['target_id']);
             ?>
             <tr>
-              <td><a href="<?php print $base_url; ?>/<?php print $url; ?>"><?php print $node->field_title_official[LANGUAGE_NONE][0]['value']; ?></a></td>
+              <td><a href="<?php print $base_url; ?>/<?php print $url; ?>"><?php (!empty($node->field_title_official[LANGUAGE_NONE][0]['value'])) ? print $node->field_title_official[LANGUAGE_NONE][0]['value'] : ''; ?></a></td>
               <td><?php print $region; ?></td>
               <td><?php (!empty($node->field_ff_surface_area[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_surface_area[LANGUAGE_NONE][0]['value']) : ''; ?></td>
               <td><?php (!empty($node->field_ff_population[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_population[LANGUAGE_NONE][0]['value']) : ''; ?></td>
