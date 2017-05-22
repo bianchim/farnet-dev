@@ -259,7 +259,7 @@ function _farnet_maps_render_flag_factsheet_country($country, $theme) {
   drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
 
   $json_map_object = drupal_json_decode($json_map);
-  $json_map_object['layers'][0]['checkbox']['features'][0]['markers'][0] = $base_url . "/on-the-ground/maps/factsheet_flag_country/" . $country. "/" . $theme;
+  $json_map_object['layers'][0]['checkbox']['features'][0]['markers'][0] = $base_url . "/on-the-ground/maps/factsheet_flag_country/" . $country . "/" . $theme;
   $json_map = drupal_json_encode($json_map_object);
 
   return strip_tags($json_map);

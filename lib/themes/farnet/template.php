@@ -731,8 +731,6 @@ function farnet_preprocess_views_view(&$vars) {
  */
 function farnet_preprocess_views_view_fields(&$vars) {
 
-  //dpm($vars['view']->name);
-
   switch ($vars['view']->name) {
     case 'farnet_communities':
     case 'farnet_discussion':
