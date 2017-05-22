@@ -688,3 +688,23 @@ html.js fieldset.collapsible .fieldset-legend {
 #bubble-counter:hover {
   text-decoration: none;
 }
+
+.ff_field-label {
+  font-weight: bold;
+  float: left;
+}
+
+#table-factsheet-areas td,
+th {
+  border: 1px #000000 solid;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+#flag_country_region {
+  display: inline;
+}
+
+#flag_country_region:not(:last-child):after {
+  content: ', ';
+}

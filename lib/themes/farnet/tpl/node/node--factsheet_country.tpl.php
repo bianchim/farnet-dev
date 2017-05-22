@@ -4,6 +4,7 @@
  * @file
  * Override of node.tpl.php for GP Short Story.
  */
+global $base_url;
 ?>
 
 <div class="content clearfix">
@@ -71,7 +72,48 @@
     <?php print render($content['group_factsheet_clld_budget']['#suffix']); ?>
   <?php endif; ?>
 
-  <?php print render($content['group_factsheet_areas']); ?>
+  <?php if (!empty($content['group_factsheet_areas'])) : ?>
+    <div id="group-factsheet-areas" class="group_factsheet_areas field-group-tab"><h3><span><?php print t('FLAGs') ?></span></h3>
+      <table id="table-factsheet-areas">
+        <thead>
+          <th><?php print t('FLAG Name'); ?></th>
+          <th><?php print t('Region'); ?></th>
+          <th><?php print t('Surface area (km²)'); ?></th>
+          <th><?php print t('Population'); ?></th>
+          <th><?php print t('Population density (per km²)'); ?></th>
+          <th><?php print t('Employment in fisheries'); ?></th>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($content['group_factsheet_areas']['field_flag_areas']['#items'] as $item => $factsheet_area) {
+            $node = node_load($factsheet_area['target_id']);
+
+            $region = '';
+            if (!empty($node->field_collection_region)) {
+              foreach ($node->field_collection_region[LANGUAGE_NONE] as $field_collection_region) {
+                $entity = entity_revision_load('field_collection_item', $field_collection_region['revision_id']);
+                $region .= '<div id="flag_country_region">' . $entity->field_region[LANGUAGE_NONE][0]["value"] . '</div>';
+              }
+            }
+
+            $url = drupal_get_path_alias('node/' . $factsheet_area['target_id']);
+            ?>
+            <tr>
+              <td><a href="<?php print $base_url; ?>/<?php print $url; ?>"><?php print $node->title_original; ?></a></td>
+              <td><?php print $region; ?></td>
+              <td><?php (!empty($node->field_ff_surface_area[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_surface_area[LANGUAGE_NONE][0]['value']) : ''; ?></td>
+              <td><?php (!empty($node->field_ff_population[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_population[LANGUAGE_NONE][0]['value']) : ''; ?></td>
+              <td><?php (!empty($node->field_ff_population_density[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_population_density[LANGUAGE_NONE][0]['value']) : ''; ?></td>
+              <td><?php (!empty($node->field_ff_total_employment[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_total_employment[LANGUAGE_NONE][0]['value']) : ''; ?></td>
+            </tr>
+            <?php
+          }
+          ?>
+        </tbody>
+      </table>
+    </div>
+  <?php endif; ?>
+
   <?php print render($content['group_factsheet_national_network']); ?>
   <?php print render($content['group_factsheet_cooperation']); ?>
   <?php print render($content['group_factsheet_delivery_clld']); ?>
@@ -86,7 +128,7 @@
 
   <?php print render($content['group_factsheet_map']); ?>
 
-  <div class="u-mt-1em"></div>
+  <div class="u-mt-1em clearfix"></div>
 
   <?php if (!empty($content['group_ne_factsheet_publication']['field_publication_date'])) : ?>
     <?php print render($content['group_ne_factsheet_publication']['field_publication_date']); ?>

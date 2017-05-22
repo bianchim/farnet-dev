@@ -233,7 +233,16 @@
       <?php endif; ?>
     <?php endif; ?>
 
-    <div class="u-mt-1em"></div>
+    <div class="u-mt-1em clearfix"></div>
+
+    <?php if (isset($ff_field_publication_date)) : ?>
+      <div class="field field-label-inline clearfix">
+        <div class="ff_field-label"><?php print t('Publication date:'); ?>&nbsp;</div>
+        <div class="field-items">
+          <div class="field-item even"><?php print $ff_field_publication_date; ?></div>
+        </div>
+      </div>
+    <?php endif; ?>
 
     <div class="link-wrapper right">
       <?php print render($content['links']); ?>
