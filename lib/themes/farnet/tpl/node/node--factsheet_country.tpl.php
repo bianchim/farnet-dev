@@ -81,7 +81,7 @@ global $base_url;
           <th><?php print t('Surface area (km²)'); ?></th>
           <th><?php print t('Population'); ?></th>
           <th><?php print t('Population density (per km²)'); ?></th>
-          <th><?php print t('Employment in fisheries'); ?></th>
+          <th><?php print t('Employment in fisheries'); ?><span id="exp">*</span></th>
         </thead>
         <tbody>
           <?php
@@ -99,7 +99,7 @@ global $base_url;
             $url = drupal_get_path_alias('node/' . $factsheet_area['target_id']);
             ?>
             <tr>
-              <td><a href="<?php print $base_url; ?>/<?php print $url; ?>"><?php print $node->title_original; ?></a></td>
+              <td><a href="<?php print $base_url; ?>/<?php print $url; ?>"><?php print $node->field_title_official[LANGUAGE_NONE][0]['value']; ?></a></td>
               <td><?php print $region; ?></td>
               <td><?php (!empty($node->field_ff_surface_area[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_surface_area[LANGUAGE_NONE][0]['value']) : ''; ?></td>
               <td><?php (!empty($node->field_ff_population[LANGUAGE_NONE][0]['value'])) ? print round($node->field_ff_population[LANGUAGE_NONE][0]['value']) : ''; ?></td>
@@ -111,6 +111,7 @@ global $base_url;
           ?>
         </tbody>
       </table>
+      <div>(<span id="exp">*</span>)<?php print t('according to the information received from the FLAG'); ?></div>
     </div>
   <?php endif; ?>
 

@@ -708,3 +708,7 @@ th {
 #flag_country_region:not(:last-child):after {
   content: ', ';
 }
+
+#exp {
+  color: red;
+}
