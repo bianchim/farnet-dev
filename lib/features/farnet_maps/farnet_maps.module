@@ -204,6 +204,68 @@ function farnet_maps_form($form, &$form_state) {
 }
 
 /**
+ * Build the map rendering.
+ */
+function _farnet_maps_render_flag_factsheet_country($country, $theme) {
+  global $base_url;
+
+  // Default, map shows whole europe.
+  $zoom = 3;
+  $coord = [
+    'lat' => "42.0329",
+    'lng' => "27.4218",
+  ];
+
+  // Country & theme selected in exposed filter.
+  $country = (isset($country) && ($country !== 'All')) ? $country : 0;
+  $theme = (isset($theme) && ($theme !== 'All')) ? $theme : 0;
+
+  $center = '[
+    "' . $coord['lat'] . '",
+    "' . $coord['lng'] . '"
+  ]';
+
+  // Webtools JSON definition for a map.
+  $json_map = '{
+    "service": "map",
+    "sidebar": {
+      "options": {
+        "collapse": true
+      }
+     },
+    "map": {
+      "zoom": "' . $zoom . '",
+      "center": ' . $center . '
+    },
+    "layers": [
+      {
+        "checkbox": {
+          "label": "Elements",
+          "features": [
+            {
+              "label": "FLAG Factsheet",
+              "checked": true,
+              "markers": [
+                "http://myproject/url_to_get_geojson"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }';
+
+  // Use the webtools smart loader.
+  drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
+
+  $json_map_object = drupal_json_decode($json_map);
+  $json_map_object['layers'][0]['checkbox']['features'][0]['markers'][0] = $base_url . "/on-the-ground/maps/factsheet_flag_country/" . $country. "/" . $theme;
+  $json_map = drupal_json_encode($json_map_object);
+
+  return strip_tags($json_map);
+}
+
+/**
  * Provide the form submit callback.
  */
 function farnet_maps_form_submit($form, &$form_state) {
