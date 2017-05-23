@@ -29,8 +29,8 @@ global $base_url;
     endswitch; ?>
   </div>
   <div class="media-body">
-    <?php if (!empty($fields['title'])) : ?>
-      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title']->content; ?></h4>
+    <?php if (!empty($fields['title_field'])) : ?>
+      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title_field']->content; ?></h4>
     <?php endif; ?>
     <div class="media-heading farnet-listing__heading">
       <?php if (!empty($fields['field_farnet_abstract'])) : ?>

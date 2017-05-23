@@ -18,10 +18,10 @@ global $base_url;
     <?php endif; ?>
   </div>
   <div class="media-body">
-    <?php if (!empty($fields['title'])) : ?>
+    <?php if (!empty($fields['title_field'])) : ?>
       <h4 class="media-heading farnet-listing__heading">
         <?php if (!empty($fields['field_ff_code'])) : ?><?php print $fields['field_ff_code']->content; ?> - <?php endif; ?>
-        <?php print $fields['title']->content; ?>
+        <?php print $fields['title_field']->content; ?>
       </h4>
     <?php endif; ?>
     <!-- div class="farnet-listing__subheading">

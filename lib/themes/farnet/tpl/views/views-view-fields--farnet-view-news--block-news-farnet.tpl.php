@@ -11,5 +11,5 @@
   <span class="f-news-item__type"><?php print strip_tags($fields['type']->content); ?></span>
 </header>
 <p class="f-news-item__content">
-  <?php print strip_tags($fields['title']->content, '<a>'); ?>
+  <?php print strip_tags($fields['title_field']->content, '<a>'); ?>
 </p>
