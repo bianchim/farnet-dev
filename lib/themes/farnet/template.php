@@ -1082,7 +1082,19 @@ function farnet_preprocess_user_profile(&$variables) {
  */
 function farnet_block_view_alter(&$data, $block) {
 
-  if ($block->module == 'apachesolr_search') {
+  if (($block->bid == 'multisite_og_button-og-contextual-links') || ($block->bid == 'apachesolr_search-sort')) {
+    dpm($block);
+  }
+
+  if ($block->bid == 'apachesolr_search-sort') {
+    if (isset($data['content'])) {
+      $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="dropdown-menu">', $data['content']) : '');
+      $data['content'] = str_replace('<div class="item-list">', '', $data['content']);
+      $data['content'] = str_replace('</div>', '', $data['content']);
+    }
+  }
+
+  if (($block->module == 'apachesolr_search') && ($block->bid != 'apachesolr_search-sort')) {
     // Add classes to list.
     $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="list-group list-group-flush list-unstyled">', $data['content']) : '');
 
