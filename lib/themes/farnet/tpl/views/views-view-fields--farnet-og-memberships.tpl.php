@@ -16,8 +16,8 @@ $community_path = $base_url . '/' . $path_alias . '/#whats-news';
   </div>
   <div class="media-body">
     <div class="media-heading">
-      <?php if (!empty($fields['title'])) : ?>
-        <?php print $fields['title']->content; ?>
+      <?php if (!empty($fields['path'])) : ?>
+        <?php print $fields['path']->content; ?>
       <?php endif; ?>
     </div>
     <div class="farnet-listing__subheading">

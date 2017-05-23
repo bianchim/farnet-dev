@@ -41,17 +41,6 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = '[path]/about';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Group */
   $handler->display->display_options['fields']['group_group']['id'] = 'group_group';
   $handler->display->display_options['fields']['group_group']['table'] = 'field_data_group_group';
@@ -103,6 +92,49 @@ function farnet_communities_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
+  /* Field: Content: Group */
+  $handler->display->display_options['fields']['group_group']['id'] = 'group_group';
+  $handler->display->display_options['fields']['group_group']['table'] = 'field_data_group_group';
+  $handler->display->display_options['fields']['group_group']['field'] = 'group_group';
+  $handler->display->display_options['fields']['group_group']['label'] = '';
+  $handler->display->display_options['fields']['group_group']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['group_group']['type'] = 'og_group_subscribe';
+  $handler->display->display_options['fields']['group_group']['settings'] = array(
+    'field_name' => 'og_user_node',
+  );
+  /* Field: Farnet communities: Last updated date */
+  $handler->display->display_options['fields']['last_updated_date']['id'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['last_updated_date']['field'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['label'] = '';
+  $handler->display->display_options['fields']['last_updated_date']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Content count */
+  $handler->display->display_options['fields']['content_count']['id'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['content_count']['field'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['label'] = '';
+  $handler->display->display_options['fields']['content_count']['element_label_colon'] = FALSE;
+  /* Field: Content: Abstract */
+  $handler->display->display_options['fields']['field_farnet_abstract']['id'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['table'] = 'field_data_field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
+  $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   $handler->display->display_options['path'] = 'community/farnet_communities';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Communities';
@@ -608,13 +640,6 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Farnet communities: Last updated date */
   $handler->display->display_options['fields']['last_updated_date']['id'] = 'last_updated_date';
   $handler->display->display_options['fields']['last_updated_date']['table'] = 'farnet_communities';
@@ -627,6 +652,24 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['fields']['content_count']['field'] = 'content_count';
   $handler->display->display_options['fields']['content_count']['label'] = '';
   $handler->display->display_options['fields']['content_count']['element_label_colon'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['path']['alter']['text'] = '<a href="[path]">[title_field]</a>';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Contextual filter: OG membership: Entity id */
   $handler->display->display_options['arguments']['etid']['id'] = 'etid';
   $handler->display->display_options['arguments']['etid']['table'] = 'og_membership';
@@ -678,6 +721,52 @@ function farnet_communities_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="btn-more-link">
   <a href="community/farnet_communities" class="btn btn-info btn-block">All communities</a>
 </div>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Last updated date */
+  $handler->display->display_options['fields']['last_updated_date']['id'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['last_updated_date']['field'] = 'last_updated_date';
+  $handler->display->display_options['fields']['last_updated_date']['label'] = '';
+  $handler->display->display_options['fields']['last_updated_date']['element_label_colon'] = FALSE;
+  /* Field: Farnet communities: Content count */
+  $handler->display->display_options['fields']['content_count']['id'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['table'] = 'farnet_communities';
+  $handler->display->display_options['fields']['content_count']['field'] = 'content_count';
+  $handler->display->display_options['fields']['content_count']['label'] = '';
+  $handler->display->display_options['fields']['content_count']['element_label_colon'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['path'] = 'path';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => '',
+    'title_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['path']['alter']['text'] = '<a href="[path]">[title_field]</a>';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
 
   /* Display: Dashboard Block other */
   $handler = $view->new_display('block', 'Dashboard Block other', 'block_1');
