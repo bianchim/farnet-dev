@@ -685,6 +685,12 @@ function farnet_field_group_build_pre_render_alter(&$element) {
  * Implements theme_preprocess_views_view.
  */
 function farnet_preprocess_views_view(&$vars) {
+
+  if (($vars['name'] == "farnet_view_factsheets_flag")
+    && ($vars['view']->current_display == 'page_factsheet_flag_by_country')) {
+    $vars['map'] = _farnet_maps_render_flag_factsheet_country($vars['view']->exposed_raw_input['field_term_country_tid'], $vars['view']->exposed_raw_input['field_term_theme_tid']);
+  }
+
   if ($vars['name'] == "farnet_content_slider") {
     // Replace id on ul.
     $vars['rows'] = str_replace('flexslider_views_slideshow_farnet_content_slider-farnet_block_slider', 'flexslider_views_slideshow_view_content_slider_2-block', $vars['rows']);
@@ -705,6 +711,7 @@ function farnet_preprocess_views_view(&$vars) {
  * Implements theme_preprocess_views_view_fields.
  */
 function farnet_preprocess_views_view_fields(&$vars) {
+
   switch ($vars['view']->name) {
     case 'farnet_communities':
     case 'farnet_discussion':
