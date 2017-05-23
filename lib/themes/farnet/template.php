@@ -1082,10 +1082,6 @@ function farnet_preprocess_user_profile(&$variables) {
  */
 function farnet_block_view_alter(&$data, $block) {
 
-  if (($block->bid == 'multisite_og_button-og-contextual-links') || ($block->bid == 'apachesolr_search-sort')) {
-    dpm($block);
-  }
-
   if ($block->bid == 'apachesolr_search-sort') {
     if (isset($data['content'])) {
       $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="dropdown-menu">', $data['content']) : '');
