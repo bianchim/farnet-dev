@@ -723,3 +723,7 @@ th {
   width: 100%;
   float: none;
 }
+
+#exp {
+  color: red;
+}
