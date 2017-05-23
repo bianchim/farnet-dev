@@ -439,7 +439,8 @@ function farnet_preprocess_field(&$variables, $hook) {
   if (in_array($variables['element']['#field_name'], $element_percent_formated)) {
     $variables['field_item_class'] .= ' farnet-progress progress';
     foreach ($variables['items'] as $key => $item) {
-      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $item['#markup'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $item['#markup'] . '%">' . $item['#markup'] . '%</div>';
+      $value = intval($item['#markup']);
+      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $value . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $value . '%">' . $value . '%</div>';
     }
   }
 
