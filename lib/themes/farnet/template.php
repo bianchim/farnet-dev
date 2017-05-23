@@ -716,6 +716,10 @@ function farnet_preprocess_views_view_fields(&$vars) {
     case 'farnet_communities':
     case 'farnet_discussion':
     case 'my_farnet_all':
+    case 'my_farnet_cooperation-idea':
+    case 'my_farnet_discussion':
+    case 'my_farnet_event':
+    case 'my_farnet_news':
       $node = $vars['row']->nid;
       $path = 'node/' . $node;
       $vars['path_alias'] = drupal_get_path_alias($path);
