@@ -31,12 +31,12 @@
 
     <!-- Views handlers not strictly follow Drupal class name conventions. -->
     <rule ref="Drupal.NamingConventions.ValidClassName">
-        <exclude-pattern>modules/**/views/*.inc</exclude-pattern>
+        <exclude-pattern>**/views/*.inc</exclude-pattern>
     </rule>
 
     <!-- Views handlers not strictly follow Drupal function name conventions. -->
     <rule ref="Drupal.NamingConventions.ValidFunctionName">
-        <exclude-pattern>modules/**/views/*.inc</exclude-pattern>
+        <exclude-pattern>**/views/*.inc</exclude-pattern>
     </rule>
 
     <!-- Phing tasks require to use CamelCaps for argument names. -->
@@ -52,8 +52,12 @@
 
     <!-- Wysiwyg profiles exported in Features do not have a trailing period. -->
     <!-- Remove this once https://www.drupal.org/node/2724173 is in. -->
+    <!-- Features export comments often do not have a trailing period. -->
     <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
+        <!-- Remove once https://www.drupal.org/node/2724173 is in. -->
         <exclude-pattern>*.features.wysiwyg.inc</exclude-pattern>
+        <!-- Remove once https://www.drupal.org/node/2855159 is in. -->
+        <exclude-pattern>*.features.og_features_permission.inc</exclude-pattern>
     </rule>
 	
     <!-- Farnet Exclude Files -->
@@ -79,10 +83,13 @@
         <exclude-pattern>*.features.*.inc</exclude-pattern>
     </rule>
 
-    <!-- Features generated menu links often have too long comment strings. -->
+    <!-- Features generated files often have too long comment strings. -->
     <rule ref="Drupal.Files.LineLength.TooLong">
+        <!-- Remove once https://www.drupal.org/node/2855180 is in. -->
         <exclude-pattern>*.features.menu_links.inc</exclude-pattern>
         <exclude-pattern>*.features.user_permission.inc</exclude-pattern>
+        <!-- Remove once https://www.drupal.org/node/2855162 is in. -->
+        <exclude-pattern>*.features.og_features_permission.inc</exclude-pattern>
     </rule>
 
     <!-- Disable DrupalPractice rules that do not apply to non-contribs. -->

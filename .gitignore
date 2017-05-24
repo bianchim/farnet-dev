@@ -20,6 +20,10 @@ platform/
 tmp/
 vendor/
 framework/
+resources/git/hooks/pre-push/phpcs
+
+# Ignore license for subsites
+LICENSE.md
 
 # Ignore QA symlinks
 src/Phing/QualityAssuranceSubsiteTask.php
