@@ -24,7 +24,7 @@ global $base_url;
       <?php if (!empty($fields['nothing'])) : ?>
         <?php if (!empty($fields['comment_count'])) : ?>
           <?php if ($fields['comment_count']->raw > 0) : ?>
-            <?php print t("Last contribution : "); ?>
+            <?php print t("Last contribution :"); ?>
             <?php if(!empty($fields['uid']->raw)) : ?>
               <a href="<?php print $base_url; ?>/user/<?php print $fields['uid']->raw; ?>" title="<?php print t("View user profile."); ?>">
             <?php endif; ?>
@@ -33,7 +33,7 @@ global $base_url;
             <?php if(!empty($fields['uid']->raw)) : ?>
               <?php print '</a>'; ?>
             <?php endif; ?>
-            <?php print t("Last contribution : "); ?>
+            <?php print t("Last contribution :"); ?>
             <?php if(!empty($fields['uid']->raw)) : ?>
               <a href="<?php print $base_url; ?>/user/<?php print $fields['uid']->raw; ?>" title="<?php print t("View user profile."); ?>">
             <?php endif; ?>
