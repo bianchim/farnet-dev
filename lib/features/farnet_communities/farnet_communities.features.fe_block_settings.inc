@@ -77,8 +77,8 @@ function farnet_communities_default_fe_block_settings() {
         'weight' => 0,
       ),
       'farnet' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'farnet',
         'weight' => 10,
       ),

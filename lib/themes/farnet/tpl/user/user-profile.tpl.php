@@ -33,6 +33,8 @@
  *
  * @ingroup themeable
  */
+
+global $user;
 ?>
 <div class="profile clearfix"<?php print $attributes; ?>>
   <div class="row">
@@ -98,7 +100,7 @@
     <div class="col-md-6">
       <div class="contacts">
         <div class="user-profile-block-contact">
-          <a href="<?php echo base_path(); ?>user/<?php echo $user_id; ?>/contact" type="message" class="btn btn-info btn-block">
+          <a href="<?php echo base_path(); ?>user/<?php echo $user_id; ?>/contact" type="message" class="btn btn-info btn-block<?php echo (($user->uid === $user_id) ? ' disabled' : ''); ?>">
             <span class="glyphicon glyphicon-envelope"></span>
             Contact me</a>
         </div>

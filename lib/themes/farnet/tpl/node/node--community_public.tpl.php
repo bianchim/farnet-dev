@@ -108,6 +108,7 @@
     hide($content['links']);
     hide($content['title_field']);
     hide($content['field_farnet_abstract']);
+    hide($content['subscriptions_ui']);
     ?>
   </div>
 
@@ -128,7 +129,6 @@
   <?php print render($content); ?>
 
   <?php print render($content['links']); ?>
-
   <?php print render($content['comments']); ?>
 
 </div>

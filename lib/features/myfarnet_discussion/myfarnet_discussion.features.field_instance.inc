@@ -630,7 +630,7 @@ function myfarnet_discussion_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'none',
+          'action' => 'hide',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(

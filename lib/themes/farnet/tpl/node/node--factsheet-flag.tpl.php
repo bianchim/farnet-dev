@@ -93,6 +93,7 @@
       hide($content['comments']);
       hide($content['links']);
       hide($content['group_factsheet_flag_content']);
+      hide($content['group_factsheet_flag_area']);
       hide($content['group_factsheet_flag_social']);
       hide($content['group_factsheet_flag_contact']);
     ?>
@@ -122,6 +123,108 @@
         </div>
       </div>
     <?php endif; ?>
+
+    <?php if (!empty($content['group_factsheet_flag_area'])) : ?>
+      <?php print render($content['group_factsheet_flag_area']['#prefix']); ?>
+      <?php if (!empty($content['group_factsheet_flag_area']['field_ff_description'])) : ?>
+        <?php print render($content['group_factsheet_flag_area']['field_ff_description']); ?>
+      <?php endif; ?>
+      <?php if (!empty($content['group_factsheet_flag_area']['field_type_of_area'])) : ?>
+        <?php print render($content['group_factsheet_flag_area']['field_type_of_area']); ?>
+      <?php endif; ?>
+      <?php if (!empty($content['group_factsheet_flag_area']['field_sea_basins'])) : ?>
+        <?php print render($content['group_factsheet_flag_area']['field_sea_basins']); ?>
+      <?php endif; ?>
+      <?php if (!empty($content['group_factsheet_flag_area']['field_ff_protected_areas'])) : ?>
+        <?php print render($content['group_factsheet_flag_area']['field_ff_protected_areas']); ?>
+      <?php endif; ?>
+
+      <?php
+        if ((empty($content['group_factsheet_flag_area']['field_ff_population']))
+        || (empty($content['group_factsheet_flag_area']['field_ff_surface_area']))
+        || (empty($content['group_factsheet_flag_area']['field_ff_population_density']))
+        ) {
+          $bootstrap_class = 'col-sm-6';
+        } else {
+          $bootstrap_class = 'col-sm-4';
+        }
+      ?>
+
+      <div class="container-fluid farnet-stats">
+        <div class="row farnet-stats__row">
+          <div class="col-md-6 farnet-stats__left-col">
+            <div class="row">
+              <?php if (!empty($content['group_factsheet_flag_area']['field_ff_population'])) : ?>
+                <div class="<?php echo $bootstrap_class; ?> farnet-stats__col farnet-stats__col--with-border">
+                  <div class="field field-name-field-ff-population field-type-number-integer field-label-inline clearfix">
+                    <div class="field-label"><?php print render($content['group_factsheet_flag_area']['field_ff_population']['#title']); ?></div>
+                    <div class="field-items">
+                      <div class="field-item even"><?php print render($content['group_factsheet_flag_area']['field_ff_population']['0']['#markup']); ?></div>
+                    </div>
+                  </div>
+                </div>
+              <?php endif; ?>
+              <?php if (!empty($content['group_factsheet_flag_area']['field_ff_surface_area'])) : ?>
+                <div class="<?php echo $bootstrap_class; ?> farnet-stats__col farnet-stats__col--with-border">
+                  <div class="field field-name-field-ff-surface-area field-type-number-float field-label-inline clearfix">
+                    <div class="field-label"><?php print render($content['group_factsheet_flag_area']['field_ff_surface_area']['#title']); ?></div>
+                    <div class="field-items">
+                      <div class="field-item even"><?php print render($content['group_factsheet_flag_area']['field_ff_surface_area']['0']['#markup']); ?></div>
+                    </div>
+                  </div>
+                </div>
+              <?php endif; ?>
+              <?php if (!empty($content['group_factsheet_flag_area']['field_ff_population_density'])) : ?>
+                <div class="<?php echo $bootstrap_class; ?> farnet-stats__col">
+                  <div class="field field-name-field-ff-population-density field-type-number-float field-label-inline clearfix">
+                    <div class="field-label"><?php print render($content['group_factsheet_flag_area']['field_ff_population_density']['#title']); ?></div>
+                    <div class="field-items">
+                      <div class="field-item even"><?php print render($content['group_factsheet_flag_area']['field_ff_population_density']['0']['#markup']); ?></div>
+                    </div>
+                  </div>
+                </div>
+              <?php endif; ?>
+            </div>
+          </div>
+          <div class="col-md-6 farnet-stats__right-col">
+            <div class="row">
+              <div class="col-sm-4 farnet-stats__col">
+                <?php if (!empty($content['group_factsheet_flag_area']['field_ff_total_employment'])) : ?>
+                  <div class="field field-name-field-ff-total-employment field-type-number-float field-label-inline clearfix">
+                    <div class="field-label"><?php print render($content['group_factsheet_flag_area']['field_ff_total_employment']['#title']); ?></div>
+                    <div class="field-items">
+                      <div class="field-item even"><?php print render($content['group_factsheet_flag_area']['field_ff_total_employment']['0']['#markup']); ?></div>
+                    </div>
+                  </div>
+                <?php endif; ?>
+              </div>
+              <?php if ((!empty($content['group_factsheet_flag_area']['field_ff_fishing']))
+              || (!empty($content['group_factsheet_flag_area']['field_ff_aquaculture']))
+              || (!empty($content['group_factsheet_flag_area']['field_ff_processing']))
+              || (!empty($content['group_factsheet_flag_area']['field_ff_women_employment']))
+              ): ?>
+              <div class="col-sm-8 farnet-stats__col--blue-bg">
+                  <?php if (!empty($content['group_factsheet_flag_area']['field_ff_fishing'])) : ?>
+                    <?php print render($content['group_factsheet_flag_area']['field_ff_fishing']); ?>
+                  <?php endif; ?>
+                  <?php if (!empty($content['group_factsheet_flag_area']['field_ff_aquaculture'])) : ?>
+                    <?php print render($content['group_factsheet_flag_area']['field_ff_aquaculture']); ?>
+                  <?php endif; ?>
+                  <?php if (!empty($content['group_factsheet_flag_area']['field_ff_processing'])) : ?>
+                    <?php print render($content['group_factsheet_flag_area']['field_ff_processing']); ?>
+                  <?php endif; ?>
+                  <?php if (!empty($content['group_factsheet_flag_area']['field_ff_women_employment'])) : ?>
+                    <?php print render($content['group_factsheet_flag_area']['field_ff_women_employment']); ?>
+                  <?php endif; ?>
+                </div>
+              <?php endif; ?>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php print render($content['group_factsheet_flag_area']['#suffix']); ?>
+    <?php endif; ?>
+
     <?php print render($content); ?>
 
     <?php if (!empty($content['contact_details'])) : ?>
@@ -130,7 +233,16 @@
       <?php endif; ?>
     <?php endif; ?>
 
-    <div class="u-mt-1em"></div>
+    <div class="u-mt-1em clearfix"></div>
+
+    <?php if (isset($ff_field_publication_date)) : ?>
+      <div class="field field-label-inline clearfix">
+        <div class="ff_field-label"><?php print t('Publication date:'); ?>&nbsp;</div>
+        <div class="field-items">
+          <div class="field-item even"><?php print $ff_field_publication_date; ?></div>
+        </div>
+      </div>
+    <?php endif; ?>
 
     <div class="link-wrapper right">
       <?php print render($content['links']); ?>

@@ -32,7 +32,7 @@ function myfarnet_discussion_node_info() {
     'myfarnet_discussion' => array(
       'name' => t('Discussion'),
       'base' => 'node_content',
-      'description' => t('Discussion content type for Farnet Community'),
+      'description' => t('Discussion content type for FARNET Community'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

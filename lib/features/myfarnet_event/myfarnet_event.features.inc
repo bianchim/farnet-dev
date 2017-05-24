@@ -32,7 +32,7 @@ function myfarnet_event_node_info() {
     'myfarnet_event' => array(
       'name' => t('Event'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Event content type for FARNET Community'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

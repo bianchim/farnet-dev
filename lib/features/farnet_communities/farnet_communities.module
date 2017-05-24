@@ -388,6 +388,13 @@ function _farnet_communities_get_last_updated_date($gid) {
  */
 function farnet_communities_block_view_alter(&$data, $block) {
   switch ($block->bid) {
+    case 'subscriptions_ui-0':
+      $data['subject'] = 'Keep me informed on updates';
+      $data['content']['#attached']['js'] = array(
+        drupal_get_path('module', 'farnet_communities') . '/js/farnet_communities_subscriptions.js',
+      );
+      break;
+
     // Exclude content types from the og content creation button.
     case 'multisite_og_button-og-contextual-links':
       // Get allowed content types.

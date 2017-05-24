@@ -83,7 +83,6 @@
     <?php endif; ?>
 
     <?php print render($content['links']); ?>
-    <?php print render($content['subscriptions_ui']); ?>
     <?php print render($content['comments']); ?>
 
   </div>

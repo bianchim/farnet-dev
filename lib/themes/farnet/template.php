@@ -482,118 +482,6 @@ function farnet_preprocess_field(&$variables, $hook) {
     $variables['label_hidden'] = TRUE;
   }
 
-  // Flag Stats.
-  elseif ($variables['element']['#field_name'] == 'field_ff_population') {
-    $variables['suffix'] = '</div>';
-    if (!$variables['element']['#object']->field_ff_population_density and
-        !$variables['element']['#object']->field_ff_surface_area) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 farnet-stats__left-col"><div class="row"><div class="col-sm-4 farnet-stats__col">';
-      $variables['suffix'] .= '</div></div>';
-    }
-    else {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 farnet-stats__left-col"><div class="row"><div class="col-sm-4 farnet-stats__col farnet-stats__col--with-border">';
-    }
-  }
-  elseif ($variables['element']['#field_name'] == 'field_ff_surface_area') {
-    if (!$variables['element']['#object']->field_ff_population) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 farnet-stats__left-col"><div class="row">';
-    }
-    $variables['suffix'] = '</div>';
-    if (!$variables['element']['#object']->field_ff_population_density) {
-      $variables['suffix'] .= '</div></div>';
-      $variables['prefix'] .= '<div class="col-sm-4 farnet-stats__col">';
-    }
-    else {
-      $variables['prefix'] .= '<div class="col-sm-4 farnet-stats__col farnet-stats__col--with-border">';
-    }
-  }
-  elseif ($variables['element']['#field_name'] == 'field_ff_population_density') {
-    if (!$variables['element']['#object']->field_ff_population and
-        !$variables['element']['#object']->field_ff_surface_area) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 farnet-stats__left-col"><div class="row">';
-    }
-    $variables['prefix'] .= '<div class="col-sm-4 farnet-stats__col">';
-    $variables['suffix'] .= '</div></div></div>';
-  }
-  elseif ($variables['element']['#field_name'] == 'field_ff_total_employment') {
-    if (!$variables['element']['#object']->field_ff_population and
-      !$variables['element']['#object']->field_ff_surface_area and
-      !$variables['element']['#object']->field_ff_population_density) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row">';
-    }
-    $variables['prefix'] .= '<div class="col-md-6 farnet-stats__right-col"><div class="row"><div class="col-sm-4 farnet-stats__col">';
-    $variables['suffix'] .= '</div>';
-  }
-  elseif ($variables['element']['#field_name'] == 'field_ff_fishing') {
-    if (!$variables['element']['#object']->field_ff_population and
-      !$variables['element']['#object']->field_ff_surface_area and
-      !$variables['element']['#object']->field_ff_population_density and
-      !$variables['element']['#object']->field_ff_total_employment) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 flag-stats__right-col"><div class="row">';
-    }
-    elseif (!$variables['element']['#object']->field_ff_total_employment) {
-      $variables['prefix'] .= '<div class="col-md-6 flag-stats__right-col"><div class="row">';
-    }
-    if (!$variables['element']['#object']->field_ff_aquaculture and
-      !$variables['element']['#object']->field_ff_processing and
-      !$variables['element']['#object']->field_ff_women_employment) {
-      $variables['suffix'] .= '</div></div></div></div></div>';
-    }
-    $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
-  }
-  elseif ($variables['element']['#field_name'] == 'field_ff_aquaculture') {
-    if (!$variables['element']['#object']->field_ff_population and
-      !$variables['element']['#object']->field_ff_surface_area and
-      !$variables['element']['#object']->field_ff_population_density and
-      !$variables['element']['#object']->field_ff_total_employment and
-      !$variables['element']['#object']->field_ff_fishing) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 farnet-stats__col--blue-bg">';
-    }
-    elseif (!$variables['element']['#object']->field_ff_total_employment and
-      !$variables['element']['#object']->field_ff_fishing) {
-      $variables['prefix'] .= '<div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 farnet-stats__col--blue-bg">';
-    }
-    elseif (!$variables['element']['#object']->field_ff_fishing) {
-      $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
-    }
-    if (!$variables['element']['#object']->field_ff_processing and
-      !$variables['element']['#object']->field_ff_women_employment) {
-      $variables['suffix'] .= '</div></div></div></div></div>';
-    }
-  }
-  elseif ($variables['element']['#field_name'] == 'field_ff_processing') {
-    if (!$variables['element']['#object']->field_ff_population and
-      !$variables['element']['#object']->field_ff_surface_area and
-      !$variables['element']['#object']->field_ff_population_density and
-      !$variables['element']['#object']->field_ff_total_employment and
-      !$variables['element']['#object']->field_ff_fishing and
-      !$variables['element']['#object']->field_ff_aquaculture) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 farnet-stats__col--blue-bg">';
-    }
-    elseif (!$variables['element']['#object']->field_ff_fishing and
-      !$variables['element']['#object']->field_ff_aquaculture) {
-      $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
-    }
-    if (!$variables['element']['#object']->field_ff_women_employment) {
-      $variables['suffix'] .= '</div></div></div></div></div>';
-    }
-  }
-  elseif ($variables['element']['#field_name'] == 'field_ff_women_employment') {
-    if (!$variables['element']['#object']->field_ff_population and
-      !$variables['element']['#object']->field_ff_surface_area and
-      !$variables['element']['#object']->field_ff_population_density and
-      !$variables['element']['#object']->field_ff_total_employment and
-      !$variables['element']['#object']->field_ff_fishing and
-      !$variables['element']['#object']->field_ff_aquaculture) {
-      $variables['prefix'] .= '<div class="container-fluid farnet-stats"><div class="row farnet-stats__row"><div class="col-md-6 flag-stats__right-col"><div class="row"><div class="col-sm-8 farnet-stats__col--blue-bg">';
-      $variables['suffix'] .= '</div></div></div></div></div>';
-    }
-    elseif (!$variables['element']['#object']->field_ff_fishing) {
-      $variables['prefix'] .= '<div class="col-sm-8 farnet-stats__col--blue-bg">';
-    }
-    $variables['suffix'] .= '</div></div></div></div></div>';
-  }
-
   // Flag factsheet - Funding.
   switch ($variables['element']['#field_name']) {
     case 'field_ff_emff':
@@ -836,12 +724,27 @@ function farnet_preprocess_views_view(&$vars) {
  * Implements theme_preprocess_views_view_fields.
  */
 function farnet_preprocess_views_view_fields(&$vars) {
+  switch ($vars['view']->name) {
+    case 'farnet_communities':
+    case 'farnet_discussion':
+    case 'my_farnet_all':
+      $node = $vars['row']->nid;
+      $path = 'node/' . $node;
+      $vars['path_alias'] = drupal_get_path_alias($path);
+      break;
 
-  if ($vars['view']->name == 'farnet_content_slider') {
-    $vars['fields']['field_slide']->wrapper_prefix = '<span class="views-field views-field-field-slide">';
-    $vars['fields']['field_slide']->wrapper_suffix = '</span>';
-    $vars['fields']['nothing']->wrapper_prefix = '<span class="views-field views-field-nothing">';
-    $vars['fields']['nothing']->wrapper_suffix = '</span>';
+    case 'farnet_og_memberships':
+      $node = $vars['row']->node_og_membership_nid;
+      $path = 'node/' . $node;
+      $vars['path_alias'] = drupal_get_path_alias($path);
+      break;
+
+    case 'farnet_content_slider':
+      $vars['fields']['field_slide']->wrapper_prefix = '<span class="views-field views-field-field-slide">';
+      $vars['fields']['field_slide']->wrapper_suffix = '</span>';
+      $vars['fields']['nothing']->wrapper_prefix = '<span class="views-field views-field-nothing">';
+      $vars['fields']['nothing']->wrapper_suffix = '</span>';
+      break;
   }
 }
 
@@ -1136,6 +1039,10 @@ function farnet_preprocess_node(&$variables) {
     }
   }
 
+  if ($variables['type'] === 'factsheet_flag' && !empty($variables['field_publication_date'])) {
+    $variables['ff_field_publication_date'] = date('m/d/Y', $variables['field_publication_date'][LANGUAGE_NONE][0]['value']);
+  }
+
 }
 
 /**
@@ -1168,4 +1075,44 @@ function farnet_preprocess_user_profile(&$variables) {
 
   // Preprocess fields.
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_block_view_alter(&$data, $block) {
+
+  if ($block->module == 'apachesolr_search') {
+    // Add classes to list.
+    $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="list-group list-group-flush list-unstyled">', $data['content']) : '');
+
+    // Add classes to list items.
+    if (!is_array($data['content'])) {
+      preg_match_all('/<a(.*?)>/s', $data['content'], $matches);
+
+      if (isset($matches[0])) {
+        foreach ($matches[0] as $link) {
+          if (strpos($link, ' class="') !== FALSE) {
+            $new_link = str_replace(' class="', ' class="list-group-item ', $link);
+          }
+          elseif (strpos($link, " class='") !== FALSE) {
+            $new_link = str_replace(" class='", " class='list-group-item ", $link);
+          }
+          else {
+            $new_link = str_replace(' href=', ' class="list-group-item" href=', $link);
+          }
+          $data['content'] = str_replace($link, $new_link, $data['content']);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function farnet_preprocess_html(&$vars) {
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(1) == variable_get("myfarnet-first-login", NULL)) {
+    $vars['classes_array'][] = "myfarnet-first-login";
+  }
 }
