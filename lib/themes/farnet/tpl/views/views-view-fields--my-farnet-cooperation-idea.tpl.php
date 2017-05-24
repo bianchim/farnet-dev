@@ -49,7 +49,13 @@
         | <span<span><?php print $fields['last_updated']->content; ?></span><span>
       <?php endif; ?>
       <?php if (!empty($fields['comment_count'])) : ?>
-        | <span class="icon icon--bubble u-color-light-blue"><span><?php print $fields['comment_count']->content; ?></span><span>
+        <?php if ($fields['comment_count']->raw > 0) : ?>
+          <a href="<?php print $base_url; ?>/<?php print $path_alias; ?>#comments" id="bubble-counter">
+        <?php endif; ?>
+          | <span class="icon icon--bubble u-color-light-blue"><span><?php print $fields['comment_count']->content; ?></span></span>
+        <?php if ($fields['comment_count']->raw > 0) : ?>
+          <?php print '</a>'; ?>
+        <?php endif; ?>
       <?php endif; ?>
     </div>
   </div>
