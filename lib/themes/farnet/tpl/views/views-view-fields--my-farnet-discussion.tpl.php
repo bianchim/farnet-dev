@@ -21,10 +21,32 @@
     </div>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['nothing'])) : ?>
-        <?php print $fields['nothing']->content; ?>
+        <?php if (!empty($fields['comment_count'])) : ?>
+          <?php if ($fields['comment_count']->raw > 0) : ?>
+            <?php print t("Last contribution :"); ?>
+            <?php if(!empty($fields['uid']->raw)) : ?>
+              <a href="<?php print $base_url; ?>/user/<?php print $fields['uid']->raw; ?>" title="<?php print t("View user profile."); ?>">
+            <?php endif; ?>
+            <?php print $fields['nothing_1']->content; ?>
+          <?php else: ?>
+            <?php if(!empty($fields['uid']->raw)) : ?>
+              <?php print '</a>'; ?>
+            <?php endif; ?>
+            <?php print t("Last contribution :"); ?>
+            <?php if(!empty($fields['uid']->raw)) : ?>
+              <a href="<?php print $base_url; ?>/user/<?php print $fields['uid']->raw; ?>" title="<?php print t("View user profile."); ?>">
+            <?php endif; ?>
+            <?php print $fields['nothing']->content; ?>
+          <?php endif; ?>
+        <?php else: ?>
+          <?php print $fields['nothing']->content; ?>
+        <?php endif; ?>
+        <?php if(!empty($fields['uid']->raw)) : ?>
+          <?php print '</a>'; ?>
+        <?php endif; ?>
       <?php endif; ?>
-      <?php if (!empty($fields['created'])) : ?>
-        | <span><span><?php print $fields['created']->content; ?></span></span>
+      <?php if (!empty($fields['last_updated'])) : ?>
+        | <span><span><?php print $fields['last_updated']->content; ?></span></span>
       <?php endif; ?>
       <?php if (!empty($fields['comment_count'])) : ?>
         <?php if ($fields['comment_count']->raw > 0) : ?>
