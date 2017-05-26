@@ -186,12 +186,18 @@ global $base_url;
 
           <a id="content"></a>
 
-          <?php if (isset($node_type)): ?>
-            <p class="title"><?php print $node_type; ?></p>
+          <?php $myfarnet_class = (((isset($myfarnet_css)) && ($myfarnet_css == TRUE)) ? '-myfarnet' : '')?>
+
+          <?php if (isset($node_community_name)): ?>
+            <p class="title<?php print $myfarnet_class; ?>"><?php print $node_community_name; ?></p>
           <?php endif; ?>
           <?php if ($title && !drupal_is_front_page()): ?>
+            <?php if (strpos(current_path(), 'user/') !== FALSE): ?>
+              <?php $title = t('User profile'); ?>
+            <?php endif; ?>
+
             <?php print render($title_prefix); ?>
-            <h1 class="title<?php if (isset($node_type)): ?>-small<?php endif; ?>" id="content-title">
+            <h1 class="title<?php if ((isset($node_type))||(isset($node_community_name))): ?>-small<?php endif; ?><?php print $myfarnet_class; ?>" id="content-title">
               <?php print $title; ?>
             </h1>
             <?php print render($title_suffix); ?>

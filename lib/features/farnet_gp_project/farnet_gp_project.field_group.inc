@@ -547,7 +547,6 @@ function farnet_gp_project_field_group_info() {
     'label' => 'Metatag',
     'weight' => '11',
     'children' => array(
-      0 => 'og_group_ref',
       1 => 'scheduler_settings',
       2 => 'language',
     ),
