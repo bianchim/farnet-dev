@@ -95,7 +95,7 @@ global $user;
           <?php endif; ?>
           <br />
           <?php if (!empty($user_profile['field_organisation'])) : ?>
-            <?php $tid = $node->field_term_country['und'][0]['tid']; ?>
+            <?php $tid = $node->field_term_country['LANGUAGE_NONE'][0]['tid']; ?>
             <?php $term = taxonomy_term_load($tid); ?>
             <?php $name = $term->name; ?>
             <?php print $name ?>
