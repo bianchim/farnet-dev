@@ -62,7 +62,6 @@ global $user;
           <strong>
             <?php $nid = $user_profile['field_organisation']['#items'][0]['target_id']; ?>
             <?php $node = node_load($nid); ?>
-            <?php dsm ($user_profile) ?>
             <?php if (!empty($user_profile['field_organisation'])) : ?>
               <?php print $user_profile['field_organisation'][0]['#markup']; ?>
             <?php endif; ?>
