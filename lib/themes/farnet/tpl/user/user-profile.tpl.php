@@ -60,8 +60,10 @@ global $user;
             </strong><br />
           <?php endif; ?>
           <strong>
-            <?php $nid = $user_profile['field_organisation']['#items'][0]['target_id']; ?>
-            <?php $node = node_load($nid); ?>
+            <?php if (!empty($user_profile['field_organisation'])) : ?>
+              <?php $nid = $user_profile['field_organisation']['#items'][0]['target_id']; ?>
+              <?php $node = node_load($nid); ?>
+            <?php endif; ?>
             <?php if (!empty($user_profile['field_organisation'])) : ?>
               <?php print $user_profile['field_organisation'][0]['#markup']; ?>
             <?php endif; ?>
@@ -99,12 +101,13 @@ global $user;
             <?php $term = taxonomy_term_load($tid); ?>
             <?php $name = $term->name; ?>
             <?php print $name ?>
-          <?php elseif (!empty($user_profile['field_user_country'][0]['#title'])) : ?>
+          <?php elseif (!empty($user_profile['field_user_country'])) : ?>
             <?php print $user_profile['field_user_country'][0]['#title']; ?>
           <?php endif; ?>
         </p>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="contacts">
         <div class="user-profile-block-contact">
