@@ -709,6 +709,21 @@ th {
   content: ', ';
 }
 
+.search-sort-button a.btn {
+  border-color: #0065a2!important;
+  color: #0065a2!important;
+  font-weight: 600;
+}
+
+.search-sort-button .btn-group {
+  display: block;
+}
+
+.search-sort-button .btn-group a.btn-custom-search-sort {
+  width: 100%;
+  float: none;
+}
+
 #exp {
   color: red;
 }

@@ -439,7 +439,8 @@ function farnet_preprocess_field(&$variables, $hook) {
   if (in_array($variables['element']['#field_name'], $element_percent_formated)) {
     $variables['field_item_class'] .= ' farnet-progress progress';
     foreach ($variables['items'] as $key => $item) {
-      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $item['#markup'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $item['#markup'] . '%">' . $item['#markup'] . '%</div>';
+      $value = intval($item['#markup']);
+      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $value . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $value . '%">' . $value . '%</div>';
     }
   }
 
@@ -716,6 +717,10 @@ function farnet_preprocess_views_view_fields(&$vars) {
     case 'farnet_communities':
     case 'farnet_discussion':
     case 'my_farnet_all':
+    case 'my_farnet_cooperation-idea':
+    case 'my_farnet_discussion':
+    case 'my_farnet_event':
+    case 'my_farnet_news':
       $node = $vars['row']->nid;
       $path = 'node/' . $node;
       $vars['path_alias'] = drupal_get_path_alias($path);
@@ -1070,7 +1075,15 @@ function farnet_preprocess_user_profile(&$variables) {
  */
 function farnet_block_view_alter(&$data, $block) {
 
-  if ($block->module == 'apachesolr_search') {
+  if ($block->bid == 'apachesolr_search-sort') {
+    if (isset($data['content'])) {
+      $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="dropdown-menu">', $data['content']) : '');
+      $data['content'] = str_replace('<div class="item-list">', '', $data['content']);
+      $data['content'] = str_replace('</div>', '', $data['content']);
+    }
+  }
+
+  if (($block->module == 'apachesolr_search') && ($block->bid != 'apachesolr_search-sort')) {
     // Add classes to list.
     $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="list-group list-group-flush list-unstyled">', $data['content']) : '');
 
