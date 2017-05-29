@@ -720,8 +720,9 @@ th {
 }
 
 .search-sort-button .btn-group a.btn-custom-search-sort {
-  width: 100%;
+  /* width: 100%; */
   float: none;
+  margin-left: 14px;
 }
 
 #exp {
