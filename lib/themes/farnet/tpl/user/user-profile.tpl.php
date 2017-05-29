@@ -61,15 +61,16 @@ global $user;
           <?php endif; ?>
           <strong>
             <?php if (!empty($user_profile['field_organisation'])) : ?>
+              <?php $nid = $user_profile['field_organisation']['#items'][0]['target_id']; ?>
+              <?php $node = node_load($nid); ?>
+            <?php endif; ?>
+            <?php if (!empty($user_profile['field_organisation'])) : ?>
               <?php print $user_profile['field_organisation'][0]['#markup']; ?>
             <?php endif; ?>
             <?php if (!empty($user_profile['field_organisation_other'])) : ?>
               <?php print $user_profile['field_organisation_other'][0]['#markup']; ?>
             <?php endif; ?>
           </strong><br />
-          <?php if (!empty($user_profile['field_user_country'])) : ?>
-            <?php print $user_profile['field_user_country'][0]['#title']; ?>
-          <?php endif; ?>
         </p>
         <p>
           <?php if (!empty($user_profile['field_telephone'])) : ?>
@@ -94,9 +95,19 @@ global $user;
           <?php if (!empty($user_profile['field_city_select'])) : ?>
             <?php print $user_profile['field_city_select'][0]['#markup']; ?>
           <?php endif; ?>
+          <br />
+          <?php if (!empty($user_profile['field_organisation'])) : ?>
+            <?php $tid = $node->field_term_country[LANGUAGE_NONE][0]['tid']; ?>
+            <?php $term = taxonomy_term_load($tid); ?>
+            <?php $name = $term->name; ?>
+            <?php print $name ?>
+          <?php elseif (!empty($user_profile['field_user_country'])) : ?>
+            <?php print $user_profile['field_user_country'][0]['#title']; ?>
+          <?php endif; ?>
         </p>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="contacts">
         <div class="user-profile-block-contact">
