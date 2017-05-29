@@ -109,7 +109,6 @@ function _farnet_core_update_workbench_permissions() {
 
   $perm = [
     'view all unpublished content',
-    'moderate content from draft to published',
   ];
 
   // Role to grant.
