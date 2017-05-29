@@ -1057,7 +1057,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 80,
+        'weight' => 82,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1234,7 +1234,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 78,
+        'weight' => 80,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1782,7 +1782,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 82,
+        'weight' => 79,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1829,7 +1829,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 81,
+        'weight' => 77,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1924,7 +1924,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 79,
+        'weight' => 81,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2292,7 +2292,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 77,
+        'weight' => 78,
       ),
       'teaser' => array(
         'label' => 'above',
