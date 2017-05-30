@@ -49,6 +49,9 @@ function farnet_core_install() {
 
   // Update wysiwyg existing permissions for authenticated user.
   _farnet_core_update_wysiwyg_permissions();
+
+  // Update workbench existing permissions for FSU roles.
+  _farnet_core_update_workbench_permissions();
 }
 
 /**
@@ -104,4 +107,13 @@ function farnet_core_update_7002() {
  */
 function farnet_core_update_7003() {
   _farnet_core_update_wysiwyg_permissions();
+}
+
+/**
+ * Update workbench existing permissions for FSU roles.
+ *
+ * Implement hook_update_N().
+ */
+function farnet_core_update_7004() {
+  _farnet_core_update_workbench_permissions();
 }

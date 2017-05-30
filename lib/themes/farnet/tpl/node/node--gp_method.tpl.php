@@ -119,7 +119,7 @@
 
   <?php print render($content['contact_details']); ?>
 
-  <div class="u-mt-1em"></div>
+  <div class="u-mt-1em clearfix"></div>
 
   <?php if (!empty($content['group_gp_method_publication']['field_publication_date'])) : ?>
     <?php print render($content['group_gp_method_publication']['field_publication_date']); ?>

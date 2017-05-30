@@ -13,8 +13,8 @@
     <?php endif; ?>
   </div>
   <div class="media-body">
-    <?php if (!empty($fields['title'])) : ?>
-      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title']->content; ?></h4>
+    <?php if (!empty($fields['title_field'])) : ?>
+      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title_field']->content; ?></h4>
     <?php endif; ?>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['field_publication_date'])) : ?>

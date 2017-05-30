@@ -16,15 +16,15 @@ $community_path = $base_url . '/' . $path_alias . '/about';
   <div class="media-left">
   </div>
   <div class="media-body">
-    <?php if (!empty($fields['title'])) : ?>
+    <?php if (!empty($fields['title_field'])) : ?>
       <?php
         if ($member) {
-          $fields['title']->content = str_replace('/about', '', $fields['title']->content);
+          $fields['title_field']->content = str_replace('/about', '', $fields['title_field']->content);
           $community_path = str_replace('/about', '/#whats-news', $community_path);
         }
       ?>
 
-      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title']->content; ?></h4>
+      <h4 class="media-heading farnet-listing__heading"><?php print $fields['title_field']->content; ?></h4>
     <?php endif; ?>
     <div class="farnet-listing__subheading">
       <?php if (!empty($fields['content_count'])) : ?>

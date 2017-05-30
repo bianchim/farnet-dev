@@ -17,8 +17,8 @@
   <div class="media-body">
     <div class="field-content">
       <h4 class="media-heading farnet-listing__heading">
-        <?php if (!empty($fields['title'])) : ?>
-          <?php print $fields['title']->content . ' / '; ?>
+        <?php if (!empty($fields['title_field'])) : ?>
+          <?php print $fields['title_field']->content . ' / '; ?>
         <?php endif; ?>
         <?php if (!empty($fields['field_city'])) : ?>
           <?php print $fields['field_city']->content . ' - '; ?>

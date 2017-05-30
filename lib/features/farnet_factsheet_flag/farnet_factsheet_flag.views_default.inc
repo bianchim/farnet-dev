@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_factsheet_flag.views_default.inc
@@ -10,7 +9,6 @@
  */
 function farnet_factsheet_flag_views_default_views() {
   $export = array();
-
   $view = new view();
   $view->name = 'cooperation_idea_by_flag';
   $view->description = '';
@@ -20,7 +18,6 @@ function farnet_factsheet_flag_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -72,11 +69,9 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'cooperation_idea' => 'cooperation_idea',
   );
-
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_idea_by_flag');
   $handler->display->display_options['path'] = 'cooperation-idea-by-flag';
-
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_idea_by_flag');
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -99,7 +94,6 @@ function farnet_factsheet_flag_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -153,11 +147,9 @@ function farnet_factsheet_flag_views_default_views() {
     'gp_project' => 'gp_project',
     'gp_short_story' => 'gp_short_story',
   );
-
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_gp_by_flag');
   $handler->display->display_options['path'] = 'gp-by-flag';
-
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_gp_by_flag');
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -215,13 +207,6 @@ function farnet_factsheet_flag_views_default_views() {
     'image_style' => 'farnet_teaser',
     'image_link' => '',
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Publication date */
   $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
   $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
@@ -256,6 +241,13 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['fields']['field_farnet_abstract']['field'] = 'field_farnet_abstract';
   $handler->display->display_options['fields']['field_farnet_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_farnet_abstract']['element_label_colon'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Sort criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
   $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
@@ -325,6 +317,13 @@ function farnet_factsheet_flag_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page_factsheet_flag');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'FLAG Factsheets';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<em>FLAGs are partnerships between fisheries actors and other local private and public stakeholders. Together, they design and implement a local development strategy to address their area´s needs be they economic, social and/or environmental. Based on their strategy, the FLAGs select and provide funding to local projects that contribute to local development in their areas, involving thousands of local stakeholders.</em>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
 
   /* Display: Page */
@@ -338,7 +337,7 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis ultricies lorem non euismod. Donec gravida vitae massa id tincidunt. Curabitur enim risus, congue non mi non, pellentesque suscipit augue. Proin auctor turpis tortor, sit amet lobortis leo tincidunt et. Integer aliquet volutpat eros, eu interdum tellus scelerisque vitae. Mauris hendrerit erat vel diam venenatis, ut maximus enim blandit. Fusce erat urna, bibendum et mi id, dapibus tempus massa.';
+  $handler->display->display_options['header']['area']['content'] = 'The Member States have now started to implement the EMFF on the ground and to select their Fisheries Local Action Groups (FLAGs). The FARNET Support Unit presents the key elements of the local strategies and activities proposed by the FLAGs.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -398,6 +397,12 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
+
+  /* Display: Page by country */
+  $handler = $view->new_display('page', 'Page by country', 'page_factsheet_flag_by_country');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'FLAG Factsheets by country';
+  $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets-list';
 
   $export['farnet_view_factsheets_flag'] = $view;
 

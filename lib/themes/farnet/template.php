@@ -439,7 +439,8 @@ function farnet_preprocess_field(&$variables, $hook) {
   if (in_array($variables['element']['#field_name'], $element_percent_formated)) {
     $variables['field_item_class'] .= ' farnet-progress progress';
     foreach ($variables['items'] as $key => $item) {
-      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $item['#markup'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $item['#markup'] . '%">' . $item['#markup'] . '%</div>';
+      $value = intval($item['#markup']);
+      $variables['items'][$key]['#markup'] = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $value . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $value . '%">' . $value . '%</div>';
     }
   }
 
@@ -559,78 +560,59 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
       $suffix = '</div>';
       $element['#prefix'] = str_replace('<h3', '<h3 class="fr-heading"', $element['#prefix']) . '<div class="flag-partnership">';
       $element['#suffix'] .= $suffix;
+      // First group of fields.
       if ($element['field_ff_accountable_body']) {
         $element['field_ff_accountable_body']['#prefix'] = $prefix;
         $element['field_ff_accountable_body']['#suffix'] = $suffix;
       }
+      // Second group of fields.
       if ($element['field_ff_members_partnership']) {
         $element['field_ff_members_partnership']['#prefix'] = $prefix;
         $element['field_ff_members_partnership']['#suffix'] = $suffix;
       }
       // Third group of fields.
-      if ($element['field_ff_public_actors']) {
-        $element['field_ff_public_actors']['#prefix'] = $prefix_percent;
-        if ($element['field_ff_environmental_actors']) {
-          $element['field_ff_environmental_actors']['#suffix'] = $suffix;
-        }
-        elseif ($element['field_ff_other_non_fisheries']) {
-          $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
-        }
-        elseif ($element['field_ff_fisheries_actors']) {
-          $element['field_ff_fisheries_actors']['#suffix'] = $suffix;
-        }
-        else {
-          $element['field_ff_public_actors']['#suffix'] = $suffix;
-        }
-      }
-      elseif ($element['field_ff_fisheries_actors']) {
-        $element['field_ff_fisheries_actors']['#prefix'] = $prefix_percent;
-        if ($element['field_ff_environmental_actors']) {
-          $element['field_ff_environmental_actors']['#suffix'] = $suffix;
-        }
-        elseif ($element['field_ff_other_non_fisheries']) {
-          $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
-        }
-        else {
-          $element['field_ff_fisheries_actors']['#suffix'] = $suffix;
-        }
-      }
-      elseif ($element['field_ff_other_non_fisheries']) {
-        $element['field_ff_other_non_fisheries']['#prefix'] = $prefix_percent;
-        if ($element['field_ff_environmental_actors']) {
-          $element['field_ff_environmental_actors']['#suffix'] = $suffix;
-        }
-        else {
-          $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
-        }
-      }
-      elseif ($element['field_ff_environmental_actors']) {
-        $element['field_ff_environmental_actors']['#prefix'] = $prefix_percent;
-        $element['field_ff_environmental_actors']['#suffix'] = $suffix;
-      }
-      // Fourth group of fields.
       if ($element['field_ff_number_decision']) {
         $element['field_ff_number_decision']['#prefix'] = $prefix;
-        if ($element['field_ff_number_staff']) {
-          $element['field_ff_number_staff']['#suffix'] = $suffix;
-        }
-        elseif ($element['field_ff_number_assembly']) {
-          $element['field_ff_number_assembly']['#suffix'] = $suffix;
+        if ($element['field_ff_public_actors']) {
+          $element['field_ff_public_actors']['#suffix'] = $suffix;
         }
         else {
           $element['field_ff_number_decision']['#suffix'] = $suffix;
         }
       }
-      elseif ($element['field_ff_number_assembly']) {
+      elseif ($element['field_ff_public_actors']) {
+        $element['field_ff_public_actors']['#prefix'] = $prefix_percent;
+        $element['field_ff_public_actors']['#suffix'] = $suffix;
+      }
+      // Fourth group of fields.
+      if ($element['field_ff_number_assembly']) {
         $element['field_ff_number_assembly']['#prefix'] = $prefix;
-        if ($element['field_ff_number_staff']) {
-          $element['field_ff_number_staff']['#suffix'] = $suffix;
+        if ($element['field_ff_fisheries_actors']) {
+          if ($element['field_ff_environmental_actors']) {
+            $element['field_ff_environmental_actors']['#suffix'] = $suffix;
+          }
+          elseif ($element['field_ff_other_non_fisheries']) {
+            $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
+          }
+          else {
+            $element['field_ff_fisheries_actors']['#suffix'] = $suffix;
+          }
+        }
+        elseif ($element['field_ff_other_non_fisheries']) {
+          $element['field_ff_other_non_fisheries']['#prefix'] = $prefix_percent;
+          if ($element['field_ff_environmental_actors']) {
+            $element['field_ff_environmental_actors']['#suffix'] = $suffix;
+          }
+          else {
+            $element['field_ff_other_non_fisheries']['#suffix'] = $suffix;
+          }
         }
         else {
           $element['field_ff_number_assembly']['#suffix'] = $suffix;
         }
       }
-      elseif ($element['field_ff_number_staff']) {
+      // Fifth group of fields.
+      if ($element['field_ff_number_staff']) {
         $element['field_ff_number_staff']['#prefix'] = $prefix;
         $element['field_ff_number_staff']['#suffix'] = $suffix;
       }
@@ -704,6 +686,12 @@ function farnet_field_group_build_pre_render_alter(&$element) {
  * Implements theme_preprocess_views_view.
  */
 function farnet_preprocess_views_view(&$vars) {
+
+  if (($vars['name'] == "farnet_view_factsheets_flag")
+    && ($vars['view']->current_display == 'page_factsheet_flag_by_country')) {
+    $vars['map'] = _farnet_maps_render_flag_factsheet_country($vars['view']->exposed_raw_input['field_term_country_tid'], $vars['view']->exposed_raw_input['field_term_theme_tid']);
+  }
+
   if ($vars['name'] == "farnet_content_slider") {
     // Replace id on ul.
     $vars['rows'] = str_replace('flexslider_views_slideshow_farnet_content_slider-farnet_block_slider', 'flexslider_views_slideshow_view_content_slider_2-block', $vars['rows']);
@@ -724,10 +712,15 @@ function farnet_preprocess_views_view(&$vars) {
  * Implements theme_preprocess_views_view_fields.
  */
 function farnet_preprocess_views_view_fields(&$vars) {
+
   switch ($vars['view']->name) {
     case 'farnet_communities':
     case 'farnet_discussion':
     case 'my_farnet_all':
+    case 'my_farnet_cooperation-idea':
+    case 'my_farnet_discussion':
+    case 'my_farnet_event':
+    case 'my_farnet_news':
       $node = $vars['row']->nid;
       $path = 'node/' . $node;
       $vars['path_alias'] = drupal_get_path_alias($path);
@@ -1040,7 +1033,7 @@ function farnet_preprocess_node(&$variables) {
   }
 
   if ($variables['type'] === 'factsheet_flag' && !empty($variables['field_publication_date'])) {
-    $variables['ff_field_publication_date'] = date('m/d/Y', $variables['field_publication_date'][LANGUAGE_NONE][0]['value']);
+    $variables['ff_field_publication_date'] = date('d/m/Y', $variables['field_publication_date'][LANGUAGE_NONE][0]['value']);
   }
 
 }
@@ -1082,7 +1075,15 @@ function farnet_preprocess_user_profile(&$variables) {
  */
 function farnet_block_view_alter(&$data, $block) {
 
-  if ($block->module == 'apachesolr_search') {
+  if ($block->bid == 'apachesolr_search-sort') {
+    if (isset($data['content'])) {
+      $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="dropdown-menu">', $data['content']) : '');
+      $data['content'] = str_replace('<div class="item-list">', '', $data['content']);
+      $data['content'] = str_replace('</div>', '', $data['content']);
+    }
+  }
+
+  if (($block->module == 'apachesolr_search') && ($block->bid != 'apachesolr_search-sort')) {
     // Add classes to list.
     $data['content'] = (isset($data['content']) ? str_replace('<ul>', '<ul class="list-group list-group-flush list-unstyled">', $data['content']) : '');
 
