@@ -143,7 +143,6 @@ Feature: Test the presence of the content menu
     And I should see "Links with LEADER or other CLLD groups" in the ".region-sidebar-left" element
     And I should see "Partnership" in the ".region-sidebar-left" element
     And I should see "Visuals" in the ".region-sidebar-left" element
-    And I should see "Social media" in the ".region-sidebar-left" element
     And I should see "Map" in the ".region-sidebar-left" element
 
   @api

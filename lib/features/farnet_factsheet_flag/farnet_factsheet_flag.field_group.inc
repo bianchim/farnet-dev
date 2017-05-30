@@ -848,7 +848,7 @@ function farnet_factsheet_flag_field_group_info() {
       'label' => 'Social media',
       'instance_settings' => array(
         'id' => 'group_factsheet_flag_social',
-        'classes' => 'group-factsheet-flag-social field-group-tab',
+        'classes' => 'group-factsheet-flag-social field-group-tab no-menu-content',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
