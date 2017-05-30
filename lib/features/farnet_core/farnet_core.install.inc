@@ -50,13 +50,7 @@ function _farnet_core_update_permissions() {
     'editor',
   ];
 
-  // Set permissions.
-  $roles = user_roles();
-  foreach ($roles as $rid => $role) {
-    if (in_array($role, $roles_to_grant)) {
-      user_role_grant_permissions($rid, $perm);
-    }
-  }
+  _farnet_core_set_permissions($perm, $roles_to_grant);
 }
 
 /**
@@ -74,6 +68,63 @@ function _farnet_core_update_wysiwyg_permissions() {
     'authenticated user'
   ];
 
+  _farnet_core_set_permissions($perm, $roles_to_grant);
+}
+
+/**
+ * Update workbench existing permissions for FSU roles.
+ *
+ */
+function _farnet_core_update_workbench_permissions() {
+  $perm = [
+    'use workbench_moderation my drafts tab',
+    'use workbench_moderation needs review tab',
+    'moderate content from draft to needs_review',
+    'moderate content from needs_review to draft',
+  ];
+
+  // Role to grant.
+  $roles_to_grant = [
+    'FSU Administrator',
+    'FSU Editor',
+    'FSU Publisher',
+    'FSU Webmaster',
+    'editor',
+  ];
+
+  _farnet_core_set_permissions($perm, $roles_to_grant);
+
+  $perm = [
+    'moderate content from needs_review to published',
+  ];
+
+  // Role to grant.
+  $roles_to_grant = [
+    'FSU Administrator',
+    'FSU Publisher',
+    'FSU Webmaster',
+  ];
+
+  _farnet_core_set_permissions($perm, $roles_to_grant);
+
+  $perm = [
+    'view all unpublished content',
+  ];
+
+  // Role to grant.
+  $roles_to_grant = [
+    'FSU Administrator',
+    'FSU Webmaster',
+  ];
+
+  _farnet_core_set_permissions($perm, $roles_to_grant);
+}
+
+/**
+ * Set permissions for FSU user.
+ *
+ */
+function _farnet_core_set_permissions($perm, $roles_to_grant) {
   // Set permissions.
   $roles = user_roles();
   foreach ($roles as $rid => $role) {
@@ -82,4 +133,3 @@ function _farnet_core_update_wysiwyg_permissions() {
     }
   }
 }
-
