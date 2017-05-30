@@ -216,9 +216,36 @@ function _farnet_maps_render_flag_factsheet_country($country, $theme) {
     'lng' => "27.4218",
   ];
 
+  if (isset($country) && ($country !== 'All')) {
+    $cterm = taxonomy_term_load($country);
+
+    // Get the coordinates of the capital either from the term or geonames.
+    if (empty($cterm->field_latitude) || empty($cterm->field_longitude)) {
+      $country_code = $cterm->field_code[LANGUAGE_NONE][0]['value'];
+      $new_coord = _farnet_maps_get_country_coordinates($country_code);
+
+      // Save the  coordinates on the country.
+      if ($new_coord !== FALSE) {
+        $coord = $new_coord;
+        $zoom = 5;
+
+        $cterm->field_latitude[LANGUAGE_NONE][0]['value'] = [$coord['lat']];
+        $cterm->field_longitude[LANGUAGE_NONE][0]['value'] = [$coord['lng']];
+        taxonomy_term_save($cterm);
+      }
+    }
+    else {
+      $coord = [
+        'lat' => $cterm->field_latitude[LANGUAGE_NONE][0]['value'],
+        'lng' => $cterm->field_longitude[LANGUAGE_NONE][0]['value'],
+      ];
+      $zoom = 5;
+    }
+  }
+
   // Country & theme selected in exposed filter.
-  $country = (isset($country) && ($country !== 'All')) ? $country : 0;
-  $theme = (isset($theme) && ($theme !== 'All')) ? $theme : 0;
+  $country = (isset($country) && ($country !== 'All')) ? $country : 'all';
+  $theme = (isset($theme) && ($theme !== 'All')) ? $theme : 'all';
 
   $center = '[
     "' . $coord['lat'] . '",
@@ -248,6 +275,10 @@ function _farnet_maps_render_flag_factsheet_country($country, $theme) {
               "markers": [
                 "http://myproject/url_to_get_geojson"
               ]
+              ,
+              "options": {
+                "color": "blue"
+              }
             }
           ]
         }
@@ -257,7 +288,7 @@ function _farnet_maps_render_flag_factsheet_country($country, $theme) {
 
   // Use the webtools smart loader.
   drupal_add_js(variable_get('nexteuropa_webtools_smartloader_prurl', ''), 'external');
-
+  
   $json_map_object = drupal_json_decode($json_map);
   $json_map_object['layers'][0]['checkbox']['features'][0]['markers'][0] = $base_url . "/on-the-ground/maps/factsheet_flag_country/" . $country . "/" . $theme;
   $json_map = drupal_json_encode($json_map_object);
