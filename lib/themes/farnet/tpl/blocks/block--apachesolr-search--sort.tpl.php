@@ -44,9 +44,9 @@
  */
 ?>
 
-<div id="<?php print $block_html_id; ?>" class="block block-multisite-og-button community-create-button">
+<div id="<?php print $block_html_id; ?>" class="block search-sort-button">
   <div class="btn-group">
-    <a href="#" data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-expanded="false"><span class="icon icon--pencil u-color-orange"></span> Sort by</a>
+    <a href="#" data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-custom-search-sort" aria-expanded="false"><span class="icon icon--pencil u-color-orange"></span> Sort by</a>
     <?php print $content ?>
   </div>
 </div>
