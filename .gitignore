@@ -27,3 +27,8 @@ src/Phing/QualityAssuranceTask.php
 
 # Ignore subfolders & files for css framework
 # framework/*
+
+resources/git/hooks/pre-push/phpcs
+
+# Ignore license for subsites
+LICENSE.md

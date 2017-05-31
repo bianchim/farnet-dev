@@ -646,7 +646,8 @@ function farnet_communities_mail($key, &$message, $params) {
  */
 function _farnet_communities_community_preview($community) {
   unset($community->group_access);
-  return node_page_view($community);
+  $node_page_view = node_page_view($community);
+  return $node_page_view;
 }
 
 /**
