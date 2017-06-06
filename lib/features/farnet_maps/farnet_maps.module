@@ -73,8 +73,8 @@ function farnet_maps_form($form, &$form_state) {
   // Default, map shows whole europe.
   $zoom = 3;
   $coord = [
-    'lat' => "42.0329",
-    'lng' => "27.4218",
+    'lat' => "48.1074",
+    'lng' => "15.1171",
   ];
 
   if ($country) {
