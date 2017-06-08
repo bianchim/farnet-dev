@@ -80,7 +80,6 @@ function farnet_maps_form($form, &$form_state) {
   if ($country) {
     $cterm = taxonomy_term_load($country);
     if ((count(taxonomy_get_parents_all($country)) - 1) > 0) {
-
       // Get the coordinates of the capital either from the term or geonames.
       if (empty($cterm->field_latitude) || empty($cterm->field_longitude)) {
         $country_code = $cterm->field_code[LANGUAGE_NONE][0]['value'];
