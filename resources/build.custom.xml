@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="My subsite" default="help">
+<project name="Farnet" default="help">
     <target
-        name="build-custom"
-        description="You can use this target to perform custom build steps for your subsite. This target is part of both build-dev and build-dist."
+            name="build-custom"
+            description="You can use this target to perform custom build steps for your subsite. This target is part of both build-dev and build-dist."
     >
         <echo message="Running custom build" />
         <if>
@@ -19,4 +19,32 @@
             </else>
         </if>
     </target>
+    <target
+            name="build-dev"
+            description="Build a local development version of the subsite."
+            depends="
+            install-build-dependencies,
+            delete-dev,
+            make-dev,
+            link-dev-resources,
+            install-dev-dependencies,
+            link-behat,
+            setup-behat,
+            update-htaccess,
+            setup-files-directory,
+            setup-php-codesniffer,
+            download-development-modules,
+            build-custom"
+    />
+    <target
+            name="build-dist"
+            description="Build a version of the subsite intended to distribute as a release package."
+            depends="
+            install-build-dependencies,
+            delete-dist,
+            make-dist,
+            copy-dist-resources,
+            install-dist-dependencies,
+            build-custom"
+    />
 </project>

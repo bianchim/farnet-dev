@@ -1,0 +1,2868 @@
+Buildfile: /var/www/farnet-dev/build.xml
+ [property] Loading /var/www/farnet-dev/build.properties.local
+ [property] Loading /var/www/farnet-dev/build.properties
+ [property] Loading /var/www/farnet-dev/build.properties.dist
+     [echo] Loading Drush task.
+     [echo] Loading Behat task.
+     [echo] Importing the ContinuousPHP specific Phing tasks.
+     [echo] Loading PHP Codesniffer Configuration task.
+     [echo] Loading Drush Makefile task.
+     [echo] Loading Relative Symlink task.
+
+My subsite > install:
+
+    [chmod] Total files changed to 755: 1
+    [chmod] Total directories changed to 755: 6
+    [drush] Executing '/var/www/farnet-dev/bin/drush --db-url=mysql://root:root@127.0.0.1:3306/farnet --site-name='FARNET' --account-name=admin --account-pass=admin --account-mail=admin@example.com --nocolor --root=/var/www/farnet-dev/platform --yes --verbose site-install multisite_drupal_standard install_configure_form.update_status_module='array(FALSE,FALSE)''...
+Executing: mysql --defaults-extra-file=/tmp/drush_EWLkWR --database=farnet --host=127.0.0.1 --port=3306 --silent  < /tmp/drush_jbODwZ > /dev/null
+Sites directory /var/www/farnet-dev/platform/sites/default already      [notice]
+exists - proceeding.
+Executing: mysql --defaults-extra-file=/tmp/drush_4sbwlN --database=farnet --host=127.0.0.1 --port=3306 --silent  < /tmp/drush_yLPUDP > /dev/null
+Executing: mysql --defaults-extra-file=/tmp/drush_g3XaMI --database=farnet --host=127.0.0.1 --port=3306 --silent  < /tmp/drush_kaTP3K
+Executing: mysql --defaults-extra-file=/tmp/drush_MwIOeE --database=farnet --host=127.0.0.1 --port=3306 --silent  < /tmp/drush_izvrvG
+Starting Drupal installation. This takes a while. Consider using the        [ok]
+--notify global option.
+WD system: user module installed.                                         [info]
+WD system: user module enabled.                                           [info]
+WD system: node module installed.                                         [info]
+WD system: node module enabled.                                           [info]
+WD system: field_sql_storage module installed.                            [info]
+WD system: field_sql_storage module enabled.                              [info]
+WD system: field module installed.                                        [info]
+WD system: field module enabled.                                          [info]
+WD system: text module installed.                                         [info]
+WD system: text module enabled.                                           [info]
+WD system: filter module installed.                                       [info]
+WD system: filter module enabled.                                         [info]
+WD system: admin_menu module installed.                                   [info]
+WD system: admin_menu module enabled.                                     [info]
+WD system: advanced_help module installed.                                [info]
+WD system: advanced_help module enabled.                                  [info]
+WD system: apachesolr module installed.                                   [info]
+WD system: apachesolr module enabled.                                     [info]
+WD system: apachesolr_attachments module installed.                       [info]
+WD system: apachesolr_attachments module enabled.                         [info]
+WD system: search module installed.                                       [info]
+WD system: search module enabled.                                         [info]
+WD system: apachesolr_search module installed.                            [info]
+WD system: apachesolr_search module enabled.                              [info]
+WD system: locale module installed.                                       [info]
+WD system: locale module enabled.                                         [info]
+WD system: variable module installed.                                     [info]
+WD system: variable module enabled.                                       [info]
+WD system: i18n module installed.                                         [info]
+WD system: i18n module enabled.                                           [info]
+WD system: variable_store module installed.                               [info]
+WD system: variable_store module enabled.                                 [info]
+WD system: variable_realm module installed.                               [info]
+WD system: variable_realm module enabled.                                 [info]
+WD system: i18n_variable module installed.                                [info]
+WD system: i18n_variable module enabled.                                  [info]
+WD system: apachesolr_multisitesearch module installed.                   [info]
+WD system: apachesolr_multisitesearch module enabled.                     [info]
+WD system: autosave module installed.                                     [info]
+WD system: autosave module enabled.                                       [info]
+WD system: entity module installed.                                       [info]
+WD system: entity module enabled.                                         [info]
+WD system: ctools module installed.                                       [info]
+WD system: ctools module enabled.                                         [info]
+WD system: bean module installed.                                         [info]
+WD system: bean module enabled.                                           [info]
+WD system: bean_admin_ui module installed.                                [info]
+WD system: bean_admin_ui module enabled.                                  [info]
+WD system: entitycache module installed.                                  [info]
+WD system: entitycache module enabled.                                    [info]
+WD system: bean_entitycache module installed.                             [info]
+WD system: bean_entitycache module enabled.                               [info]
+WD system: uuid module installed.                                         [info]
+WD system: uuid module enabled.                                           [info]
+WD system: views module installed.                                        [info]
+WD system: views module enabled.                                          [info]
+WD system: date_api module installed.                                     [info]
+WD system: date_api module enabled.                                       [info]
+WD system: date module installed.                                         [info]
+WD system: date module enabled.                                           [info]
+WD system: features module installed.                                     [info]
+WD system: features module enabled.                                       [info]
+WD system: options module installed.                                      [info]
+WD system: options module enabled.                                        [info]
+WD system: list module installed.                                         [info]
+WD system: list module enabled.                                           [info]
+WD system: number module installed.                                       [info]
+WD system: number module enabled.                                         [info]
+WD system: taxonomy module installed.                                     [info]
+WD system: taxonomy module enabled.                                       [info]
+WD system: better_formats module installed.                               [info]
+WD system: better_formats module enabled.                                 [info]
+WD system: block module installed.                                        [info]
+WD system: block module enabled.                                          [info]
+WD system: jquery_update module installed.                                [info]
+WD system: jquery_update module enabled.                                  [info]
+WD system: bootstrap_gallery module installed.                            [info]
+WD system: bootstrap_gallery module enabled.                              [info]
+WD system: file module installed.                                         [info]
+WD system: file module enabled.                                           [info]
+WD system: image module installed.                                        [info]
+WD system: image module enabled.                                          [info]
+WD system: strongarm module installed.                                    [info]
+WD system: strongarm module enabled.                                      [info]
+WD system: captcha module installed.                                      [info]
+WD system: captcha module enabled.                                        [info]
+WD system: comment module installed.                                      [info]
+WD system: comment module enabled.                                        [info]
+WD system: contact module installed.                                      [info]
+WD system: contact module enabled.                                        [info]
+WD system: context module installed.                                      [info]
+WD system: context module enabled.                                        [info]
+WD system: ckeditor_lite module installed.                                [info]
+WD system: ckeditor_lite module enabled.                                  [info]
+WD system: facetapi module installed.                                     [info]
+WD system: facetapi module enabled.                                       [info]
+WD system: current_search module installed.                               [info]
+WD system: current_search module enabled.                                 [info]
+WD system: date_popup module installed.                                   [info]
+WD system: date_popup module enabled.                                     [info]
+WD system: path module installed.                                         [info]
+WD system: path module enabled.                                           [info]
+WD system: token module installed.                                        [info]
+WD system: token module enabled.                                          [info]
+WD system: pathauto module installed.                                     [info]
+WD system: pathauto module enabled.                                       [info]
+WD system: easy_breadcrumb module installed.                              [info]
+WD system: easy_breadcrumb module enabled.                                [info]
+WD system: field_group module installed.                                  [info]
+WD system: field_group module enabled.                                    [info]
+WD system: file_entity module installed.                                  [info]
+WD system: file_entity module enabled.                                    [info]
+WD system: i18n_string module installed.                                  [info]
+WD system: i18n_string module enabled.                                    [info]
+WD system: i18n_field module installed.                                   [info]
+WD system: i18n_field module enabled.                                     [info]
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_alt_text:image:label for text group field: Alt
+Text
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_alt_text:image:label for text group field: Alt
+Text
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_alt_text:image:description for text group
+field: Alternative text is used by screen readers, search engines,
+and when the image cannot be loaded. By adding alt text you improve
+accessibility and search engine optimization.
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_alt_text:image:description for text group
+field: Alternative text is used by screen readers, search engines,
+and when the image cannot be loaded. By adding alt text you improve
+accessibility and search engine optimization.
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_title_text:image:label for text group field:
+Title Text
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_title_text:image:label for text group field:
+Title Text
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_title_text:image:description for text group
+field: Title text is used in the tool tip when a user hovers their
+mouse over the image. Adding title text makes it easier to understand
+the context of an image and improves usability.
+WD i18n_string: Created string                                          [notice]
+field:field_file_image_title_text:image:description for text group
+field: Title text is used in the tool tip when a user hovers their
+mouse over the image. Adding title text makes it easier to understand
+the context of an image and improves usability.
+WD system: translation module installed.                                  [info]
+WD system: translation module enabled.                                    [info]
+WD system: i18n_node module installed.                                    [info]
+WD system: i18n_node module enabled.                                      [info]
+WD system: i18n_translation module installed.                             [info]
+WD system: i18n_translation module enabled.                               [info]
+WD system: i18n_taxonomy module installed.                                [info]
+WD system: i18n_taxonomy module enabled.                                  [info]
+WD system: libraries module installed.                                    [info]
+WD system: libraries module enabled.                                      [info]
+WD system: linkchecker module installed.                                  [info]
+WD system: linkchecker module enabled.                                    [info]
+WD system: media module installed.                                        [info]
+WD system: media module enabled.                                          [info]
+WD system: media_node module installed.                                   [info]
+WD system: media_node module enabled.                                     [info]
+WD system: menu module installed.                                         [info]
+WD system: menu module enabled.                                           [info]
+WD system: taxonomy_browser module installed.                             [info]
+WD system: taxonomy_browser module enabled.                               [info]
+WD system: multisite_settings_core module installed.                      [info]
+WD system: multisite_settings_core module enabled.                        [info]
+WD features: Rebuilding multisite_settings_core / variable.             [notice]
+WD features: Rebuild completed for multisite_settings_core /            [notice]
+variable.
+WD system: media_wysiwyg module installed.                                [info]
+WD system: media_wysiwyg module enabled.                                  [info]
+WD system: media_wysiwyg_view_mode module installed.                      [info]
+WD system: media_wysiwyg_view_mode module enabled.                        [info]
+WD system: media_internet module installed.                               [info]
+WD system: media_internet module enabled.                                 [info]
+WD system: wysiwyg module installed.                                      [info]
+WD system: wysiwyg module enabled.                                        [info]
+WD system: multisite_wysiwyg module installed.                            [info]
+WD system: multisite_wysiwyg module enabled.                              [info]
+WD features: Rebuilding multisite_wysiwyg / user_permission.            [notice]
+WD features: Rebuild completed for multisite_wysiwyg /                  [notice]
+user_permission.
+WD system: registry_autoload module installed.                            [info]
+WD system: registry_autoload module enabled.                              [info]
+WD system: multisite_config module installed.                             [info]
+WD system: multisite_config module enabled.                               [info]
+WD system: token_filter module installed.                                 [info]
+WD system: token_filter module enabled.                                   [info]
+WD system: nexteuropa_token module installed.                             [info]
+WD system: nexteuropa_token module enabled.                               [info]
+WD system: nexteuropa_token_ckeditor module installed.                    [info]
+WD system: nexteuropa_token_ckeditor module enabled.                      [info]
+WD system: node_export module installed.                                  [info]
+WD system: node_export module enabled.                                    [info]
+WD system: password_policy module installed.                              [info]
+WD system: password_policy module enabled.                                [info]
+WD system: print module installed.                                        [info]
+WD system: print module enabled.                                          [info]
+WD system: print_mail module installed.                                   [info]
+WD system: print_mail module enabled.                                     [info]
+WD system: print_pdf module installed.                                    [info]
+WD system: print_pdf module enabled.                                      [info]
+WD system: print_ui module installed.                                     [info]
+WD system: print_ui module enabled.                                       [info]
+WD system: print_pdf_mpdf module installed.                               [info]
+WD system: print_pdf_mpdf module enabled.                                 [info]
+WD system: votingapi module installed.                                    [info]
+WD system: votingapi module enabled.                                      [info]
+WD system: rate module installed.                                         [info]
+WD system: rate module enabled.                                           [info]
+WD system: entity_token module installed.                                 [info]
+WD system: entity_token module enabled.                                   [info]
+WD system: rules module installed.                                        [info]
+WD system: rules module enabled.                                          [info]
+WD system: rules_scheduler module installed.                              [info]
+WD system: rules_scheduler module enabled.                                [info]
+WD system: video module installed.                                        [info]
+WD system: video module enabled.                                          [info]
+WD system: video_ui module installed.                                     [info]
+WD system: video_ui module enabled.                                       [info]
+WD system: views_ui module installed.                                     [info]
+WD system: views_ui module enabled.                                       [info]
+WD system: workbench module installed.                                    [info]
+WD system: workbench module enabled.                                      [info]
+WD system: workbench_moderation module installed.                         [info]
+WD system: workbench_moderation module enabled.                           [info]
+WD i18n_string: Created string taxonomy:vocabulary:1:name for text      [notice]
+group taxonomy: classification
+WD i18n_string: Created string taxonomy:vocabulary:1:name for text      [notice]
+group taxonomy: classification
+WD system: cce_basic_config module installed.                             [info]
+WD system: cce_basic_config module enabled.                               [info]
+WD features: Enableing cce_basic_config / node.                         [notice]
+WD i18n_string: Created string                                          [notice]
+field:comment_body:comment_node_article:label for text group field:
+Comment
+WD i18n_string: Created string                                          [notice]
+field:comment_body:comment_node_article:label for text group field:
+Comment
+WD i18n_string: Created string node:type:article:name for text group    [notice]
+node: Article
+WD i18n_string: Created string node:type:article:name for text group    [notice]
+node: Article
+WD i18n_string: Created string node:type:article:title_label for text   [notice]
+group node: Title
+WD i18n_string: Created string node:type:article:title_label for text   [notice]
+group node: Title
+WD i18n_string: Created string node:type:article:description for text   [notice]
+group node: Use articles for time-sensitive content.
+WD i18n_string: Created string node:type:article:description for text   [notice]
+group node: Use articles for time-sensitive content.
+WD features: Enable completed for cce_basic_config / node.              [notice]
+WD features: Rebuilding cce_basic_config / variable.                    [notice]
+WD features: Rebuild completed for cce_basic_config / variable.         [notice]
+WD features: Rebuilding cce_basic_config / field_base.                  [notice]
+WD features: Rebuild completed for cce_basic_config / field_base.       [notice]
+WD features: Rebuilding cce_basic_config / field_instance.              [notice]
+WD i18n_string: Created string field:field_caption:image:label for      [notice]
+text group field: Caption
+WD i18n_string: Created string field:field_caption:image:label for      [notice]
+text group field: Caption
+WD i18n_string: Created string field:field_tags:video:label for text    [notice]
+group field: Tags
+WD i18n_string: Created string field:field_tags:video:label for text    [notice]
+group field: Tags
+WD i18n_string: Created string                                          [notice]
+field:field_video_description:video:label for text group field: Video
+Description
+WD i18n_string: Created string                                          [notice]
+field:field_video_description:video:label for text group field: Video
+Description
+WD i18n_string: Created string field:body:article:label for text        [notice]
+group field: Body
+WD i18n_string: Created string field:body:article:label for text        [notice]
+group field: Body
+WD i18n_string: Created string                                          [notice]
+field:field_article_publication_date:article:label for text group
+field: Publication date
+WD i18n_string: Created string                                          [notice]
+field:field_article_publication_date:article:label for text group
+field: Publication date
+WD i18n_string: Created string                                          [notice]
+field:field_article_publication_date:article:description for text
+group field: This content will be published on that date, if its
+workflow status is set to "Validated"
+WD i18n_string: Created string                                          [notice]
+field:field_article_publication_date:article:description for text
+group field: This content will be published on that date, if its
+workflow status is set to "Validated"
+WD i18n_string: Created string                                          [notice]
+field:field_article_unpublish_on:article:label for text group field:
+Unpublish on
+WD i18n_string: Created string                                          [notice]
+field:field_article_unpublish_on:article:label for text group field:
+Unpublish on
+WD i18n_string: Created string                                          [notice]
+field:field_article_unpublish_on:article:description for text group
+field: This content will be unpublished on that date, and its
+workflow status will be set to "Archived"
+WD i18n_string: Created string                                          [notice]
+field:field_article_unpublish_on:article:description for text group
+field: This content will be unpublished on that date, and its
+workflow status will be set to "Archived"
+WD i18n_string: Created string field:field_image:article:label for      [notice]
+text group field: Image
+WD i18n_string: Created string field:field_image:article:label for      [notice]
+text group field: Image
+WD i18n_string: Created string field:field_image:article:description    [notice]
+for text group field: Upload an image to go with this article.
+WD i18n_string: Created string field:field_image:article:description    [notice]
+for text group field: Upload an image to go with this article.
+WD i18n_string: Created string field:field_tags:article:label for       [notice]
+text group field: Tags
+WD i18n_string: Created string field:field_tags:article:label for       [notice]
+text group field: Tags
+WD i18n_string: Created string field:field_tags:article:description     [notice]
+for text group field: Enter a comma-separated list of words to
+describe your content.
+WD i18n_string: Created string field:field_tags:article:description     [notice]
+for text group field: Enter a comma-separated list of words to
+describe your content.
+WD i18n_string: Created string field:field_creator:user:label for       [notice]
+text group field: Creator
+WD i18n_string: Created string field:field_creator:user:label for       [notice]
+text group field: Creator
+WD i18n_string: Created string field:field_firstname:user:label for     [notice]
+text group field: First name
+WD i18n_string: Created string field:field_firstname:user:label for     [notice]
+text group field: First name
+WD i18n_string: Created string field:field_lastname:user:label for      [notice]
+text group field: Last name
+WD i18n_string: Created string field:field_lastname:user:label for      [notice]
+text group field: Last name
+WD features: Rebuild completed for cce_basic_config / field_instance.   [notice]
+WD features: Rebuilding cce_basic_config / filter.                      [notice]
+WD features: Rebuild completed for cce_basic_config / filter.           [notice]
+WD features: Rebuilding cce_basic_config / menu_custom.                 [notice]
+WD features: Rebuild completed for cce_basic_config / menu_custom.      [notice]
+WD features: Rebuilding cce_basic_config / menu_links.                  [notice]
+WD features: Rebuild completed for cce_basic_config / menu_links.       [notice]
+WD features: Rebuilding cce_basic_config / taxonomy.                    [notice]
+WD i18n_string: Created string taxonomy:vocabulary:2:name for text      [notice]
+group taxonomy: Tags
+WD i18n_string: Created string taxonomy:vocabulary:2:name for text      [notice]
+group taxonomy: Tags
+WD i18n_string: Created string taxonomy:vocabulary:2:description for    [notice]
+text group taxonomy: Use tags to group articles on similar topics
+into categories.
+WD i18n_string: Created string taxonomy:vocabulary:2:description for    [notice]
+text group taxonomy: Use tags to group articles on similar topics
+into categories.
+WD features: Rebuild completed for cce_basic_config / taxonomy.         [notice]
+WD features: Rebuilding cce_basic_config / user_permission.             [notice]
+WD features: Rebuild completed for cce_basic_config /                   [notice]
+user_permission.
+WD system: chosen module installed.                                       [info]
+WD system: chosen module enabled.                                         [info]
+WD system: chr module installed.                                          [info]
+WD system: chr module enabled.                                            [info]
+WD system: coffee module installed.                                       [info]
+WD system: coffee module enabled.                                         [info]
+WD system: color module installed.                                        [info]
+WD system: color module enabled.                                          [info]
+WD system: entityreference module installed.                              [info]
+WD system: entityreference module enabled.                                [info]
+WD i18n_string: Created string                                          [notice]
+field:og_membership_request:og_membership_type_default:label for text
+group field: Request message
+WD i18n_string: Created string                                          [notice]
+field:og_membership_request:og_membership_type_default:label for text
+group field: Request message
+WD i18n_string: Created string                                          [notice]
+field:og_membership_request:og_membership_type_default:description
+for text group field: This is the text a user may send to the group
+administrators.
+WD i18n_string: Created string                                          [notice]
+field:og_membership_request:og_membership_type_default:description
+for text group field: This is the text a user may send to the group
+administrators.
+WD system: og module installed.                                           [info]
+WD system: og module enabled.                                             [info]
+WD system: og_context module installed.                                   [info]
+WD system: og_context module enabled.                                     [info]
+WD system: context_entity_field module installed.                         [info]
+WD system: context_entity_field module enabled.                           [info]
+WD system: context_layouts module installed.                              [info]
+WD system: context_layouts module enabled.                                [info]
+WD system: context_ui module installed.                                   [info]
+WD system: context_ui module enabled.                                     [info]
+WD system: contextual module installed.                                   [info]
+WD system: contextual module enabled.                                     [info]
+WD system: css_injector module installed.                                 [info]
+WD system: css_injector module enabled.                                   [info]
+WD system: customerror module installed.                                  [info]
+WD system: customerror module enabled.                                    [info]
+WD system: dashboard module installed.                                    [info]
+WD system: dashboard module enabled.                                      [info]
+WD system: date_views module installed.                                   [info]
+WD system: date_views module enabled.                                     [info]
+WD system: dblog module installed.                                        [info]
+WD system: dblog module enabled.                                          [info]
+WD system: diff module installed.                                         [info]
+WD system: diff module enabled.                                           [info]
+WD system: ds module installed.                                           [info]
+WD system: ds module enabled.                                             [info]
+WD system: ds_ui module installed.                                        [info]
+WD system: ds_ui module enabled.                                          [info]
+WD system: entityreference_prepopulate module installed.                  [info]
+WD system: entityreference_prepopulate module enabled.                    [info]
+WD system: multisite_drupal_toolbox module installed.                     [info]
+WD system: multisite_drupal_toolbox module enabled.                       [info]
+WD system: mediafield module installed.                                   [info]
+WD system: mediafield module enabled.                                     [info]
+WD system: ecas module installed.                                         [info]
+WD system: ecas module enabled.                                           [info]
+WD system: views_bulk_operations module installed.                        [info]
+WD system: views_bulk_operations module enabled.                          [info]
+WD system: ecas_extra module installed.                                   [info]
+WD system: ecas_extra module enabled.                                     [info]
+WD system: ecas_import_users module installed.                            [info]
+WD system: ecas_import_users module enabled.                              [info]
+WD system: ecas_env module installed.                                     [info]
+WD system: ecas_env module enabled.                                       [info]
+WD features: Rebuilding ecas_env / variable.                            [notice]
+WD features: Rebuild completed for ecas_env / variable.                 [notice]
+WD system: email module installed.                                        [info]
+WD system: email module enabled.                                          [info]
+WD system: entity_translation module installed.                           [info]
+WD system: entity_translation module enabled.                             [info]
+WD system: i18n_menu module installed.                                    [info]
+WD system: i18n_menu module enabled.                                      [info]
+WD i18n_string: Created string menu:menu:main-menu:title for text       [notice]
+group menu: Main menu
+WD i18n_string: Created string menu:menu:main-menu:title for text       [notice]
+group menu: Main menu
+WD i18n_string: Created string menu:menu:main-menu:description for      [notice]
+text group menu: The Main menu is used on many sites to show the
+major sections of the site, often in a top navigation bar.
+WD i18n_string: Created string menu:menu:main-menu:description for      [notice]
+text group menu: The Main menu is used on many sites to show the
+major sections of the site, often in a top navigation bar.
+WD i18n_string: Created string menu:menu:management:title for text      [notice]
+group menu: Management
+WD i18n_string: Created string menu:menu:management:title for text      [notice]
+group menu: Management
+WD i18n_string: Created string menu:menu:management:description for     [notice]
+text group menu: The Management menu contains links for
+administrative tasks.
+WD i18n_string: Created string menu:menu:management:description for     [notice]
+text group menu: The Management menu contains links for
+administrative tasks.
+WD i18n_string: Created string menu:menu:menu-breadcrumb-menu:title     [notice]
+for text group menu: Breadcrumb menu
+WD i18n_string: Created string menu:menu:menu-breadcrumb-menu:title     [notice]
+for text group menu: Breadcrumb menu
+WD i18n_string: Created string                                          [notice]
+menu:menu:menu-breadcrumb-menu:description for text group menu: Items
+to be displayed before the automatic breadcrumb
+WD i18n_string: Created string                                          [notice]
+menu:menu:menu-breadcrumb-menu:description for text group menu: Items
+to be displayed before the automatic breadcrumb
+WD i18n_string: Created string menu:menu:menu-service-tools:title for   [notice]
+text group menu: Service tools
+WD i18n_string: Created string menu:menu:menu-service-tools:title for   [notice]
+text group menu: Service tools
+WD i18n_string: Created string                                          [notice]
+menu:menu:menu-service-tools:description for text group menu: Links
+to be put in the banner, according to IPG
+WD i18n_string: Created string                                          [notice]
+menu:menu:menu-service-tools:description for text group menu: Links
+to be put in the banner, according to IPG
+WD i18n_string: Created string menu:menu:navigation:title for text      [notice]
+group menu: Navigation
+WD i18n_string: Created string menu:menu:navigation:title for text      [notice]
+group menu: Navigation
+WD i18n_string: Created string menu:menu:navigation:description for     [notice]
+text group menu: The Navigation menu contains links intended for site
+visitors. Links are added to the Navigation menu automatically by
+some modules.
+WD i18n_string: Created string menu:menu:navigation:description for     [notice]
+text group menu: The Navigation menu contains links intended for site
+visitors. Links are added to the Navigation menu automatically by
+some modules.
+WD i18n_string: Created string menu:menu:user-menu:title for text       [notice]
+group menu: User menu
+WD i18n_string: Created string menu:menu:user-menu:title for text       [notice]
+group menu: User menu
+WD i18n_string: Created string menu:menu:user-menu:description for      [notice]
+text group menu: The User menu contains links related to the user's
+account, as well as the 'Log out' link.
+WD i18n_string: Created string menu:menu:user-menu:description for      [notice]
+text group menu: The User menu contains links related to the user's
+account, as well as the 'Log out' link.
+WD system: entity_translation_i18n_menu module installed.                 [info]
+WD system: entity_translation_i18n_menu module enabled.                   [info]
+WD system: title module installed.                                        [info]
+WD system: title module enabled.                                          [info]
+WD system: link module installed.                                         [info]
+WD system: link module enabled.                                           [info]
+WD system: i18n_user module installed.                                    [info]
+WD system: i18n_user module enabled.                                      [info]
+WD system: i18nviews module installed.                                    [info]
+WD system: i18nviews module enabled.                                      [info]
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:title for text group views: Bean
+Block Overview
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:title for text group views: Bean
+Block Overview
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:use_more_text for text group
+views: more
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:use_more_text for text group
+views: more
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:submit_button for
+text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:submit_button for
+text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:sort_asc_label for
+text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:sort_asc_label for
+text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:sort_desc_label for
+text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:exposed_form:sort_desc_label for
+text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:expose:offset_label for text
+group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:expose:offset_label for text
+group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:first for text group
+views: « first
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:first for text group
+views: « first
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:previous for text group
+views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:previous for text group
+views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:next for text group
+views: next ›
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:next for text group
+views: next ›
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:last for text group
+views: last »
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:pager:tags:last for text group
+views: last »
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:title:label for text
+group views: Title
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:title:label for text
+group views: Title
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:label:label for text
+group views: Label
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:label:label for text
+group views: Label
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:delta:label for text
+group views: Block Delta
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:delta:label for text
+group views: Block Delta
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:type:label for text
+group views: Type
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:type:label for text
+group views: Type
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:operations:label for
+text group views: Operations
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:field:bean:operations:label for
+text group views: Operations
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:filter:bean:type:expose:label for
+text group views: Type
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:filter:bean:type:expose:label for
+text group views: Type
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:filter:bean:title:expose:label for
+text group views: Title
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:filter:bean:title:expose:label for
+text group views: Title
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:filter:bean:label:expose:label for
+text group views: Label
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:default:filter:bean:label:expose:label for
+text group views: Label
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:use_more_text for text group
+views: more
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:use_more_text for text group
+views: more
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:submit_button for
+text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:submit_button for
+text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:sort_asc_label for
+text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:sort_asc_label for
+text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:sort_desc_label
+for text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:exposed_form:sort_desc_label
+for text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:expose:offset_label for
+text group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:expose:offset_label for
+text group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:first for text group
+views: « first
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:first for text group
+views: « first
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:previous for text
+group views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:previous for text
+group views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:next for text group
+views: next ›
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:next for text group
+views: next ›
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:last for text group
+views: last »
+WD i18n_string: Created string                                          [notice]
+views:bean_blocks_overview:admin_page:pager:tags:last for text group
+views: last »
+WD i18n_string: Created string views:comments_recent:default:title      [notice]
+for text group views: Recent comments
+WD i18n_string: Created string views:comments_recent:default:title      [notice]
+for text group views: Recent comments
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:use_more_text for text group views:
+more
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:use_more_text for text group views:
+more
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:submit_button for text
+group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:submit_button for text
+group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:reset_button_label for
+text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:reset_button_label for
+text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:exposed_sorts_label for
+text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:exposed_sorts_label for
+text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:relationship:comment:nid:label for text
+group views: Content
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:default:relationship:comment:nid:label for text
+group views: Content
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:field:node:title:label for text group
+views: Reply to
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:page:field:node:title:label for text group
+views: Reply to
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:comments_recent:block:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string views:tracker:default:title for text     [notice]
+group views: Recent posts
+WD i18n_string: Created string views:tracker:default:title for text     [notice]
+group views: Recent posts
+WD i18n_string: Created string views:tracker:default:use_more_text      [notice]
+for text group views: more
+WD i18n_string: Created string views:tracker:default:use_more_text      [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:tracker:default:pager:tags:first   [notice]
+for text group views: « first
+WD i18n_string: Created string views:tracker:default:pager:tags:first   [notice]
+for text group views: « first
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:tracker:default:pager:tags:next    [notice]
+for text group views: next ›
+WD i18n_string: Created string views:tracker:default:pager:tags:next    [notice]
+for text group views: next ›
+WD i18n_string: Created string views:tracker:default:pager:tags:last    [notice]
+for text group views: last »
+WD i18n_string: Created string views:tracker:default:pager:tags:last    [notice]
+for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:relationship:node:uid:label for text group
+views: author
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:relationship:node:uid:label for text group
+views: author
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:type:label for text group views:
+Type
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:type:label for text group views:
+Type
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:title:label for text group views:
+Title
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:title:label for text group views:
+Title
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:users:name:label for text group views:
+Author
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:users:name:label for text group views:
+Author
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:comment_count:label
+for text group views: Replies
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:comment_count:label
+for text group views: Replies
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:comment_count:decimal
+for text group views: .
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:comment_count:decimal
+for text group views: .
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:comment_count:separator
+for text group views: ,
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:comment_count:separator
+for text group views: ,
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:last_comment_timestamp:label
+for text group views: Last Post
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node_comment_statistics:last_comment_timestamp:label
+for text group views: Last Post
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:new_comments:decimal for text group
+views: .
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:new_comments:decimal for text group
+views: .
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:new_comments:separator for text
+group views: ,
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:new_comments:separator for text
+group views: ,
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:new_comments:suffix for text group
+views:  new
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:field:node:new_comments:suffix for text group
+views:  new
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:argument:node:uid_touch:exception:title for
+text group views: All
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:argument:node:uid_touch:exception:title for
+text group views: All
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:argument:node:uid_touch:title for text group
+views: Recent posts for %1
+WD i18n_string: Created string                                          [notice]
+views:tracker:default:argument:node:uid_touch:title for text group
+views: Recent posts for %1
+WD i18n_string: Created string views:tracker:page:use_more_text for     [notice]
+text group views: more
+WD i18n_string: Created string views:tracker:page:use_more_text for     [notice]
+text group views: more
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:sort_desc_label for text group views:
+Desc
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:exposed_form:sort_desc_label for text group views:
+Desc
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:tracker:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:tracker:page:pager:tags:first      [notice]
+for text group views: « first
+WD i18n_string: Created string views:tracker:page:pager:tags:first      [notice]
+for text group views: « first
+WD i18n_string: Created string views:tracker:page:pager:tags:previous   [notice]
+for text group views: ‹ previous
+WD i18n_string: Created string views:tracker:page:pager:tags:previous   [notice]
+for text group views: ‹ previous
+WD i18n_string: Created string views:tracker:page:pager:tags:next for   [notice]
+text group views: next ›
+WD i18n_string: Created string views:tracker:page:pager:tags:next for   [notice]
+text group views: next ›
+WD i18n_string: Created string views:tracker:page:pager:tags:last for   [notice]
+text group views: last »
+WD i18n_string: Created string views:tracker:page:pager:tags:last for   [notice]
+text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:expose:items_per_page_label for
+text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:expose:items_per_page_label for
+text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:next for text group views:
+next ›
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:next for text group views:
+next ›
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:last for text group views:
+last »
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:pager:tags:last for text group views:
+last »
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:empty:views:area:content for text group
+views: No files available.
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:empty:views:area:content for text group
+views: No files available.
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:sort:file_managed:timestamp:expose:label
+for text group views: Upload date
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:sort:file_managed:timestamp:expose:label
+for text group views: Upload date
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:sort:file_usage:count:expose:label for
+text group views: Use count
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:sort:file_usage:count:expose:label for
+text group views: Use count
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:filter:file_managed:filename:expose:label
+for text group views: File name
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:filter:file_managed:filename:expose:label
+for text group views: File name
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:filter:file_managed:type:expose:label for
+text group views: Type
+WD i18n_string: Created string                                          [notice]
+views:media_default:default:filter:file_managed:type:expose:label for
+text group views: Type
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:title for text group views:
+Library
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:title for text group views:
+Library
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:use_more_text for text group
+views: more
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:use_more_text for text group
+views: more
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:submit_button for
+text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:submit_button for
+text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:sort_asc_label for
+text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:sort_asc_label for
+text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:sort_desc_label for
+text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:exposed_form:sort_desc_label for
+text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:expose:offset_label for
+text group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:expose:offset_label for
+text group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:first for text group
+views: « first
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:first for text group
+views: « first
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:previous for text
+group views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:previous for text
+group views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:next for text group
+views: next ›
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:next for text group
+views: next ›
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:last for text group
+views: last »
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_1:pager:tags:last for text group
+views: last »
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:title for text group
+views: My files
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:title for text group
+views: My files
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:use_more_text for text
+group views: more
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:use_more_text for text
+group views: more
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:submit_button
+for text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:submit_button
+for text group views: Apply
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:reset_button_label
+for text group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:exposed_sorts_label
+for text group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:sort_asc_label
+for text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:sort_asc_label
+for text group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:sort_desc_label
+for text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:exposed_form:sort_desc_label
+for text group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:expose:items_per_page_label
+for text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:expose:offset_label
+for text group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:expose:offset_label
+for text group views: Offset
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:first for text
+group views: « first
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:first for text
+group views: « first
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:previous for
+text group views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:previous for
+text group views: ‹ previous
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:next for text
+group views: next ›
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:next for text
+group views: next ›
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:last for text
+group views: last »
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:pager:tags:last for text
+group views: last »
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:relationship:file_managed:uid:label
+for text group views: User who uploaded
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:relationship:file_managed:uid:label
+for text group views: User who uploaded
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:filter:file_managed:filename:expose:label
+for text group views: File name
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:filter:file_managed:filename:expose:label
+for text group views: File name
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:filter:file_managed:type:expose:label
+for text group views: Type
+WD i18n_string: Created string                                          [notice]
+views:media_default:media_browser_my_files:filter:file_managed:type:expose:label
+for text group views: Type
+WD i18n_string: Created string views:archive:default:title for text     [notice]
+group views: Monthly archive
+WD i18n_string: Created string views:archive:default:title for text     [notice]
+group views: Monthly archive
+WD i18n_string: Created string views:archive:default:use_more_text      [notice]
+for text group views: more
+WD i18n_string: Created string views:archive:default:use_more_text      [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:archive:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:archive:default:pager:tags:first   [notice]
+for text group views: « first
+WD i18n_string: Created string views:archive:default:pager:tags:first   [notice]
+for text group views: « first
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:archive:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:archive:default:pager:tags:next    [notice]
+for text group views: next ›
+WD i18n_string: Created string views:archive:default:pager:tags:next    [notice]
+for text group views: next ›
+WD i18n_string: Created string views:archive:default:pager:tags:last    [notice]
+for text group views: last »
+WD i18n_string: Created string views:archive:default:pager:tags:last    [notice]
+for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:archive:default:argument:node:created_year_month:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:archive:default:argument:node:created_year_month:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:archive:default:argument:node:created_year_month:title for text
+group views: %1
+WD i18n_string: Created string                                          [notice]
+views:archive:default:argument:node:created_year_month:title for text
+group views: %1
+WD i18n_string: Created string views:archive:page:use_more_text for     [notice]
+text group views: more
+WD i18n_string: Created string views:archive:page:use_more_text for     [notice]
+text group views: more
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:sort_desc_label for text group views:
+Desc
+WD i18n_string: Created string                                          [notice]
+views:archive:page:exposed_form:sort_desc_label for text group views:
+Desc
+WD i18n_string: Created string                                          [notice]
+views:archive:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:archive:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:archive:page:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:archive:page:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:archive:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:archive:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:archive:page:pager:tags:first      [notice]
+for text group views: « first
+WD i18n_string: Created string views:archive:page:pager:tags:first      [notice]
+for text group views: « first
+WD i18n_string: Created string views:archive:page:pager:tags:previous   [notice]
+for text group views: ‹ previous
+WD i18n_string: Created string views:archive:page:pager:tags:previous   [notice]
+for text group views: ‹ previous
+WD i18n_string: Created string views:archive:page:pager:tags:next for   [notice]
+text group views: next ›
+WD i18n_string: Created string views:archive:page:pager:tags:next for   [notice]
+text group views: next ›
+WD i18n_string: Created string views:archive:page:pager:tags:last for   [notice]
+text group views: last »
+WD i18n_string: Created string views:archive:page:pager:tags:last for   [notice]
+text group views: last »
+WD i18n_string: Created string views:archive:block:use_more_text for    [notice]
+text group views: more
+WD i18n_string: Created string views:archive:block:use_more_text for    [notice]
+text group views: more
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:archive:block:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:archive:block:pager:tags:first     [notice]
+for text group views: « first
+WD i18n_string: Created string views:archive:block:pager:tags:first     [notice]
+for text group views: « first
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:archive:block:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:archive:block:pager:tags:next      [notice]
+for text group views: next ›
+WD i18n_string: Created string views:archive:block:pager:tags:next      [notice]
+for text group views: next ›
+WD i18n_string: Created string views:archive:block:pager:tags:last      [notice]
+for text group views: last »
+WD i18n_string: Created string views:archive:block:pager:tags:last      [notice]
+for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:archive:block:argument:node:created_year_month:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:archive:block:argument:node:created_year_month:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:archive:block:argument:node:created_year_month:title for text
+group views: %1
+WD i18n_string: Created string                                          [notice]
+views:archive:block:argument:node:created_year_month:title for text
+group views: %1
+WD i18n_string: Created string views:frontpage:default:use_more_text    [notice]
+for text group views: more
+WD i18n_string: Created string views:frontpage:default:use_more_text    [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:last for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:frontpage:default:pager:tags:last for text group views: last »
+WD i18n_string: Created string views:frontpage:page:use_more_text for   [notice]
+text group views: more
+WD i18n_string: Created string views:frontpage:page:use_more_text for   [notice]
+text group views: more
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:frontpage:page:pager:tags:first    [notice]
+for text group views: « first
+WD i18n_string: Created string views:frontpage:page:pager:tags:first    [notice]
+for text group views: « first
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:frontpage:page:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:frontpage:page:pager:tags:next     [notice]
+for text group views: next ›
+WD i18n_string: Created string views:frontpage:page:pager:tags:next     [notice]
+for text group views: next ›
+WD i18n_string: Created string views:frontpage:page:pager:tags:last     [notice]
+for text group views: last »
+WD i18n_string: Created string views:frontpage:page:pager:tags:last     [notice]
+for text group views: last »
+WD i18n_string: Created string views:frontpage:feed:title for text      [notice]
+group views: Front page feed
+WD i18n_string: Created string views:frontpage:feed:title for text      [notice]
+group views: Front page feed
+WD i18n_string: Created string views:frontpage:feed:use_more_text for   [notice]
+text group views: more
+WD i18n_string: Created string views:frontpage:feed:use_more_text for   [notice]
+text group views: more
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:frontpage:feed:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string views:glossary:default:use_more_text     [notice]
+for text group views: more
+WD i18n_string: Created string views:glossary:default:use_more_text     [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:glossary:default:pager:tags:next   [notice]
+for text group views: next ›
+WD i18n_string: Created string views:glossary:default:pager:tags:next   [notice]
+for text group views: next ›
+WD i18n_string: Created string views:glossary:default:pager:tags:last   [notice]
+for text group views: last »
+WD i18n_string: Created string views:glossary:default:pager:tags:last   [notice]
+for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:field:node:title:label for text group views:
+Title
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:field:node:title:label for text group views:
+Title
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:field:users:name:label for text group views:
+Author
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:field:users:name:label for text group views:
+Author
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:field:node:changed:label for text group views:
+Last update
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:field:node:changed:label for text group views:
+Last update
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:argument:node:title:exception:title for text
+group views: All
+WD i18n_string: Created string                                          [notice]
+views:glossary:default:argument:node:title:exception:title for text
+group views: All
+WD i18n_string: Created string views:glossary:page:use_more_text for    [notice]
+text group views: more
+WD i18n_string: Created string views:glossary:page:use_more_text for    [notice]
+text group views: more
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:sort_asc_label for text group views:
+Asc
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:expose:items_per_page_options_all_label for
+text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:glossary:page:pager:tags:first     [notice]
+for text group views: « first
+WD i18n_string: Created string views:glossary:page:pager:tags:first     [notice]
+for text group views: « first
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:glossary:page:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:glossary:page:pager:tags:next      [notice]
+for text group views: next ›
+WD i18n_string: Created string views:glossary:page:pager:tags:next      [notice]
+for text group views: next ›
+WD i18n_string: Created string views:glossary:page:pager:tags:last      [notice]
+for text group views: last »
+WD i18n_string: Created string views:glossary:page:pager:tags:last      [notice]
+for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:argument:node:title:exception:title for
+text group views: All
+WD i18n_string: Created string                                          [notice]
+views:glossary:attachment:argument:node:title:exception:title for
+text group views: All
+WD i18n_string: Created string views:backlinks:default:use_more_text    [notice]
+for text group views: more
+WD i18n_string: Created string views:backlinks:default:use_more_text    [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:last for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:pager:tags:last for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:empty:views:area:content for text group
+views: No backlinks found.
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:empty:views:area:content for text group
+views: No backlinks found.
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:argument:search_node_links_to:nid:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:argument:search_node_links_to:nid:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:argument:search_node_links_to:nid:title for
+text group views: Pages that link to %1
+WD i18n_string: Created string                                          [notice]
+views:backlinks:default:argument:search_node_links_to:nid:title for
+text group views: Pages that link to %1
+WD i18n_string: Created string views:backlinks:page:use_more_text for   [notice]
+text group views: more
+WD i18n_string: Created string views:backlinks:page:use_more_text for   [notice]
+text group views: more
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:submit_button for text group views:
+Apply
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:expose:items_per_page_label for text group
+views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:backlinks:page:pager:tags:first    [notice]
+for text group views: « first
+WD i18n_string: Created string views:backlinks:page:pager:tags:first    [notice]
+for text group views: « first
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:backlinks:page:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:backlinks:page:pager:tags:next     [notice]
+for text group views: next ›
+WD i18n_string: Created string views:backlinks:page:pager:tags:next     [notice]
+for text group views: next ›
+WD i18n_string: Created string views:backlinks:page:pager:tags:last     [notice]
+for text group views: last »
+WD i18n_string: Created string views:backlinks:page:pager:tags:last     [notice]
+for text group views: last »
+WD i18n_string: Created string views:backlinks:block:use_more_text      [notice]
+for text group views: more
+WD i18n_string: Created string views:backlinks:block:use_more_text      [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:reset_button_label for text group
+views: Reset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:exposed_sorts_label for text group
+views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:expose:offset_label for text group views:
+Offset
+WD i18n_string: Created string views:backlinks:block:pager:tags:first   [notice]
+for text group views: « first
+WD i18n_string: Created string views:backlinks:block:pager:tags:first   [notice]
+for text group views: « first
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:pager:tags:previous for text group views: ‹
+previous
+WD i18n_string: Created string views:backlinks:block:pager:tags:next    [notice]
+for text group views: next ›
+WD i18n_string: Created string views:backlinks:block:pager:tags:next    [notice]
+for text group views: next ›
+WD i18n_string: Created string views:backlinks:block:pager:tags:last    [notice]
+for text group views: last »
+WD i18n_string: Created string views:backlinks:block:pager:tags:last    [notice]
+for text group views: last »
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:argument:search_node_links_to:nid:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:argument:search_node_links_to:nid:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:argument:search_node_links_to:nid:title for
+text group views: What links here
+WD i18n_string: Created string                                          [notice]
+views:backlinks:block:argument:search_node_links_to:nid:title for
+text group views: What links here
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:use_more_text for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:sort_asc_label for text
+group views: Asc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:exposed_form:sort_desc_label for text
+group views: Desc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:expose:items_per_page_label for
+text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:expose:items_per_page_label for
+text group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:next for text group views:
+next ›
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:next for text group views:
+next ›
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:last for text group views:
+last »
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:pager:tags:last for text group views:
+last »
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:argument:node:term_node_tid_depth:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:argument:node:term_node_tid_depth:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:argument:node:term_node_tid_depth:title
+for text group views: %1
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:argument:node:term_node_tid_depth:title
+for text group views: %1
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:argument:node:term_node_tid_depth_modifier:exception:title
+for text group views: All
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:default:argument:node:term_node_tid_depth_modifier:exception:title
+for text group views: All
+WD i18n_string: Created string views:taxonomy_term:page:use_more_text   [notice]
+for text group views: more
+WD i18n_string: Created string views:taxonomy_term:page:use_more_text   [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:last for text group views: last
+»
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:page:pager:tags:last for text group views: last
+»
+WD i18n_string: Created string views:taxonomy_term:feed:use_more_text   [notice]
+for text group views: more
+WD i18n_string: Created string views:taxonomy_term:feed:use_more_text   [notice]
+for text group views: more
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:submit_button for text group
+views: Apply
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:reset_button_label for text
+group views: Reset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:exposed_sorts_label for text
+group views: Sort by
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:sort_asc_label for text group
+views: Asc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:exposed_form:sort_desc_label for text group
+views: Desc
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:expose:items_per_page_label for text
+group views: Items per page
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:expose:items_per_page_options_all_label
+for text group views: - All -
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:expose:offset_label for text group
+views: Offset
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:first for text group views: «
+first
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:previous for text group views:
+‹ previous
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:next for text group views: next
+›
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:last for text group views: last
+»
+WD i18n_string: Created string                                          [notice]
+views:taxonomy_term:feed:pager:tags:last for text group views: last
+»
+WD system: language_selector_page module installed.                       [info]
+WD system: language_selector_page module enabled.                         [info]
+WD system: language_selector_site module installed.                       [info]
+WD system: language_selector_site module enabled.                         [info]
+WD system: smart_trim module installed.                                   [info]
+WD system: smart_trim module enabled.                                     [info]
+WD system: transliteration module installed.                              [info]
+WD system: transliteration module enabled.                                [info]
+WD system: version_management module installed.                           [info]
+WD system: version_management module enabled.                             [info]
+WD system: nexteuropa_core module installed.                              [info]
+WD system: nexteuropa_core module enabled.                                [info]
+WD features: Rebuilding nexteuropa_core / variable.                     [notice]
+WD features: Rebuild completed for nexteuropa_core / variable.          [notice]
+WD features: Rebuilding nexteuropa_core / field_base.                   [notice]
+WD features: Rebuild completed for nexteuropa_core / field_base.        [notice]
+WD system: tmgmt module installed.                                        [info]
+WD system: tmgmt module enabled.                                          [info]
+WD system: tmgmt_field module installed.                                  [info]
+WD system: tmgmt_field module enabled.                                    [info]
+WD system: tmgmt_entity module installed.                                 [info]
+WD system: tmgmt_entity module enabled.                                   [info]
+WD system: tmgmt_ui module installed.                                     [info]
+WD system: tmgmt_ui module enabled.                                       [info]
+WD system: tmgmt_entity_ui module installed.                              [info]
+WD system: tmgmt_entity_ui module enabled.                                [info]
+WD system: tmgmt_file module installed.                                   [info]
+WD system: tmgmt_file module enabled.                                     [info]
+WD system: tmgmt_i18n_string module installed.                            [info]
+WD system: tmgmt_i18n_string module enabled.                              [info]
+WD system: tmgmt_language_combination module installed.                   [info]
+WD system: tmgmt_language_combination module enabled.                     [info]
+WD system: tmgmt_local module installed.                                  [info]
+WD i18n_string: Created string                                          [notice]
+field:tmgmt_translation_skills:user:label for text group field:
+Translation skills
+WD i18n_string: Created string                                          [notice]
+field:tmgmt_translation_skills:user:label for text group field:
+Translation skills
+WD system: tmgmt_local module enabled.                                    [info]
+WD system: tmgmt_locale module installed.                                 [info]
+WD system: tmgmt_locale module enabled.                                   [info]
+WD system: tmgmt_workbench module installed.                              [info]
+WD system: tmgmt_workbench module enabled.                                [info]
+WD system: nexteuropa_multilingual module installed.                      [info]
+WD system: nexteuropa_multilingual module enabled.                        [info]
+WD features: Rebuilding nexteuropa_multilingual / field_base.           [notice]
+WD features: Rebuild completed for nexteuropa_multilingual /            [notice]
+field_base.
+WD system: og_ui module installed.                                        [info]
+WD system: og_ui module enabled.                                          [info]
+WD system: og_access module installed.                                    [info]
+WD system: og_access module enabled.                                      [info]
+WD system: multisite_workbench_moderation_view module installed.          [info]
+WD system: multisite_workbench_moderation_view module enabled.            [info]
+WD system: og_linkchecker module installed.                               [info]
+WD system: og_linkchecker module enabled.                                 [info]
+WD system: tmgmt_og module installed.                                     [info]
+WD i18n_string: Created string field:og_group_ref:tmgmt_job:label for   [notice]
+text group field: Groups audience
+WD i18n_string: Created string field:og_group_ref:tmgmt_job:label for   [notice]
+text group field: Groups audience
+WD system: tmgmt_og module enabled.                                       [info]
+WD system: workbench_og module installed.                                 [info]
+WD system: workbench_og module enabled.                                   [info]
+WD system: views_bootstrap module installed.                              [info]
+WD system: views_bootstrap module enabled.                                [info]
+WD system: linkchecker_bean module installed.                             [info]
+WD system: linkchecker_bean module enabled.                               [info]
+WD system: rules_admin module installed.                                  [info]
+WD system: rules_admin module enabled.                                    [info]
+WD system: scheduler module installed.                                    [info]
+WD system: scheduler module enabled.                                      [info]
+WD system: scheduler_workbench module installed.                          [info]
+WD system: scheduler_workbench module enabled.                            [info]
+WD i18n_string: Created string field:title_field:editorial_team:label   [notice]
+for text group field: Title
+WD i18n_string: Created string field:title_field:editorial_team:label   [notice]
+for text group field: Title
+WD system: nexteuropa_editorial module installed.                         [info]
+WD i18n_string: Created string field:group_group:#allowed_values:0      [notice]
+for text group field: Not a group
+WD i18n_string: Created string field:group_group:#allowed_values:0      [notice]
+for text group field: Not a group
+WD i18n_string: Created string field:group_group:#allowed_values:1      [notice]
+for text group field: Group
+WD i18n_string: Created string field:group_group:#allowed_values:1      [notice]
+for text group field: Group
+WD i18n_string: Created string field:group_group:editorial_team:label   [notice]
+for text group field: Group
+WD i18n_string: Created string field:group_group:editorial_team:label   [notice]
+for text group field: Group
+WD i18n_string: Created string                                          [notice]
+field:group_group:editorial_team:description for text group field:
+Determine if this is an OG group.
+WD i18n_string: Created string                                          [notice]
+field:group_group:editorial_team:description for text group field:
+Determine if this is an OG group.
+WD i18n_string: Created string field:og_user_node:user:label for text   [notice]
+group field: Group membership
+WD i18n_string: Created string field:og_user_node:user:label for text   [notice]
+group field: Group membership
+WD i18n_string: Created string field:group_access:#allowed_values:0     [notice]
+for text group field: Public - accessible to all site users
+WD i18n_string: Created string field:group_access:#allowed_values:0     [notice]
+for text group field: Public - accessible to all site users
+WD i18n_string: Created string field:group_access:#allowed_values:1     [notice]
+for text group field: Private - accessible only to group members
+WD i18n_string: Created string field:group_access:#allowed_values:1     [notice]
+for text group field: Private - accessible only to group members
+WD i18n_string: Created string                                          [notice]
+field:group_access:editorial_team:label for text group field: Group
+visibility
+WD i18n_string: Created string                                          [notice]
+field:group_access:editorial_team:label for text group field: Group
+visibility
+WD i18n_string: Created string                                          [notice]
+field:og_roles_permissions:#allowed_values:0 for text group field:
+Use default roles and permissions
+WD i18n_string: Created string                                          [notice]
+field:og_roles_permissions:#allowed_values:0 for text group field:
+Use default roles and permissions
+WD i18n_string: Created string                                          [notice]
+field:og_roles_permissions:#allowed_values:1 for text group field:
+Override default roles and permissions
+WD i18n_string: Created string                                          [notice]
+field:og_roles_permissions:#allowed_values:1 for text group field:
+Override default roles and permissions
+WD i18n_string: Created string                                          [notice]
+field:og_roles_permissions:editorial_team:label for text group field:
+Group roles and permissions
+WD i18n_string: Created string                                          [notice]
+field:og_roles_permissions:editorial_team:label for text group field:
+Group roles and permissions
+WD system: nexteuropa_editorial module enabled.                           [info]
+WD features: Enableing nexteuropa_editorial / node.                     [notice]
+WD i18n_string: Created string                                          [notice]
+field:comment_body:comment_node_editorial_team:label for text group
+field: Comment
+WD i18n_string: Created string                                          [notice]
+field:comment_body:comment_node_editorial_team:label for text group
+field: Comment
+WD i18n_string: Created string node:type:editorial_team:name for text   [notice]
+group node: Editorial team
+WD i18n_string: Created string node:type:editorial_team:name for text   [notice]
+group node: Editorial team
+WD i18n_string: Created string node:type:editorial_team:title_label     [notice]
+for text group node: Editorial team name
+WD i18n_string: Created string node:type:editorial_team:title_label     [notice]
+for text group node: Editorial team name
+WD i18n_string: Created string node:type:editorial_team:description     [notice]
+for text group node: Editorial teams.
+WD i18n_string: Created string node:type:editorial_team:description     [notice]
+for text group node: Editorial teams.
+WD features: Enable completed for nexteuropa_editorial / node.          [notice]
+WD features: Rebuilding nexteuropa_editorial / variable.                [notice]
+WD features: Rebuild completed for nexteuropa_editorial / variable.     [notice]
+WD features: Rebuilding nexteuropa_editorial / field_instance.          [notice]
+WD i18n_string: Created string field:body:editorial_team:label for      [notice]
+text group field: Mission
+WD i18n_string: Created string field:body:editorial_team:label for      [notice]
+text group field: Mission
+WD features: Rebuild completed for nexteuropa_editorial /               [notice]
+field_instance.
+WD i18n_string: Created string field:title_field:page:label for text    [notice]
+group field: Title
+WD i18n_string: Created string field:title_field:page:label for text    [notice]
+group field: Title
+WD i18n_string: Created string field:og_group_ref:page:label for text   [notice]
+group field: Groups audience
+WD i18n_string: Created string field:og_group_ref:page:label for text   [notice]
+group field: Groups audience
+WD i18n_string: Created string                                          [notice]
+field:group_content_access:#allowed_values:0 for text group field:
+Use group defaults
+WD i18n_string: Created string                                          [notice]
+field:group_content_access:#allowed_values:0 for text group field:
+Use group defaults
+WD i18n_string: Created string                                          [notice]
+field:group_content_access:#allowed_values:1 for text group field:
+Public - accessible to all site users
+WD i18n_string: Created string                                          [notice]
+field:group_content_access:#allowed_values:1 for text group field:
+Public - accessible to all site users
+WD i18n_string: Created string                                          [notice]
+field:group_content_access:#allowed_values:2 for text group field:
+Private - accessible only to group members
+WD i18n_string: Created string                                          [notice]
+field:group_content_access:#allowed_values:2 for text group field:
+Private - accessible only to group members
+WD i18n_string: Created string field:group_content_access:page:label    [notice]
+for text group field: Group content visibility
+WD i18n_string: Created string field:group_content_access:page:label    [notice]
+for text group field: Group content visibility
+WD i18n_string: Created string field:field_ne_body:page:label for       [notice]
+text group field: Body
+WD i18n_string: Created string field:field_ne_body:page:label for       [notice]
+text group field: Body
+WD i18n_string: Created string field:field_tags:page:label for text     [notice]
+group field: Tags
+WD i18n_string: Created string field:field_tags:page:label for text     [notice]
+group field: Tags
+WD i18n_string: Created string                                          [notice]
+field:comment_body:comment_node_page:label for text group field:
+Comment
+WD i18n_string: Created string                                          [notice]
+field:comment_body:comment_node_page:label for text group field:
+Comment
+WD system: nexteuropa_pages module installed.                             [info]
+WD system: nexteuropa_pages module enabled.                               [info]
+WD features: Enableing nexteuropa_pages / node.                         [notice]
+WD i18n_string: Created string node:type:page:name for text group       [notice]
+node: Basic page
+WD i18n_string: Created string node:type:page:name for text group       [notice]
+node: Basic page
+WD i18n_string: Created string node:type:page:title_label for text      [notice]
+group node: Title
+WD i18n_string: Created string node:type:page:title_label for text      [notice]
+group node: Title
+WD i18n_string: Created string node:type:page:description for text      [notice]
+group node: Use basic pages for your static content, such as an
+'About us' page.
+WD i18n_string: Created string node:type:page:description for text      [notice]
+group node: Use basic pages for your static content, such as an
+'About us' page.
+WD features: Enable completed for nexteuropa_pages / node.              [notice]
+WD system: fast_404 module installed.                                     [info]
+WD system: fast_404 module enabled.                                       [info]
+WD system: feature_set module installed.                                  [info]
+WD system: feature_set module enabled.                                    [info]
+WD system: field_ui module installed.                                     [info]
+WD system: field_ui module enabled.                                       [info]
+WD system: filefield_sources module installed.                            [info]
+WD system: filefield_sources module enabled.                              [info]
+WD system: plupload module installed.                                     [info]
+WD system: plupload module enabled.                                       [info]
+WD system: filefield_sources_plupload module installed.                   [info]
+WD system: filefield_sources_plupload module enabled.                     [info]
+WD system: flag module installed.                                         [info]
+WD system: flag module enabled.                                           [info]
+WD system: fpa module installed.                                          [info]
+WD system: fpa module enabled.                                            [info]
+WD system: help module installed.                                         [info]
+WD system: help module enabled.                                           [info]
+WD system: hidden_captcha module installed.                               [info]
+WD system: hidden_captcha module enabled.                                 [info]
+WD system: i18n_block module installed.                                   [info]
+WD system: i18n_block module enabled.                                     [info]
+WD system: i18n_select module installed.                                  [info]
+WD system: i18n_select module enabled.                                    [info]
+WD system: i18n_sync module installed.                                    [info]
+WD system: i18n_sync module enabled.                                      [info]
+WD system: image_captcha module installed.                                [info]
+WD system: image_captcha module enabled.                                  [info]
+WD system: js_injector module installed.                                  [info]
+WD system: js_injector module enabled.                                    [info]
+WD system: language_cookie module installed.                              [info]
+WD system: language_cookie module enabled.                                [info]
+WD system: menu_attributes module installed.                              [info]
+WD system: menu_attributes module enabled.                                [info]
+WD system: menu_block module installed.                                   [info]
+WD system: menu_block module enabled.                                     [info]
+WD system: menu_token module installed.                                   [info]
+WD system: menu_token module enabled.                                     [info]
+WD system: multisite_autosave module installed.                           [info]
+WD system: multisite_autosave module enabled.                             [info]
+WD system: multisite_create_button module installed.                      [info]
+WD system: multisite_create_button module enabled.                        [info]
+WD system: multisite_custom_error module installed.                       [info]
+WD system: multisite_custom_error module enabled.                         [info]
+WD system: multisite_drupal_features_set_standard module installed.       [info]
+WD system: multisite_drupal_features_set_standard module enabled.         [info]
+WD system: rdf module installed.                                          [info]
+WD system: rdf module enabled.                                            [info]
+WD system: quicktabs module installed.                                    [info]
+WD system: quicktabs module enabled.                                      [info]
+WD system: realname module installed.                                     [info]
+WD system: realname module enabled.                                       [info]
+WD system: tagclouds module installed.                                    [info]
+WD system: tagclouds module enabled.                                      [info]
+WD system: multisite_dynamic_basetheme module installed.                  [info]
+WD system: multisite_dynamic_basetheme module enabled.                    [info]
+WD system: username_enumeration_prevention module installed.              [info]
+WD system: username_enumeration_prevention module enabled.                [info]
+WD system: multisite_settings_standard module installed.                  [info]
+WD system: multisite_settings_standard module enabled.                    [info]
+WD system: solr_config module installed.                                  [info]
+WD system: solr_config module enabled.                                    [info]
+WD features: Rebuilding solr_config / variable.                         [notice]
+WD features: Rebuild completed for solr_config / variable.              [notice]
+WD system: nexteuropa_europa_search module installed.                     [info]
+WD system: nexteuropa_europa_search module enabled.                       [info]
+WD system: nexteuropa_laco module installed.                              [info]
+WD system: nexteuropa_laco module enabled.                                [info]
+WD php: Warning: filesize(): stat failed for                           [warning]
+public://default_images/user_default.png in file_save() (line 605 of
+/var/www/farnet-dev/platform/includes/file.inc).
+WD php: Warning: filesize(): stat failed for                           [warning]
+public://default_images/empty_gallery.png in file_save() (line 605 of
+/var/www/farnet-dev/platform/includes/file.inc).
+WD system: multisite_drupal_standard module installed.                    [info]
+WD system: multisite_drupal_standard module enabled.                      [info]
+WD actions: Action 'Publish comment' added.                             [notice]
+WD actions: Action 'Unpublish comment' added.                           [notice]
+WD actions: Action 'Save comment' added.                                [notice]
+WD actions: Action 'Deny the activation of a user account.' added.      [notice]
+WD actions: Action 'Publish content' added.                             [notice]
+WD actions: Action 'Unpublish content' added.                           [notice]
+WD actions: Action 'Make content sticky' added.                         [notice]
+WD actions: Action 'Make content unsticky' added.                       [notice]
+WD actions: Action 'Promote content to front page' added.               [notice]
+WD actions: Action 'Remove content from front page' added.              [notice]
+WD actions: Action 'Save content' added.                                [notice]
+WD actions: Action 'Remove from group' added.                           [notice]
+WD actions: Action 'Update real name' added.                            [notice]
+WD actions: Action 'Ban IP address of current user' added.              [notice]
+WD actions: Action 'Block current user' added.                          [notice]
+WD actions: Action 'Pass ids as arguments to a page' added.             [notice]
+WD actions: Action 'Delete item' added.                                 [notice]
+WD actions: Action 'Delete revision' added.                             [notice]
+WD actions: Action 'Modify entity values' added.                        [notice]
+WD actions: Action 'Update node alias' added.                           [notice]
+WD actions: Action 'Update taxonomy term alias' added.                  [notice]
+WD actions: Action 'Update user alias' added.                           [notice]
+WD actions: Action 'Update file alias' added.                           [notice]
+WD user: Session opened for admin.                                      [notice]
+WD linkchecker: Link checks completed.                                    [info]
+WD cron: Cron run completed.                                            [notice]
+Installation complete.  User name: admin  User password: admin              [ok]
+The JS injector cache directory could not be created. Please see the     [error]
+status report for more detail.
+filesize(): stat failed for public://default_images/user_default.png   [warning]
+in file_save() (line 605 of
+/var/www/farnet-dev/platform/includes/file.inc).
+filesize(): stat failed for public://default_images/empty_gallery.png  [warning]
+in file_save() (line 605 of
+/var/www/farnet-dev/platform/includes/file.inc).
+Apache Solr is enabled. Visit the settings page.                        [status]
+Autosave module successfully installed. Please review the               [status]
+configuration settings.
+You can now configure the CAPTCHA module for your site.                 [status]
+Refreshed 8 strings for the enabled modules.                            [status]
+Taxonomy browser feature is now active on your site.                    [status]
+Multisite Wysiwyg feature is now active on your site.                   [status]
+Printer-friendly Page settings are available under Administration       [status]
+&gt; Configuration &gt; User interface &gt; Printer, email and PDF
+versions
+Reset language for all terms.                                           [status]
+Reset language for all terms.                                           [status]
+Reset language for all terms.                                           [status]
+The Coffee module was succesfully enabled, press alt+d to start         [status]
+Coffee.
+ECAS import users is now active on your site.                           [status]
+ecas_env feature is now active on your site.                            [status]
+Refreshed 12 strings for the enabled modules.                           [status]
+Refreshed 345 strings for the enabled modules.                          [status]
+Multisite Workbench Moderation View feature is now active on your       [status]
+site.
+Content permissions have been rebuilt.                                  [status]
+To use menu blocks, find the "Add menu block" link on the administer    [status]
+blocks page.
+Multisite Autosave feature is now active on your site.                  [status]
+Content creation button installed                                       [status]
+Multisite Custom Error feature is now active on your site.              [status]
+Default error page has been set.                                        [status]
+Default error page has been set.                                        [status]
+Go to Site information to review the settings.                          [status]
+Go to Custom error configuration to review additional configuration     [status]
+options.
+Multisite Settings Standard feature is now active on your site.         [status]
+Europa Search feature is now active on your site.                       [status]
+Warning in features rebuild of cce_basic_config. No module defines     [warning]
+permission "import media".
+Command dispatch complete                                               [notice]
+    [drush] You are about to create a /var/www/farnet-dev/platform/sites/default/settings.php file and DROP all tables in your 'farnet' database. Do you want to continue? (y/n): y
+
+BUILD FAILED
+/var/www/farnet-dev/build.test.xml:19:9: Drush exited with code 1
+
+Total time: 3 minutes  15.61 seconds
+
