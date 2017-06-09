@@ -174,9 +174,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    101 => '101',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -257,9 +255,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    100 => '100',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -340,9 +336,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    103 => '103',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -423,9 +417,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    102 => '102',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -570,9 +562,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    100 => '100',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -713,9 +703,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    101 => '101',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -856,9 +844,7 @@ function farnet_publication_views_default_views() {
   $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
-  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = array(
-    103 => '103',
-  );
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
   $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
   /* Filter criterion: Content: Country (field_term_country) */
@@ -903,6 +889,88 @@ function farnet_publication_views_default_views() {
   );
   $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
   $handler->display->display_options['filters']['field_term_theme_tid']['error_message'] = FALSE;
+
+  /* Display: technical reports */
+  $handler = $view->new_display('page', 'technical reports', 'page_technical_reports');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Technical reports';
+  $handler->display->display_options['display_description'] = 'Technical reports';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['filters']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value']['operator'] = '<';
+  $handler->display->display_options['filters']['field_publication_date_value']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'publication' => 'publication',
+  );
+  /* Filter criterion: Content: Type of Publication (field_type_of_publication) */
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['id'] = 'field_type_of_publication_tid';
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['table'] = 'field_data_field_type_of_publication';
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['field'] = 'field_type_of_publication_tid';
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['value'] = [];
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_type_of_publication_tid']['vocabulary'] = 'farnet_type_publication';
+  /* Filter criterion: Content: Country (field_term_country) */
+  $handler->display->display_options['filters']['field_term_country_tid']['id'] = 'field_term_country_tid';
+  $handler->display->display_options['filters']['field_term_country_tid']['table'] = 'field_data_field_term_country';
+  $handler->display->display_options['filters']['field_term_country_tid']['field'] = 'field_term_country_tid';
+  $handler->display->display_options['filters']['field_term_country_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_term_country_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['operator_id'] = 'field_term_country_tid_op';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['label'] = 'Countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['operator'] = 'field_term_country_tid_op';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['identifier'] = 'field_term_country_tid';
+  $handler->display->display_options['filters']['field_term_country_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_term_country_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_country_tid']['vocabulary'] = 'countries';
+  $handler->display->display_options['filters']['field_term_country_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_term_country_tid']['error_message'] = FALSE;
+  /* Filter criterion: Content: Theme (field_term_theme) */
+  $handler->display->display_options['filters']['field_term_theme_tid']['id'] = 'field_term_theme_tid';
+  $handler->display->display_options['filters']['field_term_theme_tid']['table'] = 'field_data_field_term_theme';
+  $handler->display->display_options['filters']['field_term_theme_tid']['field'] = 'field_term_theme_tid';
+  $handler->display->display_options['filters']['field_term_theme_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_term_theme_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['operator_id'] = 'field_term_theme_tid_op';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['operator'] = 'field_term_theme_tid_op';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['identifier'] = 'field_term_theme_tid';
+  $handler->display->display_options['filters']['field_term_theme_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_term_theme_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_term_theme_tid']['vocabulary'] = 'farnet_theme';
+  $handler->display->display_options['filters']['field_term_theme_tid']['error_message'] = FALSE;
+  $handler->display->display_options['path'] = 'library/technical-reports';
   $export['farnet_view_publication'] = $view;
 
   return $export;

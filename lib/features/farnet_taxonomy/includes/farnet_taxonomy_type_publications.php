@@ -42,6 +42,14 @@ function farnet_taxonomy_type_publications() {
         'it' => 'Presentation',
       ),
     ),
+    'Publication5' => (object) array(
+      'name' => t('Technical report'),
+      'language' => 'en',
+      'translation' => array(
+        'fr' => 'Technical report',
+        'it' => 'Technical report',
+      ),
+    ),
   );
   return $type_publications_array;
 }
