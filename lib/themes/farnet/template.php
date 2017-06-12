@@ -599,7 +599,6 @@ function farnet_field_group_pre_render_alter(&$element, $group, &$form) {
           }
         }
         elseif ($element['field_ff_other_non_fisheries']) {
-          $element['field_ff_other_non_fisheries']['#prefix'] = $prefix_percent;
           if ($element['field_ff_environmental_actors']) {
             $element['field_ff_environmental_actors']['#suffix'] = $suffix;
           }
