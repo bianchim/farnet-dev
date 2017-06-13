@@ -260,10 +260,11 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
   $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
   $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Code (field_ff_code) */
-  $handler->display->display_options['sorts']['field_ff_code_value']['id'] = 'field_ff_code_value';
-  $handler->display->display_options['sorts']['field_ff_code_value']['table'] = 'field_data_field_ff_code';
-  $handler->display->display_options['sorts']['field_ff_code_value']['field'] = 'field_ff_code_value';
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
