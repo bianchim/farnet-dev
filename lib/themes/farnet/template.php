@@ -799,13 +799,13 @@ function farnet_pager(&$variables) {
   if ($pager_total[$element] > 1) {
     if ($li_first) {
       $items[] = array(
-        'class' => array('pager-first'),
+        'class' => array('pager__item', 'pager-first'),
         'data' => $li_first,
       );
     }
     if ($li_previous) {
       $items[] = array(
-        'class' => array('pager-previous'),
+        'class' => array('pager__item', 'pager-previous'),
         'data' => $li_previous,
       );
     }
