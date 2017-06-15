@@ -9,6 +9,7 @@
  */
 function farnet_factsheet_flag_views_default_views() {
   $export = array();
+
   $view = new view();
   $view->name = 'cooperation_idea_by_flag';
   $view->description = '';
@@ -18,6 +19,7 @@ function farnet_factsheet_flag_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -69,9 +71,11 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'cooperation_idea' => 'cooperation_idea',
   );
+
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_idea_by_flag');
   $handler->display->display_options['path'] = 'cooperation-idea-by-flag';
+
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_idea_by_flag');
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -94,6 +98,7 @@ function farnet_factsheet_flag_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -147,9 +152,11 @@ function farnet_factsheet_flag_views_default_views() {
     'gp_project' => 'gp_project',
     'gp_short_story' => 'gp_short_story',
   );
+
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_gp_by_flag');
   $handler->display->display_options['path'] = 'gp-by-flag';
+
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_gp_by_flag');
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -253,10 +260,11 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
   $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
   $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Code (field_ff_code) */
-  $handler->display->display_options['sorts']['field_ff_code_value']['id'] = 'field_ff_code_value';
-  $handler->display->display_options['sorts']['field_ff_code_value']['table'] = 'field_data_field_ff_code';
-  $handler->display->display_options['sorts']['field_ff_code_value']['field'] = 'field_ff_code_value';
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -324,7 +332,7 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<em>FLAGs are partnerships between fisheries actors and other local private and public stakeholders. Together, they design and implement a local development strategy to address their area´s needs be they economic, social and/or environmental. Based on their strategy, the FLAGs select and provide funding to local projects that contribute to local development in their areas, involving thousands of local stakeholders.</em>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
+  $handler->display->display_options['path'] = 'on-the-ground/local-groups';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'ff_on_the_ground');
@@ -404,6 +412,18 @@ function farnet_factsheet_flag_views_default_views() {
   $handler->display->display_options['title'] = 'FLAG Factsheets by country';
   $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets-list';
 
+  /* Display: Page by theme */
+  $handler = $view->new_display('page', 'Page by theme', 'page_factsheet_flag_by_theme');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'FLAG Factsheets by theme';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<em>FLAGs are partnerships between fisheries actors and other local private and public stakeholders. Together, they design and implement a local development strategy to address their area´s needs be they economic, social and/or environmental. Based on their strategy, the FLAGs select and provide funding to local projects that contribute to local development in their areas, involving thousands of local stakeholders.</em>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['path'] = 'on-the-ground/flag-factsheets';
   $export['farnet_view_factsheets_flag'] = $view;
 
   return $export;
