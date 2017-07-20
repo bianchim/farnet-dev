@@ -263,3 +263,19 @@ function farnet_user_user_insert(&$edit, $account, $category) {
     og_group('node', $gid, array('entity' => $account));
   }
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function farnet_user_views_pre_render(&$view) {
+  if ($view->name === 'farnet_view_manage_users') {
+    foreach ($view->result as $user) {
+      if (strpos($user->field_field_newsletter_myfarnet[0]['rendered']['status']['#markup'], 'Not') !== FALSE) {
+        $user->field_field_newsletter_myfarnet[0]['rendered']['status']['#markup'] = 'No';
+      }
+      else {
+        $user->field_field_newsletter_myfarnet[0]['rendered']['status']['#markup'] = 'Yes';
+      }
+    }
+  }
+}

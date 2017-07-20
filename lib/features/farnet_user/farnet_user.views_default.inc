@@ -39,7 +39,7 @@ function farnet_user_views_default_views() {
     'field_firstname' => 'field_firstname',
     'field_lastname' => 'field_lastname',
     'field_organisation' => 'field_organisation',
-    'field_keep_me_informed_on_farnet' => 'field_keep_me_informed_on_farnet',
+    'field_newsletter_myfarnet' => 'field_newsletter_myfarnet',
     'created' => 'created',
     'access' => 'access',
     'status' => 'status',
@@ -80,7 +80,7 @@ function farnet_user_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_keep_me_informed_on_farnet' => array(
+    'field_newsletter_myfarnet' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -174,10 +174,10 @@ function farnet_user_views_default_views() {
     'link' => 0,
   );
   /* Field: User: Keep me informed on FARNET activities */
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['id'] = 'field_keep_me_informed_on_farnet';
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['table'] = 'field_data_field_keep_me_informed_on_farnet';
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['field'] = 'field_keep_me_informed_on_farnet';
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['label'] = 'FARNET activities';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['id'] = 'field_newsletter_myfarnet';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['table'] = 'field_data_field_newsletter_myfarnet';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['field'] = 'field_newsletter_myfarnet';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['label'] = 'FARNET activities';
   /* Field: User: Created date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'users';
@@ -538,10 +538,10 @@ function farnet_user_views_default_views() {
   $handler->display->display_options['fields']['field_preferred_language_3']['table'] = 'field_data_field_preferred_language_3';
   $handler->display->display_options['fields']['field_preferred_language_3']['field'] = 'field_preferred_language_3';
   /* Field: User: Keep me informed on FARNET activities */
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['id'] = 'field_keep_me_informed_on_farnet';
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['table'] = 'field_data_field_keep_me_informed_on_farnet';
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['field'] = 'field_keep_me_informed_on_farnet';
-  $handler->display->display_options['fields']['field_keep_me_informed_on_farnet']['label'] = 'FARNET activities';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['id'] = 'field_newsletter_myfarnet';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['table'] = 'field_data_field_newsletter_myfarnet';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['field'] = 'field_newsletter_myfarnet';
+  $handler->display->display_options['fields']['field_newsletter_myfarnet']['label'] = 'FARNET activities';
   /* Field: User: FARNET Magazine (paper version) */
   $handler->display->display_options['fields']['field_farnet_magazine_paper']['id'] = 'field_farnet_magazine_paper';
   $handler->display->display_options['fields']['field_farnet_magazine_paper']['table'] = 'field_data_field_farnet_magazine_paper';

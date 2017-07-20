@@ -415,42 +415,6 @@ function farnet_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_keep_me_informed_on_farnet'.
-  $field_instances['user-user-field_keep_me_informed_on_farnet'] = array(
-    'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 22,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_keep_me_informed_on_farnet',
-    'label' => 'Keep me informed on FARNET activities',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_keep_my_email_private'.
   $field_instances['user-user-field_keep_my_email_private'] = array(
     'bundle' => 'user',

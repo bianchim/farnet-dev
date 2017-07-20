@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Farnet MailChimp feature.
+ */
+
+include_once 'farnet_mailchimp.features.inc';

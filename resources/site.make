@@ -17,6 +17,7 @@ projects[social_media_links][version] = "1.5"
 projects[views_infinite_scroll][version] = "2.0"
 projects[viewfield][version] = "2.0"
 projects[workbench_moderation][version] = "1.4"
+projects[mailchimp][version] = "4.8"
 
 
 ; =========
@@ -30,6 +31,16 @@ projects[workbench_moderation][patch][] = https://www.drupal.org/files/issues/wo
 ; https://www.drupal.org/node/2645622
 projects[workbench_moderation][patch][] = https://www.drupal.org/files/issues/node-deleted-before-shutdown-function-2645622-4.patch
 
+; =========
+; Libraries
+; =========
+
+; mailchimp
+libraries[mailchimp][destination] = "libraries"
+libraries[mailchimp][download][type] = "file"
+libraries[mailchimp][download][request_type] = "get"
+libraries[mailchimp][download][url] = "https://github.com/thinkshout/mailchimp-api-php/releases/download/v1.0.7/v1.0.7-package-no-dev.zip"
+libraries[mailchimp][directory_name] = "mailchimp"
 
 ; ======
 ; Themes

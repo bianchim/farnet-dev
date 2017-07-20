@@ -246,9 +246,9 @@ function farnet_user_field_group_info() {
     'label' => 'Subscriptions',
     'weight' => '7',
     'children' => array(
-      0 => 'field_farnet_magazine_paper',
-      1 => 'field_farnet_magazine_subscribe',
-      2 => 'field_keep_me_informed_on_farnet',
+      0 => 'field_newsletter_myfarnet',
+      1 => 'field_farnet_magazine_paper',
+      2 => 'field_farnet_magazine_subscribe',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

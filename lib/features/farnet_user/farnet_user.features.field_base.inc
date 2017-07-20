@@ -110,32 +110,6 @@ function farnet_user_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_keep_me_informed_on_farnet'.
-  $field_bases['field_keep_me_informed_on_farnet'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_keep_me_informed_on_farnet',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        1 => 'Yes',
-        0 => 'No',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_integer',
-  );
-
   // Exported field_base: 'field_keep_my_email_private'.
   $field_bases['field_keep_my_email_private'] = array(
     'active' => 1,
