@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_factsheet_flag.field_group.inc
@@ -553,7 +552,7 @@ function farnet_factsheet_flag_field_group_info() {
     'label' => 'Metadata',
     'weight' => '16',
     'children' => array(
-      2 => 'language',
+      0 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -629,6 +628,7 @@ function farnet_factsheet_flag_field_group_info() {
       6 => 'field_ff_number_staff',
       7 => 'field_ff_other_non_fisheries',
       8 => 'field_ff_public_actors',
+      9 => 'field_ff_public_actors_decision',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

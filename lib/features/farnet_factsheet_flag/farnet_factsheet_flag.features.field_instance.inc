@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_factsheet_flag.features.field_instance.inc
@@ -1083,7 +1082,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1808,7 +1807,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1902,7 +1901,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1950,7 +1949,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -2319,6 +2318,54 @@ function farnet_factsheet_flag_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-factsheet_flag-field_ff_public_actors_decision'.
+  $field_instances['node-factsheet_flag-field_ff_public_actors_decision'] = array(
+    'bundle' => 'factsheet_flag',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 94,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ff_public_actors_decision',
+    'label' => '% of public authorities and other',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => 100,
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 11,
     ),
   );
 
@@ -3874,6 +3921,7 @@ function farnet_factsheet_flag_field_default_field_instances() {
   t('% of fisheries actors');
   t('% of other (non-fisheries) private / NGO sector actors');
   t('% of public actors');
+  t('% of public authorities and other');
   t('% of the budget allocated');
   t('Abstract');
   t('Accountable body');
