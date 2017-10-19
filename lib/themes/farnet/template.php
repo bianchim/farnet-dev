@@ -84,13 +84,36 @@ function farnet_preprocess_page(&$variables) {
       $variables['node_community_name'] = $node_community->title;
     }
   }
-
   $variables['cols']['landing_content'] = array(
     'lg' => 12 - $variables['cols']['content_right']['lg'],
     'md' => 12 - $variables['cols']['content_right']['md'],
     'sm' => 12,
     'xs' => 12,
   );
+  if ($variables['node_type'] == 'FLAG Factsheet') {
+    $array = explode("\n", $variables['regions']['content']);
+    $nid = arg(1);
+    $val = $variables['page']['content']['system_main']['nodes'][$nid]['field_ff_public_actors_decision']['#items'][0]['value'];
+    $value = intval($val);
+    $new_field = '
+      <div class="field field-name-field-ff-public-actors-decision field-type-number-decimal">
+        <div class="field-label u-fw-normal">% of public authorities and other:&nbsp; </div>
+        <div class="field-items">
+            <div class="field-item even farnet-progress progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $value . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . $value . '%">' . $value . '%</div>
+          </div>
+        </div>
+      </div> ';
+    $new_cont = "";
+    foreach ($array as $res) {
+      if ($res == '<div class="field field-name-field-ff-other-non-fisheries field-type-number-decimal">') {
+        $new_cont .= $new_field . "\n";
+      }
+      $new_cont .= $res . "\n";
+    }
+  }
+  unset($variables['regions']['content']);
+  $variables['regions']['content'] = $new_cont;
 }
 
 /**
@@ -385,6 +408,7 @@ function farnet_preprocess_field(&$variables, $hook) {
   $element_with_additional_label_class = array(
     'field_ff_public_actors',
     'field_ff_fisheries_actors',
+    'field_ff_public_actors_decision',
     'field_ff_other_non_fisheries',
     'field_ff_environmental_actors',
     'field_ff_number_decision',
@@ -405,6 +429,7 @@ function farnet_preprocess_field(&$variables, $hook) {
   $element_percent_formated = array(
     'field_ff_public_actors',
     'field_ff_fisheries_actors',
+    'field_ff_public_actors_decision',
     'field_ff_other_non_fisheries',
     'field_ff_environmental_actors',
     'field_allocated_budget',
@@ -413,6 +438,7 @@ function farnet_preprocess_field(&$variables, $hook) {
     'field_ff_accountable_body' => array('field-label-inline', 'clearfix'),
     'field_ff_public_actors' => array('field-label-inline', 'clearfix'),
     'field_ff_fisheries_actors' => array('field-label-inline', 'clearfix'),
+    'field_ff_public_actors_decision' => array('field-label-inline', 'clearfix'),
     'field_ff_other_non_fisheries' => array('field-label-inline', 'clearfix'),
     'field_ff_environmental_actors' => array('field-label-inline', 'clearfix'),
     'field_ff_number_decision' => array('field-label-inline', 'clearfix'),

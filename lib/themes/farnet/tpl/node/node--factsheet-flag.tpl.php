@@ -96,6 +96,7 @@
       hide($content['group_factsheet_flag_area']);
       hide($content['group_factsheet_flag_social']);
       hide($content['group_factsheet_flag_contact']);
+      hide($content['field_ff_public_actors_decision']);
     ?>
     <?php if (!empty($content['group_factsheet_flag_content'])) : ?>
       <div id="group-factsheet-flag-content" class="group-factsheet-flag-content field-group-tab">

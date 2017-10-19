@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * farnet_factsheet_flag.strongarm.inc
@@ -194,9 +193,149 @@ function farnet_factsheet_flag_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_bg_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_bg_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_da_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_da_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_de_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_el_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_el_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_et_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_et_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_fi_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_fi_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_fr_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_hr_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_hr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_it_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_it_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_lt_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_lt_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_lv_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_lv_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_factsheet_flag_pattern';
   $strongarm->value = 'on-the-ground/flag-factsheets/[node:source:title]';
   $export['pathauto_node_factsheet_flag_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_pl_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_pl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_pt-pt_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_pt-pt_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_ro_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_ro_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_sl_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_sl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_sv_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_sv_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_factsheet_flag_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_factsheet_flag_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_farnet_languages_spoken_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_farnet_languages_spoken_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
